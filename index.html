@@ -1,0 +1,611 @@
+<!DOCTYPE html>
+<html lang="vi" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tuấn Tử Tế (Từ Tâm) | Nguyễn Anh Tuấn - Chủ tịch GTO Media & BNI Khánh Hòa</title>
+  <meta name="description" content="Doanh nhân truyền cảm hứng & Tạo dựng cuộc sống tốt đẹp! Cổng thông tin cá nhân của Nguyễn Anh Tuấn (Tuấn Tử Tế Từ Tâm) - Chủ tịch HĐQT GTO Media (Since 2009), Giám đốc BNI Vùng Khánh Hòa, Phó Chủ tịch Hội Doanh Nhân Trẻ Khánh Hòa.">
+  <meta property="og:title" content="Tuấn Tử Tế (Từ Tâm) | Nguyễn Anh Tuấn - Chủ tịch GTO Media & BNI Khánh Hòa">
+  <meta property="og:description" content="Doanh nhân truyền cảm hứng & Tạo dựng cuộc sống tốt đẹp! Sự rộng lượng là thước đo trình độ sống.">
+  <meta property="og:url" content="https://www.facebook.com/TuanTuTeTT/">
+  <meta property="og:image" content="avatar.jpg">
+  <link rel="icon" type="image/jpeg" href="avatar.jpg">
+  
+  <!-- Google Fonts with 100% Native Vietnamese Support -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,600;1,700&family=Montserrat:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,600&display=swap" rel="stylesheet">
+  
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Background Ambient Glow Effects -->
+  <div class="ambient-glow glow-top"></div>
+  <div class="ambient-glow glow-bottom"></div>
+  <div class="ambient-mesh"></div>
+
+  <!-- Main App Wrapper -->
+  <div class="app-layout">
+
+    <!-- Top Floating Navbar -->
+    <header class="top-nav">
+      <div class="nav-container">
+        <a href="#" class="brand-badge">
+          <span class="brand-avatar-mini">
+            <img src="avatar.jpg" alt="Tuấn Tử Tế">
+          </span>
+          <div class="brand-info">
+            <span class="brand-title">Tuấn Tử Tế</span>
+            <span class="brand-subtitle">tuantute.life</span>
+          </div>
+        </a>
+
+        <!-- Live Clock & Status -->
+        <div class="nav-status-badge">
+          <span class="status-indicator"></span>
+          <span class="status-text">Khánh Hòa, VN &bull; <span id="liveClock">00:00</span></span>
+        </div>
+
+        <!-- Navigation Action Buttons -->
+        <div class="nav-actions">
+          <button class="nav-btn" id="btnDownloadVCard" title="Tải Danh Thiếp Điện Tử (.vcf)">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+              <polyline points="7 10 12 15 17 10"></polyline>
+              <line x1="12" y1="15" x2="12" y2="3"></line>
+            </svg>
+            <span class="btn-label">Lưu Danh Bạ</span>
+          </button>
+
+          <button class="nav-btn" id="btnShareModal" title="Chia sẻ hồ sơ danh thiếp">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <circle cx="18" cy="5" r="3"></circle>
+              <circle cx="6" cy="12" r="3"></circle>
+              <circle cx="18" cy="19" r="3"></circle>
+              <line x1="8.59" y1="13.51" x2="15.42" y2="17.49"></line>
+              <line x1="15.41" y1="6.51" x2="8.59" y2="10.49"></line>
+            </svg>
+            <span class="btn-label">Chia Sẻ</span>
+          </button>
+
+          <!-- Theme Palette Toggle -->
+          <div class="theme-switcher" id="themeSwitcher">
+            <button class="theme-btn active" data-theme="dark" title="Giao diện Đen Sang Trọng (Obsidian & Gold)">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
+            </button>
+            <button class="theme-btn" data-theme="amber" title="Giao diện Ấm Áp Tử Tế (Warm Amber)">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line></svg>
+            </button>
+            <button class="theme-btn" data-theme="light" title="Giao diện Tươi Sáng (Clean Frost)">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect><line x1="9" y1="3" x2="9" y2="21"></line></svg>
+            </button>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <!-- Main Content Container: Modern Bento Grid -->
+    <main class="main-content">
+      <div class="bento-container">
+
+        <!-- 1. HERO PROFILE CARD (Large VIP Card) -->
+        <section class="bento-card card-hero" id="heroCard">
+          <div class="card-glass-shine"></div>
+          
+          <div class="hero-top-meta">
+            <div class="tag-pill kindness-pill">
+              <span class="heart-pulse">&#10084;</span>
+              <span>Cherish kindness &bull; Trân quý sự tử tế</span>
+            </div>
+            <a href="https://www.facebook.com/TuanTuTeTT" target="_blank" rel="noopener noreferrer" class="fb-followers-pill" title="Theo dõi trang Facebook chính thức của Tuấn Tử Tế">
+              <svg viewBox="0 0 24 24" fill="currentColor">
+                <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
+              </svg>
+              <span>5.5K+ Followers</span>
+            </a>
+            <div class="verified-badge" title="Tài khoản chính chủ đã xác thực">
+              <svg viewBox="0 0 24 24" fill="currentColor">
+                <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/>
+              </svg>
+              <span>Verified VIP</span>
+            </div>
+          </div>
+
+          <div class="hero-body">
+            <div class="avatar-wrapper">
+              <div class="avatar-ring"></div>
+              <img src="avatar.jpg" alt="Nguyễn Anh Tuấn (Tuấn Tử Tế Từ Tâm)" class="hero-avatar" id="avatarImg">
+              <span class="avatar-online-dot" title="Đang trực tuyến sẵn sàng kết nối"></span>
+            </div>
+
+            <div class="hero-intro">
+              <h1 class="hero-name">
+                NGUYỄN ANH TUẤN
+                <span class="hero-alias">TUẤN TỬ TẾ &bull; TỪ TÂM</span>
+              </h1>
+              
+              <div class="hero-titles">
+                <span class="role-badge highlight">Chủ tịch HĐQT GTO Media &bull; Since 2009</span>
+                <span class="role-badge">Giám đốc BNI Vùng Khánh Hòa</span>
+                <span class="role-badge">Phó Chủ tịch Hội Doanh Nhân Trẻ Khánh Hòa</span>
+                <span class="role-badge">Diễn giả truyền cảm hứng</span>
+              </div>
+
+              <!-- Facebook Mission Tagline -->
+              <div class="hero-mission-row">
+                <span class="mission-sparkle">&#10024;</span>
+                <span class="mission-text">Doanh nhân truyền cảm hứng &bull; Tạo dựng cuộc sống tốt đẹp!</span>
+              </div>
+
+              <!-- Life Motto Box -->
+              <blockquote class="motto-box">
+                <div class="quote-icon">&ldquo;</div>
+                <p class="motto-en">Generosity is a measure of life's level.</p>
+                <p class="motto-vi">Sự rộng lượng là thước đo trình độ sống.</p>
+              </blockquote>
+
+              <!-- Quick Connect Action Buttons -->
+              <div class="quick-connect-row">
+                <a href="https://www.facebook.com/TuanTuTeTT" target="_blank" rel="noopener noreferrer" class="cta-btn facebook-cta" id="btnFacebook">
+                  <svg viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
+                  </svg>
+                  <span>Facebook: TuanTuTeTT</span>
+                </a>
+
+                <a href="mailto:tuan@media-gto.com" class="cta-btn secondary-cta" id="btnEmail">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+                    <polyline points="22,6 12,13 2,6"></polyline>
+                  </svg>
+                  <span>Gửi Email</span>
+                </a>
+
+                <button class="cta-btn qr-cta" id="btnTriggerQRCard">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <rect x="3" y="3" width="7" height="7"></rect>
+                    <rect x="14" y="3" width="7" height="7"></rect>
+                    <rect x="14" y="14" width="7" height="7"></rect>
+                    <rect x="3" y="14" width="7" height="7"></rect>
+                  </svg>
+                  <span>Mã QR</span>
+                </button>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- 2. QUICK STATS CARD -->
+        <section class="bento-card card-stats">
+          <div class="stats-grid">
+            <div class="stat-item">
+              <span class="stat-number" id="expYears">18+</span>
+              <span class="stat-label">Năm kinh nghiệm</span>
+              <span class="stat-sub">Truyền thông & Sự kiện (Since 2009)</span>
+            </div>
+            <div class="stat-divider"></div>
+            <div class="stat-item">
+              <span class="stat-number fb-blue-text">5.5K+</span>
+              <span class="stat-label">Cộng đồng Follower</span>
+              <span class="stat-sub">Facebook @TuanTuTeTT</span>
+            </div>
+            <div class="stat-divider"></div>
+            <div class="stat-item">
+              <span class="stat-number gold-text">2013</span>
+              <span class="stat-label">BNI Notable Award</span>
+              <span class="stat-sub">Giải thưởng Quốc gia</span>
+            </div>
+            <div class="stat-divider"></div>
+            <div class="stat-item">
+              <span class="stat-number">100%</span>
+              <span class="stat-label">Tử Tế & Tận Tâm</span>
+              <span class="stat-sub">Triết lý phụng sự</span>
+            </div>
+          </div>
+        </section>
+
+        <!-- 3. BUSINESS ECOSYSTEM / PORTFOLIO CARD -->
+        <section class="bento-card card-ecosystem" id="portfolioSection">
+          <div class="card-header">
+            <div class="header-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <rect x="2" y="7" width="20" height="14" rx="2" ry="2"></rect>
+                <path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"></path>
+              </svg>
+            </div>
+            <div>
+              <span class="card-overhead">Portfolio & Enterprise</span>
+              <h2 class="card-headline">Hệ Sinh Thái Doanh Nghiệp</h2>
+            </div>
+          </div>
+
+          <div class="companies-grid">
+            <!-- GTO Media Item -->
+            <div class="company-card">
+              <div class="company-top">
+                <div class="company-logo-wrap">
+                  <img src="gto-logo.png" alt="GTO Media Corporation" class="company-logo">
+                </div>
+                <span class="company-tag">Truyền thông & Sự kiện &bull; Since 2009</span>
+              </div>
+              <h3 class="company-name">GTO Media Corporation</h3>
+              <p class="company-role">Chủ tịch HĐQT &bull; Sự kiện quốc gia &bull; MICE &bull; Chiến lược Marketing</p>
+              <p class="company-desc">
+                Đơn vị dẫn đầu tại Nha Trang - Khánh Hòa trong lĩnh vực tổ chức các lễ hội quy mô quốc gia, hội nghị cao cấp và kích cầu du lịch. Trụ sở: Biệt thự C10 - C11 KĐT Hưng Phú, TP. Nha Trang.
+              </p>
+              <div class="company-actions">
+                <a href="https://gto.vn" target="_blank" rel="noopener noreferrer" class="link-btn">
+                  <span>Website GTO.vn</span>
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+                </a>
+                <a href="http://gtomedia.vn" target="_blank" rel="noopener noreferrer" class="link-btn secondary-link">
+                  <span>gtomedia.vn</span>
+                </a>
+              </div>
+            </div>
+
+            <!-- BNI Khanh Hoa Item -->
+            <div class="company-card">
+              <div class="company-top">
+                <div class="company-logo-wrap bni-wrap">
+                  <img src="bni-logo.png" alt="BNI Vietnam" class="company-logo">
+                </div>
+                <span class="company-tag bni-tag">Kết nối thương quyền</span>
+              </div>
+              <h3 class="company-name">BNI Vùng Khánh Hòa</h3>
+              <p class="company-role">Giám đốc Vùng &bull; Kết nối Doanh nhân Toàn Cầu</p>
+              <p class="company-desc">
+                Tổ chức kết nối kinh doanh lớn nhất thế giới. Kết nối hàng trăm chủ doanh nghiệp tại Khánh Hòa xây dựng mối quan hệ giao thương bền chặt, gia tăng doanh số và uy tín.
+              </p>
+              <div class="company-actions">
+                <a href="http://bni.vn" target="_blank" rel="noopener noreferrer" class="link-btn">
+                  <span>Website BNI Vietnam</span>
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+                </a>
+              </div>
+            </div>
+
+            <!-- Khanh Hoa Young Entrepreneurs & Inspiration Academy -->
+            <div class="company-card">
+              <div class="company-top">
+                <div class="company-logo-wrap inspiration-wrap">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="inspiration-card-icon">
+                    <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon>
+                  </svg>
+                </div>
+                <span class="company-tag inspiration-tag">Phụng sự & Truyền cảm hứng</span>
+              </div>
+              <h3 class="company-name">Tuấn Tử Tế Từ Tâm</h3>
+              <p class="company-role">Phó Chủ tịch Hội Doanh Nhân Trẻ Khánh Hòa &bull; Diễn giả</p>
+              <p class="company-desc">
+                Lan tỏa triết lý sống tử tế, đồng hành đào tạo tư duy phát triển bản thân, kỹ năng làm chủ, ứng dụng công nghệ/AI và livestream thực chiến giúp cộng đồng kiến tạo cuộc sống thành công, hạnh phúc.
+              </p>
+              <div class="company-actions">
+                <a href="https://www.youtube.com/@Tu%E1%BA%A5nT%E1%BB%ADT%E1%BA%BFT%E1%BB%ABT%C3%A2m" target="_blank" rel="noopener noreferrer" class="link-btn">
+                  <span>Kênh YouTube Chính Thức</span>
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+                </a>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- 4. PROFILE & MILESTONES CARD -->
+        <section class="bento-card card-milestones" id="profileSection">
+          <div class="card-header">
+            <div class="header-icon red-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path>
+              </svg>
+            </div>
+            <div>
+              <span class="card-overhead">Personal Life & Heritage</span>
+              <h2 class="card-headline">Gia Đình & Các Dấu Mốc</h2>
+            </div>
+          </div>
+
+          <div class="milestones-content">
+            <!-- Family Highlight -->
+            <div class="family-box">
+              <div class="family-icon">&#10084;&#65039;</div>
+              <div class="family-details">
+                <h4 class="family-title">Hạnh phúc gia đình</h4>
+                <p class="family-text">
+                  Hậu phương vững chắc và niềm tự hào lớn nhất:
+                  <strong class="highlight-family">MỘT vợ + HAI con gái</strong>.
+                </p>
+              </div>
+            </div>
+
+            <!-- Timeline Items -->
+            <div class="timeline-list">
+              <div class="timeline-entry">
+                <div class="timeline-marker">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 14 14"></polyline></svg>
+                </div>
+                <div class="timeline-info">
+                  <span class="timeline-date">02 / 01 / 1977</span>
+                  <span class="timeline-title">Ngày sinh &bull; Tuổi Bính Thìn</span>
+                  <span class="timeline-desc">Hành trình trải nghiệm và tôi rèn tinh thần trân quý sự tử tế.</span>
+                </div>
+              </div>
+
+              <div class="timeline-entry">
+                <div class="timeline-marker gold">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg>
+                </div>
+                <div class="timeline-info">
+                  <span class="timeline-date">19 / 12 / 2005</span>
+                  <span class="timeline-title">Kỷ niệm Ngày Cưới (Wedding Anniversary)</span>
+                  <span class="timeline-desc">Cột mốc thiêng liêng vun đắp tổ ấm gia đình viên mãn.</span>
+                </div>
+              </div>
+
+              <div class="timeline-entry">
+                <div class="timeline-marker trophy">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h2"></path><path d="M18 9h2a2 2 0 0 0 2-2V5a2 2 0 0 0-2-2h-2"></path><path d="M4 22h16"></path><path d="M10 14.66V17c0 .55-.45 1-1 1H7"></path><path d="M14 14.66V17c0 .55.45 1 1 1h2"></path><path d="M18 2H6v7a6 6 0 0 0 12 0V2z"></path></svg>
+                </div>
+                <div class="timeline-info">
+                  <span class="timeline-date">Năm 2013</span>
+                  <span class="timeline-title">BNI Vietnam National Notable Networker Award</span>
+                  <span class="timeline-desc">Vinh danh cá nhân kết nối xuất sắc toàn quốc tại BNI Việt Nam.</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- 5. SMART vCARD & QR INTERACTIVE CARD -->
+        <section class="bento-card card-vcard">
+          <div class="card-header">
+            <div class="header-icon gold-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect>
+                <line x1="8" y1="21" x2="16" y2="21"></line>
+                <line x1="12" y1="17" x2="12" y2="21"></line>
+              </svg>
+            </div>
+            <div>
+              <span class="card-overhead">Digital Business Card</span>
+              <h2 class="card-headline">Danh Thiếp Thông Minh</h2>
+            </div>
+          </div>
+
+          <div class="vcard-body">
+            <div class="qr-container">
+              <div class="qr-code-frame" id="vcardQrFrame">
+                <!-- Live SVG QR Code generated by JS -->
+                <div class="qr-loading" id="qrLoading">Đang tạo mã QR...</div>
+              </div>
+              <span class="qr-caption">Quét bằng Camera để lưu vào danh bạ điện thoại</span>
+            </div>
+
+            <div class="vcard-details">
+              <div class="vcard-item">
+                <span class="vcard-label">Họ & Tên:</span>
+                <span class="vcard-val">Nguyễn Anh Tuấn (Tuấn Tử Tế &bull; Từ Tâm)</span>
+              </div>
+              <div class="vcard-item">
+                <span class="vcard-label">Chức vụ:</span>
+                <span class="vcard-val">Chủ tịch HĐQT GTO Media &bull; Giám đốc BNI Khánh Hòa</span>
+              </div>
+              <div class="vcard-item">
+                <span class="vcard-label">Facebook:</span>
+                <a href="https://www.facebook.com/TuanTuTeTT" target="_blank" rel="noopener noreferrer" class="vcard-val link-val">facebook.com/TuanTuTeTT (5.5K+ Followers)</a>
+              </div>
+              <div class="vcard-item">
+                <span class="vcard-label">YouTube:</span>
+                <a href="https://www.youtube.com/@Tu%E1%BA%A5nT%E1%BB%ADT%E1%BA%BFT%E1%BB%ABT%C3%A2m" target="_blank" rel="noopener noreferrer" class="vcard-val link-val">@TuấnTửTếTừTâm</a>
+              </div>
+              <div class="vcard-item">
+                <span class="vcard-label">Email:</span>
+                <a href="mailto:tuan@media-gto.com" class="vcard-val link-val">tuan@media-gto.com</a>
+              </div>
+              <div class="vcard-item">
+                <span class="vcard-label">Website:</span>
+                <span class="vcard-val">tuantute.life &bull; gto.vn &bull; gtomedia.vn</span>
+              </div>
+              <div class="vcard-item">
+                <span class="vcard-label">Trụ sở chính:</span>
+                <span class="vcard-val">C10 - C11 KĐT Hưng Phú, Nha Trang, Khánh Hòa</span>
+              </div>
+              <div class="vcard-item">
+                <span class="vcard-label">Đoàn thể:</span>
+                <span class="vcard-val">Phó Chủ tịch Hội Doanh Nhân Trẻ Khánh Hòa</span>
+              </div>
+
+              <div class="vcard-buttons">
+                <button class="vcard-action-btn primary" id="btnDownloadVCardDirect">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>
+                  Tải File Danh Bạ (.vcf)
+                </button>
+                <button class="vcard-action-btn secondary" id="btnCopyContact">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+                  Sao Chép Email
+                </button>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- 6. THE KINDNESS WALL & GREETINGS (Interactive Guestbook) -->
+        <section class="bento-card card-kindness">
+          <div class="card-header">
+            <div class="header-icon heart-icon">
+              <svg viewBox="0 0 24 24" fill="currentColor">
+                <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/>
+              </svg>
+            </div>
+            <div>
+              <span class="card-overhead">Community & Respect</span>
+              <h2 class="card-headline">Bức Tường Tử Tế</h2>
+            </div>
+          </div>
+
+          <div class="kindness-body">
+            <p class="kindness-prompt">
+              Hãy cùng gửi trao một thông điệp tử tế, lời chào trân quý hoặc thả tim đến anh Tuấn Tử Tế!
+            </p>
+
+            <div class="heart-counter-zone">
+              <button class="heart-tap-btn" id="btnHeartTap" title="Thả tim tử tế">
+                <span class="heart-emoji">&#10084;&#65039;</span>
+                <span class="heart-label">Thả Tim</span>
+              </button>
+              <div class="heart-stats">
+                <span class="heart-count-number" id="heartCountNumber">1,879</span>
+                <span class="heart-subtext">Lượt trao gửi yêu thương</span>
+              </div>
+            </div>
+
+            <!-- Leave a message form -->
+            <form class="kindness-form" id="kindnessForm">
+              <div class="form-row">
+                <input type="text" id="guestName" placeholder="Tên của bạn hoặc Doanh nghiệp..." required maxlength="40">
+                <button type="submit" class="send-kindness-btn">Gửi Lời Chúc</button>
+              </div>
+              <textarea id="guestMessage" rows="2" placeholder="Chia sẻ một lời chúc, kỷ niệm hoặc thông điệp tử tế..." required maxlength="240"></textarea>
+            </form>
+
+            <!-- Recent messages carousel / stream -->
+            <div class="kindness-stream" id="kindnessStream">
+              <!-- Dynamically populated by JS -->
+            </div>
+          </div>
+        </section>
+
+        <!-- 7. DIRECT CONTACT & SOCIAL CHANNELS -->
+        <section class="bento-card card-contact" id="contactSection">
+          <div class="card-header">
+            <div class="header-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"></path>
+              </svg>
+            </div>
+            <div>
+              <span class="card-overhead">Reach Out</span>
+              <h2 class="card-headline">Kết Nối Trực Tiếp</h2>
+            </div>
+          </div>
+
+          <div class="contact-channels-grid">
+            <a href="https://www.facebook.com/TuanTuTeTT" target="_blank" rel="noopener noreferrer" class="channel-card">
+              <div class="channel-icon fb-bg">
+                <svg viewBox="0 0 24 24" fill="currentColor"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+              </div>
+              <div class="channel-info">
+                <span class="channel-label">Facebook Profile (5.5K+ Followers)</span>
+                <span class="channel-value">@TuanTuTeTT</span>
+              </div>
+            </a>
+
+            <a href="https://www.youtube.com/@Tu%E1%BA%A5nT%E1%BB%ADT%E1%BA%BFT%E1%BB%ABT%C3%A2m" target="_blank" rel="noopener noreferrer" class="channel-card">
+              <div class="channel-icon yt-bg">
+                <svg viewBox="0 0 24 24" fill="currentColor"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
+              </div>
+              <div class="channel-info">
+                <span class="channel-label">YouTube Truyền Cảm Hứng</span>
+                <span class="channel-value">@TuấnTửTếTừTâm</span>
+              </div>
+            </a>
+
+            <a href="mailto:tuan@media-gto.com" class="channel-card">
+              <div class="channel-icon mail-bg">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+              </div>
+              <div class="channel-info">
+                <span class="channel-label">Email chính thức</span>
+                <span class="channel-value">tuan@media-gto.com</span>
+              </div>
+            </a>
+
+            <a href="https://gto.vn" target="_blank" rel="noopener noreferrer" class="channel-card">
+              <div class="channel-icon web-bg">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><line x1="2" y1="12" x2="22" y2="12"></line><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path></svg>
+              </div>
+              <div class="channel-info">
+                <span class="channel-label">Cổng thông tin GTO</span>
+                <span class="channel-value">tuantute.life &bull; gto.vn</span>
+              </div>
+            </a>
+
+            <a href="https://maps.google.com/?q=Khu+Hưng+Phú,+Nha+Trang,+Khánh+Hòa" target="_blank" rel="noopener noreferrer" class="channel-card">
+              <div class="channel-icon map-bg">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+              </div>
+              <div class="channel-info">
+                <span class="channel-label">Trụ sở GTO Media</span>
+                <span class="channel-value">C10 - C11 Hưng Phú, Nha Trang</span>
+              </div>
+            </a>
+
+            <a href="https://www.linkedin.com/profile/view?id=271176448" target="_blank" rel="noopener noreferrer" class="channel-card">
+              <div class="channel-icon in-bg">
+                <svg viewBox="0 0 24 24" fill="currentColor"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
+              </div>
+              <div class="channel-info">
+                <span class="channel-label">Mạng Lưới Doanh Nhân</span>
+                <span class="channel-value">Tuan GTOMedia</span>
+              </div>
+            </a>
+          </div>
+        </section>
+
+      </div>
+    </main>
+
+    <!-- App Footer -->
+    <footer class="app-footer">
+      <div class="footer-inner">
+        <div class="footer-left">
+          <p class="copyright">&copy; 2026 <strong>Nguyễn Anh Tuấn</strong> &bull; Tuấn Tử Tế &bull; <a href="https://tuantute.life">tuantute.life</a></p>
+          <p class="hosting-note">Đồng hành & Tự hào vận hành hạ tầng bởi <a href="https://www.sweetsoft.vn" target="_blank" rel="noopener noreferrer">SweetSoft.vn</a></p>
+        </div>
+        <div class="footer-right">
+          <span class="philosophy-footer">{ Cherish kindness &bull; Trân quý sự tử tế }</span>
+        </div>
+      </div>
+    </footer>
+
+  </div>
+
+  <!-- Share & QR Modal -->
+  <div class="modal-overlay" id="shareModalOverlay" aria-hidden="true">
+    <div class="modal-card" role="dialog" aria-modal="true">
+      <div class="modal-head">
+        <h3>Chia Sẻ Danh Thiếp Số</h3>
+        <button class="modal-close" id="btnCloseShareModal">&times;</button>
+      </div>
+      <div class="modal-body-content">
+        <div class="share-avatar-group">
+          <img src="avatar.jpg" alt="Tuấn Tử Tế" class="share-modal-avatar">
+          <div>
+            <h4>Nguyễn Anh Tuấn (Tuấn Tử Tế)</h4>
+            <p>tuantute.life &bull; fb.com/TuanTuTeTT</p>
+          </div>
+        </div>
+
+        <div class="share-link-box">
+          <input type="text" id="shareUrlInput" value="https://tuantute.life/" readonly>
+          <button class="copy-url-btn" id="btnCopyShareUrl">Sao chép</button>
+        </div>
+
+        <div class="share-actions-row">
+          <button class="social-share-btn fb" id="btnShareFB">Facebook</button>
+          <button class="social-share-btn zalo" id="btnShareZalo">Zalo</button>
+          <button class="social-share-btn native" id="btnNativeShare">Hệ thống</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Flying Hearts Canvas for Animations -->
+  <div class="hearts-canvas" id="heartsCanvas"></div>
+
+  <!-- Toast Notification Container -->
+  <div class="toast-wrapper" id="toastWrapper"></div>
+
+  <script src="app.js"></script>
+</body>
+</html>
