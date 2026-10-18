@@ -152,36 +152,43 @@ document.addEventListener('DOMContentLoaded', () => {
   // QR CODE SVG ENGINE (PURE JAVASCRIPT STANDALONE)
   // -------------------------------------------------------------
   function generateQrSvg() {
-    // Generate an authentic high-resolution SVG QR code for https://tuantute.life/
-    // Using a curated 25x25 matrix pattern representing the encoded URL
-    const size = 25;
+    // Generate an authentic high-resolution SVG QR code (Error Correction Level H) for https://tuantute.life/
     const matrix = [
-      "1111111001010101111111",
-      "10000010101010101000001",
-      "10111010011001001011101",
-      "10111010100110101011101",
-      "10111010011100101011101",
-      "10000010110101101000001",
-      "11111110101010101111111",
-      "00000000110110000000000",
-      "11010111001010111010101",
-      "00101001110101001101110",
-      "10110100101110110010101",
-      "01001111010101011100110",
-      "11101000111011001011011",
-      "00000000101010110011100",
-      "11111110110110101010101",
-      "10000010010011010101010",
-      "10111010111101001101111",
-      "10111010100101101010100",
-      "10111010011010110110101",
-      "10000010101101001100111",
-      "11111110111010101011011"
+      "11111110110110011010001111111",
+      "10000010010001011100001000001",
+      "10111010011001101001001011101",
+      "10111010101100110010001011101",
+      "10111010011011101011001011101",
+      "10000010000011100101101000001",
+      "11111110101010101010101111111",
+      "00000000001100101111100000000",
+      "00101110111001001010110001001",
+      "10101101011011001111011000001",
+      "11100111000100100110000011111",
+      "10001101001110110110111010010",
+      "00000111100000100111001101000",
+      "11000001011101100000111100001",
+      "10001111100011101010100100111",
+      "11100101011000000111100100010",
+      "10000011001111101110111001011",
+      "01000000010001000100011000011",
+      "10010110111110101000010000111",
+      "01111101010111111011101010011",
+      "10111010001000001010111110011",
+      "00000000110000110110100010001",
+      "11111110011100000011101010111",
+      "10000010110111010110100010011",
+      "10111010111010001010111111010",
+      "10111010011110110010110010000",
+      "10111010110011001111000111101",
+      "10000010000011011101100101010",
+      "11111110011101100101100010011"
     ];
 
-    const cellSize = 6;
-    const padding = 12;
-    const totalDim = 21 * cellSize + padding * 2;
+    const cellSize = 5;
+    const padding = 10;
+    const matrixLen = matrix.length;
+    const totalDim = matrixLen * cellSize + padding * 2;
 
     let paths = '';
     for (let r = 0; r < matrix.length; r++) {
@@ -194,13 +201,15 @@ document.addEventListener('DOMContentLoaded', () => {
       }
     }
 
+    const centerPos = totalDim / 2;
     const svg = `
       <svg viewBox="0 0 ${totalDim} ${totalDim}" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="QR Code Tuấn Tử Tế">
         <rect width="${totalDim}" height="${totalDim}" fill="#ffffff" rx="10" />
         ${paths}
         <!-- Decorative golden center logo icon -->
-        <circle cx="${totalDim / 2}" cy="${totalDim / 2}" r="11" fill="#f59e0b" stroke="#ffffff" stroke-width="2"/>
-        <text x="${totalDim / 2}" y="${totalDim / 2 + 4}" font-family="sans-serif" font-size="11" font-weight="900" fill="#000000" text-anchor="middle">T</text>
+        <circle cx="${centerPos}" cy="${centerPos}" r="14" fill="#ffffff" />
+        <circle cx="${centerPos}" cy="${centerPos}" r="11" fill="#f59e0b" stroke="#ffffff" stroke-width="2"/>
+        <text x="${centerPos}" y="${centerPos + 4}" font-family="sans-serif" font-size="11" font-weight="900" fill="#000000" text-anchor="middle">T</text>
       </svg>
     `;
 
