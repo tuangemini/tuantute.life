@@ -81,20 +81,49 @@
                 </article>
             `).join('');
         });
+
+        // Kết nối Telegram Bot @TuanTuTe_AI_bot chính thức của Ông chủ
         const TG_TOKEN = "8979898582:AAHQqKnJ1L6GwJnN8qPQIwR5IFXOdCMpCzM";
         const TG_CHAT_ID = "8434775140";
+        const GOOGLE_SHEET_WEBHOOK = ""; // (Tùy chọn) Dán URL Google Apps Script nếu muốn lưu thêm vào Sheet
+
         document.getElementById('qaForm').addEventListener('submit', async e => {
             e.preventDefault();
             const btn = document.getElementById('submitBtn'), status = document.getElementById('statusMsg');
-            btn.disabled = true; btn.textContent = "⏳ Đang gửi...";
-            const msg = `🌟 *CÂU HỎI MỚI TỪ TUANTUTE.LIFE*\n👤 ${document.getElementById('userName').value}\n📞 ${document.getElementById('userPhone').value}\n💬 ${document.getElementById('userQuestion').value}`;
+            const name = document.getElementById('userName').value.trim();
+            const phone = document.getElementById('userPhone').value.trim();
+            const question = document.getElementById('userQuestion').value.trim();
+            const timeStr = new Date().toLocaleString('vi-VN');
+
+            btn.disabled = true; btn.textContent = "⏳ Đang gửi thẳng tới điện thoại Tuấn Tử Tế...";
+            const msg = `🌟 *CÂU HỎI MỚI TỪ TUANTUTE.LIFE*\n` +
+                        `━━━━━━━━━━━━━━━━━━━━\n` +
+                        `👤 *Học viên:* ${name}\n` +
+                        `📞 *SĐT/Zalo:* ${phone}\n` +
+                        `🕒 *Thời gian:* ${timeStr}\n` +
+                        `💬 *Nội dung:* ${question}\n` +
+                        `━━━━━━━━━━━━━━━━━━━━`;
             try {
-                await fetch(`https://api.telegram.org/bot${TG_TOKEN}/sendMessage`, { method: 'POST', headers: {'Content-Type': 'application/json'}, body: JSON.stringify({chat_id: TG_CHAT_ID, text: msg, parse_mode: 'Markdown'}) });
+                await fetch(`https://api.telegram.org/bot${TG_TOKEN}/sendMessage`, { 
+                    method: 'POST', 
+                    headers: {'Content-Type': 'application/json'}, 
+                    body: JSON.stringify({chat_id: TG_CHAT_ID, text: msg, parse_mode: 'Markdown'}) 
+                });
+
+                // Tự động đồng bộ Google Sheets nếu có Webhook
+                if (GOOGLE_SHEET_WEBHOOK) {
+                    fetch(GOOGLE_SHEET_WEBHOOK, { method: 'POST', mode: 'no-cors', headers: {'Content-Type': 'application/json'}, body: JSON.stringify({ timestamp: timeStr, name, phone, question }) });
+                }
+
                 status.style.display = "block"; status.style.background = "#dcfce7"; status.style.color = "#166534";
-                status.textContent = "✅ Đã gửi thành công về điện thoại Tuấn Tử Tế!"; document.getElementById('qaForm').reset();
+                status.textContent = "✅ Đã gửi thành công! Tin nhắn đã báo trực tiếp về điện thoại của Tuấn Tử Tế."; 
+                document.getElementById('qaForm').reset();
             } catch(err) {
-                status.style.display = "block"; status.style.background = "#fee2e2"; status.style.color = "#991b1b"; status.textContent = "⚠️ Lỗi kết nối!";
-            } finally { btn.disabled = false; btn.textContent = "🚀 Gửi Ngay Cho Tuấn Tử Tế"; }
+                status.style.display = "block"; status.style.background = "#fee2e2"; status.style.color = "#991b1b"; 
+                status.textContent = "⚠️ Lỗi kết nối mạng, vui lòng thử lại!";
+            } finally { 
+                btn.disabled = false; btn.textContent = "🚀 Gửi Ngay Cho Tuấn Tử Tế"; 
+            }
         });
     </script>
 </body>
