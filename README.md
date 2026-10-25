@@ -8,9 +8,8 @@
 ### Giới Thiệu
 Trang thông tin cá nhân và danh thiếp số chính thức của **Nguyễn Anh Tuấn (Tuấn Tử Tế Từ Tâm)**:
 - **Chủ tịch HĐQT** Công ty Cổ phần Truyền thông GTO (GTO Media Corporation - Since 2009)
-- **Giám đốc** BNI Vùng Khánh Hòa
 - **Phó Chủ tịch** Hội Doanh Nhân Trẻ tỉnh Khánh Hòa
-- **Diễn giả & Doanh nhân truyền cảm hứng**
+- **Diễn giả & Doanh nhân truyền cảm hứng - Kiến tạo cuộc sống Kỷ nguyên AI**
 
 ### Kênh Kết Nối
 - **Website chính thức:** [https://tuantute.life](https://tuantute.life)

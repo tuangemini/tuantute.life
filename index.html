@@ -1,131 +1,803 @@
 <!DOCTYPE html>
-<html lang="vi">
+<html lang="vi" data-theme="dark">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>TUẤN TỬ TẾ • KIẾN TẠO CUỘC SỐNG KỶ NGUYÊN TRÍ TUỆ AI</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400&display=swap" rel="stylesheet">
-    <style>
-        :root {
-            --primary: #0f766e;
-            --primary-light: #14b8a6;
-            --bg: #f8fafc;
-            --card-bg: #ffffff;
-            --text-main: #0f172a;
-            --text-muted: #475569;
-            --radius: 16px;
-            --shadow: 0 10px 25px -5px rgba(15, 23, 42, 0.08);
-        }
-        * { box-sizing: border-box; margin: 0; padding: 0; }
-        body { font-family: 'Be Vietnam Pro', sans-serif; background-color: var(--bg); color: var(--text-main); font-size: 18px; line-height: 1.75; }
-        .header-hero { background: linear-gradient(135deg, #0f172a 0%, #0f766e 100%); color: #ffffff; padding: 54px 20px; text-align: center; }
-        .header-hero h1 { font-size: clamp(1.6rem, 3.5vw, 2.5rem); font-weight: 800; margin-bottom: 12px; }
-        .header-hero p { font-size: clamp(1rem, 1.8vw, 1.2rem); max-width: 780px; margin: 0 auto; opacity: 0.92; }
-        .container { max-width: 1140px; margin: 0 auto; padding: 30px 20px; }
-        .posts-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(340px, 1fr)); gap: 24px; margin-bottom: 40px; }
-        .post-card { background: var(--card-bg); border-radius: var(--radius); overflow: hidden; box-shadow: var(--shadow); display: flex; flex-direction: column; border: 1px solid #e2e8f0; }
-        .media-box { width: 100%; aspect-ratio: 16 / 10; background: #0f172a; overflow: hidden; display: flex; align-items: center; justify-content: center; }
-        .media-box img { width: 100%; height: 100%; object-fit: cover; display: block; }
-        .post-content { padding: 24px; flex: 1; display: flex; flex-direction: column; }
-        .post-date { font-size: 0.85rem; color: var(--primary); font-weight: 700; margin-bottom: 8px; text-transform: uppercase; }
-        .post-title { font-size: 1.3rem; font-weight: 700; margin-bottom: 12px; color: var(--text-main); }
-        .post-excerpt { color: var(--text-muted); font-size: 1rem; margin-bottom: 16px; flex: 1; }
-        .quote-box { background: #f0fdf4; border-left: 4px solid var(--primary); padding: 12px 16px; border-radius: 0 10px 10px 0; font-style: italic; font-weight: 600; color: #065f46; font-size: 0.95rem; }
-        .qa-section { background: linear-gradient(135deg, #ffffff 0%, #f0fdf4 100%); border: 2px solid var(--primary-light); border-radius: var(--radius); padding: 32px 24px; box-shadow: var(--shadow); max-width: 780px; margin: 0 auto 30px auto; }
-        .qa-section h2 { font-size: 1.5rem; color: var(--primary); margin-bottom: 8px; text-align: center; }
-        .qa-section p.sub { text-align: center; color: var(--text-muted); margin-bottom: 20px; font-size: 0.95rem; }
-        .form-group { margin-bottom: 16px; }
-        .form-group label { display: block; font-weight: 600; margin-bottom: 6px; color: var(--text-main); }
-        .form-group input, .form-group textarea { width: 100%; padding: 12px 16px; font-size: 1rem; font-family: inherit; border: 1px solid #cbd5e1; border-radius: 12px; background: #ffffff; }
-        .btn-submit { width: 100%; padding: 14px; background: linear-gradient(135deg, #0f766e 0%, #0d9488 100%); color: #ffffff; font-size: 1.05rem; font-weight: 700; border: none; border-radius: 12px; cursor: pointer; }
-        .status-msg { margin-top: 14px; text-align: center; font-weight: 600; display: none; padding: 10px; border-radius: 10px; }
-        footer { text-align: center; padding: 30px 20px; border-top: 1px solid #e2e8f0; color: var(--text-muted); font-size: 0.9rem; background: #ffffff; }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tuấn Tử Tế (Từ Tâm) | Nguyễn Anh Tuấn - Kiến Tạo Cuộc Sống Kỷ Nguyên Trí Tuệ AI</title>
+  <meta name="description" content="Doanh nhân truyền cảm hứng & Tạo dựng cuộc sống tốt đẹp! Cổng thông tin cá nhân của Nguyễn Anh Tuấn (Tuấn Tử Tế Từ Tâm) - Chủ tịch HĐQT GTO Media (Since 2009), Phó Chủ tịch Hội Doanh Nhân Trẻ Khánh Hòa, Chuyên gia ứng dụng AI thực chiến.">
+  <link rel="canonical" href="https://tuantute.life/">
+  <meta name="theme-color" content="#0b0f17">
+
+  <!-- Open Graph / Facebook / Zalo -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://tuantute.life/">
+  <meta property="og:title" content="Tuấn Tử Tế (Từ Tâm) | Nguyễn Anh Tuấn - Kiến Tạo Cuộc Sống Kỷ Nguyên Trí Tuệ AI">
+  <meta property="og:description" content="Doanh nhân truyền cảm hứng & Tạo dựng cuộc sống tốt đẹp! Sự rộng lượng là thước đo trình độ sống.">
+  <meta property="og:image" content="https://tuantute.life/avatar.jpg">
+  <meta property="og:image:alt" content="Nguyễn Anh Tuấn (Tuấn Tử Tế Từ Tâm)">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:url" content="https://tuantute.life/">
+  <meta name="twitter:title" content="Tuấn Tử Tế (Từ Tâm) | Nguyễn Anh Tuấn - Kiến Tạo Cuộc Sống Kỷ Nguyên Trí Tuệ AI">
+  <meta name="twitter:description" content="Doanh nhân truyền cảm hứng & Tạo dựng cuộc sống tốt đẹp! Sự rộng lượng là thước đo trình độ sống.">
+  <meta name="twitter:image" content="https://tuantute.life/avatar.jpg">
+
+  <link rel="icon" type="image/jpeg" href="avatar.jpg">
+  <link rel="apple-touch-icon" href="avatar.jpg">
+  
+  <!-- Google Fonts with 100% Native Vietnamese Support -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,600;1,700&family=Montserrat:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,600&display=swap" rel="stylesheet">
+  
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="ai-assistant.css">
 </head>
 <body>
-    <header class="header-hero">
-        <h1 id="siteTitle">TUẤN TỬ TẾ • KIẾN TẠO CUỘC SỐNG KỶ NGUYÊN TRÍ TUỆ AI</h1>
-        <p id="siteTagline">Phát triển bản thân toàn diện Thân - Tâm - Trí & Ứng dụng Trí tuệ nhân tạo AI</p>
+
+  <!-- Background Ambient Glow Effects -->
+  <div class="ambient-glow glow-top"></div>
+  <div class="ambient-glow glow-bottom"></div>
+  <div class="ambient-mesh"></div>
+
+  <!-- Main App Wrapper -->
+  <div class="app-layout">
+
+    <!-- Top Floating Navbar -->
+    <header class="top-nav">
+      <div class="nav-container">
+        <a href="#" class="brand-badge">
+          <span class="brand-avatar-mini">
+            <img src="avatar.jpg" alt="Tuấn Tử Tế">
+          </span>
+          <div class="brand-info">
+            <span class="brand-title">Tuấn Tử Tế</span>
+            <span class="brand-subtitle">tuantute.life</span>
+          </div>
+        </a>
+
+        <!-- Live Clock & Status -->
+        <div class="nav-status-badge">
+          <span class="status-indicator"></span>
+          <span class="status-text">Khánh Hòa, VN &bull; <span id="liveClock">00:00</span></span>
+        </div>
+
+        <!-- Navigation Action Buttons -->
+        <div class="nav-actions">
+          <button class="nav-btn" id="btnDownloadVCard" title="Tải Danh Thiếp Điện Tử (.vcf)">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+              <polyline points="7 10 12 15 17 10"></polyline>
+              <line x1="12" y1="15" x2="12" y2="3"></line>
+            </svg>
+            <span class="btn-label">Lưu Danh Bạ</span>
+          </button>
+
+          <button class="nav-btn" id="btnShareModal" title="Chia sẻ hồ sơ danh thiếp">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <circle cx="18" cy="5" r="3"></circle>
+              <circle cx="6" cy="12" r="3"></circle>
+              <circle cx="18" cy="19" r="3"></circle>
+              <line x1="8.59" y1="13.51" x2="15.42" y2="17.49"></line>
+              <line x1="15.41" y1="6.51" x2="8.59" y2="10.49"></line>
+            </svg>
+            <span class="btn-label">Chia Sẻ</span>
+          </button>
+
+          <!-- Theme Palette Toggle -->
+          <div class="theme-switcher" id="themeSwitcher">
+            <button class="theme-btn active" data-theme="dark" title="Giao diện Đen Sang Trọng (Obsidian & Gold)">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
+            </button>
+            <button class="theme-btn" data-theme="amber" title="Giao diện Ấm Áp Tử Tế (Warm Amber)">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line></svg>
+            </button>
+            <button class="theme-btn" data-theme="light" title="Giao diện Tươi Sáng (Clean Frost)">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect><line x1="9" y1="3" x2="9" y2="21"></line></svg>
+            </button>
+          </div>
+        </div>
+      </div>
     </header>
-    <main class="container">
-        <div id="postsContainer" class="posts-grid"></div>
-        <section class="qa-section">
-            <h2>💬 Gửi Câu Hỏi & Kết Nối Cùng Tuấn Tử Tế</h2>
-            <p class="sub">Mọi câu hỏi của bạn sẽ được chuyển trực tiếp đến điện thoại của Tuấn Tử Tế ngay lập tức!</p>
-            <form id="qaForm">
-                <div class="form-group"><label>Họ và tên *</label><input type="text" id="userName" required placeholder="Nhập họ tên..."></div>
-                <div class="form-group"><label>Số điện thoại / Zalo *</label><input type="text" id="userPhone" required placeholder="Nhập SĐT..."></div>
-                <div class="form-group"><label>Câu hỏi của bạn *</label><textarea id="userQuestion" rows="3" required placeholder="Nhập câu hỏi..."></textarea></div>
-                <button type="submit" class="btn-submit" id="submitBtn">🚀 Gửi Ngay Cho Tuấn Tử Tế</button>
-                <div id="statusMsg" class="status-msg"></div>
-            </form>
+
+    <!-- Main Content Container: Modern Bento Grid -->
+    <main class="main-content">
+      <div class="bento-container">
+
+        <!-- 1. HERO PROFILE CARD (Large VIP Card) -->
+        <section class="bento-card card-hero" id="heroCard">
+          <div class="card-glass-shine"></div>
+          
+          <div class="hero-top-meta">
+            <div class="tag-pill kindness-pill">
+              <span class="heart-pulse">&#10084;</span>
+              <span>Cherish kindness &bull; Trân quý sự tử tế</span>
+            </div>
+            <a href="https://www.facebook.com/TuanTuTeTT" target="_blank" rel="noopener noreferrer" class="fb-followers-pill" title="Theo dõi trang Facebook chính thức của Tuấn Tử Tế">
+              <svg viewBox="0 0 24 24" fill="currentColor">
+                <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
+              </svg>
+              <span>5.5K+ Followers</span>
+            </a>
+            <div class="verified-badge" title="Tài khoản chính chủ đã xác thực">
+              <svg viewBox="0 0 24 24" fill="currentColor">
+                <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/>
+              </svg>
+              <span>Verified VIP</span>
+            </div>
+          </div>
+
+          <div class="hero-body">
+            <div class="avatar-wrapper">
+              <div class="avatar-ring"></div>
+              <img src="avatar.jpg" alt="Nguyễn Anh Tuấn (Tuấn Tử Tế • Từ Tâm)" class="hero-avatar" id="avatarImg">
+              <span class="avatar-online-dot" title="Đang trực tuyến sẵn sàng kết nối"></span>
+            </div>
+
+            <div class="hero-intro">
+              <h1 class="hero-name">
+                NGUYỄN ANH TUẤN
+                <span class="hero-alias">TUẤN TỬ TẾ &bull; TỪ TÂM</span>
+              </h1>
+              
+              <div class="hero-titles">
+                <span class="role-badge highlight">Chủ tịch HĐQT GTO Media &bull; Since 2009</span>
+                <span class="role-badge highlight" style="background:rgba(20, 184, 166, 0.2); color:#14b8a6; border-color:rgba(20, 184, 166, 0.4);">Kiến Tạo Cuộc Sống Kỷ Nguyên AI</span>
+                <span class="role-badge">Phó Chủ tịch Hội Doanh Nhân Trẻ Khánh Hòa</span>
+                <span class="role-badge">Diễn giả &bull; Đào tạo thực chiến</span>
+              </div>
+
+              <!-- Facebook Mission Tagline -->
+              <div class="hero-mission-row">
+                <span class="mission-sparkle">&#10024;</span>
+                <span class="mission-text">Doanh nhân truyền cảm hứng &bull; Tạo dựng cuộc sống tốt đẹp!</span>
+              </div>
+
+              <!-- Life Motto Box -->
+              <blockquote class="motto-box">
+                <div class="quote-icon">&ldquo;</div>
+                <p class="motto-en">Generosity is a measure of life's level.</p>
+                <p class="motto-vi">Sự rộng lượng là thước đo trình độ sống.</p>
+              </blockquote>
+
+              <!-- Quick Connect Action Buttons -->
+              <div class="quick-connect-row">
+                <a href="https://www.facebook.com/TuanTuTeTT" target="_blank" rel="noopener noreferrer" class="cta-btn facebook-cta" id="btnFacebook">
+                  <svg viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
+                  </svg>
+                  <span>Facebook: TuanTuTeTT</span>
+                </a>
+
+                <a href="mailto:tuan@media-gto.com" class="cta-btn secondary-cta" id="btnEmail">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+                    <polyline points="22,6 12,13 2,6"></polyline>
+                  </svg>
+                  <span>Gửi Email</span>
+                </a>
+
+                <button class="cta-btn qr-cta" id="btnTriggerQRCard">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <rect x="3" y="3" width="7" height="7"></rect>
+                    <rect x="14" y="3" width="7" height="7"></rect>
+                    <rect x="14" y="14" width="7" height="7"></rect>
+                    <rect x="3" y="14" width="7" height="7"></rect>
+                  </svg>
+                  <span>Mã QR</span>
+                </button>
+              </div>
+            </div>
+          </div>
         </section>
+
+        <!-- 2. QUICK STATS CARD -->
+        <section class="bento-card card-stats">
+          <div class="stats-grid">
+            <div class="stat-item">
+              <span class="stat-number" id="expYears">18+</span>
+              <span class="stat-label">Năm kinh nghiệm</span>
+              <span class="stat-sub">Truyền thông & Sự kiện (Since 2009)</span>
+            </div>
+            <div class="stat-divider"></div>
+            <div class="stat-item">
+              <span class="stat-number fb-blue-text">5.5K+</span>
+              <span class="stat-label">Cộng đồng Follower</span>
+              <span class="stat-sub">Facebook @TuanTuTeTT</span>
+            </div>
+            <div class="stat-divider"></div>
+            <div class="stat-item">
+              <span class="stat-number" style="color:#14b8a6;">24/7</span>
+              <span class="stat-label">Kỷ Nguyên Trí Tuệ AI</span>
+              <span class="stat-sub">Vận hành tự động kết nối</span>
+            </div>
+            <div class="stat-divider"></div>
+            <div class="stat-item">
+              <span class="stat-number">100%</span>
+              <span class="stat-label">Tử Tế & Tận Tâm</span>
+              <span class="stat-sub">Triết lý phụng sự</span>
+            </div>
+          </div>
+        </section>
+
+        <!-- 3. AI ERA ARTICLES & INSPIRATION (DỮ LIỆU TÍCH HỢP HÔM NAY) -->
+        <section class="bento-card card-ai-era" id="aiPostsSection">
+          <div class="card-header">
+            <div class="header-icon ai-gradient-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <circle cx="12" cy="12" r="3"></circle>
+                <path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"></path>
+              </svg>
+            </div>
+            <div>
+              <span class="card-overhead">Kỷ Nguyên Trí Tuệ AI &bull; Thân - Tâm - Trí</span>
+              <h2 class="card-headline" id="siteTitle">KIẾN TẠO CUỘC SỐNG KỶ NGUYÊN TRÍ TUỆ AI</h2>
+              <p class="card-subheadline" id="siteTagline">Phát triển bản thân toàn diện Thân - Tâm - Trí & Ứng dụng Trí tuệ nhân tạo AI</p>
+            </div>
+          </div>
+
+          <!-- Dynamic Posts Container (Loaded from data.json with graceful fallback) -->
+          <div id="postsContainer" class="posts-grid-bento">
+            <article class="bento-post-card">
+              <div class="bento-post-media">
+                <img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=1200&q=80" alt="Đánh Thức Người Hùng" loading="lazy">
+              </div>
+              <div class="bento-post-content">
+                <div class="bento-post-date">25/10/2026 &bull; HÀNH TRÌNH NGƯỜI HÙNG</div>
+                <h3 class="bento-post-title">Đánh Thức Người Hùng Phi Thường Bên Trong Bạn Giữa Kỷ Nguyên Trí Tuệ Nhân Tạo AI</h3>
+                <p class="bento-post-excerpt">Mỗi chúng ta sinh ra đều mang trong mình một người hùng đang say ngủ. Đừng để tuổi tác hay những thuật ngữ công nghệ làm chùn bước chân bạn. Khi Thân khỏe mạnh nhờ những bước chạy sớm mai, Tâm bình an trong lòng biết ơn và Trí mở rộng cùng sức mạnh của Kỷ nguyên trí tuệ nhân tạo AI, bạn chính là người kiến tạo vận mệnh rực rỡ nhất cho cuộc đời mình.</p>
+                <div class="bento-post-quote">"Từ người thường mang nỗi sợ công nghệ trở thành người hùng làm chủ thời đại — Từ bước chân đầu tiên rụt rè tạo nên hành trình vạn dặm huy hoàng!"</div>
+              </div>
+            </article>
+
+            <article class="bento-post-card">
+              <div class="bento-post-media">
+                <img src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=1200&q=80" alt="Nghệ Thuật Tạo Website Bằng Lời Nói" loading="lazy">
+              </div>
+              <div class="bento-post-content">
+                <div class="bento-post-date">25/10/2026 &bull; AI THỰC CHIẾN</div>
+                <h3 class="bento-post-title">Nghệ Thuật Tạo Website Bằng Lời Nói: Từ Ý Tưởng Trong Tâm Trí Đến Cơ Ngơi Số 1-Chạm</h3>
+                <p class="bento-post-excerpt">Qua rồi thời kỳ phải thức khuya gõ từng dòng mã lệnh phức tạp. Với phương pháp đào tạo thực chiến cùng Gemini Panel và GitHub Pages, mỗi học viên trung niên đều có thể biến giọng nói ấm áp và những câu chuyện đời mình thành một trang web sang trọng chỉ bằng thao tác kéo thả và trò chuyện tự nhiên.</p>
+                <div class="bento-post-quote">"Từ gõ phím nhọc nhằn thủ công sang tự do kiến tạo bằng lời nói — Từ ý tưởng lóe lên trong tâm trí trở thành di sản tỏa sáng giữa đời!"</div>
+              </div>
+            </article>
+
+            <article class="bento-post-card">
+              <div class="bento-post-media">
+                <img src="https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&w=1200&q=80" alt="Hệ Sinh Thái Tự Vận Hành 24/7" loading="lazy">
+              </div>
+              <div class="bento-post-content">
+                <div class="bento-post-date">25/10/2026 &bull; TỰ ĐỘNG HÓA TOÀN DIỆN</div>
+                <h3 class="bento-post-title">Hệ Sinh Thái Tự Vận Hành 24/7: Kết Nối Website, Google Sheets Và Telegram Bot</h3>
+                <p class="bento-post-excerpt">Làm sao để chăm sóc hàng trăm học viên mà vẫn thảnh thơi chạy bộ, bơi biển mỗi sáng? Bí quyết nằm ở cỗ máy tự động kết nối giữa Website trên GitHub, kho lưu trữ Google Sheets và trợ lý Telegram ngay trên điện thoại. Mọi câu hỏi của học viên đều được ghi nhận và báo về tức thì để bạn phản hồi bằng chính giọng nói yêu thương.</p>
+                <div class="bento-post-quote">"Từ làm việc quần quật một mình sang có trợ lý AI đồng hành sớm tối — Từ kết nối công nghệ thông minh tạo nên những mối nhân duyên tử tế!"</div>
+              </div>
+            </article>
+          </div>
+        </section>
+
+        <!-- 4. Q&A CONNECT SECTION (TÍCH HỢP TELEGRAM BOT & GOOGLE SHEETS HÔM NAY) -->
+        <section class="bento-card card-qa-connect" id="qaSection">
+          <div class="card-header">
+            <div class="header-icon tg-gradient-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <line x1="22" y1="2" x2="11" y2="13"></line>
+                <polygon points="22 2 15 22 11 13 2 9 22 2"></polygon>
+              </svg>
+            </div>
+            <div>
+              <span class="card-overhead">Tương Tác Trực Tiếp 24/7 &bull; Telegram & Google Sheets</span>
+              <h2 class="card-headline">💬 Gửi Câu Hỏi & Kết Nối Cùng Tuấn Tử Tế</h2>
+              <p class="card-subheadline">Mọi câu hỏi của bạn sẽ được chuyển trực tiếp đến điện thoại của Tuấn Tử Tế qua Telegram và lưu tự động vào Google Sheets!</p>
+            </div>
+          </div>
+
+          <div class="qa-form-wrapper">
+            <form id="qaForm" class="bento-qa-form">
+              <div class="qa-input-grid">
+                <div class="form-group">
+                  <label for="userName">Họ và tên <span class="required">*</span></label>
+                  <input type="text" id="userName" required placeholder="Nhập họ tên của bạn...">
+                </div>
+                <div class="form-group">
+                  <label for="userPhone">Số điện thoại / Zalo <span class="required">*</span></label>
+                  <input type="tel" id="userPhone" required placeholder="Nhập SĐT để nhận phản hồi...">
+                </div>
+              </div>
+              <div class="form-group">
+                <label for="userQuestion">Nội dung câu hỏi hoặc mong muốn kết nối <span class="required">*</span></label>
+                <textarea id="userQuestion" rows="3" required placeholder="Nhập câu hỏi hoặc tâm sự của bạn cùng anh Tuấn..."></textarea>
+              </div>
+              <button type="submit" class="btn-submit-qa" id="submitBtn">
+                <span>🚀 Gửi Ngay Cho Tuấn Tử Tế</span>
+              </button>
+              <div id="statusMsg" class="status-msg"></div>
+            </form>
+          </div>
+        </section>
+
+        <!-- 5. BUSINESS ECOSYSTEM / PORTFOLIO CARD -->
+        <section class="bento-card card-ecosystem" id="portfolioSection">
+          <div class="card-header">
+            <div class="header-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <rect x="2" y="7" width="20" height="14" rx="2" ry="2"></rect>
+                <path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"></path>
+              </svg>
+            </div>
+            <div>
+              <span class="card-overhead">Portfolio & Enterprise</span>
+              <h2 class="card-headline">Hệ Sinh Thái Doanh Nghiệp & Phụng Sự</h2>
+            </div>
+          </div>
+
+          <div class="companies-grid">
+            <!-- GTO Media Item -->
+            <div class="company-card">
+              <div class="company-top">
+                <div class="company-logo-wrap">
+                  <img src="gto-logo.png" alt="GTO Media Corporation" class="company-logo">
+                </div>
+                <span class="company-tag">Truyền thông & Sự kiện &bull; Since 2009</span>
+              </div>
+              <h3 class="company-name">GTO Media Corporation</h3>
+              <p class="company-role">Chủ tịch HĐQT &bull; Sự kiện quốc gia &bull; MICE &bull; Chiến lược Marketing</p>
+              <p class="company-desc">
+                Đơn vị dẫn đầu tại Nha Trang - Khánh Hòa trong lĩnh vực tổ chức các lễ hội quy mô quốc gia, hội nghị cao cấp và kích cầu du lịch. Trụ sở: Biệt thự C10 - C11 KĐT Hưng Phú, TP. Nha Trang.
+              </p>
+              <div class="company-actions">
+                <a href="https://gto.vn" target="_blank" rel="noopener noreferrer" class="link-btn">
+                  <span>Website GTO.vn</span>
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+                </a>
+                <a href="http://gtomedia.vn" target="_blank" rel="noopener noreferrer" class="link-btn secondary-link">
+                  <span>gtomedia.vn</span>
+                </a>
+              </div>
+            </div>
+
+            <!-- Khanh Hoa Young Entrepreneurs & Inspiration Academy -->
+            <div class="company-card">
+              <div class="company-top">
+                <div class="company-logo-wrap inspiration-wrap">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="inspiration-card-icon">
+                    <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon>
+                  </svg>
+                </div>
+                <span class="company-tag inspiration-tag">Phụng sự & Truyền cảm hứng</span>
+              </div>
+              <h3 class="company-name">Tuấn Tử Tế Từ Tâm</h3>
+              <p class="company-role">Phó Chủ tịch Hội Doanh Nhân Trẻ Khánh Hòa &bull; Diễn giả</p>
+              <p class="company-desc">
+                Lan tỏa triết lý sống tử tế, đồng hành đào tạo tư duy phát triển bản thân toàn diện Thân - Tâm - Trí, kỹ năng làm chủ công nghệ AI thực chiến giúp cộng đồng học viên kiến tạo cuộc sống thành công, hạnh phúc và an lạc.
+              </p>
+              <div class="company-actions">
+                <a href="https://www.youtube.com/@Tu%E1%BA%A5nT%E1%BB%ADT%E1%BA%BFT%E1%BB%ABT%C3%A2m" target="_blank" rel="noopener noreferrer" class="link-btn">
+                  <span>Kênh YouTube Chính Thức</span>
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+                </a>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- 6. PROFILE & MILESTONES CARD -->
+        <section class="bento-card card-milestones" id="profileSection">
+          <div class="card-header">
+            <div class="header-icon red-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path>
+              </svg>
+            </div>
+            <div>
+              <span class="card-overhead">Personal Life & Heritage</span>
+              <h2 class="card-headline">Gia Đình & Các Dấu Mốc</h2>
+            </div>
+          </div>
+
+          <div class="milestones-content">
+            <!-- Family Highlight -->
+            <div class="family-box">
+              <div class="family-icon">&#10084;&#65039;</div>
+              <div class="family-details">
+                <h4 class="family-title">Hạnh phúc gia đình</h4>
+                <p class="family-text">
+                  Hậu phương vững chắc và niềm tự hào lớn nhất:
+                  <strong class="highlight-family">MỘT vợ + HAI con gái</strong>.
+                </p>
+              </div>
+            </div>
+
+            <!-- Timeline Items -->
+            <div class="timeline-list">
+              <div class="timeline-entry">
+                <div class="timeline-marker">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 14 14"></polyline></svg>
+                </div>
+                <div class="timeline-info">
+                  <span class="timeline-date">02 / 01 / 1977</span>
+                  <span class="timeline-title">Ngày sinh &bull; Tuổi Bính Thìn</span>
+                  <span class="timeline-desc">Hành trình trải nghiệm và tôi rèn tinh thần trân quý sự tử tế.</span>
+                </div>
+              </div>
+
+              <div class="timeline-entry">
+                <div class="timeline-marker gold">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg>
+                </div>
+                <div class="timeline-info">
+                  <span class="timeline-date">19 / 12 / 2005</span>
+                  <span class="timeline-title">Kỷ niệm Ngày Cưới (Wedding Anniversary)</span>
+                  <span class="timeline-desc">Cột mốc thiêng liêng vun đắp tổ ấm gia đình viên mãn.</span>
+                </div>
+              </div>
+
+              <div class="timeline-entry">
+                <div class="timeline-marker trophy" style="background:rgba(20, 184, 166, 0.2); color:#14b8a6; border-color:rgba(20, 184, 166, 0.4);">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><path d="M12 6v6l4 2"></path></svg>
+                </div>
+                <div class="timeline-info">
+                  <span class="timeline-date">Năm 2026</span>
+                  <span class="timeline-title">Kỷ Nguyên Trí Tuệ AI & Phụng Sự Cộng Đồng</span>
+                  <span class="timeline-desc">Đồng hành chuyển đổi số, ứng dụng AI thực chiến và tự động hóa toàn diện 24/7.</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- 7. SMART vCARD & QR INTERACTIVE CARD -->
+        <section class="bento-card card-vcard">
+          <div class="card-header">
+            <div class="header-icon gold-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect>
+                <line x1="8" y1="21" x2="16" y2="21"></line>
+                <line x1="12" y1="17" x2="12" y2="21"></line>
+              </svg>
+            </div>
+            <div>
+              <span class="card-overhead">Digital Business Card</span>
+              <h2 class="card-headline">Danh Thiếp Thông Minh</h2>
+            </div>
+          </div>
+
+          <div class="vcard-body">
+            <div class="qr-container">
+              <div class="qr-code-frame" id="vcardQrFrame">
+                <!-- Live SVG QR Code generated by JS -->
+                <div class="qr-loading" id="qrLoading">Đang tạo mã QR...</div>
+              </div>
+              <span class="qr-caption">Quét bằng Camera để lưu vào danh bạ điện thoại</span>
+            </div>
+
+            <div class="vcard-details">
+              <div class="vcard-item">
+                <span class="vcard-label">Họ & Tên:</span>
+                <span class="vcard-val">Nguyễn Anh Tuấn (Tuấn Tử Tế &bull; Từ Tâm)</span>
+              </div>
+              <div class="vcard-item">
+                <span class="vcard-label">Chức vụ:</span>
+                <span class="vcard-val">Chủ tịch HĐQT GTO Media &bull; Doanh Nhân Truyền Cảm Hứng</span>
+              </div>
+              <div class="vcard-item">
+                <span class="vcard-label">Facebook:</span>
+                <a href="https://www.facebook.com/TuanTuTeTT" target="_blank" rel="noopener noreferrer" class="vcard-val link-val">facebook.com/TuanTuTeTT (5.5K+ Followers)</a>
+              </div>
+              <div class="vcard-item">
+                <span class="vcard-label">YouTube:</span>
+                <a href="https://www.youtube.com/@Tu%E1%BA%A5nT%E1%BB%ADT%E1%BA%BFT%E1%BB%ABT%C3%A2m" target="_blank" rel="noopener noreferrer" class="vcard-val link-val">@TuấnTửTếTừTâm</a>
+              </div>
+              <div class="vcard-item">
+                <span class="vcard-label">Email:</span>
+                <a href="mailto:tuan@media-gto.com" class="vcard-val link-val">tuan@media-gto.com</a>
+              </div>
+              <div class="vcard-item">
+                <span class="vcard-label">Website:</span>
+                <span class="vcard-val">tuantute.life &bull; gto.vn &bull; gtomedia.vn</span>
+              </div>
+              <div class="vcard-item">
+                <span class="vcard-label">Trụ sở chính:</span>
+                <span class="vcard-val">C10 - C11 KĐT Hưng Phú, Nha Trang, Khánh Hòa</span>
+              </div>
+              <div class="vcard-item">
+                <span class="vcard-label">Đoàn thể:</span>
+                <span class="vcard-val">Phó Chủ tịch Hội Doanh Nhân Trẻ Khánh Hòa</span>
+              </div>
+
+              <div class="vcard-buttons">
+                <button class="vcard-action-btn primary" id="btnDownloadVCardDirect">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>
+                  Tải File Danh Bạ (.vcf)
+                </button>
+                <button class="vcard-action-btn secondary" id="btnCopyContact">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+                  Sao Chép Email
+                </button>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- 8. THE KINDNESS WALL & GREETINGS (Interactive Guestbook) -->
+        <section class="bento-card card-kindness">
+          <div class="card-header">
+            <div class="header-icon heart-icon">
+              <svg viewBox="0 0 24 24" fill="currentColor">
+                <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/>
+              </svg>
+            </div>
+            <div>
+              <span class="card-overhead">Community & Respect</span>
+              <h2 class="card-headline">Bức Tường Tử Tế</h2>
+            </div>
+          </div>
+
+          <div class="kindness-body">
+            <p class="kindness-prompt">
+              Hãy cùng gửi trao một thông điệp tử tế, lời chào trân quý hoặc thả tim đến anh Tuấn Tử Tế!
+            </p>
+
+            <div class="heart-counter-zone">
+              <button class="heart-tap-btn" id="btnHeartTap" title="Thả tim tử tế">
+                <span class="heart-emoji">&#10084;&#65039;</span>
+                <span class="heart-label">Thả Tim</span>
+              </button>
+              <div class="heart-stats">
+                <span class="heart-count-number" id="heartCountNumber">1,879</span>
+                <span class="heart-subtext">Lượt trao gửi yêu thương</span>
+              </div>
+            </div>
+
+            <!-- Leave a message form -->
+            <form class="kindness-form" id="kindnessForm">
+              <div class="form-row">
+                <input type="text" id="guestName" placeholder="Tên của bạn hoặc Doanh nghiệp..." required maxlength="40">
+                <button type="submit" class="send-kindness-btn">Gửi Lời Chúc</button>
+              </div>
+              <textarea id="guestMessage" rows="2" placeholder="Chia sẻ một lời chúc, kỷ niệm hoặc thông điệp tử tế..." required maxlength="240"></textarea>
+            </form>
+
+            <!-- Recent messages stream -->
+            <div class="kindness-stream" id="kindnessStream">
+              <!-- Dynamically populated by JS -->
+            </div>
+          </div>
+        </section>
+
+        <!-- 9. DIRECT CONTACT & SOCIAL CHANNELS -->
+        <section class="bento-card card-contact" id="contactSection">
+          <div class="card-header">
+            <div class="header-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"></path>
+              </svg>
+            </div>
+            <div>
+              <span class="card-overhead">Reach Out</span>
+              <h2 class="card-headline">Kết Nối Trực Tiếp</h2>
+            </div>
+          </div>
+
+          <div class="contact-channels-grid">
+            <a href="https://www.facebook.com/TuanTuTeTT" target="_blank" rel="noopener noreferrer" class="channel-card">
+              <div class="channel-icon fb-bg">
+                <svg viewBox="0 0 24 24" fill="currentColor"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+              </div>
+              <div class="channel-info">
+                <span class="channel-label">Facebook Profile (5.5K+ Followers)</span>
+                <span class="channel-value">@TuanTuTeTT</span>
+              </div>
+            </a>
+
+            <a href="https://www.youtube.com/@Tu%E1%BA%A5nT%E1%BB%ADT%E1%BA%BFT%E1%BB%ABT%C3%A2m" target="_blank" rel="noopener noreferrer" class="channel-card">
+              <div class="channel-icon yt-bg">
+                <svg viewBox="0 0 24 24" fill="currentColor"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
+              </div>
+              <div class="channel-info">
+                <span class="channel-label">YouTube Truyền Cảm Hứng</span>
+                <span class="channel-value">@TuấnTửTếTừTâm</span>
+              </div>
+            </a>
+
+            <a href="mailto:tuan@media-gto.com" class="channel-card">
+              <div class="channel-icon mail-bg">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+              </div>
+              <div class="channel-info">
+                <span class="channel-label">Email chính thức</span>
+                <span class="channel-value">tuan@media-gto.com</span>
+              </div>
+            </a>
+
+            <a href="https://gto.vn" target="_blank" rel="noopener noreferrer" class="channel-card">
+              <div class="channel-icon web-bg">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><line x1="2" y1="12" x2="22" y2="12"></line><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path></svg>
+              </div>
+              <div class="channel-info">
+                <span class="channel-label">Cổng thông tin GTO</span>
+                <span class="channel-value">tuantute.life &bull; gto.vn</span>
+              </div>
+            </a>
+
+            <a href="https://maps.google.com/?q=Khu+H%C6%B0ng+Ph%C3%BA,+Nha+Trang,+Kh%C3%A1nh+H%C3%B2a" target="_blank" rel="noopener noreferrer" class="channel-card">
+              <div class="channel-icon map-bg">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+              </div>
+              <div class="channel-info">
+                <span class="channel-label">Trụ sở GTO Media</span>
+                <span class="channel-value">C10 - C11 Hưng Phú, Nha Trang</span>
+              </div>
+            </a>
+
+            <a href="https://www.linkedin.com/profile/view?id=271176448" target="_blank" rel="noopener noreferrer" class="channel-card">
+              <div class="channel-icon in-bg">
+                <svg viewBox="0 0 24 24" fill="currentColor"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
+              </div>
+              <div class="channel-info">
+                <span class="channel-label">Mạng Lưới Doanh Nhân</span>
+                <span class="channel-value">Tuan GTOMedia</span>
+              </div>
+            </a>
+          </div>
+        </section>
+
+      </div>
     </main>
-    <footer><p>© 2026 Tuấn Tử Tế Từ Tâm • Vận hành tự động cùng GitHub, Google Sheets & Telegram Bot</p></footer>
-    <script>
-        fetch('data.json?v=' + Date.now()).then(r => r.ok ? r.json() : null).then(d => {
-            if (!d || !Array.isArray(d.posts)) return;
-            if (d.siteTitle) document.getElementById('siteTitle').textContent = d.siteTitle;
-            if (d.siteTagline) document.getElementById('siteTagline').textContent = d.siteTagline;
-            document.getElementById('postsContainer').innerHTML = d.posts.map(p => `
-                <article class="post-card">
-                    <div class="media-box"><img src="${p.mediaUrl || 'https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=1000'}" alt="${p.title}" loading="lazy"></div>
-                    <div class="post-content">
-                        <div class="post-date">${p.date || 'Bài mới'}</div>
-                        <h2 class="post-title">${p.title}</h2>
-                        <p class="post-excerpt">${p.content}</p>
-                        ${p.quote ? `<div class="quote-box">"${p.quote}"</div>` : ''}
-                    </div>
-                </article>
-            `).join('');
-        });
 
-        const TG_TOKEN = "8979898582:AAHQqKnJ1L6GwJnN8qPQIwR5IFXOdCMpCzM";
-        const TG_CHAT_ID = "8434775140";
-        const GOOGLE_SHEET_WEBHOOK = "https://script.google.com/macros/s/AKfycbxYL0ySzY6dn7aLlIFCu7Gp9Ce_tbmtOZLRTYAwnBsEHzFM1smM1Yy84M6ABc2NalVU/exec";
+    <!-- App Footer -->
+    <footer class="app-footer">
+      <div class="footer-inner">
+        <div class="footer-left">
+          <p class="copyright">&copy; 2026 <strong>Nguyễn Anh Tuấn</strong> &bull; Tuấn Tử Tế &bull; <a href="https://tuantute.life">tuantute.life</a></p>
+          <p class="hosting-note">Đồng hành & Tự hào vận hành hạ tầng tự động bởi GitHub Pages, Google Sheets, Telegram Bot & <a href="https://www.sweetsoft.vn" target="_blank" rel="noopener noreferrer">SweetSoft.vn</a></p>
+        </div>
+        <div class="footer-right">
+          <span class="philosophy-footer">{ Cherish kindness &bull; Trân quý sự tử tế }</span>
+        </div>
+      </div>
+    </footer>
 
-        document.getElementById('qaForm').addEventListener('submit', async e => {
-            e.preventDefault();
-            const btn = document.getElementById('submitBtn'), status = document.getElementById('statusMsg');
-            const name = document.getElementById('userName').value.trim();
-            const phone = document.getElementById('userPhone').value.trim();
-            const question = document.getElementById('userQuestion').value.trim();
-            const timeStr = new Date().toLocaleString('vi-VN');
+  </div>
 
-            btn.disabled = true; btn.textContent = "⏳ Đang gửi thẳng tới điện thoại Tuấn Tử Tế...";
-            const msg = `🌟 *CÂU HỎI MỚI TỪ TUANTUTE.LIFE*\n` +
-                        `━━━━━━━━━━━━━━━━━━━━\n` +
-                        `👤 *Học viên:* ${name}\n` +
-                        `📞 *SĐT/Zalo:* ${phone}\n` +
-                        `🕒 *Thời gian:* ${timeStr}\n` +
-                        `💬 *Nội dung:* ${question}\n` +
-                        `━━━━━━━━━━━━━━━━━━━━`;
-            try {
-                // 1. Gửi thông báo tức thì về Telegram
-                await fetch(`https://api.telegram.org/bot${TG_TOKEN}/sendMessage`, { 
-                    method: 'POST', 
-                    headers: {'Content-Type': 'application/json'}, 
-                    body: JSON.stringify({chat_id: TG_CHAT_ID, text: msg, parse_mode: 'Markdown'}) 
-                });
+  <!-- Share & QR Modal -->
+  <div class="modal-overlay" id="shareModalOverlay" aria-hidden="true">
+    <div class="modal-card" role="dialog" aria-modal="true">
+      <div class="modal-head">
+        <h3>Chia Sẻ Danh Thiếp Số</h3>
+        <button class="modal-close" id="btnCloseShareModal">&times;</button>
+      </div>
+      <div class="modal-body-content">
+        <div class="share-avatar-group">
+          <img src="avatar.jpg" alt="Tuấn Tử Tế" class="share-modal-avatar">
+          <div>
+            <h4>Nguyễn Anh Tuấn (Tuấn Tử Tế)</h4>
+            <p>tuantute.life &bull; fb.com/TuanTuTeTT</p>
+          </div>
+        </div>
 
-                // 2. Ghi chép dữ liệu tự động vào Google Sheets bằng phương thức GET tối ưu chống chặn CORS
-                if (GOOGLE_SHEET_WEBHOOK) {
-                    const params = new URLSearchParams({ timestamp: timeStr, name: name, phone: phone, question: question });
-                    fetch(GOOGLE_SHEET_WEBHOOK + '?' + params.toString(), { method: 'GET', mode: 'no-cors' });
-                }
+        <div class="share-link-box">
+          <input type="text" id="shareUrlInput" value="https://tuantute.life/" readonly>
+          <button class="copy-url-btn" id="btnCopyShareUrl">Sao chép</button>
+        </div>
 
-                status.style.display = "block"; status.style.background = "#dcfce7"; status.style.color = "#166534";
-                status.textContent = "✅ Gửi thành công! Trợ lý đã báo trực tiếp về điện thoại và lưu vào Google Sheets."; 
-                document.getElementById('qaForm').reset();
-            } catch(err) {
-                status.style.display = "block"; status.style.background = "#fee2e2"; status.style.color = "#991b1b"; 
-                status.textContent = "⚠️ Lỗi kết nối mạng, vui lòng thử lại!";
-            } finally { 
-                btn.disabled = false; btn.textContent = "🚀 Gửi Ngay Cho Tuấn Tử Tế"; 
-            }
-        });
-    </script>
+        <div class="share-actions-row">
+          <button class="social-share-btn fb" id="btnShareFB">Facebook</button>
+          <button class="social-share-btn zalo" id="btnShareZalo">Zalo</button>
+          <button class="social-share-btn native" id="btnNativeShare">Hệ thống</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Flying Hearts Canvas for Animations -->
+  <div class="hearts-canvas" id="heartsCanvas"></div>
+
+  <!-- Toast Notification Container -->
+  <div class="toast-wrapper" id="toastWrapper"></div>
+
+  <!-- 1. Core App & Kindness Wall Script -->
+  <script src="app.js"></script>
+
+  <!-- 2. AI Assistant (DeepSeek & Google Gemini) -->
+  <script src="ai-assistant.js"></script>
+
+  <!-- 3. Dynamic Data Loader & Telegram + Google Sheets Automation Script -->
+  <script>
+    // Load dynamic articles from data.json if available
+    fetch('data.json?v=' + Date.now())
+      .then(r => r.ok ? r.json() : null)
+      .then(d => {
+        if (!d || !Array.isArray(d.posts)) return;
+        if (d.siteTitle) {
+          const st = document.getElementById('siteTitle');
+          if (st) st.textContent = d.siteTitle;
+        }
+        if (d.siteTagline) {
+          const tg = document.getElementById('siteTagline');
+          if (tg) tg.textContent = d.siteTagline;
+        }
+        const container = document.getElementById('postsContainer');
+        if (container && d.posts.length > 0) {
+          container.innerHTML = d.posts.map(p => `
+            <article class="bento-post-card">
+              <div class="bento-post-media">
+                <img src="${p.mediaUrl || 'https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=1000'}" alt="${p.title}" loading="lazy">
+              </div>
+              <div class="bento-post-content">
+                <div class="bento-post-date">${p.date || 'BÀI VIẾT MỚI'}</div>
+                <h3 class="bento-post-title">${p.title}</h3>
+                <p class="bento-post-excerpt">${p.content}</p>
+                ${p.quote ? `<div class="bento-post-quote">"${p.quote}"</div>` : ''}
+              </div>
+            </article>
+          `).join('');
+        }
+      })
+      .catch(err => {
+        console.log('Using static posts fallback:', err);
+      });
+
+    // Telegram Bot & Google Sheet Automation
+    const TG_TOKEN = "8979898582:AAHQqKnJ1L6GwJnN8qPQIwR5IFXOdCMpCzM";
+    const TG_CHAT_ID = "8434775140";
+    const GOOGLE_SHEET_WEBHOOK = "https://script.google.com/macros/s/AKfycbxYL0ySzY6dn7aLlIFCu7Gp9Ce_tbmtOZLRTYAwnBsEHzFM1smM1Yy84M6ABc2NalVU/exec";
+
+    const qaForm = document.getElementById('qaForm');
+    if (qaForm) {
+      qaForm.addEventListener('submit', async e => {
+        e.preventDefault();
+        const btn = document.getElementById('submitBtn');
+        const status = document.getElementById('statusMsg');
+        const name = document.getElementById('userName').value.trim();
+        const phone = document.getElementById('userPhone').value.trim();
+        const question = document.getElementById('userQuestion').value.trim();
+        const timeStr = new Date().toLocaleString('vi-VN');
+
+        btn.disabled = true;
+        btn.innerHTML = "<span>⏳ Đang gửi thẳng tới điện thoại Tuấn Tử Tế...</span>";
+
+        const msg = `🌟 *CÂU HỎI MỚI TỪ TUANTUTE.LIFE*\n` +
+                    `━━━━━━━━━━━━━━━━━━━━\n` +
+                    `👤 *Học viên:* ${name}\n` +
+                    `📞 *SĐT/Zalo:* ${phone}\n` +
+                    `⏰ *Thời gian:* ${timeStr}\n` +
+                    `💬 *Nội dung:* ${question}\n` +
+                    `━━━━━━━━━━━━━━━━━━━━`;
+
+        try {
+          // 1. Gửi thông báo tức thì về Telegram Bot
+          await fetch(`https://api.telegram.org/bot${TG_TOKEN}/sendMessage`, { 
+            method: 'POST', 
+            headers: {'Content-Type': 'application/json'}, 
+            body: JSON.stringify({chat_id: TG_CHAT_ID, text: msg, parse_mode: 'Markdown'}) 
+          });
+
+          // 2. Ghi chép dữ liệu tự động vào Google Sheets bằng phương thức GET tối ưu chống chặn CORS
+          if (GOOGLE_SHEET_WEBHOOK) {
+            const params = new URLSearchParams({ timestamp: timeStr, name: name, phone: phone, question: question });
+            fetch(GOOGLE_SHEET_WEBHOOK + '?' + params.toString(), { method: 'GET', mode: 'no-cors' });
+          }
+
+          status.style.display = "block";
+          status.style.background = "rgba(16, 185, 129, 0.15)";
+          status.style.border = "1px solid rgba(16, 185, 129, 0.4)";
+          status.style.color = "#34d399";
+          status.innerHTML = "✅ <strong>Gửi thành công!</strong> Thông điệp đã báo trực tiếp về điện thoại Tuấn Tử Tế qua Telegram và lưu trữ Google Sheets."; 
+          qaForm.reset();
+        } catch(err) {
+          status.style.display = "block";
+          status.style.background = "rgba(225, 29, 72, 0.15)";
+          status.style.border = "1px solid rgba(225, 29, 72, 0.4)";
+          status.style.color = "#fb7185";
+          status.innerHTML = "⚠️ <strong>Lỗi kết nối mạng:</strong> Vui lòng kiểm tra kết nối và thử lại!";
+        } finally { 
+          btn.disabled = false;
+          btn.innerHTML = "<span>🚀 Gửi Ngay Cho Tuấn Tử Tế</span>"; 
+        }
+      });
+    }
+  </script>
 </body>
 </html>

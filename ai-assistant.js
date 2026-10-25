@@ -1,8 +1,8 @@
 /**
  * AI ASSISTANT CHATBOT (DEEPSEEK & GOOGLE GEMINI) - TUẤN TỬ TẾ (tuantute.life)
  * Tự động giải đáp 24/7 mọi thắc mắc về Anh Nguyễn Anh Tuấn (Tuấn Tử Tế Từ Tâm),
- * triết lý sống tử tế, sự rộng lượng, hệ sinh thái GTO Media, BNI Khánh Hòa,
- * Hội Doanh Nhân Trẻ, kết nối kinh doanh và gia đình.
+ * triết lý sống tử tế, sự rộng lượng, hệ sinh thái GTO Media,
+ * Hội Doanh Nhân Trẻ Khánh Hòa, kiến tạo cuộc sống kỷ nguyên AI và gia đình.
  */
 
 (function () {
@@ -44,9 +44,9 @@ VỊ THẾ DOANH NGHIỆP & CÔNG TÁC XÃ HỘI:
    - Trụ sở: Biệt thự C10 - C11 Khu đô thị Hưng Phú, TP. Nha Trang, Khánh Hòa.
    - Website doanh nghiệp: https://gto.vn / http://gtomedia.vn.
 
-2. Giám đốc BNI Vùng Khánh Hòa:
-   - Đại diện tổ chức kết nối thương mại lớn nhất toàn cầu BNI tại Khánh Hòa, gắn kết hàng trăm doanh nhân theo triết lý "Givers Gain - Cho là nhận", giúp các doanh nghiệp mở rộng thị trường và tăng trưởng doanh thu bền vững.
-   - Thành tích nổi bật: Đạt giải thưởng quốc gia danh giá BNI Vietnam National Notable Networker Award (Năm 2013).
+2. Kiến Tạo Cuộc Sống Kỷ Nguyên Trí Tuệ AI:
+   - Truyền cảm hứng và đào tạo thực chiến phương pháp ứng dụng Trí tuệ nhân tạo (AI), tự động hóa quy trình kết nối khách hàng (Website, Google Sheets, Telegram Bot) cho cộng đồng học viên và doanh nghiệp.
+   - Giúp mọi người phát triển toàn diện Thân - Tâm - Trí, làm chủ công nghệ và tự do tài chính.
 
 3. Phó Chủ tịch Hội Doanh Nhân Trẻ Khánh Hòa:
    - Tích cực phụng sự, đồng hành cùng các thế hệ doanh nhân trẻ khởi nghiệp, chia sẻ kinh nghiệm quản trị, ứng dụng trí tuệ nhân tạo (AI), công nghệ số và livestream thực chiến.
@@ -63,7 +63,7 @@ VĂN PHONG GIAO TIẾP CỦA TRỢ LÝ AI:
   let chatHistory = [
     {
       role: 'assistant',
-      content: 'Chào bạn! Tôi là **Trợ lý AI của Anh Nguyễn Anh Tuấn (Tuấn Tử Tế • Từ Tâm)**. Rất vui được đón tiếp bạn ghé thăm tuantute.life! Bạn cần tìm hiểu thông tin về triết lý sống tử tế, cơ hội hợp tác cùng **GTO Media**, mạng lưới **BNI Khánh Hòa**, hay kết nối cá nhân cùng Anh Tuấn hôm nay ạ?'
+      content: 'Chào bạn! Tôi là **Trợ lý AI của Anh Nguyễn Anh Tuấn (Tuấn Tử Tế • Từ Tâm)**. Rất vui được đón tiếp bạn ghé thăm tuantute.life! Bạn cần tìm hiểu thông tin về triết lý sống tử tế, cơ hội hợp tác cùng **GTO Media**, ứng dụng **Kỷ nguyên AI**, hay kết nối cá nhân cùng Anh Tuấn hôm nay ạ?'
     }
   ];
 
@@ -100,11 +100,10 @@ VĂN PHONG GIAO TIẾP CỦA TRỢ LÝ AI:
         `• <strong>Website:</strong> <a href="https://gto.vn" target="_blank">gto.vn</a> &bull; <a href="http://gtomedia.vn" target="_blank">gtomedia.vn</a>.`;
     }
 
-    if (q.includes('bni') || q.includes('kết nối') || q.includes('mạng lưới') || q.includes('doanh nhân')) {
-      return `🤝 <strong>BNI Vùng Khánh Hòa & Hội Doanh Nhân Trẻ:</strong><br><br>` +
-        `• Anh Tuấn đảm nhiệm vai trò <strong>Giám đốc BNI Vùng Khánh Hòa</strong>, kết nối hàng trăm chủ doanh nghiệp địa phương giao thương theo triết lý "Cho là nhận".<br>` +
-        `• <strong>Giải thưởng quốc gia:</strong> BNI Vietnam National Notable Networker Award 2013.<br>` +
-        `• Đồng thời giữ vị trí <strong>Phó Chủ tịch Hội Doanh Nhân Trẻ Khánh Hòa</strong>, luôn tiếp sức cho thế hệ khởi nghiệp công nghệ và chuyển đổi số.`;
+    if (q.includes('hội doanh nhân trẻ') || q.includes('kết nối') || q.includes('mạng lưới') || q.includes('doanh nhân') || q.includes('hợp tác')) {
+      return `🤝 <strong>Hội Doanh Nhân Trẻ Khánh Hòa & Mạng Lưới Doanh Nhân:</strong><br><br>` +
+        `• Anh Tuấn giữ vị trí <strong>Phó Chủ tịch Hội Doanh Nhân Trẻ Khánh Hòa</strong>, luôn tích cực phụng sự, đồng hành cùng các thế hệ khởi nghiệp, chia sẻ kinh nghiệm quản trị và chuyển đổi số.<br>` +
+        `• <strong>Kiến tạo cuộc sống Kỷ nguyên AI:</strong> Giúp học viên và doanh nghiệp ứng dụng AI thực chiến, tự động hóa 24/7 để vừa thành công trong sự nghiệp vừa thảnh thơi sống an lạc.`;
     }
 
     if (q.includes('gia đình') || q.includes('vợ') || q.includes('con') || q.includes('sinh nhật') || q.includes('ngày cưới')) {
@@ -256,7 +255,7 @@ VĂN PHONG GIAO TIẾP CỦA TRỢ LÝ AI:
               <span>Tuấn Tử Tế</span>
               
             </div>
-            <span class="ai-status-text">Doanh nhân truyền cảm hứng • GTO & BNI</span>
+            <span class="ai-status-text">Doanh nhân truyền cảm hứng • Kỷ Nguyên AI</span>
           </div>
         </div>
         <div class="ai-header-actions">
@@ -269,7 +268,7 @@ VĂN PHONG GIAO TIẾP CỦA TRỢ LÝ AI:
       <!-- Quick Suggestion Chips -->
       <div class="ai-chips-bar" id="aiChipsBar">
         <button class="ai-chip" data-q="Triết lý sống 'Sự rộng lượng là thước đo trình độ sống' của Anh Tuấn là gì?">✨ Triết lý sự rộng lượng?</button>
-        <button class="ai-chip" data-q="Giới thiệu về hệ sinh thái GTO Media và BNI Khánh Hòa?">🏢 GTO Media & BNI?</button>
+        <button class="ai-chip" data-q="Giới thiệu về hệ sinh thái GTO Media và ứng dụng Kỷ nguyên AI?">🏢 GTO Media & Kỷ Nguyên AI?</button>
         <button class="ai-chip" data-q="Chia sẻ về hậu phương gia đình thiêng liêng của Anh Tuấn?">👨‍👩‍👧‍👧 Hạnh phúc gia đình?</button>
         <button class="ai-chip" data-q="Làm thế nào để kết nối Facebook và liên hệ hợp tác cùng Anh Tuấn?">📞 Kết nối Facebook & Hợp tác?</button>
         <button class="ai-chip" data-q="Anh Tuấn có những hoạt động chia sẻ kỹ năng và ứng dụng AI nào?">🤖 Đào tạo & Ứng dụng AI?</button>
@@ -292,7 +291,7 @@ VĂN PHONG GIAO TIẾP CỦA TRỢ LÝ AI:
             class="ai-input-field" 
             id="aiInputField" 
             rows="1" 
-            placeholder="Hỏi về triết lý sống tử tế, GTO Media, BNI, hợp tác..."
+            placeholder="Hỏi về triết lý sống tử tế, GTO Media, Kỷ nguyên AI, hợp tác..."
             aria-label="Nhập câu hỏi"
           ></textarea>
           <button type="submit" class="ai-send-btn" id="aiSendBtn" aria-label="Gửi tin nhắn">

@@ -10,7 +10,7 @@ document.addEventListener('DOMContentLoaded', () => {
     heartCount: parseInt(localStorage.getItem('ttt_hearts') || '1879', 10),
     messages: JSON.parse(localStorage.getItem('ttt_messages') || 'null') || [
       {
-        name: "Lê Minh Trí (BNI Chapter)",
+        name: "Lê Minh Trí (Hội Doanh Nhân Trẻ)",
         time: "Vừa xong",
         text: "Chúc anh Tuấn luôn tràn đầy năng lượng và lan tỏa triết lý 'Sự rộng lượng là thước đo trình độ sống' đến cộng đồng doanh nhân!"
       },
@@ -120,8 +120,8 @@ document.addEventListener('DOMContentLoaded', () => {
       'VERSION:3.0',
       'N:Tuấn;Nguyễn;Anh;;',
       'FN:Nguyễn Anh Tuấn (Tuấn Tử Tế Từ Tâm)',
-      'ORG:GTO Media Corporation;BNI Vùng Khánh Hòa;Hội Doanh Nhân Trẻ Khánh Hòa',
-      'TITLE:Chủ tịch HĐQT GTO Media & Giám đốc BNI Khánh Hòa',
+      'ORG:GTO Media Corporation;Hội Doanh Nhân Trẻ Khánh Hòa;Tuấn Tử Tế Từ Tâm',
+      'TITLE:Chủ tịch HĐQT GTO Media & Doanh Nhân Truyền Cảm Hứng',
       'EMAIL;TYPE=INTERNET,PREF:tuan@media-gto.com',
       'URL:https://www.facebook.com/TuanTuTeTT',
       'URL:https://www.youtube.com/@Tu%E1%BA%A5nT%E1%BB%ADT%E1%BA%BFT%E1%BB%ABT%C3%A2m',
@@ -442,7 +442,7 @@ document.addEventListener('DOMContentLoaded', () => {
       el.btnNativeShare.addEventListener('click', () => {
         if (navigator.share) {
           navigator.share({
-            title: 'Tuấn Tử Tế (Từ Tâm) | Nguyễn Anh Tuấn - Chủ tịch GTO Media & BNI Khánh Hòa',
+            title: 'Tuấn Tử Tế (Từ Tâm) | Nguyễn Anh Tuấn - Kiến Tạo Cuộc Sống Kỷ Nguyên Trí Tuệ AI',
             text: 'Doanh nhân truyền cảm hứng & Tạo dựng cuộc sống tốt đẹp! Sự rộng lượng là thước đo trình độ sống.',
             url: 'https://tuantute.life/'
           }).catch(() => {});
