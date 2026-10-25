@@ -63,7 +63,7 @@
             </form>
         </section>
     </main>
-    <footer><p>© 2026 Tuấn Tử Tế Từ Tâm • Vận hành tự động cùng GitHub & Telegram Bot</p></footer>
+    <footer><p>© 2026 Tuấn Tử Tế Từ Tâm • Vận hành tự động cùng GitHub, Google Sheets & Telegram Bot</p></footer>
     <script>
         fetch('data.json?v=' + Date.now()).then(r => r.ok ? r.json() : null).then(d => {
             if (!d || !Array.isArray(d.posts)) return;
@@ -82,10 +82,10 @@
             `).join('');
         });
 
-        // Kết nối Telegram Bot @TuanTuTe_AI_bot chính thức của Ông chủ
+        // THÔNG TIN KẾT NỐI TELEGRAM & GOOGLE SHEETS
         const TG_TOKEN = "8979898582:AAHQqKnJ1L6GwJnN8qPQIwR5IFXOdCMpCzM";
         const TG_CHAT_ID = "8434775140";
-        const GOOGLE_SHEET_WEBHOOK = ""; // (Tùy chọn) Dán URL Google Apps Script nếu muốn lưu thêm vào Sheet
+        const GOOGLE_SHEET_WEBHOOK = "DÁN_URL_GOOGLE_SHEETS_VÀO_ĐÂY"; // <-- Dán link vừa sao chép vào trong dấu ngoặc kép này
 
         document.getElementById('qaForm').addEventListener('submit', async e => {
             e.preventDefault();
@@ -104,19 +104,25 @@
                         `💬 *Nội dung:* ${question}\n` +
                         `━━━━━━━━━━━━━━━━━━━━`;
             try {
+                // 1. Bắn thông tin về Telegram
                 await fetch(`https://api.telegram.org/bot${TG_TOKEN}/sendMessage`, { 
                     method: 'POST', 
                     headers: {'Content-Type': 'application/json'}, 
                     body: JSON.stringify({chat_id: TG_CHAT_ID, text: msg, parse_mode: 'Markdown'}) 
                 });
 
-                // Tự động đồng bộ Google Sheets nếu có Webhook
-                if (GOOGLE_SHEET_WEBHOOK) {
-                    fetch(GOOGLE_SHEET_WEBHOOK, { method: 'POST', mode: 'no-cors', headers: {'Content-Type': 'application/json'}, body: JSON.stringify({ timestamp: timeStr, name, phone, question }) });
+                // 2. Lưu trữ tự động vào Google Sheets
+                if (GOOGLE_SHEET_WEBHOOK && GOOGLE_SHEET_WEBHOOK !== "DÁN_URL_GOOGLE_SHEETS_VÀO_ĐÂY") {
+                    fetch(GOOGLE_SHEET_WEBHOOK, { 
+                        method: 'POST', 
+                        mode: 'no-cors', 
+                        headers: {'Content-Type': 'application/json'}, 
+                        body: JSON.stringify({ timestamp: timeStr, name, phone, question }) 
+                    });
                 }
 
                 status.style.display = "block"; status.style.background = "#dcfce7"; status.style.color = "#166534";
-                status.textContent = "✅ Đã gửi thành công! Tin nhắn đã báo trực tiếp về điện thoại của Tuấn Tử Tế."; 
+                status.textContent = "✅ Gửi thành công! Trợ lý đã báo trực tiếp về điện thoại và lưu vào Google Sheets."; 
                 document.getElementById('qaForm').reset();
             } catch(err) {
                 status.style.display = "block"; status.style.background = "#fee2e2"; status.style.color = "#991b1b"; 
