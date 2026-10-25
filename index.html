@@ -82,10 +82,9 @@
             `).join('');
         });
 
-        // KẾT NỐI CHÍNH THỨC TELEGRAM & GOOGLE SHEETS WEB APP MỚI
         const TG_TOKEN = "8979898582:AAHQqKnJ1L6GwJnN8qPQIwR5IFXOdCMpCzM";
         const TG_CHAT_ID = "8434775140";
-        const GOOGLE_SHEET_WEBHOOK = "https://script.google.com/macros/s/AKfycbzLjHnvdWz16NGenos5mu5PLCw9KC6iHsq-Z4a78EyRXVYocC5lAfOmmYYj1ir5oqav/exec";
+        const GOOGLE_SHEET_WEBHOOK = "https://script.google.com/macros/s/AKfycbxYL0ySzY6dn7aLlIFCu7Gp9Ce_tbmtOZLRTYAwnBsEHzFM1smM1Yy84M6ABc2NalVU/exec";
 
         document.getElementById('qaForm').addEventListener('submit', async e => {
             e.preventDefault();
@@ -104,21 +103,17 @@
                         `💬 *Nội dung:* ${question}\n` +
                         `━━━━━━━━━━━━━━━━━━━━`;
             try {
-                // 1. Gửi thông báo tức thì về Telegram của Ông chủ
+                // 1. Gửi thông báo tức thì về Telegram
                 await fetch(`https://api.telegram.org/bot${TG_TOKEN}/sendMessage`, { 
                     method: 'POST', 
                     headers: {'Content-Type': 'application/json'}, 
                     body: JSON.stringify({chat_id: TG_CHAT_ID, text: msg, parse_mode: 'Markdown'}) 
                 });
 
-                // 2. Ghi chép dữ liệu tự động vào Google Sheets
+                // 2. Ghi chép dữ liệu tự động vào Google Sheets bằng phương thức GET tối ưu chống chặn CORS
                 if (GOOGLE_SHEET_WEBHOOK) {
-                    fetch(GOOGLE_SHEET_WEBHOOK, { 
-                        method: 'POST', 
-                        mode: 'no-cors', 
-                        headers: {'Content-Type': 'application/json'}, 
-                        body: JSON.stringify({ timestamp: timeStr, name, phone, question }) 
-                    });
+                    const params = new URLSearchParams({ timestamp: timeStr, name: name, phone: phone, question: question });
+                    fetch(GOOGLE_SHEET_WEBHOOK + '?' + params.toString(), { method: 'GET', mode: 'no-cors' });
                 }
 
                 status.style.display = "block"; status.style.background = "#dcfce7"; status.style.color = "#166534";
