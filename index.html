@@ -1,4 +1,87 @@
-// THÔNG TIN KẾT NỐI TELEGRAM & GOOGLE SHEETS
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TUẤN TỬ TẾ • KIẾN TẠO CUỘC SỐNG KỶ NGUYÊN TRÍ TUỆ AI</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #0f766e;
+            --primary-light: #14b8a6;
+            --bg: #f8fafc;
+            --card-bg: #ffffff;
+            --text-main: #0f172a;
+            --text-muted: #475569;
+            --radius: 16px;
+            --shadow: 0 10px 25px -5px rgba(15, 23, 42, 0.08);
+        }
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        body { font-family: 'Be Vietnam Pro', sans-serif; background-color: var(--bg); color: var(--text-main); font-size: 18px; line-height: 1.75; }
+        .header-hero { background: linear-gradient(135deg, #0f172a 0%, #0f766e 100%); color: #ffffff; padding: 54px 20px; text-align: center; }
+        .header-hero h1 { font-size: clamp(1.6rem, 3.5vw, 2.5rem); font-weight: 800; margin-bottom: 12px; }
+        .header-hero p { font-size: clamp(1rem, 1.8vw, 1.2rem); max-width: 780px; margin: 0 auto; opacity: 0.92; }
+        .container { max-width: 1140px; margin: 0 auto; padding: 30px 20px; }
+        .posts-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(340px, 1fr)); gap: 24px; margin-bottom: 40px; }
+        .post-card { background: var(--card-bg); border-radius: var(--radius); overflow: hidden; box-shadow: var(--shadow); display: flex; flex-direction: column; border: 1px solid #e2e8f0; }
+        .media-box { width: 100%; aspect-ratio: 16 / 10; background: #0f172a; overflow: hidden; display: flex; align-items: center; justify-content: center; }
+        .media-box img { width: 100%; height: 100%; object-fit: cover; display: block; }
+        .post-content { padding: 24px; flex: 1; display: flex; flex-direction: column; }
+        .post-date { font-size: 0.85rem; color: var(--primary); font-weight: 700; margin-bottom: 8px; text-transform: uppercase; }
+        .post-title { font-size: 1.3rem; font-weight: 700; margin-bottom: 12px; color: var(--text-main); }
+        .post-excerpt { color: var(--text-muted); font-size: 1rem; margin-bottom: 16px; flex: 1; }
+        .quote-box { background: #f0fdf4; border-left: 4px solid var(--primary); padding: 12px 16px; border-radius: 0 10px 10px 0; font-style: italic; font-weight: 600; color: #065f46; font-size: 0.95rem; }
+        .qa-section { background: linear-gradient(135deg, #ffffff 0%, #f0fdf4 100%); border: 2px solid var(--primary-light); border-radius: var(--radius); padding: 32px 24px; box-shadow: var(--shadow); max-width: 780px; margin: 0 auto 30px auto; }
+        .qa-section h2 { font-size: 1.5rem; color: var(--primary); margin-bottom: 8px; text-align: center; }
+        .qa-section p.sub { text-align: center; color: var(--text-muted); margin-bottom: 20px; font-size: 0.95rem; }
+        .form-group { margin-bottom: 16px; }
+        .form-group label { display: block; font-weight: 600; margin-bottom: 6px; color: var(--text-main); }
+        .form-group input, .form-group textarea { width: 100%; padding: 12px 16px; font-size: 1rem; font-family: inherit; border: 1px solid #cbd5e1; border-radius: 12px; background: #ffffff; }
+        .btn-submit { width: 100%; padding: 14px; background: linear-gradient(135deg, #0f766e 0%, #0d9488 100%); color: #ffffff; font-size: 1.05rem; font-weight: 700; border: none; border-radius: 12px; cursor: pointer; }
+        .status-msg { margin-top: 14px; text-align: center; font-weight: 600; display: none; padding: 10px; border-radius: 10px; }
+        footer { text-align: center; padding: 30px 20px; border-top: 1px solid #e2e8f0; color: var(--text-muted); font-size: 0.9rem; background: #ffffff; }
+    </style>
+</head>
+<body>
+    <header class="header-hero">
+        <h1 id="siteTitle">TUẤN TỬ TẾ • KIẾN TẠO CUỘC SỐNG KỶ NGUYÊN TRÍ TUỆ AI</h1>
+        <p id="siteTagline">Phát triển bản thân toàn diện Thân - Tâm - Trí & Ứng dụng Trí tuệ nhân tạo AI</p>
+    </header>
+    <main class="container">
+        <div id="postsContainer" class="posts-grid"></div>
+        <section class="qa-section">
+            <h2>💬 Gửi Câu Hỏi & Kết Nối Cùng Tuấn Tử Tế</h2>
+            <p class="sub">Mọi câu hỏi của bạn sẽ được chuyển trực tiếp đến điện thoại của Tuấn Tử Tế ngay lập tức!</p>
+            <form id="qaForm">
+                <div class="form-group"><label>Họ và tên *</label><input type="text" id="userName" required placeholder="Nhập họ tên..."></div>
+                <div class="form-group"><label>Số điện thoại / Zalo *</label><input type="text" id="userPhone" required placeholder="Nhập SĐT..."></div>
+                <div class="form-group"><label>Câu hỏi của bạn *</label><textarea id="userQuestion" rows="3" required placeholder="Nhập câu hỏi..."></textarea></div>
+                <button type="submit" class="btn-submit" id="submitBtn">🚀 Gửi Ngay Cho Tuấn Tử Tế</button>
+                <div id="statusMsg" class="status-msg"></div>
+            </form>
+        </section>
+    </main>
+    <footer><p>© 2026 Tuấn Tử Tế Từ Tâm • Vận hành tự động cùng GitHub, Google Sheets & Telegram Bot</p></footer>
+    <script>
+        fetch('data.json?v=' + Date.now()).then(r => r.ok ? r.json() : null).then(d => {
+            if (!d || !Array.isArray(d.posts)) return;
+            if (d.siteTitle) document.getElementById('siteTitle').textContent = d.siteTitle;
+            if (d.siteTagline) document.getElementById('siteTagline').textContent = d.siteTagline;
+            document.getElementById('postsContainer').innerHTML = d.posts.map(p => `
+                <article class="post-card">
+                    <div class="media-box"><img src="${p.mediaUrl || 'https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=1000'}" alt="${p.title}" loading="lazy"></div>
+                    <div class="post-content">
+                        <div class="post-date">${p.date || 'Bài mới'}</div>
+                        <h2 class="post-title">${p.title}</h2>
+                        <p class="post-excerpt">${p.content}</p>
+                        ${p.quote ? `<div class="quote-box">"${p.quote}"</div>` : ''}
+                    </div>
+                </article>
+            `).join('');
+        });
+
         const TG_TOKEN = "8979898582:AAHQqKnJ1L6GwJnN8qPQIwR5IFXOdCMpCzM";
         const TG_CHAT_ID = "8434775140";
         const GOOGLE_SHEET_WEBHOOK = "https://script.google.com/macros/s/AKfycbxxH3e4-KZ2brpybUAQKOOERjSKcBaQ7oTzxfRxHq4QhOOCWxYTnom-cx5coy8Aq4gu/exec";
@@ -20,14 +103,12 @@
                         `💬 *Nội dung:* ${question}\n` +
                         `━━━━━━━━━━━━━━━━━━━━`;
             try {
-                // 1. Bắn thông tin về Telegram
                 await fetch(`https://api.telegram.org/bot${TG_TOKEN}/sendMessage`, { 
                     method: 'POST', 
                     headers: {'Content-Type': 'application/json'}, 
                     body: JSON.stringify({chat_id: TG_CHAT_ID, text: msg, parse_mode: 'Markdown'}) 
                 });
 
-                // 2. Lưu trữ tự động vào Google Sheets
                 if (GOOGLE_SHEET_WEBHOOK) {
                     fetch(GOOGLE_SHEET_WEBHOOK, { 
                         method: 'POST', 
@@ -47,3 +128,6 @@
                 btn.disabled = false; btn.textContent = "🚀 Gửi Ngay Cho Tuấn Tử Tế"; 
             }
         });
+    </script>
+</body>
+</html>
