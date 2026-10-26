@@ -723,13 +723,18 @@
           container.innerHTML = d.posts.map(p => `
             <article class="bento-post-card">
               <div class="bento-post-media">
+                ${p.linkUrl ? `<a href="${p.linkUrl}">` : ''}
                 <img src="${p.mediaUrl || 'https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=1000'}" alt="${p.title}" loading="lazy">
+                ${p.linkUrl ? `</a>` : ''}
               </div>
               <div class="bento-post-content">
                 <div class="bento-post-date">${p.date || 'BÀI VIẾT MỚI'}</div>
-                <h3 class="bento-post-title">${p.title}</h3>
+                <h3 class="bento-post-title">
+                  ${p.linkUrl ? `<a href="${p.linkUrl}" style="color:inherit;text-decoration:none;">${p.title}</a>` : p.title}
+                </h3>
                 <p class="bento-post-excerpt">${p.content}</p>
                 ${p.quote ? `<div class="bento-post-quote">"${p.quote}"</div>` : ''}
+                ${p.linkUrl ? `<div style="margin-top:14px;"><a href="${p.linkUrl}" style="display:inline-flex;align-items:center;gap:6px;padding:9px 18px;background:linear-gradient(135deg,#f59e0b,#d97706);color:#0b0f17;font-weight:800;border-radius:999px;text-decoration:none;font-size:0.86rem;box-shadow:0 4px 15px rgba(245,158,11,0.35);transition:transform 0.2s;">🚀 Khám Phá Bài Giảng 4D &rarr;</a></div>` : ''}
               </div>
             </article>
           `).join('');

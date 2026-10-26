@@ -1,0 +1,3805 @@
+<!DOCTYPE html>
+<!--
+  ==========================================================================
+  TÊN FILE: bai-giang-6-tang-nhan-thuc-co-truong-v08.html
+  PHIÊN BẢN: V08 (Thanh Trượt Tốc Độ Mượt • Phụ Đề Không Che Nội Dung • Chuẩn Ký Hiệu A388 • 4 Phong Cách Nghệ Thuật)
+  NGÀY CẬP NHẬT: 26/10/2026
+  TÁC GIẢ & BẢN QUYỀN: Tuấn Tử Tế Từ Tâm - Kiến Tạo Cuộc Sống Kỷ Nguyên Trí Tuệ AI
+  GHI VẾT THAY ĐỔI (CHANGELOG V08):
+  1. Thay thế 3 nút tốc độ bằng Thanh trượt tốc độ liên tục (0.50x -> 1.80x) kèm nút -/+ trên Top Bar.
+  2. Thiết kế kiến trúc 3 tầng (Top HUD + Main Stage + Bottom Studio Dock): Thanh phụ đề nằm gọn
+     ở dải Dock chân trang riêng biệt, tuyệt đối không che khuất nội dung bài giảng.
+  3. Chuẩn hóa phụ đề hiển thị đúng ký hiệu & chữ số (A388, 560 tấn, 10.000m, 30m, 108.0 MHz, 3D)
+     và tự động dịch ngầm sang âm đọc Tiếng Việt tự nhiên khi phát giọng nói.
+  4. Nâng cấp hiệu ứng chuyển cảnh 4D mượt mà (Scale-Depth + Cubic-Bezier Transition).
+  5. Tích hợp bộ chọn 4 Phong cách Nghệ thuật (Điện ảnh 4D / Vẽ tay Viết tay / Đồ họa Infographic / Hoạt hình 3D).
+  ==========================================================================
+-->
+<html lang="vi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Bản Chỉ Huy Tâm Thức Siêu Chuyên Cơ A388 - 16 Chặng 4D (V08)</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400&family=Dancing+Script:wght@700&family=Patrick+Hand&family=Playfair+Display:ital,wght@0,700;0,800;1,600&display=swap" rel="stylesheet">
+  <style>
+    /* =========================================================================
+       1. HỆ THỐNG BIẾN MÀU CHO 4 PHONG CÁCH NGHỆ THUẬT (CINEMATIC / HANDDRAWN / INFOGRAPHIC / CARTOON)
+       ========================================================================= */
+    :root {
+      --bg-deep: #030714;
+      --bg-navy: #08132b;
+      --bg-card: rgba(8, 19, 43, 0.93);
+      --bg-panel: rgba(6, 15, 36, 0.9);
+      --gold-primary: #f5c451;
+      --gold-light: #ffe9ad;
+      --gold-dark: #c48a10;
+      --cyan-sky: #38bdf8;
+      --emerald-peace: #34d399;
+      --rose-warm: #fb7185;
+      --text-main: #ffffff;
+      --text-muted: #e2e8f0;
+      --border-glass: rgba(245, 196, 81, 0.45);
+      --shadow-elevated: 0 22px 60px rgba(0, 0, 0, 0.85);
+      --font-body: 'Be Vietnam Pro', sans-serif;
+      --font-heading: 'Playfair Display', serif;
+      --card-radius: 24px;
+      --topbar-h: 68px;
+      --bottomdock-h: 66px;
+    }
+
+    /* PHONG CÁCH 2: VẼ TAY & VIẾT TAY NGHỆ THUẬT (HAND-DRAWN SKETCHNOTE & CALLIGRAPHY) */
+    body.style-handdrawn {
+      --bg-deep: #f4ebd9;
+      --bg-navy: #efe2c8;
+      --bg-card: #fffdf7;
+      --bg-panel: #faf3e3;
+      --gold-primary: #b45309;
+      --gold-light: #7c2d12;
+      --gold-dark: #92400e;
+      --cyan-sky: #0369a1;
+      --emerald-peace: #15803d;
+      --rose-warm: #be123c;
+      --text-main: #1e293b;
+      --text-muted: #334155;
+      --border-glass: #78350f;
+      --shadow-elevated: 6px 8px 0px rgba(120, 53, 15, 0.28);
+      --font-body: 'Patrick Hand', 'Be Vietnam Pro', cursive;
+      --font-heading: 'Dancing Script', 'Playfair Display', cursive;
+      --card-radius: 18px 28px 20px 26px;
+      background-image: radial-gradient(rgba(120, 53, 15, 0.16) 1px, transparent 1px);
+      background-size: 22px 22px;
+    }
+
+    body.style-handdrawn .slide-inner {
+      border: 3px dashed #78350f;
+      box-shadow: 8px 10px 0px rgba(120, 53, 15, 0.22);
+    }
+
+    body.style-handdrawn .senior-panel {
+      border: 2px solid #92400e;
+      box-shadow: 4px 5px 0px rgba(120, 53, 15, 0.15);
+    }
+
+    body.style-handdrawn .giant-art-frame img {
+      filter: sepia(0.18) contrast(1.08) saturate(1.15);
+    }
+
+    body.style-handdrawn .poem-box-large {
+      background: rgba(245, 158, 11, 0.12);
+      color: #7c2d12;
+      border-left: 5px solid #b45309;
+    }
+
+    body.style-handdrawn .state-old-lg { color: #be123c; }
+    body.style-handdrawn .state-new-lg { color: #15803d; }
+    body.style-handdrawn .senior-text strong { color: #7c2d12; }
+
+    /* PHONG CÁCH 3: ĐỒ HOẠ INFOGRAPHIC HIỆN ĐẠI (MODERN VECTOR INFOGRAPHIC) */
+    body.style-infographic {
+      --bg-deep: #0b192c;
+      --bg-navy: #1e3e62;
+      --bg-card: rgba(15, 34, 60, 0.96);
+      --bg-panel: rgba(22, 48, 82, 0.92);
+      --gold-primary: #ff6500;
+      --gold-light: #ff9f45;
+      --gold-dark: #cc5200;
+      --cyan-sky: #00d2ff;
+      --emerald-peace: #00f5d4;
+      --border-glass: rgba(0, 210, 255, 0.5);
+      --card-radius: 14px;
+    }
+
+    /* PHONG CÁCH 4: HOẠT HÌNH 3D SỐNG ĐỘNG (3D PIXAR / ANIMATION STYLE) */
+    body.style-cartoon {
+      --bg-deep: #1e1b4b;
+      --bg-navy: #312e81;
+      --bg-card: rgba(49, 46, 129, 0.94);
+      --bg-panel: rgba(67, 56, 202, 0.65);
+      --gold-primary: #facc15;
+      --gold-light: #fef08a;
+      --gold-dark: #eab308;
+      --cyan-sky: #38bdf8;
+      --emerald-peace: #4ade80;
+      --border-glass: rgba(250, 204, 21, 0.65);
+      --card-radius: 34px;
+      --shadow-elevated: 0 14px 0 rgba(15, 23, 42, 0.6), 0 28px 50px rgba(0, 0, 0, 0.7);
+    }
+
+    body.style-cartoon .giant-art-frame img {
+      filter: saturate(1.38) contrast(1.12) brightness(1.04);
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html, body {
+      width: 100%;
+      height: 100%;
+      background-color: var(--bg-deep);
+      color: var(--text-main);
+      font-family: var(--font-body);
+      overflow: hidden;
+      user-select: none;
+      transition: background-color 0.4s ease, color 0.4s ease;
+    }
+
+    html.mode-scroll,
+    body.mode-scroll {
+      height: auto !important;
+      overflow-y: auto !important;
+      overflow-x: hidden !important;
+    }
+
+    h1, h2, h3, .slide-title, .senior-heading, .art-caption, .poem-box-large {
+      text-wrap: balance;
+      word-break: keep-all;
+      overflow-wrap: break-word;
+    }
+
+    p, .senior-text, li, .teleprompter-text {
+      text-wrap: pretty;
+      word-break: keep-all;
+      overflow-wrap: break-word;
+    }
+
+    #cosmosCanvas {
+      position: fixed;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      z-index: 0;
+      pointer-events: none;
+    }
+
+    body.style-handdrawn #cosmosCanvas {
+      opacity: 0.15;
+    }
+
+    /* =========================================================================
+       TẦNG 1: THANH ĐIỀU KHIỂN ĐỈNH (TOP HUD CONTROL BAR - 68PX)
+       ========================================================================= */
+    .hud-topbar {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: var(--topbar-h);
+      background: rgba(3, 7, 20, 0.96);
+      backdrop-filter: blur(22px);
+      border-bottom: 2px solid var(--border-glass);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 12px;
+      z-index: 1000;
+      gap: 6px;
+      flex-wrap: nowrap;
+    }
+
+    .brand-pilot {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .pilot-wings-badge {
+      background: linear-gradient(135deg, var(--gold-primary), var(--gold-dark));
+      color: #030714;
+      font-weight: 800;
+      font-size: 0.72rem;
+      padding: 6px 10px;
+      border-radius: 999px;
+      letter-spacing: 0.4px;
+      text-transform: uppercase;
+      box-shadow: 0 0 14px rgba(245, 196, 81, 0.45);
+      white-space: nowrap;
+    }
+
+    .slide-select-dropdown, .style-select-dropdown {
+      background: rgba(14, 29, 62, 0.96);
+      color: #ffe9ad;
+      border: 1px solid rgba(245, 196, 81, 0.45);
+      padding: 6px 9px;
+      border-radius: 999px;
+      font-family: 'Be Vietnam Pro', sans-serif;
+      font-size: 0.74rem;
+      font-weight: 700;
+      cursor: pointer;
+      outline: none;
+    }
+
+    .slide-select-dropdown {
+      max-width: 195px;
+    }
+
+    .style-select-dropdown {
+      border-color: rgba(56, 189, 248, 0.55);
+      color: #38bdf8;
+    }
+
+    .mode-switcher, .voice-Active-group {
+      display: flex;
+      align-items: center;
+      gap: 2px;
+      background: rgba(12, 27, 58, 0.95);
+      padding: 3px;
+      border-radius: 999px;
+      border: 1px solid rgba(56, 189, 248, 0.42);
+    }
+
+    .voice-Active-group {
+      border-color: rgba(245, 196, 81, 0.45);
+    }
+
+    .mode-btn, .voice-opt-btn {
+      background: transparent;
+      border: none;
+      color: #cbd5e1;
+      padding: 5px 9px;
+      border-radius: 999px;
+      font-family: 'Be Vietnam Pro', sans-serif;
+      font-size: 0.73rem;
+      font-weight: 700;
+      cursor: pointer;
+      transition: all 0.2s ease;
+      white-space: nowrap;
+    }
+
+    .mode-btn:hover, .voice-opt-btn:hover {
+      color: #fff;
+    }
+
+    .mode-btn.active {
+      background: linear-gradient(135deg, #38bdf8, #0284c7);
+      color: #fff;
+      box-shadow: 0 3px 10px rgba(56, 189, 248, 0.45);
+    }
+
+    .voice-opt-btn.active {
+      background: linear-gradient(135deg, #f5c451, #c48a10);
+      color: #030714;
+      font-weight: 800;
+      box-shadow: 0 2px 10px rgba(245, 196, 81, 0.5);
+    }
+
+    /* Thanh trượt tốc độ đọc mượt mà ngay trên Top Bar */
+    .speed-slider-pill {
+      display: flex;
+      align-items: center;
+      gap: 5px;
+      background: rgba(12, 27, 58, 0.95);
+      padding: 4px 10px;
+      border-radius: 999px;
+      border: 1px solid rgba(52, 211, 153, 0.45);
+      color: #fff;
+      font-family: 'Be Vietnam Pro', sans-serif;
+      font-size: 0.73rem;
+      font-weight: 700;
+      white-space: nowrap;
+    }
+
+    .speed-step-btn {
+      background: rgba(255, 255, 255, 0.1);
+      border: none;
+      color: #ffe9ad;
+      width: 20px;
+      height: 20px;
+      border-radius: 50%;
+      font-weight: 800;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.8rem;
+      line-height: 1;
+    }
+
+    .speed-step-btn:hover {
+      background: var(--gold-primary);
+      color: #030714;
+    }
+
+    .top-speed-range {
+      width: 78px;
+      accent-color: #34d399;
+      cursor: pointer;
+      height: 5px;
+    }
+
+    .speed-val-badge {
+      color: #34d399;
+      font-weight: 800;
+      min-width: 38px;
+      text-align: center;
+    }
+
+    .voice-master-bar {
+      display: flex;
+      align-items: center;
+      gap: 5px;
+    }
+
+    .btn-speak-master {
+      background: linear-gradient(135deg, #10b981, #059669);
+      color: #fff;
+      border: 1px solid rgba(255, 255, 255, 0.4);
+      padding: 7px 13px;
+      border-radius: 999px;
+      font-family: 'Be Vietnam Pro', sans-serif;
+      font-size: 0.76rem;
+      font-weight: 800;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      gap: 5px;
+      box-shadow: 0 0 18px rgba(16, 185, 129, 0.5);
+      transition: all 0.25s ease;
+      white-space: nowrap;
+    }
+
+    .btn-speak-master:hover {
+      transform: scale(1.03);
+      box-shadow: 0 0 25px rgba(16, 185, 129, 0.75);
+    }
+
+    .btn-speak-master.speaking {
+      background: linear-gradient(135deg, #f59e0b, #dc2626);
+      box-shadow: 0 0 25px rgba(245, 158, 11, 0.75);
+      animation: pulseGlow 1.5s infinite;
+    }
+
+    @keyframes pulseGlow {
+      0%, 100% { transform: scale(1); }
+      50% { transform: scale(1.03); }
+    }
+
+    .btn-voice-studio {
+      background: rgba(245, 196, 81, 0.16);
+      border: 1px solid rgba(245, 196, 81, 0.4);
+      color: #ffe9ad;
+      padding: 6px 10px;
+      border-radius: 999px;
+      font-family: 'Be Vietnam Pro', sans-serif;
+      font-size: 0.73rem;
+      font-weight: 700;
+      cursor: pointer;
+      transition: all 0.2s;
+      white-space: nowrap;
+    }
+
+    .btn-voice-studio:hover {
+      background: #f5c451;
+      color: #030714;
+    }
+
+    .btn-github-deploy {
+      background: linear-gradient(135deg, #3b82f6, #1d4ed8);
+      border: 1px solid rgba(147, 197, 253, 0.5);
+      color: #ffffff;
+      padding: 6px 11px;
+      border-radius: 999px;
+      font-family: 'Be Vietnam Pro', sans-serif;
+      font-size: 0.73rem;
+      font-weight: 800;
+      cursor: pointer;
+      transition: all 0.2s;
+      white-space: nowrap;
+    }
+
+    .voice-toast {
+      position: fixed;
+      top: 78px;
+      right: 22px;
+      background: rgba(6, 19, 45, 0.96);
+      border: 2px solid #f5c451;
+      color: #ffe9ad;
+      padding: 9px 16px;
+      border-radius: 14px;
+      font-family: 'Be Vietnam Pro', sans-serif;
+      font-size: 0.85rem;
+      font-weight: 700;
+      z-index: 2500;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.8);
+      opacity: 0;
+      transform: translateY(-10px);
+      pointer-events: none;
+      transition: all 0.3s ease;
+    }
+
+    .voice-toast.show {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* =========================================================================
+       TẦNG 2: KHUNG TRÌNH CHIẾU CHÍNH (ZERO-OVERLAP: KHÔNG BAO GIỜ BỊ PHỤ ĐỀ CHE)
+       ========================================================================= */
+    .deck-viewport {
+      position: relative;
+      width: 100vw;
+      height: calc(100vh - var(--topbar-h) - var(--bottomdock-h));
+      margin-top: var(--topbar-h);
+      z-index: 10;
+      overflow: hidden;
+    }
+
+    body.mode-scroll .deck-viewport {
+      height: auto !important;
+      overflow: visible !important;
+      margin-bottom: 80px;
+    }
+
+    .slides-track {
+      width: 100%;
+      height: 100%;
+      display: flex;
+      /* Chuyển cảnh siêu mượt Ultra-Smooth Cubic-Bezier */
+      transition: transform 0.82s cubic-bezier(0.16, 1, 0.3, 1);
+      will-change: transform;
+    }
+
+    body.mode-horizontal .slides-track {
+      flex-direction: row;
+    }
+
+    body.mode-vertical .slides-track {
+      flex-direction: column;
+    }
+
+    body.mode-scroll .slides-track {
+      display: block !important;
+      height: auto !important;
+      transform: none !important;
+      padding-bottom: 90px;
+    }
+
+    .slide {
+      flex: 0 0 100%;
+      width: 100vw;
+      min-width: 100vw;
+      height: calc(100vh - var(--topbar-h) - var(--bottomdock-h));
+      min-height: calc(100vh - var(--topbar-h) - var(--bottomdock-h));
+      padding: 10px 2vw;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      overflow-y: auto;
+      overflow-x: hidden;
+    }
+
+    body.mode-scroll .slide {
+      height: auto !important;
+      min-height: 86vh;
+      padding: 24px 2vw;
+      margin-bottom: 24px;
+    }
+
+    /* Hiệu ứng chuyển cảnh chiều sâu mượt mà trên từng Slide */
+    .slide-inner {
+      width: 96vw;
+      max-width: 1840px;
+      background: var(--bg-card);
+      backdrop-filter: blur(22px);
+      border: 2px solid var(--border-glass);
+      border-radius: var(--card-radius);
+      padding: 18px 28px 22px 28px;
+      box-shadow: var(--shadow-elevated);
+      position: relative;
+      overflow: hidden;
+      transform: scale(0.965) translateY(10px);
+      opacity: 0.55;
+      transition:
+        transform 0.78s cubic-bezier(0.16, 1, 0.3, 1),
+        opacity 0.65s ease,
+        border-color 0.4s ease,
+        box-shadow 0.4s ease,
+        background-color 0.4s ease;
+    }
+
+    .slide.active-slide .slide-inner,
+    body.mode-scroll .slide-inner {
+      transform: scale(1) translateY(0);
+      opacity: 1;
+    }
+
+    .slide-inner.narrating-glow {
+      border-color: var(--gold-primary);
+      box-shadow: 0 0 48px rgba(245, 196, 81, 0.38), var(--shadow-elevated);
+    }
+
+    .slide-inner::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 5px;
+      background: linear-gradient(90deg, transparent, var(--gold-primary), var(--cyan-sky), var(--gold-primary), transparent);
+    }
+
+    .slide-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 14px;
+      border-bottom: 1px solid rgba(148, 163, 184, 0.22);
+      padding-bottom: 10px;
+      gap: 16px;
+    }
+
+    .slide-tag {
+      font-size: 0.82rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 1.3px;
+      color: var(--cyan-sky);
+      display: block;
+      margin-bottom: 2px;
+    }
+
+    .slide-title {
+      font-family: var(--font-heading);
+      font-size: clamp(1.48rem, 1.95vw, 2.02rem);
+      font-weight: 800;
+      color: var(--gold-light);
+      line-height: 1.24;
+    }
+
+    .btn-slide-voice {
+      background: rgba(52, 211, 153, 0.18);
+      border: 2px solid rgba(52, 211, 153, 0.6);
+      color: var(--emerald-peace);
+      padding: 7px 16px;
+      border-radius: 999px;
+      font-family: 'Be Vietnam Pro', sans-serif;
+      font-size: 0.84rem;
+      font-weight: 800;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      white-space: nowrap;
+      transition: all 0.2s;
+    }
+
+    .btn-slide-voice:hover {
+      background: var(--emerald-peace);
+      color: #030714;
+    }
+
+    .senior-stage {
+      display: grid;
+      grid-template-columns: 1.22fr 0.88fr;
+      gap: 24px;
+      align-items: stretch;
+    }
+
+    .senior-panel {
+      background: var(--bg-panel);
+      border: 1px solid rgba(148, 163, 184, 0.22);
+      border-radius: 20px;
+      padding: 20px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      position: relative;
+      perspective: 1200px;
+      transition: background-color 0.4s ease;
+    }
+
+    /* KHUNG SÂN KHẤU HÌNH ẢNH ĐỘNG 4D */
+    .giant-art-frame {
+      position: relative;
+      width: 100%;
+      height: 380px;
+      border-radius: 16px;
+      overflow: hidden;
+      border: 2px solid var(--border-glass);
+      box-shadow:
+        0 16px 40px rgba(0, 0, 0, 0.65),
+        0 0 24px rgba(56, 189, 248, 0.18);
+      background: #040d21;
+      transform-style: preserve-3d;
+      transition: transform 0.25s ease-out, box-shadow 0.3s ease;
+    }
+
+    .giant-art-frame img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      animation: kenBurns4D 16s ease-in-out infinite alternate;
+      transition: filter 0.5s ease;
+      filter: contrast(1.06) saturate(1.12);
+    }
+
+    @keyframes kenBurns4D {
+      0% { transform: scale(1.02) translate(0, 0); }
+      50% { transform: scale(1.09) translate(-1%, -0.8%); }
+      100% { transform: scale(1.04) translate(1%, -1%); }
+    }
+
+    .giant-art-frame::after {
+      content: "";
+      position: absolute;
+      inset: -40%;
+      background: linear-gradient(
+        115deg,
+        transparent 35%,
+        rgba(255, 233, 173, 0.14) 48%,
+        rgba(56, 189, 248, 0.18) 52%,
+        transparent 65%
+      );
+      animation: holoSweep4D 7s ease-in-out infinite;
+      pointer-events: none;
+      z-index: 3;
+    }
+
+    @keyframes holoSweep4D {
+      0% { transform: translateX(-65%) rotate(8deg); }
+      50% { transform: translateX(65%) rotate(8deg); }
+      100% { transform: translateX(-65%) rotate(8deg); }
+    }
+
+    .fx-4d-canvas {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+      z-index: 2;
+    }
+
+    .live-motion-overlay {
+      position: absolute;
+      inset: 0;
+      pointer-events: none;
+      z-index: 3;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transform: translateZ(50px);
+    }
+
+    .a388-float-anim {
+      animation: a388FloatGlide4D 4s ease-in-out infinite;
+    }
+
+    @keyframes a388FloatGlide4D {
+      0%, 100% { transform: translateY(0px) scale(1) rotate(-0.6deg); }
+      50% { transform: translateY(-11px) scale(1.03) rotate(0.9deg); }
+    }
+
+    .radar-sweep-anim {
+      transform-origin: center;
+      animation: radarSpin 6s linear infinite;
+    }
+
+    @keyframes radarSpin {
+      from { transform: rotate(0deg); }
+      to { transform: rotate(360deg); }
+    }
+
+    .pulse-ring-anim {
+      animation: ringExpand 2.6s ease-out infinite;
+      transform-origin: center;
+    }
+
+    @keyframes ringExpand {
+      0% { transform: scale(0.65); opacity: 0.95; }
+      100% { transform: scale(1.55); opacity: 0; }
+    }
+
+    .a388-badge-overlay {
+      position: absolute;
+      top: 12px;
+      left: 14px;
+      background: rgba(3, 8, 22, 0.9);
+      border: 1.5px solid #f5c451;
+      color: #ffe9ad;
+      font-family: 'Be Vietnam Pro', sans-serif;
+      font-size: 0.8rem;
+      font-weight: 800;
+      padding: 5px 13px;
+      border-radius: 999px;
+      letter-spacing: 0.5px;
+      z-index: 5;
+      backdrop-filter: blur(8px);
+      box-shadow: 0 4px 15px rgba(0,0,0,0.6);
+    }
+
+    .art-image-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(180deg, rgba(3,8,22,0.02) 48%, rgba(3,8,22,0.92) 100%);
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      padding: 16px 20px;
+      z-index: 4;
+    }
+
+    .art-caption {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.25rem;
+      font-weight: 700;
+      color: #ffe9ad;
+      text-shadow: 0 2px 8px rgba(0,0,0,0.95);
+    }
+
+    .senior-heading {
+      font-size: clamp(1.26rem, 1.44vw, 1.48rem);
+      font-weight: 800;
+      color: var(--gold-light);
+      margin-bottom: 12px;
+      line-height: 1.36;
+    }
+
+    .senior-text {
+      font-size: clamp(1.01rem, 1.12vw, 1.12rem);
+      line-height: 1.68;
+      color: var(--text-muted);
+      margin-bottom: 10px;
+    }
+
+    .senior-text strong {
+      color: var(--text-main);
+      font-weight: 700;
+    }
+
+    .poem-box-large {
+      background: linear-gradient(135deg, rgba(245, 196, 81, 0.18), rgba(56, 189, 248, 0.1));
+      border-left: 5px solid var(--gold-primary);
+      padding: 14px 18px;
+      border-radius: 0 16px 16px 0;
+      font-family: var(--font-heading);
+      font-size: clamp(1.12rem, 1.26vw, 1.28rem);
+      line-height: 1.62;
+      color: var(--text-main);
+      margin: 10px 0;
+    }
+
+    .transform-row-large {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 10px;
+      background: rgba(148, 163, 184, 0.08);
+      border: 2px solid rgba(148, 163, 184, 0.22);
+      padding: 12px 15px;
+      border-radius: 15px;
+      margin-top: 7px;
+      transition: all 0.3s ease;
+    }
+
+    .transform-row-large.active-step {
+      border-color: var(--gold-primary);
+      background: rgba(245, 196, 81, 0.18);
+      transform: scale(1.01);
+      box-shadow: 0 0 20px rgba(245, 196, 81, 0.25);
+    }
+
+    .state-old-lg {
+      color: #fecdd3;
+      font-weight: 600;
+      font-size: clamp(0.85rem, 0.95vw, 0.98rem);
+      flex: 1;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+
+    .verb-bridge-lg {
+      background: linear-gradient(135deg, var(--gold-primary), var(--gold-dark));
+      color: #030714;
+      font-weight: 800;
+      font-size: 0.76rem;
+      padding: 5px 12px;
+      border-radius: 999px;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      white-space: nowrap;
+      box-shadow: 0 0 14px rgba(245, 196, 81, 0.45);
+      flex-shrink: 0;
+    }
+
+    .state-new-lg {
+      color: var(--emerald-peace);
+      font-weight: 800;
+      font-size: clamp(0.85rem, 0.96vw, 1rem);
+      flex: 1;
+      text-align: right;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+
+    .interactive-btn-lg {
+      background: linear-gradient(135deg, var(--gold-primary), var(--gold-dark));
+      color: #030714;
+      border: none;
+      padding: 11px 20px;
+      border-radius: 999px;
+      font-family: 'Be Vietnam Pro', sans-serif;
+      font-weight: 800;
+      font-size: 0.94rem;
+      cursor: pointer;
+      transition: all 0.22s ease;
+      box-shadow: 0 6px 18px rgba(245, 196, 81, 0.4);
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      white-space: nowrap;
+    }
+
+    .interactive-btn-lg:hover {
+      transform: translateY(-2px) scale(1.02);
+      box-shadow: 0 8px 25px rgba(245, 196, 81, 0.65);
+    }
+
+    .btn-outline-lg {
+      background: rgba(56, 189, 248, 0.14);
+      color: var(--cyan-sky);
+      border: 2px solid rgba(56, 189, 248, 0.5);
+      padding: 9px 16px;
+      border-radius: 999px;
+      font-family: 'Be Vietnam Pro', sans-serif;
+      font-weight: 700;
+      font-size: 0.9rem;
+      cursor: pointer;
+      transition: all 0.2s;
+      white-space: nowrap;
+    }
+
+    .btn-outline-lg:hover, .btn-outline-lg.active {
+      background: var(--cyan-sky);
+      color: #030714;
+      box-shadow: 0 0 18px rgba(56, 189, 248, 0.6);
+    }
+
+    .pyramid-container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 8px;
+      padding: 8px 0;
+    }
+
+    .pyramid-tier {
+      height: 48px;
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 800;
+      font-size: 0.95rem;
+      cursor: pointer;
+      transition: all 0.25s ease;
+      border: 2px solid rgba(255, 255, 255, 0.32);
+      color: #fff;
+      text-shadow: 0 2px 4px rgba(0,0,0,0.7);
+      white-space: nowrap;
+    }
+
+    .pyramid-tier:hover, .pyramid-tier.active {
+      transform: scale(1.04) translateY(-2px);
+      border-color: #fff;
+      box-shadow: 0 0 26px rgba(245, 196, 81, 0.85);
+    }
+
+    .tier-6 { width: 42%; background: linear-gradient(90deg, #f59e0b, #fbbf24); color: #030714; text-shadow: none; }
+    .tier-5 { width: 54%; background: linear-gradient(90deg, #8b5cf6, #a78bfa); }
+    .tier-4 { width: 66%; background: linear-gradient(90deg, #0ea5e9, #38bdf8); }
+    .tier-3 { width: 78%; background: linear-gradient(90deg, #10b981, #34d399); }
+    .tier-2 { width: 90%; background: linear-gradient(90deg, #475569, #64748b); }
+    .tier-1 { width: 100%; background: linear-gradient(90deg, #334155, #475569); }
+
+    .sky-simulator-lg {
+      position: relative;
+      height: 370px;
+      border-radius: 16px;
+      overflow: hidden;
+      border: 2px solid rgba(56, 189, 248, 0.55);
+      background: linear-gradient(180deg,
+        #020617 0%,
+        #0c4a6e 34%,
+        #38bdf8 48%,
+        #475569 55%,
+        #1e293b 82%,
+        #0f172a 100%
+      );
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      padding: 16px;
+    }
+
+    .tropopause-line {
+      position: absolute;
+      top: 48%;
+      left: 0;
+      right: 0;
+      border-top: 3px dashed #f5c451;
+      z-index: 4;
+      display: flex;
+      justify-content: flex-end;
+      padding-right: 14px;
+    }
+
+    .tropopause-label {
+      background: #f5c451;
+      color: #030714;
+      font-size: 0.78rem;
+      font-weight: 800;
+      padding: 4px 14px;
+      border-radius: 999px;
+      transform: translateY(-50%);
+    }
+
+    .plane-actor {
+      position: absolute;
+      left: 50%;
+      transform: translateX(-50%);
+      transition: bottom 0.55s cubic-bezier(0.22, 1, 0.36, 1);
+      z-index: 10;
+      filter: drop-shadow(0 14px 22px rgba(0,0,0,0.88));
+    }
+
+    .giant-windshield-mud {
+      position: absolute;
+      inset: 0;
+      background: rgba(15, 23, 42, 0.86);
+      backdrop-filter: blur(12px);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      color: #fecdd3;
+      font-weight: 800;
+      font-size: 1.2rem;
+      text-align: center;
+      padding: 28px;
+      transition: opacity 0.6s ease;
+      z-index: 4;
+    }
+
+    .giant-windshield-mud.clean {
+      opacity: 0;
+      pointer-events: none;
+    }
+
+    /* Chữ ký Tuấn Tử Tế Từ Tâm ở góc dưới bên phải thu nhỏ tinh tế (0.82rem) */
+    .signature-watermark {
+      position: absolute;
+      bottom: 6px;
+      right: 22px;
+      font-family: 'Dancing Script', cursive;
+      font-size: 0.82rem;
+      color: var(--gold-light);
+      opacity: 0.65;
+      letter-spacing: 0.4px;
+      pointer-events: none;
+    }
+
+    /* =========================================================================
+       TẦNG 3: DẢI STUDIO CHÂN TRANG TÍCH HỢP PHỤ ĐỀ & ĐIỀU HƯỚNG (66PX - KHÔNG CHE SLIDE)
+       ========================================================================= */
+    .bottom-studio-dock {
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      height: var(--bottomdock-h);
+      background: rgba(3, 7, 20, 0.96);
+      backdrop-filter: blur(20px);
+      border-top: 2px solid var(--border-glass);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 20px;
+      gap: 16px;
+      z-index: 1000;
+      box-shadow: 0 -10px 30px rgba(0, 0, 0, 0.75);
+    }
+
+    .dock-nav-cluster {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      flex-shrink: 0;
+    }
+
+    .nav-action-btn {
+      background: rgba(245, 196, 81, 0.18);
+      border: 1px solid rgba(245, 196, 81, 0.45);
+      color: #ffe9ad;
+      padding: 7px 14px;
+      border-radius: 999px;
+      font-family: 'Be Vietnam Pro', sans-serif;
+      font-size: 0.8rem;
+      font-weight: 800;
+      cursor: pointer;
+      transition: all 0.2s;
+      white-space: nowrap;
+    }
+
+    .nav-action-btn:hover {
+      background: #f5c451;
+      color: #030714;
+    }
+
+    .dots-wrapper {
+      display: flex;
+      align-items: center;
+      gap: 5px;
+    }
+
+    .slide-dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 999px;
+      background: rgba(255, 255, 255, 0.28);
+      cursor: pointer;
+      transition: all 0.25s;
+    }
+
+    .slide-dot.active {
+      width: 22px;
+      background: #f5c451;
+      box-shadow: 0 0 10px #f5c451;
+    }
+
+    /* Hộp chữ Phụ đề Bài giảng tích hợp giữa dải chân trang - Không bao giờ che nội dung Slide */
+    .dock-teleprompter-stage {
+      flex: 1;
+      height: 46px;
+      background: rgba(12, 27, 58, 0.9);
+      border: 1.5px solid rgba(245, 196, 81, 0.4);
+      border-radius: 999px;
+      padding: 0 18px;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      overflow: hidden;
+      transition: border-color 0.3s, box-shadow 0.3s;
+    }
+
+    .dock-teleprompter-stage.active-speaking {
+      border-color: #34d399;
+      box-shadow: 0 0 20px rgba(52, 211, 153, 0.3);
+    }
+
+    .voice-wave-bars {
+      display: flex;
+      align-items: center;
+      gap: 3px;
+      height: 22px;
+      flex-shrink: 0;
+      opacity: 0.35;
+    }
+
+    .dock-teleprompter-stage.active-speaking .voice-wave-bars {
+      opacity: 1;
+    }
+
+    .voice-wave-bars span {
+      width: 4px;
+      height: 8px;
+      background: #34d399;
+      border-radius: 99px;
+    }
+
+    .dock-teleprompter-stage.active-speaking .voice-wave-bars span {
+      animation: waveBounce 0.8s infinite ease-in-out;
+    }
+
+    .voice-wave-bars span:nth-child(2) { animation-delay: 0.15s; height: 16px; }
+    .voice-wave-bars span:nth-child(3) { animation-delay: 0.3s; height: 22px; background: #f5c451; }
+    .voice-wave-bars span:nth-child(4) { animation-delay: 0.45s; height: 12px; }
+
+    @keyframes waveBounce {
+      0%, 100% { transform: scaleY(0.4); }
+      50% { transform: scaleY(1.15); }
+    }
+
+    .teleprompter-text {
+      flex: 1;
+      font-family: 'Be Vietnam Pro', sans-serif;
+      font-size: clamp(0.88rem, 1.02vw, 1.04rem);
+      font-weight: 700;
+      color: #ffe9ad;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+
+    .btn-stop-inline {
+      background: rgba(251, 113, 133, 0.2);
+      border: 1px solid #fb7185;
+      color: #fecdd3;
+      padding: 4px 11px;
+      border-radius: 999px;
+      font-family: 'Be Vietnam Pro', sans-serif;
+      font-size: 0.74rem;
+      font-weight: 800;
+      cursor: pointer;
+      display: none;
+      flex-shrink: 0;
+    }
+
+    .dock-teleprompter-stage.active-speaking .btn-stop-inline {
+      display: inline-block;
+    }
+
+    .voice-modal-backdrop {
+      position: fixed;
+      inset: 0;
+      background: rgba(2, 6, 23, 0.88);
+      backdrop-filter: blur(14px);
+      z-index: 2000;
+      display: none;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+    }
+
+    .voice-modal-backdrop.open {
+      display: flex;
+    }
+
+    .voice-modal-card {
+      width: 100%;
+      max-width: 780px;
+      background: #081530;
+      border: 2px solid #f5c451;
+      border-radius: 24px;
+      padding: 26px 30px;
+      box-shadow: 0 25px 70px rgba(0,0,0,0.95);
+      color: #fff;
+      font-family: 'Be Vietnam Pro', sans-serif;
+    }
+
+    .code-box-ps {
+      background: #030816;
+      border: 1px solid rgba(56, 189, 248, 0.45);
+      border-radius: 12px;
+      padding: 14px;
+      font-family: Consolas, monospace;
+      font-size: 0.82rem;
+      color: #38bdf8;
+      overflow-x: auto;
+      white-space: pre-wrap;
+      line-height: 1.5;
+      margin: 10px 0;
+      user-select: text;
+    }
+
+    @media (max-width: 1240px) {
+      .senior-stage {
+        grid-template-columns: 1fr;
+      }
+      .giant-art-frame {
+        height: 290px;
+      }
+      .dots-wrapper {
+        display: none;
+      }
+      .teleprompter-text {
+        white-space: normal;
+        line-height: 1.25;
+      }
+    }
+  </style>
+</head>
+<body class="mode-horizontal style-cinematic">
+
+  <canvas id="cosmosCanvas"></canvas>
+
+  <!-- Thông báo nổi xác nhận -->
+  <div class="voice-toast" id="voiceToast">🔊 Đã áp dụng cài đặt mới!</div>
+
+  <!-- =========================================================================
+       TẦNG 1: THANH CÔNG CỤ ĐỈNH (CÓ THANH TRƯỢT TỐC ĐỘ & BỘ CHỌN 4 PHONG CÁCH)
+       ========================================================================= -->
+  <header class="hud-topbar">
+    <div class="brand-pilot">
+      <span class="pilot-wings-badge">✈️ A388 • V08</span>
+      <select class="slide-select-dropdown" id="slideJumpSelect" onchange="goToSlide(parseInt(this.value, 10), true)" aria-label="Chọn nhanh trang bài giảng">
+        <option value="0">01. ✈️ Mở Đầu: Độ Cao A388</option>
+        <option value="1">02. 🌟 Thông Điệp 1: Thơ Bác Hồ</option>
+        <option value="2">03. ⚖️ Thông Điệp 2: Bình Tông</option>
+        <option value="3">04. 🌌 Mục a: Tiểu Vũ Trụ</option>
+        <option value="4">05. 🌱 Mục b: Gán Nghĩa</option>
+        <option value="5">06. 👑 Mục c: Chuyên Cơ A388</option>
+        <option value="6">07. 🏛️ Tháp 6 Tầng Nhận Thức</option>
+        <option value="8">08. ⛈️ Giải Mã Tầng 1 - 2 - 3</option>
+        <option value="8">09. 💎 Giải Mã Tầng 4 - 5 - 6</option>
+        <option value="9">10. ☀️ Khoa Học Trên 10.000m</option>
+        <option value="10">11. 🪟 Ví Dụ 1: Kính Chắn Gió</option>
+        <option value="11">12. 📻 Ví Dụ 2: Tần Số Radio</option>
+        <option value="12">13. 👁️ Ví Dụ 3: Tiêu Cự 3D</option>
+        <option value="13">14. 🌊 Ví Dụ 4: Đáy Biển 30m</option>
+        <option value="14">15. 🧭 Dịch Chuyển Tâm Thức</option>
+        <option value="15">16. 🏆 Tổng Kết: 5 Khẩu Quyết</option>
+      </select>
+
+      <!-- Bộ chọn 4 Phong Cách Nghệ Thuật Trực Quan -->
+      <select class="style-select-dropdown" id="artStyleSelect" onchange="setVisualArtStyle(this.value)" aria-label="Chọn phong cách nghệ thuật">
+        <option value="cinematic">🎬 Phong cách: Điện Ảnh 4D</option>
+        <option value="handdrawn">✍️ Phong cách: Vẽ Tay &amp; Viết Tay</option>
+        <option value="infographic">📊 Phong cách: Đồ Hoạ Infographic</option>
+        <option value="cartoon">🎠 Phong cách: Hoạt Hình 3D</option>
+      </select>
+    </div>
+
+    <!-- Bộ chuyển đổi Lật Ngang / Lật Dọc / Cuộn Toàn Trang -->
+    <div class="mode-switcher" role="group" aria-label="Chế độ lật trang">
+      <button class="mode-btn active" id="btnHorizontal" onclick="setDeckMode('horizontal')">↔ Ngang</button>
+      <button class="mode-btn" id="btnVertical" onclick="setDeckMode('vertical')">↕ Dọc</button>
+      <button class="mode-btn" id="btnScroll" onclick="setDeckMode('scroll')">☰ Toàn Trang</button>
+    </div>
+
+    <!-- Bộ chọn Giọng Đọc Nam / Nữ -->
+    <div class="voice-Active-group" role="group" aria-label="Chọn giọng đọc Nam hoặc Nữ">
+      <button class="voice-opt-btn active" id="btnVoiceMale" onclick="setVoiceGender('male', true)">
+        👨 Nam
+      </button>
+      <button class="voice-opt-btn" id="btnVoiceFemale" onclick="setVoiceGender('female', true)">
+        👩 Nữ
+      </button>
+    </div>
+
+    <!-- Thanh Trượt Tùy Chỉnh Tốc Độ Đọc Liên Tục (0.50x -> 1.80x) -->
+    <div class="speed-slider-pill" title="Kéo thanh trượt để chỉnh tốc độ đọc phù hợp">
+      <span>Tốc độ:</span>
+      <button class="speed-step-btn" onclick="stepSpeechSpeed(-0.05)" title="Giảm tốc độ">-</button>
+      <input type="range" class="top-speed-range" id="topSpeedSlider" min="0.5" max="1.8" step="0.05" value="1.0" oninput="onTopSpeedSliderInput(this.value)" onchange="onTopSpeedSliderCommit(this.value)" />
+      <button class="speed-step-btn" onclick="stepSpeechSpeed(0.05)" title="Tăng tốc độ">+</button>
+      <span class="speed-val-badge" id="topSpeedVal">1.00x</span>
+    </div>
+
+    <!-- Cụm nút Phát Bài Giảng, Phòng Thu & Đẩy Lên GitHub -->
+    <div class="voice-master-bar">
+      <button class="btn-speak-master" id="btnMasterSpeak" onclick="toggleAutoLecture()">
+        <span id="speakIcon">🎙️</span>
+        <span id="speakLabel">BẤM NÚT NÓI</span>
+      </button>
+      <button class="btn-voice-studio" onclick="openVoiceModal()" title="Phòng thu giọng thật & tùy chỉnh">⚙️ Thu Âm</button>
+      <button class="btn-github-deploy" onclick="openGitHubModal()" title="Đóng gói đưa lên Website GitHub Pages">🚀 GitHub</button>
+      <button class="btn-voice-studio" onclick="toggleFullScreen()" title="Toàn màn hình">⛶</button>
+    </div>
+  </header>
+
+  <!-- =========================================================================
+       TẦNG 2: KHUNG TRÌNH CHIẾU MỞ RỘNG 96VW (16 TRANG SÂN KHẤU ĐỘNG 4D A388)
+       ========================================================================= -->
+  <main class="deck-viewport" id="deckViewport">
+    <div class="slides-track" id="slidesTrack">
+
+      <!-- =========================================================
+           TRANG 01: MỞ ĐẦU BUỒNG LÁI SIÊU CHUYÊN CƠ A388
+           ========================================================= -->
+      <section class="slide active-slide">
+        <div class="slide-inner">
+          <div class="slide-header">
+            <div>
+              <span class="slide-tag">✈️ TRANG 01 / 16 • KHỞI ĐỘNG BUỒNG LÁI SIÊU CHUYÊN CƠ HIỆN ĐẠI NHẤT AIRBUS A388</span>
+              <h1 class="slide-title">🧭 ĐỘ CAO NHẬN THỨC QUYẾT ĐỊNH SỰ BÌNH AN CỦA CHUYẾN&nbsp;BAY</h1>
+            </div>
+            <button class="btn-slide-voice" onclick="speakSingleSlide(0)">🔊 Giảng Trang Này</button>
+          </div>
+
+          <div class="senior-stage">
+            <div class="senior-panel">
+              <div class="giant-art-frame" data-fx="jet-clouds">
+                <span class="a388-badge-overlay">✈️ SIÊU CHUYÊN CƠ A388 SUPERJUMBO • 2 TẦNG • 4 ĐỘNG CƠ</span>
+                <img id="slide1HeroImg" src="https://images.unsplash.com/photo-1540339832862-474599807836?auto=format&fit=crop&w=1600&q=85" alt="Siêu chuyên cơ A388 bay trên biển mây" />
+                <canvas class="fx-4d-canvas"></canvas>
+                <div class="live-motion-overlay">
+                  <svg viewBox="0 0 600 320" style="width:94%; height:94%;">
+                    <circle cx="300" cy="155" r="118" fill="none" stroke="rgba(56,189,248,0.5)" stroke-width="2" stroke-dasharray="8 6" class="radar-sweep-anim"/>
+                    <circle cx="300" cy="155" r="84" fill="none" stroke="rgba(245,196,81,0.55)" stroke-width="1.8"/>
+                    <line x1="130" y1="155" x2="470" y2="155" stroke="rgba(52,211,153,0.65)" stroke-width="2"/>
+                    <g class="a388-float-anim">
+                      <path d="M210,158 L390,158 M265,146 L335,146 M300,122 L300,162" stroke="#f5c451" stroke-width="4.5" stroke-linecap="round"/>
+                      <circle cx="238" cy="165" r="6" fill="#38bdf8"/>
+                      <circle cx="268" cy="163" r="6" fill="#38bdf8"/>
+                      <circle cx="332" cy="163" r="6" fill="#38bdf8"/>
+                      <circle cx="362" cy="165" r="6" fill="#38bdf8"/>
+                    </g>
+                    <text x="300" y="30" fill="#ffe9ad" font-size="13" font-weight="bold" text-anchor="middle">HUD HOLOGRAM 4D A388 • ĐỘ CAO TÂM THỨC 11.500&nbsp;MÉT</text>
+                  </svg>
+                </div>
+                <div class="art-image-overlay">
+                  <div class="art-caption" id="slide1ImgCaption">✈️ Siêu Chuyên Cơ A388 Vượt Biển Mây • Tầm Nhìn Của Người Chỉ&nbsp;Huy</div>
+                </div>
+              </div>
+              <div style="display:flex; justify-content:space-between; align-items:center; margin-top:10px;">
+                <span style="font-size:1rem; font-weight:700; color:var(--cyan-sky);" id="cockpitStatusText">🧭 Đồng hồ độ cao A388: Sẵn sàng cất&nbsp;cánh</span>
+                <button class="interactive-btn-lg" onclick="activateCockpitMind(true)">
+                  🚀 Bấm Nâng Độ Cao A388 Lên 11.500m
+                </button>
+              </div>
+            </div>
+
+            <div class="senior-panel">
+              <div>
+                <h3 class="senior-heading">👨‍✈️ Chào Mừng Các Cơ Trưởng &amp; Cơ Phó Chuyên Cơ&nbsp;A388!</h3>
+                <p class="senior-text">
+                  🔹 <strong>1. Đồng hồ kỹ thuật:</strong> Trong buồng lái của <strong>Siêu chuyên cơ hiện đại nhất thế giới&nbsp;A388</strong>, chúng ta có đồng hồ đo độ cao, tốc độ và radar thời&nbsp;tiết.<br/>
+                  🔹 <strong>2. Đồng hồ tâm thức:</strong> Có một độ cao vô hình quyết định bản lĩnh của người chỉ huy trước mọi giông bão cuộc đời: <strong>Độ cao của Tầng Nhận Thức (Logical&nbsp;Levels)</strong>.
+                </p>
+                <div class="poem-box-large">
+                  🌤️ “Càng bay lên cao trên chín tầng&nbsp;mây,<br/>
+                  ☀️ Trời càng quang và mây càng&nbsp;tạnh.<br/>
+                  🧘‍♂️ Càng nâng tầm nhận thức vào sâu nội&nbsp;tâm,<br/>
+                  ✨ Việc lớn đến mấy cũng trở nên dễ&nbsp;dàng!”
+                </div>
+              </div>
+              <div class="transform-row-large" id="s0Row1">
+                <span class="state-old-lg">⚙️ Thao tác kỹ thuật trong áp&nbsp;lực</span>
+                <span class="verb-bridge-lg">TRỞ THÀNH</span>
+                <span class="state-new-lg">👑 Cơ trưởng A388 làm chủ tâm&nbsp;thức</span>
+              </div>
+            </div>
+          </div>
+          <div class="signature-watermark">Tuấn Tử Tế Từ Tâm</div>
+        </div>
+      </section>
+
+      <!-- =========================================================
+           TRANG 02: THÔNG ĐIỆP VÀNG SỐ 1 - CÂU THƠ BÁC HỒ
+           ========================================================= -->
+      <section class="slide">
+        <div class="slide-inner">
+          <div class="slide-header">
+            <div>
+              <span class="slide-tag">🌟 TRANG 02 / 16 • THÔNG ĐIỆP VÀNG SỐ 1 (SÂN KHẤU ĐỘNG 4D A388)</span>
+              <h2 class="slide-title">🔥 THÂN THỂ Ở TRONG LAO • TINH THẦN Ở NGOÀI&nbsp;LAO</h2>
+            </div>
+            <button class="btn-slide-voice" onclick="speakSingleSlide(1)">🔊 Giảng Trang Này</button>
+          </div>
+
+          <div class="senior-stage">
+            <div class="senior-panel">
+              <div class="giant-art-frame" data-fx="sun-rays">
+                <span class="a388-badge-overlay">✈️ SIÊU CHUYÊN CƠ A388 VƯƠN TẦM BẦU TRỜI RỘNG LỚN</span>
+                <img id="slide2Img" src="https://images.unsplash.com/photo-1556388158-158ea5ccacbd?auto=format&fit=crop&w=1600&q=85" alt="Siêu chuyên cơ hiện đại cất cánh lên bầu trời hoàng hôn rực rỡ" />
+                <canvas class="fx-4d-canvas"></canvas>
+                <div class="live-motion-overlay">
+                  <svg viewBox="0 0 600 320" style="width:92%; height:92%;">
+                    <circle cx="300" cy="155" r="68" fill="none" stroke="rgba(245,196,81,0.75)" stroke-width="2.5" class="pulse-ring-anim"/>
+                    <circle cx="300" cy="155" r="112" fill="none" stroke="rgba(56,189,248,0.6)" stroke-width="2" class="pulse-ring-anim" style="animation-delay:1.2s;"/>
+                    <g class="a388-float-anim" transform="translate(210, 125)">
+                      <path d="M10,30 C50,18 120,18 158,28 C166,31 166,36 158,39 C120,42 50,42 10,36 Z" fill="#ffffff" stroke="#f5c451" stroke-width="2"/>
+                      <polygon points="12,30 30,30 18,6 8,6" fill="#0284c7" stroke="#ffe9ad" stroke-width="1.2"/>
+                      <polygon points="62,34 106,34 80,56 60,56" fill="#38bdf8" stroke="#ffe9ad" stroke-width="1.2"/>
+                    </g>
+                  </svg>
+                </div>
+                <div class="art-image-overlay">
+                  <div class="art-caption" id="slide2Caption">🦅 Khoang Lái Tuy Hữu Hạn • Tinh Thần Cơ Trưởng A388 Bao Trùm Bầu&nbsp;Trời</div>
+                </div>
+              </div>
+              <div style="display:flex; justify-content:center; margin-top:10px;">
+                <button class="interactive-btn-lg" onclick="expandSpiritView()">
+                  🌟 Bấm Mở Rộng Tầm Nhìn Tinh Thần Chuyên Cơ A388
+                </button>
+              </div>
+            </div>
+
+            <div class="senior-panel">
+              <div>
+                <h3 class="senior-heading">📜 1. Khí Phách Bác Hồ &amp; Bản Lĩnh Người Cầm Lái&nbsp;A388</h3>
+                <div class="poem-box-large">
+                  🏛️ “Thân thể ở trong&nbsp;lao<br/>
+                  🦅 Tinh thần ở ngoài&nbsp;lao<br/>
+                  🚀 Muốn nên sự nghiệp&nbsp;lớn<br/>
+                  ☀️ Tinh thần càng phải&nbsp;cao.”
+                </div>
+                <p class="senior-text">
+                  ✅ <strong>a. Giới hạn vật lý:</strong> Thân thể có thể ngồi cố định trong buồng lái chuyên cơ, đối mặt với áp lực lịch trình và thời&nbsp;tiết.<br/>
+                  ✅ <strong>b. Tự do tâm thức:</strong> <strong>Tinh thần của người chỉ huy phải tự do khoáng đạt ngoài bầu trời bao&nbsp;la</strong>. Tinh thần càng cao thì sự nghiệp dẫn dắt chuyên cơ càng vĩ&nbsp;đại!
+                </p>
+              </div>
+              <div class="transform-row-large" id="s1Row1">
+                <span class="state-old-lg">🔒 Bị bó hẹp trong hoàn cảnh&nbsp;nhỏ</span>
+                <span class="verb-bridge-lg">TRỞ THÀNH</span>
+                <span class="state-new-lg">🦅 Tinh thần đỉnh cao dựng nghiệp&nbsp;lớn</span>
+              </div>
+            </div>
+          </div>
+          <div class="signature-watermark">Tuấn Tử Tế Từ Tâm</div>
+        </div>
+      </section>
+
+      <!-- =========================================================
+           TRANG 03: THÔNG ĐIỆP VÀNG SỐ 2 - BÌNH TÔNG TƯ TƯỞNG & A388 560 TẤN
+           ========================================================= -->
+      <section class="slide">
+        <div class="slide-inner">
+          <div class="slide-header">
+            <div>
+              <span class="slide-tag">⚖️ TRANG 03 / 16 • THÔNG ĐIỆP VÀNG SỐ 2 (MÔ PHỎNG LỰC NÂNG KHÍ ĐỘNG HỌC 4D)</span>
+              <h2 class="slide-title">💡 TƯ TƯỞNG KHÔNG THÔNG • VÁC BÌNH TÔNG CŨNG&nbsp;NẶNG</h2>
+            </div>
+            <button class="btn-slide-voice" onclick="speakSingleSlide(2)">🔊 Giảng Trang Này</button>
+          </div>
+
+          <div class="senior-stage">
+            <div class="senior-panel">
+              <div class="giant-art-frame" data-fx="jet-clouds">
+                <span class="a388-badge-overlay" id="canteenWeightBadge">✈️ SIÊU CHUYÊN CƠ A388 NẶNG 560 TẤN VẪN BAY NHẸ TÊNH</span>
+                <img id="canteenImg" src="https://images.unsplash.com/photo-1436491865332-7a61a109cc05?auto=format&fit=crop&w=1600&q=85" alt="Chuyên cơ A388 bay nhẹ nhàng trên biển mây" />
+                <canvas class="fx-4d-canvas"></canvas>
+                <div class="live-motion-overlay">
+                  <svg viewBox="0 0 600 320" style="width:92%; height:90%;">
+                    <g class="a388-float-anim">
+                      <path d="M100,175 Q300,110 500,175" fill="none" stroke="rgba(52,211,153,0.85)" stroke-width="3.5" stroke-dasharray="12 6"/>
+                      <path d="M140,205 Q300,140 460,205" fill="none" stroke="rgba(245,196,81,0.85)" stroke-width="3" stroke-dasharray="10 6"/>
+                      <text x="300" y="128" fill="#ffe9ad" font-size="14" font-weight="bold" text-anchor="middle">LỰC NÂNG NHẬN THỨC 4D • 560 TẤN NHẸ NHƯ LÔNG&nbsp;HỒNG</text>
+                    </g>
+                  </svg>
+                </div>
+                <div class="art-image-overlay">
+                  <div class="art-caption" id="canteenCaption">🌈 Khi Tư Tưởng Thông Suốt • Vượt Ngàn Sóng Vẫn Nhẹ Như Lông&nbsp;Hồng</div>
+                </div>
+              </div>
+              <div style="display:flex; gap:12px; margin-top:10px;">
+                <button class="btn-outline-lg" style="flex:1;" onclick="setCanteenMode('heavy')">
+                  ⚠️ Khi Tư Tưởng Bế Tắc (Nặng Nề)
+                </button>
+                <button class="interactive-btn-lg" style="flex:1;" onclick="setCanteenMode('light')">
+                  ✨ Khi Tư Tưởng Thông Suốt (Nhẹ Tênh)
+                </button>
+              </div>
+            </div>
+
+            <div class="senior-panel">
+              <div>
+                <h3 class="senior-heading">💎 2. Trí Tuệ Ông Bà: Sức Mạnh Của Thế Giới Tinh Thần Đủ&nbsp;Đầy</h3>
+                <div class="poem-box-large">
+                  🪨 “Tư tưởng không thông, vác bình tông cũng&nbsp;nặng;<br/>
+                  🕊️ Tư tưởng giải phóng, vượt ngàn sóng vẫn nhẹ&nbsp;tênh!”
+                </div>
+                <p class="senior-text" id="canteenDesc">
+                  🔹 <strong>a. Khi tâm bế tắc:</strong> Chiếc bình tông vốn rất nhẹ, nhưng khi tâm rối bời, phàn nàn thì việc nhỏ cũng hóa ngàn&nbsp;cân.<br/>
+                  🔹 <strong>b. Khi tinh thần đủ đầy:</strong> Giống như <strong>Siêu chuyên cơ A388 nặng 560 tấn vẫn vút bay thanh&nbsp;thoát</strong>, khi thế giới tinh thần phong phú và nhận thức cao thì mọi việc lớn đều trở nên vô cùng dễ&nbsp;dàng!
+                </p>
+              </div>
+              <div class="transform-row-large" id="s2Row1">
+                <span class="state-old-lg">🪨 Tư tưởng bế tắc, việc nhỏ hóa&nbsp;nặng</span>
+                <span class="verb-bridge-lg">TẠO NÊN</span>
+                <span class="state-new-lg">🕊️ Tinh thần đủ đầy, việc lớn nhẹ&nbsp;tênh</span>
+              </div>
+            </div>
+          </div>
+          <div class="signature-watermark">Tuấn Tử Tế Từ Tâm</div>
+        </div>
+      </section>
+
+      <!-- =========================================================
+           TRANG 04: MỤC A - CON NGƯỜI LÀ TIỂU VŨ TRỤ ĐỦ ĐẦY NGUỒN LỰC
+           ========================================================= -->
+      <section class="slide">
+        <div class="slide-inner">
+          <div class="slide-header">
+            <div>
+              <span class="slide-tag">🌌 TRANG 04 / 16 • NỘI LỰC BÊN TRONG (MỤC A - THIÊN HÀ XOAY 4D)</span>
+              <h2 class="slide-title">🌍 TRÁI ĐẤT NHƯ HẠT BỤI TRONG PHÒNG • TA CHỨA HÀNG TRIỆU TRÁI ĐẤT BÊN&nbsp;TRONG</h2>
+            </div>
+            <button class="btn-slide-voice" onclick="speakSingleSlide(3)">🔊 Giảng Trang Này</button>
+          </div>
+
+          <div class="senior-stage">
+            <div class="senior-panel">
+              <div class="giant-art-frame" data-fx="galaxy-vortex">
+                <span class="a388-badge-overlay" id="cosmosBadge">🌌 MÔ HÌNH VŨ TRỤ 4D: TIỂU VŨ TRỤ TRONG TA</span>
+                <img id="cosmosZoomImg" src="https://images.unsplash.com/photo-1462331940025-496dfbfc7564?auto=format&fit=crop&w=1600&q=85" alt="Vũ trụ ngân hà rực rỡ" />
+                <canvas class="fx-4d-canvas"></canvas>
+                <div class="live-motion-overlay">
+                  <svg viewBox="0 0 600 320" style="width:92%; height:92%;">
+                    <g class="radar-sweep-anim" style="transform-origin:300px 155px; animation-duration:12s;">
+                      <ellipse cx="300" cy="155" rx="140" ry="64" fill="none" stroke="rgba(56,189,248,0.65)" stroke-width="2" stroke-dasharray="6 4"/>
+                      <circle cx="160" cy="155" r="10" fill="#38bdf8"/>
+                      <circle cx="440" cy="155" r="12" fill="#34d399"/>
+                      <circle cx="300" cy="91" r="9" fill="#f5c451"/>
+                    </g>
+                    <circle cx="300" cy="155" r="34" fill="rgba(245,196,81,0.32)" stroke="#f5c451" stroke-width="3" class="pulse-ring-anim"/>
+                    <text x="300" y="159" fill="#ffffff" font-size="11" font-weight="bold" text-anchor="middle">TIỂU VŨ TRỤ</text>
+                  </svg>
+                </div>
+                <div class="art-image-overlay">
+                  <div class="art-caption" id="cosmosZoomCaption">✨ Cấp độ 3: Bên Trong Ta Là Tiểu Vũ Trụ Đủ Đầy Vạn Nguồn&nbsp;Lực</div>
+                </div>
+              </div>
+              <div style="display:flex; gap:8px; margin-top:10px;">
+                <button class="btn-outline-lg" id="btnZoom1" style="flex:1;" onclick="setCosmosZoom(1)">🌌 a. Căn Phòng Vũ Trụ</button>
+                <button class="btn-outline-lg" id="btnZoom2" style="flex:1;" onclick="setCosmosZoom(2)">🌍 b. Hạt Bụi Trái Đất</button>
+                <button class="btn-outline-lg active" id="btnZoom3" style="flex:1;" onclick="setCosmosZoom(3)">🧘‍♂️ c. Tiểu Vũ Trụ Trong Ta</button>
+              </div>
+            </div>
+
+            <div class="senior-panel">
+              <div>
+                <h3 class="senior-heading">🌟 Mục a: Mọi Nguồn Lực Đã Có Sẵn Dư Giả Ở Bên&nbsp;Trong</h3>
+                <p class="senior-text" id="cosmosZoomDesc">
+                  🔹 <strong>1. Đại Vũ Trụ:</strong> Nếu so sánh <strong>Vũ Trụ là một căn&nbsp;phòng</strong> thì <strong>Trái Đất chỉ như một hạt bụi&nbsp;nhỏ</strong> trong căn phòng&nbsp;đó.<br/>
+                  🔹 <strong>2. Tiểu Vũ Trụ:</strong> Con người được ví như một <strong>Tiểu Vũ&nbsp;Trụ</strong> — nghĩa là bên trong chúng ta chứa đựng hàng triệu Trái&nbsp;Đất!<br/>
+                  🔹 <strong>3. Quay vào bên trong:</strong> Nguồn lực đã <strong>có sẵn dư giả, đủ&nbsp;đầy</strong>. Chỉ cần quay vào bên trong thay đổi tự nhận thức của bản thân, mọi sức mạnh lập tức thức&nbsp;tỉnh!
+                </p>
+              </div>
+              <div class="transform-row-large" id="s3Row1">
+                <span class="state-old-lg">🔍 Đi tìm nguồn lực ở bên&nbsp;ngoài</span>
+                <span class="verb-bridge-lg">TRỞ THÀNH</span>
+                <span class="state-new-lg">🌌 Quay vào đánh thức Tiểu Vũ&nbsp;Trụ</span>
+              </div>
+            </div>
+          </div>
+          <div class="signature-watermark">Tuấn Tử Tế Từ Tâm</div>
+        </div>
+      </section>
+
+      <!-- =========================================================
+           TRANG 05: MỤC B - NGHỆ THUẬT GÁN NGHĨA (TRONG KHÓ KHĂN CÓ HẠT MẦM)
+           ========================================================= -->
+      <section class="slide">
+        <div class="slide-inner">
+          <div class="slide-header">
+            <div>
+              <span class="slide-tag">🌱 TRANG 05 / 16 • NỘI LỰC BÊN TRONG (MỤC B - HẠT MẦM NẢY NỞ 4D)</span>
+              <h2 class="slide-title">🌳 NGHỆ THUẬT GÁN NGHĨA: TRONG THỬ THÁCH CHỨA HẠT MẦM TUYỆT&nbsp;VỜI</h2>
+            </div>
+            <button class="btn-slide-voice" onclick="speakSingleSlide(4)">🔊 Giảng Trang Này</button>
+          </div>
+
+          <div class="senior-stage">
+            <div class="senior-panel">
+              <div class="giant-art-frame" data-fx="golden-seeds">
+                <span class="a388-badge-overlay" id="seedBadge">🌱 CHUYỂN HÓA THỬ THÁCH THÀNH HẠT MẦM VĨ ĐẠI</span>
+                <img id="seedImg" src="https://images.unsplash.com/photo-1502082553048-f009c37129b9?auto=format&fit=crop&w=1600&q=85" alt="Cây đại thụ vươn lên rực rỡ" />
+                <canvas class="fx-4d-canvas"></canvas>
+                <div class="live-motion-overlay">
+                  <svg viewBox="0 0 600 320" style="width:88%; height:88%;">
+                    <circle cx="300" cy="150" r="72" fill="rgba(52,211,153,0.18)" stroke="#34d399" stroke-width="2.5" class="pulse-ring-anim"/>
+                    <circle cx="300" cy="150" r="108" fill="none" stroke="#f5c451" stroke-width="2" class="pulse-ring-anim" style="animation-delay:1s;"/>
+                  </svg>
+                </div>
+                <div class="art-image-overlay">
+                  <div class="art-caption" id="seedCaption">🌺 Còn Phát Triển Là Còn Thành Công, Còn Hạnh&nbsp;Phúc!</div>
+                </div>
+              </div>
+              <div style="display:flex; gap:10px; margin-top:10px;">
+                <button class="btn-outline-lg" style="flex:1;" onclick="setSeedState('storm')">🌧️ Góc Nhìn Cũ: Thấy Khó Khăn</button>
+                <button class="interactive-btn-lg" style="flex:1;" onclick="setSeedState('bloom')">🌳 Gán Nghĩa Mới: Hạt Mầm Vĩ Đại</button>
+              </div>
+            </div>
+
+            <div class="senior-panel">
+              <div>
+                <h3 class="senior-heading">💎 Mục b: Tất Cả Là Do Cách Mình Gán&nbsp;Nghĩa!</h3>
+                <p class="senior-text" id="seedDescText">
+                  🔹 <strong>a. Quyền năng gán nghĩa:</strong> Mọi sự kiện, câu chuyện và con người ta gặp trong đời đều do <strong>cách mình gán&nbsp;nghĩa</strong>.<br/>
+                  🔹 <strong>b. Hạt mầm trong thử thách:</strong> Nếu tập trung vào điều tích cực, bên trong những điều tưởng chừng là thử thách khó khăn lại <strong>chứa rất nhiều hạt giống, hạt mầm tích&nbsp;cực</strong>.
+                </p>
+                <div class="poem-box-large">
+                  🌱 “Khó khăn giúp ta trở nên trưởng thành hơn, tuyệt vời&nbsp;hơn;<br/>
+                  🎓 Thử thách chính là bài học để ta phát triển mỗi&nbsp;ngày.<br/>
+                  🏆 Còn phát triển là còn thành công, còn hạnh&nbsp;phúc!”
+                </div>
+              </div>
+              <div class="transform-row-large" id="s4Row1">
+                <span class="state-old-lg">🌧️ Sợ hãi trước thử thách khó&nbsp;khăn</span>
+                <span class="verb-bridge-lg">TẠO RA</span>
+                <span class="state-new-lg">🌳 Bài học trưởng thành và hạnh&nbsp;phúc</span>
+              </div>
+            </div>
+          </div>
+          <div class="signature-watermark">Tuấn Tử Tế Từ Tâm</div>
+        </div>
+      </section>
+
+      <!-- =========================================================
+           TRANG 06: MỤC C - ĐẶC ÂN DẪN DẮT CHUYÊN CƠ GIẤC MƠ A388
+           ========================================================= -->
+      <section class="slide">
+        <div class="slide-inner">
+          <div class="slide-header">
+            <div>
+              <span class="slide-tag">👑 TRANG 06 / 16 • SỨ MỆNH CHỈ HUY (MỤC C - CHUYÊN CƠ GIẤC MƠ A388)</span>
+              <h2 class="slide-title">✈️ ĐẶC ÂN DẪN DẮT CHUYÊN CƠ • GIÚP ĐỒNG ĐỘI GIÀU CÓ, KHỎE MẠNH, HẠNH&nbsp;PHÚC</h2>
+            </div>
+            <button class="btn-slide-voice" onclick="speakSingleSlide(5)">🔊 Giảng Trang Này</button>
+          </div>
+
+          <div class="senior-stage">
+            <div class="senior-panel">
+              <div class="giant-art-frame" data-fx="sun-rays">
+                <span class="a388-badge-overlay">✈️ SIÊU CHUYÊN CƠ A388 CHỞ MUÔN GIẤC MƠ LỚN</span>
+                <img id="dreamCrewImg" src="https://images.unsplash.com/photo-1569154941061-e231b4725ef1?auto=format&fit=crop&w=1600&q=85" alt="Siêu chuyên cơ hiện đại bay giữa bầu trời xanh" />
+                <canvas class="fx-4d-canvas"></canvas>
+                <div class="art-image-overlay">
+                  <div class="art-caption" id="dreamCrewCaption">🌟 Ai Đến Với Chuyên Cơ A388 Cũng Mang Theo Một Giấc Mơ Đổi&nbsp;Đời</div>
+                </div>
+              </div>
+              <div style="display:flex; justify-content:center; margin-top:10px;">
+                <button class="interactive-btn-lg" onclick="lightUpCabinDreams()">
+                  👑 Bấm Thắp Sáng Giấc Mơ Giàu Có – Khỏe Mạnh – Hạnh Phúc
+                </button>
+              </div>
+            </div>
+
+            <div class="senior-panel">
+              <div>
+                <h3 class="senior-heading">👑 Mục c: Người Giàu Có, Khỏe Mạnh, Hạnh Phúc Nhất Chính Là Nhà Lãnh&nbsp;Đạo!</h3>
+                <p class="senior-text">
+                  🔹 <strong>1. Đặc ân may mắn:</strong> Chúng ta vô cùng may mắn được làm việc cùng các đồng đội trên chuyên cơ A388 trong vai trò <strong>nhà lãnh đạo, nhà chỉ huy điều&nbsp;phối</strong>.<br/>
+                  🔹 <strong>2. Chắp cánh ước mơ:</strong> Ai đến với chuyên cơ của mình cũng mang theo một giấc mơ. Hãy giúp giấc mơ của họ <strong>trở thành hiện&nbsp;thực</strong>, giúp họ trở nên <strong>💰 giàu có, 💪 khỏe mạnh, 😊 hạnh&nbsp;phúc</strong> — và chính người giàu có, khỏe mạnh, hạnh phúc đó là Nhà Lãnh&nbsp;Đạo!
+                </p>
+              </div>
+              <div class="transform-row-large" id="s5Row1">
+                <span class="state-old-lg">📋 Quản lý công việc theo trách&nbsp;nhiệm</span>
+                <span class="verb-bridge-lg">TRỞ THÀNH</span>
+                <span class="state-new-lg">👑 Nhà lãnh đạo nâng cánh giấc&nbsp;mơ</span>
+              </div>
+            </div>
+          </div>
+          <div class="signature-watermark">Tuấn Tử Tế Từ Tâm</div>
+        </div>
+      </section>
+
+      <!-- =========================================================
+           TRANG 07: TỔNG QUAN THÁP 6 TẦNG NHẬN THỨC (CHIỀU DỌC & CHIỀU NGANG)
+           ========================================================= -->
+      <section class="slide">
+        <div class="slide-inner">
+          <div class="slide-header">
+            <div>
+              <span class="slide-tag">🏛️ TRANG 07 / 16 • MÔ HÌNH LOGICAL LEVELS (ROBERT DILTS)</span>
+              <h2 class="slide-title">📐 THÁP 6 TẦNG NHẬN THỨC: MÂY TẦNG NÀO ĐÓN GIÓ TẦNG&nbsp;ĐÓ</h2>
+            </div>
+            <button class="btn-slide-voice" onclick="speakSingleSlide(6)">🔊 Giảng Trang Này</button>
+          </div>
+
+          <div class="senior-stage">
+            <div class="senior-panel" style="justify-content:center;">
+              <div style="text-align: center; font-size: 0.94rem; color: var(--gold-light); margin-bottom: 6px; font-weight: 800;">
+                ▲ ĐỈNH THÁP THU NHỎ DẦN: ÍT NHIỄU LOẠN • CHẤT LƯỢNG TINH&nbsp;HOA ▲
+              </div>
+              <div class="pyramid-container">
+                <div class="pyramid-tier tier-6 active" onclick="selectLevel(6)">👑 6. SỨ MỆNH &amp; VƯỢT THOÁT (PURPOSE)</div>
+                <div class="pyramid-tier tier-5" onclick="selectLevel(5)">🌟 5. BẢN SẮC &amp; ĐỊNH DANH (IDENTITY)</div>
+                <div class="pyramid-tier tier-4" onclick="selectLevel(4)">💎 4. NIỀM TIN &amp; GIÁ TRỊ (BELIEFS &amp; VALUES)</div>
+                <div class="pyramid-tier tier-3" onclick="selectLevel(3)">🧭 3. NĂNG LỰC &amp; CHIẾN LƯỢC (CAPABILITIES)</div>
+                <div class="pyramid-tier tier-2" onclick="selectLevel(2)">⚙️ 2. HÀNH VI &amp; THAO TÁC (BEHAVIOR)</div>
+                <div class="pyramid-tier tier-1" onclick="selectLevel(1)">🌧️ 1. MÔI TRƯỜNG &amp; HOÀN CẢNH (ENVIRONMENT)</div>
+              </div>
+              <div style="text-align: center; font-size: 0.9rem; color: var(--text-muted); margin-top: 6px;">
+                ▼ ĐÁY THÁP RỘNG: ĐÔNG ĐÚC • NHIỀU PHÀN NÀN &amp; VA&nbsp;CHẠM ▼
+              </div>
+            </div>
+
+            <div class="senior-panel">
+              <div>
+                <span class="slide-tag" id="lvlBadge" style="color:var(--gold-primary);">👆 BẤM TỪNG TẦNG THÁP BÊN TRÁI ĐỂ XEM GIẢI&nbsp;MÃ</span>
+                <h3 class="senior-heading" id="lvlTitle">🏔️ Nhìn Theo Chiều Ngang: Càng Lên Cao Càng Tinh&nbsp;Hoa</h3>
+                <p class="senior-text" id="lvlDesc">
+                  Khi nhìn theo chiều ngang của tháp nhận thức, <strong>nhận thức càng cao thì tháp càng thu hẹp&nbsp;dần</strong>. Nghĩa là càng lên tầng cao, chúng ta càng <strong>ít nhiễu&nbsp;loạn</strong>, số người gặp có thể ít hơn nhưng <strong>chất lượng cao hơn&nbsp;hẳn</strong>!
+                </p>
+                <div class="poem-box-large" id="lvlQuoteBox">
+                  ⛈️ “Tầng thấp xô bồ chen&nbsp;chúc,<br/>
+                  ☀️ Tầng cao tĩnh lặng thênh&nbsp;thang.<br/>
+                  ✈️ Mây tầng nào đón gió tầng&nbsp;đó!”
+                </div>
+              </div>
+              <div class="transform-row-large" id="s6Row1">
+                <span class="state-old-lg" id="lvlOld">⛈️ Chen chúc ở tầng đáy ồn&nbsp;ào</span>
+                <span class="verb-bridge-lg">TRỞ THÀNH</span>
+                <span class="state-new-lg" id="lvlNew">👑 Hội tụ cùng tinh hoa đỉnh&nbsp;tháp</span>
+              </div>
+            </div>
+          </div>
+          <div class="signature-watermark">Tuấn Tử Tế Từ Tâm</div>
+        </div>
+      </section>
+
+      <!-- =========================================================
+           TRANG 08: GIẢI MÃ TẦNG 1 - 2 - 3 (VƯỢT QUA BẪY TẦNG THẤP)
+           ========================================================= -->
+      <section class="slide">
+        <div class="slide-inner">
+          <div class="slide-header">
+            <div>
+              <span class="slide-tag">⛈️ TRANG 08 / 16 • GIẢI MÃ 3 TẦNG DƯỚI (MÔI TRƯỜNG • HÀNH VI • NĂNG LỰC)</span>
+              <h2 class="slide-title">🚀 KHÔNG ĐỂ LỜI PHÀN NÀN Ở TẦNG THẤP NHẤN CHÌM CHUYÊN&nbsp;CƠ</h2>
+            </div>
+            <button class="btn-slide-voice" onclick="speakSingleSlide(7)">🔊 Giảng Trang Này</button>
+          </div>
+
+          <div class="senior-stage">
+            <div class="senior-panel">
+              <div class="giant-art-frame" data-fx="jet-clouds">
+                <span class="a388-badge-overlay">✈️ A388 VƯỢT QUA VÙNG NHIỄU ĐỘNG TẦNG THẤP</span>
+                <img id="lowTierImg" src="https://images.unsplash.com/photo-1540339832862-474599807836?auto=format&fit=crop&w=1600&q=85" alt="Siêu chuyên cơ A388 vượt lên trên tầng mây" />
+                <canvas class="fx-4d-canvas"></canvas>
+                <div class="art-image-overlay">
+                  <div class="art-caption" id="lowTierCaption">✈️ Người Phi Công Giỏi Vượt Lên Trên Rào Cản Để Nhìn Tổng&nbsp;Thể</div>
+                </div>
+              </div>
+              <div style="display:flex; justify-content:center; margin-top:10px;">
+                <button class="interactive-btn-lg" onclick="riseAboveLowTiers()">
+                  ✈️ Bấm Kéo Cần Lái A388 Vượt Lên Trên 3 Tầng Thấp
+                </button>
+              </div>
+            </div>
+
+            <div class="senior-panel">
+              <div>
+                <h3 class="senior-heading">🔍 Nhận Diện 3 Tầng Kỹ Thuật Bên&nbsp;Dưới:</h3>
+                <p class="senior-text">
+                  🌧️ <strong>1. Tầng Môi trường (Ở đâu, Khi nào):</strong> Thời tiết xấu, sự cố trễ giờ, những người hay phàn nàn. Nếu để lời phàn nàn nhấn chìm mình là ta đang ở tầng nhận thức&nbsp;thấp.<br/>
+                  ⚙️ <strong>2. Tầng Hành vi (Làm gì):</strong> Thao tác tay lái, lời ăn tiếng nói hàng&nbsp;ngày.<br/>
+                  🧭 <strong>3. Tầng Năng lực (Làm thế nào):</strong> Kỹ năng điều phối quy trình tổ&nbsp;bay.
+                </p>
+                <p class="senior-text" style="color:var(--gold-light); font-weight:700;">
+                  💡 Người lái chuyên cơ A388 giỏi không đứng lại tranh cãi với mây mù ở tầng thấp, mà lập tức nâng độ cao lên tầng&nbsp;trên!
+                </p>
+              </div>
+              <div class="transform-row-large" id="s7Row1">
+                <span class="state-old-lg">🌧️ Bị cuốn vào phàn nàn tầng&nbsp;thấp</span>
+                <span class="verb-bridge-lg">TRỞ NÊN</span>
+                <span class="state-new-lg">🦅 Tỉnh thức vượt lên mọi rào&nbsp;cản</span>
+              </div>
+            </div>
+          </div>
+          <div class="signature-watermark">Tuấn Tử Tế Từ Tâm</div>
+        </div>
+      </section>
+
+      <!-- =========================================================
+           TRANG 09: GIẢI MÃ TẦNG 4 - 5 - 6 (ĐỈNH CAO TÂM THỨC CƠ TRƯỞNG)
+           ========================================================= -->
+      <section class="slide">
+        <div class="slide-inner">
+          <div class="slide-header">
+            <div>
+              <span class="slide-tag">💎 TRANG 09 / 16 • GIẢI MÃ 3 TẦNG ĐỈNH CAO (NIỀM TIN • BẢN SẮC • SỨ MỆNH)</span>
+              <h2 class="slide-title">✨ KHI THẾ GIỚI VÔ HÌNH BÊN TRONG ĐỔI THAY • THẾ GIỚI BÊN NGOÀI TỎA&nbsp;SÁNG</h2>
+            </div>
+            <button class="btn-slide-voice" onclick="speakSingleSlide(8)">🔊 Giảng Trang Này</button>
+          </div>
+
+          <div class="senior-stage">
+            <div class="senior-panel">
+              <div class="giant-art-frame" data-fx="sun-rays">
+                <span class="a388-badge-overlay">✈️ ĐỈNH CAO SỨ MỆNH CƠ TRƯỞNG A388</span>
+                <img src="https://images.unsplash.com/photo-1436491865332-7a61a109cc05?auto=format&fit=crop&w=1600&q=85" alt="Cánh siêu chuyên cơ A388 trên đỉnh mây rực rỡ" />
+                <canvas class="fx-4d-canvas"></canvas>
+                <div class="art-image-overlay">
+                  <div class="art-caption">👑 Làm Chủ Niềm Tin, Bản Sắc &amp; Sứ Mệnh Phụng&nbsp;Sự</div>
+                </div>
+              </div>
+            </div>
+
+            <div class="senior-panel">
+              <div>
+                <h3 class="senior-heading">🌟 3 Tầng Quyết Định Tầm Vóc Người Chỉ Huy&nbsp;A388:</h3>
+                <p class="senior-text">
+                  💎 <strong>4. Tầng Niềm tin &amp; Giá trị:</strong> Tin rằng mình còn quá nhiều may mắn, đặc ân trên cuộc đời này; tin rằng mọi thử thách đều là bài học&nbsp;quý.<br/>
+                  🌟 <strong>5. Tầng Bản sắc (Tôi là ai):</strong> Tôi là Cơ trưởng bản lĩnh, là nhà lãnh đạo giàu có, khỏe mạnh, hạnh&nbsp;phúc.<br/>
+                  👑 <strong>6. Tầng Sứ mệnh (Vì ai):</strong> Phụng sự và dẫn dắt đồng đội trên chuyên cơ A388 hiện thực hóa ước&nbsp;mơ!
+                </p>
+              </div>
+              <div class="transform-row-large" id="s8Row1">
+                <span class="state-old-lg">🔧 Thay đổi hành vi ở bề&nbsp;nổi</span>
+                <span class="verb-bridge-lg">TẠO NÊN</span>
+                <span class="state-new-lg">💎 Chuyển hóa niềm tin và sứ&nbsp;mệnh</span>
+              </div>
+            </div>
+          </div>
+          <div class="signature-watermark">Tuấn Tử Tế Từ Tâm</div>
+        </div>
+      </section>
+
+      <!-- =========================================================
+           TRANG 10: KHOA HỌC ĐỘ CAO 10.000M TRÊN SIÊU CHUYÊN CƠ A388
+           ========================================================= -->
+      <section class="slide">
+        <div class="slide-inner">
+          <div class="slide-header">
+            <div>
+              <span class="slide-tag">☀️ TRANG 10 / 16 • KHOA HỌC KHÍ QUYỂN 4D &amp; BẢN LĨNH VƯỢT RÀO CẢN</span>
+              <h2 class="slide-title">✈️ TẠI SAO TRÊN ĐỘ CAO 10.000 MÉT KHÔNG BAO GIỜ CÓ MƯA BÃO, MÂY&nbsp;MÙ?</h2>
+            </div>
+            <button class="btn-slide-voice" onclick="speakSingleSlide(9)">🔊 Giảng Trang Này</button>
+          </div>
+
+          <div class="senior-stage">
+            <div class="senior-panel" style="padding:16px;">
+              <div class="sky-simulator-lg">
+                <div style="display:flex; justify-content:space-between; z-index:5;">
+                  <span style="font-size:0.86rem; font-weight:800; color:#ffe9ad;">☀️ TẦNG BÌNH LƯU (TRÊN 10.000M) • TRỜI XANH VĨNH&nbsp;CỬU</span>
+                  <span style="font-size:0.88rem; font-weight:800; color:#38bdf8;" id="simAltText">Chuyên cơ A388: 11.500m</span>
+                </div>
+
+                <div class="tropopause-line">
+                  <span class="tropopause-label">🛡️ RANH GIỚI TROPOPAUSE • NẮP CHẶN ĐẢO NHIỆT KHÓA MÂY&nbsp;BÃO</span>
+                </div>
+
+                <div class="plane-actor" id="planeActor" style="bottom: 245px;">
+                  <svg width="215" height="82" viewBox="0 0 180 68" class="a388-float-anim">
+                    <ellipse cx="16" cy="36" rx="14" ry="3.5" fill="rgba(56,189,248,0.85)"/>
+                    <ellipse cx="22" cy="42" rx="11" ry="3" fill="rgba(245,196,81,0.9)"/>
+                    <polygon points="18,32 38,32 24,6 14,6" fill="#0284c7" stroke="#ffe9ad" stroke-width="1.4"/>
+                    <path d="M16,32 C55,20 130,20 164,31 C172,34 174,39 164,42 C125,45 50,45 16,38 Z" fill="#ffffff" stroke="#f5c451" stroke-width="1.8"/>
+                    <line x1="45" y1="28" x2="138" y2="28" stroke="#0f172a" stroke-width="2.2" stroke-dasharray="3 3"/>
+                    <line x1="40" y1="34" x2="148" y2="34" stroke="#0f172a" stroke-width="2.4" stroke-dasharray="3 3"/>
+                    <path d="M152,29 L163,32 L154,34 Z" fill="#0284c7"/>
+                    <polygon points="68,36 112,36 86,58 66,58" fill="#cbd5e1" stroke="#f5c451" stroke-width="1.4"/>
+                    <rect x="74" y="50" width="13" height="6" rx="3" fill="#0284c7" stroke="#ffe9ad" stroke-width="1"/>
+                    <rect x="92" y="44" width="13" height="6" rx="3" fill="#0284c7" stroke="#ffe9ad" stroke-width="1"/>
+                    <text x="80" y="25" fill="#030714" font-size="7" font-weight="900">A388 SUPER</text>
+                  </svg>
+                </div>
+
+                <div style="position:absolute; bottom:12px; left:0; right:0; text-align:center; color:#fecdd3; font-weight:700; font-size:0.9rem;">
+                  ⛈️ TẦNG ĐỐI LƯU (0 – 8.000M): Chứa 99% hơi nước, mưa bão, sấm sét &amp; lời phàn&nbsp;nàn 🌩️
+                </div>
+              </div>
+
+              <div style="display:flex; gap:8px; margin-top:10px;">
+                <button class="btn-outline-lg" style="flex:1; padding:8px;" onclick="updateAltitudeSim(2500)">⛈️ 2.500m (Mưa Bão)</button>
+                <button class="btn-outline-lg" style="flex:1; padding:8px;" onclick="updateAltitudeSim(9000)">🌤️ 9.000m (Vượt Mây)</button>
+                <button class="interactive-btn-lg" style="flex:1; padding:8px;" onclick="updateAltitudeSim(11500)">☀️ 11.500m (Trời Xanh A388)</button>
+              </div>
+            </div>
+
+            <div class="senior-panel">
+              <div>
+                <h3 class="senior-heading">🔬 3 Lý Do Khoa Học (a, b, c) Cho Người Chỉ&nbsp;Huy:</h3>
+                <p class="senior-text">
+                  💧 <strong>a. Vượt thoát 99% hơi nước của Tầng Đối Lưu:</strong> Toàn bộ mưa bão chỉ ở tầng thấp. Lên Tầng Bình Lưu trên 10.000m, không khí cực kỳ khô nên mây mù không thể hình&nbsp;thành.<br/>
+                  🛡️ <strong>b. Hiện tượng Đảo Nhiệt (Nắp chặn tự nhiên):</strong> Lớp Ozone hấp thụ tia cực tím làm nhiệt độ ấm dần lên, chặn đứng mọi luồng khí giông bão bốc&nbsp;lên.<br/>
+                  🦅 <strong>c. Tầm nhìn tổng thể:</strong> Người lái A388 giỏi vượt lên trên rào cản để nhìn bao quát trong bình&nbsp;an!
+                </p>
+              </div>
+              <div class="transform-row-large" id="s9Row1">
+                <span class="state-old-lg" id="simStateOld">⛈️ Bay thấp chịu mưa bão phàn&nbsp;nàn</span>
+                <span class="verb-bridge-lg">TRỞ THÀNH</span>
+                <span class="state-new-lg" id="simStateNew">☀️ Cơ trưởng A388 lướt êm trên&nbsp;10.000m</span>
+              </div>
+            </div>
+          </div>
+          <div class="signature-watermark">Tuấn Tử Tế Từ Tâm</div>
+        </div>
+      </section>
+
+      <!-- =========================================================
+           TRANG 11: VÍ DỤ 1 - TẤM KÍNH CHẮN GIÓ BUỒNG LÁI A388 & GIA ĐÌNH
+           ========================================================= -->
+      <section class="slide">
+        <div class="slide-inner">
+          <div class="slide-header">
+            <div>
+              <span class="slide-tag">🪟 TRANG 11 / 16 • VÍ DỤ THỰC TẾ SỐ 1 (CẦN GẠT KÍNH BUỒNG LÁI 4D)</span>
+              <h2 class="slide-title">🏠 VÍ DỤ 1: TẤM KÍNH CHẮN GIÓ BUỒNG LÁI A388 &amp; ĐÔI KÍNH GIA&nbsp;ĐÌNH</h2>
+            </div>
+            <button class="btn-slide-voice" onclick="speakSingleSlide(10)">🔊 Giảng Trang Này</button>
+          </div>
+
+          <div class="senior-stage">
+            <div class="senior-panel">
+              <div class="giant-art-frame" data-fx="sun-rays">
+                <span class="a388-badge-overlay">✈️ KÍNH CHẮN GIÓ TÂM THỨC CƠ TRƯỞNG A388</span>
+                <img src="https://images.unsplash.com/photo-1511895426328-dc8714191300?auto=format&fit=crop&w=1600&q=85" alt="Gia đình ấm áp hạnh phúc" />
+                <canvas class="fx-4d-canvas"></canvas>
+                <div class="giant-windshield-mud" id="wiperMudSlide11">
+                  <div>
+                    <div style="font-size:2.4rem; margin-bottom:10px;">🌫️</div>
+                    KÍNH BÁM BỤI PHÁN XÉT &amp; MỆT&nbsp;MỎI<br/>
+                    <span style="font-size:1.05rem; font-weight:500; color:#e2e8f0; display:block; margin-top:8px;">
+                      Vẫn ngôi nhà ấy, vẫn người bạn đời ấy nhưng nhìn đâu cũng thấy cãi vã vụn&nbsp;vặt...
+                    </span>
+                  </div>
+                </div>
+                <div class="art-image-overlay">
+                  <div class="art-caption">💖 Khi Kính Tâm Trong Suốt • Căn Nhà Nhỏ Bừng Sáng Yêu&nbsp;Thương</div>
+                </div>
+              </div>
+              <div style="display:flex; justify-content:center; margin-top:10px;">
+                <button class="interactive-btn-lg" onclick="toggleGiantWiper()">
+                  ✨ Bấm Cần Gạt Lau Sạch Tấm Kính Tâm Thức Ngay!
+                </button>
+              </div>
+            </div>
+
+            <div class="senior-panel">
+              <div>
+                <h3 class="senior-heading">🏡 Vẫn Con Người Đấy, Căn Nhà Đấy • Tâm Ta Đổi, Thế Giới Đổi&nbsp;Thay!</h3>
+                <p class="senior-text" id="wiperDescSlide11">
+                  🔹 <strong>a. Trong buồng lái A388:</strong> Khi kính chắn gió bị dính vệt bẩn, nhìn ra bầu trời đâu cũng thấy vết đen. Không ai bay ra ngoài lau bầu trời, người Cơ trưởng chỉ cần <strong>gạt sạch tấm kính ngay trước mắt&nbsp;mình</strong>!<br/>
+                  🔹 <strong>b. Trong ngôi nhà nhỏ:</strong> Vẫn là người vợ, người chồng ấy, vẫn chiếc giường đó, chỗ ngồi đó. Khi ta lau sạch lăng kính phán xét bằng <strong>lòng biết&nbsp;ơn</strong>, cả thế giới quanh ta lập tức đổi&nbsp;thay!
+                </p>
+              </div>
+              <div class="transform-row-large" id="s10Row1">
+                <span class="state-old-lg">🌫️ Đòi hỏi người thân phải thay&nbsp;đổi</span>
+                <span class="verb-bridge-lg">TRỞ THÀNH</span>
+                <span class="state-new-lg">✨ Chủ động lau sáng lăng kính&nbsp;tâm</span>
+              </div>
+            </div>
+          </div>
+          <div class="signature-watermark">Tuấn Tử Tế Từ Tâm</div>
+        </div>
+      </section>
+
+      <!-- =========================================================
+           TRANG 12: VÍ DỤ 2 - TẦN SỐ ĐÀM THOẠI RADIO TRÊN BUỒNG LÁI A388
+           ========================================================= -->
+      <section class="slide">
+        <div class="slide-inner">
+          <div class="slide-header">
+            <div>
+              <span class="slide-tag">📻 TRANG 12 / 16 • VÍ DỤ THỰC TẾ SỐ 2 (SÓNG TẦN SỐ RADIO DAO ĐỘNG 4D)</span>
+              <h2 class="slide-title">📡 VÍ DỤ 2: TẦN SỐ ĐÀM THOẠI RADIO TRÊN BUỒNG LÁI&nbsp;A388</h2>
+            </div>
+            <button class="btn-slide-voice" onclick="speakSingleSlide(11)">🔊 Giảng Trang Này</button>
+          </div>
+
+          <div class="senior-stage">
+            <div class="senior-panel">
+              <div class="giant-art-frame" data-fx="radio-waves">
+                <span class="a388-badge-overlay" id="radioBadgeSlide12">📻 TẦN SỐ 108.0 MHz • SÓNG BIẾT ƠN &amp; BÌNH AN</span>
+                <img id="radioImgSlide12" src="https://images.unsplash.com/photo-1520437358207-323b43b50729?auto=format&fit=crop&w=1600&q=85" alt="Hệ thống liên lạc buồng lái chuyên cơ hiện đại" />
+                <canvas class="fx-4d-canvas"></canvas>
+                <div class="art-image-overlay">
+                  <div class="art-caption" id="radioCapSlide12">🎵 Chọn Tần Số Yêu Thương • Nghe Thấu Lời Tri Ân Giữa Đời&nbsp;Thường</div>
+                </div>
+              </div>
+              <div style="display:flex; gap:12px; margin-top:10px;">
+                <button class="btn-outline-lg" style="flex:1;" onclick="setGiantRadio(false)">
+                  ⚡ Kênh 88.5 MHz (Nhiễu Sóng Bắt Lỗi)
+                </button>
+                <button class="interactive-btn-lg" style="flex:1;" onclick="setGiantRadio(true)">
+                  📻 Kênh 108.0 MHz (Sóng Biết Ơn)
+                </button>
+              </div>
+            </div>
+
+            <div class="senior-panel">
+              <div>
+                <h3 class="senior-heading">🎧 Cùng Một Không Gian • Ta Nghe Gì Là Do Tần Số Ta&nbsp;Chọn</h3>
+                <p class="senior-text" id="radioDescSlide12">
+                  🔹 <strong>a. Sóng vô tuyến bầu trời:</strong> Giữa không trung có hàng trăm tần số cùng tồn tại: có kênh nhiễu sóng rè rè, và có kênh dẫn đường trong trẻo của đài chỉ&nbsp;huy.<br/>
+                  🔹 <strong>b. Tần số tâm thức:</strong> Nếu vặn tâm về kênh <strong>phàn nàn, soi&nbsp;lỗi</strong>, nghe ai nói gì cũng thấy chói tai. Khi người Cơ trưởng xoay núm tâm thức sang <strong>tần số biết ơn và bao&nbsp;dung</strong>, mọi âm thanh quanh mình đều trở nên ấm&nbsp;áp!
+                </p>
+              </div>
+              <div class="transform-row-large" id="s11Row1">
+                <span class="state-old-lg">⚡ Bắt sóng thị phi và phàn&nbsp;nàn</span>
+                <span class="verb-bridge-lg">TRỞ NÊN</span>
+                <span class="state-new-lg">📻 Hòa nhịp tần số biết ơn&nbsp;sâu</span>
+              </div>
+            </div>
+          </div>
+          <div class="signature-watermark">Tuấn Tử Tế Từ Tâm</div>
+        </div>
+      </section>
+
+      <!-- =========================================================
+           TRANG 13: VÍ DỤ 3 - TIÊU CỰ TRANH 3D & CHIẾC ĐIỆN THOẠI GÓC PHÒNG
+           ========================================================= -->
+      <section class="slide">
+        <div class="slide-inner">
+          <div class="slide-header">
+            <div>
+              <span class="slide-tag">👁️ TRANG 13 / 16 • VÍ DỤ THỰC TẾ SỐ 3 (TIÊU CỰ THẤU KÍNH CHIỀU SÂU 4D)</span>
+              <h2 class="slide-title">🖼️ VÍ DỤ 3: TIÊU CỰ BỨC TRANH 3D &amp; CHIẾC ĐIỆN THOẠI TRÊN&nbsp;GIƯỜNG</h2>
+            </div>
+            <button class="btn-slide-voice" onclick="speakSingleSlide(12)">🔊 Giảng Trang Này</button>
+          </div>
+
+          <div class="senior-stage">
+            <div class="senior-panel">
+              <div class="giant-art-frame" data-fx="depth-rings">
+                <span class="a388-badge-overlay" id="focusBadgeSlide13">👁️ TIÊU CỰ THẤU CẢM SÂU SẮC 4D</span>
+                <img id="focusImgSlide13" src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=1600&q=85" alt="Thấu cảm và sẻ chia" style="filter:blur(0px);" />
+                <canvas class="fx-4d-canvas"></canvas>
+                <div class="art-image-overlay">
+                  <div class="art-caption" id="focusCapSlide13">💝 Đổi Tiêu Cự Ánh Nhìn • Thấy Ngay Chiều Sâu Yêu&nbsp;Thương</div>
+                </div>
+              </div>
+              <div style="display:flex; gap:12px; margin-top:10px;">
+                <button class="btn-outline-lg" style="flex:1;" onclick="setGiantFocus(false)">
+                  💢 Nhìn Căng Thẳng (Phán Xét)
+                </button>
+                <button class="interactive-btn-lg" style="flex:1;" onclick="setGiantFocus(true)">
+                  👁️ Nhìn Chiều Sâu (Thấu Cảm)
+                </button>
+              </div>
+            </div>
+
+            <div class="senior-panel">
+              <div>
+                <h3 class="senior-heading">🛏️ Vẫn Chiếc Giường Đó, Chỗ Ngồi Đó • Đổi Tiêu Cự Là Đổi Cả Bầu&nbsp;Trời</h3>
+                <p class="senior-text" id="focusDescSlide13">
+                  🔹 <strong>a. Nguyên lý tranh 3D:</strong> Nhìn bằng đôi mắt căng thẳng chỉ thấy chấm màu rối rắm; thả lỏng điều chỉnh tiêu cự nhìn sâu vào bên trong, khung cảnh kỳ vĩ lập tức hiện&nbsp;ra!<br/>
+                  🔹 <strong>b. Ứng dụng ngay trên chiếc giường cũ:</strong> Nhìn người bạn đời cầm điện thoại, thay vì phán xét <em>“họ vô&nbsp;tâm”</em>, ta đổi tiêu cự thấu cảm: <em>“Họ đã vất vả cả ngày và đang cần vài phút thư&nbsp;giãn”</em>. Một ly nước ấm trao đi, căn phòng ngập tràn hạnh&nbsp;phúc!
+                </p>
+              </div>
+              <div class="transform-row-large" id="s12Row1">
+                <span class="state-old-lg">💢 Nhìn bề nổi bằng sự trách&nbsp;móc</span>
+                <span class="verb-bridge-lg">TẠO RA</span>
+                <span class="state-new-lg">💝 Ánh nhìn thấu cảm chữa lành&nbsp;tâm</span>
+              </div>
+            </div>
+          </div>
+          <div class="signature-watermark">Tuấn Tử Tế Từ Tâm</div>
+        </div>
+      </section>
+
+      <!-- =========================================================
+           TRANG 14: VÍ DỤ 4 - SÓNG BỀ MẶT & ĐÁY ĐẠI DƯƠNG NHA TRANG SÂU 30M
+           ========================================================= -->
+      <section class="slide">
+        <div class="slide-inner">
+          <div class="slide-header">
+            <div>
+              <span class="slide-tag">🌊 TRANG 14 / 16 • VÍ DỤ THỰC TẾ SỐ 4 (MÔ PHỎNG LẶN SÂU ĐẠI DƯƠNG 4D)</span>
+              <h2 class="slide-title">🐬 VÍ DỤ 4: SÓNG BIỂN BỀ MẶT &amp; ĐÁY ĐẠI DƯƠNG NHA TRANG SÂU 30&nbsp;MÉT</h2>
+            </div>
+            <button class="btn-slide-voice" onclick="speakSingleSlide(13)">🔊 Giảng Trang Này</button>
+          </div>
+
+          <div class="senior-stage">
+            <div class="senior-panel">
+              <div class="giant-art-frame" data-fx="deep-ocean">
+                <span class="a388-badge-overlay" id="oceanBadgeSlide14">🌊 ĐỘ SÂU 30 MÉT • ĐÁY BIỂN TĨNH LẶNG BẤT HOẠI</span>
+                <img id="oceanImgSlide14" src="https://images.unsplash.com/photo-1544551763-46a013bb70d5?auto=format&fit=crop&w=1600&q=85" alt="Đáy đại dương Nha Trang san hô tĩnh lặng" />
+                <canvas class="fx-4d-canvas"></canvas>
+                <div class="art-image-overlay">
+                  <div class="art-caption" id="oceanCapSlide14">🐠 Dù Mặt Nước Bão Giông • Đáy Đại Dương Vẫn Bình Yên Ngàn&nbsp;Năm</div>
+                </div>
+              </div>
+              <div style="display:flex; gap:12px; margin-top:10px;">
+                <button class="btn-outline-lg" style="flex:1;" onclick="setGiantOcean(false)">
+                  🌪️ Mặt Nước 0m (Sóng Vỗ Ồn Ào)
+                </button>
+                <button class="interactive-btn-lg" style="flex:1;" onclick="setGiantOcean(true)">
+                  🌊 Lặn Sâu 30m (Tâm Tĩnh Lặng)
+                </button>
+              </div>
+            </div>
+
+            <div class="senior-panel">
+              <div>
+                <h3 class="senior-heading">⚓ Bão Tố Chỉ Ở Bề Mặt • Tâm Người Cơ Trưởng Sâu Như Đáy&nbsp;Biển</h3>
+                <p class="senior-text" id="oceanDescSlide14">
+                  🔹 <strong>a. Mặt nước 0 mét:</strong> Khi biển động, trên mặt nước sóng cuộn trào và bọt tung trắng&nbsp;xóa.<br/>
+                  🔹 <strong>b. Đáy sâu 30 mét:</strong> Chỉ cần lặn sâu xuống 30 mét nước dưới vịnh Nha Trang, toàn bộ không gian bên dưới hoàn toàn tĩnh lặng. Chuyện cãi vã vụn vặt chỉ là <strong>bọt sóng trên mặt&nbsp;nước</strong>; tâm người chỉ huy sâu như đáy biển nên chẳng bao giờ xao&nbsp;động!
+                </p>
+              </div>
+              <div class="transform-row-large" id="s13Row1">
+                <span class="state-old-lg">🌪️ Chao đảo theo bọt sóng bề&nbsp;mặt</span>
+                <span class="verb-bridge-lg">TRỞ THÀNH</span>
+                <span class="state-new-lg">🌊 Đại dương nội tâm sâu bình&nbsp;yên</span>
+              </div>
+            </div>
+          </div>
+          <div class="signature-watermark">Tuấn Tử Tế Từ Tâm</div>
+        </div>
+      </section>
+
+      <!-- =========================================================
+           TRANG 15: DỊCH CHUYỂN TÂM THỨC THAY VÌ DỊCH CHUYỂN ĐỊA LÝ
+           ========================================================= -->
+      <section class="slide">
+        <div class="slide-inner">
+          <div class="slide-header">
+            <div>
+              <span class="slide-tag">🧭 TRANG 15 / 16 • BÍ QUYẾT KẾT NỐI VƯỢT KHÔNG GIAN TRÊN CHUYÊN CƠ A388</span>
+              <h2 class="slide-title">🌐 CHẲNG CẦN DỊCH CHUYỂN ĐỊA LÝ • DỊCH CHUYỂN TÂM THỨC GẶP NGAY TRI&nbsp;ÂM</h2>
+            </div>
+            <button class="btn-slide-voice" onclick="speakSingleSlide(14)">🔊 Giảng Trang Này</button>
+          </div>
+
+          <div class="senior-stage">
+            <div class="senior-panel">
+              <div class="giant-art-frame" data-fx="jet-clouds">
+                <span class="a388-badge-overlay" id="tpBadgeSlide15">✈️ TẦN SỐ ĐỈNH CAO A388 • KẾT NỐI VẠN TÂM HỒN LỚN</span>
+                <img id="teleportImg" src="https://images.unsplash.com/photo-1540339832862-474599807836?auto=format&fit=crop&w=1600&q=85" alt="Chuyên cơ A388 kết nối năm châu" />
+                <canvas class="fx-4d-canvas"></canvas>
+                <div class="art-image-overlay">
+                  <div class="art-caption" id="teleportTitle">🤝 Muốn Gặp Ai, Muốn Đi Đâu, Bất Cứ Khi Nào Đều Dễ&nbsp;Dàng!</div>
+                </div>
+              </div>
+              <div style="display:flex; gap:8px; margin-top:10px;">
+                <button class="btn-outline-lg" id="tpBtn1" style="flex:1;" onclick="setMindTeleport(1)">🌧️ 1. Tâm Phàn Nàn</button>
+                <button class="btn-outline-lg" id="tpBtn2" style="flex:1;" onclick="setMindTeleport(2)">🌿 2. Tâm Bình An</button>
+                <button class="btn-outline-lg active" id="tpBtn3" style="flex:1;" onclick="setMindTeleport(3)">👑 3. Tâm Phụng Sự A388</button>
+              </div>
+            </div>
+
+            <div class="senior-panel">
+              <div>
+                <h3 class="senior-heading">🧘‍♂️ Dịch Chuyển Tâm Thức Ngay Trên Chiếc Ghế Bạn Đang&nbsp;Ngồi</h3>
+                <p class="senior-text" id="teleportDesc">
+                  Đôi khi chúng ta <strong>chẳng cần dịch chuyển một bước chân địa lý&nbsp;nào</strong>, mà hãy dịch chuyển tâm thức của chính mình! Khi nâng tầm nhận thức lên tầng Phụng Sự và Biết Ơn, muốn gặp người tài đức nào, muốn chạm tới cơ hội nào đều trở nên vô cùng dễ&nbsp;dàng.
+                </p>
+                <div class="poem-box-large">
+                  🏙️ “Đáy tháp đông đúc thị&nbsp;phi,<br/>
+                  🏔️ Đỉnh tháp tĩnh lặng khắc ghi ân&nbsp;tình.<br/>
+                  🚶‍♂️ Người thường dịch chuyển đôi&nbsp;chân,<br/>
+                  👑 Bậc thầy chuyển hóa một phân tâm&nbsp;hồn!”
+                </div>
+              </div>
+              <div class="transform-row-large" id="s14Row1">
+                <span class="state-old-lg">🏃‍♂️ Mệt mỏi chạy tìm ngoài vạn&nbsp;dặm</span>
+                <span class="verb-bridge-lg">TẠO NÊN</span>
+                <span class="state-new-lg">🧭 Dịch chuyển tâm thức hội tinh&nbsp;hoa</span>
+              </div>
+            </div>
+          </div>
+          <div class="signature-watermark">Tuấn Tử Tế Từ Tâm</div>
+        </div>
+      </section>
+
+      <!-- =========================================================
+           TRANG 16: TỔNG KẾT 5 KHẨU QUYẾT KIM CƯƠNG & CẤT CÁNH A388
+           ========================================================= -->
+      <section class="slide">
+        <div class="slide-inner">
+          <div class="slide-header">
+            <div>
+              <span class="slide-tag">🏆 TRANG 16 / 16 • TỔNG KẾT &amp; NGHI THỨC CẤT CÁNH SIÊU CHUYÊN CƠ A388</span>
+              <h2 class="slide-title">💎 5 KHẨU QUYẾT KIM CƯƠNG TRAO TAY CÁC CƠ TRƯỞNG &amp; CƠ&nbsp;PHÓ</h2>
+            </div>
+            <button class="btn-slide-voice" onclick="speakSingleSlide(15)">🔊 Giảng Trang Này</button>
+          </div>
+
+          <div class="senior-stage">
+            <div class="senior-panel" style="justify-content:space-around;">
+              <div class="transform-row-large" id="finalRow0" style="cursor:pointer;" onclick="this.classList.toggle('active-step')">
+                <span class="state-old-lg">🌍 1. Từ hạt bụi nhỏ bé giữa&nbsp;đời</span>
+                <span class="verb-bridge-lg">TRỞ THÀNH</span>
+                <span class="state-new-lg">🌌 Tiểu Vũ Trụ đủ đầy nguồn&nbsp;lực</span>
+              </div>
+
+              <div class="transform-row-large" id="finalRow1" style="cursor:pointer;" onclick="this.classList.toggle('active-step')">
+                <span class="state-old-lg">🪨 2. Từ vác nặng bình tông phàn&nbsp;nàn</span>
+                <span class="verb-bridge-lg">TRỞ NÊN</span>
+                <span class="state-new-lg">☀️ Thanh thản lướt êm tầng bình&nbsp;lưu</span>
+              </div>
+
+              <div class="transform-row-large" id="finalRow2" style="cursor:pointer;" onclick="this.classList.toggle('active-step')">
+                <span class="state-old-lg">⛈️ 3. Từ lo sợ giông bão thử&nbsp;thách</span>
+                <span class="verb-bridge-lg">TẠO NÊN</span>
+                <span class="state-new-lg">🌳 Hạt mầm trưởng thành và hạnh&nbsp;phúc</span>
+              </div>
+
+              <div class="transform-row-large" id="finalRow3" style="cursor:pointer;" onclick="this.classList.toggle('active-step')">
+                <span class="state-old-lg">🏠 4. Từ mong cầu đổi dời cảnh&nbsp;ngoài</span>
+                <span class="verb-bridge-lg">TẠO RA</span>
+                <span class="state-new-lg">✨ Phép màu chuyển tâm trên ghế&nbsp;cũ</span>
+              </div>
+
+              <div class="transform-row-large" id="finalRow4" style="cursor:pointer;" onclick="this.classList.toggle('active-step')">
+                <span class="state-old-lg">✈️ 5. Từ người điều khiển chuyến&nbsp;bay</span>
+                <span class="verb-bridge-lg">TRỞ THÀNH</span>
+                <span class="state-new-lg">👑 Nhà lãnh đạo nâng cánh giấc&nbsp;mơ</span>
+              </div>
+            </div>
+
+            <div class="senior-panel" style="text-align:center;">
+              <div class="giant-art-frame" data-fx="sun-rays" style="height:245px;">
+                <span class="a388-badge-overlay">✈️ SIÊU CHUYÊN CƠ A388 CẤT CÁNH RỰC RỠ</span>
+                <img src="https://images.unsplash.com/photo-1436491865332-7a61a109cc05?auto=format&fit=crop&w=1600&q=85" alt="Siêu chuyên cơ A388 vươn lên bầu trời" />
+                <canvas class="fx-4d-canvas"></canvas>
+                <div class="art-image-overlay">
+                  <div class="art-caption">🌟 Chuyên Cơ A388 • Giàu Có, Khỏe Mạnh &amp; Hạnh&nbsp;Phúc</div>
+                </div>
+              </div>
+
+              <p class="senior-text" style="margin-top:10px; margin-bottom:10px;">
+                🎉 Chúc các Cơ trưởng, Cơ phó luôn giữ tâm thức ở độ cao trên 10.000 mét, đưa toàn bộ đồng đội trên chuyên cơ A388 chạm tới giàu có, khỏe mạnh và hạnh&nbsp;phúc!
+              </p>
+
+              <button class="interactive-btn-lg" onclick="launchCelebration()">
+                🌟 BẤM NÚT CẤT CÁNH SIÊU CHUYÊN CƠ A388 🌟
+              </button>
+            </div>
+          </div>
+          <div class="signature-watermark">Tuấn Tử Tế Từ Tâm</div>
+        </div>
+      </section>
+
+    </div>
+  </main>
+
+  <!-- =========================================================================
+       TẦNG 3: DẢI STUDIO CHÂN TRANG (TÍCH HỢP PHỤ ĐỀ KHÔNG CHE SLIDE & ĐIỀU HƯỚNG)
+       ========================================================================= -->
+  <footer class="bottom-studio-dock" aria-label="Thanh Phụ đề và Điều hướng">
+    <div class="dock-nav-cluster">
+      <button class="nav-action-btn" onclick="prevSlide()" id="btnPrevNav">◀ Trang Trước</button>
+      <div class="dots-wrapper" id="dotsContainer"></div>
+    </div>
+
+    <!-- Hộp Phụ đề Bài giảng nằm gọn giữa dải Dock - Hiển thị chuẩn xác ký hiệu A388, 10.000m -->
+    <div class="dock-teleprompter-stage" id="teleprompterBar">
+      <div class="voice-wave-bars">
+        <span></span><span></span><span></span><span></span>
+      </div>
+      <div class="teleprompter-text" id="teleprompterText">
+        ✈️ Sẵn sàng thuyết trình Siêu chuyên cơ A388 (Bấm "Bấm Nút Nói" hoặc "Giảng Trang Này" để phát giọng đọc)...
+      </div>
+      <button class="btn-stop-inline" onclick="stopAutoLecture()">⏹ Dừng</button>
+    </div>
+
+    <div class="dock-nav-cluster">
+      <button class="nav-action-btn" onclick="nextSlide()" id="btnNextNav">Trang Tiếp ▶</button>
+    </div>
+  </footer>
+
+  <!-- MODAL 1: PHÒNG THU & TÙY CHỌN GIỌNG ĐỌC NAM/NỮ DUAL-ENGINE -->
+  <div class="voice-modal-backdrop" id="voiceModal">
+    <div class="voice-modal-card">
+      <div style="display:flex; justify-content:space-between; align-items:center; border-bottom:1px solid rgba(255,255,255,0.15); padding-bottom:12px; margin-bottom:16px;">
+        <div>
+          <span class="slide-tag">🎙️ PHÒNG THU BUỒNG LÁI A388 • DUAL-ENGINE GIỌNG NAM &amp; GIỌNG NỮ THẬT 100%</span>
+          <h3 style="font-family:'Playfair Display', serif; font-size:1.5rem; color:#ffe9ad;">
+            Cài Đặt Giọng Đọc &amp; Thu Âm Giọng Thật
+          </h3>
+        </div>
+        <button class="btn-outline-lg" style="padding:6px 14px;" onclick="closeVoiceModal()">✕ Đóng</button>
+      </div>
+
+      <div style="display:grid; grid-template-columns:1fr 1fr; gap:14px; margin-bottom:16px;">
+        <div style="background:rgba(255,255,255,0.04); padding:14px; border-radius:14px; border:1px solid rgba(255,255,255,0.1);">
+          <label style="font-size:0.88rem; color:#ffe9ad; font-weight:700; display:block; margin-bottom:8px;">
+            1. Chọn Giọng Đọc (Nam / Nữ Chuẩn Xác):
+          </label>
+          <div style="display:flex; gap:8px;">
+            <button class="btn-outline-lg active" id="modalBtnMale" style="flex:1; padding:8px;" onclick="setVoiceGender('male', true)">👨 Giọng Nam</button>
+            <button class="btn-outline-lg" id="modalBtnFemale" style="flex:1; padding:8px;" onclick="setVoiceGender('female', true)">👩 Giọng Nữ (Cloud)</button>
+          </div>
+          <select id="systemVoiceSelect" style="width:100%; margin-top:10px; background:#0f1f40; color:#fff; border:1px solid rgba(245,196,81,0.4); padding:7px; border-radius:8px; font-size:0.82rem;" onchange="onManualVoiceSelect(this.value)">
+            <option value="auto">Tự động Dual-Engine (Nam: Microsoft An / Nữ: Cloud Nữ Tiếng Việt)</option>
+          </select>
+        </div>
+
+        <div style="background:rgba(255,255,255,0.04); padding:14px; border-radius:14px; border:1px solid rgba(255,255,255,0.1);">
+          <label style="font-size:0.88rem; color:#38bdf8; font-weight:700; display:block; margin-bottom:8px;">
+            2. Thanh Trượt Tốc Độ Đọc (<span id="rateValLabel">1.00x</span>):
+          </label>
+          <input type="range" id="speedRangeSlider" min="0.5" max="1.8" step="0.05" value="1.0" style="width:100%; accent-color:#f5c451; margin-bottom:10px;" oninput="onTopSpeedSliderInput(this.value)" onchange="onTopSpeedSliderCommit(this.value)" />
+          <div style="display:flex; justify-content:space-between; align-items:center;">
+            <span style="font-size:0.85rem; color:#ffe9ad; font-weight:700;">Tự động lật qua 16 trang:</span>
+            <input type="checkbox" id="chkAutoAdvance" checked style="width:20px; height:20px; accent-color:#34d399; cursor:pointer;" />
+          </div>
+        </div>
+      </div>
+
+      <div style="background:rgba(255,255,255,0.05); border:1px solid rgba(245,196,81,0.4); border-radius:16px; padding:16px; margin-bottom:16px;">
+        <div style="font-weight:800; color:#ffe9ad; font-size:1.02rem; margin-bottom:10px;" id="modalCurrentSlideLabel">
+          Thu âm giọng thật của Ông chủ cho: Trang 01 / 16
+        </div>
+        <div style="display:flex; gap:10px; flex-wrap:wrap; align-items:center;">
+          <button class="interactive-btn-lg" id="btnRecordMic" onclick="toggleMicRecording()">
+            🎙️ Bấm Thu Âm Giọng Thật (Có Lọc Ồn)
+          </button>
+          <label class="btn-outline-lg" style="cursor:pointer; display:inline-block;">
+            📂 Tải File Giọng Nói (.MP3/.WAV)
+            <input type="file" accept="audio/*" style="display:none;" onchange="handleAudioUpload(event)" />
+          </label>
+          <span id="audioStatusBadge" style="font-size:0.85rem; color:#34d399; font-weight:700;">
+            Đang dùng: Giọng Nam Trầm Ấm • Tốc độ 1.00x
+          </span>
+        </div>
+      </div>
+
+      <div style="display:flex; justify-content:flex-end;">
+        <button class="interactive-btn-lg" onclick="closeVoiceModal(); startAutoLectureFromCurrent();">
+          ▶️ Bắt Đầu Phát Bài Giảng Ngay
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- MODAL 2: KẾT NỐI & ĐÓNG GÓI ĐƯA LÊN WEBSITE GITHUB PAGES 1-CLICK -->
+  <div class="voice-modal-backdrop" id="githubModal">
+    <div class="voice-modal-card">
+      <div style="display:flex; justify-content:space-between; align-items:center; border-bottom:1px solid rgba(255,255,255,0.15); padding-bottom:12px; margin-bottom:14px;">
+        <div>
+          <span class="slide-tag">🚀 KẾT NỐI TRỰC TIẾP GITHUB PAGES • TÀI KHOẢN TUANGEMINI</span>
+          <h3 style="font-family:'Playfair Display', serif; font-size:1.45rem; color:#ffe9ad;">
+            Đóng Gói &amp; Xuất Bản Bài Giảng 4D Lên Website GitHub (1-Click)
+          </h3>
+        </div>
+        <button class="btn-outline-lg" style="padding:6px 14px;" onclick="closeGitHubModal()">✕ Đóng</button>
+      </div>
+
+      <div style="display:grid; grid-template-columns:1fr 1fr; gap:12px; margin-bottom:12px;">
+        <div>
+          <label style="font-size:0.82rem; color:#38bdf8; font-weight:700; display:block; margin-bottom:5px;">
+            Tên Kho Chứa Website GitHub (Repo Slug):
+          </label>
+          <input type="text" id="ghRepoInput" value="nhan-thuc-co-truong-a388" oninput="updateGitHubScript()" style="width:100%; background:#040d21; border:1px solid rgba(245,196,81,0.4); color:#fff; padding:9px 12px; border-radius:10px; font-weight:700;" />
+        </div>
+        <div>
+          <label style="font-size:0.82rem; color:#ffe9ad; font-weight:700; display:block; margin-bottom:5px;">
+            Đường Dẫn Website Sau Khi Xuất Bản:
+          </label>
+          <div id="ghLiveUrlPreview" style="background:rgba(52,211,153,0.12); border:1px solid #34d399; color:#34d399; padding:9px 12px; border-radius:10px; font-weight:800; font-size:0.86rem; overflow:hidden; text-overflow:ellipsis; white-space:nowrap;">
+            https://tuangemini.github.io/nhan-thuc-co-truong-a388/
+          </div>
+        </div>
+      </div>
+
+      <p style="font-size:0.86rem; color:#cbd5e1; line-height:1.5;">
+        💡 <strong>Cách thực thi 1-Click:</strong> Bấm nút <strong>"1. Tải File index.html Chuẩn"</strong> hoặc bấm <strong>"2. Sao Chép Lệnh PowerShell"</strong> bên dưới và dán vào cửa sổ PowerShell trên máy tính Windows của Ông chủ:
+      </p>
+
+      <pre class="code-box-ps" id="ghPsCommandBox"></pre>
+
+      <div style="display:flex; justify-content:space-between; gap:10px; flex-wrap:wrap; margin-top:12px;">
+        <button class="btn-outline-lg" onclick="downloadReadyIndexHtml()">
+          📥 1. Tải File index.html Đóng Gói Sẵn
+        </button>
+        <button class="interactive-btn-lg" onclick="copyGitHubCommand()">
+          📋 2. Sao Chép Lệnh PowerShell Đẩy Lên GitHub
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    // =========================================================================
+    // 0. THUẬT TOÁN CHỐNG CHỮ MỒ CÔI & CHUYỂN ĐỔI PHONG CÁCH NGHỆ THUẬT
+    // =========================================================================
+    function bindClauseWords(str) {
+      if (!str) return str;
+      const trimmed = str.trim();
+      const words = trimmed.split(/\s+/);
+      if (words.length < 4) return str;
+      const head = words.slice(0, -3).join(' ');
+      const tail = words.slice(-3).join('\u00A0');
+      return head + ' ' + tail;
+    }
+
+    function lockAllVietnameseOrphans() {
+      const targets = document.querySelectorAll('.slide-title, .senior-heading, .senior-text, .art-caption, .poem-box-large');
+      targets.forEach(el => {
+        if (el.innerHTML.includes('<br')) {
+          const lines = el.innerHTML.split(/<br\s*\/?>/i);
+          const lockedLines = lines.map(line => {
+            return line.replace(/([^\s<>]+)\s+([^\s<>]+)\s+([^\s<>]+)\s*$/, '$1\u00A0$2\u00A0$3');
+          });
+          el.innerHTML = lockedLines.join('<br/>');
+        } else {
+          const walker = document.createTreeWalker(el, NodeFilter.SHOW_TEXT, null, false);
+          let nodes = [];
+          while (walker.nextNode()) {
+            if (walker.currentNode.nodeValue.trim().length > 0) {
+              nodes.push(walker.currentNode);
+            }
+          }
+          if (nodes.length > 0) {
+            const last = nodes[nodes.length - 1];
+            last.nodeValue = last.nodeValue.replace(/(\S+)\s+(\S+)\s+(\S+)\s*$/, '$1\u00A0$2\u00A0$3');
+          }
+        }
+      });
+    }
+
+    let currentArtStyle = 'cinematic';
+    function setVisualArtStyle(styleKey) {
+      currentArtStyle = styleKey;
+      document.body.classList.remove('style-cinematic', 'style-handdrawn', 'style-infographic', 'style-cartoon');
+      document.body.classList.add('style-' + styleKey);
+
+      const styleNames = {
+        cinematic: '🎬 Phong cách Điện Ảnh 4D Hologram',
+        handdrawn: '✍️ Phong cách Vẽ Tay & Viết Tay Nghệ Thuật',
+        infographic: '📊 Phong cách Đồ Hoạ Infographic Hiện Đại',
+        cartoon: '🎠 Phong cách Hoạt Hình 3D Sống Động'
+      };
+      showVoiceToast(`🎨 Đã chuyển sang: ${styleNames[styleKey]}`);
+    }
+
+    // =========================================================================
+    // 1. ENGINE ĐỒ HỌA ĐỘNG 4D (PARALLAX 3D TILT + MULTI-CANVAS FX)
+    // =========================================================================
+    const canvas = document.getElementById('cosmosCanvas');
+    const ctx = canvas.getContext('2d');
+    let stars = [];
+    let particles = [];
+
+    function resizeCanvas() {
+      canvas.width = window.innerWidth;
+      canvas.height = window.innerHeight;
+    }
+    window.addEventListener('resize', resizeCanvas);
+    resizeCanvas();
+
+    for (let i = 0; i < 95; i++) {
+      stars.push({
+        x: Math.random() * canvas.width,
+        y: Math.random() * canvas.height,
+        r: Math.random() * 1.6 + 0.4,
+        alpha: Math.random(),
+        speed: Math.random() * 0.014 + 0.004
+      });
+    }
+
+    function animateCosmos() {
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
+      stars.forEach(s => {
+        s.alpha += s.speed;
+        if (s.alpha > 1 || s.alpha < 0.2) s.speed = -s.speed;
+        ctx.beginPath();
+        ctx.arc(s.x, s.y, s.r, 0, Math.PI * 2);
+        ctx.fillStyle = `rgba(255, 233, 173, ${s.alpha * 0.65})`;
+        ctx.fill();
+      });
+
+      for (let i = particles.length - 1; i >= 0; i--) {
+        const p = particles[i];
+        p.x += p.vx;
+        p.y += p.vy;
+        p.vy += 0.06;
+        p.life -= 0.016;
+        if (p.life <= 0) {
+          particles.splice(i, 1);
+        } else {
+          ctx.beginPath();
+          ctx.arc(p.x, p.y, p.size, 0, Math.PI * 2);
+          ctx.fillStyle = `rgba(${p.color}, ${p.life})`;
+          ctx.fill();
+        }
+      }
+      requestAnimationFrame(animateCosmos);
+    }
+    animateCosmos();
+
+    function launchCelebration() {
+      for (let b = 0; b < 4; b++) {
+        const cx = canvas.width * (0.25 + Math.random() * 0.5);
+        const cy = canvas.height * (0.25 + Math.random() * 0.35);
+        for (let i = 0; i < 45; i++) {
+          const angle = Math.random() * Math.PI * 2;
+          const speed = Math.random() * 5 + 1.5;
+          const colors = ['245, 196, 81', '56, 189, 248', '52, 211, 153', '255, 255, 255'];
+          particles.push({
+            x: cx,
+            y: cy,
+            vx: Math.cos(angle) * speed,
+            vy: Math.sin(angle) * speed,
+            size: Math.random() * 3.5 + 1.5,
+            color: colors[Math.floor(Math.random() * colors.length)],
+            life: 1.0
+          });
+        }
+      }
+    }
+
+    const stage4DControllers = [];
+    let radioWaveCleanMode = true;
+
+    function init4DVisualStages() {
+      document.querySelectorAll('.giant-art-frame').forEach((frame) => {
+        frame.addEventListener('mousemove', (e) => {
+          const rect = frame.getBoundingClientRect();
+          const x = (e.clientX - rect.left) / rect.width - 0.5;
+          const y = (e.clientY - rect.top) / rect.height - 0.5;
+          frame.style.transform = `rotateY(${x * 9}deg) rotateX(${-y * 9}deg) scale(1.01)`;
+        });
+        frame.addEventListener('mouseleave', () => {
+          frame.style.transform = 'rotateY(0deg) rotateX(0deg) scale(1)';
+        });
+
+        const fxCanvas = frame.querySelector('.fx-4d-canvas');
+        if (!fxCanvas) return;
+        const fxType = frame.getAttribute('data-fx') || 'jet-clouds';
+        const fCtx = fxCanvas.getContext('2d');
+        fxCanvas.width = 640;
+        fxCanvas.height = 380;
+
+        const items = [];
+        for (let i = 0; i < 36; i++) {
+          items.push({
+            x: Math.random() * 640,
+            y: Math.random() * 380,
+            r: Math.random() * 3.5 + 1.2,
+            vx: (Math.random() * 1.4 + 0.5) * (fxType === 'jet-clouds' ? -1.8 : 0.6),
+            vy: fxType === 'golden-seeds' || fxType === 'deep-ocean' ? -(Math.random() * 1.1 + 0.4) : (Math.random() - 0.5) * 0.5,
+            angle: Math.random() * Math.PI * 2,
+            dist: Math.random() * 140 + 20,
+            alpha: Math.random() * 0.65 + 0.25
+          });
+        }
+
+        stage4DControllers.push({ frame, fxCanvas, fCtx, fxType, items, phase: 0 });
+      });
+
+      function renderActive4DStage() {
+        stage4DControllers.forEach((ctrl) => {
+          const slideSec = ctrl.frame.closest('.slide');
+          const allSlides = Array.from(document.querySelectorAll('.slide'));
+          const sIdx = allSlides.indexOf(slideSec);
+          if (currentMode !== 'scroll' && sIdx !== currentSlide) return;
+
+          const { fCtx, fxCanvas, fxType, items } = ctrl;
+          const w = fxCanvas.width;
+          const h = fxCanvas.height;
+          fCtx.clearRect(0, 0, w, h);
+          ctrl.phase += 0.045;
+
+          if (fxType === 'jet-clouds') {
+            items.forEach(p => {
+              p.x += p.vx * 2.2;
+              if (p.x < -40) p.x = w + 40;
+              const grad = fCtx.createLinearGradient(p.x, p.y, p.x + 55, p.y);
+              grad.addColorStop(0, `rgba(255, 255, 255, ${p.alpha * 0.55})`);
+              grad.addColorStop(1, 'rgba(56, 189, 248, 0)');
+              fCtx.strokeStyle = grad;
+              fCtx.lineWidth = p.r;
+              fCtx.beginPath();
+              fCtx.moveTo(p.x, p.y);
+              fCtx.lineTo(p.x + 55, p.y);
+              fCtx.stroke();
+            });
+          } else if (fxType === 'sun-rays' || fxType === 'golden-seeds') {
+            items.forEach(p => {
+              p.y += p.vy;
+              p.x += Math.sin(ctrl.phase + p.y * 0.03) * 0.6;
+              if (p.y < -10) p.y = h + 10;
+              fCtx.beginPath();
+              fCtx.arc(p.x, p.y, p.r * 1.1, 0, Math.PI * 2);
+              fCtx.fillStyle = `rgba(245, 196, 81, ${p.alpha})`;
+              fCtx.shadowBlur = 10;
+              fCtx.shadowColor = '#f5c451';
+              fCtx.fill();
+              fCtx.shadowBlur = 0;
+            });
+          } else if (fxType === 'galaxy-vortex') {
+            items.forEach(p => {
+              p.angle += 0.015;
+              const gx = w / 2 + Math.cos(p.angle) * p.dist * 1.4;
+              const gy = h / 2 + Math.sin(p.angle) * p.dist * 0.75;
+              fCtx.beginPath();
+              fCtx.arc(gx, gy, p.r, 0, Math.PI * 2);
+              fCtx.fillStyle = `rgba(56, 189, 248, ${p.alpha})`;
+              fCtx.fill();
+            });
+          } else if (fxType === 'radio-waves') {
+            for (let layer = 0; layer < 3; layer++) {
+              fCtx.beginPath();
+              for (let x = 20; x < w - 20; x += 6) {
+                const freq = radioWaveCleanMode ? 0.022 : 0.085;
+                const amp = radioWaveCleanMode ? 32 : 55;
+                const jitter = radioWaveCleanMode ? 0 : (Math.random() - 0.5) * 18;
+                const y = h / 2 + Math.sin(x * freq + ctrl.phase * 2 + layer) * amp + jitter;
+                if (x === 20) fCtx.moveTo(x, y);
+                else fCtx.lineTo(x, y);
+              }
+              fCtx.strokeStyle = radioWaveCleanMode
+                ? `rgba(52, 211, 153, ${0.8 - layer * 0.22})`
+                : `rgba(251, 113, 133, ${0.8 - layer * 0.22})`;
+              fCtx.lineWidth = 3.5 - layer;
+              fCtx.stroke();
+            }
+          } else if (fxType === 'depth-rings') {
+            for (let r = 1; r <= 4; r++) {
+              const radius = ((ctrl.phase * 22 + r * 42) % 175) + 15;
+              const alpha = 1 - radius / 190;
+              fCtx.beginPath();
+              fCtx.arc(w / 2, h / 2, radius, 0, Math.PI * 2);
+              fCtx.strokeStyle = `rgba(245, 196, 81, ${alpha * 0.75})`;
+              fCtx.lineWidth = 2.2;
+              fCtx.stroke();
+            }
+          } else if (fxType === 'deep-ocean') {
+            items.forEach(p => {
+              p.y += p.vy * 1.1;
+              p.x += Math.sin(ctrl.phase + p.y * 0.04) * 0.7;
+              if (p.y < -10) p.y = h + 10;
+              fCtx.beginPath();
+              fCtx.arc(p.x, p.y, p.r * 1.3, 0, Math.PI * 2);
+              fCtx.strokeStyle = `rgba(125, 211, 252, ${p.alpha})`;
+              fCtx.lineWidth = 1.5;
+              fCtx.stroke();
+            });
+          }
+        });
+        requestAnimationFrame(renderActive4DStage);
+      }
+      renderActive4DStage();
+    }
+
+    // =========================================================================
+    // 2. ĐIỀU HƯỚNG & CHUYỂN CẢNH SIÊU MƯỢT CHO 16 TRANG
+    // =========================================================================
+    let currentSlide = 0;
+    const totalSlides = 16;
+    let currentMode = 'horizontal';
+    let wheelCooldown = false;
+
+    const slidesTrack = document.getElementById('slidesTrack');
+    const dotsContainer = document.getElementById('dotsContainer');
+    const slideJumpSelect = document.getElementById('slideJumpSelect');
+
+    function initDots() {
+      dotsContainer.innerHTML = '';
+      for (let i = 0; i < totalSlides; i++) {
+        const dot = document.createElement('div');
+        dot.className = 'slide-dot' + (i === currentSlide ? ' active' : '');
+        dot.title = 'Trang ' + (i + 1);
+        dot.onclick = () => goToSlide(i, true);
+        dotsContainer.appendChild(dot);
+      }
+    }
+
+    function updateSlidePosition() {
+      if (slideJumpSelect) {
+        slideJumpSelect.value = String(currentSlide);
+      }
+
+      // Kích hoạt hiệu ứng chuyển cảnh chiều sâu (.active-slide)
+      document.querySelectorAll('.slide').forEach((s, idx) => {
+        s.classList.toggle('active-slide', idx === currentSlide);
+      });
+
+      if (currentMode === 'scroll') {
+        slidesTrack.style.transform = 'none';
+        return;
+      }
+
+      if (currentMode === 'horizontal') {
+        slidesTrack.style.transform = `translate3d(-${currentSlide * 100}vw, 0, 0)`;
+        document.getElementById('btnPrevNav').textContent = '◀ Trang Trước';
+        document.getElementById('btnNextNav').textContent = 'Trang Tiếp ▶';
+      } else if (currentMode === 'vertical') {
+        slidesTrack.style.transform = `translate3d(0, -${currentSlide * 100}%, 0)`;
+        document.getElementById('btnPrevNav').textContent = '▲ Trang Trên';
+        document.getElementById('btnNextNav').textContent = 'Trang Dưới ▼';
+      }
+
+      const dots = dotsContainer.querySelectorAll('.slide-dot');
+      dots.forEach((d, idx) => d.classList.toggle('active', idx === currentSlide));
+
+      const chg = String(currentSlide + 1).padStart(2, '0');
+      const modalLabel = document.getElementById('modalCurrentSlideLabel');
+      if (modalLabel) {
+        modalLabel.textContent = `Thu âm giọng thật của Ông chủ cho: Trang ${chg} / 16`;
+      }
+    }
+
+    function goToSlide(index, manualTrigger = false) {
+      if (index < 0) index = 0;
+      if (index >= totalSlides) index = totalSlides - 1;
+      currentSlide = index;
+      updateSlidePosition();
+
+      if (currentMode === 'scroll') {
+        const slideElements = document.querySelectorAll('.slide');
+        if (slideElements[currentSlide]) {
+          slideElements[currentSlide].scrollIntoView({ behavior: 'smooth' });
+        }
+      }
+
+      if (manualTrigger && isAutoLecturing) {
+        playSlideNarration(currentSlide, document.getElementById('chkAutoAdvance').checked, 0);
+      }
+    }
+
+    function nextSlide() {
+      if (currentSlide < totalSlides - 1) {
+        goToSlide(currentSlide + 1, true);
+      }
+    }
+
+    function prevSlide() {
+      if (currentSlide > 0) {
+        goToSlide(currentSlide - 1, true);
+      }
+    }
+
+    function setDeckMode(mode) {
+      currentMode = mode;
+      document.documentElement.className = 'mode-' + mode;
+      document.body.classList.remove('mode-horizontal', 'mode-vertical', 'mode-scroll');
+      document.body.classList.add('mode-' + mode);
+
+      document.getElementById('btnHorizontal').classList.toggle('active', mode === 'horizontal');
+      document.getElementById('btnVertical').classList.toggle('active', mode === 'vertical');
+      document.getElementById('btnScroll').classList.toggle('active', mode === 'scroll');
+
+      updateSlidePosition();
+    }
+
+    window.addEventListener('keydown', (e) => {
+      if (currentMode === 'scroll') return;
+      if (document.getElementById('voiceModal').classList.contains('open')) return;
+      if (document.getElementById('githubModal').classList.contains('open')) return;
+
+      if (['ArrowRight', 'ArrowDown', 'PageDown'].includes(e.key)) {
+        e.preventDefault();
+        nextSlide();
+      } else if (['ArrowLeft', 'ArrowUp', 'PageUp'].includes(e.key)) {
+        e.preventDefault();
+        prevSlide();
+      }
+    });
+
+    window.addEventListener('wheel', (e) => {
+      if (currentMode === 'scroll') return;
+      if (document.getElementById('voiceModal').classList.contains('open')) return;
+      if (document.getElementById('githubModal').classList.contains('open')) return;
+
+      e.preventDefault();
+      if (wheelCooldown) return;
+      if (Math.abs(e.deltaY) < 18) return;
+
+      wheelCooldown = true;
+      if (e.deltaY > 0) nextSlide();
+      else prevSlide();
+      setTimeout(() => { wheelCooldown = false; }, 650);
+    }, { passive: false });
+
+    window.addEventListener('resize', updateSlidePosition);
+
+    function toggleFullScreen() {
+      if (!document.fullscreenElement) {
+        document.documentElement.requestFullscreen().catch(() => {});
+      } else {
+        document.exitFullscreen();
+      }
+    }
+
+    // =========================================================================
+    // 3. BỘ XỬ LÝ PHỤ ĐỀ CHUẨN KÝ HIỆU (A388, 10.000m) & THANH TRƯỢT TỐC ĐỘ MƯỢT
+    // =========================================================================
+    let isAutoLecturing = false;
+    let voiceGender = 'male';
+    let speechRate = 1.0;
+    let manualVoiceURI = 'auto';
+    let customAudioBySlide = {};
+    let activeAudioElement = null;
+
+    let speechSessionId = 0;
+    let currentUtterance = null;
+    let activeTimers = [];
+    let currentActiveSegmentIndex = 0;
+    let toastTimer = null;
+
+    // Hàm chuyển đổi ngầm từ chữ hiển thị chuẩn (A388, 560 tấn, 10.000m, 30m, 108.0 MHz, 3D) sang âm đọc Tiếng Việt tự nhiên
+    function toSpokenVietnamese(displayText) {
+      return displayText
+        .replace(/A388/g, 'A ba tám tám')
+        .replace(/560\s*tấn/gi, 'năm trăm sáu mươi tấn')
+        .replace(/11\.500\s*m(ét)?/gi, 'mười một nghìn năm trăm mét')
+        .replace(/10\.000\s*m(ét)?/gi, 'mười nghìn mét')
+        .replace(/2\.500\s*m(ét)?/gi, 'hai nghìn năm trăm mét')
+        .replace(/9\.000\s*m(ét)?/gi, 'chín nghìn mét')
+        .replace(/30\s*m(ét)?/gi, 'ba mươi mét')
+        .replace(/108\.0\s*MHz/gi, 'một trăm lẻ tám Mê ga héc')
+        .replace(/88\.5\s*MHz/gi, 'tám mươi tám phẩy năm Mê ga héc')
+        .replace(/99%/g, 'chín mươi chín phần trăm')
+        .replace(/0%/g, 'không phần trăm')
+        .replace(/3D/g, 'ba đê')
+        .replace(/4D/g, 'bốn đê')
+        .replace(/\b6\s+tầng/gi, 'sáu tầng')
+        .replace(/\b3\s+tầng/gi, 'ba tầng')
+        .replace(/\b5\s+khẩu/gi, 'năm khẩu');
+    }
+
+    function showVoiceToast(msg) {
+      const t = document.getElementById('voiceToast');
+      if (!t) return;
+      t.textContent = msg;
+      t.classList.add('show');
+      clearTimeout(toastTimer);
+      toastTimer = setTimeout(() => t.classList.remove('show'), 2400);
+    }
+
+    function scheduleSafeTimer(fn, delayMs) {
+      const id = setTimeout(fn, delayMs);
+      activeTimers.push(id);
+      return id;
+    }
+
+    function cancelActiveSpeechCleanly() {
+      speechSessionId++;
+      activeTimers.forEach(id => clearTimeout(id));
+      activeTimers = [];
+
+      if (currentUtterance) {
+        currentUtterance.onend = null;
+        currentUtterance.onerror = null;
+        currentUtterance.onboundary = null;
+        currentUtterance = null;
+      }
+
+      if (activeAudioElement) {
+        activeAudioElement.onended = null;
+        activeAudioElement.onerror = null;
+        activeAudioElement.pause();
+        activeAudioElement = null;
+      }
+
+      if ('speechSynthesis' in window) {
+        window.speechSynthesis.cancel();
+      }
+      return speechSessionId;
+    }
+
+    function populateVoiceList() {
+      if (!('speechSynthesis' in window)) return;
+      const voices = window.speechSynthesis.getVoices();
+      const select = document.getElementById('systemVoiceSelect');
+      if (!select) return;
+
+      const viVoices = voices.filter(v => v.lang.toLowerCase().includes('vi'));
+      select.innerHTML = '<option value="auto">Tự động Dual-Engine (Nam: Microsoft An / Nữ: Cloud Nữ Tiếng Việt)</option>';
+      viVoices.forEach(v => {
+        const opt = document.createElement('option');
+        opt.value = v.voiceURI;
+        opt.textContent = `${v.name} (${v.lang})`;
+        select.appendChild(opt);
+      });
+    }
+
+    if ('speechSynthesis' in window) {
+      window.speechSynthesis.onvoiceschanged = populateVoiceList;
+      populateVoiceList();
+    }
+
+    function findTrueLocalFemaleVietnameseVoice() {
+      if (!('speechSynthesis' in window)) return null;
+      const voices = window.speechSynthesis.getVoices();
+      const viVoices = voices.filter(v => v.lang.toLowerCase().includes('vi'));
+      return viVoices.find(v => /hoaimy|linh|female|nữ|nu|google/i.test(v.name) && !/\ban\b/i.test(v.name)) || null;
+    }
+
+    function findTrueLocalMaleVietnameseVoice() {
+      if (!('speechSynthesis' in window)) return null;
+      const voices = window.speechSynthesis.getVoices();
+      const viVoices = voices.filter(v => v.lang.toLowerCase().includes('vi'));
+      return viVoices.find(v => /namminh|\ban\b|male|nam/i.test(v.name)) || viVoices[0] || null;
+    }
+
+    function splitTextIntoCloudChunks(text) {
+      const rawParts = text.split(/(?<=[.,!;?])\s+/);
+      const chunks = [];
+      let current = '';
+      rawParts.forEach(part => {
+        if ((current + ' ' + part).trim().length <= 165) {
+          current = (current + ' ' + part).trim();
+        } else {
+          if (current) chunks.push(current);
+          current = part.trim();
+        }
+      });
+      if (current) chunks.push(current);
+      return chunks.length > 0 ? chunks : [text];
+    }
+
+    function speakTextWithDualEngine(rawDisplayText, mySession, onComplete) {
+      if (mySession !== speechSessionId) return;
+      const spokenText = toSpokenVietnamese(rawDisplayText);
+      const trueFemaleLocal = findTrueLocalFemaleVietnameseVoice();
+
+      if (voiceGender === 'female' && manualVoiceURI === 'auto' && !trueFemaleLocal) {
+        const chunks = splitTextIntoCloudChunks(spokenText);
+        let cIdx = 0;
+
+        function playNextCloudChunk() {
+          if (mySession !== speechSessionId) return;
+          if (cIdx >= chunks.length) {
+            if (onComplete) onComplete();
+            return;
+          }
+          const q = encodeURIComponent(chunks[cIdx]);
+          const url = `https://translate.googleapis.com/translate_tts?ie=UTF-8&tl=vi&client=tw-ob&q=${q}`;
+          const audio = new Audio(url);
+          audio.playbackRate = speechRate;
+          activeAudioElement = audio;
+
+          audio.onended = () => {
+            if (mySession !== speechSessionId) return;
+            cIdx++;
+            scheduleSafeTimer(playNextCloudChunk, 110);
+          };
+
+          audio.onerror = () => {
+            if (mySession !== speechSessionId) return;
+            fallbackWebSpeech(chunks.slice(cIdx).join(' '), mySession, onComplete, true);
+          };
+
+          audio.play().catch(() => {
+            if (mySession !== speechSessionId) return;
+            fallbackWebSpeech(chunks.slice(cIdx).join(' '), mySession, onComplete, true);
+          });
+        }
+
+        playNextCloudChunk();
+        return;
+      }
+
+      fallbackWebSpeech(spokenText, mySession, onComplete, false);
+    }
+
+    function fallbackWebSpeech(spokenText, mySession, onComplete, forceHighFemalePitch) {
+      if (!('speechSynthesis' in window) || mySession !== speechSessionId) {
+        if (onComplete) onComplete();
+        return;
+      }
+
+      const utter = new SpeechSynthesisUtterance(spokenText);
+      utter.lang = 'vi-VN';
+      utter.rate = speechRate;
+
+      const voices = window.speechSynthesis.getVoices();
+      if (manualVoiceURI !== 'auto') {
+        const found = voices.find(v => v.voiceURI === manualVoiceURI);
+        if (found) utter.voice = found;
+        utter.pitch = voiceGender === 'male' ? 0.8 : 1.35;
+      } else if (voiceGender === 'female') {
+        const fVoice = findTrueLocalFemaleVietnameseVoice();
+        if (fVoice) {
+          utter.voice = fVoice;
+          utter.pitch = 1.15;
+        } else {
+          const anyVi = findTrueLocalMaleVietnameseVoice();
+          if (anyVi) utter.voice = anyVi;
+          utter.pitch = forceHighFemalePitch ? 1.68 : 1.45;
+        }
+      } else {
+        const mVoice = findTrueLocalMaleVietnameseVoice();
+        if (mVoice) utter.voice = mVoice;
+        utter.pitch = 0.82;
+      }
+
+      let done = false;
+      utter.onend = () => {
+        if (done || mySession !== speechSessionId) return;
+        done = true;
+        if (onComplete) onComplete();
+      };
+
+      utter.onerror = (ev) => {
+        if (ev && (ev.error === 'canceled' || ev.error === 'interrupted')) return;
+        if (done || mySession !== speechSessionId) return;
+        done = true;
+        if (onComplete) onComplete();
+      };
+
+      currentUtterance = utter;
+      window.speechSynthesis.speak(utter);
+    }
+
+    function speakPreviewSample(sampleText) {
+      const mySession = cancelActiveSpeechCleanly();
+      scheduleSafeTimer(() => {
+        speakTextWithDualEngine(sampleText, mySession, null);
+      }, 70);
+    }
+
+    function setVoiceGender(gender, userClicked = false) {
+      voiceGender = gender;
+      manualVoiceURI = 'auto';
+      const sel = document.getElementById('systemVoiceSelect');
+      if (sel) sel.value = 'auto';
+
+      document.getElementById('btnVoiceMale').classList.toggle('active', gender === 'male');
+      document.getElementById('btnVoiceFemale').classList.toggle('active', gender === 'female');
+      document.getElementById('modalBtnMale').classList.toggle('active', gender === 'male');
+      document.getElementById('modalBtnFemale').classList.toggle('active', gender === 'female');
+
+      updateVoiceStatusText();
+      const gText = gender === 'male'
+        ? '👨 Đã chọn Giọng Nam Trầm Ấm'
+        : '👩 Đã chọn Giọng Nữ Truyền Cảm';
+      showVoiceToast(`${gText} (${speechRate.toFixed(2)}x)`);
+
+      if (isAutoLecturing) {
+        playSlideNarration(currentSlide, document.getElementById('chkAutoAdvance').checked, currentActiveSegmentIndex);
+      } else if (userClicked) {
+        speakPreviewSample(gender === 'male'
+          ? 'Chào các Cơ trưởng chuyên cơ A388, đây là giọng đọc Nam trầm ấm.'
+          : 'Chào các Cơ trưởng chuyên cơ A388, đây là giọng đọc Nữ truyền cảm.');
+      }
+    }
+
+    // Thanh trượt tốc độ đọc liên tục trên Top Bar & trong Modal
+    function syncSpeedUI(val) {
+      speechRate = Math.max(0.5, Math.min(1.8, parseFloat(val)));
+      const formatted = speechRate.toFixed(2) + 'x';
+      document.getElementById('topSpeedSlider').value = String(speechRate);
+      document.getElementById('topSpeedVal').textContent = formatted;
+      document.getElementById('speedRangeSlider').value = String(speechRate);
+      document.getElementById('rateValLabel').textContent = formatted;
+      updateVoiceStatusText();
+
+      if (activeAudioElement) {
+        activeAudioElement.playbackRate = speechRate;
+      }
+    }
+
+    function onTopSpeedSliderInput(val) {
+      syncSpeedUI(val);
+    }
+
+    function onTopSpeedSliderCommit(val) {
+      syncSpeedUI(val);
+      showVoiceToast(`⚡ Tốc độ giọng đọc: ${speechRate.toFixed(2)}x`);
+      if (isAutoLecturing) {
+        playSlideNarration(currentSlide, document.getElementById('chkAutoAdvance').checked, currentActiveSegmentIndex);
+      } else {
+        speakPreviewSample(`Tốc độ đọc hiện tại là ${speechRate.toFixed(2)} lần.`);
+      }
+    }
+
+    function stepSpeechSpeed(delta) {
+      const nextVal = Math.round((speechRate + delta) * 100) / 100;
+      onTopSpeedSliderCommit(nextVal);
+    }
+
+    function onManualVoiceSelect(uri) {
+      manualVoiceURI = uri;
+      updateVoiceStatusText();
+      if (isAutoLecturing) {
+        playSlideNarration(currentSlide, document.getElementById('chkAutoAdvance').checked, currentActiveSegmentIndex);
+      }
+    }
+
+    function updateVoiceStatusText() {
+      const gLabel = voiceGender === 'male' ? 'Giọng Nam Trầm Ấm' : 'Giọng Nữ Truyền Cảm (Cloud)';
+      const badge = document.getElementById('audioStatusBadge');
+      if (badge) {
+        badge.textContent = `Đang dùng: ${gLabel} • Tốc độ ${speechRate.toFixed(2)}x`;
+      }
+    }
+
+    // KỊCH BẢN 16 TRANG CHUẨN KÝ HIỆU & CHỮ SỐ TRÊN PHỤ ĐỀ (A388, 560 tấn, 10.000m, 30m, 108.0 MHz, 3D)
+    const lectureScripts16 = [
+      {
+        segments: [
+          {
+            text: "✈️ Chào mừng các Cơ trưởng, Cơ phó bước vào buồng lái của Siêu chuyên cơ hiện đại nhất thế giới A388!",
+            action: () => activateCockpitMind(false)
+          },
+          {
+            text: "🧭 Trong buồng lái A388 có đồng hồ đo độ cao 11.500m, tốc độ và radar. Nhưng độ cao quyết định sự bình an của cả chuyến bay chính là Độ cao của Tầng Nhận Thức!",
+            action: () => {
+              activateCockpitMind(true);
+              document.getElementById('s0Row1').classList.add('active-step');
+            }
+          }
+        ]
+      },
+      {
+        segments: [
+          {
+            text: "🌟 Thông điệp vàng số 1 là câu thơ của Bác Hồ: Thân thể ở trong lao, tinh thần ở ngoài lao. Muốn nên sự nghiệp lớn, tinh thần càng phải cao!",
+            action: () => expandSpiritView()
+          },
+          {
+            text: "🦅 Khoang lái A388 tuy hữu hạn, nhưng tinh thần của người chỉ huy phải bao quát cả bầu trời rộng lớn. Từ bị bó hẹp trong hoàn cảnh nhỏ trở thành tinh thần đỉnh cao dựng nghiệp lớn!",
+            action: () => document.getElementById('s1Row1').classList.add('active-step')
+          }
+        ]
+      },
+      {
+        segments: [
+          {
+            text: "⚖️ Thông điệp vàng số 2 của ông bà ta là: Tư tưởng không thông, vác bình tông cũng nặng!",
+            action: () => setCanteenMode('heavy')
+          },
+          {
+            text: "🕊️ Khi thế giới tinh thần phong phú, đủ đầy và nhận thức cao, giống như Siêu chuyên cơ A388 nặng 560 tấn vẫn vút bay nhẹ tênh, mọi việc lớn đều trở nên dễ dàng!",
+            action: () => {
+              setCanteenMode('light');
+              document.getElementById('s2Row1').classList.add('active-step');
+            }
+          }
+        ]
+      },
+      {
+        segments: [
+          {
+            text: "🌌 Mục a: Mọi nguồn lực đã có sẵn ở bên trong. Nếu so sánh Đại Vũ Trụ là 1 căn phòng thì Trái Đất chỉ như 1 hạt bụi nhỏ.",
+            action: () => setCosmosZoom(2)
+          },
+          {
+            text: "✨ Bên trong mỗi chúng ta lại có Tiểu Vũ Trụ chứa hàng triệu Trái Đất! Nguồn lực đã dư giả đủ đầy, từ đi tìm bên ngoài trở thành quay vào đánh thức Tiểu Vũ Trụ!",
+            action: () => {
+              setCosmosZoom(3);
+              document.getElementById('s3Row1').classList.add('active-step');
+            }
+          }
+        ]
+      },
+      {
+        segments: [
+          {
+            text: "🌱 Mục b: Mọi sự kiện diễn ra trong cuộc đời đều do việc mình gán nghĩa. Bên trong thử thách khó khăn lại chứa rất nhiều hạt giống, hạt mầm tuyệt vời!",
+            action: () => setSeedState('bloom')
+          },
+          {
+            text: "🌳 Khó khăn chỉ giúp chúng ta trở nên trưởng thành hơn. Còn phát triển là còn thành công, còn hạnh phúc!",
+            action: () => document.getElementById('s4Row1').classList.add('active-step')
+          }
+        ]
+      },
+      {
+        segments: [
+          {
+            text: "👑 Mục c: Được làm việc cùng đồng đội trên chuyên cơ A388 là đặc ân may mắn. Ai đến với chuyên cơ A388 cũng mang theo 1 giấc mơ lớn.",
+            action: () => lightUpCabinDreams()
+          },
+          {
+            text: "💎 Hãy giúp giấc mơ của họ trở thành hiện thực, giúp họ trở nên giàu có, khỏe mạnh, hạnh phúc. Và chính người giàu có, khỏe mạnh, hạnh phúc nhất là Nhà Lãnh Đạo!",
+            action: () => document.getElementById('s5Row1').classList.add('active-step')
+          }
+        ]
+      },
+      {
+        segments: [
+          {
+            text: "🏛️ Khi nhìn theo chiều ngang của Tháp 6 tầng nhận thức, nhận thức càng cao thì tháp càng thu nhỏ dần: càng lên cao càng ít nhiễu loạn.",
+            action: () => selectLevel(5)
+          },
+          {
+            text: "✈️ Số người chúng ta gặp ở tầng cao có thể ít hơn nhưng chất lượng tinh hoa hơn hẳn. Đúng nghĩa với câu: Mây tầng nào đón gió tầng đó!",
+            action: () => {
+              selectLevel(6);
+              document.getElementById('s6Row1').classList.add('active-step');
+            }
+          }
+        ]
+      },
+      {
+        segments: [
+          {
+            text: "⛈️ Ở 3 tầng thấp (Môi trường, Hành vi, Năng lực): nếu nhìn thấy người phàn nàn mà để lời phàn nàn nhấn chìm mình, nghĩa là ta đang ở tầng nhận thức thấp.",
+            action: () => {}
+          },
+          {
+            text: "🚀 Giống như lái chuyên cơ A388, người phi công giỏi lập tức kéo cần lái vượt lên trên những rào cản ở tầng thấp để nhìn tổng thể!",
+            action: () => {
+              riseAboveLowTiers();
+              document.getElementById('s7Row1').classList.add('active-step');
+            }
+          }
+        ]
+      },
+      {
+        segments: [
+          {
+            text: "💎 Khi vươn lên 3 tầng đỉnh cao (Niềm tin, Bản sắc, Sứ mệnh): ta nhận ra mình còn quá nhiều may mắn, đặc ân trên cuộc đời này.",
+            action: () => {}
+          },
+          {
+            text: "✨ Khi thay đổi những thứ vô hình bên trong chính là suy nghĩ và niềm tin, toàn bộ thế giới hữu hình bên ngoài lập tức đổi thay!",
+            action: () => document.getElementById('s8Row1').classList.add('active-step')
+          }
+        ]
+      },
+      {
+        segments: [
+          {
+            text: "☀️ Tại sao trên độ cao 10.000m không bao giờ có mưa bão, mây mù? Vì toàn bộ 99% hơi nước chỉ nằm ở tầng đối lưu bên dưới.",
+            action: () => updateAltitudeSim(2500)
+          },
+          {
+            text: "✈️ Khi chuyên cơ A388 vượt qua ngưỡng 10.000m lên độ cao 11.500m ở tầng bình lưu, hiện tượng đảo nhiệt khóa chặt mây giông bên dưới, bầu trời luôn có 0% mưa bão!",
+            action: () => {
+              updateAltitudeSim(11500);
+              document.getElementById('s9Row1').classList.add('active-step');
+            }
+          }
+        ]
+      },
+      {
+        segments: [
+          {
+            text: "🪟 Ví dụ 1: Tấm kính chắn gió buồng lái A388 và đôi kính gia đình. Vẫn con người đấy, vẫn căn nhà đấy, nhưng nếu kính tâm bám bụi phán xét thì nhìn đâu cũng thấy bực bội.",
+            action: () => {}
+          },
+          {
+            text: "💖 Chỉ cần bấm nút gạt sạch tấm kính tâm thức bằng lòng biết ơn, tự khắc cả thế giới xung quanh ta bừng sáng!",
+            action: () => {
+              document.getElementById('wiperMudSlide11').classList.add('clean');
+              document.getElementById('s10Row1').classList.add('active-step');
+            }
+          }
+        ]
+      },
+      {
+        segments: [
+          {
+            text: "📻 Ví dụ 2: Tần số đàm thoại radio trên buồng lái A388. Nếu để tâm ở kênh 88.5 MHz nhiễu sóng bắt lỗi, nghe gì cũng thấy nặng nề.",
+            action: () => setGiantRadio(false)
+          },
+          {
+            text: "🎵 Khi xoay núm tâm thức về tần số 108.0 MHz của lòng biết ơn và thấu cảm, mọi lời nói quanh ta đều trở nên ấm áp!",
+            action: () => {
+              setGiantRadio(true);
+              document.getElementById('s11Row1').classList.add('active-step');
+            }
+          }
+        ]
+      },
+      {
+        segments: [
+          {
+            text: "👁️ Ví dụ 3: Tiêu cự bức tranh 3D và chiếc điện thoại trên chiếc giường quen thuộc. Nhìn bằng mắt căng thẳng phán xét chỉ thấy xa cách.",
+            action: () => setGiantFocus(false)
+          },
+          {
+            text: "💝 Khi điều chỉnh tiêu cự 4D sang ánh nhìn thấu cảm, thương sự vất vả của người bạn đời, căn phòng ngủ quen thuộc lập tức hóa thiên đường hạnh phúc!",
+            action: () => {
+              setGiantFocus(true);
+              document.getElementById('s12Row1').classList.add('active-step');
+            }
+          }
+        ]
+      },
+      {
+        segments: [
+          {
+            text: "🌊 Ví dụ 4: Sóng biển bề mặt 0m và đáy đại dương Nha Trang sâu 30m. Cãi vã vụn vặt chỉ là bọt sóng ngoài mặt nước.",
+            action: () => setGiantOcean(false)
+          },
+          {
+            text: "🐠 Người Cơ trưởng A388 chọn lặn sâu xuống 30m đáy biển nội tâm tĩnh lặng, nên dù bên trên có giông bão cũng không bao giờ chao đảo!",
+            action: () => {
+              setGiantOcean(true);
+              document.getElementById('s13Row1').classList.add('active-step');
+            }
+          }
+        ]
+      },
+      {
+        segments: [
+          {
+            text: "🧭 Đôi khi chúng ta chẳng cần dịch chuyển địa lý, mà hãy dịch chuyển tâm thức của chính mình ngay trên chiếc ghế đang ngồi!",
+            action: () => setMindTeleport(2)
+          },
+          {
+            text: "✈️ Khi tâm thức vươn lên đỉnh cao Phụng Sự của chuyên cơ A388, muốn gặp ai, muốn đi đâu, bất cứ khi nào đều trở nên vô cùng dễ dàng!",
+            action: () => {
+              setMindTeleport(3);
+              document.getElementById('s14Row1').classList.add('active-step');
+            }
+          }
+        ]
+      },
+      {
+        segments: [
+          {
+            text: "🏆 Tổng kết với 5 khẩu quyết kim cương: 1. Từ hạt bụi nhỏ bé giữa đời trở thành Tiểu Vũ Trụ đủ đầy nguồn lực! 2. Từ vác nặng bình tông phàn nàn trở nên thanh thản lướt êm tầng bình lưu!",
+            action: () => {
+              document.getElementById('finalRow0').classList.add('active-step');
+              document.getElementById('finalRow1').classList.add('active-step');
+            }
+          },
+          {
+            text: "🌟 3. Từ lo sợ giông bão thử thách tạo nên hạt mầm trưởng thành và hạnh phúc! 4. Từ mong cầu đổi dời cảnh ngoài tạo ra phép màu chuyển tâm trên ghế cũ! 5. Từ người điều khiển chuyến bay A388 trở thành Nhà lãnh đạo nâng cánh giấc mơ!",
+            action: () => {
+              document.getElementById('finalRow2').classList.add('active-step');
+              document.getElementById('finalRow3').classList.add('active-step');
+              document.getElementById('finalRow4').classList.add('active-step');
+              launchCelebration();
+            }
+          }
+        ]
+      }
+    ];
+
+    function toggleAutoLecture() {
+      if (isAutoLecturing) {
+        stopAutoLecture();
+      } else {
+        startAutoLectureFromCurrent();
+      }
+    }
+
+    function startAutoLectureFromCurrent() {
+      isAutoLecturing = true;
+      updateSpeakButtonUI(true);
+      document.getElementById('teleprompterBar').classList.add('active-speaking');
+      playSlideNarration(currentSlide, document.getElementById('chkAutoAdvance').checked, 0);
+    }
+
+    function speakSingleSlide(slideIdx) {
+      if (currentSlide !== slideIdx) {
+        goToSlide(slideIdx, false);
+      }
+      isAutoLecturing = true;
+      updateSpeakButtonUI(true);
+      document.getElementById('teleprompterBar').classList.add('active-speaking');
+      playSlideNarration(slideIdx, document.getElementById('chkAutoAdvance').checked, 0);
+    }
+
+    function stopAutoLecture() {
+      isAutoLecturing = false;
+      cancelActiveSpeechCleanly();
+      updateSpeakButtonUI(false);
+      document.getElementById('teleprompterBar').classList.remove('active-speaking');
+      document.querySelectorAll('.slide-inner').forEach(el => el.classList.remove('narrating-glow'));
+    }
+
+    function updateSpeakButtonUI(speaking) {
+      const btn = document.getElementById('btnMasterSpeak');
+      const icon = document.getElementById('speakIcon');
+      const label = document.getElementById('speakLabel');
+      btn.classList.toggle('speaking', speaking);
+      if (speaking) {
+        icon.textContent = '⏹';
+        label.textContent = 'ĐANG GIẢNG (DỪNG)';
+      } else {
+        icon.textContent = '🎙️';
+        label.textContent = 'BẤM NÚT NÓI';
+      }
+    }
+
+    function playSlideNarration(slideIdx, autoAdvanceNext, startFromSegment = 0) {
+      const mySession = cancelActiveSpeechCleanly();
+      if (!isAutoLecturing) return;
+
+      document.querySelectorAll('.slide-inner').forEach((el, idx) => {
+        el.classList.toggle('narrating-glow', idx === slideIdx);
+      });
+
+      const scriptObj = lectureScripts16[slideIdx];
+      if (!scriptObj) return;
+
+      if (customAudioBySlide[slideIdx]) {
+        const segments = scriptObj.segments;
+        segments.forEach((seg, sIdx) => {
+          scheduleSafeTimer(() => {
+            if (mySession !== speechSessionId || !isAutoLecturing) return;
+            document.getElementById('teleprompterText').textContent = seg.text;
+            if (seg.action) seg.action();
+          }, sIdx * (4200 / speechRate));
+        });
+
+        activeAudioElement = new Audio(customAudioBySlide[slideIdx]);
+        activeAudioElement.playbackRate = speechRate;
+        activeAudioElement.onended = () => {
+          if (mySession !== speechSessionId || !isAutoLecturing) return;
+          advanceToNextSlideInLecture(slideIdx, autoAdvanceNext, mySession);
+        };
+        activeAudioElement.play().catch(() => {});
+        return;
+      }
+
+      const segments = scriptObj.segments;
+      let segIndex = startFromSegment;
+
+      function speakNextSegment() {
+        if (mySession !== speechSessionId || !isAutoLecturing) return;
+
+        if (segIndex >= segments.length) {
+          advanceToNextSlideInLecture(slideIdx, autoAdvanceNext, mySession);
+          return;
+        }
+
+        currentActiveSegmentIndex = segIndex;
+        const seg = segments[segIndex];
+        // Hiển thị nguyên bản ký hiệu A388, 560 tấn, 10.000m, 108.0 MHz trên thanh phụ đề
+        document.getElementById('teleprompterText').textContent = seg.text;
+        if (seg.action) seg.action();
+
+        // Khi phát âm thanh thì tự động lọc bỏ emoji và đọc A388 -> A ba tám tám
+        const cleanForSpeech = seg.text.replace(/[\u{1F300}-\u{1FAFF}\u{2600}-\u{27BF}]/gu, '');
+        speakTextWithDualEngine(cleanForSpeech, mySession, () => {
+          if (mySession !== speechSessionId || !isAutoLecturing) return;
+          segIndex++;
+          scheduleSafeTimer(speakNextSegment, 300);
+        });
+      }
+
+      scheduleSafeTimer(speakNextSegment, 80);
+    }
+
+    function advanceToNextSlideInLecture(currentIdx, autoAdvanceNext, mySession) {
+      if (mySession !== speechSessionId || !isAutoLecturing) return;
+      const shouldAdvance = autoAdvanceNext && document.getElementById('chkAutoAdvance').checked;
+      if (shouldAdvance && currentIdx < totalSlides - 1) {
+        scheduleSafeTimer(() => {
+          if (mySession !== speechSessionId || !isAutoLecturing) return;
+          goToSlide(currentIdx + 1, false);
+          scheduleSafeTimer(() => {
+            if (mySession !== speechSessionId || !isAutoLecturing) return;
+            playSlideNarration(currentIdx + 1, true, 0);
+          }, 550);
+        }, 700);
+      } else {
+        scheduleSafeTimer(() => {
+          if (mySession !== speechSessionId) return;
+          stopAutoLecture();
+        }, 900);
+      }
+    }
+
+    // =========================================================================
+    // 4. PHÒNG THU MICRO LỌC ỒN & ĐÓNG GÓI GITHUB PAGES 1-CLICK
+    // =========================================================================
+    let mediaRecorder = null;
+    let recordedChunks = [];
+    let isRecordingMic = false;
+
+    function openVoiceModal() {
+      const chg = String(currentSlide + 1).padStart(2, '0');
+      document.getElementById('modalCurrentSlideLabel').textContent = `Thu âm giọng thật của Ông chủ cho: Trang ${chg} / 16`;
+      document.getElementById('voiceModal').classList.add('open');
+    }
+
+    function closeVoiceModal() {
+      document.getElementById('voiceModal').classList.remove('open');
+    }
+
+    function openGitHubModal() {
+      updateGitHubScript();
+      document.getElementById('githubModal').classList.add('open');
+    }
+
+    function closeGitHubModal() {
+      document.getElementById('githubModal').classList.remove('open');
+    }
+
+    function updateGitHubScript() {
+      const repoRaw = document.getElementById('ghRepoInput').value.trim() || 'nhan-thuc-co-truong-a388';
+      const repoSlug = repoRaw.toLowerCase().replace(/[^a-z0-9-]/g, '-');
+      document.getElementById('ghLiveUrlPreview').textContent = `https://tuangemini.github.io/${repoSlug}/`;
+
+      const psCode = `$RepoName = "${repoSlug}"
+$WorkDir = "D:\\Users\\Downloads\\WEBSITE"
+New-Item -ItemType Directory -Force -Path $WorkDir | Out-Null
+Set-Location $WorkDir
+
+if (-not (Test-Path "$WorkDir\\$RepoName")) {
+    gh repo create "tuangemini/$RepoName" --public --clone
+}
+Set-Location "$WorkDir\\$RepoName"
+
+# Sao chép file bài giảng V08 mới nhất thành trang chủ index.html
+$LatestHtml = Get-ChildItem "$env:USERPROFILE\\Downloads\\*co-truong*.html" | Sort-Object LastWriteTime -Descending | Select-Object -First 1
+if ($LatestHtml) {
+    Copy-Item -Path $LatestHtml.FullName -Destination "index.html" -Force
+}
+
+git add index.html
+git commit -m "Deploy 4D A388 Lecture V08: $RepoName"
+git push -u origin main
+gh api -X POST "repos/tuangemini/$RepoName/pages" -f "source[branch]=main" -f "source[path]=/" 2>$null
+Start-Process "https://tuangemini.github.io/$RepoName/"`;
+
+      document.getElementById('ghPsCommandBox').textContent = psCode;
+    }
+
+    function copyGitHubCommand() {
+      const code = document.getElementById('ghPsCommandBox').textContent;
+      navigator.clipboard.writeText(code).then(() => {
+        showVoiceToast('📋 Đã sao chép lệnh PowerShell đẩy lên GitHub!');
+      });
+    }
+
+    function downloadReadyIndexHtml() {
+      const fullHtml = '<!DOCTYPE html>\n' + document.documentElement.outerHTML;
+      const blob = new Blob([fullHtml], { type: 'text/html;charset=utf-8' });
+      const a = document.createElement('a');
+      a.href = URL.createObjectURL(blob);
+      a.download = 'index.html';
+      a.click();
+      showVoiceToast('📥 Đã tải file index.html sẵn sàng đưa lên GitHub!');
+    }
+
+    function handleAudioUpload(event) {
+      const file = event.target.files[0];
+      if (!file) return;
+      customAudioBySlide[currentSlide] = URL.createObjectURL(file);
+      document.getElementById('audioStatusBadge').textContent = `Đã gắn file giọng thật (${file.name}) cho Trang ${currentSlide + 1}!`;
+      showVoiceToast(`Đã nạp file giọng thật cho Trang ${currentSlide + 1}!`);
+    }
+
+    async function toggleMicRecording() {
+      const btn = document.getElementById('btnRecordMic');
+      const status = document.getElementById('audioStatusBadge');
+
+      if (!isRecordingMic) {
+        try {
+          const stream = await navigator.mediaDevices.getUserMedia({
+            audio: {
+              echoCancellation: true,
+              noiseSuppression: true,
+              autoGainControl: true
+            }
+          });
+          recordedChunks = [];
+          mediaRecorder = new MediaRecorder(stream);
+          mediaRecorder.ondataavailable = e => {
+            if (e.data.size > 0) recordedChunks.push(e.data);
+          };
+          mediaRecorder.onstop = () => {
+            const blob = new Blob(recordedChunks, { type: 'audio/webm' });
+            customAudioBySlide[currentSlide] = URL.createObjectURL(blob);
+            status.textContent = `Đã lưu bản thu âm trong trẻo cho Trang ${currentSlide + 1}!`;
+            showVoiceToast(`Đã lưu giọng thu âm cho Trang ${currentSlide + 1}!`);
+            stream.getTracks().forEach(t => t.stop());
+          };
+          mediaRecorder.start();
+          isRecordingMic = true;
+          btn.textContent = '⏹ Bấm Để Lưu Bản Thu Âm';
+          btn.style.background = '#fb7185';
+          status.textContent = 'Đang thu âm giọng Ông chủ (Đã khử ồn)...';
+        } catch (err) {
+          status.textContent = 'Vui lòng cấp quyền Micro hoặc chọn Tải File Giọng Nói.';
+        }
+      } else {
+        if (mediaRecorder && mediaRecorder.state !== 'inactive') {
+          mediaRecorder.stop();
+        }
+        isRecordingMic = false;
+        btn.textContent = '🎙️ Bấm Thu Âm Giọng Thật (Có Lọc Ồn)';
+        btn.style.background = '';
+      }
+    }
+
+    // =========================================================================
+    // 5. CÁC HÀM TƯƠNG TÁC TRỰC QUAN 4D TRÊN 16 TRANG (100% CHUYÊN CƠ A388)
+    // =========================================================================
+    function activateCockpitMind(active) {
+      const img = document.getElementById('slide1HeroImg');
+      const cap = document.getElementById('slide1ImgCaption');
+      const txt = document.getElementById('cockpitStatusText');
+      if (active) {
+        img.src = 'https://images.unsplash.com/photo-1436491865332-7a61a109cc05?auto=format&fit=crop&w=1600&q=85';
+        cap.textContent = bindClauseWords('☀️ Độ Cao Nhận Thức 11.500m • Bầu Trời Trí Tuệ Rực Rỡ Ánh Nắng');
+        txt.textContent = '☀️ Đã đạt độ cao 11.500m (Tầng Bình Lưu Bình Yên)';
+        launchCelebration();
+      } else {
+        img.src = 'https://images.unsplash.com/photo-1540339832862-474599807836?auto=format&fit=crop&w=1600&q=85';
+        cap.textContent = bindClauseWords('✈️ Siêu Chuyên Cơ A388 Vượt Biển Mây • Tầm Nhìn Của Người Chỉ Huy');
+        txt.textContent = '🧭 Đồng hồ độ cao A388: Sẵn sàng cất cánh';
+      }
+    }
+
+    function expandSpiritView() {
+      document.getElementById('slide2Img').src = 'https://images.unsplash.com/photo-1569154941061-e231b4725ef1?auto=format&fit=crop&w=1600&q=85';
+      document.getElementById('slide2Caption').textContent = bindClauseWords('🦅 Tinh Thần Vượt Ngoài Lao • Siêu Chuyên Cơ A388 Làm Chủ Bầu Trời');
+      document.getElementById('s1Row1').classList.add('active-step');
+    }
+
+    function setCanteenMode(mode) {
+      const img = document.getElementById('canteenImg');
+      const cap = document.getElementById('canteenCaption');
+      const badge = document.getElementById('canteenWeightBadge');
+      if (mode === 'heavy') {
+        img.src = 'https://images.unsplash.com/photo-1509198397868-475647b2a1e5?auto=format&fit=crop&w=1600&q=85';
+        cap.textContent = bindClauseWords('🪨 Khi Tư Tưởng Không Thông • Vác Chiếc Bình Tông Nhỏ Cũng Nặng Trĩu');
+        badge.textContent = '⚠️ TƯ TƯỞNG BẾ TẮC • NẶNG 100 KG';
+      } else {
+        img.src = 'https://images.unsplash.com/photo-1436491865332-7a61a109cc05?auto=format&fit=crop&w=1600&q=85';
+        cap.textContent = bindClauseWords('🌈 Khi Tư Tưởng Thông Suốt • Chuyên Cơ A388 560 Tấn Vẫn Bay Nhẹ Tênh!');
+        badge.textContent = '✈️ TƯ TƯỞNG THÔNG SUỐT • NHẸ TÊNH 0 KG';
+      }
+    }
+
+    const cosmosData = {
+      1: {
+        img: 'https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&w=1600&q=85',
+        caption: '🌌 a. Đại Vũ Trụ Bao La Như Một Căn Phòng Khổng Lồ'
+      },
+      2: {
+        img: 'https://images.unsplash.com/photo-1614730321146-b6fa6a46bcb4?auto=format&fit=crop&w=1600&q=85',
+        caption: '🌍 b. Trái Đất Của Chúng Ta Chỉ Như Một Hạt Bụi Nhỏ Trong Căn Phòng Ấy'
+      },
+      3: {
+        img: 'https://images.unsplash.com/photo-1462331940025-496dfbfc7564?auto=format&fit=crop&w=1600&q=85',
+        caption: '✨ c. Bên Trong Ta Là Tiểu Vũ Trụ Chứa Hàng Triệu Trái Đất!'
+      }
+    };
+
+    function setCosmosZoom(level) {
+      [1, 2, 3].forEach(n => document.getElementById('btnZoom' + n).classList.toggle('active', n === level));
+      document.getElementById('cosmosZoomImg').src = cosmosData[level].img;
+      document.getElementById('cosmosZoomCaption').textContent = bindClauseWords(cosmosData[level].caption);
+    }
+
+    function setSeedState(state) {
+      const img = document.getElementById('seedImg');
+      const cap = document.getElementById('seedCaption');
+      const badge = document.getElementById('seedBadge');
+      if (state === 'storm') {
+        img.src = 'https://images.unsplash.com/photo-1509198397868-475647b2a1e5?auto=format&fit=crop&w=1600&q=85';
+        cap.textContent = bindClauseWords('🌧️ Nếu Gán Nghĩa Tiêu Cực: Chỉ Thấy Áp Lực Và Mệt Mỏi');
+        badge.textContent = '🌧️ GÓC NHÌN TẦNG THẤP';
+      } else {
+        img.src = 'https://images.unsplash.com/photo-1502082553048-f009c37129b9?auto=format&fit=crop&w=1600&q=85';
+        cap.textContent = bindClauseWords('🌳 Gán Nghĩa Tích Cực: Trong Thử Thách Chứa Hạt Mầm Trưởng Thành Tuyệt Vời!');
+        badge.textContent = '🌳 HẠT MẦM TRƯỞNG THÀNH & HẠNH PHÚC';
+      }
+    }
+
+    function lightUpCabinDreams() {
+      document.getElementById('dreamCrewImg').src = 'https://images.unsplash.com/photo-1540339832862-474599807836?auto=format&fit=crop&w=1600&q=85';
+      document.getElementById('dreamCrewCaption').textContent = bindClauseWords('👑 Đồng Đội Giàu Có, Khỏe Mạnh, Hạnh Phúc • Nhà Lãnh Đạo A388 Tỏa Sáng!');
+      document.getElementById('s5Row1').classList.add('active-step');
+      launchCelebration();
+    }
+
+    const levelsData = {
+      6: {
+        badge: '👑 TẦNG 6 • ĐỈNH THÁP SỨ MỆNH (CHIỀU NGANG TINH GỌN NHẤT)',
+        title: '👑 Sứ Mệnh (Purpose): Nâng Cánh Giấc Mơ Cho Muôn Người',
+        desc: 'Ở đỉnh tháp, diện tích ngang thu nhỏ lại: không còn nhiễu loạn, chỉ hội tụ những tâm hồn lớn cùng phụng sự cuộc đời.'
+      },
+      5: {
+        badge: '🌟 TẦNG 5 • BẢN SẮC CƠ TRƯỞNG A388',
+        title: '🌟 Bản Sắc (Identity): Tôi Là Nhà Lãnh Đạo Giàu Có, Khỏe Mạnh, Hạnh Phúc',
+        desc: 'Định vị rõ bản sắc người chỉ huy điềm tĩnh, làm chỗ dựa bình an cho toàn bộ chuyên cơ.'
+      },
+      4: {
+        badge: '💎 TẦNG 4 • HỆ THỐNG NIỀM TIN & GIÁ TRỊ',
+        title: '💎 Niềm Tin (Beliefs): Mọi Nguồn Lực Đã Sẵn Có Bên Trong',
+        desc: 'Tin rằng mọi thử thách đều chứa hạt mầm tích cực giúp ta trưởng thành hơn mỗi ngày.'
+      },
+      3: {
+        badge: '🧭 TẦNG 3 • NĂNG LỰC ĐIỀU PHỐI',
+        title: '🧭 Năng Lực (Capabilities): Làm Chủ Kỹ Thuật Bằng Tâm Tĩnh Lặng',
+        desc: 'Khi tư tưởng đã thông suốt, mọi năng lực điều phối chuyên cơ đều vận hành nhẹ nhàng.'
+      },
+      2: {
+        badge: '⚙️ TẦNG 2 • HÀNH VI HÀNG NGÀY',
+        title: '⚙️ Hành Vi (Behavior): Lời Nói Và Cử Chỉ Tử Tế, Chuẩn Xác',
+        desc: 'Thao tác ung dung, lời nói ấm áp truyền năng lượng tích cực cho đồng đội.'
+      },
+      1: {
+        badge: '🌧️ TẦNG 1 • ĐÁY THÁP MÔI TRƯỜNG (RỘNG NHẤT & ỒN ÀO NHẤT)',
+        title: '🌧️ Môi Trường (Environment): Vượt Lên Trên Lời Phàn Nàn',
+        desc: 'Đáy tháp đông đúc và nhiều phàn nàn nhất. Người Cơ trưởng giỏi lập tức bay vút lên tầng cao!'
+      }
+    };
+
+    function selectLevel(lvl) {
+      document.querySelectorAll('.pyramid-tier').forEach((el, idx) => {
+        el.classList.toggle('active', (6 - idx) === lvl);
+      });
+      const d = levelsData[lvl];
+      document.getElementById('lvlBadge').textContent = d.badge;
+      document.getElementById('lvlTitle').textContent = bindClauseWords(d.title);
+      document.getElementById('lvlDesc').textContent = bindClauseWords(d.desc);
+    }
+
+    function riseAboveLowTiers() {
+      document.getElementById('lowTierImg').src = 'https://images.unsplash.com/photo-1436491865332-7a61a109cc05?auto=format&fit=crop&w=1600&q=85';
+      document.getElementById('lowTierCaption').textContent = bindClauseWords('☀️ Siêu Chuyên Cơ A388 Đã Vượt Lên Trên Rào Cản Tầng Thấp!');
+      document.getElementById('s7Row1').classList.add('active-step');
+    }
+
+    function updateAltitudeSim(val) {
+      const altitude = parseInt(val, 10);
+      const plane = document.getElementById('planeActor');
+      const altText = document.getElementById('simAltText');
+      const bottomPx = 26 + ((altitude - 1000) / 11500) * 240;
+      plane.style.bottom = bottomPx + 'px';
+
+      if (altitude >= 10000) {
+        altText.textContent = `☀️ A388: ${altitude.toLocaleString('vi-VN')}m • TẦNG BÌNH LƯU (0% MƯA BÃO)`;
+        altText.style.color = '#ffe9ad';
+      } else if (altitude >= 8000) {
+        altText.textContent = `🌤️ A388: ${altitude.toLocaleString('vi-VN')}m • ĐANG VƯỢT NẮP CHẶN ĐẢO NHIỆT`;
+        altText.style.color = '#38bdf8';
+      } else {
+        altText.textContent = `⛈️ A388: ${altitude.toLocaleString('vi-VN')}m • TẦNG ĐỐI LƯU MƯA BÃO`;
+        altText.style.color = '#fecdd3';
+      }
+    }
+
+    function toggleGiantWiper() {
+      const mud = document.getElementById('wiperMudSlide11');
+      mud.classList.toggle('clean');
+      document.getElementById('s10Row1').classList.add('active-step');
+    }
+
+    function setGiantRadio(positive) {
+      radioWaveCleanMode = positive;
+      const badge = document.getElementById('radioBadgeSlide12');
+      const cap = document.getElementById('radioCapSlide12');
+      if (positive) {
+        badge.textContent = '📻 TẦN SỐ 108.0 MHz • SÓNG BIẾT ƠN & BÌNH AN';
+        cap.textContent = bindClauseWords('🎵 Chọn Tần Số Yêu Thương • Nghe Thấu Lời Tri Ân Giữa Đời Thường');
+      } else {
+        badge.textContent = '⚡ TẦN SỐ 88.5 MHz • NHIỄU SÓNG PHÀN NÀN & BẮT LỖI';
+        cap.textContent = bindClauseWords('⚡ Khi Bắt Sóng Tiêu Cực • Nghe Ai Nói Gì Cũng Thấy Chói Tai');
+      }
+    }
+
+    function setGiantFocus(deep) {
+      const img = document.getElementById('focusImgSlide13');
+      const badge = document.getElementById('focusBadgeSlide13');
+      const cap = document.getElementById('focusCapSlide13');
+      if (deep) {
+        img.style.filter = 'blur(0px)';
+        badge.textContent = '👁️ TIÊU CỰ THẤU CẢM SÂU SẮC 4D';
+        cap.textContent = bindClauseWords('💝 Đổi Tiêu Cự Ánh Nhìn • Thấy Ngay Chiều Sâu Yêu Thương');
+      } else {
+        img.style.filter = 'blur(8px) grayscale(75%)';
+        badge.textContent = '💢 TIÊU CỰ CĂNG THẲNG & PHÁN XÉT';
+        cap.textContent = bindClauseWords('💢 Nhìn Bề Nổi Căng Thẳng • Cảnh Vật Quen Thuộc Trở Nên Rối Rắm');
+      }
+    }
+
+    function setGiantOcean(deep) {
+      const img = document.getElementById('oceanImgSlide14');
+      const badge = document.getElementById('oceanBadgeSlide14');
+      const cap = document.getElementById('oceanCapSlide14');
+      if (deep) {
+        img.src = 'https://images.unsplash.com/photo-1544551763-46a013bb70d5?auto=format&fit=crop&w=1600&q=85';
+        badge.textContent = '🌊 ĐỘ SÂU 30 MÉT • ĐÁY BIỂN TĨNH LẶNG BẤT HOẠI';
+        cap.textContent = bindClauseWords('🐠 Dù Mặt Nước Bão Giông • Đáy Đại Dương Vẫn Bình Yên Ngàn Năm');
+      } else {
+        img.src = 'https://images.unsplash.com/photo-1518837695005-2083093ee35b?auto=format&fit=crop&w=1600&q=85';
+        badge.textContent = '🌪️ ĐỘ SÂU 0 MÉT (MẶT NƯỚC) • SÓNG CUỘN BỌT TUNG';
+        cap.textContent = bindClauseWords('🌪️ Ở Tầng Bề Mặt • Dễ Bị Những Chuyện Vụn Vặt Làm Chao Đảo');
+      }
+    }
+
+    const teleportData = {
+      1: {
+        img: 'https://images.unsplash.com/photo-1509198397868-475647b2a1e5?auto=format&fit=crop&w=1600&q=85',
+        title: '🌧️ Tâm Phàn Nàn: Đi Đâu Cũng Gặp Nhiễu Loạn'
+      },
+      2: {
+        img: 'https://images.unsplash.com/photo-1556388158-158ea5ccacbd?auto=format&fit=crop&w=1600&q=85',
+        title: '🌿 Tâm Bình An: Ngay Tại Ghế Ngồi Đã Thấy Hạnh Phúc'
+      },
+      3: {
+        img: 'https://images.unsplash.com/photo-1540339832862-474599807836?auto=format&fit=crop&w=1600&q=85',
+        title: '👑 Tâm Phụng Sự Đỉnh Cao A388: Muốn Gặp Ai, Đi Đâu Đều Dễ Dàng!'
+      }
+    };
+
+    function setMindTeleport(lvl) {
+      [1, 2, 3].forEach(n => document.getElementById('tpBtn' + n).classList.toggle('active', n === lvl));
+      document.getElementById('teleportImg').src = teleportData[lvl].img;
+      document.getElementById('teleportTitle').textContent = bindClauseWords(teleportData[lvl].title);
+    }
+
+    // Khởi chạy toàn bộ hệ thống V08
+    initDots();
+    lockAllVietnameseOrphans();
+    init4DVisualStages();
+    updateSlidePosition();
+  </script>
+</body>
+</html>
