@@ -11,6 +11,14 @@ import re
 import subprocess
 from datetime import datetime
 
+# Đảm bảo in tiếng Việt và Emoji mượt mà trên Windows console
+if sys.platform.startswith("win"):
+    try:
+        sys.stdout.reconfigure(encoding='utf-8')
+        sys.stderr.reconfigure(encoding='utf-8')
+    except Exception:
+        pass
+
 # Đường dẫn thư mục hiện tại
 SCRIPT_DIR = os.path.dirname(os.path.abspath(__file__))
 DATA_JSON_PATH = os.path.join(SCRIPT_DIR, "data.json")
