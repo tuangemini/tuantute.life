@@ -2,20 +2,18 @@
 <!--
   ==========================================================================
   TÊN FILE: thuyet-trinh-bni-force-ktcs-xai-v03.html
-  PHIÊN BẢN: V03 (Nâng cấp Toàn Diện: Chuyển Giọng Tức Thì + Chiếu Toàn Màn Hình Chuẩn Trang + Nhạc Nền & SFX + 5 Phong Cách Đồng Bộ + KTCSxAI)
+  PHIÊN BẢN: V03 (15 Slide Thuyết Trình BNI Force - Đã Lược Bỏ Số Tài Khoản, Số Tiền & Mã QR)
   NGÀY THUYẾT TRÌNH: Sáng Thứ Ba, ngày 27 tháng 10 năm 2026
   DIỄN GIẢ: Nhà đào tạo Nguyễn Anh Tuấn (Tuấn Tử Tế Từ Tâm) - Chủ tịch GTO Media
   ĐỐI TƯỢNG: Các Chủ Doanh Nghiệp BNI Force Chapter
-  TÍNH NĂNG NỔI BẬT V03:
-  1. Chuyển Giọng Đọc Tức Thì: Chuyển ngay tại câu/từ đang nói, không đọc lại từ đầu trang slide.
-  2. Chiếu Toàn Màn Hình Tức Thì: Giữ nguyên trang đang đứng, không bị văng về trang đầu tiên.
-  3. Hình Ảnh Hoàn Toàn Mới Cho Chủ Doanh Nghiệp BNI: Thay thế triệt để các hình ảnh cũ phi công A388,
-     thiết kế dành riêng cho giới Chủ doanh nghiệp, kết nối kinh doanh đỉnh cao, Thân-Tâm-Trí & Trí tuệ AI.
-  4. 5 Phong Cách Đồng Bộ Khi Bấm Chọn: Điện ảnh 4D / Chân thực Sang trọng / Đồ họa Infographic / Bức vẽ & Viết tay / Hoạt hình 3D.
-  5. Nhạc Nền Nhẹ Truyền Cảm Hứng (Web Audio Ambient Synth) + Hiệu Ứng Âm Thanh SFX + Thanh trượt Âm lượng (0% - 100%).
-  6. Chuẩn Hóa Danh Xưng: Chuyển toàn bộ KXDMxAI thành KTCSxAI (Kiến Tạo Cuộc Sống x AI).
-  7. Tích Hợp Xuất Bản GitHub Thông Minh: Thêm vào đầu trang web tuantute.life như bài viết mới nhất,
-     không ghi đè hay xóa các bài viết cũ trong index hay data.json.
+  TÍNH NĂNG NỔI BẬT:
+  1. 15 Slide Chuẩn Mực: Tập trung trọn vẹn vào chia sẻ giá trị, triết lý Thân - Tâm - Trí và văn hóa BNI.
+  2. Chuyển Giọng Đọc Tức Thì: Chuyển ngay tại câu/từ đang nói, không đọc lại từ đầu trang slide.
+  3. Chiếu Toàn Màn Hình Tức Thì: Giữ nguyên trang đang đứng, không bị văng về trang đầu tiên.
+  4. Hình Ảnh Hoàn Toàn Mới Cho Chủ Doanh Nghiệp BNI: Thiết kế dành riêng cho giới Chủ doanh nghiệp BNI Force.
+  5. 5 Phong Cách Đồng Bộ Khi Bấm Chọn: Điện ảnh 4D / Chân thực Sang trọng / Đồ họa Infographic / Bức vẽ & Viết tay / Hoạt hình 3D.
+  6. Nhạc Nền Nhẹ Truyền Cảm Hứng (Web Audio Ambient Synth) + Hiệu Ứng Âm Thanh SFX + Thanh trượt Âm lượng (0% - 100%).
+  7. Chuẩn Hóa Danh Xưng: Toàn bộ chuyển thành KTCSxAI (Kiến Tạo Cuộc Sống x AI).
   8. Hệ Thống Hide Slide: Tùy chọn Ẩn/Hiện từng trang bằng Checkbox, tự động bỏ qua trang ẩn.
   ==========================================================================
 -->
@@ -199,7 +197,7 @@
       justify-content: space-between;
       padding: 0 10px;
       z-index: 1000;
-      gap: 5px;
+      gap: 6px;
       flex-wrap: nowrap;
     }
 
@@ -236,7 +234,7 @@
       outline: none;
     }
 
-    .slide-select-dropdown { max-width: 180px; }
+    .slide-select-dropdown { max-width: 195px; }
     .style-select-dropdown { border-color: rgba(56, 189, 248, 0.6); color: #38bdf8; max-width: 155px; }
 
     .btn-hide-manager {
@@ -245,7 +243,6 @@
       color: #e0f2fe;
       padding: 6px 10px;
       border-radius: 999px;
-      font-family: 'Be Vietnam Pro', sans-serif;
       font-size: 0.72rem;
       font-weight: 800;
       cursor: pointer;
@@ -286,7 +283,6 @@
       color: #cbd5e1;
       padding: 5px 8px;
       border-radius: 999px;
-      font-family: 'Be Vietnam Pro', sans-serif;
       font-size: 0.71rem;
       font-weight: 700;
       cursor: pointer;
@@ -306,7 +302,7 @@
       box-shadow: 0 0 10px rgba(245, 196, 81, 0.6);
     }
 
-    /* THANH TRƯỢT NHẠC NỀN & ÂM LƯỢNG V03 */
+    /* THANH TRƯỢT NHẠC NỀN & ÂM LƯỢNG */
     .bgm-control-pill {
       display: flex;
       align-items: center;
@@ -397,14 +393,14 @@
     .voice-master-bar {
       display: flex;
       align-items: center;
-      gap: 5px;
+      gap: 6px;
     }
 
     .btn-speak-master {
       background: linear-gradient(135deg, #10b981, #059669);
       color: #fff;
       border: 1px solid rgba(255, 255, 255, 0.4);
-      padding: 7px 11px;
+      padding: 7px 12px;
       border-radius: 999px;
       font-size: 0.74rem;
       font-weight: 800;
@@ -426,51 +422,26 @@
       50% { transform: scale(1.03); }
     }
 
-    .btn-qr-instant {
-      background: linear-gradient(135deg, #cf2030, #f59e0b);
-      color: #fff;
-      border: 1.5px solid #ffe9ad;
-      padding: 7px 11px;
+    .btn-fullscreen-instant {
+      background: linear-gradient(135deg, #8b5cf6, #6d28d9);
+      border: 1px solid rgba(221, 214, 254, 0.6);
+      color: #ffffff;
+      padding: 6px 11px;
       border-radius: 999px;
-      font-size: 0.74rem;
+      font-size: 0.72rem;
       font-weight: 800;
       cursor: pointer;
       white-space: nowrap;
-      box-shadow: 0 0 18px rgba(207, 32, 48, 0.7);
-      animation: pulseGlow 2s infinite;
-    }
-
-    .btn-voice-studio {
-      background: rgba(245, 196, 81, 0.16);
-      border: 1px solid rgba(245, 196, 81, 0.4);
-      color: #ffe9ad;
-      padding: 6px 8px;
-      border-radius: 999px;
-      font-size: 0.71rem;
-      font-weight: 700;
-      cursor: pointer;
-      white-space: nowrap;
+      box-shadow: 0 0 14px rgba(139, 92, 246, 0.4);
     }
 
     .btn-github-deploy {
       background: linear-gradient(135deg, #3b82f6, #1d4ed8);
       border: 1px solid rgba(147, 197, 253, 0.5);
       color: #ffffff;
-      padding: 6px 9px;
-      border-radius: 999px;
-      font-size: 0.71rem;
-      font-weight: 800;
-      cursor: pointer;
-      white-space: nowrap;
-    }
-
-    .btn-fullscreen-instant {
-      background: linear-gradient(135deg, #8b5cf6, #6d28d9);
-      border: 1px solid rgba(221, 214, 254, 0.6);
-      color: #ffffff;
       padding: 6px 10px;
       border-radius: 999px;
-      font-size: 0.72rem;
+      font-size: 0.71rem;
       font-weight: 800;
       cursor: pointer;
       white-space: nowrap;
@@ -501,7 +472,7 @@
     }
 
     /* =========================================================================
-       TẦNG 2: KHUNG TRÌNH CHIẾU CHÍNH (ZERO-OVERLAP + 16 TRANG)
+       TẦNG 2: KHUNG TRÌNH CHIẾU CHÍNH (ZERO-OVERLAP + 15 TRANG)
        ========================================================================= */
     .deck-viewport {
       position: relative;
@@ -971,53 +942,6 @@
     .tier-2 { width: 90%; background: linear-gradient(90deg, #10b981, #34d399); }
     .tier-1 { width: 100%; background: linear-gradient(90deg, #334155, #475569); }
 
-    /* =========================================================================
-       SIÊU MÃ QUÉT QR ACB CỠ ĐẠI (SLIDE 16 & FULLSCREEN LIGHTBOX)
-       ========================================================================= */
-    .giant-qr-showcase {
-      background: #ffffff;
-      border: 5px solid #f5c451;
-      border-radius: 24px;
-      padding: 16px;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      box-shadow: 0 0 45px rgba(245, 196, 81, 0.55);
-      cursor: pointer;
-      transition: transform 0.25s ease;
-      position: relative;
-    }
-
-    .giant-qr-showcase:hover {
-      transform: scale(1.02);
-    }
-
-    .giant-qr-showcase img {
-      width: 295px;
-      height: 295px;
-      object-fit: contain;
-      display: block;
-    }
-
-    .qr-bank-pill {
-      background: #005baa;
-      color: #ffffff;
-      font-weight: 800;
-      font-size: 0.95rem;
-      padding: 6px 18px;
-      border-radius: 999px;
-      margin-top: 8px;
-      letter-spacing: 0.5px;
-    }
-
-    .qr-amount-highlight {
-      color: #cf2030;
-      font-size: 1.55rem;
-      font-weight: 900;
-      margin-top: 4px;
-    }
-
     .signature-watermark {
       position: absolute;
       bottom: 6px;
@@ -1363,12 +1287,11 @@
         <option value="12">13. 🎯 Vòng Tròn Vàng: Bắt Đầu Bằng TẠI SAO</option>
         <option value="13">14. 🎓 4 Khóa Học Cốt Lõi KTCSxAI</option>
         <option value="14">15. 📚 Giá Trị BNI #3: Học Tập Suốt Đời</option>
-        <option value="15">16. 💳 SIÊU MÃ QR ACB: 468.468 VND</option>
       </select>
 
       <button class="btn-hide-manager" id="btnHideSlideManager" onclick="openSlideVisibilityModal()" title="Tùy chọn Ẩn / Hiện từng trang thuyết trình (Hide Slide)">
         <span>🗂️ Ẩn/Hiện</span>
-        <span id="visibleCountBadge">(16/16)</span>
+        <span id="visibleCountBadge">(15/15)</span>
       </button>
 
       <!-- 5 PHONG CÁCH NGHỆ THUẬT ĐỒNG BỘ V03 -->
@@ -1413,9 +1336,6 @@
         <span id="speakIcon">🎙️</span>
         <span id="speakLabel">BẤM NÚT NÓI</span>
       </button>
-      <button class="btn-qr-instant" onclick="openQrFullscreenModal()" title="Bật Mã QR ACB Cỡ Đại Toàn Màn Hình">
-        💳 MÃ QR 468.468đ
-      </button>
       <!-- CHIẾU TOÀN MÀN HÌNH TỨC THÌ (GIỮ NGUYÊN TRANG ĐANG XEM) -->
       <button class="btn-fullscreen-instant" onclick="toggleFullScreenPresentation()" title="Chiếu toàn màn hình ngay tại trang này (Không nhảy về trang đầu)">⛶ Toàn Màn Hình</button>
       <button class="btn-github-deploy" onclick="openGitHubModal()" title="Đóng gói xuất bản lên GitHub">🚀 GitHub</button>
@@ -1423,19 +1343,19 @@
   </header>
 
   <!-- =========================================================================
-       TẦNG 2: KHUNG TRÌNH CHIẾU 16 TRANG ĐỈNH CAO BNI FORCE CHAPTER (THIẾT KẾ MỚI HOÀN TOÀN)
+       TẦNG 2: KHUNG TRÌNH CHIẾU 15 TRANG ĐỈNH CAO BNI FORCE CHAPTER (THIẾT KẾ MỚI HOÀN TOÀN)
        ========================================================================= -->
   <main class="deck-viewport" id="deckViewport">
     <div class="slides-track" id="slidesTrack">
 
       <!-- =========================================================
-           TRANG 01: CHÂN DUNG NHÀ ĐÀO TẠO NGUYỄN ANH TUẤN (ẢNH THẬT SỐ 1)
+           TRANG 01: CHÂN DUNG NHÀ ĐÀO TẠO NGUYỄN ANH TUẤN
            ========================================================= -->
       <section class="slide active-slide" data-slide-index="0">
         <div class="slide-inner">
           <div class="slide-header">
             <div>
-              <span class="slide-tag">🌅 TRANG 01 / 16 • BNI FORCE CHAPTER • SÁNG THỨ BA NGÀY 27 THÁNG 10 NĂM 2026</span>
+              <span class="slide-tag">🌅 TRANG 01 / 15 • BNI FORCE CHAPTER • SÁNG THỨ BA NGÀY 27 THÁNG 10 NĂM 2026</span>
               <h1 class="slide-title">👨‍💼 NHÀ ĐÀO TẠO NGUYỄN ANH TUẤN (TUẤN TỬ TẾ TỪ TÂM)</h1>
             </div>
             <div class="slide-header-actions">
@@ -1471,7 +1391,7 @@
               </div>
               <div style="display:flex; justify-content:space-between; align-items:center; margin-top:10px;">
                 <span style="font-size:0.95rem; font-weight:700; color:var(--gold-light);">🏆 GTO Media Since 2009 • BNI Vietnam Champion</span>
-                <button class="interactive-btn-lg" onclick="goToSlide(15, true)">💳 Đăng Ký Khóa Học KTCSxAI Ngay</button>
+                <button class="interactive-btn-lg" onclick="goToSlide(14, true)">🚀 Khám Phá 15 Bài Học KTCSxAI</button>
               </div>
             </div>
 
@@ -1503,7 +1423,7 @@
         <div class="slide-inner">
           <div class="slide-header">
             <div>
-              <span class="slide-tag">🔥 TRANG 02 / 16 • KHỞI NGUỒN SỨ MỆNH ĐÀO TẠO CHO CHỦ DOANH NGHIỆP</span>
+              <span class="slide-tag">🔥 TRANG 02 / 15 • KHỞI NGUỒN SỨ MỆNH ĐÀO TẠO CHO CHỦ DOANH NGHIỆP</span>
               <h2 class="slide-title">💡 LÝ DO TÔI ĐÀO TẠO: GIÚP NGƯỜI KINH DOANH PHÁT TRIỂN BỀN VỮNG</h2>
             </div>
             <div class="slide-header-actions">
@@ -1565,7 +1485,7 @@
         <div class="slide-inner">
           <div class="slide-header">
             <div>
-              <span class="slide-tag">🏆 TRANG 03 / 16 • DẤU ẤN LỊCH SỬ TẠI BNI VIỆT NAM (HỘI NGỘ ĐỈNH CAO 2013)</span>
+              <span class="slide-tag">🏆 TRANG 03 / 15 • DẤU ẤN LỊCH SỬ TẠI BNI VIỆT NAM (HỘI NGỘ ĐỈNH CAO 2013)</span>
               <h2 class="slide-title">🥇 GIẢI NHẤT “TÔI KẾT NỐI THÀNH CÔNG” & PIN DOUBLE PLATINUM</h2>
             </div>
             <div class="slide-header-actions">
@@ -1633,7 +1553,7 @@
         <div class="slide-inner">
           <div class="slide-header">
             <div>
-              <span class="slide-tag">🤝 TRANG 04 / 16 • HÀNH TRÌNH ĐỒNG HÀNH & UY TÍN DOANH NGHIỆP TỪ 2009</span>
+              <span class="slide-tag">🤝 TRANG 04 / 15 • HÀNH TRÌNH ĐỒNG HÀNH & UY TÍN DOANH NGHIỆP TỪ 2009</span>
               <h2 class="slide-title">📸 “NGÀY ẤY – BÂY GIỜ” & BẰNG KHEN UBND TỈNH KHÁNH HÒA</h2>
             </div>
             <div class="slide-header-actions">
@@ -1691,7 +1611,7 @@
         <div class="slide-inner">
           <div class="slide-header">
             <div>
-              <span class="slide-tag">💻 TRANG 05 / 16 • BƯỚC NGOẶT TỪ NĂM 2020 ĐẾN NAY</span>
+              <span class="slide-tag">💻 TRANG 05 / 15 • BƯỚC NGOẶT TỪ NĂM 2020 ĐẾN NAY</span>
               <h2 class="slide-title">🌟 TẬP TRUNG ĐÀO TẠO PHÁT TRIỂN BẢN THÂN & CHUYỂN HÓA HỌC VIÊN</h2>
             </div>
             <div class="slide-header-actions">
@@ -1745,7 +1665,7 @@
         <div class="slide-inner">
           <div class="slide-header">
             <div>
-              <span class="slide-tag">🧭 TRANG 06 / 16 • TRIẾT LÝ CỐT LÕI TRONG KỶ NGUYÊN TRÍ TUỆ NHÂN TẠO KTCSxAI</span>
+              <span class="slide-tag">🧭 TRANG 06 / 15 • TRIẾT LÝ CỐT LÕI TRONG KỶ NGUYÊN TRÍ TUỆ NHÂN TẠO KTCSxAI</span>
               <h2 class="slide-title">⚡ PHÁT TRIỂN BẢN THÂN QUAN TRỌNG HƠN & CẦN TRƯỚC PHÁT TRIỂN KINH DOANH!</h2>
             </div>
             <div class="slide-header-actions">
@@ -1806,7 +1726,7 @@
         <div class="slide-inner">
           <div class="slide-header">
             <div>
-              <span class="slide-tag">🎯 TRANG 07 / 16 • ĐỒ HỌA ĐỘNG 4D: MÔ HÌNH 5 VÒNG TRÒN ĐỒNG TÂM</span>
+              <span class="slide-tag">🎯 TRANG 07 / 15 • ĐỒ HỌA ĐỘNG 4D: MÔ HÌNH 5 VÒNG TRÒN ĐỒNG TÂM</span>
               <h2 class="slide-title">💫 MÌNH CẦN PHÁT TRIỂN BẢN THÂN TRƯỚC • VẠN SỰ BÊN NGOÀI TỰ THÔNG</h2>
             </div>
             <div class="slide-header-actions">
@@ -1875,7 +1795,7 @@
         <div class="slide-inner">
           <div class="slide-header">
             <div>
-              <span class="slide-tag">🧊 TRANG 08 / 16 • ĐỒ HỌA ĐỘNG 4D: TẢNG BĂNG TÂM THỨC CON NGƯỜI</span>
+              <span class="slide-tag">🧊 TRANG 08 / 15 • ĐỒ HỌA ĐỘNG 4D: TẢNG BĂNG TÂM THỨC CON NGƯỜI</span>
               <h2 class="slide-title">🌊 10% Ý THỨC (KIẾN THỨC) & 90% TIỀM THỨC QUYẾT ĐỊNH CUỘC SỐNG</h2>
             </div>
             <div class="slide-header-actions">
@@ -1935,7 +1855,7 @@
         <div class="slide-inner">
           <div class="slide-header">
             <div>
-              <span class="slide-tag">⚙️ TRANG 09 / 16 • THE POWER OF HABIT & KỶ LUẬT THÂN - TÂM - TRÍ THỰC CHIẾN</span>
+              <span class="slide-tag">⚙️ TRANG 09 / 15 • THE POWER OF HABIT & KỶ LUẬT THÂN - TÂM - TRÍ THỰC CHIẾN</span>
               <h2 class="slide-title">🏃‍♂️ THÓI QUEN NHỎ TẠO THAY ĐỔI LỚN • MINH CHỨNG TUỔI THỂ CHẤT 38!</h2>
             </div>
             <div class="slide-header-actions">
@@ -2008,7 +1928,7 @@
         <div class="slide-inner">
           <div class="slide-header">
             <div>
-              <span class="slide-tag">⛏️ TRANG 10 / 16 • ĐỒ HỌA ĐỘNG 4D: KHAI PHÁ MỎ VÀNG TÂM TRÍ CÙNG KTCSxAI</span>
+              <span class="slide-tag">⛏️ TRANG 10 / 15 • ĐỒ HỌA ĐỘNG 4D: KHAI PHÁ MỎ VÀNG TÂM TRÍ CÙNG KTCSxAI</span>
               <h2 class="slide-title">👑 VÀNG TRONG TÂM TRÍ LỚN GẤP VẠN LẦN VÀNG TRONG LÒNG ĐẤT!</h2>
             </div>
             <div class="slide-header-actions">
@@ -2068,7 +1988,7 @@
         <div class="slide-inner">
           <div class="slide-header">
             <div>
-              <span class="slide-tag">🏛️ TRANG 11 / 16 • ĐỒ HỌA ĐỘNG 4D: THÁP NHU CẦU MASLOW</span>
+              <span class="slide-tag">🏛️ TRANG 11 / 15 • ĐỒ HỌA ĐỘNG 4D: THÁP NHU CẦU MASLOW</span>
               <h2 class="slide-title">🌟 THẤU HIỂU 5 TẦNG NHU CẦU MASLOW ĐỂ DẪN DẮT ĐỘI NGŨ & KHÁCH HÀNG</h2>
             </div>
             <div class="slide-header-actions">
@@ -2123,7 +2043,7 @@
         <div class="slide-inner">
           <div class="slide-header">
             <div>
-              <span class="slide-tag">📐 TRANG 12 / 16 • ĐỒ HỌA ĐỘNG 4D: 6 TẦNG NHẬN THỨC LOGICAL LEVELS</span>
+              <span class="slide-tag">📐 TRANG 12 / 15 • ĐỒ HỌA ĐỘNG 4D: 6 TẦNG NHẬN THỨC LOGICAL LEVELS</span>
               <h2 class="slide-title">🧭 NÂNG TẦM NHẬN THỨC LÃNH ĐẠO TỪ MÔI TRƯỜNG LÊN ĐỈNH SỨ MỆNH</h2>
             </div>
             <div class="slide-header-actions">
@@ -2175,7 +2095,7 @@
         <div class="slide-inner">
           <div class="slide-header">
             <div>
-              <span class="slide-tag">🎯 TRANG 13 / 16 • ĐỒ HỌA ĐỘNG 4D: VÒNG TRÒN VÀNG (GOLDEN CIRCLE)</span>
+              <span class="slide-tag">🎯 TRANG 13 / 15 • ĐỒ HỌA ĐỘNG 4D: VÒNG TRÒN VÀNG (GOLDEN CIRCLE)</span>
               <h2 class="slide-title">🧠 BẮT ĐẦU VỚI CÂU HỎI “TẠI SAO” • CHẠM TRỰC TIẾP VÀO NÃO GIỮA!</h2>
             </div>
             <div class="slide-header-actions">
@@ -2234,7 +2154,7 @@
         <div class="slide-inner">
           <div class="slide-header">
             <div>
-              <span class="slide-tag">🎓 TRANG 14 / 16 • HỆ SINH THÁI ĐÀO TẠO TOÀN DIỆN CHO CHỦ DOANH NGHIỆP</span>
+              <span class="slide-tag">🎓 TRANG 14 / 15 • HỆ SINH THÁI ĐÀO TẠO TOÀN DIỆN CHO CHỦ DOANH NGHIỆP</span>
               <h2 class="slide-title">💎 4 TRỤ CỘT KHÓA HỌC CỦA TUẤN TỬ TẾ TỪ TÂM</h2>
             </div>
             <div class="slide-header-actions">
@@ -2300,13 +2220,13 @@
       </section>
 
       <!-- =========================================================
-           TRANG 15: GIÁ TRỊ CỐT LÕI BNI #3 - HỌC TẬP SUỐT ĐỜI
+           TRANG 15: GIÁ TRỊ CỐT LÕI BNI #3 - HỌC TẬP SUỐT ĐỜI & KẾT LUẬN TRUYỀN CẢM HỨNG
            ========================================================= -->
       <section class="slide" data-slide-index="14">
         <div class="slide-inner">
           <div class="slide-header">
             <div>
-              <span class="slide-tag">📚 TRANG 15 / 16 • GIÁ TRỊ CỐT LÕI BNI #3: LIFELONG LEARNING (HỌC TẬP SUỐT ĐỜI)</span>
+              <span class="slide-tag">📚 TRANG 15 / 15 • GIÁ TRỊ CỐT LÕI BNI #3: LIFELONG LEARNING (HỌC TẬP SUỐT ĐỜI)</span>
               <h2 class="slide-title">📈 “KIẾN THỨC SẼ MANG LẠI LỢI NHUẬN LỚN NHẤT!”</h2>
             </div>
             <div class="slide-header-actions">
@@ -2350,87 +2270,10 @@
                 </p>
               </div>
               <div style="display:flex; justify-content:center; margin-top:8px;">
-                <button class="interactive-btn-lg" style="font-size:1.05rem; padding:14px 28px;" onclick="goToSlide(15, true)">
-                  👉 Bấm Sang Trang 16: Quét Mã QR Nhận Ưu Đãi Đặc Biệt BNI Force!
+                <button class="interactive-btn-lg" style="font-size:1.05rem; padding:14px 28px;" onclick="playSfx('fanfare'); launchCelebration();">
+                  🤝 BNI FORCE: GIVERS GAIN • HỌC TẬP SUỐT ĐỜI & KIẾN TẠO THÀNH CÔNG!
                 </button>
               </div>
-            </div>
-          </div>
-          <div class="signature-watermark">Tuấn Tử Tế Từ Tâm</div>
-        </div>
-      </section>
-
-      <!-- =========================================================
-           TRANG 16: CHỐT ĐƠN ĐỈNH CAO & SIÊU MÃ QUÉT QR ACB CỠ ĐẠI (468.468 VND)
-           ========================================================= -->
-      <section class="slide" data-slide-index="15">
-        <div class="slide-inner" style="border-color:#f5c451; box-shadow: 0 0 55px rgba(245,196,81,0.35);">
-          <div class="slide-header">
-            <div>
-              <span class="slide-tag">💳 TRANG 16 / 16 • ĐĂNG KÝ NGAY TẠI BUỔI HỌP BNI FORCE CHAPTER SÁNG 27/10/2026</span>
-              <h2 class="slide-title">🚀 KHÓA HỌC “KIẾN TẠO CUỘC SỐNG × AI” (KTCSxAI) • QUÉT MÃ QR THAM GIA NGAY!</h2>
-            </div>
-            <div class="slide-header-actions">
-              <label class="inline-slide-vis-label" title="Bỏ tích để ẩn trang này khi trình chiếu">
-                <input type="checkbox" class="inline-slide-chk" data-idx="15" checked onchange="toggleSlideVisibility(15, this.checked)" />
-                <span>Hiện trang</span>
-              </label>
-              <button class="btn-slide-voice" onclick="speakSingleSlide(15)">🔊 Giảng Trang Này</button>
-            </div>
-          </div>
-
-          <div class="senior-stage" style="grid-template-columns: 0.95fr 1.05fr;">
-            <div class="senior-panel" style="align-items:center; justify-content:center; background: radial-gradient(circle at center, rgba(207,32,48,0.25) 0%, rgba(6,15,36,0.95) 100%); border: 2px solid #f5c451;">
-              <div class="giant-qr-showcase" onclick="openQrFullscreenModal()" title="Bấm vào mã QR để phóng to toàn màn hình">
-                <label class="real-photo-upload-label" style="top:8px; right:8px;" onclick="event.stopPropagation();" title="Nạp ảnh QR gốc từ máy nếu muốn">
-                  📷 Nạp Ảnh QR Gốc
-                  <input type="file" accept="image/*" style="display:none;" onchange="loadRealPhoto(event, 'mainQrImg')" />
-                </label>
-                <img id="mainQrImg" src="https://img.vietqr.io/image/ACB-102168268-compact2.png?amount=468468&addInfo=KTCS%20Ten%20SDT&accountName=NGUYEN%20ANH%20TUAN" alt="Mã QR ACB 102168268 Nguyễn Anh Tuấn 468.468 VND" onerror="this.src='https://api.qrserver.com/v1/create-qr-code/?size=400x400&data=ACB%20102168268%20NGUYEN%20ANH%20TUAN%20468468%20KTCS%20Ten%20SDT'" />
-                <div class="qr-bank-pill">🏦 NGÂN HÀNG ACB KHÁNH HÒA • STK: 102 168 268</div>
-                <div class="qr-amount-highlight">468.468 VND</div>
-                <div style="color:#0f172a; font-weight:800; font-size:0.9rem; margin-top:2px;">
-                  Nội dung: <span style="color:#cf2030;">KTCS Ten SDT</span> (hoặc <span style="color:#005baa;">KTCSxAI Ten SDT</span>)
-                </div>
-              </div>
-
-              <div style="display:flex; gap:10px; margin-top:12px; width:100%; justify-content:center;">
-                <button class="interactive-btn-lg" onclick="openQrFullscreenModal()">
-                  🔍 PHÓNG TO MÃ QR TOÀN MÀN HÌNH ĐỂ QUÉT NGAY
-                </button>
-                <button class="btn-outline-lg" onclick="copyBankDetails()">
-                  📋 Sao Chép STK: 102168268
-                </button>
-              </div>
-            </div>
-
-            <div class="senior-panel">
-              <div>
-                <h3 class="senior-heading">🌟 Lợi Ích Nhận Được Trong Khóa Học KTCSxAI Kỷ Nguyên Trí Tuệ AI:</h3>
-                <p class="senior-text">
-                  ✅ <strong>1. Phát Triển Bản Thân Toàn Diện</strong> (Thân – Tâm – Trí) kết hợp <strong>Ứng dụng trí tuệ AI hiệu quả nhất</strong>!<br/>
-                  ✅ <strong>2. Bứt phá toàn diện:</strong> Công việc phát triển, cuộc sống tự do, thịnh vượng, hạnh phúc!<br/>
-                  🕗 <strong>3. Thời gian học trực tuyến qua Zoom:</strong> <strong>20h00 tối Thứ 4 & Thứ 7 hàng tuần</strong>.
-                </p>
-
-                <div style="background:rgba(207,32,48,0.18); border:2px solid #f5c451; border-radius:18px; padding:14px 18px; margin:10px 0;">
-                  <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:6px;">
-                    <span style="font-size:1rem; color:#cbd5e1;">Học phí chính thức: <del style="color:#fb7185; font-weight:700;">4.368.000đ</del></span>
-                    <span class="bni-badge">🎁 ĐẶC QUYỀN BNI FORCE</span>
-                  </div>
-                  <div style="font-size:1.35rem; font-weight:900; color:#ffe9ad;">
-                    🔥 Ưu đãi trải nghiệm 1 tháng: <span style="color:#34d399; font-size:1.6rem;">468.468đ</span>
-                  </div>
-                  <div style="font-size:0.96rem; color:#ffffff; margin-top:6px; line-height:1.5;">
-                    🏦 <strong>STK: 102 168 268</strong> • Ngân hàng <strong>ACB Khánh Hòa</strong><br/>
-                    👤 Chủ TK: <strong>Nguyễn Anh Tuấn</strong> • Nội dung: <strong>KTCS Ten SDT</strong>
-                  </div>
-                </div>
-              </div>
-
-              <button class="interactive-btn-lg" style="width:100%; font-size:1.05rem; padding:13px;" onclick="playSfx('fanfare'); launchCelebration(); openQrFullscreenModal();">
-                🎉 CHÀO MỪNG CÁC CHỦ DOANH NGHIỆP BNI FORCE ĐĂNG KÝ NGAY! 🎉
-              </button>
             </div>
           </div>
           <div class="signature-watermark">Tuấn Tử Tế Từ Tâm</div>
@@ -2440,9 +2283,9 @@
     </div>
   </main>
 
-  <!-- =========================================================================
+  <!-- =========================================================
        TẦNG 3: DẢI STUDIO CHÂN TRANG (TÍCH HỢP PHỤ ĐỀ KHÔNG CHE SLIDE & ĐIỀU HƯỚNG)
-       ========================================================================= -->
+       ========================================================= -->
   <footer class="bottom-studio-dock" aria-label="Thanh Phụ đề và Điều hướng">
     <div class="dock-nav-cluster">
       <button class="nav-action-btn" onclick="prevSlide()" id="btnPrevNav">◀ Trang Trước</button>
@@ -2471,7 +2314,7 @@
         <div>
           <span class="slide-tag">🗂️ TRÌNH QUẢN LÝ SLIDE V03 • CHẾ ĐỘ HIDE SLIDE BNI FORCE</span>
           <h3 style="font-family:'Playfair Display', serif; font-size:1.45rem; color:#ffe9ad;">
-            Tùy Chọn Ẩn / Hiện Từng Trang Thuyết Trình (<span id="modalVisSummaryText">Đang hiện 16/16 trang</span>)
+            Tùy Chọn Ẩn / Hiện Từng Trang Thuyết Trình (<span id="modalVisSummaryText">Đang hiện 15/15 trang</span>)
           </h3>
         </div>
         <button class="btn-outline-lg" style="padding:6px 14px;" onclick="closeSlideVisibilityModal()">✕ Đóng</button>
@@ -2483,7 +2326,7 @@
         </span>
         <div style="display:flex; gap:8px; flex-wrap:wrap;">
           <button class="btn-outline-lg" style="padding:6px 12px; font-size:0.8rem;" onclick="showAllSlidesV03()">
-            ☑️ Hiện Tất Cả (16/16)
+            ☑️ Hiện Tất Cả (15/15)
           </button>
           <button class="btn-outline-lg" style="padding:6px 12px; font-size:0.8rem; border-color:#f5c451; color:#ffe9ad;" onclick="applyCompactPitchPresetV03()">
             ⚡ Gợi Ý Bản Ngắn Gọn (10 Trang Cốt Lõi)
@@ -2509,31 +2352,6 @@
     </div>
   </div>
 
-  <!-- MODAL PHÓNG TO SIÊU MÃ QR ACB TOÀN MÀN HÌNH (QUÉT CỰC NHANH TỪ XA) -->
-  <div class="voice-modal-backdrop" id="qrFullscreenModal" onclick="closeQrFullscreenModal()">
-    <div class="voice-modal-card" style="max-width:680px; text-align:center; background:#ffffff; color:#0f172a; border:6px solid #f5c451;" onclick="event.stopPropagation()">
-      <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:10px;">
-        <span class="bni-badge" style="font-size:0.85rem;">💳 QUÉT MÃ QR ĐĂNG KÝ NGAY • BNI FORCE CHAPTER</span>
-        <button class="btn-outline-lg" style="background:#0f172a; color:#fff; padding:6px 14px;" onclick="closeQrFullscreenModal()">✕ Đóng</button>
-      </div>
-
-      <img id="fullscreenQrImg" src="https://img.vietqr.io/image/ACB-102168268-compact2.png?amount=468468&addInfo=KTCS%20Ten%20SDT&accountName=NGUYEN%20ANH%20TUAN" alt="Siêu Mã QR ACB 102168268" style="width:430px; height:430px; max-width:82vw; max-height:55vh; object-fit:contain; margin:0 auto; display:block; border:3px solid #005baa; border-radius:20px; padding:8px;" onerror="this.src='https://api.qrserver.com/v1/create-qr-code/?size=450x450&data=ACB%20102168268%20NGUYEN%20ANH%20TUAN%20468468%20KTCS%20Ten%20SDT'" />
-
-      <div style="font-size:1.95rem; font-weight:900; color:#cf2030; margin-top:8px;">
-        ƯU ĐÃI TRẢI NGHIỆM 1 THÁNG: 468.468 VND
-      </div>
-      <div style="font-size:1.15rem; font-weight:800; color:#005baa; margin-top:4px;">
-        🏦 Ngân hàng ACB Khánh Hòa • STK: 102 168 268 • Nguyễn Anh Tuấn
-      </div>
-      <div style="font-size:1.05rem; font-weight:800; color:#0f172a; margin-top:4px;">
-        Nội dung chuyển khoản: <span style="color:#cf2030; background:#fef08a; padding:2px 10px; border-radius:6px;">KTCS Ten SDT</span> hoặc <span style="color:#005baa; background:#e0f2fe; padding:2px 10px; border-radius:6px;">KTCSxAI Ten SDT</span>
-      </div>
-      <div style="font-size:0.92rem; color:#475569; font-weight:600; margin-top:6px;">
-        🕗 Lịch học trực tuyến qua Zoom: 20h00 tối Thứ 4 & Thứ 7 hàng tuần (Học phí gốc: 4.368.000đ)
-      </div>
-    </div>
-  </div>
-
   <!-- MODAL XUẤT BẢN GITHUB THÔNG MINH (BỔ SUNG VÀO ĐẦU TRANG NHƯ BÀI VIẾT MỚI) -->
   <div class="voice-modal-backdrop" id="githubModal" onclick="closeGitHubModal()">
     <div class="voice-modal-card" style="max-width: 860px;">
@@ -2548,7 +2366,7 @@
       </div>
 
       <div style="background:rgba(52,211,153,0.12); border:1.5px solid #34d399; border-radius:12px; padding:12px 16px; margin-bottom:14px; font-size:0.88rem; line-height:1.6; color:#e0f2fe;">
-        ✅ <strong>Chuẩn thông minh V03:</strong> File này được lưu với tên <code>thuyet-trinh-bni-force-ktcs-xai-v03.html</code> và tự động được đưa lên <strong>vị trí đầu tiên</strong> trong danh sách bài viết trên trang chủ <code>tuantute.life</code> qua file <code>data.json</code> mà <strong>KHÔNG thay thế hay xóa bỏ bất kỳ mục nào</strong> trong index.
+        ✅ <strong>Chuẩn thông minh V03:</strong> File này được lưu với tên <code>thuyet-trinh-bni-force-ktcs-xai-v03.html</code> (15 Slide) và tự động được đưa lên <strong>vị trí đầu tiên</strong> trong danh sách bài viết trên trang chủ <code>tuantute.life</code> qua file <code>data.json</code> mà <strong>KHÔNG thay thế hay xóa bỏ bất kỳ mục nào</strong> trong index.
       </div>
 
       <pre class="code-box-ps" id="ghPsCommandBox"></pre>
@@ -2611,9 +2429,6 @@
         const dataUrl = e.target.result;
         const imgEl = document.getElementById(imgElementId);
         if (imgEl) imgEl.src = dataUrl;
-        if (imgElementId === 'mainQrImg') {
-          document.getElementById('fullscreenQrImg').src = dataUrl;
-        }
         try {
           localStorage.setItem('bni_v03_real_photo_' + imgElementId, dataUrl);
         } catch (err) {}
@@ -2623,15 +2438,12 @@
     }
 
     function restoreSavedRealPhotos() {
-      ['realImgSlide1', 'realImgSlide3', 'realImgSlide4', 'realImgSlide5', 'realImgSlide9', 'mainQrImg'].forEach(id => {
+      ['realImgSlide1', 'realImgSlide3', 'realImgSlide4', 'realImgSlide5', 'realImgSlide9'].forEach(id => {
         try {
           const saved = localStorage.getItem('bni_v03_real_photo_' + id) || localStorage.getItem('bni_real_photo_' + id);
           if (saved) {
             const el = document.getElementById(id);
             if (el) el.src = saved;
-            if (id === 'mainQrImg') {
-              document.getElementById('fullscreenQrImg').src = saved;
-            }
           }
         } catch (e) {}
       });
@@ -2674,7 +2486,6 @@
       return audioCtx;
     }
 
-    // Web Audio Synthesizer: Nhạc nền thư giãn, truyền cảm hứng cho doanh nhân
     function startAmbientSynthBgm() {
       const ctx = getAudioContext();
       if (!ctx) return;
@@ -2685,7 +2496,6 @@
         bgmMasterGain.connect(ctx.destination);
       }
 
-      // Hợp âm êm đềm: Cmaj7 -> Am9 -> Fmaj7 -> Gsus4
       const chordProgressions = [
         [261.63, 329.63, 392.00, 493.88], // Cmaj7
         [220.00, 261.63, 329.63, 493.88], // Am9
@@ -2755,7 +2565,6 @@
       }
     }
 
-    // Hiệu ứng âm thanh SFX Web Audio API (Swoosh, Ting, Fanfare)
     function playSfx(type) {
       try {
         const ctx = getAudioContext();
@@ -2763,7 +2572,6 @@
         const now = ctx.currentTime;
 
         if (type === 'swoosh') {
-          // Tiếng trượt slide nhẹ nhàng
           const osc = ctx.createOscillator();
           const gain = ctx.createGain();
           osc.type = 'sine';
@@ -2786,7 +2594,6 @@
           osc.start(now);
           osc.stop(now + 0.09);
         } else if (type === 'fanfare') {
-          // Ăn mừng chúc mừng
           [523.25, 659.25, 783.99, 1046.50].forEach((freq, i) => {
             const osc = ctx.createOscillator();
             const gain = ctx.createGain();
@@ -2881,10 +2688,10 @@
     }
 
     // =========================================================================
-    // 3. ĐIỀU HƯỚNG 16 TRANG & CHIẾU TOÀN MÀN HÌNH TỨC THÌ (GIỮ NGUYÊN TRANG ĐANG XEM)
+    // 3. ĐIỀU HƯỚNG 15 TRANG & CHIẾU TOÀN MÀN HÌNH TỨC THÌ
     // =========================================================================
     let currentSlide = 0;
-    const totalSlides = 16;
+    const totalSlides = 15;
     let currentMode = 'horizontal';
     let wheelCooldown = false;
 
@@ -2907,15 +2714,14 @@
       "12. 📐 Tháp 6 Tầng Nhận Thức Logical Levels",
       "13. 🎯 Vòng Tròn Vàng: Bắt Đầu Bằng TẠI SAO",
       "14. 🎓 4 Khóa Học Cốt Lõi KTCSxAI",
-      "15. 📚 Giá Trị BNI #3: Học Tập Suốt Đời",
-      "16. 💳 SIÊU MÃ QR ACB: 468.468 VND"
+      "15. 📚 Giá Trị BNI #3: Học Tập Suốt Đời"
     ];
 
     let slideVisibleState = new Array(totalSlides).fill(true);
 
     function loadSavedSlideVisibility() {
       try {
-        const saved = localStorage.getItem('bni_v03_slide_visibility') || localStorage.getItem('bni_v02_slide_visibility');
+        const saved = localStorage.getItem('bni_v03_slide_visibility');
         if (saved) {
           const parsed = JSON.parse(saved);
           if (Array.isArray(parsed) && parsed.length === totalSlides && parsed.some(Boolean)) {
@@ -2962,9 +2768,11 @@
 
       if (slideJumpSelect) {
         Array.from(slideJumpSelect.options).forEach((opt, idx) => {
-          const baseTitle = slideCatalogTitles[idx] || opt.textContent;
-          opt.textContent = slideVisibleState[idx] ? baseTitle : `🚫 [ĐÃ ẨN] ${baseTitle}`;
-          opt.style.color = slideVisibleState[idx] ? '#ffe9ad' : '#94a3b8';
+          if (idx < totalSlides) {
+            const baseTitle = slideCatalogTitles[idx] || opt.textContent;
+            opt.textContent = slideVisibleState[idx] ? baseTitle : `🚫 [ĐÃ ẨN] ${baseTitle}`;
+            opt.style.color = slideVisibleState[idx] ? '#ffe9ad' : '#94a3b8';
+          }
         });
       }
 
@@ -3074,20 +2882,20 @@
       saveSlideVisibility();
       syncSlideVisibilityUI();
       updateSlidePosition();
-      showVoiceToast('☑️ Đã bật hiển thị toàn bộ 16/16 trang!');
+      showVoiceToast('☑️ Đã bật hiển thị toàn bộ 15/15 trang!');
     }
 
     function applyCompactPitchPresetV03() {
-      const hiddenPreset = [3, 4, 7, 9, 10, 11];
+      const hiddenPreset = [3, 4, 7, 9, 10];
       slideVisibleState = new Array(totalSlides).fill(true);
-      hiddenPreset.forEach(idx => { slideVisibleState[idx] = false; });
+      hiddenPreset.forEach(idx => { if (idx < totalSlides) slideVisibleState[idx] = false; });
       saveSlideVisibility();
       syncSlideVisibilityUI();
       if (!slideVisibleState[currentSlide]) {
         currentSlide = getVisibleSlideIndices()[0] || 0;
       }
       updateSlidePosition();
-      showVoiceToast('⚡ Đã áp dụng Bản Ngắn Gọn (10/16 trang cốt lõi)!');
+      showVoiceToast('⚡ Đã áp dụng Bản Ngắn Gọn (10/15 trang cốt lõi)!');
     }
 
     function openSlideVisibilityModal() {
@@ -3209,9 +3017,9 @@
       updateSlidePosition();
     }
 
-    // CHIẾU TOÀN MÀN HÌNH TỨC THÌ (KHÔNG NHẢY VỀ TRANG ĐẦU TIÊN)
+    // CHIẾU TOÀN MÀN HÌNH TỨC THÌ (GIỮ NGUYÊN TRANG ĐANG XEM)
     function toggleFullScreenPresentation() {
-      const targetSlide = currentSlide; // Khóa chặt trang đang đứng
+      const targetSlide = currentSlide;
       if (!document.fullscreenElement) {
         document.documentElement.requestFullscreen().then(() => {
           setTimeout(() => {
@@ -3231,7 +3039,6 @@
     }
 
     document.addEventListener('fullscreenchange', () => {
-      // Đảm bảo không bị layout shift nhảy trang
       setTimeout(updateSlidePosition, 80);
     });
 
@@ -3240,10 +3047,6 @@
       if (document.getElementById('githubModal').classList.contains('open')) return;
       if (document.getElementById('slideVisibilityModal').classList.contains('open')) {
         if (e.key === 'Escape') closeSlideVisibilityModal();
-        return;
-      }
-      if (document.getElementById('qrFullscreenModal').classList.contains('open')) {
-        if (e.key === 'Escape') closeQrFullscreenModal();
         return;
       }
 
@@ -3260,7 +3063,6 @@
       if (currentMode === 'scroll') return;
       if (document.getElementById('githubModal').classList.contains('open')) return;
       if (document.getElementById('slideVisibilityModal').classList.contains('open')) return;
-      if (document.getElementById('qrFullscreenModal').classList.contains('open')) return;
 
       e.preventDefault();
       if (wheelCooldown) return;
@@ -3287,7 +3089,6 @@
     let activeTimers = [];
     let toastTimer = null;
 
-    // Con trỏ theo dõi câu đang đọc để chuyển giọng ngay lập tức
     let currentSegmentIndex = 0;
     let currentSentenceIndex = 0;
     let activeSentencesList = [];
@@ -3296,9 +3097,6 @@
       return displayText
         .replace(/27\/10\/2026/g, '27 tháng 10 năm 2026')
         .replace(/03\/08\/2013/g, 'mùng 3 tháng 8 năm 2013')
-        .replace(/4\.368\.000\s*đ/gi, 'bốn triệu ba trăm sáu mươi tám nghìn đồng')
-        .replace(/468\.468\s*(đ|VND)/gi, 'bốn trăm sáu mươi tám nghìn bốn trăm sáu mươi tám đồng')
-        .replace(/102\s*168\s*268/g, 'một không hai, một sáu tám, hai sáu tám')
         .replace(/20h00/gi, 'hai mươi giờ')
         .replace(/10%/g, 'mười phần trăm')
         .replace(/90%/g, 'chín mươi phần trăm')
@@ -3365,7 +3163,6 @@
       return viVoices.find(v => /namminh|\ban\b|male|nam/i.test(v.name)) || viVoices[0] || null;
     }
 
-    // Tách văn bản thành các câu ngắn để chuyển giọng tức thì
     function splitIntoSentences(text) {
       const raw = text.split(/(?<=[.!?…])\s+/);
       const clean = [];
@@ -3382,7 +3179,6 @@
       const trueFemaleLocal = findTrueLocalFemaleVietnameseVoice();
 
       if (voiceGender === 'female' && !trueFemaleLocal) {
-        // Cloud Voice Nữ Tiếng Việt
         const q = encodeURIComponent(spokenText);
         const url = `https://translate.googleapis.com/translate_tts?ie=UTF-8&tl=vi&client=tw-ob&q=${q}`;
         const audio = new Audio(url);
@@ -3453,7 +3249,6 @@
       window.speechSynthesis.speak(utter);
     }
 
-    // CHUYỂN GIỌNG TỨC THÌ TẠI CÂU ĐANG NÓI V03
     function instantSwitchVoiceGender(gender) {
       if (voiceGender === gender && isAutoLecturing) return;
       voiceGender = gender;
@@ -3465,7 +3260,6 @@
       showVoiceToast(`⚡ Đã chuyển sang ${gText} ngay tại nội dung đang nói!`);
 
       if (isAutoLecturing) {
-        // Tiếp tục đọc ngay lập tức từ câu hiện tại với giọng mới
         startLectureSlideAtSentence(currentSlide, currentSegmentIndex, currentSentenceIndex);
       }
     }
@@ -3498,8 +3292,8 @@
       onTopSpeedSliderCommit(nextVal);
     }
 
-    // KỊCH BẢN 16 TRANG KTCSxAI DÀNH CHO BNI FORCE CHAPTER
-    const lectureScripts16 = [
+    // KỊCH BẢN 15 TRANG KTCSxAI DÀNH CHO BNI FORCE CHAPTER
+    const lectureScripts = [
       {
         segments: [
           {
@@ -3655,18 +3449,10 @@
           {
             text: "📚 Đúng như Giá trị cốt lõi số 3 của BNI về Học tập suốt đời: Nếu bạn đầu tư tất cả tài sản vào kiến thức, bạn sẽ có được 1 thứ không ai chiếm đoạt được. Kiến thức mang lại lợi nhuận lớn nhất!",
             action: () => {}
-          }
-        ]
-      },
-      {
-        segments: [
-          {
-            text: "💳 Ngay sáng nay tại BNI Force Chapter, khóa học Kiến Tạo Cuộc Sống trong Kỷ nguyên trí tuệ KTCSxAI học vào 20h00 tối Thứ 4 và Thứ 7 hàng tuần, ưu đãi trải nghiệm 1 tháng chỉ còn 468.468 VND!",
-            action: () => launchCelebration()
           },
           {
-            text: "📲 Mời các Chủ doanh nghiệp quét ngay Siêu Mã QR Ngân hàng ACB Khánh Hòa, số tài khoản 102 168 268, Nguyễn Anh Tuấn, nội dung KTCS kèm Tên và Số điện thoại để cùng cất cánh!",
-            action: () => openQrFullscreenModal()
+            text: "🤝 Chúc toàn thể các Chủ doanh nghiệp BNI Force Chapter luôn tràn đầy năng lượng Thân - Tâm - Trí, ứng dụng xuất sắc trí tuệ KTCSxAI để kinh doanh đột phá và cùng nhau kiến tạo một cuộc sống tự do, thịnh vượng, hạnh phúc!",
+            action: () => launchCelebration()
           }
         ]
       }
@@ -3718,7 +3504,6 @@
       }
     }
 
-    // ĐỌC CHI TIẾT TỪNG CÂU VÀ HỖ TRỢ CHUYỂN GIỌNG TỨC THÌ
     function startLectureSlideAtSentence(slideIdx, startSegIdx = 0, startSentIdx = 0) {
       const mySession = cancelActiveSpeechCleanly();
       if (!isAutoLecturing) return;
@@ -3727,7 +3512,7 @@
         el.classList.toggle('narrating-glow', idx === slideIdx);
       });
 
-      const scriptObj = lectureScripts16[slideIdx];
+      const scriptObj = lectureScripts[slideIdx];
       if (!scriptObj) return;
 
       currentSegmentIndex = startSegIdx;
@@ -3739,7 +3524,6 @@
         if (mySession !== speechSessionId || !isAutoLecturing) return;
 
         if (currentSegmentIndex >= segments.length) {
-          // Hoàn thành hết các đoạn của slide hiện tại -> Chuyển slide kế tiếp
           advanceToNextSlideInLecture(slideIdx, mySession);
           return;
         }
@@ -3793,25 +3577,8 @@
     }
 
     // =========================================================================
-    // 5. CÁC HÀM TƯƠNG TÁC MASLOW, LOGICAL LEVELS, QR ACB
+    // 5. CÁC HÀM TƯƠNG TÁC MASLOW & LOGICAL LEVELS
     // =========================================================================
-    function openQrFullscreenModal() {
-      playSfx('fanfare');
-      document.getElementById('qrFullscreenModal').classList.add('open');
-      launchCelebration();
-    }
-
-    function closeQrFullscreenModal() {
-      document.getElementById('qrFullscreenModal').classList.remove('open');
-    }
-
-    function copyBankDetails() {
-      playSfx('click');
-      navigator.clipboard.writeText('102168268').then(() => {
-        showVoiceToast('📋 Đã sao chép STK ACB: 102 168 268 (Nguyễn Anh Tuấn - 468.468đ)');
-      });
-    }
-
     function pulseConcentricRings() {
       playSfx('click');
       ['ring1', 'ring2', 'ring3', 'ring4', 'ring5'].forEach((id, idx) => {
@@ -3922,7 +3689,7 @@ Set-Location "c:\\Users\\PC\\Downloads\\Tu_C_Goc\\WEBSITE\\TuanTuTe.Life"
 
 # 2. Thêm bài thuyết trình mới V03 vào Git và cập nhật data.json
 git add thuyet-trinh-bni-force-ktcs-xai-v03.html data.json
-git commit -m "feat(bni-force): bổ sung bài thuyết trình V03 KTCSxAI lên đầu trang web tuantute.life"
+git commit -m "feat(bni-force): cập nhật 15 slide thuyết trình V03 KTCSxAI lên đầu trang tuantute.life"
 git push origin main
 
 Write-Host "✅ Đã xuất bản bài thuyết trình V03 thành công lên https://tuantute.life/ !" -ForegroundColor Green`;
@@ -3950,7 +3717,7 @@ Write-Host "✅ Đã xuất bản bài thuyết trình V03 thành công lên htt
       showVoiceToast(`📥 Đã tải file ${filename} sẵn sàng sử dụng!`);
     }
 
-    // KHỞI CHẠY HỆ THỐNG V03
+    // KHỞI CHẠY HỆ THỐNG V03 (15 SLIDE)
     loadSavedSlideVisibility();
     initDots();
     syncSlideVisibilityUI();
