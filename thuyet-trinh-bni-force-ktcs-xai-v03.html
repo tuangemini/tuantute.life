@@ -1,0 +1,3962 @@
+<!DOCTYPE html>
+<!--
+  ==========================================================================
+  TÊN FILE: thuyet-trinh-bni-force-ktcs-xai-v03.html
+  PHIÊN BẢN: V03 (Nâng cấp Toàn Diện: Chuyển Giọng Tức Thì + Chiếu Toàn Màn Hình Chuẩn Trang + Nhạc Nền & SFX + 5 Phong Cách Đồng Bộ + KTCSxAI)
+  NGÀY THUYẾT TRÌNH: Sáng Thứ Ba, ngày 27 tháng 10 năm 2026
+  DIỄN GIẢ: Nhà đào tạo Nguyễn Anh Tuấn (Tuấn Tử Tế Từ Tâm) - Chủ tịch GTO Media
+  ĐỐI TƯỢNG: Các Chủ Doanh Nghiệp BNI Force Chapter
+  TÍNH NĂNG NỔI BẬT V03:
+  1. Chuyển Giọng Đọc Tức Thì: Chuyển ngay tại câu/từ đang nói, không đọc lại từ đầu trang slide.
+  2. Chiếu Toàn Màn Hình Tức Thì: Giữ nguyên trang đang đứng, không bị văng về trang đầu tiên.
+  3. Hình Ảnh Hoàn Toàn Mới Cho Chủ Doanh Nghiệp BNI: Thay thế triệt để các hình ảnh cũ phi công A388,
+     thiết kế dành riêng cho giới Chủ doanh nghiệp, kết nối kinh doanh đỉnh cao, Thân-Tâm-Trí & Trí tuệ AI.
+  4. 5 Phong Cách Đồng Bộ Khi Bấm Chọn: Điện ảnh 4D / Chân thực Sang trọng / Đồ họa Infographic / Bức vẽ & Viết tay / Hoạt hình 3D.
+  5. Nhạc Nền Nhẹ Truyền Cảm Hứng (Web Audio Ambient Synth) + Hiệu Ứng Âm Thanh SFX + Thanh trượt Âm lượng (0% - 100%).
+  6. Chuẩn Hóa Danh Xưng: Chuyển toàn bộ KXDMxAI thành KTCSxAI (Kiến Tạo Cuộc Sống x AI).
+  7. Tích Hợp Xuất Bản GitHub Thông Minh: Thêm vào đầu trang web tuantute.life như bài viết mới nhất,
+     không ghi đè hay xóa các bài viết cũ trong index hay data.json.
+  8. Hệ Thống Hide Slide: Tùy chọn Ẩn/Hiện từng trang bằng Checkbox, tự động bỏ qua trang ẩn.
+  ==========================================================================
+-->
+<html lang="vi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>V03 - BNI Force Chapter 27/10/2026 - Kiến Tạo Cuộc Sống Kỷ Nguyên Trí Tuệ KTCSxAI (Tuấn Tử Tế Từ Tâm)</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400&family=Dancing+Script:wght@700&family=Patrick+Hand&family=Playfair+Display:ital,wght@0,700;0,800;1,600&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg-deep: #030712;
+      --bg-navy: #081226;
+      --bg-card: rgba(10, 20, 42, 0.95);
+      --bg-panel: rgba(7, 16, 36, 0.92);
+      --bni-crimson: #cf2030;
+      --bni-crimson-glow: rgba(207, 32, 48, 0.5);
+      --gold-primary: #f5c451;
+      --gold-light: #ffe9ad;
+      --gold-dark: #c48a10;
+      --cyan-sky: #38bdf8;
+      --emerald-peace: #34d399;
+      --rose-warm: #fb7185;
+      --text-main: #ffffff;
+      --text-muted: #e2e8f0;
+      --border-glass: rgba(245, 196, 81, 0.48);
+      --shadow-elevated: 0 24px 65px rgba(0, 0, 0, 0.88);
+      --font-body: 'Be Vietnam Pro', sans-serif;
+      --font-heading: 'Playfair Display', serif;
+      --card-radius: 22px;
+      --topbar-h: 70px;
+      --bottomdock-h: 68px;
+    }
+
+    /* PHONG CÁCH 2: CHÂN THỰC SANG TRỌNG (REALISTIC / EXECUTIVE SAPPHIRE) */
+    body.style-realistic {
+      --bg-deep: #0b1329;
+      --bg-navy: #132247;
+      --bg-card: rgba(18, 32, 66, 0.96);
+      --bg-panel: rgba(13, 24, 52, 0.94);
+      --gold-primary: #f59e0b;
+      --gold-light: #fef08a;
+      --cyan-sky: #60a5fa;
+      --emerald-peace: #10b981;
+      --border-glass: rgba(96, 165, 250, 0.45);
+      --card-radius: 18px;
+      --shadow-elevated: 0 20px 50px rgba(2, 6, 23, 0.85);
+    }
+
+    /* PHONG CÁCH 3: VẼ TAY & VIẾT TAY NGHỆ THUẬT (HANDDRAWN & SKETCH) */
+    body.style-handdrawn {
+      --bg-deep: #f6efe2;
+      --bg-navy: #eddcc4;
+      --bg-card: #fffdf9;
+      --bg-panel: #f8f2e4;
+      --gold-primary: #b45309;
+      --gold-light: #7c2d12;
+      --gold-dark: #92400e;
+      --cyan-sky: #0369a1;
+      --emerald-peace: #15803d;
+      --rose-warm: #be123c;
+      --text-main: #1e293b;
+      --text-muted: #334155;
+      --border-glass: #991b1b;
+      --shadow-elevated: 6px 8px 0px rgba(153, 27, 27, 0.22);
+      --font-body: 'Patrick Hand', 'Be Vietnam Pro', cursive;
+      --font-heading: 'Dancing Script', 'Playfair Display', cursive;
+      --card-radius: 18px 28px 20px 26px;
+      background-image: radial-gradient(rgba(120, 53, 15, 0.16) 1px, transparent 1px);
+      background-size: 22px 22px;
+    }
+
+    body.style-handdrawn .slide-inner {
+      border: 3px dashed #991b1b;
+    }
+
+    body.style-handdrawn .senior-panel {
+      border: 2px solid #92400e;
+    }
+
+    body.style-handdrawn .poem-box-large {
+      background: rgba(207, 32, 48, 0.08);
+      color: #7c2d12;
+      border-left: 5px solid #cf2030;
+    }
+
+    body.style-handdrawn .state-old-lg { color: #be123c; }
+    body.style-handdrawn .state-new-lg { color: #15803d; }
+
+    /* PHONG CÁCH 4: ĐỒ HOẠ INFOGRAPHIC (INFOGRAPHIC & CYBER) */
+    body.style-infographic {
+      --bg-deep: #081220;
+      --bg-navy: #0e223d;
+      --bg-card: rgba(14, 34, 61, 0.96);
+      --bg-panel: rgba(19, 44, 77, 0.94);
+      --gold-primary: #ff6500;
+      --gold-light: #ffae58;
+      --cyan-sky: #00d2ff;
+      --emerald-peace: #00f5d4;
+      --border-glass: rgba(0, 210, 255, 0.55);
+      --card-radius: 12px;
+      --shadow-elevated: 0 0 35px rgba(0, 210, 255, 0.18);
+    }
+
+    /* PHONG CÁCH 5: HOẠT HÌNH 3D (3D CLAYMORPHISM) */
+    body.style-cartoon {
+      --bg-deep: #17153b;
+      --bg-navy: #2e236c;
+      --bg-card: rgba(46, 35, 108, 0.95);
+      --bg-panel: rgba(67, 56, 140, 0.85);
+      --gold-primary: #facc15;
+      --gold-light: #fef08a;
+      --cyan-sky: #38bdf8;
+      --emerald-peace: #4ade80;
+      --border-glass: rgba(250, 204, 21, 0.65);
+      --card-radius: 32px;
+      --shadow-elevated: 0 20px 45px rgba(0,0,0,0.6);
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html, body {
+      width: 100%;
+      height: 100%;
+      background-color: var(--bg-deep);
+      color: var(--text-main);
+      font-family: var(--font-body);
+      overflow: hidden;
+      user-select: none;
+      transition: background-color 0.4s ease, color 0.4s ease;
+    }
+
+    html.mode-scroll,
+    body.mode-scroll {
+      height: auto !important;
+      overflow-y: auto !important;
+      overflow-x: hidden !important;
+    }
+
+    h1, h2, h3, .slide-title, .senior-heading, .art-caption, .poem-box-large {
+      text-wrap: balance;
+      word-break: keep-all;
+      overflow-wrap: break-word;
+    }
+
+    p, .senior-text, li, .teleprompter-text {
+      text-wrap: pretty;
+      word-break: keep-all;
+      overflow-wrap: break-word;
+    }
+
+    #cosmosCanvas {
+      position: fixed;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      z-index: 0;
+      pointer-events: none;
+    }
+
+    /* =========================================================================
+       TẦNG 1: THANH ĐIỀU KHIỂN ĐỈNH (TOP HUD CONTROL BAR - 70PX)
+       ========================================================================= */
+    .hud-topbar {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: var(--topbar-h);
+      background: rgba(3, 7, 18, 0.96);
+      backdrop-filter: blur(24px);
+      border-bottom: 2px solid var(--border-glass);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 10px;
+      z-index: 1000;
+      gap: 5px;
+      flex-wrap: nowrap;
+    }
+
+    .brand-pilot {
+      display: flex;
+      align-items: center;
+      gap: 5px;
+    }
+
+    .bni-badge {
+      background: linear-gradient(135deg, #cf2030, #991b1b);
+      color: #ffffff;
+      font-weight: 800;
+      font-size: 0.72rem;
+      padding: 6px 11px;
+      border-radius: 999px;
+      letter-spacing: 0.4px;
+      text-transform: uppercase;
+      box-shadow: 0 0 16px rgba(207, 32, 48, 0.6);
+      border: 1px solid #f5c451;
+      white-space: nowrap;
+    }
+
+    .slide-select-dropdown, .style-select-dropdown {
+      background: rgba(14, 29, 62, 0.96);
+      color: #ffe9ad;
+      border: 1.5px solid rgba(245, 196, 81, 0.5);
+      padding: 6px 8px;
+      border-radius: 999px;
+      font-family: 'Be Vietnam Pro', sans-serif;
+      font-size: 0.72rem;
+      font-weight: 700;
+      cursor: pointer;
+      outline: none;
+    }
+
+    .slide-select-dropdown { max-width: 180px; }
+    .style-select-dropdown { border-color: rgba(56, 189, 248, 0.6); color: #38bdf8; max-width: 155px; }
+
+    .btn-hide-manager {
+      background: linear-gradient(135deg, rgba(56, 189, 248, 0.22), rgba(14, 165, 233, 0.35));
+      border: 1.5px solid #38bdf8;
+      color: #e0f2fe;
+      padding: 6px 10px;
+      border-radius: 999px;
+      font-family: 'Be Vietnam Pro', sans-serif;
+      font-size: 0.72rem;
+      font-weight: 800;
+      cursor: pointer;
+      white-space: nowrap;
+      display: flex;
+      align-items: center;
+      gap: 4px;
+      transition: all 0.2s ease;
+    }
+
+    .btn-hide-manager:hover {
+      background: #38bdf8;
+      color: #030714;
+      box-shadow: 0 0 14px rgba(56, 189, 248, 0.65);
+    }
+
+    .btn-hide-manager.has-hidden {
+      background: linear-gradient(135deg, #f59e0b, #d97706);
+      border-color: #fef08a;
+      color: #030714;
+    }
+
+    .mode-switcher, .voice-Active-group {
+      display: flex;
+      align-items: center;
+      gap: 2px;
+      background: rgba(12, 27, 58, 0.95);
+      padding: 3px;
+      border-radius: 999px;
+      border: 1px solid rgba(56, 189, 248, 0.42);
+    }
+
+    .voice-Active-group { border-color: rgba(245, 196, 81, 0.45); }
+
+    .mode-btn, .voice-opt-btn {
+      background: transparent;
+      border: none;
+      color: #cbd5e1;
+      padding: 5px 8px;
+      border-radius: 999px;
+      font-family: 'Be Vietnam Pro', sans-serif;
+      font-size: 0.71rem;
+      font-weight: 700;
+      cursor: pointer;
+      transition: all 0.2s ease;
+      white-space: nowrap;
+    }
+
+    .mode-btn.active {
+      background: linear-gradient(135deg, #38bdf8, #0284c7);
+      color: #fff;
+    }
+
+    .voice-opt-btn.active {
+      background: linear-gradient(135deg, #f5c451, #c48a10);
+      color: #030714;
+      font-weight: 800;
+      box-shadow: 0 0 10px rgba(245, 196, 81, 0.6);
+    }
+
+    /* THANH TRƯỢT NHẠC NỀN & ÂM LƯỢNG V03 */
+    .bgm-control-pill {
+      display: flex;
+      align-items: center;
+      gap: 5px;
+      background: rgba(12, 27, 58, 0.95);
+      padding: 4px 9px;
+      border-radius: 999px;
+      border: 1px solid rgba(245, 158, 11, 0.5);
+      color: #ffe9ad;
+      font-size: 0.71rem;
+      font-weight: 700;
+      white-space: nowrap;
+    }
+
+    .btn-bgm-toggle {
+      background: rgba(245, 196, 81, 0.2);
+      border: 1px solid #f5c451;
+      color: #ffe9ad;
+      padding: 3px 8px;
+      border-radius: 999px;
+      cursor: pointer;
+      font-size: 0.7rem;
+      font-weight: 800;
+      transition: all 0.2s;
+    }
+
+    .btn-bgm-toggle.playing {
+      background: linear-gradient(135deg, #f59e0b, #d97706);
+      color: #030714;
+      animation: musicPulse 1.8s infinite;
+    }
+
+    @keyframes musicPulse {
+      0%, 100% { transform: scale(1); }
+      50% { transform: scale(1.05); }
+    }
+
+    .bgm-volume-slider {
+      width: 58px;
+      accent-color: #f59e0b;
+      cursor: pointer;
+      height: 5px;
+    }
+
+    /* THANH TRƯỢT TỐC ĐỘ ĐỌC */
+    .speed-slider-pill {
+      display: flex;
+      align-items: center;
+      gap: 4px;
+      background: rgba(12, 27, 58, 0.95);
+      padding: 4px 8px;
+      border-radius: 999px;
+      border: 1px solid rgba(52, 211, 153, 0.45);
+      color: #fff;
+      font-size: 0.71rem;
+      font-weight: 700;
+      white-space: nowrap;
+    }
+
+    .speed-step-btn {
+      background: rgba(255, 255, 255, 0.12);
+      border: none;
+      color: #ffe9ad;
+      width: 19px;
+      height: 19px;
+      border-radius: 50%;
+      font-weight: 800;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .top-speed-range {
+      width: 60px;
+      accent-color: #34d399;
+      cursor: pointer;
+      height: 5px;
+    }
+
+    .speed-val-badge {
+      color: #34d399;
+      font-weight: 800;
+      min-width: 32px;
+      text-align: center;
+    }
+
+    .voice-master-bar {
+      display: flex;
+      align-items: center;
+      gap: 5px;
+    }
+
+    .btn-speak-master {
+      background: linear-gradient(135deg, #10b981, #059669);
+      color: #fff;
+      border: 1px solid rgba(255, 255, 255, 0.4);
+      padding: 7px 11px;
+      border-radius: 999px;
+      font-size: 0.74rem;
+      font-weight: 800;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      gap: 4px;
+      box-shadow: 0 0 16px rgba(16, 185, 129, 0.5);
+      white-space: nowrap;
+    }
+
+    .btn-speak-master.speaking {
+      background: linear-gradient(135deg, #f59e0b, #dc2626);
+      animation: pulseGlow 1.5s infinite;
+    }
+
+    @keyframes pulseGlow {
+      0%, 100% { transform: scale(1); }
+      50% { transform: scale(1.03); }
+    }
+
+    .btn-qr-instant {
+      background: linear-gradient(135deg, #cf2030, #f59e0b);
+      color: #fff;
+      border: 1.5px solid #ffe9ad;
+      padding: 7px 11px;
+      border-radius: 999px;
+      font-size: 0.74rem;
+      font-weight: 800;
+      cursor: pointer;
+      white-space: nowrap;
+      box-shadow: 0 0 18px rgba(207, 32, 48, 0.7);
+      animation: pulseGlow 2s infinite;
+    }
+
+    .btn-voice-studio {
+      background: rgba(245, 196, 81, 0.16);
+      border: 1px solid rgba(245, 196, 81, 0.4);
+      color: #ffe9ad;
+      padding: 6px 8px;
+      border-radius: 999px;
+      font-size: 0.71rem;
+      font-weight: 700;
+      cursor: pointer;
+      white-space: nowrap;
+    }
+
+    .btn-github-deploy {
+      background: linear-gradient(135deg, #3b82f6, #1d4ed8);
+      border: 1px solid rgba(147, 197, 253, 0.5);
+      color: #ffffff;
+      padding: 6px 9px;
+      border-radius: 999px;
+      font-size: 0.71rem;
+      font-weight: 800;
+      cursor: pointer;
+      white-space: nowrap;
+    }
+
+    .btn-fullscreen-instant {
+      background: linear-gradient(135deg, #8b5cf6, #6d28d9);
+      border: 1px solid rgba(221, 214, 254, 0.6);
+      color: #ffffff;
+      padding: 6px 10px;
+      border-radius: 999px;
+      font-size: 0.72rem;
+      font-weight: 800;
+      cursor: pointer;
+      white-space: nowrap;
+    }
+
+    .voice-toast {
+      position: fixed;
+      top: 80px;
+      right: 22px;
+      background: rgba(6, 19, 45, 0.96);
+      border: 2px solid #f5c451;
+      color: #ffe9ad;
+      padding: 9px 16px;
+      border-radius: 14px;
+      font-size: 0.85rem;
+      font-weight: 700;
+      z-index: 2500;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.8);
+      opacity: 0;
+      transform: translateY(-10px);
+      pointer-events: none;
+      transition: all 0.3s ease;
+    }
+
+    .voice-toast.show {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* =========================================================================
+       TẦNG 2: KHUNG TRÌNH CHIẾU CHÍNH (ZERO-OVERLAP + 16 TRANG)
+       ========================================================================= */
+    .deck-viewport {
+      position: relative;
+      width: 100vw;
+      height: calc(100vh - var(--topbar-h) - var(--bottomdock-h));
+      margin-top: var(--topbar-h);
+      z-index: 10;
+      overflow: hidden;
+    }
+
+    body.mode-scroll .deck-viewport {
+      height: auto !important;
+      overflow: visible !important;
+      margin-bottom: 80px;
+    }
+
+    .slides-track {
+      width: 100%;
+      height: 100%;
+      display: flex;
+      transition: transform 0.82s cubic-bezier(0.16, 1, 0.3, 1);
+      will-change: transform;
+    }
+
+    body.mode-horizontal .slides-track { flex-direction: row; }
+    body.mode-vertical .slides-track { flex-direction: column; }
+    body.mode-scroll .slides-track {
+      display: block !important;
+      height: auto !important;
+      transform: none !important;
+      padding-bottom: 90px;
+    }
+
+    .slide {
+      flex: 0 0 100%;
+      width: 100vw;
+      min-width: 100vw;
+      height: calc(100vh - var(--topbar-h) - var(--bottomdock-h));
+      min-height: calc(100vh - var(--topbar-h) - var(--bottomdock-h));
+      padding: 10px 2vw;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      overflow-y: auto;
+      overflow-x: hidden;
+    }
+
+    .slide.slide-hidden-user {
+      display: none !important;
+    }
+
+    body.mode-scroll .slide {
+      height: auto !important;
+      min-height: 86vh;
+      padding: 24px 2vw;
+      margin-bottom: 24px;
+    }
+
+    .slide-inner {
+      width: 96vw;
+      max-width: 1840px;
+      background: var(--bg-card);
+      backdrop-filter: blur(24px);
+      border: 2px solid var(--border-glass);
+      border-radius: var(--card-radius);
+      padding: 18px 28px 22px 28px;
+      box-shadow: var(--shadow-elevated);
+      position: relative;
+      overflow: hidden;
+      transform: scale(0.965) translateY(10px);
+      opacity: 0.55;
+      transition:
+        transform 0.78s cubic-bezier(0.16, 1, 0.3, 1),
+        opacity 0.65s ease,
+        border-color 0.4s ease,
+        box-shadow 0.4s ease;
+    }
+
+    .slide.active-slide .slide-inner,
+    body.mode-scroll .slide-inner {
+      transform: scale(1) translateY(0);
+      opacity: 1;
+    }
+
+    .slide-inner.narrating-glow {
+      border-color: var(--gold-primary);
+      box-shadow: 0 0 48px rgba(245, 196, 81, 0.4), var(--shadow-elevated);
+    }
+
+    .slide-inner::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 5px;
+      background: linear-gradient(90deg, #cf2030, var(--gold-primary), var(--cyan-sky), var(--gold-primary), #cf2030);
+    }
+
+    .slide-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 12px;
+      border-bottom: 1px solid rgba(148, 163, 184, 0.22);
+      padding-bottom: 8px;
+      gap: 16px;
+    }
+
+    .slide-tag {
+      font-size: 0.8rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 1.3px;
+      color: var(--cyan-sky);
+      display: block;
+      margin-bottom: 2px;
+    }
+
+    .slide-title {
+      font-family: var(--font-heading);
+      font-size: clamp(1.42rem, 1.88vw, 1.95rem);
+      font-weight: 800;
+      color: var(--gold-light);
+      line-height: 1.25;
+    }
+
+    .slide-header-actions {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      flex-shrink: 0;
+    }
+
+    .inline-slide-vis-label {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: rgba(15, 23, 42, 0.78);
+      border: 1.5px solid rgba(56, 189, 248, 0.45);
+      color: #e0f2fe;
+      padding: 6px 12px;
+      border-radius: 999px;
+      font-size: 0.76rem;
+      font-weight: 700;
+      cursor: pointer;
+      transition: all 0.2s ease;
+      white-space: nowrap;
+    }
+
+    .inline-slide-vis-label:hover {
+      border-color: #f5c451;
+      color: #ffe9ad;
+    }
+
+    .inline-slide-vis-label input[type="checkbox"] {
+      width: 15px;
+      height: 15px;
+      accent-color: #34d399;
+      cursor: pointer;
+    }
+
+    .btn-slide-voice {
+      background: rgba(52, 211, 153, 0.18);
+      border: 2px solid rgba(52, 211, 153, 0.6);
+      color: var(--emerald-peace);
+      padding: 7px 16px;
+      border-radius: 999px;
+      font-size: 0.84rem;
+      font-weight: 800;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      white-space: nowrap;
+    }
+
+    .senior-stage {
+      display: grid;
+      grid-template-columns: 1.22fr 0.88fr;
+      gap: 22px;
+      align-items: stretch;
+    }
+
+    .senior-panel {
+      background: var(--bg-panel);
+      border: 1px solid rgba(148, 163, 184, 0.22);
+      border-radius: 20px;
+      padding: 18px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      position: relative;
+      perspective: 1200px;
+    }
+
+    /* KHUNG SÂN KHẤU HÌNH ẢNH DOANH NHÂN & ĐỒ HỌA ĐỘNG 4D */
+    .giant-art-frame {
+      position: relative;
+      width: 100%;
+      height: 380px;
+      border-radius: 16px;
+      overflow: hidden;
+      border: 2px solid var(--border-glass);
+      box-shadow: 0 16px 40px rgba(0, 0, 0, 0.65), 0 0 24px rgba(207, 32, 48, 0.2);
+      background: #040d21;
+      transform-style: preserve-3d;
+      transition: transform 0.25s ease-out, box-shadow 0.3s ease;
+    }
+
+    .giant-art-frame img.bg-photo {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      animation: kenBurns4D 16s ease-in-out infinite alternate;
+      filter: contrast(1.06) saturate(1.12);
+    }
+
+    @keyframes kenBurns4D {
+      0% { transform: scale(1.02) translate(0, 0); }
+      50% { transform: scale(1.08) translate(-1%, -0.8%); }
+      100% { transform: scale(1.03) translate(1%, -1%); }
+    }
+
+    .fx-4d-canvas {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+      z-index: 2;
+    }
+
+    .live-motion-overlay {
+      position: absolute;
+      inset: 0;
+      pointer-events: none;
+      z-index: 3;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transform: translateZ(45px);
+    }
+
+    .badge-executive-overlay {
+      position: absolute;
+      top: 12px;
+      left: 14px;
+      background: rgba(4, 7, 17, 0.92);
+      border: 1.5px solid #f5c451;
+      color: #ffe9ad;
+      font-size: 0.78rem;
+      font-weight: 800;
+      padding: 5px 13px;
+      border-radius: 999px;
+      z-index: 5;
+      backdrop-filter: blur(8px);
+    }
+
+    .real-photo-upload-label {
+      position: absolute;
+      top: 12px;
+      right: 14px;
+      background: rgba(207, 32, 48, 0.92);
+      border: 1.5px solid #ffe9ad;
+      color: #fff;
+      font-size: 0.74rem;
+      font-weight: 800;
+      padding: 5px 12px;
+      border-radius: 999px;
+      z-index: 6;
+      cursor: pointer;
+      pointer-events: auto;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.6);
+      transition: transform 0.2s;
+    }
+
+    .real-photo-upload-label:hover {
+      transform: scale(1.05);
+      background: #f5c451;
+      color: #030714;
+    }
+
+    .art-image-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(180deg, rgba(3,8,22,0.02) 52%, rgba(3,8,22,0.92) 100%);
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      padding: 16px 20px;
+      z-index: 4;
+      pointer-events: none;
+    }
+
+    .art-caption {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.2rem;
+      font-weight: 700;
+      color: #ffe9ad;
+      text-shadow: 0 2px 8px rgba(0,0,0,0.95);
+    }
+
+    .senior-heading {
+      font-size: clamp(1.22rem, 1.4vw, 1.44rem);
+      font-weight: 800;
+      color: var(--gold-light);
+      margin-bottom: 10px;
+      line-height: 1.35;
+    }
+
+    .senior-text {
+      font-size: clamp(0.98rem, 1.08vw, 1.08rem);
+      line-height: 1.66;
+      color: var(--text-muted);
+      margin-bottom: 10px;
+    }
+
+    .senior-text strong {
+      color: var(--text-main);
+      font-weight: 700;
+    }
+
+    .poem-box-large {
+      background: linear-gradient(135deg, rgba(207, 32, 48, 0.2), rgba(245, 196, 81, 0.14));
+      border-left: 5px solid var(--gold-primary);
+      padding: 14px 18px;
+      border-radius: 0 16px 16px 0;
+      font-family: var(--font-heading);
+      font-size: clamp(1.08rem, 1.22vw, 1.25rem);
+      line-height: 1.6;
+      color: var(--text-main);
+      margin: 8px 0;
+    }
+
+    .transform-row-large {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 10px;
+      background: rgba(148, 163, 184, 0.08);
+      border: 2px solid rgba(148, 163, 184, 0.22);
+      padding: 11px 15px;
+      border-radius: 15px;
+      margin-top: 6px;
+      transition: all 0.3s ease;
+    }
+
+    .transform-row-large.active-step {
+      border-color: var(--gold-primary);
+      background: rgba(245, 196, 81, 0.18);
+      transform: scale(1.01);
+      box-shadow: 0 0 20px rgba(245, 196, 81, 0.25);
+    }
+
+    .state-old-lg {
+      color: #fecdd3;
+      font-weight: 600;
+      font-size: clamp(0.84rem, 0.94vw, 0.96rem);
+      flex: 1;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+
+    .verb-bridge-lg {
+      background: linear-gradient(135deg, var(--gold-primary), var(--gold-dark));
+      color: #030714;
+      font-weight: 800;
+      font-size: 0.75rem;
+      padding: 5px 12px;
+      border-radius: 999px;
+      text-transform: uppercase;
+      white-space: nowrap;
+      box-shadow: 0 0 14px rgba(245, 196, 81, 0.45);
+      flex-shrink: 0;
+    }
+
+    .state-new-lg {
+      color: var(--emerald-peace);
+      font-weight: 800;
+      font-size: clamp(0.84rem, 0.95vw, 0.98rem);
+      flex: 1;
+      text-align: right;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+
+    .interactive-btn-lg {
+      background: linear-gradient(135deg, var(--gold-primary), var(--gold-dark));
+      color: #030714;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 999px;
+      font-weight: 800;
+      font-size: 0.92rem;
+      cursor: pointer;
+      transition: all 0.22s ease;
+      box-shadow: 0 6px 18px rgba(245, 196, 81, 0.4);
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      white-space: nowrap;
+    }
+
+    .interactive-btn-lg:hover {
+      transform: translateY(-2px) scale(1.02);
+      box-shadow: 0 8px 25px rgba(245, 196, 81, 0.65);
+    }
+
+    .btn-outline-lg {
+      background: rgba(56, 189, 248, 0.14);
+      color: var(--cyan-sky);
+      border: 2px solid rgba(56, 189, 248, 0.5);
+      padding: 9px 16px;
+      border-radius: 999px;
+      font-weight: 700;
+      font-size: 0.88rem;
+      cursor: pointer;
+      transition: all 0.2s;
+      white-space: nowrap;
+    }
+
+    .btn-outline-lg:hover, .btn-outline-lg.active {
+      background: var(--cyan-sky);
+      color: #030714;
+    }
+
+    /* Tháp Maslow & Tháp Logical Levels 4D */
+    .pyramid-container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 7px;
+      padding: 6px 0;
+    }
+
+    .pyramid-tier {
+      height: 46px;
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 800;
+      font-size: 0.92rem;
+      cursor: pointer;
+      transition: all 0.25s ease;
+      border: 2px solid rgba(255, 255, 255, 0.32);
+      color: #fff;
+      text-shadow: 0 2px 4px rgba(0,0,0,0.7);
+      white-space: nowrap;
+    }
+
+    .pyramid-tier:hover, .pyramid-tier.active {
+      transform: scale(1.04) translateY(-2px);
+      border-color: #fff;
+      box-shadow: 0 0 26px rgba(245, 196, 81, 0.85);
+    }
+
+    .tier-6 { width: 42%; background: linear-gradient(90deg, #f59e0b, #fbbf24); color: #030714; text-shadow: none; }
+    .tier-5 { width: 54%; background: linear-gradient(90deg, #cf2030, #ef4444); }
+    .tier-4 { width: 66%; background: linear-gradient(90deg, #8b5cf6, #a78bfa); }
+    .tier-3 { width: 78%; background: linear-gradient(90deg, #0ea5e9, #38bdf8); }
+    .tier-2 { width: 90%; background: linear-gradient(90deg, #10b981, #34d399); }
+    .tier-1 { width: 100%; background: linear-gradient(90deg, #334155, #475569); }
+
+    /* =========================================================================
+       SIÊU MÃ QUÉT QR ACB CỠ ĐẠI (SLIDE 16 & FULLSCREEN LIGHTBOX)
+       ========================================================================= */
+    .giant-qr-showcase {
+      background: #ffffff;
+      border: 5px solid #f5c451;
+      border-radius: 24px;
+      padding: 16px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 0 45px rgba(245, 196, 81, 0.55);
+      cursor: pointer;
+      transition: transform 0.25s ease;
+      position: relative;
+    }
+
+    .giant-qr-showcase:hover {
+      transform: scale(1.02);
+    }
+
+    .giant-qr-showcase img {
+      width: 295px;
+      height: 295px;
+      object-fit: contain;
+      display: block;
+    }
+
+    .qr-bank-pill {
+      background: #005baa;
+      color: #ffffff;
+      font-weight: 800;
+      font-size: 0.95rem;
+      padding: 6px 18px;
+      border-radius: 999px;
+      margin-top: 8px;
+      letter-spacing: 0.5px;
+    }
+
+    .qr-amount-highlight {
+      color: #cf2030;
+      font-size: 1.55rem;
+      font-weight: 900;
+      margin-top: 4px;
+    }
+
+    .signature-watermark {
+      position: absolute;
+      bottom: 6px;
+      right: 22px;
+      font-family: 'Dancing Script', cursive;
+      font-size: 0.84rem;
+      color: var(--gold-light);
+      opacity: 0.65;
+      letter-spacing: 0.4px;
+      pointer-events: none;
+    }
+
+    /* =========================================================================
+       TẦNG 3: DẢI STUDIO CHÂN TRANG (KHÔNG CHE NỘI DUNG SLIDE)
+       ========================================================================= */
+    .bottom-studio-dock {
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      height: var(--bottomdock-h);
+      background: rgba(3, 7, 18, 0.96);
+      backdrop-filter: blur(22px);
+      border-top: 2px solid var(--border-glass);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 16px;
+      gap: 12px;
+      z-index: 1000;
+      box-shadow: 0 -10px 30px rgba(0, 0, 0, 0.75);
+    }
+
+    .dock-nav-cluster {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      flex-shrink: 0;
+    }
+
+    .nav-action-btn {
+      background: rgba(245, 196, 81, 0.18);
+      border: 1px solid rgba(245, 196, 81, 0.45);
+      color: #ffe9ad;
+      padding: 7px 14px;
+      border-radius: 999px;
+      font-size: 0.8rem;
+      font-weight: 800;
+      cursor: pointer;
+      white-space: nowrap;
+    }
+
+    .nav-action-btn:hover {
+      background: #f5c451;
+      color: #030714;
+    }
+
+    .dots-wrapper {
+      display: flex;
+      align-items: center;
+      gap: 5px;
+    }
+
+    .slide-dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 999px;
+      background: rgba(255, 255, 255, 0.28);
+      cursor: pointer;
+      transition: all 0.25s;
+    }
+
+    .slide-dot.active {
+      width: 22px;
+      background: #f5c451;
+      box-shadow: 0 0 10px #f5c451;
+    }
+
+    .slide-dot.dot-hidden {
+      width: 6px;
+      height: 6px;
+      background: rgba(251, 113, 133, 0.25);
+      border: 1px dashed rgba(251, 113, 133, 0.65);
+      opacity: 0.45;
+    }
+
+    .dock-teleprompter-stage {
+      flex: 1;
+      height: 46px;
+      background: rgba(12, 27, 58, 0.92);
+      border: 1.5px solid rgba(245, 196, 81, 0.4);
+      border-radius: 999px;
+      padding: 0 18px;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      overflow: hidden;
+    }
+
+    .dock-teleprompter-stage.active-speaking {
+      border-color: #34d399;
+      box-shadow: 0 0 20px rgba(52, 211, 153, 0.3);
+    }
+
+    .voice-wave-bars {
+      display: flex;
+      align-items: center;
+      gap: 3px;
+      height: 22px;
+      flex-shrink: 0;
+      opacity: 0.35;
+    }
+
+    .dock-teleprompter-stage.active-speaking .voice-wave-bars { opacity: 1; }
+
+    .voice-wave-bars span {
+      width: 4px;
+      height: 8px;
+      background: #34d399;
+      border-radius: 99px;
+    }
+
+    .dock-teleprompter-stage.active-speaking .voice-wave-bars span {
+      animation: waveBounce 0.8s infinite ease-in-out;
+    }
+
+    .voice-wave-bars span:nth-child(2) { animation-delay: 0.15s; height: 16px; }
+    .voice-wave-bars span:nth-child(3) { animation-delay: 0.3s; height: 22px; background: #f5c451; }
+    .voice-wave-bars span:nth-child(4) { animation-delay: 0.45s; height: 12px; }
+
+    @keyframes waveBounce {
+      0%, 100% { transform: scaleY(0.4); }
+      50% { transform: scaleY(1.15); }
+    }
+
+    .teleprompter-text {
+      flex: 1;
+      font-size: clamp(0.88rem, 1.02vw, 1.04rem);
+      font-weight: 700;
+      color: #ffe9ad;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+
+    .btn-stop-inline {
+      background: rgba(251, 113, 133, 0.2);
+      border: 1px solid #fb7185;
+      color: #fecdd3;
+      padding: 4px 11px;
+      border-radius: 999px;
+      font-size: 0.74rem;
+      font-weight: 800;
+      cursor: pointer;
+      display: none;
+      flex-shrink: 0;
+    }
+
+    .dock-teleprompter-stage.active-speaking .btn-stop-inline {
+      display: inline-block;
+    }
+
+    /* MODAL CHUNG */
+    .voice-modal-backdrop {
+      position: fixed;
+      inset: 0;
+      background: rgba(2, 6, 23, 0.92);
+      backdrop-filter: blur(16px);
+      z-index: 2000;
+      display: none;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+    }
+
+    .voice-modal-backdrop.open {
+      display: flex;
+    }
+
+    .voice-modal-card {
+      width: 100%;
+      max-width: 840px;
+      background: #081530;
+      border: 2px solid #f5c451;
+      border-radius: 26px;
+      padding: 24px 28px;
+      box-shadow: 0 25px 70px rgba(0,0,0,0.95);
+      color: #fff;
+      max-height: 92vh;
+      overflow-y: auto;
+    }
+
+    /* Lưới danh sách Checkbox Ẩn/Hiện */
+    .slide-visibility-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 10px;
+      margin: 14px 0;
+      max-height: 52vh;
+      overflow-y: auto;
+      padding-right: 4px;
+    }
+
+    .slide-vis-item {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 10px;
+      background: rgba(15, 32, 68, 0.85);
+      border: 1.5px solid rgba(56, 189, 248, 0.35);
+      border-radius: 14px;
+      padding: 10px 14px;
+      cursor: pointer;
+      transition: all 0.2s ease;
+    }
+
+    .slide-vis-item:hover {
+      border-color: #f5c451;
+      background: rgba(22, 45, 92, 0.95);
+    }
+
+    .slide-vis-item.is-hidden-item {
+      background: rgba(30, 41, 59, 0.55);
+      border-color: rgba(251, 113, 133, 0.45);
+      opacity: 0.72;
+    }
+
+    .slide-vis-item.is-hidden-item .slide-vis-name {
+      text-decoration: line-through;
+      color: #94a3b8;
+    }
+
+    .slide-vis-left {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      flex: 1;
+      min-width: 0;
+    }
+
+    .slide-vis-checkbox {
+      width: 20px;
+      height: 20px;
+      accent-color: #34d399;
+      cursor: pointer;
+      flex-shrink: 0;
+    }
+
+    .slide-vis-name {
+      font-size: 0.88rem;
+      font-weight: 700;
+      color: #f8fafc;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+
+    .slide-vis-status-pill {
+      font-size: 0.72rem;
+      font-weight: 800;
+      padding: 3px 9px;
+      border-radius: 999px;
+      flex-shrink: 0;
+    }
+
+    .slide-vis-status-pill.status-visible {
+      background: rgba(52, 211, 153, 0.18);
+      color: #34d399;
+      border: 1px solid rgba(52, 211, 153, 0.45);
+    }
+
+    .slide-vis-status-pill.status-hidden {
+      background: rgba(251, 113, 133, 0.18);
+      color: #fb7185;
+      border: 1px solid rgba(251, 113, 133, 0.45);
+    }
+
+    .slide-vis-jump-btn {
+      background: rgba(245, 196, 81, 0.18);
+      border: 1px solid rgba(245, 196, 81, 0.45);
+      color: #ffe9ad;
+      font-size: 0.72rem;
+      font-weight: 700;
+      padding: 4px 8px;
+      border-radius: 8px;
+      cursor: pointer;
+      flex-shrink: 0;
+    }
+
+    .slide-vis-jump-btn:hover {
+      background: #f5c451;
+      color: #030714;
+    }
+
+    .code-box-ps {
+      background: #030816;
+      border: 1px solid rgba(56, 189, 248, 0.45);
+      border-radius: 12px;
+      padding: 14px;
+      font-family: Consolas, monospace;
+      font-size: 0.82rem;
+      color: #38bdf8;
+      overflow-x: auto;
+      white-space: pre-wrap;
+      line-height: 1.5;
+      margin: 10px 0;
+      user-select: text;
+    }
+
+    @media (max-width: 1240px) {
+      .senior-stage { grid-template-columns: 1fr; }
+      .giant-art-frame { height: 290px; }
+      .dots-wrapper { display: none; }
+      .slide-visibility-grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body class="mode-horizontal style-cinematic">
+
+  <canvas id="cosmosCanvas"></canvas>
+
+  <div class="voice-toast" id="voiceToast">🔊 Đã áp dụng cài đặt mới!</div>
+
+  <!-- =========================================================================
+       TẦNG 1: THANH CÔNG CỤ ĐỈNH V03 (CHỌN SLIDE, 5 PHONG CÁCH, CHUYỂN GIỌNG TỨC THÌ, NHẠC NỀN, FULLSCREEN)
+       ========================================================================= -->
+  <header class="hud-topbar">
+    <div class="brand-pilot">
+      <span class="bni-badge">🤝 BNI FORCE • V03</span>
+      <select class="slide-select-dropdown" id="slideJumpSelect" onchange="goToSlide(parseInt(this.value, 10), true)" aria-label="Chọn nhanh trang thuyết trình">
+        <option value="0">01. 👨‍💼 Diễn Giả Nguyễn Anh Tuấn (GTO)</option>
+        <option value="1">02. 🔥 Sứ Mệnh Đào Tạo Chủ Doanh Nghiệp</option>
+        <option value="2">03. 🏆 Kỷ Lục BNI & Giải Nhất Kết Nối 2013</option>
+        <option value="3">04. 🤝 22 Năm Uy Tín & Đồng Hành Thầy Long</option>
+        <option value="4">05. 💻 Bước Ngoặt 2020: Đào Tạo Trực Tuyến</option>
+        <option value="5">06. 🧭 PTBT (Gốc) & Trí Tuệ AI + Kinh Doanh</option>
+        <option value="6">07. 🎯 5 Vòng Tròn Đồng Tâm: MÌNH Là Gốc</option>
+        <option value="7">08. 🧊 Tảng Băng: 10% Ý Thức - 90% Tiềm Thức</option>
+        <option value="8">09. ⚙️ Thói Quen Vàng & Tuổi Thể Chất 38</option>
+        <option value="9">10. 💎 Mỏ Vàng Trong Tâm Trí × Sức Mạnh AI</option>
+        <option value="10">11. 🏛️ Tháp Nhu Cầu Maslow 5 Tầng 4D</option>
+        <option value="11">12. 📐 Tháp 6 Tầng Nhận Thức Logical Levels</option>
+        <option value="12">13. 🎯 Vòng Tròn Vàng: Bắt Đầu Bằng TẠI SAO</option>
+        <option value="13">14. 🎓 4 Khóa Học Cốt Lõi KTCSxAI</option>
+        <option value="14">15. 📚 Giá Trị BNI #3: Học Tập Suốt Đời</option>
+        <option value="15">16. 💳 SIÊU MÃ QR ACB: 468.468 VND</option>
+      </select>
+
+      <button class="btn-hide-manager" id="btnHideSlideManager" onclick="openSlideVisibilityModal()" title="Tùy chọn Ẩn / Hiện từng trang thuyết trình (Hide Slide)">
+        <span>🗂️ Ẩn/Hiện</span>
+        <span id="visibleCountBadge">(16/16)</span>
+      </button>
+
+      <!-- 5 PHONG CÁCH NGHỆ THUẬT ĐỒNG BỘ V03 -->
+      <select class="style-select-dropdown" id="artStyleSelect" onchange="setVisualArtStyle(this.value)" aria-label="Chọn phong cách nghệ thuật">
+        <option value="cinematic">🎬 Điện Ảnh 4D</option>
+        <option value="realistic">📸 Chân Thực Sang Trọng</option>
+        <option value="infographic">📊 Đồ Hoạ Infographic</option>
+        <option value="handdrawn">✍️ Bức Vẽ & Viết Tay</option>
+        <option value="cartoon">🎠 Hoạt Hình 3D</option>
+      </select>
+    </div>
+
+    <div class="mode-switcher" role="group" aria-label="Chế độ lật trang">
+      <button class="mode-btn active" id="btnHorizontal" onclick="setDeckMode('horizontal')">↔ Ngang</button>
+      <button class="mode-btn" id="btnVertical" onclick="setDeckMode('vertical')">↕ Dọc</button>
+      <button class="mode-btn" id="btnScroll" onclick="setDeckMode('scroll')">☰ Cuộn</button>
+    </div>
+
+    <!-- CHUYỂN GIỌNG TỨC THÌ (KHÔNG ĐỌC LẠI TỪ ĐẦU TRANG) -->
+    <div class="voice-Active-group" role="group" aria-label="Chuyển giọng đọc tức thì Nam hoặc Nữ">
+      <button class="voice-opt-btn active" id="btnVoiceMale" onclick="instantSwitchVoiceGender('male')" title="Chuyển ngay sang Giọng Nam tại câu đang nói">👨 Nam</button>
+      <button class="voice-opt-btn" id="btnVoiceFemale" onclick="instantSwitchVoiceGender('female')" title="Chuyển ngay sang Giọng Nữ tại câu đang nói">👩 Nữ</button>
+    </div>
+
+    <!-- NHẠC NỀN TRUYỀN CẢM HƯNG & ÂM LƯỢNG V03 -->
+    <div class="bgm-control-pill" title="Bật/Tắt và chỉnh âm lượng Nhạc nền nhẹ truyền cảm hứng">
+      <button class="btn-bgm-toggle" id="btnBgmToggle" onclick="toggleBackgroundMusic()">🎵 Nhạc: Bật</button>
+      <input type="range" class="bgm-volume-slider" id="bgmVolumeSlider" min="0" max="1" step="0.05" value="0.2" oninput="setBgmVolume(this.value)" title="Âm lượng nhạc nền" />
+    </div>
+
+    <!-- TỐC ĐỘ ĐỌC -->
+    <div class="speed-slider-pill" title="Kéo thanh trượt để chỉnh tốc độ đọc phù hợp">
+      <span>Tốc độ:</span>
+      <button class="speed-step-btn" onclick="stepSpeechSpeed(-0.05)">-</button>
+      <input type="range" class="top-speed-range" id="topSpeedSlider" min="0.5" max="1.8" step="0.05" value="1.0" oninput="onTopSpeedSliderInput(this.value)" onchange="onTopSpeedSliderCommit(this.value)" />
+      <button class="speed-step-btn" onclick="stepSpeechSpeed(0.05)">+</button>
+      <span class="speed-val-badge" id="topSpeedVal">1.00x</span>
+    </div>
+
+    <div class="voice-master-bar">
+      <button class="btn-speak-master" id="btnMasterSpeak" onclick="toggleAutoLecture()">
+        <span id="speakIcon">🎙️</span>
+        <span id="speakLabel">BẤM NÚT NÓI</span>
+      </button>
+      <button class="btn-qr-instant" onclick="openQrFullscreenModal()" title="Bật Mã QR ACB Cỡ Đại Toàn Màn Hình">
+        💳 MÃ QR 468.468đ
+      </button>
+      <!-- CHIẾU TOÀN MÀN HÌNH TỨC THÌ (GIỮ NGUYÊN TRANG ĐANG XEM) -->
+      <button class="btn-fullscreen-instant" onclick="toggleFullScreenPresentation()" title="Chiếu toàn màn hình ngay tại trang này (Không nhảy về trang đầu)">⛶ Toàn Màn Hình</button>
+      <button class="btn-github-deploy" onclick="openGitHubModal()" title="Đóng gói xuất bản lên GitHub">🚀 GitHub</button>
+    </div>
+  </header>
+
+  <!-- =========================================================================
+       TẦNG 2: KHUNG TRÌNH CHIẾU 16 TRANG ĐỈNH CAO BNI FORCE CHAPTER (THIẾT KẾ MỚI HOÀN TOÀN)
+       ========================================================================= -->
+  <main class="deck-viewport" id="deckViewport">
+    <div class="slides-track" id="slidesTrack">
+
+      <!-- =========================================================
+           TRANG 01: CHÂN DUNG NHÀ ĐÀO TẠO NGUYỄN ANH TUẤN (ẢNH THẬT SỐ 1)
+           ========================================================= -->
+      <section class="slide active-slide" data-slide-index="0">
+        <div class="slide-inner">
+          <div class="slide-header">
+            <div>
+              <span class="slide-tag">🌅 TRANG 01 / 16 • BNI FORCE CHAPTER • SÁNG THỨ BA NGÀY 27 THÁNG 10 NĂM 2026</span>
+              <h1 class="slide-title">👨‍💼 NHÀ ĐÀO TẠO NGUYỄN ANH TUẤN (TUẤN TỬ TẾ TỪ TÂM)</h1>
+            </div>
+            <div class="slide-header-actions">
+              <label class="inline-slide-vis-label" title="Bỏ tích để ẩn trang này khi trình chiếu">
+                <input type="checkbox" class="inline-slide-chk" data-idx="0" checked onchange="toggleSlideVisibility(0, this.checked)" />
+                <span>Hiện trang</span>
+              </label>
+              <button class="btn-slide-voice" onclick="speakSingleSlide(0)">🔊 Giảng Trang Này</button>
+            </div>
+          </div>
+
+          <div class="senior-stage">
+            <div class="senior-panel">
+              <div class="giant-art-frame" data-fx="sun-rays">
+                <span class="badge-executive-overlay">📸 HÌNH ẢNH THẬT • CHỦ TỊCH GTO MEDIA (SINCE 2009)</span>
+                <label class="real-photo-upload-label" title="Bấm để chọn ảnh chân dung thật từ máy tính (Tự động lưu)">
+                  📷 Đổi/Gắn Ảnh Thật
+                  <input type="file" accept="image/*" style="display:none;" onchange="loadRealPhoto(event, 'realImgSlide1')" />
+                </label>
+                <img class="bg-photo" id="realImgSlide1" src="https://images.unsplash.com/photo-1507679799987-c73779587ccf?auto=format&fit=crop&w=1400&q=85" alt="Doanh nhân Diễn giả Nguyễn Anh Tuấn" />
+                <canvas class="fx-4d-canvas"></canvas>
+                <div class="live-motion-overlay">
+                  <svg viewBox="0 0 600 320" style="width:92%; height:92%;">
+                    <rect x="20" y="20" width="560" height="280" rx="18" fill="none" stroke="rgba(245,196,81,0.5)" stroke-width="2" stroke-dasharray="10 6"/>
+                    <circle cx="510" cy="80" r="46" fill="rgba(207,32,48,0.85)" stroke="#ffe9ad" stroke-width="2.5" />
+                    <text x="510" y="76" fill="#ffffff" font-size="13" font-weight="900" text-anchor="middle">22 NĂM</text>
+                    <text x="510" y="94" fill="#ffe9ad" font-size="9" font-weight="700" text-anchor="middle">KINH NGHIỆM</text>
+                  </svg>
+                </div>
+                <div class="art-image-overlay">
+                  <div class="art-caption">🌟 22 Năm Kinh Nghiệm Vận Hành Doanh Nghiệp & Đồng Hành Cùng Doanh Nhân</div>
+                </div>
+              </div>
+              <div style="display:flex; justify-content:space-between; align-items:center; margin-top:10px;">
+                <span style="font-size:0.95rem; font-weight:700; color:var(--gold-light);">🏆 GTO Media Since 2009 • BNI Vietnam Champion</span>
+                <button class="interactive-btn-lg" onclick="goToSlide(15, true)">💳 Đăng Ký Khóa Học KTCSxAI Ngay</button>
+              </div>
+            </div>
+
+            <div class="senior-panel">
+              <div>
+                <h3 class="senior-heading">🏅 Hồ Sơ Năng Lực & Uy Tín Thực Chiến:</h3>
+                <p class="senior-text">
+                  🔹 <strong>1. Chuyên gia Kết nối:</strong> Doanh nhân – Diễn giả – Chuyên gia Xây dựng Mối quan hệ & Kết nối Kinh doanh.<br/>
+                  🔹 <strong>2. Lãnh đạo Doanh nghiệp:</strong> Chủ tịch Công ty Cổ phần Truyền thông GTO (Since 2009).<br/>
+                  🔹 <strong>3. Phụng sự Cộng đồng:</strong> Phó Chủ tịch Hội Doanh Nhân Trẻ Khánh Hòa • Chủ tịch BNI Flash.<br/>
+                  🔹 <strong>4. Quán quân BNI Việt Nam:</strong> Giải Nhất cuộc thi <strong>“Tôi kết nối thành công”</strong> do BNI Việt Nam tổ chức • <strong>22 năm kinh nghiệm</strong> làm việc cùng hàng ngàn chủ doanh nghiệp!
+                </p>
+              </div>
+              <div class="transform-row-large" id="s0Row1">
+                <span class="state-old-lg">🤝 Kết nối kinh doanh thuần túy</span>
+                <span class="verb-bridge-lg">TRỞ THÀNH</span>
+                <span class="state-new-lg">👑 Nhà đào tạo Phát triển Bản thân & KTCSxAI</span>
+              </div>
+            </div>
+          </div>
+          <div class="signature-watermark">Tuấn Tử Tế Từ Tâm</div>
+        </div>
+      </section>
+
+      <!-- =========================================================
+           TRANG 02: LÝ DO TÔI ĐÀO TẠO: GIÚP NGƯỜI KINH DOANH PHÁT TRIỂN
+           ========================================================= -->
+      <section class="slide" data-slide-index="1">
+        <div class="slide-inner">
+          <div class="slide-header">
+            <div>
+              <span class="slide-tag">🔥 TRANG 02 / 16 • KHỞI NGUỒN SỨ MỆNH ĐÀO TẠO CHO CHỦ DOANH NGHIỆP</span>
+              <h2 class="slide-title">💡 LÝ DO TÔI ĐÀO TẠO: GIÚP NGƯỜI KINH DOANH PHÁT TRIỂN BỀN VỮNG</h2>
+            </div>
+            <div class="slide-header-actions">
+              <label class="inline-slide-vis-label" title="Bỏ tích để ẩn trang này khi trình chiếu">
+                <input type="checkbox" class="inline-slide-chk" data-idx="1" checked onchange="toggleSlideVisibility(1, this.checked)" />
+                <span>Hiện trang</span>
+              </label>
+              <button class="btn-slide-voice" onclick="speakSingleSlide(1)">🔊 Giảng Trang Này</button>
+            </div>
+          </div>
+
+          <div class="senior-stage">
+            <div class="senior-panel">
+              <div class="giant-art-frame" data-fx="golden-seeds">
+                <span class="badge-executive-overlay">🤝 HỢP LỰC CHỦ DOANH NGHIỆP BNI TẠO DỰNG GIÁ TRỊ</span>
+                <img class="bg-photo" src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=1600&q=85" alt="Hợp tác doanh nhân BNI kiến tạo công ăn việc làm" />
+                <canvas class="fx-4d-canvas"></canvas>
+                <div class="live-motion-overlay">
+                  <svg viewBox="0 0 600 320" style="width:94%; height:92%;">
+                    <circle cx="300" cy="155" r="78" fill="rgba(207,32,48,0.28)" stroke="#f5c451" stroke-width="3" />
+                    <text x="300" y="150" fill="#ffffff" font-size="16" font-weight="900" text-anchor="middle">PHÁT TRIỂN CHỦ DOANH NGHIỆP</text>
+                    <text x="300" y="174" fill="#ffe9ad" font-size="13" font-weight="700" text-anchor="middle">TẠO CÔNG ĂN VIỆC LÀM & CỦA CẢI XÃ HỘI</text>
+                  </svg>
+                </div>
+                <div class="art-image-overlay">
+                  <div class="art-caption">🌱 Giúp 1 Chủ Doanh Nghiệp Phát Triển Là Giúp Hàng Trăm Gia Đình Hạnh Phúc</div>
+                </div>
+              </div>
+            </div>
+
+            <div class="senior-panel">
+              <div>
+                <h3 class="senior-heading">❓ Tại Sao Sau 22 Năm Kinh Doanh, Tôi Đam Mê Đào Tạo?</h3>
+                <div class="poem-box-large">
+                  🎯 “MUỐN GIÚP CHO NHỮNG NGƯỜI KINH DOANH PHÁT TRIỂN,<br/>
+                  🤝 CÙNG TẠO RA NHIỀU CÔNG ĂN, VIỆC LÀM,<br/>
+                  💎 CỦA CẢI, VẬT CHẤT & GIÁ TRỊ TÍCH CỰC!”
+                </div>
+                <p class="senior-text">
+                  🔹 <strong>a. Đòn bẩy xã hội:</strong> Khi một Chủ doanh nghiệp BNI nâng tầm tư duy và làm chủ trí tuệ AI, cả doanh nghiệp đó bứt phá.<br/>
+                  🔹 <strong>b. Lan tỏa thịnh vượng:</strong> Doanh nghiệp vững mạnh sẽ tạo thêm hàng trăm việc làm, mang lại của cải vật chất và giá trị tốt đẹp cho cộng đồng!
+                </p>
+              </div>
+              <div class="transform-row-large" id="s1Row1">
+                <span class="state-old-lg">👤 Thành công cho riêng bản thân</span>
+                <span class="verb-bridge-lg">TẠO NÊN</span>
+                <span class="state-new-lg">🌏 Sự thịnh vượng cho vạn gia đình</span>
+              </div>
+            </div>
+          </div>
+          <div class="signature-watermark">Tuấn Tử Tế Từ Tâm</div>
+        </div>
+      </section>
+
+      <!-- =========================================================
+           TRANG 03: DẤU ẤN BNI ĐỈNH CAO - GIẢI NHẤT 2013 & PIN DOUBLE PLATINUM
+           ========================================================= -->
+      <section class="slide" data-slide-index="2">
+        <div class="slide-inner">
+          <div class="slide-header">
+            <div>
+              <span class="slide-tag">🏆 TRANG 03 / 16 • DẤU ẤN LỊCH SỬ TẠI BNI VIỆT NAM (HỘI NGỘ ĐỈNH CAO 2013)</span>
+              <h2 class="slide-title">🥇 GIẢI NHẤT “TÔI KẾT NỐI THÀNH CÔNG” & PIN DOUBLE PLATINUM</h2>
+            </div>
+            <div class="slide-header-actions">
+              <label class="inline-slide-vis-label" title="Bỏ tích để ẩn trang này khi trình chiếu">
+                <input type="checkbox" class="inline-slide-chk" data-idx="2" checked onchange="toggleSlideVisibility(2, this.checked)" />
+                <span>Hiện trang</span>
+              </label>
+              <button class="btn-slide-voice" onclick="speakSingleSlide(2)">🔊 Giảng Trang Này</button>
+            </div>
+          </div>
+
+          <div class="senior-stage">
+            <div class="senior-panel">
+              <div class="giant-art-frame" data-fx="sun-rays">
+                <span class="badge-executive-overlay">📸 HÌNH ẢNH THẬT • CÚP GIẢI NHẤT BNI VIỆT NAM (03/08/2013)</span>
+                <label class="real-photo-upload-label">
+                  📷 Đổi/Gắn Ảnh Cúp BNI
+                  <input type="file" accept="image/*" style="display:none;" onchange="loadRealPhoto(event, 'realImgSlide3')" />
+                </label>
+                <img class="bg-photo" id="realImgSlide3" src="https://images.unsplash.com/photo-1511578314322-379afb476865?auto=format&fit=crop&w=1400&q=85" alt="Hội ngộ đỉnh cao BNI Vietnam National Conference" />
+                <canvas class="fx-4d-canvas"></canvas>
+                <div class="live-motion-overlay">
+                  <svg viewBox="0 0 540 270" style="width:86%; height:84%; filter:drop-shadow(0 12px 25px rgba(0,0,0,0.85));">
+                    <rect x="30" y="15" width="480" height="235" rx="22" fill="#044e3a" stroke="#e2e8f0" stroke-width="6"/>
+                    <rect x="42" y="27" width="456" height="211" rx="14" fill="none" stroke="#f5c451" stroke-width="2"/>
+                    <text x="270" y="68" fill="#ffffff" font-size="32" font-weight="900" text-anchor="middle" letter-spacing="3">BNI®</text>
+                    <text x="270" y="88" fill="#cbd5e1" font-size="10" text-anchor="middle">BNI Vietnam National Conference - Top Meeting 2013</text>
+                    <text x="270" y="114" fill="#ffe9ad" font-size="14" font-style="italic" text-anchor="middle">Congratulations to</text>
+                    <text x="270" y="142" fill="#ffffff" font-size="21" font-weight="900" text-anchor="middle">NGUYỄN ANH TUẤN</text>
+                    <text x="270" y="168" fill="#f5c451" font-size="18" font-weight="800" text-anchor="middle">GIẢI NHẤT - TÔI KẾT NỐI THÀNH CÔNG</text>
+                    <text x="270" y="192" fill="#e2e8f0" font-size="12" font-style="italic" text-anchor="middle">Changing the Way the World Does Business</text>
+                    <text x="270" y="214" fill="#34d399" font-size="13" font-weight="700" text-anchor="middle">Da Nang, August 3rd, 2013</text>
+                  </svg>
+                </div>
+                <div class="art-image-overlay">
+                  <div class="art-caption">🏅 Pin Double Platinum (Bảo Trợ 24 Thành Viên) • Hội Ngộ Đỉnh Cao 2013</div>
+                </div>
+              </div>
+            </div>
+
+            <div class="senior-panel">
+              <div>
+                <h3 class="senior-heading">🌟 Thành Tựu Cống Hiến Thực Tế Trong Hệ Thống BNI:</h3>
+                <p class="senior-text">
+                  🔹 <strong>1. Người mở đường:</strong> Chủ tịch Nhiệm kỳ I <strong>BNI Union tại Nha Trang</strong>, Giám đốc mở Chapter, Giám đốc vùng Khánh Hòa.<br/>
+                  🔹 <strong>2. Kỷ lục bảo trợ:</strong> Đạt danh hiệu cao quý <strong>Pin Double Platinum</strong> (trực tiếp bảo trợ <strong>24 thành viên</strong> chủ doanh nghiệp vào BNI).<br/>
+                  🔹 <strong>3. Quán quân toàn quốc:</strong> Đạt <strong>Giải Nhất cuộc thi “TÔI KẾT NỐI THÀNH CÔNG”</strong> tại Hội ngộ đỉnh cao BNI Việt Nam ngày 03/08/2013 tại Đà Nẵng!
+                </p>
+              </div>
+              <div class="transform-row-large" id="s2Row1">
+                <span class="state-old-lg">🌱 Thành viên tham gia sinh hoạt</span>
+                <span class="verb-bridge-lg">TRỞ THÀNH</span>
+                <span class="state-new-lg">🏆 Biểu tượng kết nối đỉnh cao BNI</span>
+              </div>
+            </div>
+          </div>
+          <div class="signature-watermark">Tuấn Tử Tế Từ Tâm</div>
+        </div>
+      </section>
+
+      <!-- =========================================================
+           TRANG 04: HÀNH TRÌNH NGÀY ẤY - BÂY GIỜ & UY TÍN GTO TỪ 2009
+           ========================================================= -->
+      <section class="slide" data-slide-index="3">
+        <div class="slide-inner">
+          <div class="slide-header">
+            <div>
+              <span class="slide-tag">🤝 TRANG 04 / 16 • HÀNH TRÌNH ĐỒNG HÀNH & UY TÍN DOANH NGHIỆP TỪ 2009</span>
+              <h2 class="slide-title">📸 “NGÀY ẤY – BÂY GIỜ” & BẰNG KHEN UBND TỈNH KHÁNH HÒA</h2>
+            </div>
+            <div class="slide-header-actions">
+              <label class="inline-slide-vis-label" title="Bỏ tích để ẩn trang này khi trình chiếu">
+                <input type="checkbox" class="inline-slide-chk" data-idx="3" checked onchange="toggleSlideVisibility(3, this.checked)" />
+                <span>Hiện trang</span>
+              </label>
+              <button class="btn-slide-voice" onclick="speakSingleSlide(3)">🔊 Giảng Trang Này</button>
+            </div>
+          </div>
+
+          <div class="senior-stage">
+            <div class="senior-panel">
+              <div class="giant-art-frame" data-fx="sun-rays">
+                <span class="badge-executive-overlay">📸 HÌNH ẢNH THẬT • NGÀY ẤY & BÂY GIỜ CÙNG THẦY PHẠM THÀNH LONG</span>
+                <label class="real-photo-upload-label">
+                  📷 Đổi/Gắn Ảnh Thật
+                  <input type="file" accept="image/*" style="display:none;" onchange="loadRealPhoto(event, 'realImgSlide4')" />
+                </label>
+                <img class="bg-photo" id="realImgSlide4" src="https://images.unsplash.com/photo-1521791136064-7986c2920216?auto=format&fit=crop&w=1400&q=85" alt="Tình bạn và sự đồng hành bền chặt qua năm tháng" />
+                <canvas class="fx-4d-canvas"></canvas>
+                <div class="art-image-overlay">
+                  <div class="art-caption">🌟 Những Mối Quan Hệ Chất Lượng Bền Vững Qua Hàng Thập Kỷ</div>
+                </div>
+              </div>
+            </div>
+
+            <div class="senior-panel">
+              <div>
+                <h3 class="senior-heading">🏛️ Nền Tảng Uy Tín Vững Chắc Qua Thời Gian:</h3>
+                <p class="senior-text">
+                  🔹 <strong>a. Tình bằng hữu & Người Thầy lớn:</strong> Hành trình <strong>“Ngày ấy – Bây giờ”</strong> gắn bó bền chặt từ những ngày đầu xây dựng BNI cùng Thầy <strong>Phạm Thành Long</strong>.<br/>
+                  🔹 <strong>b. Ghi nhận từ Chính quyền tỉnh Khánh Hòa:</strong> Chủ tịch UBND tỉnh Khánh Hòa tặng <strong>Bằng Khen cho Công ty Cổ phần Truyền thông GTO</strong> (Quyết định số 2287/QĐ-CTUBND ngày 26/08/2011) vì thành tích xuất sắc tài trợ Festival Biển Nha Trang – Khánh Hòa.
+                </p>
+                <div class="poem-box-large">
+                  🤝 “Uy tín tạo nên thương hiệu lớn,<br/>
+                  💎 Chân thành kết nối vạn thành công!”
+                </div>
+              </div>
+              <div class="transform-row-large" id="s3Row1">
+                <span class="state-old-lg">⏳ Khởi đầu từ những bước chân đầu</span>
+                <span class="verb-bridge-lg">TẠO NÊN</span>
+                <span class="state-new-lg">🏛️ Di sản uy tín hơn 2 thập kỷ</span>
+              </div>
+            </div>
+          </div>
+          <div class="signature-watermark">Tuấn Tử Tế Từ Tâm</div>
+        </div>
+      </section>
+
+      <!-- =========================================================
+           TRANG 05: BƯỚC NGOẶT TỪ 2020 - ĐÀO TẠO PHÁT TRIỂN BẢN THÂN TRỰC TUYẾN
+           ========================================================= -->
+      <section class="slide" data-slide-index="4">
+        <div class="slide-inner">
+          <div class="slide-header">
+            <div>
+              <span class="slide-tag">💻 TRANG 05 / 16 • BƯỚC NGOẶT TỪ NĂM 2020 ĐẾN NAY</span>
+              <h2 class="slide-title">🌟 TẬP TRUNG ĐÀO TẠO PHÁT TRIỂN BẢN THÂN & CHUYỂN HÓA HỌC VIÊN</h2>
+            </div>
+            <div class="slide-header-actions">
+              <label class="inline-slide-vis-label" title="Bỏ tích để ẩn trang này khi trình chiếu">
+                <input type="checkbox" class="inline-slide-chk" data-idx="4" checked onchange="toggleSlideVisibility(4, this.checked)" />
+                <span>Hiện trang</span>
+              </label>
+              <button class="btn-slide-voice" onclick="speakSingleSlide(4)">🔊 Giảng Trang Này</button>
+            </div>
+          </div>
+
+          <div class="senior-stage">
+            <div class="senior-panel">
+              <div class="giant-art-frame" data-fx="golden-seeds">
+                <span class="badge-executive-overlay">📸 HÌNH ẢNH THẬT • CỘNG ĐỒNG HỌC VIÊN TRỰC TUYẾN QUA ZOOM</span>
+                <label class="real-photo-upload-label">
+                  📷 Đổi/Gắn Ảnh Lớp Học
+                  <input type="file" accept="image/*" style="display:none;" onchange="loadRealPhoto(event, 'realImgSlide5')" />
+                </label>
+                <img class="bg-photo" id="realImgSlide5" src="https://images.unsplash.com/photo-1588196749597-9ff075ee6b5b?auto=format&fit=crop&w=1400&q=85" alt="Lớp học trực tuyến truyền cảm hứng qua Zoom" />
+                <canvas class="fx-4d-canvas"></canvas>
+                <div class="art-image-overlay">
+                  <div class="art-caption">💖 Hàng Trăm Anh Chị Doanh Nhân & Học Viên Thay Đổi Tích Cực Mỗi Tuần</div>
+                </div>
+              </div>
+            </div>
+
+            <div class="senior-panel">
+              <div>
+                <h3 class="senior-heading">🚀 Từ Năm 2020: Tập Trung Trọn Vẹn Vào Phát Triển Bản Thân</h3>
+                <p class="senior-text">
+                  🔹 <strong>1. Các chương trình gây tiếng vang:</strong> <em>“Tự tin truyền cảm hứng trực tuyến”</em>, <em>“Biết ơn – Con đường dẫn tới hạnh phúc”</em>, <em>“Kiến tạo cuộc sống”</em>.<br/>
+                  🔹 <strong>2. Sự chuyển hóa thực tế:</strong> Hàng loạt anh chị chủ doanh nghiệp và học viên (Chị Tina, Mạnh Hiếu, Kim Boivin, HạnhEagle, Chị Huệ, Hưng Huỳnh...) đã lột xác tự tin, làm chủ cảm xúc và bứt phá doanh số!
+                </p>
+              </div>
+              <div class="transform-row-large" id="s4Row1">
+                <span class="state-old-lg">🙈 Ngại ngùng trước ống kính trực tuyến</span>
+                <span class="verb-bridge-lg">TRỞ THÀNH</span>
+                <span class="state-new-lg">🌟 Nhà lãnh đạo truyền cảm hứng lớn</span>
+              </div>
+            </div>
+          </div>
+          <div class="signature-watermark">Tuấn Tử Tế Từ Tâm</div>
+        </div>
+      </section>
+
+      <!-- =========================================================
+           TRANG 06: TRIẾT LÝ CỐT LÕI: PTBT CẦN TRƯỚC KINH DOANH (KTCSxAI)
+           ========================================================= -->
+      <section class="slide" data-slide-index="5">
+        <div class="slide-inner">
+          <div class="slide-header">
+            <div>
+              <span class="slide-tag">🧭 TRANG 06 / 16 • TRIẾT LÝ CỐT LÕI TRONG KỶ NGUYÊN TRÍ TUỆ NHÂN TẠO KTCSxAI</span>
+              <h2 class="slide-title">⚡ PHÁT TRIỂN BẢN THÂN QUAN TRỌNG HƠN & CẦN TRƯỚC PHÁT TRIỂN KINH DOANH!</h2>
+            </div>
+            <div class="slide-header-actions">
+              <label class="inline-slide-vis-label" title="Bỏ tích để ẩn trang này khi trình chiếu">
+                <input type="checkbox" class="inline-slide-chk" data-idx="5" checked onchange="toggleSlideVisibility(5, this.checked)" />
+                <span>Hiện trang</span>
+              </label>
+              <button class="btn-slide-voice" onclick="speakSingleSlide(5)">🔊 Giảng Trang Này</button>
+            </div>
+          </div>
+
+          <div class="senior-stage">
+            <div class="senior-panel">
+              <div class="giant-art-frame" data-fx="galaxy-vortex">
+                <span class="badge-executive-overlay">🤖 SỨC MẠNH KẾT HỢP: NỘI LỰC BẢN THÂN × TRÍ TUỆ AI</span>
+                <img class="bg-photo" src="https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&w=1600&q=85" alt="Trí tuệ nhân tạo AI và sự phát triển con người" />
+                <canvas class="fx-4d-canvas"></canvas>
+                <div class="live-motion-overlay">
+                  <svg viewBox="0 0 600 320" style="width:94%; height:92%;">
+                    <circle cx="200" cy="155" r="78" fill="rgba(52,211,153,0.22)" stroke="#34d399" stroke-width="3" />
+                    <text x="200" y="150" fill="#ffffff" font-size="14" font-weight="900" text-anchor="middle">PHÁT TRIỂN</text>
+                    <text x="200" y="170" fill="#34d399" font-size="15" font-weight="900" text-anchor="middle">BẢN THÂN (GỐC)</text>
+
+                    <circle cx="400" cy="155" r="78" fill="rgba(245,196,81,0.22)" stroke="#f5c451" stroke-width="3" style="animation-delay:1.1s;"/>
+                    <text x="400" y="150" fill="#ffffff" font-size="14" font-weight="900" text-anchor="middle">TRÍ TUỆ AI &</text>
+                    <text x="400" y="170" fill="#ffe9ad" font-size="15" font-weight="900" text-anchor="middle">KINH DOANH (QUẢ)</text>
+                  </svg>
+                </div>
+                <div class="art-image-overlay">
+                  <div class="art-caption">🚀 Tầm Của Chủ Doanh Nghiệp Tới Đâu • Quy Mô Doanh Nghiệp Tới Đó!</div>
+                </div>
+              </div>
+            </div>
+
+            <div class="senior-panel">
+              <div>
+                <h3 class="senior-heading">🔑 Cách Giúp Của Tôi Cho Các Chủ Kinh Doanh BNI:</h3>
+                <p class="senior-text">
+                  🔹 <strong>1. Quy luật Gốc – Quả:</strong> <em>“Nếu bạn phát triển kinh doanh trước thì bạn chỉ đủ ăn; còn khi bạn <strong>phát triển bản thân trước</strong> thì bạn mới thực sự kinh doanh bền vững!”</em><br/>
+                  🔹 <strong>2. Đòn bẩy Kỷ nguyên trí tuệ KTCSxAI:</strong> Công cụ AI mạnh gấp vạn lần, nhưng AI chỉ là <strong>cỗ máy khuếch đại tâm thức của người chủ</strong>. Chủ doanh nghiệp có Thân – Tâm – Trí sáng suốt kết hợp với AI sẽ tạo ra lợi thế cạnh tranh tuyệt đối!
+                </p>
+              </div>
+              <div class="transform-row-large" id="s5Row1">
+                <span class="state-old-lg">😰 Chạy theo kinh doanh chỉ đủ ăn</span>
+                <span class="verb-bridge-lg">TRỞ THÀNH</span>
+                <span class="state-new-lg">👑 Nâng tầm bản thân kinh doanh bền vững</span>
+              </div>
+            </div>
+          </div>
+          <div class="signature-watermark">Tuấn Tử Tế Từ Tâm</div>
+        </div>
+      </section>
+
+      <!-- =========================================================
+           TRANG 07: MÔ HÌNH 5 VÒNG TRÒN ĐỒNG TÂM 4D: MÌNH LÀ GỐC
+           ========================================================= -->
+      <section class="slide" data-slide-index="6">
+        <div class="slide-inner">
+          <div class="slide-header">
+            <div>
+              <span class="slide-tag">🎯 TRANG 07 / 16 • ĐỒ HỌA ĐỘNG 4D: MÔ HÌNH 5 VÒNG TRÒN ĐỒNG TÂM</span>
+              <h2 class="slide-title">💫 MÌNH CẦN PHÁT TRIỂN BẢN THÂN TRƯỚC • VẠN SỰ BÊN NGOÀI TỰ THÔNG</h2>
+            </div>
+            <div class="slide-header-actions">
+              <label class="inline-slide-vis-label" title="Bỏ tích để ẩn trang này khi trình chiếu">
+                <input type="checkbox" class="inline-slide-chk" data-idx="6" checked onchange="toggleSlideVisibility(6, this.checked)" />
+                <span>Hiện trang</span>
+              </label>
+              <button class="btn-slide-voice" onclick="speakSingleSlide(6)">🔊 Giảng Trang Này</button>
+            </div>
+          </div>
+
+          <div class="senior-stage">
+            <div class="senior-panel">
+              <div class="giant-art-frame" data-fx="depth-rings" style="background: radial-gradient(circle at center, #102a56 0%, #030714 100%);">
+                <span class="badge-executive-overlay">🎯 BẤM NÚT ĐỂ THẮP SÁNG TỪ TÂM "MÌNH" LAN TỎA RA 5 VÒNG</span>
+                <canvas class="fx-4d-canvas"></canvas>
+                <div class="live-motion-overlay" style="pointer-events:auto;">
+                  <svg viewBox="0 0 620 350" style="width:96%; height:94%;">
+                    <circle id="ring5" cx="310" cy="175" r="152" fill="rgba(16,185,129,0.14)" stroke="#34d399" stroke-width="2.5"/>
+                    <text x="310" y="38" fill="#34d399" font-size="13" font-weight="800" text-anchor="middle">5. CUỘC SỐNG THỊNH VƯỢNG & HẠNH PHÚC</text>
+                    <circle id="ring4" cx="310" cy="175" r="118" fill="rgba(56,189,248,0.18)" stroke="#38bdf8" stroke-width="2.5"/>
+                    <text x="310" y="72" fill="#38bdf8" font-size="13" font-weight="800" text-anchor="middle">4. KINH DOANH ĐỘT PHÁ</text>
+                    <circle id="ring3" cx="310" cy="175" r="85" fill="rgba(168,85,247,0.22)" stroke="#c084fc" stroke-width="2.5"/>
+                    <text x="310" y="106" fill="#e9d5ff" font-size="12.5" font-weight="800" text-anchor="middle">3. MỐI QUAN HỆ CHẤT LƯỢNG</text>
+                    <circle id="ring2" cx="310" cy="175" r="54" fill="rgba(245,158,11,0.28)" stroke="#fbbf24" stroke-width="2.5"/>
+                    <text x="310" y="136" fill="#fde68a" font-size="12" font-weight="800" text-anchor="middle">2. CẢM XÚC</text>
+                    <circle id="ring1" cx="310" cy="175" r="28" fill="#cf2030" stroke="#ffffff" stroke-width="3" />
+                    <circle cx="310" cy="175" r="28" fill="#cf2030" stroke="#ffe9ad" stroke-width="2.5"/>
+                    <text x="310" y="179" fill="#ffffff" font-size="13" font-weight="900" text-anchor="middle">1. MÌNH</text>
+                  </svg>
+                </div>
+              </div>
+              <div style="display:flex; justify-content:center; margin-top:10px;">
+                <button class="interactive-btn-lg" onclick="pulseConcentricRings()">
+                  💫 Kích Hoạt Năng Lượng Từ "MÌNH" Ra "CUỘC SỐNG"
+                </button>
+              </div>
+            </div>
+
+            <div class="senior-panel">
+              <div>
+                <h3 class="senior-heading">🧭 5 Vòng Tròn Nhân Quả Của Người Làm Kinh Doanh:</h3>
+                <p class="senior-text">
+                  🔴 <strong>1. MÌNH (Hạt nhân gốc):</strong> Cần phát triển bản thân mình đầu tiên.<br/>
+                  🟠 <strong>2. CẢM XÚC:</strong> Khi MÌNH trưởng thành, ta làm chủ hoàn toàn cảm xúc tích cực.<br/>
+                  🟣 <strong>3. MỐI QUAN HỆ:</strong> Cảm xúc tốt đẹp kiến tạo nên những mối quan hệ chất lượng cao.<br/>
+                  🔵 <strong>4. KINH DOANH:</strong> Mối quan hệ tin cậy đẻ ra cơ hội và dòng tiền kinh doanh bền vững.<br/>
+                  🟢 <strong>5. CUỘC SỐNG:</strong> Kinh doanh hưng thịnh tạo nên một cuộc sống viên mãn, tự do!
+                </p>
+              </div>
+              <div class="transform-row-large" id="s6Row1">
+                <span class="state-old-lg">🔄 Loay hoay sửa ngọn bên ngoài</span>
+                <span class="verb-bridge-lg">TRỞ THÀNH</span>
+                <span class="state-new-lg">🎯 Bồi gốc chính MÌNH ở trung tâm</span>
+              </div>
+            </div>
+          </div>
+          <div class="signature-watermark">Tuấn Tử Tế Từ Tâm</div>
+        </div>
+      </section>
+
+      <!-- =========================================================
+           TRANG 08: TẢNG BĂNG TÂM THỨC 4D: 10% Ý THỨC - 90% TIỀM THỨC
+           ========================================================= -->
+      <section class="slide" data-slide-index="7">
+        <div class="slide-inner">
+          <div class="slide-header">
+            <div>
+              <span class="slide-tag">🧊 TRANG 08 / 16 • ĐỒ HỌA ĐỘNG 4D: TẢNG BĂNG TÂM THỨC CON NGƯỜI</span>
+              <h2 class="slide-title">🌊 10% Ý THỨC (KIẾN THỨC) & 90% TIỀM THỨC QUYẾT ĐỊNH CUỘC SỐNG</h2>
+            </div>
+            <div class="slide-header-actions">
+              <label class="inline-slide-vis-label" title="Bỏ tích để ẩn trang này khi trình chiếu">
+                <input type="checkbox" class="inline-slide-chk" data-idx="7" checked onchange="toggleSlideVisibility(7, this.checked)" />
+                <span>Hiện trang</span>
+              </label>
+              <button class="btn-slide-voice" onclick="speakSingleSlide(7)">🔊 Giảng Trang Này</button>
+            </div>
+          </div>
+
+          <div class="senior-stage">
+            <div class="senior-panel">
+              <div class="giant-art-frame" data-fx="deep-ocean" style="background: linear-gradient(180deg, #0ea5e9 0%, #0284c7 30%, #082f49 32%, #020617 100%);">
+                <span class="badge-executive-overlay">🧊 MÔ HÌNH TẢNG BĂNG 4D • KHAI PHÁ 90% TIỀM THỨC</span>
+                <canvas class="fx-4d-canvas"></canvas>
+                <div class="live-motion-overlay">
+                  <svg viewBox="0 0 600 340" style="width:94%; height:94%;">
+                    <line x1="20" y1="110" x2="580" y2="110" stroke="#7dd3fc" stroke-width="3" stroke-dasharray="10 5"/>
+                    <text x="95" y="100" fill="#ffffff" font-size="12" font-weight="800">MẶT NƯỚC NHẬN BIẾT</text>
+                    <polygon points="300,26 235,110 365,110" fill="rgba(255,255,255,0.92)" stroke="#38bdf8" stroke-width="2.5"/>
+                    <text x="300" y="82" fill="#030714" font-size="14" font-weight="900" text-anchor="middle">10% Ý THỨC</text>
+                    <text x="300" y="100" fill="#0284c7" font-size="11" font-weight="800" text-anchor="middle">(Kiến Thức)</text>
+                    <polygon points="235,112 365,112 435,235 300,322 165,235" fill="rgba(56,189,248,0.28)" stroke="#f5c451" stroke-width="3"/>
+                    <text x="300" y="168" fill="#ffe9ad" font-size="22" font-weight="900" text-anchor="middle">90% TIỀM THỨC</text>
+                    <text x="300" y="202" fill="#ffffff" font-size="14" font-weight="800" text-anchor="middle">❤️ CẢM XÚC • ⚙️ THÓI QUEN</text>
+                    <text x="300" y="232" fill="#34d399" font-size="15" font-weight="900" text-anchor="middle">🌟 QUYẾT ĐỊNH TOÀN BỘ CUỘC SỐNG</text>
+                  </svg>
+                </div>
+              </div>
+            </div>
+
+            <div class="senior-panel">
+              <div>
+                <h3 class="senior-heading">🧠 Tại Sao Biết Rất Nhiều Nhưng Chưa Đột Phá?</h3>
+                <p class="senior-text">
+                  🔹 <strong>a. 10% Ý thức (Phần nổi):</strong> Là kiến thức sách vở, lý thuyết chuyên môn. Nếu chỉ học kiến thức, ta mới chạm được <strong>10% sức mạnh</strong>.<br/>
+                  🔹 <strong>b. 90% Tiềm thức (Phần chìm khổng lồ):</strong> Nằm ở <strong>Cảm xúc, Thói quen và Niềm tin sâu thẳm</strong>. Đây mới là động cơ ngầm điều khiển <strong>90% kết quả cuộc sống và kinh doanh</strong> của bạn!<br/>
+                  🔹 <strong>c. Giải pháp tại KTCSxAI:</strong> Huấn luyện chuyển hóa trực tiếp vào 90% Tiềm thức, cài đặt thói quen thịnh vượng mỗi ngày!
+                </p>
+              </div>
+              <div class="transform-row-large" id="s7Row1">
+                <span class="state-old-lg">📚 Chỉ dùng 10% kiến thức lý thuyết</span>
+                <span class="verb-bridge-lg">TRỞ THÀNH</span>
+                <span class="state-new-lg">🌊 Làm chủ 90% sức mạnh tiềm thức</span>
+              </div>
+            </div>
+          </div>
+          <div class="signature-watermark">Tuấn Tử Tế Từ Tâm</div>
+        </div>
+      </section>
+
+      <!-- =========================================================
+           TRANG 09: THÓI QUEN VÀNG & MINH CHỨNG TUỔI THỂ CHẤT 38
+           ========================================================= -->
+      <section class="slide" data-slide-index="8">
+        <div class="slide-inner">
+          <div class="slide-header">
+            <div>
+              <span class="slide-tag">⚙️ TRANG 09 / 16 • THE POWER OF HABIT & KỶ LUẬT THÂN - TÂM - TRÍ THỰC CHIẾN</span>
+              <h2 class="slide-title">🏃‍♂️ THÓI QUEN NHỎ TẠO THAY ĐỔI LỚN • MINH CHỨNG TUỔI THỂ CHẤT 38!</h2>
+            </div>
+            <div class="slide-header-actions">
+              <label class="inline-slide-vis-label" title="Bỏ tích để ẩn trang này khi trình chiếu">
+                <input type="checkbox" class="inline-slide-chk" data-idx="8" checked onchange="toggleSlideVisibility(8, this.checked)" />
+                <span>Hiện trang</span>
+              </label>
+              <button class="btn-slide-voice" onclick="speakSingleSlide(8)">🔊 Giảng Trang Này</button>
+            </div>
+          </div>
+
+          <div class="senior-stage">
+            <div class="senior-panel">
+              <div class="giant-art-frame" data-fx="sun-rays">
+                <span class="badge-executive-overlay">📸 MINH CHỨNG THẬT TRÊN ĐỒNG HỒ GARMIN • TUỔI THỂ CHẤT 38</span>
+                <label class="real-photo-upload-label">
+                  📷 Đổi/Gắn Ảnh Garmin
+                  <input type="file" accept="image/*" style="display:none;" onchange="loadRealPhoto(event, 'realImgSlide9')" />
+                </label>
+                <img class="bg-photo" id="realImgSlide9" src="https://images.unsplash.com/photo-1530549387789-4c1017266635?auto=format&fit=crop&w=1400&q=85" alt="Bơi biển Nha Trang và rèn luyện thể chất sớm mai" />
+                <canvas class="fx-4d-canvas"></canvas>
+                <div class="live-motion-overlay">
+                  <svg viewBox="0 0 580 280" style="width:92%; height:88%;">
+                    <rect x="25" y="20" width="250" height="230" rx="20" fill="rgba(4,12,28,0.9)" stroke="#34d399" stroke-width="2.5"/>
+                    <text x="150" y="55" fill="#cbd5e1" font-size="13" font-weight="700" text-anchor="middle">GARMIN FITNESS AGE</text>
+                    <circle cx="150" cy="130" r="54" fill="rgba(52,211,153,0.18)" stroke="#34d399" stroke-width="4" />
+                    <text x="150" y="142" fill="#34d399" font-size="38" font-weight="900" text-anchor="middle">38</text>
+                    <text x="150" y="208" fill="#ffe9ad" font-size="13" font-weight="800" text-anchor="middle">TUỔI THỂ CHẤT TRẺ HÓA</text>
+                    <text x="150" y="230" fill="#38bdf8" font-size="11" font-weight="700" text-anchor="middle">🏊‍♂️ Bơi biển Nha Trang • 🏃‍♂️ Chạy bộ</text>
+
+                    <rect x="305" y="20" width="250" height="230" rx="20" fill="rgba(245,196,81,0.92)" stroke="#ffffff" stroke-width="2.5"/>
+                    <text x="430" y="55" fill="#030714" font-size="14" font-weight="900" text-anchor="middle">THE POWER OF HABIT</text>
+                    <circle cx="430" cy="132" r="46" fill="none" stroke="#cf2030" stroke-width="4" stroke-dasharray="12 6"/>
+                    <text x="430" y="136" fill="#cf2030" font-size="13" font-weight="900" text-anchor="middle">THÓI QUEN TỐT</text>
+                    <text x="430" y="212" fill="#030714" font-size="12" font-weight="800" text-anchor="middle">Charles Duhigg</text>
+                  </svg>
+                </div>
+                <div class="art-image-overlay">
+                  <div class="art-caption">🏊‍♂️ Bơi Biển Sáng Sớm & Chạy Bộ Cùng Học Viên Mỗi Ngày</div>
+                </div>
+              </div>
+            </div>
+
+            <div class="senior-panel">
+              <div>
+                <h3 class="senior-heading">📖 Sức Mạnh Thói Quen & Kết Quả Thực Tế:</h3>
+                <div class="poem-box-large">
+                  ✨ “Muốn có sự thay đổi lớn trong đời, hãy bắt đầu từ những việc nhỏ hình thành nên thói quen tốt.”<br/>
+                  <span style="font-size:0.95rem; color:var(--gold-light);">— Charles Duhigg (The Power of Habit)</span>
+                </div>
+                <p class="senior-text">
+                  🔹 <strong>Minh chứng sống từ Tuấn Tử Tế:</strong> Nhờ duy trì thói quen kỷ luật mỗi sáng (Bơi biển Nha Trang Open Water Swimming & Chạy bộ cùng học viên), chỉ số <strong>Tuổi thể chất trên Garmin đạt mức 38 tuổi</strong> — tràn đầy năng lượng điều hành doanh nghiệp và giảng dạy!
+                </p>
+              </div>
+              <div class="transform-row-large" id="s8Row1">
+                <span class="state-old-lg">😴 Làm việc quá sức, cơ thể mệt mỏi</span>
+                <span class="verb-bridge-lg">TẠO NÊN</span>
+                <span class="state-new-lg">⚡ Thói quen vàng trẻ hóa tuổi thể chất</span>
+              </div>
+            </div>
+          </div>
+          <div class="signature-watermark">Tuấn Tử Tế Từ Tâm</div>
+        </div>
+      </section>
+
+      <!-- =========================================================
+           TRANG 10: MỎ VÀNG TRONG TÂM TRÍ × SỨC MẠNH AI
+           ========================================================= -->
+      <section class="slide" data-slide-index="9">
+        <div class="slide-inner">
+          <div class="slide-header">
+            <div>
+              <span class="slide-tag">⛏️ TRANG 10 / 16 • ĐỒ HỌA ĐỘNG 4D: KHAI PHÁ MỎ VÀNG TÂM TRÍ CÙNG KTCSxAI</span>
+              <h2 class="slide-title">👑 VÀNG TRONG TÂM TRÍ LỚN GẤP VẠN LẦN VÀNG TRONG LÒNG ĐẤT!</h2>
+            </div>
+            <div class="slide-header-actions">
+              <label class="inline-slide-vis-label" title="Bỏ tích để ẩn trang này khi trình chiếu">
+                <input type="checkbox" class="inline-slide-chk" data-idx="9" checked onchange="toggleSlideVisibility(9, this.checked)" />
+                <span>Hiện trang</span>
+              </label>
+              <button class="btn-slide-voice" onclick="speakSingleSlide(9)">🔊 Giảng Trang Này</button>
+            </div>
+          </div>
+
+          <div class="senior-stage">
+            <div class="senior-panel">
+              <div class="giant-art-frame" data-fx="golden-seeds">
+                <span class="badge-executive-overlay">💎 KHAI THÁC KHO BÁU TRÍ TUỆ BẰNG PHÁT TRIỂN BẢN THÂN & AI</span>
+                <img class="bg-photo" src="https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=1600&q=85" alt="Khai phá tiềm năng và trí tuệ công nghệ" />
+                <canvas class="fx-4d-canvas"></canvas>
+                <div class="live-motion-overlay">
+                  <svg viewBox="0 0 600 320" style="width:94%; height:90%;">
+                    <circle cx="300" cy="145" r="88" fill="rgba(245,196,81,0.28)" stroke="#f5c451" stroke-width="3.5" />
+                    <text x="300" y="135" fill="#ffffff" font-size="18" font-weight="900" text-anchor="middle">💎 MỎ VÀNG TÂM TRÍ</text>
+                    <text x="300" y="162" fill="#ffe9ad" font-size="15" font-weight="800" text-anchor="middle">GẤP 10.000 LẦN LÒNG ĐẤT</text>
+                  </svg>
+                </div>
+                <div class="art-image-overlay">
+                  <div class="art-caption">🌟 Một Ý Tưởng Đúng Kết Hợp Cùng Trí Tuệ AI Sinh Ra Gia Tài Vô Giá</div>
+                </div>
+              </div>
+            </div>
+
+            <div class="senior-panel">
+              <div>
+                <h3 class="senior-heading">💰 Kho Báu Lớn Nhất Nằm Ngay Giữa Hai Thái Dương Của Bạn!</h3>
+                <div class="poem-box-large">
+                  💎 “VÀNG ĐƯỢC KHAI THÁC TRONG TÂM TRÍ CON NGƯỜI LỚN GẤP VẠN LẦN KHAI THÁC TRONG LÒNG ĐẤT!”
+                </div>
+                <p class="senior-text">
+                  🔹 <strong>1. Mỏ vàng dưới đất có giới hạn:</strong> Đào mãi cũng cạn kiệt.<br/>
+                  🔹 <strong>2. Mỏ vàng trong tâm trí là vô tận:</strong> Đặc biệt trong <strong>Kỷ nguyên trí tuệ KTCSxAI</strong>, khi Chủ doanh nghiệp biết khai mở tư duy và kết hợp sức mạnh của AI, bạn có thể giải quyết bài toán chiến lược, marketing và nhân sự nhanh gấp hàng chục lần!
+                </p>
+              </div>
+              <div class="transform-row-large" id="s9Row1">
+                <span class="state-old-lg">⛏️ Bán sức lao động kiếm từng đồng</span>
+                <span class="verb-bridge-lg">TRỞ THÀNH</span>
+                <span class="state-new-lg">💎 Khai thác mỏ vàng tâm trí & AI</span>
+              </div>
+            </div>
+          </div>
+          <div class="signature-watermark">Tuấn Tử Tế Từ Tâm</div>
+        </div>
+      </section>
+
+      <!-- =========================================================
+           TRANG 11: THÁP NHU CẦU MASLOW 5 TẦNG 4D
+           ========================================================= -->
+      <section class="slide" data-slide-index="10">
+        <div class="slide-inner">
+          <div class="slide-header">
+            <div>
+              <span class="slide-tag">🏛️ TRANG 11 / 16 • ĐỒ HỌA ĐỘNG 4D: THÁP NHU CẦU MASLOW</span>
+              <h2 class="slide-title">🌟 THẤU HIỂU 5 TẦNG NHU CẦU MASLOW ĐỂ DẪN DẮT ĐỘI NGŨ & KHÁCH HÀNG</h2>
+            </div>
+            <div class="slide-header-actions">
+              <label class="inline-slide-vis-label" title="Bỏ tích để ẩn trang này khi trình chiếu">
+                <input type="checkbox" class="inline-slide-chk" data-idx="10" checked onchange="toggleSlideVisibility(10, this.checked)" />
+                <span>Hiện trang</span>
+              </label>
+              <button class="btn-slide-voice" onclick="speakSingleSlide(10)">🔊 Giảng Trang Này</button>
+            </div>
+          </div>
+
+          <div class="senior-stage">
+            <div class="senior-panel" style="justify-content:center;">
+              <div style="text-align:center; font-size:0.92rem; color:var(--gold-light); font-weight:800; margin-bottom:6px;">
+                👆 BẤM TỪNG TẦNG THÁP MASLOW ĐỂ XEM ỨNG DỤNG CHO CHỦ DOANH NGHIỆP:
+              </div>
+              <div class="pyramid-container">
+                <div class="pyramid-tier tier-6 active" onclick="selectMaslow(5)">👑 5. TỰ THỂ HIỆN BẢN THÂN (SELF-ACTUALIZATION)</div>
+                <div class="pyramid-tier tier-5" onclick="selectMaslow(4)">👍 4. ĐƯỢC TÔN TRỌNG & GHI NHẬN (ESTEEM)</div>
+                <div class="pyramid-tier tier-4" onclick="selectMaslow(3)">❤️ 3. NHU CẦU XÃ HỘI & KẾT NỐI (SOCIAL)</div>
+                <div class="pyramid-tier tier-3" onclick="selectMaslow(2)">🛡️ 2. NHU CẦU AN TOÀN & ĐẢM BẢO (SAFETY)</div>
+                <div class="pyramid-tier tier-1" onclick="selectMaslow(1)">🍚 1. NHU CẦU SINH LÝ CƠ BẢN (PHYSIOLOGICAL)</div>
+              </div>
+            </div>
+
+            <div class="senior-panel">
+              <div>
+                <span class="slide-tag" id="maslowBadge" style="color:var(--gold-primary);">ĐỈNH THÁP MASLOW • TẦNG 5</span>
+                <h3 class="senior-heading" id="maslowTitle">👑 5. Tự Thể Hiện: Sống Đúng Đam Mê & Sứ Mệnh Lãnh Đạo</h3>
+                <p class="senior-text" id="maslowDesc">
+                  Khi vượt qua nhu cầu cơm áo gạo tiền (Sinh lý, An toàn), người Chủ doanh nghiệp BNI khao khát được kết nối yêu thương (Xã hội), được khẳng định uy tín (Tôn trọng) và vươn lên đỉnh cao <strong>Tự thể hiện — phát huy tối đa tiềm năng và trao giá trị cho cuộc đời</strong>!
+                </p>
+                <div class="poem-box-large">
+                  💡 Hiểu Maslow để <strong>hiểu mình, hiểu nhân sự và chạm đúng tử huyệt cảm xúc của khách hàng</strong>!
+                </div>
+              </div>
+              <div class="transform-row-large" id="s10Row1">
+                <span class="state-old-lg">🍚 Kinh doanh chỉ vì mưu sinh đủ ăn</span>
+                <span class="verb-bridge-lg">TRỞ THÀNH</span>
+                <span class="state-new-lg">👑 Đỉnh cao tự thể hiện và phụng sự</span>
+              </div>
+            </div>
+          </div>
+          <div class="signature-watermark">Tuấn Tử Tế Từ Tâm</div>
+        </div>
+      </section>
+
+      <!-- =========================================================
+           TRANG 12: THÁP 6 TẦNG NHẬN THỨC LOGICAL LEVELS
+           ========================================================= -->
+      <section class="slide" data-slide-index="11">
+        <div class="slide-inner">
+          <div class="slide-header">
+            <div>
+              <span class="slide-tag">📐 TRANG 12 / 16 • ĐỒ HỌA ĐỘNG 4D: 6 TẦNG NHẬN THỨC LOGICAL LEVELS</span>
+              <h2 class="slide-title">🧭 NÂNG TẦM NHẬN THỨC LÃNH ĐẠO TỪ MÔI TRƯỜNG LÊN ĐỈNH SỨ MỆNH</h2>
+            </div>
+            <div class="slide-header-actions">
+              <label class="inline-slide-vis-label" title="Bỏ tích để ẩn trang này khi trình chiếu">
+                <input type="checkbox" class="inline-slide-chk" data-idx="11" checked onchange="toggleSlideVisibility(11, this.checked)" />
+                <span>Hiện trang</span>
+              </label>
+              <button class="btn-slide-voice" onclick="speakSingleSlide(11)">🔊 Giảng Trang Này</button>
+            </div>
+          </div>
+
+          <div class="senior-stage">
+            <div class="senior-panel" style="justify-content:center;">
+              <div class="pyramid-container">
+                <div class="pyramid-tier tier-6 active" onclick="selectLevel(6)">👑 6. SỨ MỆNH: Phục vụ ai?</div>
+                <div class="pyramid-tier tier-5" onclick="selectLevel(5)">🌟 5. NHÂN DẠNG: Bạn là ai?</div>
+                <div class="pyramid-tier tier-4" onclick="selectLevel(4)">💎 4. NIỀM TIN & GIÁ TRỊ: Tại sao?</div>
+                <div class="pyramid-tier tier-3" onclick="selectLevel(3)">🧭 3. THÁI ĐỘ & NĂNG LỰC: Như thế nào?</div>
+                <div class="pyramid-tier tier-2" onclick="selectLevel(2)">⚙️ 2. HÀNH VI: Cái gì?</div>
+                <div class="pyramid-tier tier-1" onclick="selectLevel(1)">🌧️ 1. MÔI TRƯỜNG: Khi nào / Ở đâu?</div>
+              </div>
+            </div>
+
+            <div class="senior-panel">
+              <div>
+                <span class="slide-tag" id="lvlBadge" style="color:var(--gold-primary);">TẦNG 6 • ĐỈNH CAO NHẬN THỨC</span>
+                <h3 class="senior-heading" id="lvlTitle">👑 Sứ Mệnh (Phục Vụ Ai?) & Nhân Dạng (Bạn Là Ai?)</h3>
+                <p class="senior-text" id="lvlDesc">
+                  🔹 <strong>1. Ba tầng dưới (Môi trường, Hành vi, Thái độ):</strong> Trả lời câu hỏi <em>Khi nào/Ở đâu, Cái gì, Như thế nào</em>.<br/>
+                  🔹 <strong>2. Ba tầng trên (Niềm tin, Nhân dạng, Sứ mệnh):</strong> Trả lời câu hỏi <em>Tại sao, Bạn là ai, Phục vụ ai</em>.<br/>
+                  🔹 <strong>3. Chìa khóa đột phá:</strong> Khi Chủ doanh nghiệp định vị rõ <strong>Nhân dạng nhà lãnh đạo Kỷ nguyên trí tuệ KTCSxAI</strong> và <strong>Sứ mệnh phụng sự</strong>, mọi rào cản thị trường ở tầng dưới tự động được hóa giải!
+                </p>
+              </div>
+              <div class="transform-row-large" id="s11Row1">
+                <span class="state-old-lg">🌧️ Đổ lỗi cho thị trường khó khăn</span>
+                <span class="verb-bridge-lg">TRỞ THÀNH</span>
+                <span class="state-new-lg">👑 Làm chủ Nhân dạng & Sứ mệnh lớn</span>
+              </div>
+            </div>
+          </div>
+          <div class="signature-watermark">Tuấn Tử Tế Từ Tâm</div>
+        </div>
+      </section>
+
+      <!-- =========================================================
+           TRANG 13: VÒNG TRÒN VÀNG: BẮT ĐẦU VỚI CÂU HỎI TẠI SAO
+           ========================================================= -->
+      <section class="slide" data-slide-index="12">
+        <div class="slide-inner">
+          <div class="slide-header">
+            <div>
+              <span class="slide-tag">🎯 TRANG 13 / 16 • ĐỒ HỌA ĐỘNG 4D: VÒNG TRÒN VÀNG (GOLDEN CIRCLE)</span>
+              <h2 class="slide-title">🧠 BẮT ĐẦU VỚI CÂU HỎI “TẠI SAO” • CHẠM TRỰC TIẾP VÀO NÃO GIỮA!</h2>
+            </div>
+            <div class="slide-header-actions">
+              <label class="inline-slide-vis-label" title="Bỏ tích để ẩn trang này khi trình chiếu">
+                <input type="checkbox" class="inline-slide-chk" data-idx="12" checked onchange="toggleSlideVisibility(12, this.checked)" />
+                <span>Hiện trang</span>
+              </label>
+              <button class="btn-slide-voice" onclick="speakSingleSlide(12)">🔊 Giảng Trang Này</button>
+            </div>
+          </div>
+
+          <div class="senior-stage">
+            <div class="senior-panel">
+              <div class="giant-art-frame" data-fx="depth-rings" style="background: radial-gradient(circle at center, #1e1b4b 0%, #030714 100%);">
+                <span class="badge-executive-overlay">🧠 CƠ CHẾ RA QUYẾT ĐỊNH CỦA NÃO BỘ: TẠI SAO ➔ THẾ NÀO ➔ CÁI GÌ</span>
+                <canvas class="fx-4d-canvas"></canvas>
+                <div class="live-motion-overlay">
+                  <svg viewBox="0 0 600 330" style="width:94%; height:92%;">
+                    <circle cx="300" cy="165" r="142" fill="rgba(56,189,248,0.15)" stroke="#38bdf8" stroke-width="2.5"/>
+                    <text x="300" y="48" fill="#38bdf8" font-size="14" font-weight="900" text-anchor="middle">3. CÁI GÌ (WHAT) • NÃO NGOÀI (LÝ TRÍ)</text>
+                    <circle cx="300" cy="165" r="96" fill="rgba(245,196,81,0.22)" stroke="#f5c451" stroke-width="2.5"/>
+                    <text x="300" y="94" fill="#ffe9ad" font-size="14" font-weight="900" text-anchor="middle">2. THẾ NÀO (HOW)</text>
+                    <circle cx="300" cy="165" r="52" fill="#cf2030" stroke="#ffffff" stroke-width="3.5" />
+                    <circle cx="300" cy="165" r="52" fill="#cf2030" stroke="#ffe9ad" stroke-width="2.5"/>
+                    <text x="300" y="160" fill="#ffffff" font-size="17" font-weight="900" text-anchor="middle">1. TẠI SAO</text>
+                    <text x="300" y="180" fill="#ffe9ad" font-size="11" font-weight="800" text-anchor="middle">(NÃO GIỮA)</text>
+                  </svg>
+                </div>
+              </div>
+            </div>
+
+            <div class="senior-panel">
+              <div>
+                <h3 class="senior-heading">🔥 Bí Quyết Truyền Cảm Hứng & Bán Hàng Đỉnh Cao:</h3>
+                <p class="senior-text">
+                  🔹 <strong>a. Não Ngoài (CÁI GÌ – What):</strong> Xử lý thông số kỹ thuật, tính năng sản phẩm, nhưng <strong>không có chức năng ra quyết định mua hàng</strong>.<br/>
+                  🔹 <strong>b. Não Giữa (TẠI SAO – Why & THẾ NÀO – How):</strong> Là trung tâm điều khiển <strong>cảm xúc, niềm tin và quyết định hành động</strong>!<br/>
+                  🔹 <strong>c. Ứng dụng ngay:</strong> Khi bạn bắt đầu từ câu hỏi <strong>TẠI SAO</strong>, bạn chạm thẳng vào trái tim đối tác BNI và khách hàng!
+                </p>
+              </div>
+              <div class="transform-row-large" id="s12Row1">
+                <span class="state-old-lg">📢 Giới thiệu sản phẩm khô khan</span>
+                <span class="verb-bridge-lg">TRỞ THÀNH</span>
+                <span class="state-new-lg">❤️ Chạm thẳng Não Giữa bằng TẠI SAO</span>
+              </div>
+            </div>
+          </div>
+          <div class="signature-watermark">Tuấn Tử Tế Từ Tâm</div>
+        </div>
+      </section>
+
+      <!-- =========================================================
+           TRANG 14: HỆ SINH THÁI 4 KHÓA HỌC CỐT LÕI CỦA TUẤN TỬ TẾ TỪ TÂM
+           ========================================================= -->
+      <section class="slide" data-slide-index="13">
+        <div class="slide-inner">
+          <div class="slide-header">
+            <div>
+              <span class="slide-tag">🎓 TRANG 14 / 16 • HỆ SINH THÁI ĐÀO TẠO TOÀN DIỆN CHO CHỦ DOANH NGHIỆP</span>
+              <h2 class="slide-title">💎 4 TRỤ CỘT KHÓA HỌC CỦA TUẤN TỬ TẾ TỪ TÂM</h2>
+            </div>
+            <div class="slide-header-actions">
+              <label class="inline-slide-vis-label" title="Bỏ tích để ẩn trang này khi trình chiếu">
+                <input type="checkbox" class="inline-slide-chk" data-idx="13" checked onchange="toggleSlideVisibility(13, this.checked)" />
+                <span>Hiện trang</span>
+              </label>
+              <button class="btn-slide-voice" onclick="speakSingleSlide(13)">🔊 Giảng Trang Này</button>
+            </div>
+          </div>
+
+          <div class="senior-stage">
+            <div class="senior-panel">
+              <div class="giant-art-frame" data-fx="sun-rays">
+                <span class="badge-executive-overlay">🌟 4 CHƯƠNG TRÌNH CHUYỂN HÓA THỰC CHIẾN</span>
+                <img class="bg-photo" src="https://images.unsplash.com/photo-1531482615713-2afd69097998?auto=format&fit=crop&w=1600&q=85" alt="Hệ sinh thái đào tạo doanh nhân" />
+                <canvas class="fx-4d-canvas"></canvas>
+                <div class="live-motion-overlay">
+                  <svg viewBox="0 0 600 320" style="width:94%; height:92%;">
+                    <rect x="25" y="25" width="260" height="120" rx="16" fill="rgba(12,27,58,0.9)" stroke="#38bdf8" stroke-width="2"/>
+                    <text x="155" y="65" fill="#38bdf8" font-size="14" font-weight="900" text-anchor="middle">🖥️ 1. TỰ TIN TRỰC TUYẾN</text>
+                    <text x="155" y="95" fill="#e2e8f0" font-size="11.5" text-anchor="middle">Làm chủ Zoom, công cụ AI &</text>
+                    <text x="155" y="115" fill="#e2e8f0" font-size="11.5" text-anchor="middle">truyền cảm hứng ngàn người</text>
+
+                    <rect x="315" y="25" width="260" height="120" rx="16" fill="rgba(12,27,58,0.9)" stroke="#f5c451" stroke-width="2"/>
+                    <text x="445" y="65" fill="#ffe9ad" font-size="14" font-weight="900" text-anchor="middle">🤝 2. GIAO TIẾP & QUAN HỆ</text>
+                    <text x="445" y="95" fill="#e2e8f0" font-size="11.5" text-anchor="middle">Thấu hiểu DISC, kết nối sâu &</text>
+                    <text x="445" y="115" fill="#34d399" font-size="12" font-weight="800" text-anchor="middle">sinh ra tiền tệ mỗi ngày</text>
+
+                    <rect x="25" y="165" width="260" height="120" rx="16" fill="rgba(12,27,58,0.9)" stroke="#34d399" stroke-width="2"/>
+                    <text x="155" y="205" fill="#34d399" font-size="14" font-weight="900" text-anchor="middle">🌈 3. KIẾN TẠO CUỘC SỐNG</text>
+                    <text x="155" y="235" fill="#ffffff" font-size="11.5" font-weight="700" text-anchor="middle">Thành Công • Giàu Có</text>
+                    <text x="155" y="255" fill="#ffe9ad" font-size="11.5" font-weight="700" text-anchor="middle">Hạnh Phúc • Khỏe Mạnh</text>
+
+                    <rect x="315" y="165" width="260" height="120" rx="16" fill="rgba(207,32,48,0.9)" stroke="#ffe9ad" stroke-width="2.5"/>
+                    <text x="445" y="205" fill="#ffffff" font-size="14" font-weight="900" text-anchor="middle">🚀 4. PTBT × TRÍ TUỆ AI</text>
+                    <text x="445" y="235" fill="#ffe9ad" font-size="11.5" font-weight="700" text-anchor="middle">Phát triển bản thân trước để</text>
+                    <text x="445" y="255" fill="#ffffff" font-size="12" font-weight="900" text-anchor="middle">kinh doanh bền vững!</text>
+                  </svg>
+                </div>
+              </div>
+            </div>
+
+            <div class="senior-panel">
+              <div>
+                <h3 class="senior-heading">☑️ 4 Giá Trị Cốt Lõi Bạn Nhận Được Ngay:</h3>
+                <p class="senior-text">
+                  ✅ <strong>1. Học tập phát triển bản thân toàn diện:</strong> Thân khỏe – Tâm an – Trí sáng kết hợp công nghệ AI.<br/>
+                  ✅ <strong>2. Thấu hiểu bản thân & người khác:</strong> Giao tiếp là kỹ năng quan trọng nhất vì mọi việc trong xã hội đều vận hành qua giao tiếp.<br/>
+                  ✅ <strong>3. Xây dựng mối quan hệ tốt đẹp:</strong> Cách bạn giao tiếp và xây dựng mối quan hệ <strong>sinh ra tiền tệ mỗi ngày</strong>!<br/>
+                  ✅ <strong>4. Kiến tạo cuộc đời đáng sống:</strong> Giàu có hơn, thành công hơn, hạnh phúc hơn & khỏe mạnh hơn!
+                </p>
+              </div>
+              <div class="transform-row-large" id="s13Row1">
+                <span class="state-old-lg">🧩 Kỹ năng rời rạc, thiếu hệ thống</span>
+                <span class="verb-bridge-lg">TẠO NÊN</span>
+                <span class="state-new-lg">💎 Hệ sinh thái Thân - Tâm - Trí & KTCSxAI</span>
+              </div>
+            </div>
+          </div>
+          <div class="signature-watermark">Tuấn Tử Tế Từ Tâm</div>
+        </div>
+      </section>
+
+      <!-- =========================================================
+           TRANG 15: GIÁ TRỊ CỐT LÕI BNI #3 - HỌC TẬP SUỐT ĐỜI
+           ========================================================= -->
+      <section class="slide" data-slide-index="14">
+        <div class="slide-inner">
+          <div class="slide-header">
+            <div>
+              <span class="slide-tag">📚 TRANG 15 / 16 • GIÁ TRỊ CỐT LÕI BNI #3: LIFELONG LEARNING (HỌC TẬP SUỐT ĐỜI)</span>
+              <h2 class="slide-title">📈 “KIẾN THỨC SẼ MANG LẠI LỢI NHUẬN LỚN NHẤT!”</h2>
+            </div>
+            <div class="slide-header-actions">
+              <label class="inline-slide-vis-label" title="Bỏ tích để ẩn trang này khi trình chiếu">
+                <input type="checkbox" class="inline-slide-chk" data-idx="14" checked onchange="toggleSlideVisibility(14, this.checked)" />
+                <span>Hiện trang</span>
+              </label>
+              <button class="btn-slide-voice" onclick="speakSingleSlide(14)">🔊 Giảng Trang Này</button>
+            </div>
+          </div>
+
+          <div class="senior-stage">
+            <div class="senior-panel">
+              <div class="giant-art-frame" data-fx="golden-seeds">
+                <span class="badge-executive-overlay">🏛️ GIÁ TRỊ CỐT LÕI BNI #3 • HỌC TẬP SUỐT ĐỜI</span>
+                <img class="bg-photo" src="https://images.unsplash.com/photo-1434030216411-0b793f4b4173?auto=format&fit=crop&w=1600&q=85" alt="Đầu tư vào kiến thức và trí tuệ" />
+                <canvas class="fx-4d-canvas"></canvas>
+                <div class="live-motion-overlay">
+                  <svg viewBox="0 0 600 320" style="width:92%; height:90%;">
+                    <rect x="60" y="75" width="480" height="165" rx="22" fill="rgba(4,12,28,0.88)" stroke="#f5c451" stroke-width="3"/>
+                    <text x="300" y="122" fill="#ffe9ad" font-size="16" font-weight="900" text-anchor="middle">GIÁ TRỊ CỐT LÕI BNI #3: HỌC TẬP SUỐT ĐỜI</text>
+                    <text x="300" y="160" fill="#ffffff" font-size="19" font-weight="900" text-anchor="middle">“KIẾN THỨC MANG LẠI LỢI NHUẬN LỚN NHẤT”</text>
+                    <text x="300" y="198" fill="#34d399" font-size="14" font-weight="800" text-anchor="middle">Tài sản duy nhất không ai có thể chiếm đoạt được!</text>
+                  </svg>
+                </div>
+                <div class="art-image-overlay">
+                  <div class="art-caption">🌟 Đầu Tư Vào Trí Tuệ Bản Thân Là Khoản Đầu Tư Siêu Lợi Nhuận</div>
+                </div>
+              </div>
+            </div>
+
+            <div class="senior-panel">
+              <div>
+                <h3 class="senior-heading">💎 Khoản Đầu Tư Không Bao Giờ Lỗ Của Chủ Doanh Nghiệp:</h3>
+                <div class="poem-box-large">
+                  🏆 “Nếu bạn đầu tư tất cả tài sản vào kiến thức, bạn sẽ có được 1 thứ mà <strong>không ai chiếm đoạt được</strong>.<br/>
+                  💰 <strong>Kiến thức sẽ mang lại lợi nhuận lớn nhất!</strong>”
+                </div>
+                <p class="senior-text">
+                  Đặc biệt trong kỷ nguyên trí tuệ KTCSxAI thay đổi từng ngày, người Chủ doanh nghiệp ngừng học tập chính là đang tự lùi lại phía sau. Hãy kích hoạt Giá trị cốt lõi #3 của BNI ngay hôm nay!
+                </p>
+              </div>
+              <div style="display:flex; justify-content:center; margin-top:8px;">
+                <button class="interactive-btn-lg" style="font-size:1.05rem; padding:14px 28px;" onclick="goToSlide(15, true)">
+                  👉 Bấm Sang Trang 16: Quét Mã QR Nhận Ưu Đãi Đặc Biệt BNI Force!
+                </button>
+              </div>
+            </div>
+          </div>
+          <div class="signature-watermark">Tuấn Tử Tế Từ Tâm</div>
+        </div>
+      </section>
+
+      <!-- =========================================================
+           TRANG 16: CHỐT ĐƠN ĐỈNH CAO & SIÊU MÃ QUÉT QR ACB CỠ ĐẠI (468.468 VND)
+           ========================================================= -->
+      <section class="slide" data-slide-index="15">
+        <div class="slide-inner" style="border-color:#f5c451; box-shadow: 0 0 55px rgba(245,196,81,0.35);">
+          <div class="slide-header">
+            <div>
+              <span class="slide-tag">💳 TRANG 16 / 16 • ĐĂNG KÝ NGAY TẠI BUỔI HỌP BNI FORCE CHAPTER SÁNG 27/10/2026</span>
+              <h2 class="slide-title">🚀 KHÓA HỌC “KIẾN TẠO CUỘC SỐNG × AI” (KTCSxAI) • QUÉT MÃ QR THAM GIA NGAY!</h2>
+            </div>
+            <div class="slide-header-actions">
+              <label class="inline-slide-vis-label" title="Bỏ tích để ẩn trang này khi trình chiếu">
+                <input type="checkbox" class="inline-slide-chk" data-idx="15" checked onchange="toggleSlideVisibility(15, this.checked)" />
+                <span>Hiện trang</span>
+              </label>
+              <button class="btn-slide-voice" onclick="speakSingleSlide(15)">🔊 Giảng Trang Này</button>
+            </div>
+          </div>
+
+          <div class="senior-stage" style="grid-template-columns: 0.95fr 1.05fr;">
+            <div class="senior-panel" style="align-items:center; justify-content:center; background: radial-gradient(circle at center, rgba(207,32,48,0.25) 0%, rgba(6,15,36,0.95) 100%); border: 2px solid #f5c451;">
+              <div class="giant-qr-showcase" onclick="openQrFullscreenModal()" title="Bấm vào mã QR để phóng to toàn màn hình">
+                <label class="real-photo-upload-label" style="top:8px; right:8px;" onclick="event.stopPropagation();" title="Nạp ảnh QR gốc từ máy nếu muốn">
+                  📷 Nạp Ảnh QR Gốc
+                  <input type="file" accept="image/*" style="display:none;" onchange="loadRealPhoto(event, 'mainQrImg')" />
+                </label>
+                <img id="mainQrImg" src="https://img.vietqr.io/image/ACB-102168268-compact2.png?amount=468468&addInfo=KTCS%20Ten%20SDT&accountName=NGUYEN%20ANH%20TUAN" alt="Mã QR ACB 102168268 Nguyễn Anh Tuấn 468.468 VND" onerror="this.src='https://api.qrserver.com/v1/create-qr-code/?size=400x400&data=ACB%20102168268%20NGUYEN%20ANH%20TUAN%20468468%20KTCS%20Ten%20SDT'" />
+                <div class="qr-bank-pill">🏦 NGÂN HÀNG ACB KHÁNH HÒA • STK: 102 168 268</div>
+                <div class="qr-amount-highlight">468.468 VND</div>
+                <div style="color:#0f172a; font-weight:800; font-size:0.9rem; margin-top:2px;">
+                  Nội dung: <span style="color:#cf2030;">KTCS Ten SDT</span> (hoặc <span style="color:#005baa;">KTCSxAI Ten SDT</span>)
+                </div>
+              </div>
+
+              <div style="display:flex; gap:10px; margin-top:12px; width:100%; justify-content:center;">
+                <button class="interactive-btn-lg" onclick="openQrFullscreenModal()">
+                  🔍 PHÓNG TO MÃ QR TOÀN MÀN HÌNH ĐỂ QUÉT NGAY
+                </button>
+                <button class="btn-outline-lg" onclick="copyBankDetails()">
+                  📋 Sao Chép STK: 102168268
+                </button>
+              </div>
+            </div>
+
+            <div class="senior-panel">
+              <div>
+                <h3 class="senior-heading">🌟 Lợi Ích Nhận Được Trong Khóa Học KTCSxAI Kỷ Nguyên Trí Tuệ AI:</h3>
+                <p class="senior-text">
+                  ✅ <strong>1. Phát Triển Bản Thân Toàn Diện</strong> (Thân – Tâm – Trí) kết hợp <strong>Ứng dụng trí tuệ AI hiệu quả nhất</strong>!<br/>
+                  ✅ <strong>2. Bứt phá toàn diện:</strong> Công việc phát triển, cuộc sống tự do, thịnh vượng, hạnh phúc!<br/>
+                  🕗 <strong>3. Thời gian học trực tuyến qua Zoom:</strong> <strong>20h00 tối Thứ 4 & Thứ 7 hàng tuần</strong>.
+                </p>
+
+                <div style="background:rgba(207,32,48,0.18); border:2px solid #f5c451; border-radius:18px; padding:14px 18px; margin:10px 0;">
+                  <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:6px;">
+                    <span style="font-size:1rem; color:#cbd5e1;">Học phí chính thức: <del style="color:#fb7185; font-weight:700;">4.368.000đ</del></span>
+                    <span class="bni-badge">🎁 ĐẶC QUYỀN BNI FORCE</span>
+                  </div>
+                  <div style="font-size:1.35rem; font-weight:900; color:#ffe9ad;">
+                    🔥 Ưu đãi trải nghiệm 1 tháng: <span style="color:#34d399; font-size:1.6rem;">468.468đ</span>
+                  </div>
+                  <div style="font-size:0.96rem; color:#ffffff; margin-top:6px; line-height:1.5;">
+                    🏦 <strong>STK: 102 168 268</strong> • Ngân hàng <strong>ACB Khánh Hòa</strong><br/>
+                    👤 Chủ TK: <strong>Nguyễn Anh Tuấn</strong> • Nội dung: <strong>KTCS Ten SDT</strong>
+                  </div>
+                </div>
+              </div>
+
+              <button class="interactive-btn-lg" style="width:100%; font-size:1.05rem; padding:13px;" onclick="playSfx('fanfare'); launchCelebration(); openQrFullscreenModal();">
+                🎉 CHÀO MỪNG CÁC CHỦ DOANH NGHIỆP BNI FORCE ĐĂNG KÝ NGAY! 🎉
+              </button>
+            </div>
+          </div>
+          <div class="signature-watermark">Tuấn Tử Tế Từ Tâm</div>
+        </div>
+      </section>
+
+    </div>
+  </main>
+
+  <!-- =========================================================================
+       TẦNG 3: DẢI STUDIO CHÂN TRANG (TÍCH HỢP PHỤ ĐỀ KHÔNG CHE SLIDE & ĐIỀU HƯỚNG)
+       ========================================================================= -->
+  <footer class="bottom-studio-dock" aria-label="Thanh Phụ đề và Điều hướng">
+    <div class="dock-nav-cluster">
+      <button class="nav-action-btn" onclick="prevSlide()" id="btnPrevNav">◀ Trang Trước</button>
+      <div class="dots-wrapper" id="dotsContainer"></div>
+    </div>
+
+    <div class="dock-teleprompter-stage" id="teleprompterBar">
+      <div class="voice-wave-bars">
+        <span></span><span></span><span></span><span></span>
+      </div>
+      <div class="teleprompter-text" id="teleprompterText">
+        🤝 Sẵn sàng thuyết trình BNI Force Chapter Sáng Thứ Ba 27/10/2026 (Bấm "Bấm Nút Nói" hoặc chuyển giọng bất kỳ lúc nào)...
+      </div>
+      <button class="btn-stop-inline" onclick="stopAutoLecture()">⏹ Dừng</button>
+    </div>
+
+    <div class="dock-nav-cluster">
+      <button class="nav-action-btn" onclick="nextSlide()" id="btnNextNav">Trang Tiếp ▶</button>
+    </div>
+  </footer>
+
+  <!-- MODAL QUẢN LÝ TÙY CHỌN ẨN / HIỆN TỪNG TRANG DẠNG CHECKBOX (HIDE SLIDE) -->
+  <div class="voice-modal-backdrop" id="slideVisibilityModal" onclick="closeSlideVisibilityModal()">
+    <div class="voice-modal-card" style="max-width: 920px;" onclick="event.stopPropagation()">
+      <div style="display:flex; justify-content:space-between; align-items:center; border-bottom:1px solid rgba(255,255,255,0.15); padding-bottom:12px; margin-bottom:12px; gap:12px; flex-wrap:wrap;">
+        <div>
+          <span class="slide-tag">🗂️ TRÌNH QUẢN LÝ SLIDE V03 • CHẾ ĐỘ HIDE SLIDE BNI FORCE</span>
+          <h3 style="font-family:'Playfair Display', serif; font-size:1.45rem; color:#ffe9ad;">
+            Tùy Chọn Ẩn / Hiện Từng Trang Thuyết Trình (<span id="modalVisSummaryText">Đang hiện 16/16 trang</span>)
+          </h3>
+        </div>
+        <button class="btn-outline-lg" style="padding:6px 14px;" onclick="closeSlideVisibilityModal()">✕ Đóng</button>
+      </div>
+
+      <div style="display:flex; justify-content:space-between; align-items:center; gap:10px; flex-wrap:wrap; background:rgba(255,255,255,0.04); padding:10px 14px; border-radius:14px; border:1px solid rgba(245,196,81,0.3);">
+        <span style="font-size:0.86rem; color:#cbd5e1;">
+          💡 <strong>Hướng dẫn:</strong> Tích chọn ☑️ để <strong>Hiện trang</strong>, bỏ tích ⬜ để <strong>Ẩn trang (Hide Slide)</strong>. Các trang ẩn sẽ tự động được bỏ qua khi chiếu và thuyết trình.
+        </span>
+        <div style="display:flex; gap:8px; flex-wrap:wrap;">
+          <button class="btn-outline-lg" style="padding:6px 12px; font-size:0.8rem;" onclick="showAllSlidesV03()">
+            ☑️ Hiện Tất Cả (16/16)
+          </button>
+          <button class="btn-outline-lg" style="padding:6px 12px; font-size:0.8rem; border-color:#f5c451; color:#ffe9ad;" onclick="applyCompactPitchPresetV03()">
+            ⚡ Gợi Ý Bản Ngắn Gọn (10 Trang Cốt Lõi)
+          </button>
+        </div>
+      </div>
+
+      <div class="slide-visibility-grid" id="slideVisibilityGrid"></div>
+
+      <div style="display:flex; justify-content:space-between; align-items:center; margin-top:14px; padding-top:12px; border-top:1px solid rgba(255,255,255,0.12); flex-wrap:wrap; gap:10px;">
+        <span style="font-size:0.82rem; color:#34d399; font-weight:700;">
+          💾 Cấu hình được lưu tự động trên trình duyệt và áp dụng đồng bộ!
+        </span>
+        <div style="display:flex; gap:10px;">
+          <button class="btn-outline-lg" onclick="downloadReadyIndexHtml('thuyet-trinh-bni-force-ktcs-xai-v03.html')">
+            📥 Tải File HTML V03 Đã Lưu Cấu Hình
+          </button>
+          <button class="interactive-btn-lg" onclick="closeSlideVisibilityModal()">
+            ✅ Hoàn Tất & Tiếp Tục Trình Chiếu
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- MODAL PHÓNG TO SIÊU MÃ QR ACB TOÀN MÀN HÌNH (QUÉT CỰC NHANH TỪ XA) -->
+  <div class="voice-modal-backdrop" id="qrFullscreenModal" onclick="closeQrFullscreenModal()">
+    <div class="voice-modal-card" style="max-width:680px; text-align:center; background:#ffffff; color:#0f172a; border:6px solid #f5c451;" onclick="event.stopPropagation()">
+      <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:10px;">
+        <span class="bni-badge" style="font-size:0.85rem;">💳 QUÉT MÃ QR ĐĂNG KÝ NGAY • BNI FORCE CHAPTER</span>
+        <button class="btn-outline-lg" style="background:#0f172a; color:#fff; padding:6px 14px;" onclick="closeQrFullscreenModal()">✕ Đóng</button>
+      </div>
+
+      <img id="fullscreenQrImg" src="https://img.vietqr.io/image/ACB-102168268-compact2.png?amount=468468&addInfo=KTCS%20Ten%20SDT&accountName=NGUYEN%20ANH%20TUAN" alt="Siêu Mã QR ACB 102168268" style="width:430px; height:430px; max-width:82vw; max-height:55vh; object-fit:contain; margin:0 auto; display:block; border:3px solid #005baa; border-radius:20px; padding:8px;" onerror="this.src='https://api.qrserver.com/v1/create-qr-code/?size=450x450&data=ACB%20102168268%20NGUYEN%20ANH%20TUAN%20468468%20KTCS%20Ten%20SDT'" />
+
+      <div style="font-size:1.95rem; font-weight:900; color:#cf2030; margin-top:8px;">
+        ƯU ĐÃI TRẢI NGHIỆM 1 THÁNG: 468.468 VND
+      </div>
+      <div style="font-size:1.15rem; font-weight:800; color:#005baa; margin-top:4px;">
+        🏦 Ngân hàng ACB Khánh Hòa • STK: 102 168 268 • Nguyễn Anh Tuấn
+      </div>
+      <div style="font-size:1.05rem; font-weight:800; color:#0f172a; margin-top:4px;">
+        Nội dung chuyển khoản: <span style="color:#cf2030; background:#fef08a; padding:2px 10px; border-radius:6px;">KTCS Ten SDT</span> hoặc <span style="color:#005baa; background:#e0f2fe; padding:2px 10px; border-radius:6px;">KTCSxAI Ten SDT</span>
+      </div>
+      <div style="font-size:0.92rem; color:#475569; font-weight:600; margin-top:6px;">
+        🕗 Lịch học trực tuyến qua Zoom: 20h00 tối Thứ 4 & Thứ 7 hàng tuần (Học phí gốc: 4.368.000đ)
+      </div>
+    </div>
+  </div>
+
+  <!-- MODAL XUẤT BẢN GITHUB THÔNG MINH (BỔ SUNG VÀO ĐẦU TRANG NHƯ BÀI VIẾT MỚI) -->
+  <div class="voice-modal-backdrop" id="githubModal" onclick="closeGitHubModal()">
+    <div class="voice-modal-card" style="max-width: 860px;">
+      <div style="display:flex; justify-content:space-between; align-items:center; border-bottom:1px solid rgba(255,255,255,0.15); padding-bottom:12px; margin-bottom:14px;">
+        <div>
+          <span class="slide-tag">🚀 XUẤT BẢN GITHUB PAGES THÔNG MINH • WEBSITE TUANTUTE.LIFE</span>
+          <h3 style="font-family:'Playfair Display', serif; font-size:1.45rem; color:#ffe9ad;">
+            Cập Nhật Bài Thuyết Trình V03 Lên Đầu Tiên (Giữ Nguyên Tất Cả Bài Cũ)
+          </h3>
+        </div>
+        <button class="btn-outline-lg" style="padding:6px 14px;" onclick="closeGitHubModal()">✕ Đóng</button>
+      </div>
+
+      <div style="background:rgba(52,211,153,0.12); border:1.5px solid #34d399; border-radius:12px; padding:12px 16px; margin-bottom:14px; font-size:0.88rem; line-height:1.6; color:#e0f2fe;">
+        ✅ <strong>Chuẩn thông minh V03:</strong> File này được lưu với tên <code>thuyet-trinh-bni-force-ktcs-xai-v03.html</code> và tự động được đưa lên <strong>vị trí đầu tiên</strong> trong danh sách bài viết trên trang chủ <code>tuantute.life</code> qua file <code>data.json</code> mà <strong>KHÔNG thay thế hay xóa bỏ bất kỳ mục nào</strong> trong index.
+      </div>
+
+      <pre class="code-box-ps" id="ghPsCommandBox"></pre>
+
+      <div style="display:flex; justify-content:space-between; gap:10px; flex-wrap:wrap; margin-top:12px;">
+        <button class="btn-outline-lg" onclick="downloadReadyIndexHtml('thuyet-trinh-bni-force-ktcs-xai-v03.html')">
+          📥 1. Tải File V03 Về Máy
+        </button>
+        <button class="interactive-btn-lg" onclick="copyGitHubCommand()">
+          📋 2. Sao Chép Lệnh Git Cập Nhật Lên tuantute.life
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    // =========================================================================
+    // 0. KHÓA CHỮ MỒ CÔI & LƯU ẢNH THẬT
+    // =========================================================================
+    function bindClauseWords(str) {
+      if (!str) return str;
+      const trimmed = str.trim();
+      const words = trimmed.split(/\s+/);
+      if (words.length < 4) return str;
+      const head = words.slice(0, -3).join(' ');
+      const tail = words.slice(-3).join('\u00A0');
+      return head + ' ' + tail;
+    }
+
+    function lockAllVietnameseOrphans() {
+      const targets = document.querySelectorAll('.slide-title, .senior-heading, .senior-text, .art-caption, .poem-box-large');
+      targets.forEach(el => {
+        if (el.innerHTML.includes('<br')) {
+          const lines = el.innerHTML.split(/<br\s*\/?>/i);
+          const lockedLines = lines.map(line => {
+            return line.replace(/([^\s<>]+)\s+([^\s<>]+)\s+([^\s<>]+)\s*$/, '$1\u00A0$2\u00A0$3');
+          });
+          el.innerHTML = lockedLines.join('<br/>');
+        } else {
+          const walker = document.createTreeWalker(el, NodeFilter.SHOW_TEXT, null, false);
+          let nodes = [];
+          while (walker.nextNode()) {
+            if (walker.currentNode.nodeValue.trim().length > 0) {
+              nodes.push(walker.currentNode);
+            }
+          }
+          if (nodes.length > 0) {
+            const last = nodes[nodes.length - 1];
+            last.nodeValue = last.nodeValue.replace(/(\S+)\s+(\S+)\s+(\S+)\s*$/, '$1\u00A0$2\u00A0$3');
+          }
+        }
+      });
+    }
+
+    function loadRealPhoto(event, imgElementId) {
+      const file = event.target.files[0];
+      if (!file) return;
+      const reader = new FileReader();
+      reader.onload = function(e) {
+        const dataUrl = e.target.result;
+        const imgEl = document.getElementById(imgElementId);
+        if (imgEl) imgEl.src = dataUrl;
+        if (imgElementId === 'mainQrImg') {
+          document.getElementById('fullscreenQrImg').src = dataUrl;
+        }
+        try {
+          localStorage.setItem('bni_v03_real_photo_' + imgElementId, dataUrl);
+        } catch (err) {}
+        showVoiceToast('📸 Đã cập nhật và lưu Ảnh Thật thành công!');
+      };
+      reader.readAsDataURL(file);
+    }
+
+    function restoreSavedRealPhotos() {
+      ['realImgSlide1', 'realImgSlide3', 'realImgSlide4', 'realImgSlide5', 'realImgSlide9', 'mainQrImg'].forEach(id => {
+        try {
+          const saved = localStorage.getItem('bni_v03_real_photo_' + id) || localStorage.getItem('bni_real_photo_' + id);
+          if (saved) {
+            const el = document.getElementById(id);
+            if (el) el.src = saved;
+            if (id === 'mainQrImg') {
+              document.getElementById('fullscreenQrImg').src = saved;
+            }
+          }
+        } catch (e) {}
+      });
+    }
+
+    // 5 PHONG CÁCH NGHỆ THUẬT ĐỒNG BỘ V03
+    function setVisualArtStyle(styleKey) {
+      document.body.classList.remove('style-cinematic', 'style-realistic', 'style-handdrawn', 'style-infographic', 'style-cartoon');
+      document.body.classList.add('style-' + styleKey);
+      const styleNames = {
+        cinematic: '🎬 Phong cách Điện Ảnh 4D',
+        realistic: '📸 Phong cách Chân Thực Sang Trọng',
+        handdrawn: '✍️ Phong cách Bức Vẽ & Viết Tay',
+        infographic: '📊 Phong cách Đồ Hoạ Infographic',
+        cartoon: '🎠 Phong cách Hoạt Hình 3D'
+      };
+      playSfx('click');
+      showVoiceToast(`🎨 Đã chuyển sang: ${styleNames[styleKey]}`);
+    }
+
+    // =========================================================================
+    // 1. NHẠC NỀN TRUYỀN CẢM HỨNG (WEB AUDIO API SYNTH) & HIỆU ỨNG ÂM THANH SFX
+    // =========================================================================
+    let audioCtx = null;
+    let bgmMasterGain = null;
+    let bgmIsPlaying = false;
+    let bgmTimer = null;
+    let bgmVolume = 0.2;
+
+    function getAudioContext() {
+      if (!audioCtx) {
+        const AudioContextClass = window.AudioContext || window.webkitAudioContext;
+        if (AudioContextClass) {
+          audioCtx = new AudioContextClass();
+        }
+      }
+      if (audioCtx && audioCtx.state === 'suspended') {
+        audioCtx.resume();
+      }
+      return audioCtx;
+    }
+
+    // Web Audio Synthesizer: Nhạc nền thư giãn, truyền cảm hứng cho doanh nhân
+    function startAmbientSynthBgm() {
+      const ctx = getAudioContext();
+      if (!ctx) return;
+
+      if (!bgmMasterGain) {
+        bgmMasterGain = ctx.createGain();
+        bgmMasterGain.gain.setValueAtTime(bgmVolume, ctx.currentTime);
+        bgmMasterGain.connect(ctx.destination);
+      }
+
+      // Hợp âm êm đềm: Cmaj7 -> Am9 -> Fmaj7 -> Gsus4
+      const chordProgressions = [
+        [261.63, 329.63, 392.00, 493.88], // Cmaj7
+        [220.00, 261.63, 329.63, 493.88], // Am9
+        [174.61, 261.63, 329.63, 349.23], // Fmaj7
+        [196.00, 293.66, 392.00, 523.25]  // Gsus4
+      ];
+      let step = 0;
+
+      function playNextChord() {
+        if (!bgmIsPlaying) return;
+        const now = ctx.currentTime;
+        const freqs = chordProgressions[step % chordProgressions.length];
+        step++;
+
+        freqs.forEach((freq, idx) => {
+          const osc = ctx.createOscillator();
+          const noteGain = ctx.createGain();
+          const filter = ctx.createBiquadFilter();
+
+          osc.type = idx === 0 ? 'triangle' : 'sine';
+          osc.frequency.setValueAtTime(freq, now);
+
+          filter.type = 'lowpass';
+          filter.frequency.setValueAtTime(750, now);
+
+          noteGain.gain.setValueAtTime(0.001, now);
+          noteGain.gain.exponentialRampToValueAtTime(0.035, now + 1.2);
+          noteGain.gain.exponentialRampToValueAtTime(0.0001, now + 4.8);
+
+          osc.connect(filter);
+          filter.connect(noteGain);
+          noteGain.connect(bgmMasterGain);
+
+          osc.start(now);
+          osc.stop(now + 5.0);
+        });
+
+        bgmTimer = setTimeout(playNextChord, 4200);
+      }
+
+      playNextChord();
+    }
+
+    function toggleBackgroundMusic() {
+      bgmIsPlaying = !bgmIsPlaying;
+      const btn = document.getElementById('btnBgmToggle');
+      if (bgmIsPlaying) {
+        startAmbientSynthBgm();
+        btn.classList.add('playing');
+        btn.textContent = '🎵 Nhạc: Bật';
+        showVoiceToast('🎵 Đã bật Nhạc Nền nhẹ truyền cảm hứng');
+      } else {
+        clearTimeout(bgmTimer);
+        btn.classList.remove('playing');
+        btn.textContent = '🎵 Nhạc: Tắt';
+        showVoiceToast('🔇 Đã tạm dừng Nhạc Nền');
+      }
+    }
+
+    function setBgmVolume(val) {
+      bgmVolume = parseFloat(val);
+      if (bgmMasterGain && audioCtx) {
+        bgmMasterGain.gain.setValueAtTime(bgmVolume, audioCtx.currentTime);
+      }
+      if (!bgmIsPlaying && bgmVolume > 0) {
+        toggleBackgroundMusic();
+      }
+    }
+
+    // Hiệu ứng âm thanh SFX Web Audio API (Swoosh, Ting, Fanfare)
+    function playSfx(type) {
+      try {
+        const ctx = getAudioContext();
+        if (!ctx) return;
+        const now = ctx.currentTime;
+
+        if (type === 'swoosh') {
+          // Tiếng trượt slide nhẹ nhàng
+          const osc = ctx.createOscillator();
+          const gain = ctx.createGain();
+          osc.type = 'sine';
+          osc.frequency.setValueAtTime(320, now);
+          osc.frequency.exponentialRampToValueAtTime(120, now + 0.18);
+          gain.gain.setValueAtTime(0.04, now);
+          gain.gain.exponentialRampToValueAtTime(0.001, now + 0.18);
+          osc.connect(gain);
+          gain.connect(ctx.destination);
+          osc.start(now);
+          osc.stop(now + 0.2);
+        } else if (type === 'click') {
+          const osc = ctx.createOscillator();
+          const gain = ctx.createGain();
+          osc.frequency.setValueAtTime(800, now);
+          gain.gain.setValueAtTime(0.05, now);
+          gain.gain.exponentialRampToValueAtTime(0.001, now + 0.08);
+          osc.connect(gain);
+          gain.connect(ctx.destination);
+          osc.start(now);
+          osc.stop(now + 0.09);
+        } else if (type === 'fanfare') {
+          // Ăn mừng chúc mừng
+          [523.25, 659.25, 783.99, 1046.50].forEach((freq, i) => {
+            const osc = ctx.createOscillator();
+            const gain = ctx.createGain();
+            osc.type = 'triangle';
+            osc.frequency.setValueAtTime(freq, now + i * 0.1);
+            gain.gain.setValueAtTime(0.06, now + i * 0.1);
+            gain.gain.exponentialRampToValueAtTime(0.001, now + i * 0.1 + 0.45);
+            osc.connect(gain);
+            gain.connect(ctx.destination);
+            osc.start(now + i * 0.1);
+            osc.stop(now + i * 0.1 + 0.5);
+          });
+        }
+      } catch (e) {}
+    }
+
+    // =========================================================================
+    // 2. ENGINE ĐỒ HỌA ĐỘNG 4D (PARALLAX + CANVAS PARTICLES)
+    // =========================================================================
+    const canvas = document.getElementById('cosmosCanvas');
+    const ctx = canvas.getContext('2d');
+    let stars = [];
+    let particles = [];
+
+    function resizeCanvas() {
+      canvas.width = window.innerWidth;
+      canvas.height = window.innerHeight;
+    }
+    window.addEventListener('resize', resizeCanvas);
+    resizeCanvas();
+
+    for (let i = 0; i < 90; i++) {
+      stars.push({
+        x: Math.random() * canvas.width,
+        y: Math.random() * canvas.height,
+        r: Math.random() * 1.5 + 0.4,
+        alpha: Math.random(),
+        speed: Math.random() * 0.012 + 0.004
+      });
+    }
+
+    function animateCosmos() {
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
+      stars.forEach(s => {
+        s.alpha += s.speed;
+        if (s.alpha > 1 || s.alpha < 0.2) s.speed = -s.speed;
+        ctx.beginPath();
+        ctx.arc(s.x, s.y, s.r, 0, Math.PI * 2);
+        ctx.fillStyle = `rgba(255, 233, 173, ${s.alpha * 0.6})`;
+        ctx.fill();
+      });
+
+      for (let i = particles.length - 1; i >= 0; i--) {
+        const p = particles[i];
+        p.x += p.vx;
+        p.y += p.vy;
+        p.vy += 0.06;
+        p.life -= 0.016;
+        if (p.life <= 0) {
+          particles.splice(i, 1);
+        } else {
+          ctx.beginPath();
+          ctx.arc(p.x, p.y, p.size, 0, Math.PI * 2);
+          ctx.fillStyle = `rgba(${p.color}, ${p.life})`;
+          ctx.fill();
+        }
+      }
+      requestAnimationFrame(animateCosmos);
+    }
+    animateCosmos();
+
+    function launchCelebration() {
+      playSfx('fanfare');
+      for (let b = 0; b < 5; b++) {
+        const cx = canvas.width * (0.2 + Math.random() * 0.6);
+        const cy = canvas.height * (0.2 + Math.random() * 0.4);
+        for (let i = 0; i < 40; i++) {
+          const angle = Math.random() * Math.PI * 2;
+          const speed = Math.random() * 5.5 + 1.5;
+          const colors = ['245, 196, 81', '207, 32, 48', '52, 211, 153', '56, 189, 248'];
+          particles.push({
+            x: cx,
+            y: cy,
+            vx: Math.cos(angle) * speed,
+            vy: Math.sin(angle) * speed,
+            size: Math.random() * 3.5 + 1.5,
+            color: colors[Math.floor(Math.random() * colors.length)],
+            life: 1.0
+          });
+        }
+      }
+    }
+
+    // =========================================================================
+    // 3. ĐIỀU HƯỚNG 16 TRANG & CHIẾU TOÀN MÀN HÌNH TỨC THÌ (GIỮ NGUYÊN TRANG ĐANG XEM)
+    // =========================================================================
+    let currentSlide = 0;
+    const totalSlides = 16;
+    let currentMode = 'horizontal';
+    let wheelCooldown = false;
+
+    const slidesTrack = document.getElementById('slidesTrack');
+    const dotsContainer = document.getElementById('dotsContainer');
+    const slideJumpSelect = document.getElementById('slideJumpSelect');
+
+    const slideCatalogTitles = [
+      "01. 👨‍💼 Diễn Giả Nguyễn Anh Tuấn (GTO)",
+      "02. 🔥 Sứ Mệnh Đào Tạo Chủ Doanh Nghiệp",
+      "03. 🏆 Kỷ Lục BNI & Giải Nhất Kết Nối 2013",
+      "04. 🤝 22 Năm Uy Tín & Đồng Hành Thầy Long",
+      "05. 💻 Bước Ngoặt 2020: Đào Tạo Trực Tuyến",
+      "06. 🧭 PTBT (Gốc) & Trí Tuệ AI + Kinh Doanh",
+      "07. 🎯 5 Vòng Tròn Đồng Tâm: MÌNH Là Gốc",
+      "08. 🧊 Tảng Băng: 10% Ý Thức - 90% Tiềm Thức",
+      "09. ⚙️ Thói Quen Vàng & Tuổi Thể Chất 38",
+      "10. 💎 Mỏ Vàng Trong Tâm Trí × Sức Mạnh AI",
+      "11. 🏛️ Tháp Nhu Cầu Maslow 5 Tầng 4D",
+      "12. 📐 Tháp 6 Tầng Nhận Thức Logical Levels",
+      "13. 🎯 Vòng Tròn Vàng: Bắt Đầu Bằng TẠI SAO",
+      "14. 🎓 4 Khóa Học Cốt Lõi KTCSxAI",
+      "15. 📚 Giá Trị BNI #3: Học Tập Suốt Đời",
+      "16. 💳 SIÊU MÃ QR ACB: 468.468 VND"
+    ];
+
+    let slideVisibleState = new Array(totalSlides).fill(true);
+
+    function loadSavedSlideVisibility() {
+      try {
+        const saved = localStorage.getItem('bni_v03_slide_visibility') || localStorage.getItem('bni_v02_slide_visibility');
+        if (saved) {
+          const parsed = JSON.parse(saved);
+          if (Array.isArray(parsed) && parsed.length === totalSlides && parsed.some(Boolean)) {
+            slideVisibleState = parsed.map(Boolean);
+          }
+        }
+      } catch (e) {}
+    }
+
+    function saveSlideVisibility() {
+      try {
+        localStorage.setItem('bni_v03_slide_visibility', JSON.stringify(slideVisibleState));
+      } catch (e) {}
+    }
+
+    function getVisibleSlideIndices() {
+      const list = [];
+      for (let i = 0; i < totalSlides; i++) {
+        if (slideVisibleState[i]) list.push(i);
+      }
+      return list;
+    }
+
+    function syncSlideVisibilityUI() {
+      const visibleList = getVisibleSlideIndices();
+      const visibleCount = visibleList.length;
+
+      const slideEls = document.querySelectorAll('.slide');
+      slideEls.forEach((sec, idx) => {
+        const isVis = slideVisibleState[idx];
+        sec.classList.toggle('slide-hidden-user', !isVis);
+        const inlineChk = sec.querySelector('.inline-slide-chk');
+        if (inlineChk) {
+          inlineChk.checked = isVis;
+          inlineChk.setAttribute('checked', isVis ? 'checked' : '');
+          if (!isVis) inlineChk.removeAttribute('checked');
+        }
+      });
+
+      const badge = document.getElementById('visibleCountBadge');
+      const btnMgr = document.getElementById('btnHideSlideManager');
+      if (badge) badge.textContent = `(${visibleCount}/${totalSlides})`;
+      if (btnMgr) btnMgr.classList.toggle('has-hidden', visibleCount < totalSlides);
+
+      if (slideJumpSelect) {
+        Array.from(slideJumpSelect.options).forEach((opt, idx) => {
+          const baseTitle = slideCatalogTitles[idx] || opt.textContent;
+          opt.textContent = slideVisibleState[idx] ? baseTitle : `🚫 [ĐÃ ẨN] ${baseTitle}`;
+          opt.style.color = slideVisibleState[idx] ? '#ffe9ad' : '#94a3b8';
+        });
+      }
+
+      const summaryEl = document.getElementById('modalVisSummaryText');
+      if (summaryEl) {
+        const hiddenCount = totalSlides - visibleCount;
+        summaryEl.textContent = hiddenCount === 0
+          ? `Đang hiện đủ ${visibleCount}/${totalSlides} trang`
+          : `Đang hiện ${visibleCount}/${totalSlides} trang • Đã ẩn ${hiddenCount} trang`;
+      }
+
+      renderSlideVisibilityModalGrid();
+    }
+
+    function renderSlideVisibilityModalGrid() {
+      const grid = document.getElementById('slideVisibilityGrid');
+      if (!grid) return;
+      grid.innerHTML = '';
+
+      for (let i = 0; i < totalSlides; i++) {
+        const isVis = slideVisibleState[i];
+        const card = document.createElement('div');
+        card.className = 'slide-vis-item' + (isVis ? '' : ' is-hidden-item');
+        card.onclick = (ev) => {
+          if (ev.target.tagName === 'INPUT' || ev.target.tagName === 'BUTTON') return;
+          toggleSlideVisibility(i, !slideVisibleState[i]);
+        };
+
+        const left = document.createElement('div');
+        left.className = 'slide-vis-left';
+
+        const chk = document.createElement('input');
+        chk.type = 'checkbox';
+        chk.className = 'slide-vis-checkbox';
+        chk.checked = isVis;
+        chk.onchange = (ev) => {
+          ev.stopPropagation();
+          toggleSlideVisibility(i, ev.target.checked);
+        };
+
+        const nameSpan = document.createElement('span');
+        nameSpan.className = 'slide-vis-name';
+        nameSpan.textContent = slideCatalogTitles[i];
+
+        left.appendChild(chk);
+        left.appendChild(nameSpan);
+
+        const right = document.createElement('div');
+        right.style.display = 'flex';
+        right.style.alignItems = 'center';
+        right.style.gap = '6px';
+
+        const statusPill = document.createElement('span');
+        statusPill.className = 'slide-vis-status-pill ' + (isVis ? 'status-visible' : 'status-hidden');
+        statusPill.textContent = isVis ? '👁️ Đang hiện' : '🚫 Đã ẩn';
+
+        const jumpBtn = document.createElement('button');
+        jumpBtn.className = 'slide-vis-jump-btn';
+        jumpBtn.textContent = 'Xem';
+        jumpBtn.title = 'Chuyển tới trang này';
+        jumpBtn.onclick = (ev) => {
+          ev.stopPropagation();
+          if (!slideVisibleState[i]) {
+            slideVisibleState[i] = true;
+            saveSlideVisibility();
+            syncSlideVisibilityUI();
+          }
+          closeSlideVisibilityModal();
+          goToSlide(i, true);
+        };
+
+        right.appendChild(statusPill);
+        right.appendChild(jumpBtn);
+
+        card.appendChild(left);
+        card.appendChild(right);
+        grid.appendChild(card);
+      }
+    }
+
+    function toggleSlideVisibility(slideIdx, shouldShow) {
+      const visibleList = getVisibleSlideIndices();
+      if (!shouldShow && visibleList.length <= 1 && slideVisibleState[slideIdx]) {
+        showVoiceToast('⚠️ Cần giữ lại ít nhất 1 trang hiển thị để trình chiếu!');
+        syncSlideVisibilityUI();
+        return;
+      }
+
+      slideVisibleState[slideIdx] = Boolean(shouldShow);
+      saveSlideVisibility();
+      syncSlideVisibilityUI();
+
+      if (!slideVisibleState[currentSlide]) {
+        const nextVis = getNextVisibleSlideIndex(currentSlide, 1) ?? getNextVisibleSlideIndex(currentSlide, -1) ?? 0;
+        currentSlide = nextVis;
+      }
+
+      updateSlidePosition();
+      const statusMsg = shouldShow
+        ? `👁️ Đã HIỆN Trang ${String(slideIdx + 1).padStart(2, '0')}`
+        : `🚫 Đã ẨN Trang ${String(slideIdx + 1).padStart(2, '0')} (Bỏ qua khi trình chiếu)`;
+      showVoiceToast(statusMsg);
+    }
+
+    function showAllSlidesV03() {
+      slideVisibleState = new Array(totalSlides).fill(true);
+      saveSlideVisibility();
+      syncSlideVisibilityUI();
+      updateSlidePosition();
+      showVoiceToast('☑️ Đã bật hiển thị toàn bộ 16/16 trang!');
+    }
+
+    function applyCompactPitchPresetV03() {
+      const hiddenPreset = [3, 4, 7, 9, 10, 11];
+      slideVisibleState = new Array(totalSlides).fill(true);
+      hiddenPreset.forEach(idx => { slideVisibleState[idx] = false; });
+      saveSlideVisibility();
+      syncSlideVisibilityUI();
+      if (!slideVisibleState[currentSlide]) {
+        currentSlide = getVisibleSlideIndices()[0] || 0;
+      }
+      updateSlidePosition();
+      showVoiceToast('⚡ Đã áp dụng Bản Ngắn Gọn (10/16 trang cốt lõi)!');
+    }
+
+    function openSlideVisibilityModal() {
+      renderSlideVisibilityModalGrid();
+      document.getElementById('slideVisibilityModal').classList.add('open');
+    }
+
+    function closeSlideVisibilityModal() {
+      document.getElementById('slideVisibilityModal').classList.remove('open');
+    }
+
+    function getNextVisibleSlideIndex(fromIdx, stepDirection) {
+      let i = fromIdx + stepDirection;
+      while (i >= 0 && i < totalSlides) {
+        if (slideVisibleState[i]) return i;
+        i += stepDirection;
+      }
+      return null;
+    }
+
+    function initDots() {
+      dotsContainer.innerHTML = '';
+      for (let i = 0; i < totalSlides; i++) {
+        const dot = document.createElement('div');
+        dot.className = 'slide-dot' + (i === currentSlide ? ' active' : '') + (!slideVisibleState[i] ? ' dot-hidden' : '');
+        dot.title = slideVisibleState[i] ? `Trang ${i + 1}` : `Trang ${i + 1} (Đang ẩn)`;
+        dot.onclick = () => goToSlide(i, true);
+        dotsContainer.appendChild(dot);
+      }
+    }
+
+    function updateSlidePosition() {
+      if (slideJumpSelect) slideJumpSelect.value = String(currentSlide);
+
+      document.querySelectorAll('.slide').forEach((s, idx) => {
+        s.classList.toggle('active-slide', idx === currentSlide);
+      });
+
+      const visibleList = getVisibleSlideIndices();
+      let visibleOrderIndex = visibleList.indexOf(currentSlide);
+      if (visibleOrderIndex === -1) {
+        currentSlide = visibleList[0] || 0;
+        visibleOrderIndex = 0;
+      }
+
+      if (currentMode === 'scroll') {
+        slidesTrack.style.transform = 'none';
+      } else if (currentMode === 'horizontal') {
+        slidesTrack.style.transform = `translate3d(-${visibleOrderIndex * 100}vw, 0, 0)`;
+        document.getElementById('btnPrevNav').textContent = '◀ Trang Trước';
+        document.getElementById('btnNextNav').textContent = 'Trang Tiếp ▶';
+      } else if (currentMode === 'vertical') {
+        slidesTrack.style.transform = `translate3d(0, -${visibleOrderIndex * 100}%, 0)`;
+        document.getElementById('btnPrevNav').textContent = '▲ Trang Trên';
+        document.getElementById('btnNextNav').textContent = 'Trang Dưới ▼';
+      }
+
+      const dots = dotsContainer.querySelectorAll('.slide-dot');
+      dots.forEach((d, idx) => {
+        d.classList.toggle('active', idx === currentSlide);
+        d.classList.toggle('dot-hidden', !slideVisibleState[idx]);
+      });
+    }
+
+    function goToSlide(index, manualTrigger = false) {
+      if (index < 0) index = 0;
+      if (index >= totalSlides) index = totalSlides - 1;
+
+      if (manualTrigger && !slideVisibleState[index]) {
+        slideVisibleState[index] = true;
+        saveSlideVisibility();
+        syncSlideVisibilityUI();
+      }
+
+      currentSlide = index;
+      updateSlidePosition();
+      playSfx('swoosh');
+
+      if (currentMode === 'scroll') {
+        const slideElements = document.querySelectorAll('.slide');
+        if (slideElements[currentSlide]) {
+          slideElements[currentSlide].scrollIntoView({ behavior: 'smooth' });
+        }
+      }
+
+      if (manualTrigger && isAutoLecturing) {
+        startLectureSlideAtSentence(currentSlide, 0, 0);
+      }
+    }
+
+    function nextSlide() {
+      const nextVis = getNextVisibleSlideIndex(currentSlide, 1);
+      if (nextVis !== null) {
+        goToSlide(nextVis, true);
+      } else {
+        showVoiceToast('🏁 Đã tới trang hiển thị cuối cùng!');
+      }
+    }
+
+    function prevSlide() {
+      const prevVis = getNextVisibleSlideIndex(currentSlide, -1);
+      if (prevVis !== null) {
+        goToSlide(prevVis, true);
+      } else {
+        showVoiceToast('🌅 Đang ở trang hiển thị đầu tiên!');
+      }
+    }
+
+    function setDeckMode(mode) {
+      currentMode = mode;
+      document.documentElement.className = 'mode-' + mode;
+      document.body.classList.remove('mode-horizontal', 'mode-vertical', 'mode-scroll');
+      document.body.classList.add('mode-' + mode);
+
+      document.getElementById('btnHorizontal').classList.toggle('active', mode === 'horizontal');
+      document.getElementById('btnVertical').classList.toggle('active', mode === 'vertical');
+      document.getElementById('btnScroll').classList.toggle('active', mode === 'scroll');
+
+      updateSlidePosition();
+    }
+
+    // CHIẾU TOÀN MÀN HÌNH TỨC THÌ (KHÔNG NHẢY VỀ TRANG ĐẦU TIÊN)
+    function toggleFullScreenPresentation() {
+      const targetSlide = currentSlide; // Khóa chặt trang đang đứng
+      if (!document.fullscreenElement) {
+        document.documentElement.requestFullscreen().then(() => {
+          setTimeout(() => {
+            currentSlide = targetSlide;
+            updateSlidePosition();
+            showVoiceToast(`⛶ Toàn màn hình: Đang chiếu Trang ${String(targetSlide + 1).padStart(2, '0')}`);
+          }, 60);
+        }).catch(() => {});
+      } else {
+        document.exitFullscreen().then(() => {
+          setTimeout(() => {
+            currentSlide = targetSlide;
+            updateSlidePosition();
+          }, 60);
+        }).catch(() => {});
+      }
+    }
+
+    document.addEventListener('fullscreenchange', () => {
+      // Đảm bảo không bị layout shift nhảy trang
+      setTimeout(updateSlidePosition, 80);
+    });
+
+    window.addEventListener('keydown', (e) => {
+      if (currentMode === 'scroll') return;
+      if (document.getElementById('githubModal').classList.contains('open')) return;
+      if (document.getElementById('slideVisibilityModal').classList.contains('open')) {
+        if (e.key === 'Escape') closeSlideVisibilityModal();
+        return;
+      }
+      if (document.getElementById('qrFullscreenModal').classList.contains('open')) {
+        if (e.key === 'Escape') closeQrFullscreenModal();
+        return;
+      }
+
+      if (['ArrowRight', 'ArrowDown', 'PageDown'].includes(e.key)) {
+        e.preventDefault();
+        nextSlide();
+      } else if (['ArrowLeft', 'ArrowUp', 'PageUp'].includes(e.key)) {
+        e.preventDefault();
+        prevSlide();
+      }
+    });
+
+    window.addEventListener('wheel', (e) => {
+      if (currentMode === 'scroll') return;
+      if (document.getElementById('githubModal').classList.contains('open')) return;
+      if (document.getElementById('slideVisibilityModal').classList.contains('open')) return;
+      if (document.getElementById('qrFullscreenModal').classList.contains('open')) return;
+
+      e.preventDefault();
+      if (wheelCooldown) return;
+      if (Math.abs(e.deltaY) < 18) return;
+
+      wheelCooldown = true;
+      if (e.deltaY > 0) nextSlide();
+      else prevSlide();
+      setTimeout(() => { wheelCooldown = false; }, 650);
+    }, { passive: false });
+
+    window.addEventListener('resize', updateSlidePosition);
+
+    // =========================================================================
+    // 4. HỆ THỐNG CHUYỂN GIỌNG TỨC THÌ V03 (KHÔNG BẮT ĐẦU ĐỌC LẠI TỪ ĐẦU TRANG)
+    // =========================================================================
+    let isAutoLecturing = false;
+    let voiceGender = 'male';
+    let speechRate = 1.0;
+    let activeAudioElement = null;
+
+    let speechSessionId = 0;
+    let currentUtterance = null;
+    let activeTimers = [];
+    let toastTimer = null;
+
+    // Con trỏ theo dõi câu đang đọc để chuyển giọng ngay lập tức
+    let currentSegmentIndex = 0;
+    let currentSentenceIndex = 0;
+    let activeSentencesList = [];
+
+    function toSpokenVietnamese(displayText) {
+      return displayText
+        .replace(/27\/10\/2026/g, '27 tháng 10 năm 2026')
+        .replace(/03\/08\/2013/g, 'mùng 3 tháng 8 năm 2013')
+        .replace(/4\.368\.000\s*đ/gi, 'bốn triệu ba trăm sáu mươi tám nghìn đồng')
+        .replace(/468\.468\s*(đ|VND)/gi, 'bốn trăm sáu mươi tám nghìn bốn trăm sáu mươi tám đồng')
+        .replace(/102\s*168\s*268/g, 'một không hai, một sáu tám, hai sáu tám')
+        .replace(/20h00/gi, 'hai mươi giờ')
+        .replace(/10%/g, 'mười phần trăm')
+        .replace(/90%/g, 'chín mươi phần trăm')
+        .replace(/3D/g, 'ba đê')
+        .replace(/4D/g, 'bốn đê')
+        .replace(/BNI/g, 'Bi En Ai')
+        .replace(/GTO/g, 'Gi Ti Ô')
+        .replace(/PTBT/g, 'Phát triển bản thân')
+        .replace(/KXDMxAI/gi, 'Kiến tạo cuộc sống nhân A I')
+        .replace(/KTCSxAI/gi, 'Kiến tạo cuộc sống nhân A I')
+        .replace(/KTCS/g, 'Kiến tạo cuộc sống');
+    }
+
+    function showVoiceToast(msg) {
+      const t = document.getElementById('voiceToast');
+      if (!t) return;
+      t.textContent = msg;
+      t.classList.add('show');
+      clearTimeout(toastTimer);
+      toastTimer = setTimeout(() => t.classList.remove('show'), 2400);
+    }
+
+    function scheduleSafeTimer(fn, delayMs) {
+      const id = setTimeout(fn, delayMs);
+      activeTimers.push(id);
+      return id;
+    }
+
+    function cancelActiveSpeechCleanly() {
+      speechSessionId++;
+      activeTimers.forEach(id => clearTimeout(id));
+      activeTimers = [];
+
+      if (currentUtterance) {
+        currentUtterance.onend = null;
+        currentUtterance.onerror = null;
+        currentUtterance = null;
+      }
+
+      if (activeAudioElement) {
+        activeAudioElement.onended = null;
+        activeAudioElement.onerror = null;
+        activeAudioElement.pause();
+        activeAudioElement = null;
+      }
+
+      if ('speechSynthesis' in window) {
+        window.speechSynthesis.cancel();
+      }
+      return speechSessionId;
+    }
+
+    function findTrueLocalFemaleVietnameseVoice() {
+      if (!('speechSynthesis' in window)) return null;
+      const voices = window.speechSynthesis.getVoices();
+      const viVoices = voices.filter(v => v.lang.toLowerCase().includes('vi'));
+      return viVoices.find(v => /hoaimy|linh|female|nữ|nu|google/i.test(v.name) && !/\ban\b/i.test(v.name)) || null;
+    }
+
+    function findTrueLocalMaleVietnameseVoice() {
+      if (!('speechSynthesis' in window)) return null;
+      const voices = window.speechSynthesis.getVoices();
+      const viVoices = voices.filter(v => v.lang.toLowerCase().includes('vi'));
+      return viVoices.find(v => /namminh|\ban\b|male|nam/i.test(v.name)) || viVoices[0] || null;
+    }
+
+    // Tách văn bản thành các câu ngắn để chuyển giọng tức thì
+    function splitIntoSentences(text) {
+      const raw = text.split(/(?<=[.!?…])\s+/);
+      const clean = [];
+      raw.forEach(r => {
+        const trimmed = r.trim();
+        if (trimmed.length > 0) clean.push(trimmed);
+      });
+      return clean.length > 0 ? clean : [text];
+    }
+
+    function speakSentenceWithDualEngine(sentenceText, mySession, onComplete) {
+      if (mySession !== speechSessionId) return;
+      const spokenText = toSpokenVietnamese(sentenceText);
+      const trueFemaleLocal = findTrueLocalFemaleVietnameseVoice();
+
+      if (voiceGender === 'female' && !trueFemaleLocal) {
+        // Cloud Voice Nữ Tiếng Việt
+        const q = encodeURIComponent(spokenText);
+        const url = `https://translate.googleapis.com/translate_tts?ie=UTF-8&tl=vi&client=tw-ob&q=${q}`;
+        const audio = new Audio(url);
+        audio.playbackRate = speechRate;
+        activeAudioElement = audio;
+
+        audio.onended = () => {
+          if (mySession !== speechSessionId) return;
+          if (onComplete) onComplete();
+        };
+
+        audio.onerror = () => {
+          if (mySession !== speechSessionId) return;
+          fallbackSpeechSynth(spokenText, mySession, onComplete, true);
+        };
+
+        audio.play().catch(() => {
+          if (mySession !== speechSessionId) return;
+          fallbackSpeechSynth(spokenText, mySession, onComplete, true);
+        });
+        return;
+      }
+
+      fallbackSpeechSynth(spokenText, mySession, onComplete, false);
+    }
+
+    function fallbackSpeechSynth(spokenText, mySession, onComplete, forceHighFemalePitch) {
+      if (!('speechSynthesis' in window) || mySession !== speechSessionId) {
+        if (onComplete) onComplete();
+        return;
+      }
+
+      const utter = new SpeechSynthesisUtterance(spokenText);
+      utter.lang = 'vi-VN';
+      utter.rate = speechRate;
+
+      if (voiceGender === 'female') {
+        const fVoice = findTrueLocalFemaleVietnameseVoice();
+        if (fVoice) {
+          utter.voice = fVoice;
+          utter.pitch = 1.15;
+        } else {
+          const anyVi = findTrueLocalMaleVietnameseVoice();
+          if (anyVi) utter.voice = anyVi;
+          utter.pitch = forceHighFemalePitch ? 1.65 : 1.45;
+        }
+      } else {
+        const mVoice = findTrueLocalMaleVietnameseVoice();
+        if (mVoice) utter.voice = mVoice;
+        utter.pitch = 0.84;
+      }
+
+      let done = false;
+      utter.onend = () => {
+        if (done || mySession !== speechSessionId) return;
+        done = true;
+        if (onComplete) onComplete();
+      };
+
+      utter.onerror = (ev) => {
+        if (ev && (ev.error === 'canceled' || ev.error === 'interrupted')) return;
+        if (done || mySession !== speechSessionId) return;
+        done = true;
+        if (onComplete) onComplete();
+      };
+
+      currentUtterance = utter;
+      window.speechSynthesis.speak(utter);
+    }
+
+    // CHUYỂN GIỌNG TỨC THÌ TẠI CÂU ĐANG NÓI V03
+    function instantSwitchVoiceGender(gender) {
+      if (voiceGender === gender && isAutoLecturing) return;
+      voiceGender = gender;
+      document.getElementById('btnVoiceMale').classList.toggle('active', gender === 'male');
+      document.getElementById('btnVoiceFemale').classList.toggle('active', gender === 'female');
+      playSfx('click');
+
+      const gText = gender === 'male' ? '👨 Giọng Nam' : '👩 Giọng Nữ';
+      showVoiceToast(`⚡ Đã chuyển sang ${gText} ngay tại nội dung đang nói!`);
+
+      if (isAutoLecturing) {
+        // Tiếp tục đọc ngay lập tức từ câu hiện tại với giọng mới
+        startLectureSlideAtSentence(currentSlide, currentSegmentIndex, currentSentenceIndex);
+      }
+    }
+
+    function syncSpeedUI(val) {
+      speechRate = Math.max(0.5, Math.min(1.8, parseFloat(val)));
+      const formatted = speechRate.toFixed(2) + 'x';
+      document.getElementById('topSpeedSlider').value = String(speechRate);
+      document.getElementById('topSpeedVal').textContent = formatted;
+
+      if (activeAudioElement) {
+        activeAudioElement.playbackRate = speechRate;
+      }
+    }
+
+    function onTopSpeedSliderInput(val) {
+      syncSpeedUI(val);
+    }
+
+    function onTopSpeedSliderCommit(val) {
+      syncSpeedUI(val);
+      showVoiceToast(`⚡ Tốc độ đọc: ${speechRate.toFixed(2)}x`);
+      if (isAutoLecturing) {
+        startLectureSlideAtSentence(currentSlide, currentSegmentIndex, currentSentenceIndex);
+      }
+    }
+
+    function stepSpeechSpeed(delta) {
+      const nextVal = Math.round((speechRate + delta) * 100) / 100;
+      onTopSpeedSliderCommit(nextVal);
+    }
+
+    // KỊCH BẢN 16 TRANG KTCSxAI DÀNH CHO BNI FORCE CHAPTER
+    const lectureScripts16 = [
+      {
+        segments: [
+          {
+            text: "🌅 Chào mừng các Chủ doanh nghiệp BNI Force Chapter trong buổi sáng Thứ Ba ngày 27/10/2026! Tôi là Nguyễn Anh Tuấn – Tuấn Tử Tế Từ Tâm, Chủ tịch Công ty Cổ phần Truyền thông GTO từ năm 2009.",
+            action: () => {}
+          },
+          {
+            text: "🏆 Với 22 năm kinh nghiệm vận hành doanh nghiệp, Phó Chủ tịch Hội Doanh Nhân Trẻ Khánh Hòa và Quán quân BNI Việt Nam, hôm nay tôi mang đến cho các anh chị chìa khóa đột phá nhất trong Kỷ nguyên trí tuệ KTCSxAI!",
+            action: () => document.getElementById('s0Row1').classList.add('active-step')
+          }
+        ]
+      },
+      {
+        segments: [
+          {
+            text: "🔥 Lý do tôi đam mê đào tạo xuất phát từ trái tim: Tôi muốn giúp cho những người kinh doanh phát triển bền vững!",
+            action: () => {}
+          },
+          {
+            text: "🤝 Khi 1 Chủ doanh nghiệp phát triển, chúng ta cùng nhau tạo ra nhiều công ăn việc làm, của cải vật chất và những giá trị tích cực cho toàn xã hội!",
+            action: () => document.getElementById('s1Row1').classList.add('active-step')
+          }
+        ]
+      },
+      {
+        segments: [
+          {
+            text: "🏆 Nhìn lại hành trình tại BNI từ vai trò Chủ tịch Nhiệm kỳ 1 BNI Union Nha Trang, Giám đốc mở Chapter, Giám đốc vùng Khánh Hòa, tôi vinh dự đạt Pin Double Platinum bảo trợ 24 thành viên.",
+            action: () => {}
+          },
+          {
+            text: "🥇 Và tự hào nhất là đạt Giải Nhất cuộc thi Tôi Kết Nối Thành Công tại Hội ngộ đỉnh cao BNI Việt Nam ngày 03/08/2013 tại Đà Nẵng!",
+            action: () => document.getElementById('s2Row1').classList.add('active-step')
+          }
+        ]
+      },
+      {
+        segments: [
+          {
+            text: "📸 Đây là hình ảnh Ngày ấy và Bây giờ của tôi cùng người thầy lớn Phạm Thành Long, cùng Bằng khen của Chủ tịch Ủy ban Nhân dân tỉnh Khánh Hòa trao tặng GTO Media.",
+            action: () => {}
+          },
+          {
+            text: "💎 Hơn 2 thập kỷ qua, uy tín và sự tử tế từ tâm chính là nền móng vững chắc nhất giúp chúng ta kết nối thành công!",
+            action: () => document.getElementById('s3Row1').classList.add('active-step')
+          }
+        ]
+      },
+      {
+        segments: [
+          {
+            text: "💻 Từ năm 2020 đến nay, tôi tập trung sâu vào lĩnh vực đào tạo Phát Triển Bản Thân trực tuyến, giúp hàng trăm chủ doanh nghiệp tự tin truyền cảm hứng và bứt phá doanh số.",
+            action: () => document.getElementById('s4Row1').classList.add('active-step')
+          }
+        ]
+      },
+      {
+        segments: [
+          {
+            text: "🧭 Cách giúp của tôi dành cho các Chủ kinh doanh BNI dựa trên quy luật tối thượng: Phát Triển Bản Thân quan trọng hơn và cần đi trước Phát Triển Kinh Doanh!",
+            action: () => {}
+          },
+          {
+            text: "🤖 Đặc biệt trong Kỷ nguyên trí tuệ KTCSxAI, nếu chỉ chạy theo công cụ thì bạn chỉ đủ ăn; nhưng khi nâng tầm Bản Thân kết hợp với sức mạnh AI, bạn sẽ kinh doanh bền vững và tự do!",
+            action: () => document.getElementById('s5Row1').classList.add('active-step')
+          }
+        ]
+      },
+      {
+        segments: [
+          {
+            text: "🎯 Hãy nhìn vào 5 vòng tròn đồng tâm: Hạt nhân ở giữa chính là MÌNH. Khi MÌNH phát triển trước, ta làm chủ được Cảm xúc, từ đó kiến tạo Mối quan hệ chất lượng.",
+            action: () => pulseConcentricRings()
+          },
+          {
+            text: "💫 Từ mối quan hệ tốt đẹp sẽ nở hoa ra Kinh doanh đột phá, và tạo nên Cuộc sống viên mãn hạnh phúc!",
+            action: () => document.getElementById('s6Row1').classList.add('active-step')
+          }
+        ]
+      },
+      {
+        segments: [
+          {
+            text: "🧊 Trong mô hình Tảng băng tâm thức: Kiến thức thuộc về Ý thức chỉ chiếm 10% ở phần nổi trên mặt nước.",
+            action: () => {}
+          },
+          {
+            text: "🌊 Còn 90% kết quả Cuộc sống của chúng ta nằm ở phần chìm Tiềm thức, được quyết định bởi Cảm xúc và Thói quen mỗi ngày!",
+            action: () => document.getElementById('s7Row1').classList.add('active-step')
+          }
+        ]
+      },
+      {
+        segments: [
+          {
+            text: "⚙️ Tác giả Charles Duhigg đã khẳng định: Muốn có sự thay đổi lớn trong đời, hãy bắt đầu từ những việc nhỏ hình thành nên thói quen tốt!",
+            action: () => {}
+          },
+          {
+            text: "🏃‍♂️ Nhờ thói quen bơi biển Nha Trang và chạy bộ mỗi sáng cùng học viên, đồng hồ Garmin ghi nhận Tuổi thể chất của tôi trẻ hóa ở mức 38 tuổi!",
+            action: () => document.getElementById('s8Row1').classList.add('active-step')
+          }
+        ]
+      },
+      {
+        segments: [
+          {
+            text: "⛏️ Vàng được khai thác trong tâm trí con người lớn gấp vạn lần khai thác trong lòng đất! Khi Chủ doanh nghiệp biết khai mỏ vàng tâm trí bằng trí tuệ KTCSxAI, tài sản tạo ra là vô tận!",
+            action: () => document.getElementById('s9Row1').classList.add('active-step')
+          }
+        ]
+      },
+      {
+        segments: [
+          {
+            text: "🏛️ Đi qua 5 tầng Tháp nhu cầu Maslow cho đến đỉnh cao Tự thể hiện bản thân, phát triển bản thân giúp bạn chạm tới đỉnh tháp viên mãn nhất!",
+            action: () => {
+              selectMaslow(5);
+              document.getElementById('s10Row1').classList.add('active-step');
+            }
+          }
+        ]
+      },
+      {
+        segments: [
+          {
+            text: "📐 Trên Tháp 6 tầng nhận thức Logical Levels, khi bạn nâng mình lên tầng Nhân dạng Bạn là ai và Sứ mệnh Phục vụ ai, mọi bài toán ở tầng Môi trường và Hành vi đều được hóa giải!",
+            action: () => {
+              selectLevel(6);
+              document.getElementById('s11Row1').classList.add('active-step');
+            }
+          }
+        ]
+      },
+      {
+        segments: [
+          {
+            text: "🎯 Hãy luôn bắt đầu với câu hỏi TẠI SAO ở tâm Vòng tròn vàng để chạm thẳng vào Não Giữa điều khiển cảm xúc và quyết định hành động!",
+            action: () => document.getElementById('s12Row1').classList.add('active-step')
+          }
+        ]
+      },
+      {
+        segments: [
+          {
+            text: "🎓 Toàn bộ tinh hoa ấy được đúc kết trong 4 khóa học của Tuấn Tử Tế Từ Tâm: Tự tin trực tuyến, Giao tiếp sinh tiền tệ, Kiến tạo cuộc sống và Phát triển bản thân kết hợp trí tuệ AI!",
+            action: () => document.getElementById('s13Row1').classList.add('active-step')
+          }
+        ]
+      },
+      {
+        segments: [
+          {
+            text: "📚 Đúng như Giá trị cốt lõi số 3 của BNI về Học tập suốt đời: Nếu bạn đầu tư tất cả tài sản vào kiến thức, bạn sẽ có được 1 thứ không ai chiếm đoạt được. Kiến thức mang lại lợi nhuận lớn nhất!",
+            action: () => {}
+          }
+        ]
+      },
+      {
+        segments: [
+          {
+            text: "💳 Ngay sáng nay tại BNI Force Chapter, khóa học Kiến Tạo Cuộc Sống trong Kỷ nguyên trí tuệ KTCSxAI học vào 20h00 tối Thứ 4 và Thứ 7 hàng tuần, ưu đãi trải nghiệm 1 tháng chỉ còn 468.468 VND!",
+            action: () => launchCelebration()
+          },
+          {
+            text: "📲 Mời các Chủ doanh nghiệp quét ngay Siêu Mã QR Ngân hàng ACB Khánh Hòa, số tài khoản 102 168 268, Nguyễn Anh Tuấn, nội dung KTCS kèm Tên và Số điện thoại để cùng cất cánh!",
+            action: () => openQrFullscreenModal()
+          }
+        ]
+      }
+    ];
+
+    function toggleAutoLecture() {
+      if (isAutoLecturing) stopAutoLecture();
+      else startAutoLectureFromCurrent();
+    }
+
+    function startAutoLectureFromCurrent() {
+      if (!slideVisibleState[currentSlide]) {
+        const firstVis = getVisibleSlideIndices()[0] || 0;
+        goToSlide(firstVis, false);
+      }
+      isAutoLecturing = true;
+      updateSpeakButtonUI(true);
+      document.getElementById('teleprompterBar').classList.add('active-speaking');
+      startLectureSlideAtSentence(currentSlide, 0, 0);
+    }
+
+    function speakSingleSlide(slideIdx) {
+      if (currentSlide !== slideIdx) goToSlide(slideIdx, false);
+      isAutoLecturing = true;
+      updateSpeakButtonUI(true);
+      document.getElementById('teleprompterBar').classList.add('active-speaking');
+      startLectureSlideAtSentence(slideIdx, 0, 0);
+    }
+
+    function stopAutoLecture() {
+      isAutoLecturing = false;
+      cancelActiveSpeechCleanly();
+      updateSpeakButtonUI(false);
+      document.getElementById('teleprompterBar').classList.remove('active-speaking');
+      document.querySelectorAll('.slide-inner').forEach(el => el.classList.remove('narrating-glow'));
+    }
+
+    function updateSpeakButtonUI(speaking) {
+      const btn = document.getElementById('btnMasterSpeak');
+      const icon = document.getElementById('speakIcon');
+      const label = document.getElementById('speakLabel');
+      btn.classList.toggle('speaking', speaking);
+      if (speaking) {
+        icon.textContent = '⏹';
+        label.textContent = 'ĐANG GIẢNG (DỪNG)';
+      } else {
+        icon.textContent = '🎙️';
+        label.textContent = 'BẤM NÚT NÓI';
+      }
+    }
+
+    // ĐỌC CHI TIẾT TỪNG CÂU VÀ HỖ TRỢ CHUYỂN GIỌNG TỨC THÌ
+    function startLectureSlideAtSentence(slideIdx, startSegIdx = 0, startSentIdx = 0) {
+      const mySession = cancelActiveSpeechCleanly();
+      if (!isAutoLecturing) return;
+
+      document.querySelectorAll('.slide-inner').forEach((el, idx) => {
+        el.classList.toggle('narrating-glow', idx === slideIdx);
+      });
+
+      const scriptObj = lectureScripts16[slideIdx];
+      if (!scriptObj) return;
+
+      currentSegmentIndex = startSegIdx;
+      currentSentenceIndex = startSentIdx;
+
+      const segments = scriptObj.segments;
+
+      function playNextStep() {
+        if (mySession !== speechSessionId || !isAutoLecturing) return;
+
+        if (currentSegmentIndex >= segments.length) {
+          // Hoàn thành hết các đoạn của slide hiện tại -> Chuyển slide kế tiếp
+          advanceToNextSlideInLecture(slideIdx, mySession);
+          return;
+        }
+
+        const seg = segments[currentSegmentIndex];
+        if (seg.action) seg.action();
+
+        const sentences = splitIntoSentences(seg.text);
+        activeSentencesList = sentences;
+
+        if (currentSentenceIndex >= sentences.length) {
+          currentSegmentIndex++;
+          currentSentenceIndex = 0;
+          scheduleSafeTimer(playNextStep, 250);
+          return;
+        }
+
+        const curSentence = sentences[currentSentenceIndex];
+        document.getElementById('teleprompterText').textContent = curSentence;
+
+        const cleanForSpeech = curSentence.replace(/[\u{1F300}-\u{1FAFF}\u{2600}-\u{27BF}]/gu, '');
+        speakSentenceWithDualEngine(cleanForSpeech, mySession, () => {
+          if (mySession !== speechSessionId || !isAutoLecturing) return;
+          currentSentenceIndex++;
+          scheduleSafeTimer(playNextStep, 200);
+        });
+      }
+
+      scheduleSafeTimer(playNextStep, 60);
+    }
+
+    function advanceToNextSlideInLecture(currentIdx, mySession) {
+      if (mySession !== speechSessionId || !isAutoLecturing) return;
+      const nextVisIdx = getNextVisibleSlideIndex(currentIdx, 1);
+
+      if (nextVisIdx !== null) {
+        scheduleSafeTimer(() => {
+          if (mySession !== speechSessionId || !isAutoLecturing) return;
+          goToSlide(nextVisIdx, false);
+          scheduleSafeTimer(() => {
+            if (mySession !== speechSessionId || !isAutoLecturing) return;
+            startLectureSlideAtSentence(nextVisIdx, 0, 0);
+          }, 500);
+        }, 700);
+      } else {
+        scheduleSafeTimer(() => {
+          if (mySession !== speechSessionId) return;
+          stopAutoLecture();
+        }, 900);
+      }
+    }
+
+    // =========================================================================
+    // 5. CÁC HÀM TƯƠNG TÁC MASLOW, LOGICAL LEVELS, QR ACB
+    // =========================================================================
+    function openQrFullscreenModal() {
+      playSfx('fanfare');
+      document.getElementById('qrFullscreenModal').classList.add('open');
+      launchCelebration();
+    }
+
+    function closeQrFullscreenModal() {
+      document.getElementById('qrFullscreenModal').classList.remove('open');
+    }
+
+    function copyBankDetails() {
+      playSfx('click');
+      navigator.clipboard.writeText('102168268').then(() => {
+        showVoiceToast('📋 Đã sao chép STK ACB: 102 168 268 (Nguyễn Anh Tuấn - 468.468đ)');
+      });
+    }
+
+    function pulseConcentricRings() {
+      playSfx('click');
+      ['ring1', 'ring2', 'ring3', 'ring4', 'ring5'].forEach((id, idx) => {
+        const el = document.getElementById(id);
+        if (!el) return;
+        setTimeout(() => {
+          el.style.strokeWidth = '6';
+          setTimeout(() => { el.style.strokeWidth = '2.5'; }, 450);
+        }, idx * 180);
+      });
+      document.getElementById('s6Row1').classList.add('active-step');
+    }
+
+    const maslowData = {
+      5: {
+        badge: '👑 TẦNG 5 • ĐỈNH CAO THÁP MASLOW',
+        title: '👑 5. Tự Thể Hiện: Sống Đúng Đam Mê & Sứ Mệnh Lãnh Đạo',
+        desc: 'Phát huy tối đa tiềm năng bản thân, làm chủ trí tuệ KTCSxAI và dẫn dắt đội ngũ tạo ra di sản lớn cho xã hội.'
+      },
+      4: {
+        badge: '👍 TẦNG 4 • ĐƯỢC TÔN TRỌNG & GHI NHẬN',
+        title: '👍 4. Được Tôn Trọng: Khẳng Định Uy Tín & Vị Thế Doanh Nhân',
+        desc: 'Xây dựng thương hiệu cá nhân uy tín trong cộng đồng BNI và được khách hàng, đối tác kính trọng.'
+      },
+      3: {
+        badge: '❤️ TẦNG 3 • NHU CẦU XÃ HỘI & KẾT NỐI',
+        title: '❤️ 3. Xã Hội: Gia Đình Hạnh Phúc & Mối Quan Hệ Chất Lượng',
+        desc: 'Kết nối sâu sắc cùng gia đình, đồng đội và những người bạn lớn cùng tần số.'
+      },
+      2: {
+        badge: '🛡️ TẦNG 2 • NHU CẦU AN TOÀN',
+        title: '🛡️ 2. An Toàn: Bảo Vệ Sức Khỏe & Dòng Tiền Vững Chắc',
+        desc: 'Chủ động rèn luyện sức khỏe (Tuổi thể chất 38) và quản trị rủi ro cho doanh nghiệp.'
+      },
+      1: {
+        badge: '🍚 TẦNG 1 • NHU CẦU SINH LÝ CƠ BẢN',
+        title: '🍚 1. Sinh Lý: Nền Tảng Thể Chất & Năng Lượng Sống',
+        desc: 'Đảm bảo giấc ngủ sâu, dinh dưỡng lành mạnh và hơi thở tràn đầy sinh lực mỗi ngày.'
+      }
+    };
+
+    function selectMaslow(lvl) {
+      playSfx('click');
+      const d = maslowData[lvl];
+      if (!d) return;
+      document.getElementById('maslowBadge').textContent = d.badge;
+      document.getElementById('maslowTitle').textContent = bindClauseWords(d.title);
+      document.getElementById('maslowDesc').textContent = bindClauseWords(d.desc);
+    }
+
+    const levelsData = {
+      6: {
+        badge: '👑 TẦNG 6 • SỨ MỆNH (PHỤC VỤ AI?)',
+        title: '👑 Sứ Mệnh: Giúp Người Kinh Doanh Phát Triển & Thịnh Vượng',
+        desc: 'Khi xác định rõ sứ mệnh phụng sự cộng đồng doanh nhân, năng lượng của bạn là vô tận!'
+      },
+      5: {
+        badge: '🌟 TẦNG 5 • NHÂN DẠNG (BẠN LÀ AI?)',
+        title: '🌟 Nhân Dạng: Tôi Là Nhà Lãnh Đạo Giàu Có, Khỏe Mạnh, Hạnh Phúc',
+        desc: 'Định vị bản sắc chủ doanh nghiệp làm chủ công nghệ KTCSxAI và truyền cảm hứng lớn.'
+      },
+      4: {
+        badge: '💎 TẦNG 4 • NIỀM TIN & GIÁ TRỊ (TẠI SAO?)',
+        title: '💎 Niềm Tin: Phát Triển Bản Thân Trước Mới Kinh Doanh Bền Vững',
+        desc: 'Tin rằng mỏ vàng trong tâm trí lớn gấp vạn lần trong lòng đất.'
+      },
+      3: {
+        badge: '🧭 TẦNG 3 • THÁI ĐỘ & NĂNG LỰC (NHƯ THẾ NÀO?)',
+        title: '🧭 Thái Độ: Học Tập Suốt Đời & Lòng Biết Ơn',
+        desc: 'Làm chủ kỹ năng giao tiếp, thuyết trình trực tuyến và ứng dụng AI hiệu quả.'
+      },
+      2: {
+        badge: '⚙️ TẦNG 2 • HÀNH VI (CÁI GÌ?)',
+        title: '⚙️ Hành Vi: Kỷ Luật Những Việc Nhỏ Mỗi Ngày',
+        desc: 'Bơi biển, chạy bộ buổi sáng và rèn luyện cùng đồng đội tối Thứ 4 & Thứ 7.'
+      },
+      1: {
+        badge: '🌧️ TẦNG 1 • MÔI TRƯỜNG (KHI NÀO / Ở ĐÂU?)',
+        title: '🌧️ Môi Trường: Vượt Lên Mọi Biến Động Thị Trường',
+        desc: 'Không để hoàn cảnh bên ngoài kéo tụt cảm xúc của người cầm lái doanh nghiệp.'
+      }
+    };
+
+    function selectLevel(lvl) {
+      playSfx('click');
+      const d = levelsData[lvl];
+      if (!d) return;
+      document.getElementById('lvlBadge').textContent = d.badge;
+      document.getElementById('lvlTitle').textContent = bindClauseWords(d.title);
+      document.getElementById('lvlDesc').textContent = bindClauseWords(d.desc);
+    }
+
+    // =========================================================================
+    // 6. XUẤT BẢN GITHUB THÔNG MINH (BỔ SUNG VÀO ĐẦU TRANG WEB TUANTUTE.LIFE)
+    // =========================================================================
+    function openGitHubModal() {
+      updateGitHubScript();
+      document.getElementById('githubModal').classList.add('open');
+    }
+
+    function closeGitHubModal() {
+      document.getElementById('githubModal').classList.remove('open');
+    }
+
+    function updateGitHubScript() {
+      const psCode = `# 1. Di chuyển vào thư mục website TuanTuTe.Life
+Set-Location "c:\\Users\\PC\\Downloads\\Tu_C_Goc\\WEBSITE\\TuanTuTe.Life"
+
+# 2. Thêm bài thuyết trình mới V03 vào Git và cập nhật data.json
+git add thuyet-trinh-bni-force-ktcs-xai-v03.html data.json
+git commit -m "feat(bni-force): bổ sung bài thuyết trình V03 KTCSxAI lên đầu trang web tuantute.life"
+git push origin main
+
+Write-Host "✅ Đã xuất bản bài thuyết trình V03 thành công lên https://tuantute.life/ !" -ForegroundColor Green`;
+
+      document.getElementById('ghPsCommandBox').textContent = psCode;
+    }
+
+    function copyGitHubCommand() {
+      playSfx('click');
+      const code = document.getElementById('ghPsCommandBox').textContent;
+      navigator.clipboard.writeText(code).then(() => {
+        showVoiceToast('📋 Đã sao chép lệnh Git xuất bản lên tuantute.life!');
+      });
+    }
+
+    function downloadReadyIndexHtml(filename = 'thuyet-trinh-bni-force-ktcs-xai-v03.html') {
+      playSfx('click');
+      closeSlideVisibilityModal();
+      const fullHtml = '<!DOCTYPE html>\n' + document.documentElement.outerHTML;
+      const blob = new Blob([fullHtml], { type: 'text/html;charset=utf-8' });
+      const a = document.createElement('a');
+      a.href = URL.createObjectURL(blob);
+      a.download = filename;
+      a.click();
+      showVoiceToast(`📥 Đã tải file ${filename} sẵn sàng sử dụng!`);
+    }
+
+    // KHỞI CHẠY HỆ THỐNG V03
+    loadSavedSlideVisibility();
+    initDots();
+    syncSlideVisibilityUI();
+    restoreSavedRealPhotos();
+    lockAllVietnameseOrphans();
+    updateSlidePosition();
+  </script>
+</body>
+</html>
