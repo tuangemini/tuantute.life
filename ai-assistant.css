@@ -583,3 +583,11 @@
     border: none;
   }
 }
+
+/* Tránh che khuất dải chân trang của các trang bài giảng thuyết trình */
+body.mode-horizontal .ai-fab-launcher,
+body.mode-vertical .ai-fab-launcher,
+body.mode-scroll .ai-fab-launcher {
+  bottom: 80px !important;
+  right: 20px !important;
+}

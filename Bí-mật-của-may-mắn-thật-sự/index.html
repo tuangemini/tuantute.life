@@ -11,7 +11,7 @@
   2. Thanh trượt tốc độ đọc liên tục (0.50x -> 1.80x) + Giọng Nam / Giọng Nữ Cloud chuẩn 100%.
   3. 4 Phong cách nghệ thuật: Điện ảnh 4D / Vẽ tay & Viết tay / Đồ họa Infographic / Hoạt hình 3D.
   4. Lưu giữ khung Ảnh Thật (cho phép nạp ảnh gốc từ máy lưu tự động) + Đồ họa 4D siêu nét.
-  5. Siêu Mã QR ACB (STK 102 168 268 - 468.468 VND) cỡ đại kèm chế độ Phóng To Toàn Màn Hình.
+  5. Siêu Mã QR ACB (STK Zalo: Phát Triển Bản Thân - Tâm - Trí xAI - Tham gia Nhóm Zalo miễn phí) cỡ đại kèm chế độ Phóng To Toàn Màn Hình.
   6. [V02] ẨN TRANG (Hide Slide): tích hộp để ẩn từng trang; khi lật trang / đọc tự động sẽ BỎ QUA trang đã ẩn.
      Lưu lựa chọn vào trình duyệt (localStorage). Phím tắt: H = ẩn/hiện trang đang xem.
   ==========================================================================
@@ -1371,7 +1371,7 @@
         👁 Ẩn Trang <span class="hide-count-badge zero" id="hideCountBadge">0</span>
       </button>
       <button class="btn-qr-instant" onclick="openQrFullscreenModal()" title="Bật Mã QR ACB Cỡ Đại Toàn Màn Hình">
-        💳 QUÉT QR ĐĂNG KÝ
+        💳 THAM GIA NHÓM ZALO xAI
       </button>
       <button class="btn-voice-studio" onclick="openVoiceModal()" title="Phòng thu giọng thật">⚙️ Thu Âm</button>
       <button class="btn-github-deploy" onclick="openGitHubModal()" title="Đóng gói đưa lên GitHub Pages">🚀 GitHub</button>
@@ -1434,26 +1434,26 @@
   </footer>
 
   <!-- MODAL PHÓNG TO SIÊU MÃ QR ACB TOÀN MÀN HÌNH (QUÉT CỰC NHANH TỪ XA) -->
+  <!-- MODAL MÃ QR & KÊU GỌI THAM GIA NHÓM ZALO XAI -->
   <div class="voice-modal-backdrop" id="qrFullscreenModal" onclick="closeQrFullscreenModal()">
-    <div class="voice-modal-card" style="max-width:680px; text-align:center; background:#ffffff; color:#0f172a; border:6px solid #f5c451;" onclick="event.stopPropagation()">
-      <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:10px;">
-        <span class="bni-badge" style="font-size:0.85rem;">💳 QUÉT MÃ QR ĐĂNG KÝ NGAY • BNI FORCE CHAPTER</span>
+    <div class="voice-modal-card" style="max-width:680px; text-align:center; background:#ffffff; color:#0f172a; border:6px solid #0068ff;" onclick="event.stopPropagation()">
+      <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:12px;">
+        <span class="bni-badge" style="font-size:0.85rem; background:linear-gradient(135deg,#0068ff,#004fc4); border-color:#93c5fd;">📲 CỘNG ĐỒNG ZALO • THÂN - TÂM - TRÍ xAI</span>
         <button class="btn-outline-lg" style="background:#0f172a; color:#fff; padding:6px 14px;" onclick="closeQrFullscreenModal()">✕ Đóng</button>
       </div>
 
-      <img id="fullscreenQrImg" src="https://img.vietqr.io/image/ACB-102168268-compact2.png?amount=468468&addInfo=KTCS%20Ten%20SDT&accountName=NGUYEN%20ANH%20TUAN" alt="Siêu Mã QR ACB 102168268" style="width:430px; height:430px; max-width:82vw; max-height:55vh; object-fit:contain; margin:0 auto; display:block; border:3px solid #005baa; border-radius:20px; padding:8px;" onerror="this.src='https://api.qrserver.com/v1/create-qr-code/?size=450x450&data=ACB%20102168268%20NGUYEN%20ANH%20TUAN%20468468%20KTCS%20Ten%20SDT'" />
+      <img id="fullscreenQrImg" src="https://api.qrserver.com/v1/create-qr-code/?size=450x450&data=https%3A%2F%2Fzalo.me%2Fg%2Firsrqz032" alt="Mã QR Nhóm Zalo Phát Triển Bản Thân - Tâm - Trí xAI" style="width:360px; height:360px; max-width:82vw; max-height:48vh; object-fit:contain; margin:0 auto; display:block; border:4px solid #0068ff; border-radius:20px; padding:8px; box-shadow:0 8px 30px rgba(0,104,255,0.25);" />
 
-      <div style="font-size:1.95rem; font-weight:900; color:#cf2030; margin-top:8px;">
-        ƯU ĐÃI TRẢI NGHIỆM 1 THÁNG: 468.468 VND
+      <div style="font-size:1.65rem; font-weight:900; color:#005baa; margin-top:12px; line-height:1.3;">
+        CỘNG ĐỒNG: PHÁT TRIỂN BẢN THÂN - TÂM - TRÍ xAI
       </div>
-      <div style="font-size:1.15rem; font-weight:800; color:#005baa; margin-top:4px;">
-        🏦 Ngân hàng ACB Khánh Hòa • STK: 102 168 268 • Nguyễn Anh Tuấn
+      <div style="font-size:1.02rem; font-weight:700; color:#334155; margin-top:6px; line-height:1.5;">
+        🤝 Nơi giao lưu học hỏi, nhận kịch bản thực chiến &amp; tham gia lớp Zoom <strong>20h00 tối Thứ 4 &amp; Thứ 7</strong> hàng tuần cùng Thầy <strong>Nguyễn Anh Tuấn (Tuấn Tử Tế)</strong>!
       </div>
-      <div style="font-size:1.05rem; font-weight:800; color:#0f172a; margin-top:4px;">
-        Nội dung chuyển khoản: <span style="color:#cf2030; background:#fef08a; padding:2px 10px; border-radius:6px;">KTCS Ten SDT</span> hoặc <span style="color:#005baa; background:#e0f2fe; padding:2px 10px; border-radius:6px;">KTCSxAI Ten SDT</span>
-      </div>
-      <div style="font-size:0.92rem; color:#475569; font-weight:600; margin-top:6px;">
-        🕗 Lịch học trực tuyến: 20h00 tối Thứ 4 &amp; Thứ 7 hàng tuần (Học phí gốc: 4.368.000đ)
+      <div style="margin-top:14px;">
+        <a href="https://zalo.me/g/irsrqz032" target="_blank" rel="noopener noreferrer" style="display:inline-flex; align-items:center; justify-content:center; gap:8px; padding:13px 32px; background:linear-gradient(135deg, #0068ff, #004fc4); color:#ffffff; font-weight:800; font-size:1.05rem; border-radius:999px; text-decoration:none; box-shadow:0 8px 25px rgba(0,104,255,0.45); transition:transform 0.2s;">
+          💬 BẤM VÀO ĐÂY ĐỂ VÀO NHÓM ZALO NGAY &rarr;
+        </a>
       </div>
     </div>
   </div>
@@ -2150,7 +2150,7 @@
     }
 
     // =========================================================================
-    // 3. HỆ THỐNG GIỌNG ĐỌC DUAL-ENGINE & PHỤ ĐỀ CHUẨN SỐ (468.468đ, STK 102 168 268)
+    // 3. HỆ THỐNG GIỌNG ĐỌC DUAL-ENGINE & PHỤ ĐỀ CHUẨN SỐ (Nhóm Zalo xAI, STK Zalo: Phát Triển Bản Thân - Tâm - Trí xAI)
     // =========================================================================
     let isAutoLecturing = false;
     let voiceGender = 'male';
@@ -2557,8 +2557,8 @@
     }
 
     function copyBankDetails() {
-      navigator.clipboard.writeText('102168268').then(() => {
-        showVoiceToast('📋 Đã sao chép STK ACB: 102 168 268 (Nguyễn Anh Tuấn - 468.468đ)');
+      navigator.clipboard.writeText('https://zalo.me/g/irsrqz032').then(() => {
+        showVoiceToast('📋 Đã sao chép STK ACB: Zalo: Phát Triển Bản Thân - Tâm - Trí xAI (Nguyễn Anh Tuấn - Nhóm Zalo xAI)');
       });
     }
 
@@ -2714,7 +2714,11 @@ $Index = @'
 <!DOCTYPE html><html lang="vi"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Bai viet - Tuan Tu Te Tu Tam</title>
 <style>body{font-family:Segoe UI,sans-serif;background:#0a1428;color:#fff;max-width:860px;margin:30px auto;padding:0 16px}a{display:block;background:#10244a;border:1px solid #f5c451;border-radius:14px;padding:16px;margin:12px 0;color:#ffe9ad;text-decoration:none;font-weight:700}a small{display:block;color:#9fb3d9;font-weight:400}</style></head>
 <body><!--POSTS-INDEX--><h1>Bai viet moi nhat</h1><div id="l"></div>
-<script>fetch('posts.json?'+Date.now()).then(function(r){return r.json()}).then(function(p){document.getElementById('l').innerHTML=p.map(function(x,i){return '<a href="'+x.path+'">'+(i==0?'NEW - ':'')+x.title+'<small>'+x.date+'</small></a>'}).join('')})<\/script></body></html>
+<script>fetch('posts.json?'+Date.now()).then(function(r){return r.json()}).then(function(p){document.getElementById('l').innerHTML=p.map(function(x,i){return '<a href="'+x.path+'">'+(i==0?'NEW - ':'')+x.title+'<small>'+x.date+'</small></a>'}).join('')})<\/script>
+  <!-- TÍCH HỢP TRỢ LÝ AI TUẤN TỬ TẾ (DEEPSEEK & GEMINI) TRẢ LỜI 24/7 VỀ BÀI HỌC -->
+  <link rel="stylesheet" href="../ai-assistant.css">
+  <script src="../ai-assistant.js"></script>
+</body></html>
 '@
 Set-Content "index.html" $Index -Encoding UTF8
 
@@ -3184,5 +3188,9 @@ Start-Process "https://tuangemini.github.io/$RepoName/posts/$Stamp/"`;
     init4DVisualStages();
     updateSlidePosition();
   </script>
+
+  <!-- TÍCH HỢP TRỢ LÝ AI TUẤN TỬ TẾ (DEEPSEEK & GEMINI) TRẢ LỜI 24/7 VỀ BÀI HỌC -->
+  <link rel="stylesheet" href="../ai-assistant.css">
+  <script src="../ai-assistant.js"></script>
 </body>
 </html>

@@ -631,7 +631,7 @@ html_content = f"""<!DOCTYPE html>
         👁 Ẩn Trang <span class="hide-count-badge zero" id="hideCountBadge">0</span>
       </button>
       <button class="btn-qr-instant" onclick="openQrFullscreenModal()" title="Bật Mã QR ACB Cỡ Đại Toàn Màn Hình">
-        💳 QUÉT QR ĐĂNG KÝ
+        💬 NHÓM ZALO xAI
       </button>
       <button class="btn-voice-studio" onclick="openVoiceModal()" title="Phòng thu giọng thật">⚙️ Thu Âm</button>
       <button class="btn-github-deploy" onclick="openGitHubModal()" title="Đóng gói đưa lên GitHub Pages">🚀 GitHub</button>
@@ -1281,7 +1281,7 @@ html_content = f"""<!DOCTYPE html>
               <div class="bigsub2">📅 Lớp học trực tuyến: 20h00 tối Thứ Tư &amp; Thứ Bảy hàng tuần trên Zoom</div>
               <div style="display:flex; gap:12px; justify-content:center; flex-wrap:wrap; margin-top:10px;">
                 <button class="btn-qr-instant" style="font-size:1.15rem; padding:12px 28px;" onclick="openQrFullscreenModal()">
-                  💳 QUÉT QR ĐĂNG KÝ NGAY (468.468 VND)
+                  💬 NHÓM ZALO xAI NGAY (Nhóm Zalo VND)
                 </button>
                 <button class="interactive-btn-lg" onclick="confetti()">🎉 Ăn mừng bứt phá!</button>
               </div>
@@ -1328,13 +1328,13 @@ html_content = f"""<!DOCTYPE html>
         <button class="btn-outline-lg" style="background:#0f172a; color:#fff; padding:6px 14px;" onclick="closeQrFullscreenModal()">✕ Đóng</button>
       </div>
 
-      <img id="fullscreenQrImg" src="https://img.vietqr.io/image/ACB-102168268-compact2.png?amount=468468&addInfo=KTCS%20Cunningham%20SDT&accountName=NGUYEN%20ANH%20TUAN" alt="Siêu Mã QR ACB 102168268" style="width:430px; height:430px; max-width:82vw; max-height:55vh; object-fit:contain; margin:0 auto; display:block; border:3px solid #005baa; border-radius:20px; padding:8px;" onerror="this.src='https://api.qrserver.com/v1/create-qr-code/?size=450x450&data=ACB%20102168268%20NGUYEN%20ANH%20TUAN%20468468%20KTCS%20Cunningham%20SDT'" />
+      <img id="fullscreenQrImg" src="https://api.qrserver.com/v1/create-qr-code/?size=450x450&data=https%3A%2F%2Fzalo.me%2Fg%2Firsrqz032" alt="Siêu Mã QR ACB Zalo-xAI" style="width:430px; height:430px; max-width:82vw; max-height:55vh; object-fit:contain; margin:0 auto; display:block; border:3px solid #005baa; border-radius:20px; padding:8px;" onerror="this.src='https://api.qrserver.com/v1/create-qr-code/?size=450x450&data=ACB%20Zalo-xAI%20NGUYEN%20ANH%20TUAN%20%20KTCS%20Cunningham%20SDT'" />
 
       <div style="font-size:1.95rem; font-weight:900; color:#cf2030; margin-top:8px;">
-        ƯU ĐÃI TRẢI NGHIỆM 1 THÁNG: 468.468 VND
+        ƯU ĐÃI TRẢI NGHIỆM 1 THÁNG: Nhóm Zalo VND
       </div>
       <div style="font-size:1.15rem; font-weight:800; color:#005baa; margin-top:4px;">
-        🏦 Ngân hàng ACB Khánh Hòa • STK: 102 168 268 • Nguyễn Anh Tuấn
+        🏦 Ngân hàng Cộng Đồng Zalo • Zalo: Zalo xAI • Nguyễn Anh Tuấn
       </div>
       <div style="font-size:1.05rem; font-weight:800; color:#0f172a; margin-top:4px;">
         Nội dung chuyển khoản: <span style="color:#cf2030; background:#fef08a; padding:2px 10px; border-radius:6px;">KTCS Ten SDT</span> hoặc <span style="color:#005baa; background:#e0f2fe; padding:2px 10px; border-radius:6px;">KTCSxAI Ten SDT</span>
