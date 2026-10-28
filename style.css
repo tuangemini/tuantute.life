@@ -872,6 +872,155 @@ button {
 }
 
 /* ==========================================================================
+   2.5. ZALO COMMUNITY xAI BENTO CARD (Spans 12 cols - Key Conversion Goal)
+   ========================================================================== */
+.card-zalo-community {
+  grid-column: span 12 !important;
+  position: relative;
+  background: linear-gradient(135deg, rgba(8, 26, 68, 0.95) 0%, rgba(4, 15, 42, 0.98) 100%) !important;
+  border: 2px solid #38bdf8 !important;
+  border-radius: var(--radius-lg);
+  padding: 32px 36px;
+  box-shadow: 0 16px 45px rgba(0, 104, 255, 0.28), 0 0 35px rgba(56, 189, 248, 0.15);
+  overflow: hidden;
+  transition: var(--transition-smooth);
+}
+
+.card-zalo-community:hover {
+  border-color: #60a5fa !important;
+  box-shadow: 0 20px 50px rgba(0, 104, 255, 0.4), 0 0 45px rgba(56, 189, 248, 0.25);
+  transform: translateY(-3px);
+}
+
+.zalo-community-grid {
+  display: grid;
+  grid-template-columns: 1fr 280px;
+  gap: 36px;
+  align-items: center;
+}
+
+.zalo-community-content {
+  display: flex;
+  flex-direction: column;
+}
+
+.zalo-community-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  color: #38bdf8;
+  font-weight: 800;
+  letter-spacing: 0.8px;
+  text-transform: uppercase;
+  font-size: 0.85rem;
+  margin-bottom: 10px;
+}
+
+.zalo-community-badge span {
+  display: inline-block;
+  background: rgba(56, 189, 248, 0.15);
+  border: 1px solid rgba(56, 189, 248, 0.35);
+  padding: 4px 12px;
+  border-radius: var(--radius-full);
+}
+
+.zalo-community-title {
+  color: #ffe9ad;
+  font-family: var(--font-heading);
+  font-size: 1.85rem;
+  font-weight: 900;
+  line-height: 1.3;
+  margin: 4px 0 12px;
+  letter-spacing: -0.4px;
+}
+
+.zalo-community-desc {
+  color: #e2e8f0;
+  font-size: 1.02rem;
+  line-height: 1.65;
+  margin-bottom: 22px;
+}
+
+.zalo-community-desc strong {
+  color: #ffffff;
+  font-weight: 700;
+}
+
+.zalo-community-actions {
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+.btn-join-zalo-vip {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 13px 28px;
+  background: linear-gradient(135deg, #0068ff 0%, #004fc4 100%);
+  color: #ffffff !important;
+  font-weight: 800;
+  font-size: 1.02rem;
+  border-radius: var(--radius-full);
+  text-decoration: none;
+  box-shadow: 0 8px 24px rgba(0, 104, 255, 0.45);
+  transition: var(--transition-smooth);
+  border: 1px solid #93c5fd;
+}
+
+.btn-join-zalo-vip:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 12px 32px rgba(0, 104, 255, 0.65);
+  filter: brightness(1.1);
+  color: #ffffff !important;
+}
+
+.zalo-community-free-tag {
+  color: #34d399;
+  font-weight: 700;
+  font-size: 0.92rem;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.zalo-community-qr-box {
+  background: #ffffff;
+  padding: 18px;
+  border-radius: 20px;
+  border: 3px solid #f59e0b;
+  box-shadow: 0 12px 35px rgba(0, 0, 0, 0.6);
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  transition: var(--transition-smooth);
+}
+
+.zalo-community-qr-box:hover {
+  transform: scale(1.02);
+  border-color: #fbbf24;
+}
+
+.zalo-community-qr-img {
+  width: 190px;
+  height: 190px;
+  object-fit: contain;
+  display: block;
+}
+
+.zalo-community-qr-label {
+  font-size: 0.82rem;
+  font-weight: 800;
+  color: #005baa;
+  margin-top: 10px;
+  letter-spacing: 0.3px;
+}
+
+
+/* ==========================================================================
    3. BUSINESS ECOSYSTEM / PORTFOLIO CARD (Spans 12 cols)
    ========================================================================== */
 .card-ecosystem {
@@ -2063,6 +2212,7 @@ textarea {
 
   .card-hero,
   .card-stats,
+  .card-zalo-community,
   .card-ai-era,
   .card-qa-connect,
   .card-ecosystem,
@@ -2070,8 +2220,28 @@ textarea {
   .card-vcard,
   .card-kindness,
   .card-contact {
-    grid-column: span 1;
+    grid-column: span 1 !important;
     padding: 20px;
+  }
+
+  .zalo-community-grid {
+    grid-template-columns: 1fr;
+    gap: 24px;
+    text-align: center;
+  }
+
+  .zalo-community-actions {
+    justify-content: center;
+  }
+
+  .zalo-community-qr-box {
+    max-width: 240px;
+    margin: 0 auto;
+  }
+
+  .zalo-community-qr-img {
+    width: 170px;
+    height: 170px;
   }
 
   .qa-input-grid {
