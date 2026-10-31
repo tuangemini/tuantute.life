@@ -2202,6 +2202,10 @@ textarea {
     height: 40px;
     margin: auto 0;
   }
+
+  .nav-status-badge {
+    display: none;
+  }
 }
 
 @media (max-width: 768px) {
@@ -2214,6 +2218,8 @@ textarea {
   .card-stats,
   .card-zalo-community,
   .card-ai-era,
+  .card-student-websites,
+  .card-student-videos,
   .card-qa-connect,
   .card-ecosystem,
   .card-milestones,
@@ -2309,6 +2315,7 @@ textarea {
 
 /* --- 1. STUDENT WEBSITES SECTION --- */
 .card-student-websites {
+  grid-column: span 12 !important;
   position: relative;
   overflow: hidden;
 }
@@ -2619,6 +2626,7 @@ textarea {
 
 /* --- 2. STUDENT VIDEOS SECTION --- */
 .card-student-videos {
+  grid-column: span 12 !important;
   position: relative;
   overflow: hidden;
 }
@@ -2973,5 +2981,18 @@ textarea {
   .video-modal-actions {
     flex-direction: column;
     text-align: center;
+  }
+}
+
+@media (max-width: 640px) {
+  .student-grid {
+    grid-template-columns: 1fr;
+  }
+  .video-cards-grid {
+    grid-template-columns: 1fr;
+  }
+  .student-filter-bar,
+  .video-filter-bar {
+    padding-bottom: 12px;
   }
 }
