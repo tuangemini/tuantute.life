@@ -482,4 +482,118 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // Run on start
   init();
+
+
+  // =============================================================
+  // STUDENT WEBSITES & VIDEOS INTERACTION LOGIC
+  // =============================================================
+  function initStudentShowcase() {
+    // 1. Student Websites Filter
+    const siteFilterBtns = document.querySelectorAll('.student-filter-btn');
+    const siteCards = document.querySelectorAll('.student-site-card');
+
+    siteFilterBtns.forEach(btn => {
+      btn.addEventListener('click', () => {
+        siteFilterBtns.forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+        const filter = btn.getAttribute('data-filter');
+
+        siteCards.forEach(card => {
+          const category = card.getAttribute('data-category');
+          if (filter === 'all' || category === filter) {
+            card.style.display = 'flex';
+          } else {
+            card.style.display = 'none';
+          }
+        });
+      });
+    });
+
+    // 2. Video Playlist Filter
+    const vfilterBtns = document.querySelectorAll('.vfilter-btn');
+    const videoCards = document.querySelectorAll('.video-item-card');
+
+    vfilterBtns.forEach(btn => {
+      btn.addEventListener('click', () => {
+        vfilterBtns.forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+        const vfilter = btn.getAttribute('data-vfilter');
+
+        videoCards.forEach(card => {
+          const vcat = card.getAttribute('data-vcat');
+          if (vfilter === 'all' || vcat === vfilter) {
+            card.style.display = 'flex';
+          } else {
+            card.style.display = 'none';
+          }
+        });
+      });
+    });
+
+    // 3. Video Modal & Theater Click
+    const videoModal = document.getElementById('videoModalOverlay');
+    const videoModalIframe = document.getElementById('videoModalIframe');
+    const videoModalTitle = document.getElementById('videoModalTitle');
+    const videoModalYtLink = document.getElementById('videoModalYtLink');
+    const btnCloseVideoModal = document.getElementById('btnCloseVideoModal');
+
+    const featuredIframe = document.getElementById('featuredIframe');
+    const featuredTitle = document.getElementById('featuredTitle');
+
+    function openVideoModal(vid, title) {
+      if (!videoModal || !videoModalIframe) return;
+      videoModalTitle.textContent = title;
+      videoModalIframe.src = 'https://www.youtube.com/embed/' + vid + '?autoplay=1&rel=0';
+      videoModalYtLink.href = 'https://www.youtube.com/watch?v=' + vid + '&list=PLFZjSefZJjsIc6IeUUWkA90-SE956r3o3';
+      videoModal.classList.add('active');
+      videoModal.setAttribute('aria-hidden', 'false');
+      document.body.style.overflow = 'hidden';
+
+      // Also update featured theater
+      if (featuredIframe) {
+        featuredIframe.src = 'https://www.youtube.com/embed/' + vid + '?rel=0';
+      }
+      if (featuredTitle) {
+        featuredTitle.textContent = title;
+      }
+    }
+
+    function closeVideoModal() {
+      if (!videoModal || !videoModalIframe) return;
+      videoModal.classList.remove('active');
+      videoModal.setAttribute('aria-hidden', 'true');
+      videoModalIframe.src = '';
+      document.body.style.overflow = '';
+    }
+
+    videoCards.forEach(card => {
+      card.addEventListener('click', () => {
+        const vid = card.getAttribute('data-vid');
+        const title = card.getAttribute('data-vtitle');
+        openVideoModal(vid, title);
+      });
+    });
+
+    if (btnCloseVideoModal) {
+      btnCloseVideoModal.addEventListener('click', closeVideoModal);
+    }
+
+    if (videoModal) {
+      videoModal.addEventListener('click', (e) => {
+        if (e.target === videoModal) {
+          closeVideoModal();
+        }
+      });
+    }
+
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && videoModal && videoModal.classList.contains('active')) {
+        closeVideoModal();
+      }
+    });
+  }
+
+  // Call showcase init
+  initStudentShowcase();
+
 });
