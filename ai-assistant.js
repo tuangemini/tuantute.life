@@ -66,6 +66,16 @@ KIẾN THỨC VỀ CÁC BÀI GIẢNG TRÊN WEBSITE TUANTUTE.LIFE:
    - Tạo website cá nhân bằng giọng nói thông qua Gemini & GitHub Pages.
    - Kết nối tự động hóa Website + Google Sheets + Telegram Bot chăm sóc học viên tự động.
 
+
+5. BÀI GIẢNG "KIẾN TẠO CUỘC SỐNG xAI - THÔNG ĐIỆP & GIÁ TRỊ DI SẢN 4D (V04)":
+   - Đối tượng: Người đi làm tại Việt Nam tuổi từ 38 đến 58. Lịch học trực tuyến 20h00 - 22h00 tối Thứ 4 & Thứ 7.
+   - 3 Video Điện ảnh 16:9 Full HD Ken Burns lồng tiếng Edge-TTS hòa âm 432Hz/528Hz:
+     + Video 1 (Slide 3): Sông Nile và Biển Chết - Quy luật cho đi để trường tồn (Sông Nile tưới mát nền văn minh, Biển Chết tích trữ nên mặn chát).
+     + Video 2 (Slide 4): Hiệu ứng cánh bướm - Đòn bẩy xAI & Lãi kép 1% mỗi ngày (Chạy Vrace 5h30 + Giải phóng 3 giờ làm việc thủ công).
+     + Video 3 (Slide 7): Vincent Van Gogh - Di sản 180 triệu đô (Đừng làm thợ hồ vì ngày công vụn vặt; hãy làm Tổng công trình sư kiệt tác cuộc đời 4D).
+   - Hội Đồng Cố Vấn Trí Tuệ & Giác Ngộ: Đức Phật / Bậc Thiền Sư (Tâm an), Lão Tử (Sông Nile), Seneca (Khắc Kỷ), TS. Glenn Cunningham (Ý chí thép), TS. Huberman (Cardio Zone 2), Peter Drucker (80/20), Van Gogh (Di sản 4D), Tuấn Tử Tế (Cơ trưởng A388).
+   - Sổ tay chuyển hóa 90 ngày: Rèn luyện Thân (Vrace) - Tâm (Biết ơn) - Trí (xAI 80/20) - Di sản (Cho đi).
+
 VĂN PHONG GIAO TIẾP:
 - Xưng hô: "Chào bạn! Tôi là Trợ lý AI của Anh Tuấn Tử Tế".
 - Giọng điệu ấm áp, hào sảng, trí tuệ, luôn khích lệ tinh thần và kết thúc bằng lời mời tham gia nhóm Zalo https://zalo.me/g/irsrqz032 để nhận trọn bộ tài liệu và lịch học Zoom!
@@ -96,6 +106,55 @@ VĂN PHONG GIAO TIẾP:
 
   function getSmartFallbackReply(question) {
     const q = question.toLowerCase();
+
+    if (q.includes('sông nile') || q.includes('biển chết') || q.includes('cho đi') || q.includes('lão tử')) {
+      return `🌊 <strong>Sông Nile & Biển Chết – Quy Luật Cho Đi Để Trường Tồn (Lão Tử & KTCS xAI):</strong><br><br>` +
+        `• <strong>Sông Nile:</strong> Đón nhận nguồn nước mát lành rồi hào phóng tuôn chảy, bồi đắp phù sa tưới mát mọi thung lũng, tạo nên nền văn minh cổ đại rực rỡ và muôn loài sinh sôi.<br>` +
+        `• <strong>Biển Chết:</strong> Chỉ biết nhận vào mà không hề cho đi một giọt nước nào, biến mình thành hồ nước mặn chát cô độc, không một sinh vật nào sống sót!<br>` +
+        `• <strong>Bài học cuộc đời:</strong> Sự giàu có đích thực ở tuổi trung niên không nằm ở việc bạn tích trữ bao nhiêu của cải, mà nằm ở việc bạn đã trở thành dòng sông Nile trao đi giá trị và kiến tạo di sản cho cuộc đời!<br><br>` +
+        `👉 Mở xem Video 1 tại bài giảng V04: <a href="ktcs-thong-diep-gia-tri-di-san-4d-v04.html" target="_blank" style="color:#fde047; font-weight:800;">ktcs-thong-diep-gia-tri-di-san-4d-v04.html</a>`;
+    }
+
+    if (q.includes('cánh bướm') || q.includes('lãi kép') || q.includes('1%') || q.includes('bước nhảy')) {
+      return `🦋 <strong>Hiệu Ứng Cánh Bướm & Lãi Kép 1% Mỗi Ngày (Đòn Bẩy xAI Cấp Số Nhân):</strong><br><br>` +
+        `• Một cái đập cánh nhẹ nhàng của chú bướm tại rừng rậm Amazon có thể tạo nên cơn cuồng phong ở nửa bán cầu kia.<br>` +
+        `• <strong>Cánh bướm của bạn:</strong> 5h30 sáng xỏ giày chạy bộ Vrace cùng bộ lạc + Ứng dụng một câu lệnh AI chuẩn mực để giải phóng 3 giờ làm việc thủ công mỗi ngày.<br>` +
+        `• <strong>Sức mạnh toán học:</strong> 1% cải thiện mỗi ngày: (1.01)^365 = <strong>37.78 lần tăng trưởng</strong> sau 1 năm!<br><br>` +
+        `👉 Xem Video 2 tại: <a href="ktcs-thong-diep-gia-tri-di-san-4d-v04.html" target="_blank" style="color:#fde047; font-weight:800;">ktcs-thong-diep-gia-tri-di-san-4d-v04.html</a>`;
+    }
+
+    if (q.includes('van gogh') || q.includes('180 triệu') || q.includes('di sản') || q.includes('kiệt tác') || q.includes('thợ hồ')) {
+      return `🎨 <strong>Vincent Van Gogh & Di Sản 180 Triệu Đô (Giá Trị Vượt Thời Gian):</strong><br><br>` +
+        `• Cả đời nghèo khó và chỉ bán được đúng một bức tranh với giá bèo bọt, nhưng Van Gogh chưa từng vẽ tranh chỉ để mưu sinh qua ngày. Ông dồn toàn bộ tâm hồn, tình yêu và những vì sao rực cháy vào từng nét cọ cuộn trào cảm xúc.<br>` +
+        `• Ngày nay, mỗi kiệt tác như <em>Đêm Đầy Sao</em> có giá trị hơn 180 triệu USD và sống mãi cùng nhân loại.<br>` +
+        `• <strong>Thông điệp tối thượng:</strong> Đừng làm thợ hồ chỉ làm việc vì ngày công vụn vặt; hãy bước lên làm Tổng công trình sư kiệt tác cuộc đời, kiến tạo di sản 4D trường tồn cùng thời gian!<br><br>` +
+        `👉 Xem Video 3 tại: <a href="ktcs-thong-diep-gia-tri-di-san-4d-v04.html" target="_blank" style="color:#fde047; font-weight:800;">ktcs-thong-diep-gia-tri-di-san-4d-v04.html</a>`;
+    }
+
+    if (q.includes('hội đồng') || q.includes('cố vấn') || q.includes('trí tuệ') || q.includes('giác ngộ') || q.includes('chuyên gia')) {
+      return `🏛️ <strong>Hội Đồng Cố Vấn Trí Tuệ & Giác Ngộ xAI (Nguyên Tắc Tối Thượng):</strong><br><br>` +
+        `Trong hệ sinh thái bài giảng của Anh Tuấn Tử Tế, bạn có thể tham vấn trực tiếp cùng 8 Bậc Trí Huệ & Vĩ Nhân Xuất Chúng:<br>` +
+        `1. 🧘 <strong>Bậc Thiền Sư Tỉnh Thức:</strong> Tâm an lạc, buông bỏ lo âu, chánh niệm.<br>` +
+        `2. 🌊 <strong>Lão Tử:</strong> Triết lý Sông Nile, nhu thắng cương, cho đi để trường tồn.<br>` +
+        `3. 🏛️ <strong>Seneca & Marcus Aurelius:</strong> Khắc Kỷ, tự tạo may mắn thật sự.<br>` +
+        `4. 🏃 <strong>TS. Glenn Cunningham:</strong> Ý chí thép, chạy bộ 5h30 sáng Vrace.<br>` +
+        `5. 🩺 <strong>TS. Huberman & Peter Attia:</strong> Nhịp tim Zone 2 & Y học trường thọ.<br>` +
+        `6. 💼 <strong>Peter Drucker & Buffett:</strong> Quản trị 80/20 & Lãi kép cấp số nhân.<br>` +
+        `7. 🎨 <strong>Vincent Van Gogh:</strong> Kiến tạo kiệt tác di sản 4 chiều.<br>` +
+        `8. 👑 <strong>Tuấn Tử Tế:</strong> Tâm thức cơ trưởng A388 & Sự rộng lượng.<br><br>` +
+        `👉 Trải nghiệm tham vấn tại: <a href="ktcs-thong-diep-gia-tri-di-san-4d-v04.html" target="_blank" style="color:#fde047; font-weight:800;">Bài Giảng V04 (Nút Hội Đồng Trí Tuệ)</a>`;
+    }
+
+    if (q.includes('nhật ký') || q.includes('sổ tay') || q.includes('ghi chép') || q.includes('90 ngày')) {
+      return `📓 <strong>Sổ Tay Khai Sáng & Nhật Ký Chuyển Hóa 90 Ngày:</strong><br><br>` +
+        `Hệ thống tích hợp sẵn sổ tay điện tử ghi chép 4 trụ cột mỗi ngày:<br>` +
+        `• <strong>1. THÂN:</strong> Quãng đường chạy Vrace 5h30 sáng & nhịp tim Zone 2.<br>` +
+        `• <strong>2. TÂM:</strong> 3 điều trân quý biết ơn & gắn kết gia đình thấu cảm.<br>` +
+        `• <strong>3. TRÍ:</strong> 1 tác vụ 80/20 đã dùng xAI tự động hóa giải phóng 3 giờ.<br>` +
+        `• <strong>4. DI SẢN:</strong> Hành động tử tế trao đi cho bộ lạc.<br><br>` +
+        `✨ <em>Đặc biệt có nút <strong>"xAI Nâng Cấp Lời Văn"</strong> tự động trau chuốt thành bài viết truyền cảm hứng để đăng Zalo / Facebook!</em><br><br>` +
+        `👉 Bấm mở sổ tay tại: <a href="ktcs-thong-diep-gia-tri-di-san-4d-v04.html" target="_blank" style="color:#fde047; font-weight:800;">ktcs-thong-diep-gia-tri-di-san-4d-v04.html</a>`;
+    }
 
     if (q.includes('zalo') || q.includes('nhóm') || q.includes('cộng đồng') || q.includes('tham gia') || q.includes('đăng ký') || q.includes('lớp') || q.includes('zoom') || q.includes('học')) {
       return `🤝 <strong>Cộng Đồng: Phát Triển Bản Thân - Tâm - Trí xAI:</strong><br><br>` +
