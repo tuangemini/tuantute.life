@@ -1,0 +1,871 @@
+[
+  {
+    "pageNumber": 1,
+    "tag": "🧭 GIỚI THIỆU CHƯƠNG TRÌNH • TRANG 1 / 30",
+    "title": "Kiến Tạo Cuộc Sống xAI:<br>Nền Tảng Giá Trị và Di Sản Vĩnh Cửu",
+    "bullets": [
+      "Khám phá thông điệp giá trị, ý nghĩa sâu sắc và di sản vượt thời gian.",
+      "Trang bị hành trang toàn diện (Thân - Tâm - Trí) cho kỷ nguyên Trí tuệ Nhân tạo.",
+      "Xây dựng một cuộc sống đích thực, vững vàng trong mọi biến động của tương lai."
+    ],
+    "flipCards": [
+      {
+        "front": "TRƯỚC: Cảm thấy lạc lõng, thiếu định hướng trong kỷ nguyên AI đầy biến động.",
+        "back": "TRỞ THÀNH: Người kiến tạo cuộc sống có ý nghĩa, vững vàng với giá trị cốt lõi."
+      },
+      {
+        "front": "TRƯỚC: Thiếu sự chuẩn bị toàn diện cho những thách thức của tương lai công nghệ.",
+        "back": "TRỞ THÀNH: Sở hữu hành trang Thân - Tâm - Trí vững chắc, sẵn sàng đón đầu."
+      },
+      {
+        "front": "TRƯỚC: Lo lắng về việc để lại dấu ấn hay di sản gì cho thế hệ mai sau.",
+        "back": "TRỞ THÀNH: Kiến tạo di sản giá trị, truyền cảm hứng và vượt thời gian."
+      }
+    ],
+    "script": "Chào mừng tất cả quý vị đến với hành trình đặc biệt của chúng ta: 'Kiến Tạo Cuộc Sống xAI'. Trong một thế giới đang thay đổi chóng mặt bởi trí tuệ nhân tạo, câu hỏi lớn nhất không phải là 'AI sẽ làm gì?', mà là 'Chúng ta sẽ sống như thế nào?'. Chương trình này không chỉ là một khóa học, mà là một lời mời gọi để mỗi chúng ta cùng nhau khám phá, định hình lại những giá trị cốt lõi, tìm thấy ý nghĩa sâu sắc và xây dựng một di sản thực sự vượt thời gian. Chúng ta sẽ cùng nhau trang bị một hành trang toàn diện – từ sức khỏe thể chất (Thân), sự bình an nội tâm (Tâm), đến năng lực tư duy sắc bén (Trí) – để không chỉ thích nghi mà còn thịnh vượng trong kỷ nguyên mới. Hãy cùng Thầy Tuấn Tử Tế bắt đầu hành trình kiến tạo một cuộc sống đích thực, đầy đủ và có ý nghĩa, một cuộc sống mà AI sẽ là công cụ hỗ trợ đắc lực, chứ không phải là yếu tố định đoạt.",
+    "flowPrompt": "Cinematic 16:9 seamless loop, a serene yet dynamic scene. A person stands on a futuristic, glowing pathway, looking towards a horizon where digital cityscapes blend with natural landscapes. Around them, subtle holographic elements represent data and AI, but they are interacting with tangible elements: planting a tree that grows rapidly, sketching blueprints for a meaningful life, meditating under a digital aurora. The scene transitions smoothly, showing hands building a miniature, intricate world, then a wise figure passing down knowledge to a younger generation, all within a harmonious blend of technology and nature. Emphasize growth, wisdom, human connection, and purposeful creation in an AI-integrated future. Soft, warm lighting with occasional futuristic glows. UHD, highly detailed, inspiring, hopeful.",
+    "image": "assets/slides_pdf/page_01.webp",
+    "audioFemale": "assets/audio/nu_01.mp3",
+    "audioMale": "assets/audio/nam_01.mp3"
+  },
+  {
+    "pageNumber": 2,
+    "tag": "💡 THÓI QUEN VÀ KỶ LUẬT • TRANG 2 / 30",
+    "title": "Lời Chào Từ Đêm Trăng Tới Bình Minh",
+    "bullets": [
+      "Hành trình vĩ đại luôn bắt đầu từ những kỷ luật nhỏ bé nhất.",
+      "20:00 Đêm Về: Mài giũa trí tuệ, làm chủ công nghệ mới.",
+      "05:00 Bình Minh: Đánh thức sắc vóc, rèn luyện Thân - Tâm. · Dành cho anh chị em ở độ tuổi 38-58, những người khao khát kiến tạo cuộc sống."
+    ],
+    "flipCards": [
+      {
+        "front": "TRƯỚC: Cảm thấy cuộc sống thiếu động lực, dễ bị cuốn theo dòng chảy.",
+        "back": "TRỞ THÀNH: Người kiến tạo cuộc sống, chủ động với những kỷ luật nhỏ bé mỗi ngày."
+      },
+      {
+        "front": "TRƯỚC: Loay hoay với công nghệ, cảm thấy mình tụt hậu hoặc bị lệ thuộc.",
+        "back": "TRỞ THÀNH: Người làm chủ công nghệ, dùng trí tuệ để khai phá tiềm năng mới."
+      },
+      {
+        "front": "TRƯỚC: Sức khỏe thể chất và tinh thần chưa được chăm sóc đúng mức.",
+        "back": "TRỞ THÀNH: Người có sắc vóc khỏe mạnh, tinh thần minh mẫn, tràn đầy năng lượng."
+      }
+    ],
+    "script": "Chào mừng anh chị em, những người đang ở độ tuổi vàng 38-58, đến với hành trình KTCSxAI! Slide này là lời chào ấm áp, một lời nhắc nhở rằng mỗi hành trình vĩ đại đều bắt đầu từ những kỷ luật nhỏ bé nhất. Chúng ta sẽ cùng nhau khám phá cách kiến tạo một cuộc sống trọn vẹn, bắt đầu từ những thói quen đơn giản nhưng mạnh mẽ. Hãy hình dung: 20:00 đêm về, thay vì lướt web vô định, chúng ta mài giũa trí tuệ, làm chủ công nghệ mới, biến nó thành công cụ đắc lực cho sự phát triển bản thân. Và rồi, 05:00 bình minh, chúng ta thức dậy, đánh thức sắc vóc, rèn luyện Thân - Tâm, chuẩn bị cho một ngày mới tràn đầy năng lượng. Đây không chỉ là lịch trình, mà là một triết lý sống, nơi mỗi khoảnh khắc đều được tận dụng để nâng tầm bản thân. Hãy cùng nhau bắt đầu hành trình này nhé!",
+    "flowPrompt": "Cinematic 16:9 seamless loop of a serene transition from a starry night sky with subtle digital circuit patterns to a vibrant sunrise over a calm horizon. On the night side, an open book glows with knowledge, and a tablet displays intricate tech designs. On the dawn side, a silhouette of a person meditating, a steaming cup of coffee, and a pair of running shoes symbolize morning rituals and well-being. The overall mood is inspiring, disciplined, and transformative, blending intellectual growth with physical and mental rejuvenation.",
+    "image": "assets/slides_pdf/page_02.webp",
+    "audioFemale": "assets/audio/nu_02.mp3",
+    "audioMale": "assets/audio/nam_02.mp3"
+  },
+  {
+    "pageNumber": 3,
+    "tag": "💡 BẢN CHẤT TỐI THƯỢNG • TRANG 3 / 30",
+    "title": "Sống là Phát Đi Một Thông Điệp",
+    "bullets": [
+      "Giáo dục: Truyền ngọn lửa đánh thức, không chỉ kiến thức khô khan.",
+      "Kinh doanh: Bán ý nghĩa và niềm tin, không chỉ sản phẩm vật lý.",
+      "Gia đình: Cha mẹ là thông điệp sống động, là tấm gương cho con cái. · Di sản: Là thông điệp tử tế chảy mãi qua các thế hệ."
+    ],
+    "flipCards": [
+      {
+        "front": "TRƯỚC: Giáo dục chỉ là truyền đạt kiến thức khô khan.",
+        "back": "TRỞ THÀNH: Giáo dục là truyền ngọn lửa đánh thức tâm hồn."
+      },
+      {
+        "front": "TRƯỚC: Kinh doanh chỉ bán sản phẩm vật lý, dịch vụ.",
+        "back": "TRỞ THÀNH: Kinh doanh bán ý nghĩa, giá trị và niềm tin."
+      },
+      {
+        "front": "TRƯỚC: Di sản là tài sản vật chất, công trình vĩ đại.",
+        "back": "TRỞ THÀNH: Di sản là thông điệp tử tế, giá trị truyền đời."
+      }
+    ],
+    "script": "Chào mừng quý vị đến với một góc nhìn sâu sắc về bản chất cuộc sống. Chúng ta thường nghĩ về cuộc đời mình như một hành trình cá nhân, nhưng thực ra, mỗi khoảnh khắc sống của chúng ta đều là một thông điệp đang được phát đi. Từ cách chúng ta giáo dục con cái – không chỉ truyền đạt kiến thức mà còn thắp lên ngọn lửa đam mê, đến cách chúng ta kinh doanh – không chỉ bán sản phẩm mà còn trao đi ý nghĩa và niềm tin. Trong gia đình, cha mẹ chính là thông điệp sống động nhất, là tấm gương phản chiếu cho con cái. Và di sản chúng ta để lại không phải là những công trình vật chất, mà là dòng chảy tử tế, là những giá trị tốt đẹp được truyền từ thế hệ này sang thế hệ khác. Hãy sống một cách có ý thức, để thông điệp của bạn là nguồn cảm hứng, là ánh sáng dẫn lối cho những người xung quanh, kiến tạo nên một cuộc sống ý nghĩa hơn.",
+    "flowPrompt": "Cinematic 16:9 seamless loop of a stylized human silhouette at the center, radiating warm, ethereal light and energy outwards in concentric, flowing patterns. This energy subtly transforms into symbolic representations: an open book glowing with knowledge, two hands shaking in agreement, a loving family silhouette, and a deeply rooted ancient tree. The overall aesthetic is watercolor and digital painting fusion, with a cosmic, interconnected feel. The colors are warm golds, blues, and oranges, blending harmoniously. The movement is gentle, continuous, and flowing, emphasizing the ripple effect of one's essence. Ethereal particles drift through the scene, enhancing the spiritual and profound nature of the message being sent.",
+    "image": "assets/slides_pdf/page_03.webp",
+    "audioFemale": "assets/audio/nu_03.mp3",
+    "audioMale": "assets/audio/nam_03.mp3"
+  },
+  {
+    "pageNumber": 4,
+    "tag": "🌱 BA GỐC RỄ • TRANG 4 / 30",
+    "title": "Ba Gốc Rễ:<br>Kiến Tạo Sức Mạnh Nội Tại",
+    "bullets": [
+      "Thân (Móng nhà): Cơ thể khỏe mạnh, tràn đầy sinh khí, tạo nên năng lượng sống mãnh liệt.",
+      "Tâm (Cột trụ): Bình an, yêu thương, chân thành, phát ra tần số rung động chạm đến trái tim.",
+      "Trí (Mái nhà): Liên tục học hỏi, hợp nhất não bộ, làm chủ AI, dẫn lối đến chiều sâu minh triết."
+    ],
+    "flipCards": [
+      {
+        "front": "TRƯỚC: Cơ thể yếu ớt, thiếu sinh khí",
+        "back": "TRỞ THÀNH: Thân khỏe mạnh, tràn đầy năng lượng sống"
+      },
+      {
+        "front": "TRƯỚC: Tâm hồn bất an, thiếu kết nối",
+        "back": "TRỞ THÀNH: Tâm bình an, yêu thương, chân thành"
+      },
+      {
+        "front": "TRƯỚC: Tư duy rời rạc, thiếu chiều sâu",
+        "back": "TRỞ THÀNH: Trí tuệ minh triết, làm chủ tri thức"
+      }
+    ],
+    "script": "Chào mừng bạn đến với hành trình kiến tạo nội lực! Hôm nay, chúng ta sẽ khám phá ba gốc rễ vững chắc tạo nên sức mạnh bên trong mỗi con người: Thân, Tâm và Trí. Hãy hình dung cuộc đời mình như một ngôi nhà. Thân chính là nền móng, một cơ thể khỏe mạnh, tràn đầy sinh khí sẽ là bệ phóng cho mọi năng lượng sống. Tâm là những cột trụ vững chãi, nơi bình an, yêu thương và sự chân thành ngự trị, giúp chúng ta phát ra tần số rung động chạm đến trái tim người khác. Và Trí, chính là mái nhà, nơi chúng ta không ngừng học hỏi, hợp nhất tri thức, làm chủ công nghệ như AI, để đạt đến chiều sâu của minh triết. Sức mạnh thực sự không nằm ở lời nói hoa mỹ, mà ở chính nội lực được xây dựng từ ba gốc rễ này. Hãy cùng nhau vun bồi để ngôi nhà cuộc đời chúng ta thật kiên cố và rạng rỡ nhé!",
+    "flowPrompt": "Cinematic 16:9 seamless loop. A beautifully rendered architectural blueprint of a cozy, strong house slowly materializes from glowing lines. As it builds, subtle energy flows from the foundation (representing 'Body' - strong, vibrant), up through the pillars (representing 'Mind' - peaceful, loving light), and culminates in the roof (representing 'Spirit' - a bright, expanding light bulb of wisdom and AI integration). The house stands on a solid, glowing base, surrounded by a gentle aura of internal power. The scene is warm, inspiring, and symbolizes the holistic development of inner strength. Soft, ethereal lighting. Golden hour glow.",
+    "image": "assets/slides_pdf/page_04.webp",
+    "audioFemale": "assets/audio/nu_04.mp3",
+    "audioMale": "assets/audio/nam_04.mp3"
+  },
+  {
+    "pageNumber": 5,
+    "tag": "💪 KỶ LUẬT SINH KHÍ • TRANG 5 / 30",
+    "title": "Kỷ Luật Sinh Khí:<br>Nền Tảng Vững Chắc Cho Mọi Chuyển Hóa",
+    "bullets": [
+      "Chủ động rèn luyện thân thể mỗi ngày, tích lũy sinh khí dồi dào.",
+      "Tận dụng công nghệ để theo dõi, lan tỏa năng lượng tích cực trong cộng đồng.",
+      "Sinh khí là gốc rễ cho tâm an, thông điệp mạnh mẽ và chuyển hóa nhận thức sâu sắc."
+    ],
+    "flipCards": [
+      {
+        "front": "TRƯỚC: Cơ thể uể oải, thiếu năng lượng",
+        "back": "TRỞ THÀNH: Cơ thể tràn đầy sinh khí, khỏe mạnh"
+      },
+      {
+        "front": "TRƯỚC: Tâm trí bất an, dễ xao nhãng",
+        "back": "TRỞ THÀNH: Tâm trí an yên, vững vàng, tập trung"
+      },
+      {
+        "front": "TRƯỚC: Tiếng ồn thông tin hỗn loạn",
+        "back": "TRỞ THÀNH: Tín hiệu đánh thức, dẫn lối rõ ràng"
+      }
+    ],
+    "script": "Chào mừng bạn đến với một chủ đề vô cùng quan trọng: Kỷ Luật Sinh Khí – Nền Tảng Vững Chắc Cho Mọi Chuyển Hóa. Bạn có thấy không, hành trình chuyển hóa bắt đầu từ những điều giản dị nhất: một buổi sáng chạy bộ đầy năng lượng, việc theo dõi và cải thiện bản thân qua các ứng dụng như VRACE, và quan trọng hơn cả là việc lan tỏa năng lượng tích cực ấy đến cộng đồng, qua Zalo hay Facebook. Khi thân thể khỏe mạnh, tràn đầy sinh khí, tâm trí chúng ta mới thực sự an yên. Từ đó, mọi thông điệp chúng ta gửi đi đều mang một sức mạnh nội tại, một sự chân thành khó cưỡng. Điều kỳ diệu là, chính nhờ sinh khí dồi dào, chúng ta có thể biến những 'tiếng ồn thông tin' hàng ngày thành những 'tín hiệu đánh thức' quý giá, giúp ta nhìn rõ hơn con đường mình đang đi. Hãy cùng nhau xây dựng kỷ luật sinh khí để kiến tạo một cuộc sống tràn đầy năng lượng và ý nghĩa nhé!",
+    "flowPrompt": "Cinematic 16:9 seamless loop of a person running joyfully at sunrise, transitioning to a hand holding a smartphone tracking progress on a vibrant map app, then to a diverse group of people high-fiving and sharing positive energy with social media icons (Facebook, Zalo) subtly appearing. The scene should convey vitality, discipline, community, and personal transformation, with dynamic lighting and an uplifting mood. Focus on smooth transitions between scenes, emphasizing energy flow and awakening. The overall aesthetic is inspiring and energetic.",
+    "image": "assets/slides_pdf/page_05.webp",
+    "audioFemale": "assets/audio/nu_05.mp3",
+    "audioMale": "assets/audio/nam_05.mp3"
+  },
+  {
+    "pageNumber": 6,
+    "tag": "KHOA HỌC NÃO BỘ • TRANG 6 / 30",
+    "title": "Khoa Học Não Bộ:<br>Chạy Marathon Bằng Hai Chân",
+    "bullets": [
+      "Não trái (Logic) mang đến cấu trúc, bằng chứng khoa học và số liệu thực tế, giúp người nghe hiểu sâu sắc vấn đề.",
+      "Não phải (Cảm xúc) truyền tải qua câu chuyện, hình ảnh, vần điệu và ẩn dụ, giúp người nghe nhớ lâu và hành động.",
+      "Một thông điệp xuất chúng là sự hợp nhất hài hòa giữa logic và cảm xúc, như chạy marathon bằng cả hai chân."
+    ],
+    "flipCards": [
+      {
+        "front": "TRƯỚC: Chỉ dùng Logic",
+        "back": "TRỞ THÀNH: Thông điệp khô khan, khó nhớ, thiếu động lực hành động"
+      },
+      {
+        "front": "TRƯỚC: Chỉ dùng Cảm xúc",
+        "back": "TRỞ THÀNH: Thông điệp bay bổng nhưng thiếu chiều sâu, không thuyết phục"
+      },
+      {
+        "front": "TRƯỚC: Tách rời Logic và Cảm xúc",
+        "back": "TRỞ THÀNH: Thông điệp toàn diện, vừa sâu sắc vừa chạm đến trái tim, thúc đẩy hành động"
+      }
+    ],
+    "script": "Chào mừng quý vị đến với một góc nhìn thú vị về cách bộ não chúng ta tiếp nhận thông tin. Hôm nay, chúng ta sẽ khám phá khoa học não bộ qua hình ảnh 'Chạy Marathon Bằng Hai Chân'. Hãy hình dung, não trái của chúng ta như một vận động viên logic, chuyên về cấu trúc, bằng chứng khoa học và số liệu thực tế. Nó giúp chúng ta phân tích, hiểu sâu mọi vấn đề một cách rõ ràng, mạch lạc. Đây là nền tảng vững chắc cho mọi thông điệp. Còn não phải, đó là người nghệ sĩ đầy cảm xúc, kể chuyện qua hình ảnh, vần điệu và những ẩn dụ sâu sắc. Não phải giúp thông điệp trở nên sống động, dễ nhớ, chạm đến trái tim và thôi thúc chúng ta hành động. Giống như một cuộc chạy marathon, chúng ta không thể chỉ dùng một chân. Một thông điệp thực sự xuất chúng, có sức lan tỏa mạnh mẽ, phải là sự hợp nhất hoàn hảo của cả hai: sự chặt chẽ của logic và sự lay động của cảm xúc. Khi đó, thông điệp của bạn sẽ không chỉ được hiểu mà còn được cảm nhận, được ghi nhớ và được chuyển hóa thành hành động thực tế.",
+    "flowPrompt": "Cinematic 16:9 seamless loop. A split screen of a human brain. The left hemisphere is depicted with intricate gears, blueprints, data visualizations, and flowing mathematical equations, all in cool, precise blues and grays. The right hemisphere is a vibrant explosion of watercolor art, musical notes, blooming flowers, swirling colors, and dreamlike clouds, in warm, expressive hues. Both halves are subtly connected by glowing neural pathways, symbolizing synergy. A faint, energetic runner's silhouette is seen in the background, moving smoothly, representing the 'marathon' of communication. The transition between the two halves is fluid and harmonious, not a harsh line. Dynamic lighting, soft glow. UHD, high detail, artistic.",
+    "image": "assets/slides_pdf/page_06.webp",
+    "audioFemale": "assets/audio/nu_06.mp3",
+    "audioMale": "assets/audio/nam_06.mp3"
+  },
+  {
+    "pageNumber": 7,
+    "tag": "NÃO PHẢI • TRANG 7 / 30",
+    "title": "Nghệ Thuật Chạm Não Phải:<br>Sức Mạnh Của Cảm Xúc",
+    "bullets": [
+      "Thông điệp thuần túy thông tin thường kém hiệu quả trong việc tạo ra sự thay đổi.",
+      "Kích hoạt cảm xúc, đặc biệt là lòng biết ơn và sự đồng cảm, có sức mạnh lay động hành động.",
+      "Nghệ thuật giao tiếp đỉnh cao là biết cách chạm đến trái tim, không chỉ truyền tải dữ liệu."
+    ],
+    "flipCards": [
+      {
+        "front": "TRƯỚC: Thông điệp chỉ cung cấp thông tin khô khan: 'Tôi bị mù, xin hãy giúp tôi.'",
+        "back": "TRỞ THÀNH: Thông điệp chạm đến cảm xúc, khơi gợi sự đồng cảm: 'Hôm nay là một ngày mùa xuân tuyệt đẹp, và tôi không thể nhìn thấy nó.'"
+      },
+      {
+        "front": "TRƯỚC: Tư duy thông tin, thiếu động lực hành động từ người nghe.",
+        "back": "TRỞ THÀNH: Đánh thức lòng biết ơn, kích hoạt hành động ngay lập tức và mạnh mẽ."
+      },
+      {
+        "front": "TRƯỚC: Chưa lan tỏa điều hữu ích này.",
+        "back": "TRỞ THÀNH: Kích hoạt cảm xúc, đặc biệt là lòng biết ơn và sự đồng cảm, có sức mạnh lay động hành động."
+      }
+    ],
+    "script": "Chào mừng quý vị đến với slide số 7, nơi chúng ta khám phá 'Nghệ Thuật Chạm Não Phải: Sức Mạnh Của Cảm Xúc'. Câu chuyện về tấm biển cầu Brooklyn này là một minh chứng kinh điển. Ở bên trái, người ăn xin chỉ đơn thuần nói: 'Tôi bị mù, xin hãy giúp tôi.' Thông điệp này chỉ cung cấp thông tin, và kết quả là chiếc mũ lèo tèo vài đồng xu. Nó chỉ kích hoạt phần não trái, nơi xử lý logic và dữ liệu. Nhưng hãy nhìn sang bên phải. Cùng một người, cùng một hoàn cảnh, nhưng thông điệp đã được thay đổi một cách tinh tế: 'Hôm nay là một ngày mùa xuân tuyệt đẹp, và tôi không thể nhìn thấy nó.' Câu nói này không chỉ thông báo tình trạng mù lòa, mà còn khơi gợi sự đồng cảm sâu sắc, đánh thức lòng biết ơn trong mỗi người qua đường. Nó chạm thẳng vào não phải, nơi cảm xúc ngự trị, và kết quả là chiếc mũ tràn ngập tiền bạc. Đây chính là sức mạnh của việc giao tiếp bằng cảm xúc. Nó không chỉ truyền tải thông tin, mà còn tạo ra một kết nối sâu sắc, thúc đẩy hành động ngay lập tức. Trong KTCSxAI, chúng ta học cách không chỉ nói điều đúng, mà còn nói điều chạm đến trái tim, biến thông tin thành động lực chuyển hóa mạnh mẽ.",
+    "flowPrompt": "Cinematic 16:9 seamless loop of a street scene. On the left, a blind person sits with a sign saying 'I am blind, please help me', a few coins drop into a hat. The scene subtly transitions to the right, same person, same street, but the sign now reads 'Today is a beautiful spring day, and I cannot see it'. Now, banknotes and many coins overflow from the hat. Emphasize the emotional contrast, subtle watercolor animation, warm spring light, gentle falling money, evoking empathy and transformation. The transition should be smooth, highlighting the power of emotional communication and right-brain activation.",
+    "image": "assets/slides_pdf/page_07.webp",
+    "audioFemale": "assets/audio/nu_07.mp3",
+    "audioMale": "assets/audio/nam_07.mp3"
+  },
+  {
+    "pageNumber": 8,
+    "tag": "TƯ DUY CHIẾN LƯỢC • TRANG 8 / 30",
+    "title": "Vòng Tròn Vàng:<br>Sức Mạnh Giao Tiếp Từ Bên Trong",
+    "bullets": [
+      "Vòng Tròn Vàng chỉ ra rằng giao tiếp hiệu quả nhất bắt đầu từ \"Tại sao\" – sứ mệnh và ý nghĩa cốt lõi.",
+      "\"Tại sao\" chạm thẳng vào hệ viền não, nơi điều khiển cảm xúc và mọi quyết định của con người.",
+      "\"Làm thế nào\" và \"Cái gì\" chỉ là phương tiện và kết quả, chúng ít có khả năng truyền cảm hứng bằng \"Tại sao\"."
+    ],
+    "flipCards": [
+      {
+        "front": "TRƯỚC: Giao tiếp chỉ tập trung vào sản phẩm, dịch vụ (Cái gì) và cách làm (Làm thế nào).",
+        "back": "TRỞ THÀNH: Giao tiếp bắt đầu từ niềm tin, giá trị cốt lõi (Tại sao), tạo sự kết nối sâu sắc."
+      },
+      {
+        "front": "TRƯỚC: Khó khăn trong việc truyền cảm hứng, xây dựng lòng tin và tạo sự khác biệt bền vững.",
+        "back": "TRỞ THÀNH: Dễ dàng truyền cảm hứng, xây dựng lòng tin và thúc đẩy hành động tự nguyện."
+      },
+      {
+        "front": "TRƯỚC: Quyết định mua hàng hay hợp tác dựa trên logic, tính năng và giá cả đơn thuần.",
+        "back": "TRỞ THÀNH: Quyết định dựa trên cảm xúc, sự đồng điệu về giá trị và niềm tin chung."
+      }
+    ],
+    "script": "Chào mừng bạn đến với Vòng Tròn Vàng, một mô hình mạnh mẽ giúp chúng ta hiểu sâu sắc về cách truyền cảm hứng và tạo ảnh hưởng. Thay vì bắt đầu bằng \"Cái gì\" bạn làm hay \"Làm thế nào\" bạn làm, Vòng Tròn Vàng khuyến khích chúng ta bắt đầu từ \"Tại sao\". \"Tại sao\" chính là sứ mệnh, niềm tin, là lý do sâu xa nhất cho sự tồn tại của bạn hay doanh nghiệp bạn. Khi bạn giao tiếp từ \"Tại sao\" ra ngoài, bạn đang chạm thẳng vào hệ viền não của người nghe – phần não điều khiển cảm xúc và ra quyết định. Đây là nơi tạo ra sự tin tưởng, lòng trung thành và thúc đẩy hành động mạnh mẽ. Ngược lại, khi chỉ tập trung vào \"Cái gì\" hay \"Làm thế nào\", chúng ta chỉ chạm đến vỏ não ngoài, phần logic, và khó tạo được sự kết nối sâu sắc. Hãy luôn bắt đầu từ tâm lõi rực rỡ nhất của mình để lan tỏa giá trị và truyền cảm hứng!",
+    "flowPrompt": "Cinematic 16:9 seamless loop of a glowing golden circle at the center, radiating outwards through concentric rings of orange and light blue. Text labels \"WHY\", \"HOW\", \"WHAT\" appear sequentially from the center outwards. A dynamic arrow flows from the \"WHY\" core, expanding outwards, with subtle particles or light trails emphasizing the outward movement. The background is a warm, textured paper with watercolor splashes and subtle gears, pencils, and leaves, suggesting creativity and thought. The overall mood is inspiring, insightful, and empowering, representing the power of communicating from purpose.",
+    "image": "assets/slides_pdf/page_08.webp",
+    "audioFemale": "assets/audio/nu_08.mp3",
+    "audioMale": "assets/audio/nam_08.mp3"
+  },
+  {
+    "pageNumber": 9,
+    "tag": "💬 THÔNG ĐIỆP KẾT DÍNH • TRANG 9 / 30",
+    "title": "6 Yếu Tố Tạo Nên Thông Điệp 'Kết Dính' (S.U.C.C.E.S)",
+    "bullets": [
+      "Simple (Đơn giản, cô đọng): Dễ hiểu, đi thẳng vào trọng tâm.",
+      "Unexpected (Bất ngờ, phá lối mòn): Gây tò mò, thu hút sự chú ý.",
+      "Concrete (Cụ thể bằng hình ảnh): Dễ hình dung, dễ ghi nhớ. · Credible (Chân thực từ trải nghiệm): Đáng tin cậy, có cơ sở thực tế. · Emotional (Chạm tới cảm xúc): Gây ấn tượng, tạo sự đồng cảm. · Stories (Kể bằng câu chuyện): Dễ lan tỏa, neo đậu trong tâm trí."
+    ],
+    "flipCards": [
+      {
+        "front": "TRƯỚC: Mới biết nhưng chưa thực hành.",
+        "back": "TRỞ THÀNH: Unexpected (Bất ngờ, phá lối mòn): Gây tò mò, thu hút sự chú ý."
+      },
+      {
+        "front": "TRƯỚC: Chưa kết nối bài học với đời sống.",
+        "back": "TRỞ THÀNH: Unexpected (Bất ngờ, phá lối mòn): Gây tò mò, thu hút sự chú ý."
+      },
+      {
+        "front": "TRƯỚC: Chưa lan tỏa điều hữu ích này.",
+        "back": "TRỞ THÀNH: Unexpected (Bất ngờ, phá lối mòn): Gây tò mò, thu hút sự chú ý."
+      }
+    ],
+    "script": "Chào mừng quý vị đến với một trong những bí quyết cốt lõi để thông điệp của chúng ta không chỉ được nghe, mà còn được ghi nhớ và hành động theo. Trong thế giới thông tin bão hòa ngày nay, làm thế nào để lời nói của bạn thực sự 'kết dính'? Câu trả lời nằm ở khung S.U.C.C.E.S. – Simple, Unexpected, Concrete, Credible, Emotional, và Stories. Một thông điệp 'kết dính' bắt đầu từ sự **Simple** (đơn giản, cô đọng), dễ hiểu. Sau đó, nó cần **Unexpected** (bất ngờ) để thu hút sự chú ý, phá vỡ lối mòn. Thông điệp phải **Concrete** (cụ thể, hình ảnh hóa) để người nghe dễ hình dung. Điều quan trọng là nó phải **Credible** (đáng tin cậy), dựa trên trải nghiệm thực tế. Để chạm đến trái tim, thông điệp cần **Emotional** (chạm tới cảm xúc). Cuối cùng, hãy kể nó qua **Stories** (những câu chuyện) để dễ dàng lan tỏa và neo đậu trong tâm trí. Khi áp dụng S.U.C.C.E.S., bạn không chỉ truyền tải thông tin mà còn tạo ra sự kết nối sâu sắc, biến lời nói thành hành động, tạo ảnh hưởng bền vững. Hãy cùng nhau thực hành để mỗi thông điệp chúng ta gửi đi đều trở nên mạnh mẽ và đáng nhớ!",
+    "flowPrompt": "Cinematic 16:9 seamless loop of abstract ideas transforming into clear, impactful messages. Visual metaphors for simplicity (minimalist design), unexpectedness (a sudden, delightful reveal), concreteness (tangible objects forming a clear image), credibility (a handshake or trusted symbol), emotion (glowing heart, warm colors), and storytelling (pages turning, narrative unfolding). Dynamic, flowing transitions between these concepts, symbolizing the journey of an idea becoming 'sticky' and memorable. Soft, inspiring lighting, subtle motion graphics, focus on connection and understanding.",
+    "image": "assets/slides_pdf/page_09.webp",
+    "audioFemale": "assets/audio/nu_09.mp3",
+    "audioMale": "assets/audio/nam_09.mp3"
+  },
+  {
+    "pageNumber": 10,
+    "tag": "KHO TÀNG DI SẢN • TRANG 10 / 30",
+    "title": "Vượt Phán Xét:<br>Kiến Tạo Di Sản Vĩnh Cửu Của Đời Mình",
+    "bullets": [
+      "Giá trị đích thực thường bị che mờ bởi định kiến và phán xét nhất thời.",
+      "Thời gian sẽ chứng minh giá trị của một tâm hồn kiên định và tầm nhìn vượt trội.",
+      "Đừng để những lời chê bai làm dang dở hành trình kiến tạo di sản cuộc đời bạn."
+    ],
+    "flipCards": [
+      {
+        "front": "TRƯỚC: Mới biết nhưng chưa thực hành.",
+        "back": "TRỞ THÀNH: Thời gian sẽ chứng minh giá trị của một tâm hồn kiên định và tầm nhìn vượt trội."
+      },
+      {
+        "front": "TRƯỚC: Chưa kết nối bài học với đời sống.",
+        "back": "TRỞ THÀNH: Thời gian sẽ chứng minh giá trị của một tâm hồn kiên định và tầm nhìn vượt trội."
+      },
+      {
+        "front": "TRƯỚC: Chưa lan tỏa điều hữu ích này.",
+        "back": "TRỞ THÀNH: Thời gian sẽ chứng minh giá trị của một tâm hồn kiên định và tầm nhìn vượt trội."
+      }
+    ],
+    "script": "Chào mừng quý vị đến với Kho Tàng Di Sản, nơi chúng ta khám phá những giá trị vượt thời gian. Hôm nay, chúng ta sẽ nhìn vào một câu chuyện đầy cảm hứng về tầm nhìn vượt mọi phán xét. Hãy nhìn bức tranh này, 'Đêm Đầy Sao' của Vincent van Gogh. Ông, một người nghệ sĩ nghèo túng, bị gọi là 'gã điên tóc đỏ', đã vẽ kiệt tác này qua song sắt nhà thương điên. Cả đời ông chỉ bán được duy nhất một bức tranh, sống trong sự khinh miệt và hiểu lầm. Nhưng thời gian là minh chứng công bằng nhất. Ngày nay, một tác phẩm của ông có thể trị giá đến 180 triệu đô la. Điều này cho chúng ta thấy gì? Lời phán xét của người đời chỉ như cơn gió thoảng qua. Giá trị thật của tâm hồn, của tầm nhìn độc đáo mà bạn mang trong mình, sẽ luôn sáng mãi như vì sao trên bầu trời. Đừng bao giờ để những lời cười chê, những định kiến của xã hội làm bạn chùn bước, làm dang dở bức tranh di sản cuộc đời mà bạn đang kiến tạo. Hãy tin vào giá trị nội tại của mình, và kiên định trên con đường riêng.",
+    "flowPrompt": "Cinematic 16:9 seamless loop. A painter's hand, in Van Gogh's style, creating 'The Starry Night' with vibrant, swirling brushstrokes. The view shifts between the canvas and the same starry sky seen through a barred window, suggesting confinement. Stars in the painting subtly merge with the actual night sky, symbolizing boundless vision. A soft, growing light emanates from the artwork, representing enduring value and legacy. Emphasize deep blues, yellows, and oranges, conveying artistic passion, resilience, and timeless beauty.",
+    "image": "assets/slides_pdf/page_10.webp",
+    "audioFemale": "assets/audio/nu_10.mp3",
+    "audioMale": "assets/audio/nam_10.mp3"
+  },
+  {
+    "pageNumber": 11,
+    "tag": "💡 KHO TÀNG DI SẢN • TRANG 11 / 30",
+    "title": "Cáo Phó Thức Tỉnh:<br>Di Sản Vĩ Đại Từ Một Sai Lầm Định Mệnh",
+    "bullets": [
+      "Alfred Nobel, người phát minh thuốc nổ, từng bị báo chí gọi là 'vua buôn cái chết'.",
+      "Việc đọc nhầm cáo phó của chính mình đã khiến ông nhận ra di sản mình đang để lại.",
+      "Sự thức tỉnh này đã thôi thúc ông dùng toàn bộ tài sản để lập nên Giải Nobel, vinh danh những cống hiến cho nhân loại."
+    ],
+    "flipCards": [
+      {
+        "front": "TRƯỚC: Bị gán mác 'vua buôn cái chết' vì phát minh thuốc nổ.",
+        "back": "TRỞ THÀNH: Người kiến tạo giải thưởng cao quý nhất, vinh danh trí tuệ và lòng nhân ái."
+      },
+      {
+        "front": "TRƯỚC: Sống mà không nhận thức rõ về di sản mình để lại.",
+        "back": "TRỞ THÀNH: Thức tỉnh, chủ động định hình ý nghĩa cuộc đời và đóng góp cho tương lai."
+      },
+      {
+        "front": "TRƯỚC: Trăn trở về ý nghĩa cuộc đời và dấu ấn cá nhân.",
+        "back": "TRỞ THÀNH: Sống có mục đích, để lại thông điệp giá trị cho thế hệ mai sau."
+      }
+    ],
+    "script": "Chào mừng bạn đến với Kho Tàng Di Sản số 2, nơi chúng ta khám phá câu chuyện thức tỉnh đầy mạnh mẽ của Alfred Nobel. Năm 1888, một sự kiện định mệnh đã thay đổi hoàn toàn cuộc đời ông. Khi đọc nhầm cáo phó của chính mình trên báo, Nobel bàng hoàng khi thấy mình bị gọi là 'vua buôn cái chết' – người giàu lên nhờ phát minh thuốc nổ. Khoảnh khắc đó như một tiếng sét đánh ngang tai, khiến ông nhận ra di sản mình đang để lại thật nghiệt ngã. Sự thức tỉnh sâu sắc này đã thôi thúc Nobel hành động. Ông quyết định dùng toàn bộ tài sản để thành lập Giải Nobel, vinh danh những cống hiến xuất sắc cho nhân loại. Từ một 'thương gia của cái chết', ông đã trở thành biểu tượng của trí tuệ và lòng nhân ái. Câu chuyện của Nobel đặt ra cho chúng ta một câu hỏi lớn, đặc biệt là với những ai đang ở độ tuổi 39-58: 'Thông điệp lớn nhất bạn muốn để lại cho thế hệ sau là gì?' Hãy suy ngẫm về di sản bạn đang xây dựng mỗi ngày. Đây là cơ hội để chúng ta kiến tạo một cuộc sống ý nghĩa, không chỉ cho bản thân mà còn cho cả tương lai.",
+    "flowPrompt": "Cinematic 16:9 seamless loop. A sepia-toned antique newspaper headline slowly transforms into a shimmering gold Nobel Prize medal. The medal rotates to reveal Alfred Nobel's profile, then subtly morphs into a wise, reflective face looking towards a bright, hopeful horizon. Subtle watercolor splashes of blue and gold blend into the background, symbolizing transformation and enlightenment. Elements of old parchment, a quill pen, and abstract light rays emanate from the medal, suggesting legacy and profound thought. The overall mood is reflective, inspiring, and transformative, with a sense of historical significance meeting future impact.",
+    "image": "assets/slides_pdf/page_11.webp",
+    "audioFemale": "assets/audio/nu_11.mp3",
+    "audioMale": "assets/audio/nam_11.mp3"
+  },
+  {
+    "pageNumber": 12,
+    "tag": "📜 KHO TÀNG DI SẢN • TRANG 12 / 30",
+    "title": "Dẫn Dắt Bằng Chính Cuộc Đời:<br>Bài Học Từ Gandhi",
+    "bullets": [
+      "Gandhi đợi 3 tuần mới khuyên cậu bé bỏ đường, vì chính ông cũng cần thời gian để bỏ thói quen này.",
+      "Bài học về sự chân thật: Chỉ khi tự mình thực hành, lời khuyên mới có trọng lượng và sức thuyết phục.",
+      "Sức mạnh của sự chuyển hóa cá nhân là nền tảng cho mọi ảnh hưởng tích cực."
+    ],
+    "flipCards": [
+      {
+        "front": "TRƯỚC: Từ nói điều mình biết",
+        "back": "TRỞ THÀNH: TRỞ THÀNH sống điều mình nói."
+      },
+      {
+        "front": "TRƯỚC: Từ thuyết phục bằng lý lẽ",
+        "back": "TRỞ THÀNH: TRỞ THÀNH cảm hóa bằng nhân cách."
+      },
+      {
+        "front": "TRƯỚC: Chưa lan tỏa điều hữu ích này.",
+        "back": "TRỞ THÀNH: Bài học về sự chân thật: Chỉ khi tự mình thực hành, lời khuyên mới có trọng lượng và sức thuyết phục."
+      }
+    ],
+    "script": "Chào mừng bạn đến với Kho Tàng Di Sản số 3, nơi chúng ta khám phá câu chuyện đầy ý nghĩa về Gandhi và hũ đường. Một người mẹ đưa con đến gặp Gandhi, mong ông khuyên cậu bé bỏ ăn đường. Nhưng Gandhi đã yêu cầu họ quay lại sau ba tuần. Tại sao vậy? Bởi vì chính ông lúc đó vẫn còn thích ăn đường. Ông cần thời gian để tự mình thay đổi thói quen trước khi có thể khuyên người khác. Đây là một bài học sâu sắc về sự chính trực và gương mẫu. Nó nhắc nhở chúng ta rằng, lời nói chỉ thực sự có sức nặng khi được minh chứng bằng hành động và cuộc sống của chính mình. Chúng ta không thể truyền cảm hứng cho người khác làm điều mà bản thân mình chưa sẵn sàng hoặc chưa thực hiện. KTCSxAI tin rằng, sự chuyển hóa thật sự bắt đầu từ bên trong, từ việc chúng ta sống đúng với những giá trị mình tin tưởng, từ đó mới có thể cảm hóa và dẫn dắt người khác bằng nhân cách.",
+    "flowPrompt": "Cinematic 16:9 seamless loop, watercolor style, sepia tones. An old, wise Gandhi with gentle eyes, sitting calmly. A young child, dressed in simple Indian attire, approaches him with a pot of sugar cubes. Gandhi looks at the child with compassion, then subtly glances at the sugar, a hint of personal struggle. A subtle visual transition showing the passage of three weeks, perhaps a calendar page turning or a plant growing. Then, Gandhi is seen again, now with a serene smile, gently advising the child, who listens attentively. The scene emphasizes integrity, self-mastery, and leading by example. Soft, warm lighting, traditional Indian background elements subtly blurred. The loop should convey a sense of quiet wisdom and personal transformation.",
+    "image": "assets/slides_pdf/page_12.webp",
+    "audioFemale": "assets/audio/nu_12.mp3",
+    "audioMale": "assets/audio/nam_12.mp3"
+  },
+  {
+    "pageNumber": 13,
+    "tag": "💡 SỨC MẠNH CỦA NIỀM TIN • TRANG 13 / 30",
+    "title": "Bức Thư Của Mẹ Edison:<br>Niềm Tin Kiến Tạo Thiên Tài",
+    "bullets": [
+      "Lời nói yêu thương có sức mạnh tái định nghĩa số phận con người.",
+      "Niềm tin của người mẹ là chất xúc tác biến 'kẻ bị ruồng bỏ' thành thiên tài.",
+      "Tái lập trình tiềm thức bằng thông điệp tích cực mở khóa tiềm năng vô hạn."
+    ],
+    "flipCards": [
+      {
+        "front": "TRƯỚC: Bị trường học đánh giá 'tâm thần, đần độn' và bị ruồng bỏ.",
+        "back": "TRỞ THÀNH: Nhà phát minh vĩ đại nhất với hơn 1.000 bằng sáng chế."
+      },
+      {
+        "front": "TRƯỚC: Chưa kết nối bài học với đời sống.",
+        "back": "TRỞ THÀNH: Niềm tin của người mẹ là chất xúc tác biến 'kẻ bị ruồng bỏ' thành thiên tài."
+      },
+      {
+        "front": "TRƯỚC: Chưa lan tỏa điều hữu ích này.",
+        "back": "TRỞ THÀNH: Niềm tin của người mẹ là chất xúc tác biến 'kẻ bị ruồng bỏ' thành thiên tài."
+      }
+    ],
+    "script": "Chào mừng quý vị đến với Kho Tàng Di Sản số 4, một câu chuyện lay động về Thomas Edison và bức thư định mệnh của mẹ ông. Khi còn nhỏ, Edison bị nhà trường đánh giá là 'tâm thần, đần độn' và bị đuổi học. Một bản án nghiệt ngã có thể hủy hoại bất kỳ đứa trẻ nào. Nhưng mẹ ông, với tình yêu vô bờ, đã biến bi kịch thành kỳ tích. Bà lau nước mắt, đọc lại bức thư với một thông điệp hoàn toàn khác: 'Con bà là một thiên tài!' Lời nói ấy không chỉ là an ủi, mà là một 'lập trình' mạnh mẽ vào tiềm thức của Edison. Chính thông điệp yêu thương và niềm tin tuyệt đối đó đã tái sinh một đứa trẻ bị ruồng bỏ, nuôi dưỡng một tâm hồn vĩ đại, để rồi biến cậu bé ấy thành Thomas Edison – nhà phát minh lỗi lạc với hơn 1.000 bằng sáng chế. Đây là minh chứng hùng hồn cho sức mạnh phi thường của niềm tin và tình yêu thương đúng lúc, có thể kiến tạo nên những thiên tài từ những khởi đầu tưởng chừng như bất hạnh nhất.",
+    "flowPrompt": "Cinematic 16:9 seamless loop. A pair of gentle, wise hands carefully holding an old, folded letter. Above the hands, a glowing, incandescent light bulb radiates warm, golden light, symbolizing a brilliant idea or genius. Subtle watercolor splashes of blue and orange in the background. Gears and circuit board patterns faintly emerge from the edges, representing innovation and intellect. The scene transitions from a somber, rejected tone to one of hopeful, transformative brilliance. Focus on the interplay of light, paper texture, and the aura of potential. Emphasize the feeling of nurturing and the birth of greatness from a simple, loving message. Soft, inspiring glow. Dreamlike quality.",
+    "image": "assets/slides_pdf/page_13.webp",
+    "audioFemale": "assets/audio/nu_13.mp3",
+    "audioMale": "assets/audio/nam_13.mp3"
+  },
+  {
+    "pageNumber": 14,
+    "tag": "💡 SỨC MẠNH CÔ ĐỌNG • TRANG 14 / 30",
+    "title": "Sức Mạnh Sự Cô Đọng:<br>Ít Câu Chữ, Chạm Cực Sâu",
+    "bullets": [
+      "Thông điệp dài dòng, lan man dễ bị lãng quên, dù tốn nhiều thời gian.",
+      "Sự cô đọng tạo nên giá trị bất hủ, như Diễn văn Gettysburg 272 từ.",
+      "Một câu hỏi đúng trọng tâm có sức mạnh thay đổi cục diện, lay động lòng người. · Chất lượng và chiều sâu thông điệp quan trọng hơn số lượng từ ngữ."
+    ],
+    "flipCards": [
+      {
+        "front": "TRƯỚC: Thông điệp dài dòng, lan man, khó nhớ",
+        "back": "TRỞ THÀNH: Thông điệp cô đọng, sâu sắc, tạo ảnh hưởng vĩnh cửu"
+      },
+      {
+        "front": "TRƯỚC: Chưa kết nối bài học với đời sống.",
+        "back": "TRỞ THÀNH: Sự cô đọng tạo nên giá trị bất hủ, như Diễn văn Gettysburg 272 từ."
+      },
+      {
+        "front": "TRƯỚC: Chưa lan tỏa điều hữu ích này.",
+        "back": "TRỞ THÀNH: Sự cô đọng tạo nên giá trị bất hủ, như Diễn văn Gettysburg 272 từ."
+      }
+    ],
+    "script": "Chào mừng bạn đến với bài học về Sức Mạnh Sự Cô Đọng. Chúng ta thường nghĩ nói nhiều, viết dài sẽ truyền tải được nhiều thông tin. Nhưng thực tế, điều ngược lại mới đúng. Hãy nhìn vào hình ảnh này: một bên là 13.600 từ, mất 2 tiếng trình bày, nhưng chẳng ai nhớ. Còn bên kia, chỉ 272 từ của Abraham Lincoln trong Diễn văn Gettysburg đã trở thành bất hủ. Hay một câu hỏi duy nhất của Steve Jobs đã thay đổi cả sự nghiệp của John Sculley và lịch sử công nghệ: 'Anh muốn bán nước đường cả đời, hay đi cùng tôi thay đổi thế giới?' Một câu hỏi ngắn gọn, nhưng chạm thẳng vào khát vọng sâu thẳm nhất. Điều này cho thấy, không phải số lượng từ ngữ, mà chính là sự tinh lọc, sự thấu hiểu và khả năng chạm đến trái tim, khối óc mới tạo nên sức ảnh hưởng thực sự. Hãy học cách cô đọng thông điệp để mỗi lời nói, mỗi câu chữ đều mang trọng lượng, ý nghĩa sâu sắc, tạo ra IMPACT lớn lao.",
+    "flowPrompt": "Cinematic 16:9 seamless loop. A vintage brass weighing scale in the center. On the left pan, a towering, dusty stack of old, forgotten documents, tied with faded string, representing verbosity and forgotten words. On the right pan, a single, glowing, pristine piece of paper, radiating a soft, warm light, symbolizing profound conciseness and lasting impact. Subtle golden dust motes float around the glowing paper. The background is a soft, parchment-like texture with faint, elegant ink sketches of gears, compasses, and quills, suggesting thought and creation. The scale gently sways, emphasizing the weight of impact over volume. The overall mood is thoughtful, inspiring, and timeless. Soft, warm lighting from the right, casting long shadows from the left stack. Focus on the contrast and the glow of the single paper.",
+    "image": "assets/slides_pdf/page_14.webp",
+    "audioFemale": "assets/audio/nu_14.mp3",
+    "audioMale": "assets/audio/nam_14.mp3"
+  },
+  {
+    "pageNumber": 15,
+    "tag": "DI SẢN CỦA SỰ CÔNG NHẬN • TRANG 15 / 30",
+    "title": "Sức Mạnh Biến Đổi Từ Sự Công Nhận",
+    "bullets": [
+      "Sự trân trọng chân thành có sức mạnh khơi dậy tiềm năng và biến đổi cuộc đời.",
+      "Một hành động nhỏ của sự công nhận có thể gieo mầm hy vọng và dẫn lối đến thành công vĩ đại.",
+      "Mỗi cá nhân đều mang giá trị và khả năng tạo nên sự khác biệt, chỉ cần được nhìn nhận đúng cách."
+    ],
+    "flipCards": [
+      {
+        "front": "TRƯỚC: Cậu bé lầm lì, cảm thấy bị bỏ quên",
+        "back": "TRỞ THÀNH: Bác sĩ Theodore Stallard vĩ đại, người kiến tạo giá trị"
+      },
+      {
+        "front": "TRƯỚC: Chưa kết nối bài học với đời sống.",
+        "back": "TRỞ THÀNH: Một hành động nhỏ của sự công nhận có thể gieo mầm hy vọng và dẫn lối đến thành công vĩ đại."
+      },
+      {
+        "front": "TRƯỚC: Chưa lan tỏa điều hữu ích này.",
+        "back": "TRỞ THÀNH: Một hành động nhỏ của sự công nhận có thể gieo mầm hy vọng và dẫn lối đến thành công vĩ đại."
+      }
+    ],
+    "script": "Chào mừng quý vị đến với một câu chuyện đầy cảm hứng về sức mạnh của sự công nhận. Đây là câu chuyện về cô giáo Thompson và một học trò đặc biệt. Vào dịp Giáng sinh, cậu bé, trong hoàn cảnh khó khăn, đã tặng cô một món quà đơn sơ: một chiếc vòng tay tự làm và một lọ nước nhỏ. Thay vì xem nhẹ, cô Thompson đã đeo chiếc vòng và xịt lọ nước với thái độ trân trọng nhất. Hành động tưởng chừng nhỏ bé ấy đã gieo một hạt mầm lớn trong tâm hồn cậu bé. Từ một đứa trẻ lầm lì, cậu đã lớn lên và trở thành Bác sĩ Theodore Stallard vĩ đại. Câu chuyện này cho chúng ta thấy, sự công nhận không chỉ là lời khen, mà là việc nhìn thấy và trân trọng giá trị cốt lõi của một người. Nó là động lực mạnh mẽ nhất để mỗi chúng ta tin vào bản thân, vượt qua mọi giới hạn và kiến tạo nên những điều phi thường trong cuộc sống, đúng như tinh thần của KTCSxAI. Hãy luôn nhớ, mỗi người đều quan trọng và có thể tạo nên sự khác biệt.",
+    "flowPrompt": "Cinematic 16:9 seamless loop, a gentle hand holding a simple, clear glass bottle and a handmade bracelet, glowing with subtle inner light. The background transitions from a muted, watercolor-stained paper texture to a vibrant, hopeful sky. A silhouette of a young boy slowly morphs into a confident, distinguished doctor. Soft, warm lighting, inspiring and transformative atmosphere. Focus on the emotional connection and the journey of growth. Vintage aesthetic with modern, ethereal light effects. Seamless loop.",
+    "image": "assets/slides_pdf/page_15.webp",
+    "audioFemale": "assets/audio/nu_15.mp3",
+    "audioMale": "assets/audio/nam_15.mp3"
+  },
+  {
+    "pageNumber": 16,
+    "tag": "TÍNH HAI CHIỀU • TRANG 16 / 30",
+    "title": "Tính Hai Chiều:<br>Vũ Trụ Luôn Phát Sóng",
+    "bullets": [
+      "Vũ trụ không ngừng phát sóng thông điệp quý giá qua mọi người, mọi biến cố trong cuộc sống.",
+      "May mắn và cơ hội chỉ xuất hiện khi tâm trí ta được cải tạo, sẵn sàng đón nhận \"hạt giống\" này.",
+      "Tư duy đóng, như chiếc radio hỏng ăng-ten, sẽ chỉ nghe thấy tiếng rè tiêu cực và ngừng phát triển."
+    ],
+    "flipCards": [
+      {
+        "front": "TRƯỚC: Bỏ lỡ thông điệp vũ trụ, không thấy ý nghĩa sự kiện.",
+        "back": "TRỞ THÀNH: Nhận thức mọi người, mọi biến cố là thông điệp quý giá."
+      },
+      {
+        "front": "TRƯỚC: Tâm trí chưa sẵn sàng, may mắn không đến.",
+        "back": "TRỞ THÀNH: Cải tạo mảnh đất tâm trí, thu hút và đón nhận cơ hội."
+      },
+      {
+        "front": "TRƯỚC: Tư duy đóng, chỉ nghe thấy tiêu cực, trì trệ.",
+        "back": "TRỞ THÀNH: Mở rộng tư duy, điều chỉnh \"ăng-ten\" để thu sóng tích cực."
+      }
+    ],
+    "script": "Chào bạn, hôm nay chúng ta sẽ khám phá một bí mật thú vị: Vũ trụ này luôn phát sóng! Mọi người bạn gặp, mọi biến cố bạn trải qua, đều là những thông điệp quý giá. Giống như sóng radio phủ kín bầu trời, chúng luôn ở đó, chờ đợi chúng ta thu nhận. Nhưng tại sao có người lại may mắn, còn người khác thì không? Bí mật nằm ở 'chiếc radio' trong tâm trí chúng ta. May mắn và cơ hội chỉ thực sự xuất hiện khi 'mảnh đất tâm trí' của bạn đã được cải tạo, sẵn sàng đón nhận 'hạt giống' cơ hội. Một chiếc radio hỏng ăng-ten, với tư duy đóng, sẽ chỉ nghe thấy tiếng rè tiêu cực, và ngừng phát triển. Hãy tự hỏi: 'Chiếc radio' tâm trí của mình đang ở trạng thái nào? Chúng ta có đang mở lòng đón nhận tín hiệu tích cực, hay mắc kẹt trong tiếng rè tiêu cực? Hãy cùng nhau điều chỉnh 'ăng-ten' tâm trí, để cuộc sống tràn ngập thông điệp ý nghĩa và cơ hội tuyệt vời!",
+    "flowPrompt": "Cinematic 16:9 seamless loop. A stylized watercolor and sketch animation. The universe as a vast broadcaster, emitting subtle, glowing waves of information and energy. A human figure, initially with a closed, rusty radio for a head, symbolizing a closed mind, surrounded by static and broken signals. Then, a transformation: the radio morphs into a radiant, open mind, with an antenna extending upwards, receiving clear, golden, swirling cosmic messages. The background subtly shifts from muted tones to vibrant, flowing colors, representing understanding and growth. Emphasize the contrast between noisy interference and clear reception. The overall mood is insightful and hopeful.",
+    "image": "assets/slides_pdf/page_16.webp",
+    "audioFemale": "assets/audio/nu_16.mp3",
+    "audioMale": "assets/audio/nam_16.mp3"
+  },
+  {
+    "pageNumber": 17,
+    "tag": "TƯ DUY • TẦM NHÌN ĐỘT PHÁ • TRANG 17 / 30",
+    "title": "Một Hiện Tượng, Vạn Tầm Nhìn:<br>Khám Phá Cơ Hội Từ Điều Bình Thường",
+    "bullets": [
+      "Mọi sự vật, hiện tượng đều chứa đựng nhiều tầng ý nghĩa, tùy thuộc vào góc nhìn của mỗi người.",
+      "Người bình thường thường thấy vấn đề, trong khi người vĩ đại lại thấy cơ hội và giải pháp.",
+      "Cơ hội lớn thường ẩn mình trong những điều tưởng chừng nhỏ bé, tầm thường nhất trong cuộc sống. · Phát triển một tầm nhìn khác biệt chính là chìa khóa để kiến tạo nên những đột phá vĩ đại."
+    ],
+    "flipCards": [
+      {
+        "front": "TRƯỚC: Quả táo rơi chỉ là đồ ăn",
+        "back": "TRỞ THÀNH: Lực hấp dẫn, khám phá vĩ đại của Newton"
+      },
+      {
+        "front": "TRƯỚC: Ổ bánh mì mốc là rác rưởi bỏ đi",
+        "back": "TRỞ THÀNH: Penicillin, thuốc cứu sinh của Fleming"
+      },
+      {
+        "front": "TRƯỚC: Đôi chân trần là sự hết hy vọng",
+        "back": "TRỞ THÀNH: Thị trường tiềm năng cho 10 container giày"
+      }
+    ],
+    "script": "Chào mừng bạn đến với slide này, nơi chúng ta sẽ cùng khám phá một chân lý sâu sắc: 'Cùng Hiện Tượng, Khác Tầm Nhìn'. Bạn thấy đấy, một quả táo rơi, người thường chỉ thấy đó là đồ ăn. Nhưng Newton, với tầm nhìn khác biệt, đã thấy Lực Hấp Dẫn, thay đổi cả nền khoa học. Một ổ bánh mì mốc, với đa số là rác, nhưng Fleming lại nhìn ra Penicillin cứu người. Hay ngay cả khi đối diện với cảnh tượng 'hết hy vọng' của đôi chân trần, một doanh nhân lại nhìn thấy một thị trường tiềm năng cho hàng triệu đôi giày. Điều này cho thấy, cơ hội không phải là thứ xa vời, mà nó luôn nằm sẵn trong những điều bình thường nhất, chờ đợi một tầm nhìn khác biệt để được khai phá. KTCSxAI sẽ giúp bạn rèn luyện đôi mắt này, để biến những điều tưởng chừng vô nghĩa thành những đột phá phi thường.",
+    "flowPrompt": "Cinematic 16:9 seamless loop. A dynamic visual journey illustrating the power of perspective. Start with an apple falling, then seamlessly transition to a cosmic representation of gravity. Next, a close-up of moldy bread transforming into a glowing, life-saving penicillin molecule. Then, bare, dusty feet gradually being adorned with a pair of perfectly fitting shoes, symbolizing opportunity and transformation. The overall mood is one of discovery, innovation, and shifting viewpoints, with subtle light rays highlighting moments of insight. Soft, inspiring colors, high detail, smooth transitions.",
+    "image": "assets/slides_pdf/page_17.webp",
+    "audioFemale": "assets/audio/nu_17.mp3",
+    "audioMale": "assets/audio/nam_17.mp3"
+  },
+  {
+    "pageNumber": 18,
+    "tag": "🌿 LỜI KHÔNG LỜI TỪ THIÊN NHIÊN • TRANG 18 / 30",
+    "title": "Kiên Trì Gieo Trồng, Vượt Trội Bứt Phá",
+    "bullets": [
+      "Cây tre dành 4 năm đầu để phát triển hệ rễ sâu rộng hàng trăm mét, dù thân chỉ nhú vài centimet trên mặt đất.",
+      "Đến năm thứ 5, với nền tảng vững chắc, tre bứt phá tăng trưởng 25 mét chỉ trong 6 tuần.",
+      "Mọi nỗ lực thầm lặng, từ học tập đến rèn luyện, đều là quá trình xây dựng nền tảng cho những thành công đột phá trong tương lai."
+    ],
+    "flipCards": [
+      {
+        "front": "TRƯỚC: Nỗ lực thầm lặng, kết quả chưa rõ ràng.",
+        "back": "TRỞ THÀNH: Đột phá ngoạn mục, tăng trưởng vượt bậc."
+      },
+      {
+        "front": "TRƯỚC: Cảm giác bế tắc, hoài nghi về giá trị công sức bỏ ra.",
+        "back": "TRỞ THÀNH: Niềm tin vững chắc vào quá trình xây dựng nền tảng."
+      },
+      {
+        "front": "TRƯỚC: Chỉ nhìn vào thành quả bề nổi, thiếu kiên nhẫn.",
+        "back": "TRỞ THÀNH: Hiểu rõ giá trị của sự chuẩn bị sâu sắc, bền bỉ."
+      }
+    ],
+    "script": "Chào mừng bạn đến với bài học đầu tiên từ Mẹ Thiên Nhiên, và hôm nay chúng ta sẽ khám phá bí mật của cây tre. Bạn có biết, một cây tre con trong 4 năm đầu tiên, dù chỉ nhú lên vài centimet trên mặt đất, nhưng lại đang miệt mài đan rễ sâu hàng trăm mét dưới lòng đất không? Đây là giai đoạn xây dựng nền tảng, một quá trình thầm lặng nhưng vô cùng quan trọng. Và rồi, điều kỳ diệu xảy ra vào năm thứ 5. Với bộ rễ vững chắc đã được kiến tạo, cây tre bứt phá ngoạn mục, vút cao 25 mét chỉ trong vỏn vẹn 6 tuần! Một sự tăng trưởng phi thường, phải không? Bài học ở đây thật sâu sắc. Mỗi giờ bạn miệt mài học AI, dù đôi khi cảm thấy lúng túng; mỗi giọt mồ hôi bạn đổ ra trên đường chạy, dù chưa thấy ngay kết quả, tất cả đều là những sợi rễ đang được đan kết. Chúng ta đang xây dựng nền tảng vững chắc cho 'cú nhảy vọt' của cuộc đời mình. Hãy kiên trì, vì thành quả vĩ đại thường đến sau những nỗ lực thầm lặng và bền bỉ nhất.",
+    "flowPrompt": "Cinematic 16:9 seamless loop, time-lapse of a bamboo shoot slowly growing roots deep underground for four years, then rapidly shooting upwards, growing 25 meters in just 6 weeks, breaking through the canopy. Emphasize the hidden, intricate root system and the dramatic, fast-paced vertical growth. Soft, natural lighting, earthy tones for the roots, vibrant green for the bamboo. A sense of quiet determination transforming into explosive success. Focus on the contrast between slow, foundational development and sudden, powerful emergence. High detail, realistic, inspiring.",
+    "image": "assets/slides_pdf/page_18.webp",
+    "audioFemale": "assets/audio/nu_18.mp3",
+    "audioMale": "assets/audio/nam_18.mp3"
+  },
+  {
+    "pageNumber": 19,
+    "tag": "🌿 THIÊN NHIÊN • TRANG 19 / 30",
+    "title": "Nghịch Cảnh Là Chất Liệu Trưởng Thành",
+    "bullets": [
+      "Hoa sen vươn mình từ bùn lầy, biến chất dơ bẩn thành dinh dưỡng để nở hoa thơm ngát.",
+      "Sâu bướm phải tự vật lộn thoát kén, quá trình gian nan ấy giúp đôi cánh trở nên vững chãi.",
+      "Nghịch cảnh không phải là xui xẻo, mà chính là yếu tố tôi luyện giúp chúng ta trưởng thành."
+    ],
+    "flipCards": [
+      {
+        "front": "TRƯỚC: Bùn đen hôi hám",
+        "back": "TRỞ THÀNH: Hoa sen thơm ngát"
+      },
+      {
+        "front": "TRƯỚC: Vật lộn qua lỗ kén hẹp",
+        "back": "TRỞ THÀNH: Đôi cánh vững chãi"
+      },
+      {
+        "front": "TRƯỚC: Nghịch cảnh",
+        "back": "TRỞ THÀNH: Chất liệu trưởng thành"
+      }
+    ],
+    "script": "Chào mừng quý vị đến với thông điệp không lời từ Mẹ Thiên Nhiên. Hôm nay, chúng ta sẽ cùng chiêm nghiệm về hoa sen và loài bướm. Hoa sen, biểu tượng của sự thanh khiết, không chọn nơi khô ráo mà lại vươn mình từ bùn lầy hôi hám. Chính chất dinh dưỡng từ bùn đen ấy đã nuôi dưỡng để sen nở ra những đóa hoa thơm ngát, tinh khôi. Tương tự, một chú sâu bướm phải trải qua cuộc vật lộn đầy cam go để thoát ra khỏi chiếc kén chật hẹp. Quá trình gian nan ấy không phải là sự trừng phạt, mà là cách tự nhiên ép dịch thể vào đôi cánh, giúp chúng trở nên cứng cáp và đủ sức bay lượn tự do. Nếu chúng ta can thiệp, cắt kén giúp bướm, chúng sẽ tàn tật suốt đời. Bài học ở đây rất rõ ràng: nghịch cảnh không phải là điều xui xẻo cần tránh né, mà chính là chất liệu quý giá để tôi luyện, giúp chúng ta trưởng thành mạnh mẽ hơn, đẹp đẽ hơn. Hãy đón nhận thử thách như một cơ hội để phát triển.",
+    "flowPrompt": "Cinematic 16:9 seamless loop of a vibrant pink lotus flower emerging gracefully from dark, murky mud, slowly blooming under a clear sky. Transition to a caterpillar struggling to emerge from a chrysalis, its wings slowly unfurling and strengthening as it breaks free, then taking its first powerful flight. The scene should evoke themes of transformation, resilience, and growth from adversity, with soft, natural lighting and a sense of quiet triumph. Focus on the intricate details of the lotus petals and butterfly wings. Ethereal, inspiring, nature's wisdom.",
+    "image": "assets/slides_pdf/page_19.webp",
+    "audioFemale": "assets/audio/nu_19.mp3",
+    "audioMale": "assets/audio/nam_19.mp3"
+  },
+  {
+    "pageNumber": 20,
+    "tag": "💡 CON ĐƯỜNG GIÁC NGỘ • TRANG 20 / 30",
+    "title": "Niệm Hoa Vi Tiểu:<br>Thông Điệp Giác Ngộ Sâu Sắc",
+    "bullets": [
+      "\"Tự mình thắp đuốc lên mà đi\" – là lời nhắc nhở về sự tự chủ, tự lực trên hành trình tìm kiếm chân lý và ý nghĩa cuộc đời.",
+      "Thông điệp sâu sắc nhất không luôn được truyền tải qua lời nói, mà qua sự tĩnh lặng, thấu hiểu nội tâm và sự đồng điệu của tâm thức.",
+      "Cuộc đời là hành trình cá nhân, không ai có thể sống hộ hay chạy bộ hộ cho bạn; trách nhiệm kiến tạo thuộc về chính bạn. · Chỉ khi tâm thức đạt đến tần số tĩnh lặng, chúng ta mới có thể đón nhận và thấu hiểu những thông điệp vi tế, sâu sắc nhất của vũ trụ."
+    ],
+    "flipCards": [
+      {
+        "front": "TRƯỚC: Chờ đợi người khác dẫn lối, chỉ bảo từng bước trên con đường đời",
+        "back": "TRỞ THÀNH: Tự mình thắp đuốc, soi sáng con đường riêng, tin vào nội lực bản thân"
+      },
+      {
+        "front": "TRƯỚC: Tìm kiếm lời giải đáp từ bên ngoài, qua ngôn ngữ và lý luận khô khan",
+        "back": "TRỞ THÀNH: Thấu hiểu thông điệp sâu sắc qua sự tĩnh lặng nội tâm, trực giác và cảm nhận"
+      },
+      {
+        "front": "TRƯỚC: Sống cuộc đời theo kỳ vọng hay khuôn mẫu của người khác, dễ bị lung lay",
+        "back": "TRỞ THÀNH: Chủ động kiến tạo và trải nghiệm cuộc đời mình một cách trọn vẹn, chân thật"
+      }
+    ],
+    "script": "Chào mừng bạn đến với một thông điệp giác ngộ sâu sắc qua câu chuyện 'Niệm Hoa Vi Tiểu'. Trên núi Linh Thứu, Đức Phật chỉ giơ cành sen, và chỉ có ngài Ca-diếp mỉm cười thấu hiểu. Đây là biểu tượng cho sự truyền đạt chân lý vượt ngoài ngôn ngữ, chỉ những tâm thức đồng điệu trong tĩnh lặng mới có thể cảm nhận. Nó nhắc nhở chúng ta về lời dạy 'Tự mình thắp đuốc lên mà đi'. Không ai có thể sống hộ hay chạy bộ hộ cuộc đời bạn. Mỗi người phải tự mình khám phá, tự mình trải nghiệm và tự mình giác ngộ. Khi chúng ta tĩnh lặng đủ sâu, tâm thức sẽ mở ra để đón nhận những thông điệp vi tế nhất, những chân lý không thể diễn tả bằng lời. Hãy tin vào ánh sáng nội tại của chính mình để soi rọi con đường phía trước.",
+    "flowPrompt": "Cinematic 16:9 seamless loop, tranquil scene of ancient Vulture Peak, soft morning light, a serene Buddha holding a delicate pink lotus flower, a wise monk (Mahakasyapa) beside him with a subtle, knowing smile. Focus on the silent transmission of wisdom, gentle breeze, ethereal glow, sense of profound understanding and inner peace. Subtle watercolor textures, spiritual, enlightened atmosphere.",
+    "image": "assets/slides_pdf/page_20.webp",
+    "audioFemale": "assets/audio/nu_20.mp3",
+    "audioMale": "assets/audio/nam_20.mp3"
+  },
+  {
+    "pageNumber": 21,
+    "tag": "TÂM THẾ VỮNG VÀNG • TRANG 21 / 30",
+    "title": "Chiếc Nhẫn Của Trí Tuệ:<br>Vững Tâm Giữa Biến Động",
+    "bullets": [
+      "Khi thành công, hãy dùng nó để nhắc nhở bản thân về sự khiêm tốn.",
+      "Khi đối mặt thất bại, hãy dùng nó để tìm thấy ánh sáng của hy vọng.",
+      "Giữ tâm thế bình an, kiên định trước mọi thăng trầm của cuộc đời."
+    ],
+    "flipCards": [
+      {
+        "front": "TRƯỚC: Khi đắc thắng, dễ rơi vào kiêu ngạo, mất kiểm soát cái Tôi.",
+        "back": "TRỞ THÀNH: Nhìn vào nhẫn để giữ sự khiêm tốn, biết mình là ai."
+      },
+      {
+        "front": "TRƯỚC: Khi tuyệt vọng, dễ nản lòng, mất đi niềm tin vào tương lai.",
+        "back": "TRỞ THÀNH: Nhìn vào nhẫn để thấy tia sáng, kiên cường vượt qua."
+      },
+      {
+        "front": "TRƯỚC: Chưa lan tỏa điều hữu ích này.",
+        "back": "TRỞ THÀNH: Khi đối mặt thất bại, hãy dùng nó để tìm thấy ánh sáng của hy vọng."
+      }
+    ],
+    "script": "Chào mừng bạn đến với trang sách đặc biệt này trong 'Sổ Tay Kiến Trúc Sư Cuộc Đời'. Cuộc sống là một hành trình đầy những thăng trầm, và chiếc nhẫn này chính là biểu tượng cho trí tuệ để chúng ta vượt qua. Khi bạn đạt được thành công rực rỡ, chiếc nhẫn nhắc nhở bạn hãy nhìn lại chính mình, kiểm soát cái Tôi, và giữ sự khiêm tốn. Bởi lẽ, mọi vinh quang rồi cũng sẽ qua đi. Ngược lại, khi đối diện với những thử thách tưởng chừng không thể vượt qua, khi tuyệt vọng bủa vây, hãy nhìn vào chiếc nhẫn. Nó sẽ là tia sáng nhỏ bé, nhắc nhở bạn rằng mọi khó khăn rồi cũng sẽ qua, và bạn không bao giờ được phép gục ngã. Thông điệp cốt lõi là hãy giữ cho tâm mình bất động, vững vàng như bàn thạch giữa mọi biến động của thời cuộc. Đây chính là bí quyết để kiến tạo một cuộc sống bình an và đầy ý nghĩa.",
+    "flowPrompt": "Cinematic 16:9 seamless loop of an ancient golden ring with intricate patterns and a subtle inscription 'Everything will pass' in a mystical script. The ring slowly rotates, catching light that shifts from warm golden hues to cool, hopeful blues. Reflections of a serene, calm environment transition to subtle hints of a stormy, challenging backdrop, yet the ring remains steadfast and glowing. Ethereal particles gently float around it, symbolizing wisdom and resilience. The overall mood is profound, inspiring, and timeless, representing humility in victory and hope in despair, with a constant sense of inner peace.",
+    "image": "assets/slides_pdf/page_21.webp",
+    "audioFemale": "assets/audio/nu_21.mp3",
+    "audioMale": "assets/audio/nam_21.mp3"
+  },
+  {
+    "pageNumber": 22,
+    "tag": "SỨC MẠNH ĐOÀN KẾT • TRANG 22 / 30",
+    "title": "Hào Khí Đất Việt –<br>Hợp Nhất Triệu Trái Tim",
+    "bullets": [
+      "Điện Diên Hồng (1284): Câu hỏi \"Nên hòa hay nên đánh?\" đã khơi dậy hào khí ngút trời, tạo nên sức mạnh đoàn kết.",
+      "Ba Đình (1945): Lời hỏi \"Tôi nói đồng bào nghe rõ không?\" của Bác Hồ đã xóa nhòa khoảng cách, gắn kết toàn dân tộc.",
+      "Nghệ thuật truyền tải thông điệp đỉnh cao: Đặt đúng thời điểm, hợp nhất triệu trái tim thành một khối vững chắc."
+    ],
+    "flipCards": [
+      {
+        "front": "TRƯỚC: Nguy cơ xâm lược, cần quyết định hòa hay đánh để bảo vệ đất nước?",
+        "back": "TRỞ THÀNH: Khơi dậy ý chí toàn dân, tạo nên hào khí ngút trời, đồng lòng chống giặc."
+      },
+      {
+        "front": "TRƯỚC: Khoảng cách giữa lãnh đạo và nhân dân trong thời khắc lịch sử trọng đại.",
+        "back": "TRỞ THÀNH: Lời hỏi chân thành xóa nhòa mọi khoảng cách, gắn kết toàn dân tộc thành một khối."
+      },
+      {
+        "front": "TRƯỚC: Chưa lan tỏa điều hữu ích này.",
+        "back": "TRỞ THÀNH: Ba Đình (1945): Lời hỏi \"Tôi nói đồng bào nghe rõ không?\" của Bác Hồ đã xóa nhòa khoảng cách, gắn kết toàn dân tộc."
+      }
+    ],
+    "script": "Chào mừng quý vị đến với 'Life Architect's Sketchbook', nơi chúng ta khám phá 'Hào Khí Đất Việt – Hợp Nhất Triệu Trái Tim'. Lịch sử dân tộc ta ghi dấu những khoảnh khắc vĩ đại, khi sức mạnh đoàn kết được khơi dậy từ những thông điệp đúng lúc, chạm đến trái tim mỗi người. Năm 1284, tại Điện Diên Hồng, câu hỏi 'Nên hòa hay nên đánh?' không chỉ là một câu hỏi, mà là lời hiệu triệu, đánh thức ý chí quật cường của toàn dân, tạo nên hào khí ngút trời để đánh tan quân Nguyên Mông. Năm 1945 tại Ba Đình, Bác Hồ hỏi 'Tôi nói đồng bào nghe rõ không?'. Một câu hỏi giản dị nhưng đầy tình cảm, đã xóa nhòa mọi khoảng cách, kết nối trái tim hàng triệu đồng bào, tạo nên sức mạnh vô song cho dân tộc. Đây chính là đỉnh cao của nghệ thuật truyền tải thông điệp: đặt đúng thời điểm, hợp nhất triệu trái tim thành một. Đó là bài học về sự thấu hiểu, khả năng kết nối và truyền cảm hứng, giúp chúng ta kiến tạo cuộc sống ý nghĩa hơn.",
+    "flowPrompt": "Cinematic 16:9 seamless loop, watercolor sketch style, depicting the spirit of Vietnamese unity. Start with an ancient Vietnamese court scene (Điện Diên Hồng), nobles and king discussing, then transition to a vast crowd at Ba Đình Square listening to Ho Chi Minh speak, with the Ho Chi Minh Mausoleum in the background. Interweave these scenes with a majestic, flowing Vietnamese flag (red with a golden star) as a central motif. The overall mood is inspiring, patriotic, and powerful, emphasizing historical moments of collective strength and communication. Soft, warm lighting, dynamic camera movements that flow between eras. Focus on the emotional connection and shared purpose. No text overlays.",
+    "image": "assets/slides_pdf/page_22.webp",
+    "audioFemale": "assets/audio/nu_22.mp3",
+    "audioMale": "assets/audio/nam_22.mp3"
+  },
+  {
+    "pageNumber": 23,
+    "tag": "🧩 SỨC MẠNH BỐI CẢNH • TRANG 23 / 30",
+    "title": "Sức Mạnh Bối Cảnh:<br>Bộ Tứ 4 ĐÚNG Kiến Tạo Chuyển Hóa",
+    "bullets": [
+      "ĐÚNG NGƯỜI: Thấu hiểu độ tuổi, nỗi đau của đối tượng.",
+      "ĐÚNG VIỆC: Gắn kết thông điệp với giải pháp thực tế, khả thi.",
+      "ĐÚNG CHỖ: Tạo không gian cộng hưởng, nơi thông điệp được đón nhận. · ĐÚNG THỜI ĐIỂM: Chạm đúng khoảnh khắc khao khát chuyển hóa của người nghe."
+    ],
+    "flipCards": [
+      {
+        "front": "TRƯỚC: Mới biết nhưng chưa thực hành.",
+        "back": "TRỞ THÀNH: ĐÚNG VIỆC: Gắn kết thông điệp với giải pháp thực tế, khả thi."
+      },
+      {
+        "front": "TRƯỚC: Chưa kết nối bài học với đời sống.",
+        "back": "TRỞ THÀNH: ĐÚNG VIỆC: Gắn kết thông điệp với giải pháp thực tế, khả thi."
+      },
+      {
+        "front": "TRƯỚC: Chưa lan tỏa điều hữu ích này.",
+        "back": "TRỞ THÀNH: ĐÚNG VIỆC: Gắn kết thông điệp với giải pháp thực tế, khả thi."
+      }
+    ],
+    "script": "Bạn có bao giờ tự hỏi, tại sao cùng một thông điệp, nhưng có lúc lại chạm đến trái tim, có lúc lại trôi tuột đi không dấu vết? Bí mật nằm ở 'bối cảnh'. Sức mạnh của bối cảnh được gói gọn trong 'Bộ Tứ 4 ĐÚNG' – bốn yếu tố then chốt để thông điệp của bạn thực sự tạo ra sự chuyển hóa. ĐÚNG NGƯỜI là thấu hiểu sâu sắc họ đang ở đâu, họ đang trăn trở điều gì. Khi bạn chạm vào nỗi đau, bạn chạm vào tâm hồn. ĐÚNG VIỆC nghĩa là thông điệp phải gắn liền với giải pháp thực tế, giúp họ nhìn thấy con đường phía trước. ĐÚNG CHỖ là tạo ra một không gian mà ở đó, năng lượng được cộng hưởng, sự lắng nghe được trân trọng. Và ĐÚNG THỜI ĐIỂM, đó là khoảnh khắc mà khao khát thay đổi của họ đang cháy bỏng nhất, khi họ sẵn sàng đón nhận. Khi hội tụ đủ cả bốn yếu tố này, thông điệp của bạn không chỉ là lời nói, mà là một hạt giống mạnh mẽ, nảy mầm và kiến tạo nên những cuộc đời mới. Đó chính là nghệ thuật của bối cảnh chuẩn xác.",
+    "flowPrompt": "Cinematic 16:9 seamless loop. Four distinct, watercolor-painted puzzle pieces gracefully come together, forming a perfect square. Each piece subtly animates to reveal its core symbol: the first, a silhouette of a person with a mended heart; the second, intricate gears turning with a bright lightbulb illuminating; the third, a grand archway resonating with gentle sound waves; the fourth, a clock's hands moving towards a blooming lotus. As the final piece locks into place, a soft, radiant glow emanates from the center, symbolizing profound understanding and transformative synergy. The aesthetic is a blend of hand-drawn sketch and vibrant watercolor, conveying warmth, insight, and hopeful connection. Ethereal lighting, smooth motion, inspiring atmosphere.",
+    "image": "assets/slides_pdf/page_23.webp",
+    "audioFemale": "assets/audio/nu_23.mp3",
+    "audioMale": "assets/audio/nam_23.mp3"
+  },
+  {
+    "pageNumber": 24,
+    "tag": "BỐI CẢNH LÀ TRÁI TIM • TRANG 24 / 30",
+    "title": "Bối Cảnh:<br>Trái Tim Của Mọi Lệnh AI Hiệu Quả",
+    "bullets": [
+      "Công thức lệnh vàng cho AI bao gồm: Vai trò, Việc cần làm, Bối cảnh và Định dạng.",
+      "Bối cảnh là yếu tố then chốt, biến câu trả lời của AI từ lý thuyết thành giải pháp thực tiễn, chạm đến người đọc.",
+      "AI chỉ là công cụ, chính bối cảnh mới là trái tim, mang lại chiều sâu và giá trị cho mọi tương tác."
+    ],
+    "flipCards": [
+      {
+        "front": "TRƯỚC: Lệnh AI chỉ tập trung vào việc và vai trò.",
+        "back": "TRỞ THÀNH: Lệnh AI toàn diện, có chiều sâu với bối cảnh."
+      },
+      {
+        "front": "TRƯỚC: Câu trả lời AI khô khan, thiếu sức sống.",
+        "back": "TRỞ THÀNH: Giải pháp AI sống động, chạm đến cảm xúc."
+      },
+      {
+        "front": "TRƯỚC: AI chỉ là công cụ tạo nội dung cơ bản.",
+        "back": "TRỞ THÀNH: AI là đối tác sáng tạo, thấu hiểu mục tiêu."
+      }
+    ],
+    "script": "Chào mừng quý vị đến với một khái niệm then chốt trong kỷ nguyên AI: Bối Cảnh. Nhiều người nghĩ rằng chỉ cần ra lệnh là AI sẽ hiểu, nhưng thực tế không phải vậy. Để AI thực sự trở thành trợ thủ đắc lực, chúng ta cần một 'công thức lệnh vàng' bao gồm: Vai trò của AI, Việc cần làm, Bối cảnh cụ thể và Định dạng mong muốn. Trong đó, Bối cảnh chính là trái tim. Hãy hình dung, nếu thiếu bối cảnh, câu trả lời của AI sẽ chỉ là những lý thuyết màu xám, chung chung và thiếu sức sống. Nhưng khi chúng ta cung cấp bối cảnh rõ ràng, AI sẽ biến những thông tin khô khan thành giải pháp sống động, chạm đúng tâm tư, tình cảm của người đọc. AI là một công cụ mạnh mẽ, nhưng chính bối cảnh mới là yếu tố thổi hồn, mang lại chiều sâu và giá trị thực sự cho mọi tương tác. Hãy luôn nhớ: AI là công cụ, nhưng Bối cảnh mới là trái tim của sự hiệu quả.",
+    "flowPrompt": "Cinematic 16:9 seamless loop. An antique computer monitor displaying lines of generic, gray text. As a vibrant, glowing heart symbol emerges from the screen, the text transforms into rich, colorful, and meaningful words that resonate with an unseen audience. The heart pulsates, radiating warmth and clarity, symbolizing context. Data streams flow from the heart into the monitor, making the output dynamic and impactful. Subtle watercolor splashes and pencil sketch elements add an artistic touch. Focus on the transformation from dullness to vivid, emotionally resonant output, driven by the 'heart' of context. Soft, inspiring lighting. Loopable.",
+    "image": "assets/slides_pdf/page_24.webp",
+    "audioFemale": "assets/audio/nu_24.mp3",
+    "audioMale": "assets/audio/nam_24.mp3"
+  },
+  {
+    "pageNumber": 25,
+    "tag": "💡 TƯ DUY CẢM XÚC • TRANG 25 / 30",
+    "title": "Lịch Sử Lặp Lại:<br>AI Và Sức Mạnh Của Cảm Xúc",
+    "bullets": [
+      "Lịch sử đã chứng minh: mỗi khi công nghệ mới ra đời, nó đều thách thức vai trò của con người.",
+      "Khi máy ảnh xuất hiện, những họa sĩ cố gắng sao chép thực tại đã thất bại trước tốc độ và độ chính xác của máy móc.",
+      "Chỉ những người dám chuyển hướng, khai thác chiều sâu cảm xúc và sáng tạo, mới tạo nên những kiệt tác vượt thời gian. · Với AI, bài học này càng trở nên quan trọng: đừng đua tốc độ, hãy tập trung vào giá trị cảm xúc và tư duy độc đáo của con người."
+    ],
+    "flipCards": [
+      {
+        "front": "TRƯỚC: Họa sĩ cố gắng sao chép thế giới vật lý, cạnh tranh với máy ảnh về độ chính xác.",
+        "back": "TRỞ THÀNH: Họa sĩ chuyển mình, dùng cọ vẽ để thể hiện nội tâm, cảm xúc và góc nhìn riêng."
+      },
+      {
+        "front": "TRƯỚC: Con người cố gắng cạnh tranh với AI về tốc độ xử lý, phân tích dữ liệu và lặp lại công việc.",
+        "back": "TRỞ THÀNH: Con người hợp tác với AI, tập trung vào sáng tạo, thấu cảm và tạo ra giá trị nhân văn sâu sắc."
+      },
+      {
+        "front": "TRƯỚC: Chưa lan tỏa điều hữu ích này.",
+        "back": "TRỞ THÀNH: Khi máy ảnh xuất hiện, những họa sĩ cố gắng sao chép thực tại đã thất bại trước tốc độ và độ chính xác của máy móc."
+      }
+    ],
+    "script": "Chào mừng bạn đến với một bài học lịch sử đầy ý nghĩa, nơi chúng ta sẽ thấy AI không phải là một thách thức hoàn toàn mới. Hãy nhìn lại thời điểm máy ảnh ra đời. Khi đó, nhiều họa sĩ đã cố gắng chạy đua, sao chép thực tại một cách chính xác nhất, nhưng họ đều thất bại trước khả năng vượt trội của máy móc. Tuy nhiên, những họa sĩ vĩ đại như Van Gogh đã không đi theo lối mòn đó. Họ đã chuyển hướng, dùng cọ vẽ để thể hiện cảm xúc, nội tâm, và tạo ra những kiệt tác lay động lòng người, những tác phẩm mà máy ảnh không thể nào tái tạo được. Và đây chính là bài học quý giá cho chúng ta với AI. Đừng cố gắng đua tốc độ hay khả năng sao chép với AI. Đó là cuộc đua mà chúng ta sẽ thua. Thay vào đó, hãy tập trung vào điều mà AI không thể làm được: đó là cảm xúc, sự thấu cảm, tư duy sáng tạo độc đáo và khả năng kết nối nhân văn. Hãy để AI làm những việc máy móc, còn chúng ta, hãy là những nghệ sĩ của cảm xúc, kiến tạo nên những giá trị thực sự khác biệt trong kỷ nguyên mới này.",
+    "flowPrompt": "Cinematic 16:9 seamless loop. A vintage camera slowly transforms into a sleek robotic arm precisely drawing intricate patterns. This then dissolves into a painter's hand, brushstrokes dynamically forming a vibrant, emotional masterpiece reminiscent of Van Gogh's 'Starry Night'. The painting then subtly morphs into a glowing, pulsating human heart, radiating warmth and creativity. Finally, the heart integrates with a futuristic, ethereal AI interface, where human hands gently touch and interact with glowing data streams, symbolizing collaboration and emotional intelligence. The overall mood is inspiring, reflective, and hopeful, emphasizing the fusion of human emotion and advanced technology. Soft, warm lighting with dynamic transitions.",
+    "image": "assets/slides_pdf/page_25.webp",
+    "audioFemale": "assets/audio/nu_25.mp3",
+    "audioMale": "assets/audio/nam_25.mp3"
+  },
+  {
+    "pageNumber": 26,
+    "tag": "🧠 TƯ DUY KIẾN TRÚC SƯ AI • TRANG 26 / 30",
+    "title": "Tư duy Kiến trúc sư AI:<br>Nâng tầm giá trị con người",
+    "bullets": [
+      "Con người (Não Phải) là kiến trúc sư, thổi hồn cảm xúc và định hướng trải nghiệm.",
+      "AI (Não Trái) là đội thợ xây giỏi tính toán, xử lý dữ liệu và sao chép.",
+      "Giao việc kỹ thuật cho AI để giải phóng con người sống trọn vẹn, yêu thương và lan tỏa lòng tử tế."
+    ],
+    "flipCards": [
+      {
+        "front": "TRƯỚC: Con người bị cuốn vào công việc kỹ thuật, lặp lại, thiếu thời gian cho bản thân.",
+        "back": "TRỞ THÀNH: Con người được giải phóng, tập trung vào sáng tạo, cảm xúc, và trải nghiệm sống đích thực."
+      },
+      {
+        "front": "TRƯỚC: AI chỉ là công cụ tính toán, xử lý dữ liệu đơn thuần, chưa được khai thác tối đa.",
+        "back": "TRỞ THÀNH: AI trở thành cộng sự đắc lực, tối ưu hóa công việc, hỗ trợ con người thăng hoa."
+      },
+      {
+        "front": "TRƯỚC: Cuộc sống thiếu đi sự kết nối, lòng trắc ẩn, và giá trị nhân văn sâu sắc.",
+        "back": "TRỞ THÀNH: Cuộc sống tràn đầy yêu thương, tử tế, và sự lan tỏa giá trị cộng đồng bền vững."
+      }
+    ],
+    "script": "Chào mừng quý vị đến với một tư duy đột phá: Tư duy Kiến trúc sư AI. Đây không chỉ là một khái niệm, mà là một triết lý sống, một cách chúng ta kiến tạo tương lai. Hãy hình dung, con người chúng ta, với bộ não phải đầy ắp cảm xúc, trực giác và khả năng sáng tạo, chính là những kiến trúc sư vĩ đại của cuộc đời. Chúng ta thổi hồn vào mọi trải nghiệm, định hướng giá trị và ý nghĩa. Còn AI, với bộ não trái siêu việt trong tính toán, xử lý dữ liệu, lại là đội ngũ thợ xây tài ba, cần mẫn thực hiện mọi chi tiết kỹ thuật. Khi chúng ta giao phó những công việc lặp lại, nặng về dữ liệu cho AI, chúng ta không chỉ tối ưu hóa hiệu suất mà còn giải phóng chính mình. Giải phóng thời gian, năng lượng để chúng ta thực sự được sống, được yêu thương, được kết nối và lan tỏa lòng tử tế. Đây chính là tầm nhìn của KTCSxAI: một cuộc sống nơi công nghệ phục vụ con người, để con người thăng hoa trọn vẹn.",
+    "flowPrompt": "Cinematic 16:9 seamless loop. A vibrant, glowing human silhouette with a bright lightbulb emerging from its head, representing creativity and emotion (right brain). Below, intricate gears and flowing binary code (left brain) seamlessly connect to a sleek, helpful AI robot. An upward-pointing arrow, gradient from digital blue to warm human colors, symbolizes the flow of data transforming into human-centric innovation. The background is a soft, inspiring watercolor wash. Emphasize synergy, collaboration, and the liberation of human potential. Focus on smooth transitions between abstract thought and technological execution, conveying a sense of harmonious progress and future optimism.",
+    "image": "assets/slides_pdf/page_26.webp",
+    "audioFemale": "assets/audio/nu_26.mp3",
+    "audioMale": "assets/audio/nam_26.mp3"
+  },
+  {
+    "pageNumber": 27,
+    "tag": "⚙️ TƯ DUY PHẢN BIỆN • TRANG 27 / 30",
+    "title": "Sức Mạnh 3 Sàng Socrates:<br>Lọc Thông Tin Thời Đại Số",
+    "bullets": [
+      "Áp dụng 3 sàng lọc của Socrates: Chân thật, Tử tế, Hữu ích để đánh giá thông tin.",
+      "Lọc bỏ nhiễu loạn, tin giả, thông tin tiêu cực trong dòng chảy số.",
+      "Bảo vệ 'thành trì nội tâm', giữ vững sự minh triết và bình an trước mọi biến động."
+    ],
+    "flipCards": [
+      {
+        "front": "TRƯỚC: Tiếp nhận thông tin hỗn loạn, dễ bị thao túng và lo âu.",
+        "back": "TRỞ THÀNH: Chủ động sàng lọc, tiếp thu tri thức giá trị, giữ tâm trí sáng suốt."
+      },
+      {
+        "front": "TRƯỚC: Dễ dàng lan truyền tin tức chưa kiểm chứng, gây hại cho cộng đồng.",
+        "back": "TRỞ THÀNH: Trở thành người truyền tải thông tin có trách nhiệm, xây dựng môi trường số lành mạnh."
+      },
+      {
+        "front": "TRƯỚC: Nội tâm bất an, dễ bị cuốn theo cảm xúc tiêu cực từ thông tin độc hại.",
+        "back": "TRỞ THÀNH: Kiến tạo sự bình an nội tại, vững vàng trước mọi sóng gió thông tin."
+      }
+    ],
+    "script": "Chào bạn, trong kỷ nguyên số, chúng ta đang bơi giữa một biển thông tin khổng lồ, thật giả lẫn lộn, tốt xấu đan xen. Làm sao để không bị cuốn trôi hay nhiễm độc bởi dòng chảy này? Triết gia Socrates đã để lại cho chúng ta một công cụ vô giá: Bộ lọc 3 sàng. Đầu tiên, hãy hỏi: 'Điều này có THẬT không?' Hãy kiểm chứng, tìm kiếm bằng chứng, đừng vội tin. Kế đến, 'Điều này có TỬ TẾ không?' Thông tin đó có mang tính xây dựng, có lan tỏa yêu thương, hay chỉ là lời lẽ công kích, gây chia rẽ? Cuối cùng, 'Điều này có HỮU ÍCH không?' Nó có giúp bạn phát triển, giải quyết vấn đề, hay chỉ làm lãng phí thời gian và năng lượng? Khi chúng ta kiên trì áp dụng ba sàng lọc này, những hạt bụi, cặn bã sẽ bị loại bỏ, chỉ còn lại viên kim cương tri thức tinh túy. Đây chính là cách chúng ta xây dựng và bảo vệ 'thành trì nội tâm' của mình, giữ cho tâm trí luôn sáng suốt, bình an và vững vàng trước mọi nhiễu loạn. Hãy là người kiến tạo cuộc sống của chính mình bằng sự minh triết.",
+    "flowPrompt": "Cinematic 16:9 seamless loop. A stream of chaotic, glowing digital data particles (representing information overload, fake news) flows from the top of the frame. It passes through three ethereal, glowing sieves, stacked vertically. The first sieve filters out dark, noisy particles. The second sieve filters out sharp, aggressive particles. The third sieve refines the remaining particles into pure, shimmering light. Below the final sieve, a radiant, multifaceted diamond slowly forms and pulsates with a gentle, wise glow. The background is a soft, contemplative gradient of deep blues and purples, suggesting inner peace and clarity. Subtle, ancient Greek architectural elements or philosophical symbols are faintly visible in the background, hinting at Socrates' wisdom. The overall mood is thoughtful, transformative, and serene. Focus on the smooth, continuous flow of particles and the magical transformation into wisdom.",
+    "image": "assets/slides_pdf/page_27.webp",
+    "audioFemale": "assets/audio/nu_27.mp3",
+    "audioMale": "assets/audio/nam_27.mp3"
+  },
+  {
+    "pageNumber": 28,
+    "tag": "🛡️ NỘI TÂM VỮNG CHÃI • TRANG 28 / 30",
+    "title": "Thành Trì Nội Tâm Giữa Cơn Lốc Thời Cuộc",
+    "bullets": [
+      "Giữa dòng chảy biến động của AI và thế giới, hãy kiến tạo và giữ vững “thành trì nội tâm” bất động.",
+      "Chăm sóc và nuôi dưỡng gốc rễ THÂN - TÂM - TRÍ mỗi ngày là nền tảng vững chắc nhất cho cuộc sống."
+    ],
+    "flipCards": [
+      {
+        "front": "TRƯỚC: Bị cuốn theo dòng xoáy biến động của thời cuộc, AI và thế giới bên ngoài.",
+        "back": "TRỞ THÀNH: Kiên định giữ vững “thành trì nội tâm” bất động, tìm thấy bình an từ bên trong."
+      },
+      {
+        "front": "TRƯỚC: Mải mê chạy theo những giá trị bên ngoài, bỏ quên gốc rễ bản thân.",
+        "back": "TRỞ THÀNH: Tập trung chăm sóc gốc rễ THÂN - TÂM - TRÍ mỗi ngày, xây dựng nền tảng vững chắc."
+      },
+      {
+        "front": "TRƯỚC: Chưa lan tỏa điều hữu ích này.",
+        "back": "TRỞ THÀNH: Chăm sóc và nuôi dưỡng gốc rễ THÂN - TÂM - TRÍ mỗi ngày là nền tảng vững chắc nhất cho cuộc sống."
+      }
+    ],
+    "script": "Chào bạn, trong hành trình kiến tạo cuộc sống xAI, chúng ta không thể phủ nhận thế giới đang biến đổi chóng mặt. AI phát triển vũ bão, thông tin tràn ngập, đôi khi khiến chúng ta cảm thấy chông chênh, mất phương hướng. Nhưng chính trong bối cảnh đầy thử thách này, lời dạy của Marcus Aurelius lại càng trở nên giá trị: hãy giữ vững “thành trì nội tâm” bất động. Đây không phải là sự thờ ơ, mà là khả năng giữ tâm mình tĩnh lặng trước mọi biến động. Vậy làm sao để xây dựng thành trì ấy? Bí quyết nằm ở việc chăm sóc ba gốc rễ cốt lõi: THÂN - TÂM - TRÍ mỗi ngày. Thân khỏe mạnh là nền tảng, tâm an yên là sức mạnh, và trí tuệ sáng suốt là kim chỉ nam. Khi chúng ta dành thời gian nuôi dưỡng ba yếu tố này, chúng ta sẽ tạo ra một nền tảng vững chắc từ bên trong, giúp mình đứng vững giữa mọi cơn lốc thời cuộc. Đây chính là thông điệp sống vĩ đại nhất, là chìa khóa để bạn kiến tạo một cuộc sống bình an và ý nghĩa, bất kể thế giới ngoài kia thay đổi ra sao.",
+    "flowPrompt": "Cinematic 16:9 seamless loop of a majestic, ancient stone castle standing firm and serene on a rocky outcrop. Around the castle, a powerful, swirling whirlwind rages on one side, and a dramatic thunderstorm with lightning strikes illuminates dark, turbulent clouds on the other. The castle remains perfectly still, untouched, radiating an aura of calm and resilience amidst the surrounding chaos. The camera slowly orbits the castle, emphasizing its unwavering stability against the dynamic, turbulent environment. High contrast, dramatic lighting, epic scale.",
+    "image": "assets/slides_pdf/page_28.webp",
+    "audioFemale": "assets/audio/nu_28.mp3",
+    "audioMale": "assets/audio/nam_28.mp3"
+  },
+  {
+    "pageNumber": 29,
+    "tag": "🌌 VŨ TRỤ VÀ TẦM NHÌN • TRANG 29 / 30",
+    "title": "Tầm Nhìn Vũ Trụ:<br>Đốm Xanh Mờ",
+    "bullets": [
+      "Từ khoảng cách 6 tỷ km, Trái Đất chỉ là hạt bụi lơ lửng.",
+      "Buông bỏ sân si vụn vặt ở 'tầng đối lưu' cuộc đời.",
+      "Sống trọn vẹn yêu thương, kiến tạo di sản ở 'tầng bình lưu'."
+    ],
+    "flipCards": [
+      {
+        "front": "TRƯỚC: Mắc kẹt trong sân si vụn vặt, tầm nhìn hạn hẹp",
+        "back": "TRỞ THÀNH: Sống trọn vẹn yêu thương, kiến tạo di sản vĩ đại"
+      },
+      {
+        "front": "TRƯỚC: Chưa kết nối bài học với đời sống.",
+        "back": "TRỞ THÀNH: Buông bỏ sân si vụn vặt ở 'tầng đối lưu' cuộc đời."
+      },
+      {
+        "front": "TRƯỚC: Chưa lan tỏa điều hữu ích này.",
+        "back": "TRỞ THÀNH: Buông bỏ sân si vụn vặt ở 'tầng đối lưu' cuộc đời."
+      }
+    ],
+    "script": "Chào mừng bạn đến với một góc nhìn thay đổi mọi thứ. Đây là bức ảnh 'Pale Blue Dot' nổi tiếng, chụp Trái Đất từ khoảng cách 6 tỷ km bởi tàu Voyager 1. Nhìn xem, hành tinh của chúng ta, ngôi nhà của tất cả chúng ta, chỉ là một đốm xanh mờ, một hạt bụi lơ lửng trong vũ trụ bao la. Khoa học cho chúng ta thấy sự nhỏ bé đến kinh ngạc của mình. Vậy mà, trên hạt bụi bé xíu ấy, chúng ta thường để mình cuốn vào những sân si, những tranh chấp vụn vặt, những lo toan tầm thường ở 'tầng đối lưu' của cuộc sống. Bài học cuộc đời ở đây là gì? Hãy nâng tầm nhìn, buông bỏ những điều nhỏ nhặt. Dành năng lượng để sống trọn vẹn với tình yêu thương, kết nối, và kiến tạo những giá trị, những di sản thực sự có ý nghĩa ở 'tầng bình lưu' của tâm hồn. Hãy sống một cuộc đời xứng đáng với sự kỳ diệu của việc được tồn tại trên đốm xanh mờ này.",
+    "flowPrompt": "Cinematic 16:9 seamless loop of Earth as a tiny, pale blue dot, seen from an immense distance in the vast, dark cosmos. Stars twinkle faintly. A subtle, ethereal glow emanates from the distant sun, illuminating the cosmic dust. The camera slowly zooms out, emphasizing the profound solitude and insignificance of the dot against the infinite universe. Serene, awe-inspiring, and thought-provoking.",
+    "image": "assets/slides_pdf/page_29.webp",
+    "audioFemale": "assets/audio/nu_29.mp3",
+    "audioMale": "assets/audio/nam_29.mp3"
+  },
+  {
+    "pageNumber": 30,
+    "tag": "⭐ DI SẢN & TƯƠNG LAI • TRANG 30 / 30",
+    "title": "KẾT LUẬN & KIẾN TẠO DI SẢN",
+    "bullets": [
+      "LÕI (Sự Sống): Bạn chính là trạm phát sóng vĩ đại nhất.",
+      "KẾT NỐI (Con Người): Dùng Não Phải (Why) để chạm trái tim.",
+      "CÔNG CỤ (AI 2026): Trở thành Kiến trúc sư, dùng AI làm cánh tay đòn bẩy."
+    ],
+    "flipCards": [
+      {
+        "front": "TRƯỚC: Sống bản năng, chưa nhận ra giá trị cốt lõi",
+        "back": "TRỞ THÀNH: Trạm phát sóng vĩ đại, lan tỏa giá trị bản thân"
+      },
+      {
+        "front": "TRƯỚC: Giao tiếp hời hợt, thiếu sự thấu cảm",
+        "back": "TRỞ THÀNH: Người kết nối sâu sắc, chạm đến trái tim bằng 'Why'"
+      },
+      {
+        "front": "TRƯỚC: Sử dụng công cụ thụ động, bị động trước công nghệ",
+        "back": "TRỞ THÀNH: Kiến trúc sư AI, dùng AI làm đòn bẩy kiến tạo"
+      }
+    ],
+    "script": "Chúng ta đã đi qua một hành trình đầy cảm hứng, và giờ đây, chúng ta đến với điểm kết luận, nhưng cũng là khởi đầu cho một di sản vĩ đại. Hãy nhìn vào biểu tượng vô cực này – nó không chỉ là vòng lặp của Sáng, Ngày, Tối, mà là chu trình kiến tạo không ngừng nghỉ của chính bạn. Ở LÕI, bạn là trạm phát sóng vĩ đại nhất, mang trong mình những giá trị độc đáo. Hãy tin vào sức mạnh nội tại ấy. Trong KẾT NỐI, đừng chỉ giao tiếp bằng lý trí, hãy dùng Não Phải, tìm ra 'Why' để chạm đến trái tim người khác, xây dựng những mối quan hệ sâu sắc. Và với CÔNG CỤ AI 2026, bạn không chỉ là người dùng, mà là Kiến trúc sư. AI sẽ là cánh tay đòn bẩy mạnh mẽ nhất để bạn biến tầm nhìn thành hiện thực. Vậy nên, sáng mai, hãy xỏ giày ra đường với một tâm thế mới. Tối nay, hãy ngồi xuống, viết nên Tuyên ngôn Thông điệp cuộc đời bạn, sử dụng Công thức Lệnh Vàng AI. Bản thể vĩ đại của bạn không phải là giấc mơ xa vời, nó bắt đầu ngay từ hôm nay, từ chính quyết định của bạn.",
+    "flowPrompt": "Cinematic 16:9 seamless loop video. An elegant infinity symbol made of light and energy. One end transitions from a vibrant sunrise with a person's feet in running shoes, moving forward. This flows into the middle section representing 'Day', featuring a sleek, friendly AI robot interacting with glowing data streams in a futuristic, clean environment. The loop continues to the other end, depicting 'Night', with an open, illuminated book on a desk, a hand writing in a journal under a warm lamp, with a starry window view. The entire scene is infused with soft watercolor splashes and a hand-drawn sketchbook aesthetic, conveying inspiration, continuous growth, and the integration of human purpose with advanced AI, creating a legacy. The transitions are smooth and fluid, emphasizing a never-ending cycle of creation and reflection.",
+    "image": "assets/slides_pdf/page_30.webp",
+    "audioFemale": "assets/audio/nu_30.mp3",
+    "audioMale": "assets/audio/nam_30.mp3"
+  }
+]
