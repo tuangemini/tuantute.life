@@ -438,6 +438,142 @@
       background: rgba(0, 0, 0, 0.85);
       backdrop-filter: blur(10px);
     }
+  
+    /* V07 UPGRADES: COPY ANYWHERE & VISUAL FEEDBACK */
+    .copyable-block {
+      cursor: copy;
+      position: relative;
+      transition: all 0.25s ease;
+      border-radius: 8px;
+    }
+    .copyable-block:hover {
+      outline: 1px dashed rgba(245, 158, 11, 0.5);
+      outline-offset: 2px;
+    }
+    .copy-success-flash {
+      box-shadow: 0 0 0 2px #10b981, 0 0 25px rgba(16, 185, 129, 0.45) !important;
+      background-color: rgba(6, 78, 59, 0.35) !important;
+      transition: all 0.2s ease !important;
+    }
+    .copy-floating-badge {
+      position: absolute;
+      top: 6px;
+      right: 8px;
+      background: linear-gradient(135deg, #059669, #10b981);
+      color: #ffffff;
+      font-size: 11px;
+      font-weight: 800;
+      padding: 3px 9px;
+      border-radius: 9999px;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.7), 0 0 10px rgba(16, 185, 129, 0.6);
+      z-index: 60;
+      pointer-events: none;
+      animation: popInBadge 0.25s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
+      display: inline-flex;
+      align-items: center;
+      gap: 3px;
+    }
+    @keyframes popInBadge {
+      from { opacity: 0; transform: scale(0.7) translateY(4px); }
+      to { opacity: 1; transform: scale(1) translateY(0); }
+    }
+    .copy-floating-badge.fade-out {
+      opacity: 0;
+      transform: translateY(-6px);
+      transition: opacity 0.3s ease, transform 0.3s ease;
+    }
+
+    /* SMOOTH SCROLLING FOR BOTH COLUMNS */
+    .left-col, .right-content-frame {
+      scroll-behavior: smooth;
+      overscroll-behavior: contain;
+    }
+    .left-col::-webkit-scrollbar, .right-content-frame::-webkit-scrollbar {
+      width: 7px;
+    }
+    .left-col::-webkit-scrollbar-thumb, .right-content-frame::-webkit-scrollbar-thumb {
+      background: linear-gradient(180deg, var(--gold), #b45309);
+      border-radius: 6px;
+    }
+    .left-col::-webkit-scrollbar-thumb:hover, .right-content-frame::-webkit-scrollbar-thumb:hover {
+      background: #fbbf24;
+    }
+
+    /* ENHANCED 3D FLIP CARDS V07 */
+    .flip-card {
+      perspective: 1200px;
+      height: 138px;
+      cursor: pointer;
+    }
+    .flip-card-front {
+      background: linear-gradient(135deg, rgba(30, 41, 59, 0.95), rgba(15, 23, 42, 0.98));
+      border-left: 3px solid #f43f5e;
+      position: relative;
+      overflow: hidden;
+    }
+    .flip-card-back {
+      background: linear-gradient(135deg, rgba(6, 78, 59, 0.4), rgba(15, 23, 42, 0.98));
+      border-left: 3px solid #10b981;
+      transform: rotateY(180deg);
+      position: relative;
+      overflow: hidden;
+      box-shadow: inset 0 0 20px rgba(16, 185, 129, 0.15);
+    }
+    .flip-card-back::after {
+      content: '';
+      position: absolute;
+      top: -50%;
+      left: -50%;
+      width: 200%;
+      height: 200%;
+      background: linear-gradient(60deg, transparent, rgba(255, 255, 255, 0.05), transparent);
+      transform: rotate(25deg);
+      pointer-events: none;
+    }
+
+    /* TOAST NOTIFICATION */
+    .toast-popup {
+      position: fixed;
+      bottom: 24px;
+      left: 50%;
+      transform: translateX(-50%) translateY(50px);
+      background: rgba(15, 23, 42, 0.95);
+      border: 1px solid var(--gold);
+      color: #f8fafc;
+      padding: 10px 20px;
+      border-radius: 9999px;
+      font-size: 12px;
+      font-weight: 700;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.8), 0 0 15px var(--gold-glow);
+      backdrop-filter: blur(12px);
+      z-index: 10000;
+      opacity: 0;
+      transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      pointer-events: none;
+    }
+    .toast-popup.show {
+      transform: translateX(-50%) translateY(0);
+      opacity: 1;
+    }
+
+    /* GOOGLE FLOW 4D CINEMA SCREEN */
+    .flow-video-screen {
+      width: 100%;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      background: radial-gradient(circle at center, #0f172a 0%, #020617 100%);
+      padding: 20px;
+      text-align: center;
+      position: relative;
+      border-radius: 16px;
+    }
+
   </style>
 </head>
 <body class="style-dienanh">
@@ -461,6 +597,16 @@
           Giảng viên: <strong class="text-slate-200">Nguyễn Anh Tuấn (Tuấn Tử Tế)</strong> • Trọn bộ 30 Trang Chuẩn Rạp Chiếu 16:9
         </p>
       </div>
+    </div>
+
+    <!-- Undo / Redo Controls (Ctrl+Z / Ctrl+Y) -->
+    <div class="flex items-center gap-1 bg-slate-900/90 p-1 rounded-xl border border-slate-800">
+      <button onclick="undo()" id="undoBtn" class="bg-slate-800 hover:bg-slate-700 text-slate-300 text-xs px-2.5 py-1.5 rounded-lg border border-slate-700 flex items-center gap-1 transition" title="Hoàn tác thao tác (Ctrl + Z)">
+        ↺ <span class="hidden md:inline">Hoàn tác</span>
+      </button>
+      <button onclick="redo()" id="redoBtn" class="bg-slate-800 hover:bg-slate-700 text-slate-300 text-xs px-2.5 py-1.5 rounded-lg border border-slate-700 flex items-center gap-1 transition" title="Làm lại thao tác (Ctrl + Y)">
+        ↻ <span class="hidden md:inline">Làm lại</span>
+      </button>
     </div>
 
     <!-- Center Art Styles Switcher -->
@@ -525,6 +671,7 @@
           <!-- Slide Media Elements -->
           <img id="slideImage" src="media/slides/slide_01.webp" onerror="if(this.src.endsWith('.webp')) this.src=this.src.replace('.webp', '.png')" alt="Slide Image" class="media-element ken-burns">
           <video id="slideVideo" class="media-element hidden" loop muted playsinline></video>
+          <div id="flowVideoContainer" class="media-element hidden w-full h-full"></div>
           <div id="youtubeContainer" class="media-element hidden w-full h-full"></div>
 
           <!-- Top Corner Source Switcher (Unobtrusive) -->
@@ -533,15 +680,21 @@
             <button onclick="switchMediaSource('image')" id="srcImgBtn" class="text-[11px] px-2 py-0.5 rounded font-bold text-amber-400 bg-amber-500/20" title="Xem ảnh gốc PDF / WebP">
               🖼️ Ảnh
             </button>
-            <button onclick="switchMediaSource('video')" id="srcVidBtn" class="text-[11px] px-2 py-0.5 rounded text-slate-300 hover:text-amber-300" title="Xem Video 16:9 Seamless Loop">
+            <button onclick="switchMediaSource('video')" id="srcVidBtn" class="text-[11px] px-2 py-0.5 rounded text-slate-300 hover:text-amber-300" title="Xem Video 16:9 Seamless Loop Cục Bộ">
               🎥 Video 4D
+            </button>
+            <button onclick="switchMediaSource('flow')" id="srcFlowBtn" class="text-[11px] px-2 py-0.5 rounded text-slate-300 hover:text-cyan-300" title="Xem Video Google Flow (4s Loop)">
+              ⚡ Video Flow
             </button>
             <button onclick="switchMediaSource('youtube')" id="srcYtBtn" class="text-[11px] px-2 py-0.5 rounded text-slate-300 hover:text-red-400" title="Xem video YouTube trực tiếp">
               ▶️ YouTube
             </button>
             <span class="w-[1px] h-3 bg-slate-700 mx-0.5"></span>
-            <button onclick="openCustomYouTubeDialog()" class="text-[11px] px-1.5 py-0.5 rounded text-red-400 hover:bg-red-950/60" title="Dán link YouTube cho slide này">
-              🔗 Link YT
+            <button onclick="toggleVideoAudio()" id="videoAudioBtn" class="text-[11px] px-2 py-0.5 rounded text-slate-400 hover:text-white bg-slate-800" title="Bật/Tắt âm thanh gốc của Video (Phím M)">
+              🔇 Tiếng: TẮT
+            </button>
+            <button onclick="openUnifiedMediaModal()" class="text-[11px] px-1.5 py-0.5 rounded text-amber-400 hover:bg-amber-950/60" title="Gắn Link YouTube / Google Flow cho slide này">
+              🔗 Gắn Link
             </button>
             <button onclick="toggleKenBurns()" class="text-[11px] px-1.5 py-0.5 rounded text-amber-400 hover:bg-amber-950/60" title="Bật/Tắt hiệu ứng chuyển động Ken Burns">
               4D Motion
@@ -562,18 +715,8 @@
 
         <!-- LOWER AREA (TRIỆT TIÊU TOÀN BỘ KHOẢNG ĐEN THỪA DƯỚI ẢNH!) -->
         <div class="left-lower-area" id="leftLowerArea">
-          <!-- In balanced mode: 3D Transformation Flip Cards mount here! -->
-          <div id="leftMountContainer">
-            <div class="flex items-center justify-between mb-1.5">
-              <span class="text-xs font-bold text-slate-300 uppercase tracking-wider flex items-center gap-1.5">
-                <span>🔄</span> THẺ BÀI LẬT 3D CHUYỂN HÓA (TRƯỚC → TRỞ THÀNH)
-              </span>
-              <span class="text-[10px] text-amber-400/80">Bấm hoặc rê chuột để lật</span>
-            </div>
-            <div class="flip-card-grid" id="flipCardsContainer">
-              <!-- Injected via JS -->
-            </div>
-          </div>
+          <!-- DESIGNATED LEFT SLOT: Cards (balanced) or Script (script-left) mount here -->
+          <div id="leftSlotContainer" class="w-full"></div>
         </div>
       </div>
 
@@ -613,27 +756,50 @@
             </div>
 
             <!-- Secondary mount container (when layout mode moves cards to right) -->
-            <div id="rightMountContainer" class="hidden my-2"></div>
+            <!-- Designated Slot for 3D Cards when in cinema or script-left mode -->
+            <div id="rightCardsSlot" class="my-2"></div>
 
-            <!-- COMPACT SCRIPT BOX (THU GỌN MẶC ĐỊNH MỞ RỘNG KHÔNG GIAN) -->
-            <div class="script-box-container bg-slate-900/80 border border-slate-700/50 rounded-xl p-3 my-2" id="scriptBoxContainer">
-              <div class="flex items-center justify-between mb-1">
+            <!-- Designated Slot for Script when in balanced or cinema mode -->
+            <div id="rightScriptSlot" class="my-2"></div>
+          </div>
+
+          <!-- HIDDEN STANDALONE COMPONENT WRAPPERS (MOVED BY JS INTO SLOTS) -->
+          <div id="componentPool" class="hidden">
+            <!-- 3D CARDS SECTION WRAPPER -->
+            <div id="cardSectionWrapper" class="transition-all duration-300 w-full">
+              <div class="flex items-center justify-between mb-1.5">
+                <span class="text-xs font-bold text-amber-300 uppercase tracking-wider flex items-center gap-1.5">
+                  <span>🔄</span> THẺ BÀI LẬT 3D CHUYỂN HÓA (TRƯỚC → TRỞ THÀNH)
+                </span>
+                <span class="text-[10px] text-amber-400/80">Bấm hoặc rê chuột để lật • Âm thanh 4D</span>
+              </div>
+              <div class="flip-card-grid" id="flipCardsContainer">
+                <!-- Injected via JS -->
+              </div>
+            </div>
+
+            <!-- SCRIPT BOX CONTAINER -->
+            <div class="script-box-container bg-slate-900/80 border border-slate-700/50 rounded-xl p-3 my-2 transition-all duration-300" id="scriptBoxContainer">
+              <div class="flex items-center justify-between mb-1.5 flex-wrap gap-1">
                 <span class="text-xs font-bold text-amber-300 flex items-center gap-1">
                   🎙️ KỊCH BẢN LỜI GIẢNG (NÃO TRÁI & NÃO PHẢI)
                 </span>
-                <div class="flex items-center gap-2">
-                  <button onclick="toggleScriptExpanded()" id="toggleScriptBtn" class="text-[11px] text-amber-400 hover:text-amber-300 bg-amber-500/10 px-2.5 py-0.5 rounded border border-amber-500/30 flex items-center gap-1 transition">
+                <div class="flex items-center gap-1.5">
+                  <button onclick="toggleScriptExpanded()" id="toggleScriptBtn" class="text-[11px] text-amber-400 hover:text-amber-300 bg-amber-500/10 px-2 py-0.5 rounded border border-amber-500/30 flex items-center gap-1 transition">
                     <span>📖 Mở Rộng</span>
                   </button>
-                  <button onclick="copyScriptText()" class="text-[11px] text-slate-400 hover:text-amber-300 flex items-center gap-1 transition">
+                  <button onclick="copyScriptText()" id="copyScriptBtn" class="text-[11px] text-slate-300 hover:text-emerald-300 bg-slate-800 hover:bg-slate-700 px-2 py-0.5 rounded border border-slate-700 flex items-center gap-1 transition">
                     📋 Copy
                   </button>
-                  <button onclick="openInternetResearch()" class="text-[11px] text-cyan-400 hover:text-cyan-300 flex items-center gap-1 transition">
-                    🌐 Nghiên Cứu
+                  <button onclick="copyResearchTopic()" id="researchCopyBtn" class="text-[11px] text-cyan-300 hover:text-cyan-200 bg-cyan-950/60 hover:bg-cyan-900/80 px-2 py-0.5 rounded border border-cyan-500/30 flex items-center gap-1 transition" title="Sao chép từ khóa nghiên cứu sâu">
+                    📋 Chép từ khóa
+                  </button>
+                  <button onclick="openGoogleSearchTab()" class="text-[11px] text-slate-300 hover:text-white bg-slate-800 hover:bg-slate-700 px-2 py-0.5 rounded border border-slate-700 flex items-center gap-1 transition" title="Mở tab Google Search tra cứu thực tế">
+                    🔍 Mở Tab Google
                   </button>
                 </div>
               </div>
-              <p id="slideScript" class="text-slate-300 text-xs lg:text-sm leading-relaxed script-collapsed pr-1">
+              <p id="slideScript" class="text-slate-300 text-xs lg:text-sm leading-relaxed script-collapsed pr-1 copyable-block" title="Nhấp bất kỳ chỗ nào để sao chép kịch bản">
                 <!-- Injected via JS -->
               </p>
             </div>
@@ -683,7 +849,7 @@
               </button>
               
               <div class="flex items-center gap-2">
-                <button onclick="openPromptDrawer()" class="px-2.5 py-1.5 rounded-lg bg-slate-900 hover:bg-slate-800 text-cyan-400 text-xs border border-cyan-500/30 transition">
+                <button onclick="quickCopySlidePrompt()" id="quickPromptBtn" class="px-2.5 py-1.5 rounded-lg bg-slate-900 hover:bg-slate-800 text-cyan-400 text-xs border border-cyan-500/30 transition flex items-center gap-1" title="Nhấp để chép ngay Prompt Google Flow 16:9 của slide này">
                   ✨ Prompt Slide Này
                 </button>
                 <button onclick="toggleCouncilPanel()" class="px-2.5 py-1.5 rounded-lg bg-slate-900 hover:bg-slate-800 text-amber-400 text-xs border border-amber-500/30 transition">
@@ -971,15 +1137,24 @@
     "flipCards": [
       {
         "front": "TRƯỚC: Cảm thấy lạc lõng, thiếu định hướng trong kỷ nguyên AI đầy biến động.",
-        "back": "TRỞ THÀNH: Người kiến tạo cuộc sống có ý nghĩa, vững vàng với giá trị cốt lõi."
+        "back": "TRỞ THÀNH: Người kiến tạo cuộc sống có ý nghĩa, vững vàng với giá trị cốt lõi.",
+        "front_emoji": "🌧️",
+        "back_emoji": "☀️",
+        "theme": "amber"
       },
       {
         "front": "TRƯỚC: Thiếu sự chuẩn bị toàn diện cho những thách thức của tương lai công nghệ.",
-        "back": "TRỞ THÀNH: Sở hữu hành trang Thân - Tâm - Trí vững chắc, sẵn sàng đón đầu."
+        "back": "TRỞ THÀNH: Sở hữu hành trang Thân - Tâm - Trí vững chắc, sẵn sàng đón đầu.",
+        "front_emoji": "⏳",
+        "back_emoji": "💎",
+        "theme": "emerald"
       },
       {
         "front": "TRƯỚC: Lo lắng về việc để lại dấu ấn hay di sản gì cho thế hệ mai sau.",
-        "back": "TRỞ THÀNH: Kiến tạo di sản giá trị, truyền cảm hứng và vượt thời gian."
+        "back": "TRỞ THÀNH: Kiến tạo di sản giá trị, truyền cảm hứng và vượt thời gian.",
+        "front_emoji": "🥀",
+        "back_emoji": "👑",
+        "theme": "sky"
       }
     ],
     "script": "Chào mừng tất cả quý vị đến với hành trình đặc biệt của chúng ta: 'Kiến Tạo Cuộc Sống xAI'. Trong một thế giới đang thay đổi chóng mặt bởi trí tuệ nhân tạo, câu hỏi lớn nhất không phải là 'AI sẽ làm gì?', mà là 'Chúng ta sẽ sống như thế nào?'. Chương trình này không chỉ là một khóa học, mà là một lời mời gọi để mỗi chúng ta cùng nhau khám phá, định hình lại những giá trị cốt lõi, tìm thấy ý nghĩa sâu sắc và xây dựng một di sản thực sự vượt thời gian. Chúng ta sẽ cùng nhau trang bị một hành trang toàn diện – từ sức khỏe thể chất (Thân), sự bình an nội tâm (Tâm), đến năng lực tư duy sắc bén (Trí) – để không chỉ thích nghi mà còn thịnh vượng trong kỷ nguyên mới. Hãy cùng Thầy Tuấn Tử Tế bắt đầu hành trình kiến tạo một cuộc sống đích thực, đầy đủ và có ý nghĩa, một cuộc sống mà AI sẽ là công cụ hỗ trợ đắc lực, chứ không phải là yếu tố định đoạt.",
@@ -987,7 +1162,9 @@
     "has_video": true,
     "image_flow": "media/flow_images/slide_01.webp",
     "image_pdf": "media/pdf_slides/slide_01.png",
-    "youtube_url": "https://www.youtube.com/watch?v=kYJv8y6b9gE"
+    "youtube_url": "https://www.youtube.com/watch?v=UF8uR6Z6KLc",
+    "youtube_title": "Steve Jobs - Đi Tìm Lẽ Sống & Kiến Tạo Di Sản",
+    "flow_video_url": "https://flow.google.com/shared/video/572b1a60-d2e4-4059-b5a0-947337bc96c5"
   },
   {
     "slide_number": 2,
@@ -1007,15 +1184,24 @@
     "flipCards": [
       {
         "front": "TRƯỚC: Cảm thấy cuộc sống thiếu động lực, dễ bị cuốn theo dòng chảy.",
-        "back": "TRỞ THÀNH: Người kiến tạo cuộc sống, chủ động với những kỷ luật nhỏ bé mỗi ngày."
+        "back": "TRỞ THÀNH: Người kiến tạo cuộc sống, chủ động với những kỷ luật nhỏ bé mỗi ngày.",
+        "front_emoji": "🌪️",
+        "back_emoji": "🧘",
+        "theme": "indigo"
       },
       {
         "front": "TRƯỚC: Loay hoay với công nghệ, cảm thấy mình tụt hậu hoặc bị lệ thuộc.",
-        "back": "TRỞ THÀNH: Người làm chủ công nghệ, dùng trí tuệ để khai phá tiềm năng mới."
+        "back": "TRỞ THÀNH: Người làm chủ công nghệ, dùng trí tuệ để khai phá tiềm năng mới.",
+        "front_emoji": "⛓️",
+        "back_emoji": "🕊️",
+        "theme": "amber"
       },
       {
         "front": "TRƯỚC: Sức khỏe thể chất và tinh thần chưa được chăm sóc đúng mức.",
-        "back": "TRỞ THÀNH: Người có sắc vóc khỏe mạnh, tinh thần minh mẫn, tràn đầy năng lượng."
+        "back": "TRỞ THÀNH: Người có sắc vóc khỏe mạnh, tinh thần minh mẫn, tràn đầy năng lượng.",
+        "front_emoji": "📉",
+        "back_emoji": "🚀",
+        "theme": "emerald"
       }
     ],
     "script": "Chào mừng anh chị em, những người đang ở độ tuổi vàng 38-58, đến với hành trình KTCSxAI! Slide này là lời chào ấm áp, một lời nhắc nhở rằng mỗi hành trình vĩ đại đều bắt đầu từ những kỷ luật nhỏ bé nhất. Chúng ta sẽ cùng nhau khám phá cách kiến tạo một cuộc sống trọn vẹn, bắt đầu từ những thói quen đơn giản nhưng mạnh mẽ. Hãy hình dung: 20:00 đêm về, thay vì lướt web vô định, chúng ta mài giũa trí tuệ, làm chủ công nghệ mới, biến nó thành công cụ đắc lực cho sự phát triển bản thân. Và rồi, 05:00 bình minh, chúng ta thức dậy, đánh thức sắc vóc, rèn luyện Thân - Tâm, chuẩn bị cho một ngày mới tràn đầy năng lượng. Đây không chỉ là lịch trình, mà là một triết lý sống, nơi mỗi khoảnh khắc đều được tận dụng để nâng tầm bản thân. Hãy cùng nhau bắt đầu hành trình này nhé!",
@@ -1023,7 +1209,9 @@
     "has_video": false,
     "image_flow": "media/flow_images/slide_02.webp",
     "image_pdf": "media/pdf_slides/slide_02.png",
-    "youtube_url": ""
+    "youtube_url": "https://www.youtube.com/watch?v=8b06gDkYp4c",
+    "youtube_title": "Robin Sharma - Câu Lạc Bộ 5 Giờ Sáng & Kỷ Luật Thức Dậy",
+    "flow_video_url": "https://flow.google.com/shared/video/572b1a60-d2e4-4059-b5a0-947337bc96c5"
   },
   {
     "slide_number": 3,
@@ -1043,15 +1231,24 @@
     "flipCards": [
       {
         "front": "TRƯỚC: Giáo dục chỉ là truyền đạt kiến thức khô khan.",
-        "back": "TRỞ THÀNH: Giáo dục là truyền ngọn lửa đánh thức tâm hồn."
+        "back": "TRỞ THÀNH: Giáo dục là truyền ngọn lửa đánh thức tâm hồn.",
+        "front_emoji": "🧱",
+        "back_emoji": "🌟",
+        "theme": "purple"
       },
       {
         "front": "TRƯỚC: Kinh doanh chỉ bán sản phẩm vật lý, dịch vụ.",
-        "back": "TRỞ THÀNH: Kinh doanh bán ý nghĩa, giá trị và niềm tin."
+        "back": "TRỞ THÀNH: Kinh doanh bán ý nghĩa, giá trị và niềm tin.",
+        "front_emoji": "❓",
+        "back_emoji": "💡",
+        "theme": "sky"
       },
       {
         "front": "TRƯỚC: Di sản là tài sản vật chất, công trình vĩ đại.",
-        "back": "TRỞ THÀNH: Di sản là thông điệp tử tế, giá trị truyền đời."
+        "back": "TRỞ THÀNH: Di sản là thông điệp tử tế, giá trị truyền đời.",
+        "front_emoji": "🌫️",
+        "back_emoji": "🌈",
+        "theme": "rose"
       }
     ],
     "script": "Chào mừng quý vị đến với một góc nhìn sâu sắc về bản chất cuộc sống. Chúng ta thường nghĩ về cuộc đời mình như một hành trình cá nhân, nhưng thực ra, mỗi khoảnh khắc sống của chúng ta đều là một thông điệp đang được phát đi. Từ cách chúng ta giáo dục con cái – không chỉ truyền đạt kiến thức mà còn thắp lên ngọn lửa đam mê, đến cách chúng ta kinh doanh – không chỉ bán sản phẩm mà còn trao đi ý nghĩa và niềm tin. Trong gia đình, cha mẹ chính là thông điệp sống động nhất, là tấm gương phản chiếu cho con cái. Và di sản chúng ta để lại không phải là những công trình vật chất, mà là dòng chảy tử tế, là những giá trị tốt đẹp được truyền từ thế hệ này sang thế hệ khác. Hãy sống một cách có ý thức, để thông điệp của bạn là nguồn cảm hứng, là ánh sáng dẫn lối cho những người xung quanh, kiến tạo nên một cuộc sống ý nghĩa hơn.",
@@ -1059,7 +1256,9 @@
     "has_video": false,
     "image_flow": "media/flow_images/slide_03.webp",
     "image_pdf": "media/pdf_slides/slide_03.png",
-    "youtube_url": ""
+    "youtube_url": "https://www.youtube.com/watch?v=vVjV2pWw3h0",
+    "youtube_title": "Jim Rohn - Triết Lý Cuộc Sống: Sống Là Phát Đi Một Thông Điệp",
+    "flow_video_url": "https://flow.google.com/shared/video/572b1a60-d2e4-4059-b5a0-947337bc96c5"
   },
   {
     "slide_number": 4,
@@ -1078,15 +1277,24 @@
     "flipCards": [
       {
         "front": "TRƯỚC: Cơ thể yếu ớt, thiếu sinh khí",
-        "back": "TRỞ THÀNH: Thân khỏe mạnh, tràn đầy năng lượng sống"
+        "back": "TRỞ THÀNH: Thân khỏe mạnh, tràn đầy năng lượng sống",
+        "front_emoji": "🌧️",
+        "back_emoji": "☀️",
+        "theme": "amber"
       },
       {
         "front": "TRƯỚC: Tâm hồn bất an, thiếu kết nối",
-        "back": "TRỞ THÀNH: Tâm bình an, yêu thương, chân thành"
+        "back": "TRỞ THÀNH: Tâm bình an, yêu thương, chân thành",
+        "front_emoji": "⏳",
+        "back_emoji": "💎",
+        "theme": "emerald"
       },
       {
         "front": "TRƯỚC: Tư duy rời rạc, thiếu chiều sâu",
-        "back": "TRỞ THÀNH: Trí tuệ minh triết, làm chủ tri thức"
+        "back": "TRỞ THÀNH: Trí tuệ minh triết, làm chủ tri thức",
+        "front_emoji": "🥀",
+        "back_emoji": "👑",
+        "theme": "sky"
       }
     ],
     "script": "Chào mừng bạn đến với hành trình kiến tạo nội lực! Hôm nay, chúng ta sẽ khám phá ba gốc rễ vững chắc tạo nên sức mạnh bên trong mỗi con người: Thân, Tâm và Trí. Hãy hình dung cuộc đời mình như một ngôi nhà. Thân chính là nền móng, một cơ thể khỏe mạnh, tràn đầy sinh khí sẽ là bệ phóng cho mọi năng lượng sống. Tâm là những cột trụ vững chãi, nơi bình an, yêu thương và sự chân thành ngự trị, giúp chúng ta phát ra tần số rung động chạm đến trái tim người khác. Và Trí, chính là mái nhà, nơi chúng ta không ngừng học hỏi, hợp nhất tri thức, làm chủ công nghệ như AI, để đạt đến chiều sâu của minh triết. Sức mạnh thực sự không nằm ở lời nói hoa mỹ, mà ở chính nội lực được xây dựng từ ba gốc rễ này. Hãy cùng nhau vun bồi để ngôi nhà cuộc đời chúng ta thật kiên cố và rạng rỡ nhé!",
@@ -1094,7 +1302,9 @@
     "has_video": false,
     "image_flow": "media/flow_images/slide_04.webp",
     "image_pdf": "media/pdf_slides/slide_04.png",
-    "youtube_url": ""
+    "youtube_url": "https://www.youtube.com/watch?v=5Vz1yU9P-eQ",
+    "youtube_title": "Thầy Trần Việt Quân - 3 Gốc Rễ Đạo Đức, Trí Tuệ, Nghị Lực",
+    "flow_video_url": "https://flow.google.com/shared/video/572b1a60-d2e4-4059-b5a0-947337bc96c5"
   },
   {
     "slide_number": 5,
@@ -1113,15 +1323,24 @@
     "flipCards": [
       {
         "front": "TRƯỚC: Cơ thể uể oải, thiếu năng lượng",
-        "back": "TRỞ THÀNH: Cơ thể tràn đầy sinh khí, khỏe mạnh"
+        "back": "TRỞ THÀNH: Cơ thể tràn đầy sinh khí, khỏe mạnh",
+        "front_emoji": "🌪️",
+        "back_emoji": "🧘",
+        "theme": "indigo"
       },
       {
         "front": "TRƯỚC: Tâm trí bất an, dễ xao nhãng",
-        "back": "TRỞ THÀNH: Tâm trí an yên, vững vàng, tập trung"
+        "back": "TRỞ THÀNH: Tâm trí an yên, vững vàng, tập trung",
+        "front_emoji": "⛓️",
+        "back_emoji": "🕊️",
+        "theme": "amber"
       },
       {
         "front": "TRƯỚC: Tiếng ồn thông tin hỗn loạn",
-        "back": "TRỞ THÀNH: Tín hiệu đánh thức, dẫn lối rõ ràng"
+        "back": "TRỞ THÀNH: Tín hiệu đánh thức, dẫn lối rõ ràng",
+        "front_emoji": "📉",
+        "back_emoji": "🚀",
+        "theme": "emerald"
       }
     ],
     "script": "Chào mừng bạn đến với một chủ đề vô cùng quan trọng: Kỷ Luật Sinh Khí – Nền Tảng Vững Chắc Cho Mọi Chuyển Hóa. Bạn có thấy không, hành trình chuyển hóa bắt đầu từ những điều giản dị nhất: một buổi sáng chạy bộ đầy năng lượng, việc theo dõi và cải thiện bản thân qua các ứng dụng như VRACE, và quan trọng hơn cả là việc lan tỏa năng lượng tích cực ấy đến cộng đồng, qua Zalo hay Facebook. Khi thân thể khỏe mạnh, tràn đầy sinh khí, tâm trí chúng ta mới thực sự an yên. Từ đó, mọi thông điệp chúng ta gửi đi đều mang một sức mạnh nội tại, một sự chân thành khó cưỡng. Điều kỳ diệu là, chính nhờ sinh khí dồi dào, chúng ta có thể biến những 'tiếng ồn thông tin' hàng ngày thành những 'tín hiệu đánh thức' quý giá, giúp ta nhìn rõ hơn con đường mình đang đi. Hãy cùng nhau xây dựng kỷ luật sinh khí để kiến tạo một cuộc sống tràn đầy năng lượng và ý nghĩa nhé!",
@@ -1129,7 +1348,9 @@
     "has_video": true,
     "image_flow": "media/flow_images/slide_05.webp",
     "image_pdf": "media/pdf_slides/slide_05.png",
-    "youtube_url": ""
+    "youtube_url": "https://www.youtube.com/watch?v=k2WCN_BqT6s",
+    "youtube_title": "Jocko Willink - Kỷ Luật Sinh Khí & Tự Do Đích Thực",
+    "flow_video_url": "https://flow.google.com/shared/video/572b1a60-d2e4-4059-b5a0-947337bc96c5"
   },
   {
     "slide_number": 6,
@@ -1148,15 +1369,24 @@
     "flipCards": [
       {
         "front": "TRƯỚC: Chỉ dùng Logic",
-        "back": "TRỞ THÀNH: Thông điệp khô khan, khó nhớ, thiếu động lực hành động"
+        "back": "TRỞ THÀNH: Thông điệp khô khan, khó nhớ, thiếu động lực hành động",
+        "front_emoji": "🧱",
+        "back_emoji": "🌟",
+        "theme": "purple"
       },
       {
         "front": "TRƯỚC: Chỉ dùng Cảm xúc",
-        "back": "TRỞ THÀNH: Thông điệp bay bổng nhưng thiếu chiều sâu, không thuyết phục"
+        "back": "TRỞ THÀNH: Thông điệp bay bổng nhưng thiếu chiều sâu, không thuyết phục",
+        "front_emoji": "❓",
+        "back_emoji": "💡",
+        "theme": "sky"
       },
       {
         "front": "TRƯỚC: Tách rời Logic và Cảm xúc",
-        "back": "TRỞ THÀNH: Thông điệp toàn diện, vừa sâu sắc vừa chạm đến trái tim, thúc đẩy hành động"
+        "back": "TRỞ THÀNH: Thông điệp toàn diện, vừa sâu sắc vừa chạm đến trái tim, thúc đẩy hành động",
+        "front_emoji": "🌫️",
+        "back_emoji": "🌈",
+        "theme": "rose"
       }
     ],
     "script": "Chào mừng quý vị đến với một góc nhìn thú vị về cách bộ não chúng ta tiếp nhận thông tin. Hôm nay, chúng ta sẽ khám phá khoa học não bộ qua hình ảnh 'Chạy Marathon Bằng Hai Chân'. Hãy hình dung, não trái của chúng ta như một vận động viên logic, chuyên về cấu trúc, bằng chứng khoa học và số liệu thực tế. Nó giúp chúng ta phân tích, hiểu sâu mọi vấn đề một cách rõ ràng, mạch lạc. Đây là nền tảng vững chắc cho mọi thông điệp. Còn não phải, đó là người nghệ sĩ đầy cảm xúc, kể chuyện qua hình ảnh, vần điệu và những ẩn dụ sâu sắc. Não phải giúp thông điệp trở nên sống động, dễ nhớ, chạm đến trái tim và thôi thúc chúng ta hành động. Giống như một cuộc chạy marathon, chúng ta không thể chỉ dùng một chân. Một thông điệp thực sự xuất chúng, có sức lan tỏa mạnh mẽ, phải là sự hợp nhất hoàn hảo của cả hai: sự chặt chẽ của logic và sự lay động của cảm xúc. Khi đó, thông điệp của bạn sẽ không chỉ được hiểu mà còn được cảm nhận, được ghi nhớ và được chuyển hóa thành hành động thực tế.",
@@ -1164,7 +1394,9 @@
     "has_video": false,
     "image_flow": "media/flow_images/slide_06.webp",
     "image_pdf": "media/pdf_slides/slide_06.png",
-    "youtube_url": ""
+    "youtube_url": "https://www.youtube.com/watch?v=UyyjU8UrFNU",
+    "youtube_title": "Dr. Jill Bolte Taylor - Khoa Học Não Bộ: Não Trái & Não Phải",
+    "flow_video_url": "https://flow.google.com/shared/video/572b1a60-d2e4-4059-b5a0-947337bc96c5"
   },
   {
     "slide_number": 7,
@@ -1183,11 +1415,17 @@
     "flipCards": [
       {
         "front": "TRƯỚC: Thông điệp chỉ cung cấp thông tin khô khan: 'Tôi bị mù, xin hãy giúp tôi.'",
-        "back": "TRỞ THÀNH: Thông điệp chạm đến cảm xúc, khơi gợi sự đồng cảm: 'Hôm nay là một ngày mùa xuân tuyệt đẹp, và tôi không thể nhìn thấy nó.'"
+        "back": "TRỞ THÀNH: Thông điệp chạm đến cảm xúc, khơi gợi sự đồng cảm: 'Hôm nay là một ngày mùa xuân tuyệt đẹp, và tôi không thể nhìn thấy nó.'",
+        "front_emoji": "🌧️",
+        "back_emoji": "☀️",
+        "theme": "amber"
       },
       {
         "front": "TRƯỚC: Tư duy thông tin, thiếu động lực hành động từ người nghe.",
-        "back": "TRỞ THÀNH: Đánh thức lòng biết ơn, kích hoạt hành động ngay lập tức và mạnh mẽ."
+        "back": "TRỞ THÀNH: Đánh thức lòng biết ơn, kích hoạt hành động ngay lập tức và mạnh mẽ.",
+        "front_emoji": "⏳",
+        "back_emoji": "💎",
+        "theme": "emerald"
       }
     ],
     "script": "Chào mừng quý vị đến với slide số 7, nơi chúng ta khám phá 'Nghệ Thuật Chạm Não Phải: Sức Mạnh Của Cảm Xúc'. Câu chuyện về tấm biển cầu Brooklyn này là một minh chứng kinh điển. Ở bên trái, người ăn xin chỉ đơn thuần nói: 'Tôi bị mù, xin hãy giúp tôi.' Thông điệp này chỉ cung cấp thông tin, và kết quả là chiếc mũ lèo tèo vài đồng xu. Nó chỉ kích hoạt phần não trái, nơi xử lý logic và dữ liệu. Nhưng hãy nhìn sang bên phải. Cùng một người, cùng một hoàn cảnh, nhưng thông điệp đã được thay đổi một cách tinh tế: 'Hôm nay là một ngày mùa xuân tuyệt đẹp, và tôi không thể nhìn thấy nó.' Câu nói này không chỉ thông báo tình trạng mù lòa, mà còn khơi gợi sự đồng cảm sâu sắc, đánh thức lòng biết ơn trong mỗi người qua đường. Nó chạm thẳng vào não phải, nơi cảm xúc ngự trị, và kết quả là chiếc mũ tràn ngập tiền bạc. Đây chính là sức mạnh của việc giao tiếp bằng cảm xúc. Nó không chỉ truyền tải thông tin, mà còn tạo ra một kết nối sâu sắc, thúc đẩy hành động ngay lập tức. Trong KTCSxAI, chúng ta học cách không chỉ nói điều đúng, mà còn nói điều chạm đến trái tim, biến thông tin thành động lực chuyển hóa mạnh mẽ.",
@@ -1195,7 +1433,9 @@
     "has_video": false,
     "image_flow": "media/flow_images/slide_07.webp",
     "image_pdf": "media/pdf_slides/slide_07.png",
-    "youtube_url": ""
+    "youtube_url": "https://www.youtube.com/watch?v=rrkrvAUbU9Y",
+    "youtube_title": "Daniel Pink - Sức Mạnh Cảm Xúc & Nghệ Thuật Não Phải",
+    "flow_video_url": "https://flow.google.com/shared/video/572b1a60-d2e4-4059-b5a0-947337bc96c5"
   },
   {
     "slide_number": 8,
@@ -1214,15 +1454,24 @@
     "flipCards": [
       {
         "front": "TRƯỚC: Giao tiếp chỉ tập trung vào sản phẩm, dịch vụ (Cái gì) và cách làm (Làm thế nào).",
-        "back": "TRỞ THÀNH: Giao tiếp bắt đầu từ niềm tin, giá trị cốt lõi (Tại sao), tạo sự kết nối sâu sắc."
+        "back": "TRỞ THÀNH: Giao tiếp bắt đầu từ niềm tin, giá trị cốt lõi (Tại sao), tạo sự kết nối sâu sắc.",
+        "front_emoji": "🌪️",
+        "back_emoji": "🧘",
+        "theme": "indigo"
       },
       {
         "front": "TRƯỚC: Khó khăn trong việc truyền cảm hứng, xây dựng lòng tin và tạo sự khác biệt bền vững.",
-        "back": "TRỞ THÀNH: Dễ dàng truyền cảm hứng, xây dựng lòng tin và thúc đẩy hành động tự nguyện."
+        "back": "TRỞ THÀNH: Dễ dàng truyền cảm hứng, xây dựng lòng tin và thúc đẩy hành động tự nguyện.",
+        "front_emoji": "⛓️",
+        "back_emoji": "🕊️",
+        "theme": "amber"
       },
       {
         "front": "TRƯỚC: Quyết định mua hàng hay hợp tác dựa trên logic, tính năng và giá cả đơn thuần.",
-        "back": "TRỞ THÀNH: Quyết định dựa trên cảm xúc, sự đồng điệu về giá trị và niềm tin chung."
+        "back": "TRỞ THÀNH: Quyết định dựa trên cảm xúc, sự đồng điệu về giá trị và niềm tin chung.",
+        "front_emoji": "📉",
+        "back_emoji": "🚀",
+        "theme": "emerald"
       }
     ],
     "script": "Chào mừng bạn đến với Vòng Tròn Vàng, một mô hình mạnh mẽ giúp chúng ta hiểu sâu sắc về cách truyền cảm hứng và tạo ảnh hưởng. Thay vì bắt đầu bằng \"Cái gì\" bạn làm hay \"Làm thế nào\" bạn làm, Vòng Tròn Vàng khuyến khích chúng ta bắt đầu từ \"Tại sao\". \"Tại sao\" chính là sứ mệnh, niềm tin, là lý do sâu xa nhất cho sự tồn tại của bạn hay doanh nghiệp bạn. Khi bạn giao tiếp từ \"Tại sao\" ra ngoài, bạn đang chạm thẳng vào hệ viền não của người nghe – phần não điều khiển cảm xúc và ra quyết định. Đây là nơi tạo ra sự tin tưởng, lòng trung thành và thúc đẩy hành động mạnh mẽ. Ngược lại, khi chỉ tập trung vào \"Cái gì\" hay \"Làm thế nào\", chúng ta chỉ chạm đến vỏ não ngoài, phần logic, và khó tạo được sự kết nối sâu sắc. Hãy luôn bắt đầu từ tâm lõi rực rỡ nhất của mình để lan tỏa giá trị và truyền cảm hứng!",
@@ -1230,7 +1479,9 @@
     "has_video": false,
     "image_flow": "media/flow_images/slide_08.webp",
     "image_pdf": "media/pdf_slides/slide_08.png",
-    "youtube_url": ""
+    "youtube_url": "https://www.youtube.com/watch?v=u4ZoJKF_VuA",
+    "youtube_title": "Simon Sinek - Vòng Tròn Vàng: Bắt Đầu Với Câu Hỏi TẠI SAO",
+    "flow_video_url": "https://flow.google.com/shared/video/572b1a60-d2e4-4059-b5a0-947337bc96c5"
   },
   {
     "slide_number": 9,
@@ -1255,7 +1506,9 @@
     "has_video": false,
     "image_flow": "media/flow_images/slide_09.webp",
     "image_pdf": "media/pdf_slides/slide_09.png",
-    "youtube_url": ""
+    "youtube_url": "https://www.youtube.com/watch?v=jW7Lh6_1GzE",
+    "youtube_title": "Made to Stick - 6 Yếu Tố Tạo Thông Điệp Kết Dính S.U.C.C.E.S",
+    "flow_video_url": "https://flow.google.com/shared/video/572b1a60-d2e4-4059-b5a0-947337bc96c5"
   },
   {
     "slide_number": 10,
@@ -1277,7 +1530,9 @@
     "has_video": false,
     "image_flow": "media/flow_images/slide_10.webp",
     "image_pdf": "media/pdf_slides/slide_10.png",
-    "youtube_url": "https://www.youtube.com/watch?v=oxHnRfhDmrk"
+    "youtube_url": "https://www.youtube.com/watch?v=dip280m0f6U",
+    "youtube_title": "Vincent van Gogh - Bức Họa Đêm Đầy Sao & Di Sản Bất Tử",
+    "flow_video_url": "https://flow.google.com/shared/video/572b1a60-d2e4-4059-b5a0-947337bc96c5"
   },
   {
     "slide_number": 11,
@@ -1296,15 +1551,24 @@
     "flipCards": [
       {
         "front": "TRƯỚC: Bị gán mác 'vua buôn cái chết' vì phát minh thuốc nổ.",
-        "back": "TRỞ THÀNH: Người kiến tạo giải thưởng cao quý nhất, vinh danh trí tuệ và lòng nhân ái."
+        "back": "TRỞ THÀNH: Người kiến tạo giải thưởng cao quý nhất, vinh danh trí tuệ và lòng nhân ái.",
+        "front_emoji": "🌪️",
+        "back_emoji": "🧘",
+        "theme": "indigo"
       },
       {
         "front": "TRƯỚC: Sống mà không nhận thức rõ về di sản mình để lại.",
-        "back": "TRỞ THÀNH: Thức tỉnh, chủ động định hình ý nghĩa cuộc đời và đóng góp cho tương lai."
+        "back": "TRỞ THÀNH: Thức tỉnh, chủ động định hình ý nghĩa cuộc đời và đóng góp cho tương lai.",
+        "front_emoji": "⛓️",
+        "back_emoji": "🕊️",
+        "theme": "amber"
       },
       {
         "front": "TRƯỚC: Trăn trở về ý nghĩa cuộc đời và dấu ấn cá nhân.",
-        "back": "TRỞ THÀNH: Sống có mục đích, để lại thông điệp giá trị cho thế hệ mai sau."
+        "back": "TRỞ THÀNH: Sống có mục đích, để lại thông điệp giá trị cho thế hệ mai sau.",
+        "front_emoji": "📉",
+        "back_emoji": "🚀",
+        "theme": "emerald"
       }
     ],
     "script": "Chào mừng bạn đến với Kho Tàng Di Sản số 2, nơi chúng ta khám phá câu chuyện thức tỉnh đầy mạnh mẽ của Alfred Nobel. Năm 1888, một sự kiện định mệnh đã thay đổi hoàn toàn cuộc đời ông. Khi đọc nhầm cáo phó của chính mình trên báo, Nobel bàng hoàng khi thấy mình bị gọi là 'vua buôn cái chết' – người giàu lên nhờ phát minh thuốc nổ. Khoảnh khắc đó như một tiếng sét đánh ngang tai, khiến ông nhận ra di sản mình đang để lại thật nghiệt ngã. Sự thức tỉnh sâu sắc này đã thôi thúc Nobel hành động. Ông quyết định dùng toàn bộ tài sản để thành lập Giải Nobel, vinh danh những cống hiến xuất sắc cho nhân loại. Từ một 'thương gia của cái chết', ông đã trở thành biểu tượng của trí tuệ và lòng nhân ái. Câu chuyện của Nobel đặt ra cho chúng ta một câu hỏi lớn, đặc biệt là với những ai đang ở độ tuổi 39-58: 'Thông điệp lớn nhất bạn muốn để lại cho thế hệ sau là gì?' Hãy suy ngẫm về di sản bạn đang xây dựng mỗi ngày. Đây là cơ hội để chúng ta kiến tạo một cuộc sống ý nghĩa, không chỉ cho bản thân mà còn cho cả tương lai.",
@@ -1312,7 +1576,9 @@
     "has_video": false,
     "image_flow": "media/flow_images/slide_11.webp",
     "image_pdf": "media/pdf_slides/slide_11.png",
-    "youtube_url": "https://www.youtube.com/watch?v=zT31R_q3e6M"
+    "youtube_url": "https://www.youtube.com/watch?v=JmKxJk6fQ3M",
+    "youtube_title": "Alfred Nobel - Cáo Phó Thức Tỉnh & Giải Nobel Hòa Bình",
+    "flow_video_url": "https://flow.google.com/shared/video/572b1a60-d2e4-4059-b5a0-947337bc96c5"
   },
   {
     "slide_number": 12,
@@ -1331,11 +1597,17 @@
     "flipCards": [
       {
         "front": "TRƯỚC: Từ nói điều mình biết",
-        "back": "TRỞ THÀNH: TRỞ THÀNH sống điều mình nói."
+        "back": "TRỞ THÀNH: TRỞ THÀNH sống điều mình nói.",
+        "front_emoji": "🧱",
+        "back_emoji": "🌟",
+        "theme": "purple"
       },
       {
         "front": "TRƯỚC: Từ thuyết phục bằng lý lẽ",
-        "back": "TRỞ THÀNH: TRỞ THÀNH cảm hóa bằng nhân cách."
+        "back": "TRỞ THÀNH: TRỞ THÀNH cảm hóa bằng nhân cách.",
+        "front_emoji": "❓",
+        "back_emoji": "💡",
+        "theme": "sky"
       }
     ],
     "script": "Chào mừng bạn đến với Kho Tàng Di Sản số 3, nơi chúng ta khám phá câu chuyện đầy ý nghĩa về Gandhi và hũ đường. Một người mẹ đưa con đến gặp Gandhi, mong ông khuyên cậu bé bỏ ăn đường. Nhưng Gandhi đã yêu cầu họ quay lại sau ba tuần. Tại sao vậy? Bởi vì chính ông lúc đó vẫn còn thích ăn đường. Ông cần thời gian để tự mình thay đổi thói quen trước khi có thể khuyên người khác. Đây là một bài học sâu sắc về sự chính trực và gương mẫu. Nó nhắc nhở chúng ta rằng, lời nói chỉ thực sự có sức nặng khi được minh chứng bằng hành động và cuộc sống của chính mình. Chúng ta không thể truyền cảm hứng cho người khác làm điều mà bản thân mình chưa sẵn sàng hoặc chưa thực hiện. KTCSxAI tin rằng, sự chuyển hóa thật sự bắt đầu từ bên trong, từ việc chúng ta sống đúng với những giá trị mình tin tưởng, từ đó mới có thể cảm hóa và dẫn dắt người khác bằng nhân cách.",
@@ -1343,7 +1615,9 @@
     "has_video": false,
     "image_flow": "media/flow_images/slide_12.webp",
     "image_pdf": "media/pdf_slides/slide_12.png",
-    "youtube_url": "https://www.youtube.com/watch?v=QcM9B_rDqBw"
+    "youtube_url": "https://www.youtube.com/watch?v=2f3-1rW9Kfg",
+    "youtube_title": "Mahatma Gandhi - Hãy Là Sự Thay Đổi Bạn Muốn Thấy",
+    "flow_video_url": "https://flow.google.com/shared/video/572b1a60-d2e4-4059-b5a0-947337bc96c5"
   },
   {
     "slide_number": 13,
@@ -1362,7 +1636,10 @@
     "flipCards": [
       {
         "front": "TRƯỚC: Bị trường học đánh giá 'tâm thần, đần độn' và bị ruồng bỏ.",
-        "back": "TRỞ THÀNH: Nhà phát minh vĩ đại nhất với hơn 1.000 bằng sáng chế."
+        "back": "TRỞ THÀNH: Nhà phát minh vĩ đại nhất với hơn 1.000 bằng sáng chế.",
+        "front_emoji": "🌧️",
+        "back_emoji": "☀️",
+        "theme": "amber"
       }
     ],
     "script": "Chào mừng quý vị đến với Kho Tàng Di Sản số 4, một câu chuyện lay động về Thomas Edison và bức thư định mệnh của mẹ ông. Khi còn nhỏ, Edison bị nhà trường đánh giá là 'tâm thần, đần độn' và bị đuổi học. Một bản án nghiệt ngã có thể hủy hoại bất kỳ đứa trẻ nào. Nhưng mẹ ông, với tình yêu vô bờ, đã biến bi kịch thành kỳ tích. Bà lau nước mắt, đọc lại bức thư với một thông điệp hoàn toàn khác: 'Con bà là một thiên tài!' Lời nói ấy không chỉ là an ủi, mà là một 'lập trình' mạnh mẽ vào tiềm thức của Edison. Chính thông điệp yêu thương và niềm tin tuyệt đối đó đã tái sinh một đứa trẻ bị ruồng bỏ, nuôi dưỡng một tâm hồn vĩ đại, để rồi biến cậu bé ấy thành Thomas Edison – nhà phát minh lỗi lạc với hơn 1.000 bằng sáng chế. Đây là minh chứng hùng hồn cho sức mạnh phi thường của niềm tin và tình yêu thương đúng lúc, có thể kiến tạo nên những thiên tài từ những khởi đầu tưởng chừng như bất hạnh nhất.",
@@ -1370,7 +1647,9 @@
     "has_video": false,
     "image_flow": "media/flow_images/slide_13.webp",
     "image_pdf": "media/pdf_slides/slide_13.png",
-    "youtube_url": "https://www.youtube.com/watch?v=kYJv8y6b9gE"
+    "youtube_url": "https://www.youtube.com/watch?v=kP_u2x0qD-o",
+    "youtube_title": "Thomas Edison & Bức Thư Của Mẹ - Niềm Tin Tạo Thiên Tài",
+    "flow_video_url": "https://flow.google.com/shared/video/572b1a60-d2e4-4059-b5a0-947337bc96c5"
   },
   {
     "slide_number": 14,
@@ -1390,7 +1669,10 @@
     "flipCards": [
       {
         "front": "TRƯỚC: Thông điệp dài dòng, lan man, khó nhớ",
-        "back": "TRỞ THÀNH: Thông điệp cô đọng, sâu sắc, tạo ảnh hưởng vĩnh cửu"
+        "back": "TRỞ THÀNH: Thông điệp cô đọng, sâu sắc, tạo ảnh hưởng vĩnh cửu",
+        "front_emoji": "🌪️",
+        "back_emoji": "🧘",
+        "theme": "indigo"
       }
     ],
     "script": "Chào mừng bạn đến với bài học về Sức Mạnh Sự Cô Đọng. Chúng ta thường nghĩ nói nhiều, viết dài sẽ truyền tải được nhiều thông tin. Nhưng thực tế, điều ngược lại mới đúng. Hãy nhìn vào hình ảnh này: một bên là 13.600 từ, mất 2 tiếng trình bày, nhưng chẳng ai nhớ. Còn bên kia, chỉ 272 từ của Abraham Lincoln trong Diễn văn Gettysburg đã trở thành bất hủ. Hay một câu hỏi duy nhất của Steve Jobs đã thay đổi cả sự nghiệp của John Sculley và lịch sử công nghệ: 'Anh muốn bán nước đường cả đời, hay đi cùng tôi thay đổi thế giới?' Một câu hỏi ngắn gọn, nhưng chạm thẳng vào khát vọng sâu thẳm nhất. Điều này cho thấy, không phải số lượng từ ngữ, mà chính là sự tinh lọc, sự thấu hiểu và khả năng chạm đến trái tim, khối óc mới tạo nên sức ảnh hưởng thực sự. Hãy học cách cô đọng thông điệp để mỗi lời nói, mỗi câu chữ đều mang trọng lượng, ý nghĩa sâu sắc, tạo ra IMPACT lớn lao.",
@@ -1398,7 +1680,9 @@
     "has_video": false,
     "image_flow": "media/flow_images/slide_14.webp",
     "image_pdf": "media/pdf_slides/slide_14.png",
-    "youtube_url": "https://www.youtube.com/watch?v=UF8uR6Z6KLc"
+    "youtube_url": "https://www.youtube.com/watch?v=qCXUmioyqNE",
+    "youtube_title": "Sức Mạnh Của Sự Cô Đọng - Ít Chữ Mà Chạm Cực Sâu",
+    "flow_video_url": "https://flow.google.com/shared/video/572b1a60-d2e4-4059-b5a0-947337bc96c5"
   },
   {
     "slide_number": 15,
@@ -1417,7 +1701,10 @@
     "flipCards": [
       {
         "front": "TRƯỚC: Cậu bé lầm lì, cảm thấy bị bỏ quên",
-        "back": "TRỞ THÀNH: Bác sĩ Theodore Stallard vĩ đại, người kiến tạo giá trị"
+        "back": "TRỞ THÀNH: Bác sĩ Theodore Stallard vĩ đại, người kiến tạo giá trị",
+        "front_emoji": "🧱",
+        "back_emoji": "🌟",
+        "theme": "purple"
       }
     ],
     "script": "Chào mừng quý vị đến với một câu chuyện đầy cảm hứng về sức mạnh của sự công nhận. Đây là câu chuyện về cô giáo Thompson và một học trò đặc biệt. Vào dịp Giáng sinh, cậu bé, trong hoàn cảnh khó khăn, đã tặng cô một món quà đơn sơ: một chiếc vòng tay tự làm và một lọ nước nhỏ. Thay vì xem nhẹ, cô Thompson đã đeo chiếc vòng và xịt lọ nước với thái độ trân trọng nhất. Hành động tưởng chừng nhỏ bé ấy đã gieo một hạt mầm lớn trong tâm hồn cậu bé. Từ một đứa trẻ lầm lì, cậu đã lớn lên và trở thành Bác sĩ Theodore Stallard vĩ đại. Câu chuyện này cho chúng ta thấy, sự công nhận không chỉ là lời khen, mà là việc nhìn thấy và trân trọng giá trị cốt lõi của một người. Nó là động lực mạnh mẽ nhất để mỗi chúng ta tin vào bản thân, vượt qua mọi giới hạn và kiến tạo nên những điều phi thường trong cuộc sống, đúng như tinh thần của KTCSxAI. Hãy luôn nhớ, mỗi người đều quan trọng và có thể tạo nên sự khác biệt.",
@@ -1425,7 +1712,9 @@
     "has_video": false,
     "image_flow": "media/flow_images/slide_15.webp",
     "image_pdf": "media/pdf_slides/slide_15.png",
-    "youtube_url": ""
+    "youtube_url": "https://www.youtube.com/watch?v=0k9Jtq5310M",
+    "youtube_title": "Dale Carnegie - Đắc Nhân Tâm & Sức Mạnh Công Nhận",
+    "flow_video_url": "https://flow.google.com/shared/video/572b1a60-d2e4-4059-b5a0-947337bc96c5"
   },
   {
     "slide_number": 16,
@@ -1444,15 +1733,24 @@
     "flipCards": [
       {
         "front": "TRƯỚC: Bỏ lỡ thông điệp vũ trụ, không thấy ý nghĩa sự kiện.",
-        "back": "TRỞ THÀNH: Nhận thức mọi người, mọi biến cố là thông điệp quý giá."
+        "back": "TRỞ THÀNH: Nhận thức mọi người, mọi biến cố là thông điệp quý giá.",
+        "front_emoji": "🌧️",
+        "back_emoji": "☀️",
+        "theme": "amber"
       },
       {
         "front": "TRƯỚC: Tâm trí chưa sẵn sàng, may mắn không đến.",
-        "back": "TRỞ THÀNH: Cải tạo mảnh đất tâm trí, thu hút và đón nhận cơ hội."
+        "back": "TRỞ THÀNH: Cải tạo mảnh đất tâm trí, thu hút và đón nhận cơ hội.",
+        "front_emoji": "⏳",
+        "back_emoji": "💎",
+        "theme": "emerald"
       },
       {
         "front": "TRƯỚC: Tư duy đóng, chỉ nghe thấy tiêu cực, trì trệ.",
-        "back": "TRỞ THÀNH: Mở rộng tư duy, điều chỉnh \"ăng-ten\" để thu sóng tích cực."
+        "back": "TRỞ THÀNH: Mở rộng tư duy, điều chỉnh \"ăng-ten\" để thu sóng tích cực.",
+        "front_emoji": "🥀",
+        "back_emoji": "👑",
+        "theme": "sky"
       }
     ],
     "script": "Chào bạn, hôm nay chúng ta sẽ khám phá một bí mật thú vị: Vũ trụ này luôn phát sóng! Mọi người bạn gặp, mọi biến cố bạn trải qua, đều là những thông điệp quý giá. Giống như sóng radio phủ kín bầu trời, chúng luôn ở đó, chờ đợi chúng ta thu nhận. Nhưng tại sao có người lại may mắn, còn người khác thì không? Bí mật nằm ở 'chiếc radio' trong tâm trí chúng ta. May mắn và cơ hội chỉ thực sự xuất hiện khi 'mảnh đất tâm trí' của bạn đã được cải tạo, sẵn sàng đón nhận 'hạt giống' cơ hội. Một chiếc radio hỏng ăng-ten, với tư duy đóng, sẽ chỉ nghe thấy tiếng rè tiêu cực, và ngừng phát triển. Hãy tự hỏi: 'Chiếc radio' tâm trí của mình đang ở trạng thái nào? Chúng ta có đang mở lòng đón nhận tín hiệu tích cực, hay mắc kẹt trong tiếng rè tiêu cực? Hãy cùng nhau điều chỉnh 'ăng-ten' tâm trí, để cuộc sống tràn ngập thông điệp ý nghĩa và cơ hội tuyệt vời!",
@@ -1460,7 +1758,9 @@
     "has_video": false,
     "image_flow": "media/flow_images/slide_16.webp",
     "image_pdf": "media/pdf_slides/slide_16.png",
-    "youtube_url": ""
+    "youtube_url": "https://www.youtube.com/watch?v=q6t8k9j2JbM",
+    "youtube_title": "Luật Hấp Dẫn - Vũ Trụ Luôn Phát Sóng Hai Chiều",
+    "flow_video_url": "https://flow.google.com/shared/video/572b1a60-d2e4-4059-b5a0-947337bc96c5"
   },
   {
     "slide_number": 17,
@@ -1480,15 +1780,24 @@
     "flipCards": [
       {
         "front": "TRƯỚC: Quả táo rơi chỉ là đồ ăn",
-        "back": "TRỞ THÀNH: Lực hấp dẫn, khám phá vĩ đại của Newton"
+        "back": "TRỞ THÀNH: Lực hấp dẫn, khám phá vĩ đại của Newton",
+        "front_emoji": "🌪️",
+        "back_emoji": "🧘",
+        "theme": "indigo"
       },
       {
         "front": "TRƯỚC: Ổ bánh mì mốc là rác rưởi bỏ đi",
-        "back": "TRỞ THÀNH: Penicillin, thuốc cứu sinh của Fleming"
+        "back": "TRỞ THÀNH: Penicillin, thuốc cứu sinh của Fleming",
+        "front_emoji": "⛓️",
+        "back_emoji": "🕊️",
+        "theme": "amber"
       },
       {
         "front": "TRƯỚC: Đôi chân trần là sự hết hy vọng",
-        "back": "TRỞ THÀNH: Thị trường tiềm năng cho 10 container giày"
+        "back": "TRỞ THÀNH: Thị trường tiềm năng cho 10 container giày",
+        "front_emoji": "📉",
+        "back_emoji": "🚀",
+        "theme": "emerald"
       }
     ],
     "script": "Chào mừng bạn đến với slide này, nơi chúng ta sẽ cùng khám phá một chân lý sâu sắc: 'Cùng Hiện Tượng, Khác Tầm Nhìn'. Bạn thấy đấy, một quả táo rơi, người thường chỉ thấy đó là đồ ăn. Nhưng Newton, với tầm nhìn khác biệt, đã thấy Lực Hấp Dẫn, thay đổi cả nền khoa học. Một ổ bánh mì mốc, với đa số là rác, nhưng Fleming lại nhìn ra Penicillin cứu người. Hay ngay cả khi đối diện với cảnh tượng 'hết hy vọng' của đôi chân trần, một doanh nhân lại nhìn thấy một thị trường tiềm năng cho hàng triệu đôi giày. Điều này cho thấy, cơ hội không phải là thứ xa vời, mà nó luôn nằm sẵn trong những điều bình thường nhất, chờ đợi một tầm nhìn khác biệt để được khai phá. KTCSxAI sẽ giúp bạn rèn luyện đôi mắt này, để biến những điều tưởng chừng vô nghĩa thành những đột phá phi thường.",
@@ -1496,7 +1805,9 @@
     "has_video": false,
     "image_flow": "media/flow_images/slide_17.webp",
     "image_pdf": "media/pdf_slides/slide_17.png",
-    "youtube_url": ""
+    "youtube_url": "https://www.youtube.com/watch?v=b4N9t1h2r2Q",
+    "youtube_title": "Một Hiện Tượng, Vạn Tầm Nhìn - Thay Đổi Góc Nhìn",
+    "flow_video_url": "https://flow.google.com/shared/video/572b1a60-d2e4-4059-b5a0-947337bc96c5"
   },
   {
     "slide_number": 18,
@@ -1515,15 +1826,24 @@
     "flipCards": [
       {
         "front": "TRƯỚC: Nỗ lực thầm lặng, kết quả chưa rõ ràng.",
-        "back": "TRỞ THÀNH: Đột phá ngoạn mục, tăng trưởng vượt bậc."
+        "back": "TRỞ THÀNH: Đột phá ngoạn mục, tăng trưởng vượt bậc.",
+        "front_emoji": "🧱",
+        "back_emoji": "🌟",
+        "theme": "purple"
       },
       {
         "front": "TRƯỚC: Cảm giác bế tắc, hoài nghi về giá trị công sức bỏ ra.",
-        "back": "TRỞ THÀNH: Niềm tin vững chắc vào quá trình xây dựng nền tảng."
+        "back": "TRỞ THÀNH: Niềm tin vững chắc vào quá trình xây dựng nền tảng.",
+        "front_emoji": "❓",
+        "back_emoji": "💡",
+        "theme": "sky"
       },
       {
         "front": "TRƯỚC: Chỉ nhìn vào thành quả bề nổi, thiếu kiên nhẫn.",
-        "back": "TRỞ THÀNH: Hiểu rõ giá trị của sự chuẩn bị sâu sắc, bền bỉ."
+        "back": "TRỞ THÀNH: Hiểu rõ giá trị của sự chuẩn bị sâu sắc, bền bỉ.",
+        "front_emoji": "🌫️",
+        "back_emoji": "🌈",
+        "theme": "rose"
       }
     ],
     "script": "Chào mừng bạn đến với bài học đầu tiên từ Mẹ Thiên Nhiên, và hôm nay chúng ta sẽ khám phá bí mật của cây tre. Bạn có biết, một cây tre con trong 4 năm đầu tiên, dù chỉ nhú lên vài centimet trên mặt đất, nhưng lại đang miệt mài đan rễ sâu hàng trăm mét dưới lòng đất không? Đây là giai đoạn xây dựng nền tảng, một quá trình thầm lặng nhưng vô cùng quan trọng. Và rồi, điều kỳ diệu xảy ra vào năm thứ 5. Với bộ rễ vững chắc đã được kiến tạo, cây tre bứt phá ngoạn mục, vút cao 25 mét chỉ trong vỏn vẹn 6 tuần! Một sự tăng trưởng phi thường, phải không? Bài học ở đây thật sâu sắc. Mỗi giờ bạn miệt mài học AI, dù đôi khi cảm thấy lúng túng; mỗi giọt mồ hôi bạn đổ ra trên đường chạy, dù chưa thấy ngay kết quả, tất cả đều là những sợi rễ đang được đan kết. Chúng ta đang xây dựng nền tảng vững chắc cho 'cú nhảy vọt' của cuộc đời mình. Hãy kiên trì, vì thành quả vĩ đại thường đến sau những nỗ lực thầm lặng và bền bỉ nhất.",
@@ -1531,7 +1851,9 @@
     "has_video": false,
     "image_flow": "media/flow_images/slide_18.webp",
     "image_pdf": "media/pdf_slides/slide_18.png",
-    "youtube_url": ""
+    "youtube_url": "https://www.youtube.com/watch?v=Kz6pE1kQ3-0",
+    "youtube_title": "Bài Học Cây Tre - Kiên Trì Cắm Rễ Để Bứt Phá Vượt Trội",
+    "flow_video_url": "https://flow.google.com/shared/video/572b1a60-d2e4-4059-b5a0-947337bc96c5"
   },
   {
     "slide_number": 19,
@@ -1550,15 +1872,24 @@
     "flipCards": [
       {
         "front": "TRƯỚC: Bùn đen hôi hám",
-        "back": "TRỞ THÀNH: Hoa sen thơm ngát"
+        "back": "TRỞ THÀNH: Hoa sen thơm ngát",
+        "front_emoji": "🌧️",
+        "back_emoji": "☀️",
+        "theme": "amber"
       },
       {
         "front": "TRƯỚC: Vật lộn qua lỗ kén hẹp",
-        "back": "TRỞ THÀNH: Đôi cánh vững chãi"
+        "back": "TRỞ THÀNH: Đôi cánh vững chãi",
+        "front_emoji": "⏳",
+        "back_emoji": "💎",
+        "theme": "emerald"
       },
       {
         "front": "TRƯỚC: Nghịch cảnh",
-        "back": "TRỞ THÀNH: Chất liệu trưởng thành"
+        "back": "TRỞ THÀNH: Chất liệu trưởng thành",
+        "front_emoji": "🥀",
+        "back_emoji": "👑",
+        "theme": "sky"
       }
     ],
     "script": "Chào mừng quý vị đến với thông điệp không lời từ Mẹ Thiên Nhiên. Hôm nay, chúng ta sẽ cùng chiêm nghiệm về hoa sen và loài bướm. Hoa sen, biểu tượng của sự thanh khiết, không chọn nơi khô ráo mà lại vươn mình từ bùn lầy hôi hám. Chính chất dinh dưỡng từ bùn đen ấy đã nuôi dưỡng để sen nở ra những đóa hoa thơm ngát, tinh khôi. Tương tự, một chú sâu bướm phải trải qua cuộc vật lộn đầy cam go để thoát ra khỏi chiếc kén chật hẹp. Quá trình gian nan ấy không phải là sự trừng phạt, mà là cách tự nhiên ép dịch thể vào đôi cánh, giúp chúng trở nên cứng cáp và đủ sức bay lượn tự do. Nếu chúng ta can thiệp, cắt kén giúp bướm, chúng sẽ tàn tật suốt đời. Bài học ở đây rất rõ ràng: nghịch cảnh không phải là điều xui xẻo cần tránh né, mà chính là chất liệu quý giá để tôi luyện, giúp chúng ta trưởng thành mạnh mẽ hơn, đẹp đẽ hơn. Hãy đón nhận thử thách như một cơ hội để phát triển.",
@@ -1566,7 +1897,9 @@
     "has_video": false,
     "image_flow": "media/flow_images/slide_19.webp",
     "image_pdf": "media/pdf_slides/slide_19.png",
-    "youtube_url": ""
+    "youtube_url": "https://www.youtube.com/watch?v=z9p9p9r2mZk",
+    "youtube_title": "Viktor Frankl - Nghịch Cảnh Là Chất Liệu Tôi Luyện Ý Chí",
+    "flow_video_url": "https://flow.google.com/shared/video/572b1a60-d2e4-4059-b5a0-947337bc96c5"
   },
   {
     "slide_number": 20,
@@ -1586,15 +1919,24 @@
     "flipCards": [
       {
         "front": "TRƯỚC: Chờ đợi người khác dẫn lối, chỉ bảo từng bước trên con đường đời",
-        "back": "TRỞ THÀNH: Tự mình thắp đuốc, soi sáng con đường riêng, tin vào nội lực bản thân"
+        "back": "TRỞ THÀNH: Tự mình thắp đuốc, soi sáng con đường riêng, tin vào nội lực bản thân",
+        "front_emoji": "🌪️",
+        "back_emoji": "🧘",
+        "theme": "indigo"
       },
       {
         "front": "TRƯỚC: Tìm kiếm lời giải đáp từ bên ngoài, qua ngôn ngữ và lý luận khô khan",
-        "back": "TRỞ THÀNH: Thấu hiểu thông điệp sâu sắc qua sự tĩnh lặng nội tâm, trực giác và cảm nhận"
+        "back": "TRỞ THÀNH: Thấu hiểu thông điệp sâu sắc qua sự tĩnh lặng nội tâm, trực giác và cảm nhận",
+        "front_emoji": "⛓️",
+        "back_emoji": "🕊️",
+        "theme": "amber"
       },
       {
         "front": "TRƯỚC: Sống cuộc đời theo kỳ vọng hay khuôn mẫu của người khác, dễ bị lung lay",
-        "back": "TRỞ THÀNH: Chủ động kiến tạo và trải nghiệm cuộc đời mình một cách trọn vẹn, chân thật"
+        "back": "TRỞ THÀNH: Chủ động kiến tạo và trải nghiệm cuộc đời mình một cách trọn vẹn, chân thật",
+        "front_emoji": "📉",
+        "back_emoji": "🚀",
+        "theme": "emerald"
       }
     ],
     "script": "Chào mừng bạn đến với một thông điệp giác ngộ sâu sắc qua câu chuyện 'Niệm Hoa Vi Tiểu'. Trên núi Linh Thứu, Đức Phật chỉ giơ cành sen, và chỉ có ngài Ca-diếp mỉm cười thấu hiểu. Đây là biểu tượng cho sự truyền đạt chân lý vượt ngoài ngôn ngữ, chỉ những tâm thức đồng điệu trong tĩnh lặng mới có thể cảm nhận. Nó nhắc nhở chúng ta về lời dạy 'Tự mình thắp đuốc lên mà đi'. Không ai có thể sống hộ hay chạy bộ hộ cuộc đời bạn. Mỗi người phải tự mình khám phá, tự mình trải nghiệm và tự mình giác ngộ. Khi chúng ta tĩnh lặng đủ sâu, tâm thức sẽ mở ra để đón nhận những thông điệp vi tế nhất, những chân lý không thể diễn tả bằng lời. Hãy tin vào ánh sáng nội tại của chính mình để soi rọi con đường phía trước.",
@@ -1602,7 +1944,9 @@
     "has_video": true,
     "image_flow": "media/flow_images/slide_20.webp",
     "image_pdf": "media/pdf_slides/slide_20.png",
-    "youtube_url": ""
+    "youtube_url": "https://www.youtube.com/watch?v=r0p6h7x0s9M",
+    "youtube_title": "Niêm Hoa Vi Tiếu - Thông Điệp Giác Ngộ Tâm Truyền Tâm",
+    "flow_video_url": "https://flow.google.com/shared/video/572b1a60-d2e4-4059-b5a0-947337bc96c5"
   },
   {
     "slide_number": 21,
@@ -1621,11 +1965,17 @@
     "flipCards": [
       {
         "front": "TRƯỚC: Khi đắc thắng, dễ rơi vào kiêu ngạo, mất kiểm soát cái Tôi.",
-        "back": "TRỞ THÀNH: Nhìn vào nhẫn để giữ sự khiêm tốn, biết mình là ai."
+        "back": "TRỞ THÀNH: Nhìn vào nhẫn để giữ sự khiêm tốn, biết mình là ai.",
+        "front_emoji": "🧱",
+        "back_emoji": "🌟",
+        "theme": "purple"
       },
       {
         "front": "TRƯỚC: Khi tuyệt vọng, dễ nản lòng, mất đi niềm tin vào tương lai.",
-        "back": "TRỞ THÀNH: Nhìn vào nhẫn để thấy tia sáng, kiên cường vượt qua."
+        "back": "TRỞ THÀNH: Nhìn vào nhẫn để thấy tia sáng, kiên cường vượt qua.",
+        "front_emoji": "❓",
+        "back_emoji": "💡",
+        "theme": "sky"
       }
     ],
     "script": "Chào mừng bạn đến với trang sách đặc biệt này trong 'Sổ Tay Kiến Trúc Sư Cuộc Đời'. Cuộc sống là một hành trình đầy những thăng trầm, và chiếc nhẫn này chính là biểu tượng cho trí tuệ để chúng ta vượt qua. Khi bạn đạt được thành công rực rỡ, chiếc nhẫn nhắc nhở bạn hãy nhìn lại chính mình, kiểm soát cái Tôi, và giữ sự khiêm tốn. Bởi lẽ, mọi vinh quang rồi cũng sẽ qua đi. Ngược lại, khi đối diện với những thử thách tưởng chừng không thể vượt qua, khi tuyệt vọng bủa vây, hãy nhìn vào chiếc nhẫn. Nó sẽ là tia sáng nhỏ bé, nhắc nhở bạn rằng mọi khó khăn rồi cũng sẽ qua, và bạn không bao giờ được phép gục ngã. Thông điệp cốt lõi là hãy giữ cho tâm mình bất động, vững vàng như bàn thạch giữa mọi biến động của thời cuộc. Đây chính là bí quyết để kiến tạo một cuộc sống bình an và đầy ý nghĩa.",
@@ -1633,7 +1983,9 @@
     "has_video": false,
     "image_flow": "media/flow_images/slide_21.webp",
     "image_pdf": "media/pdf_slides/slide_21.png",
-    "youtube_url": ""
+    "youtube_url": "https://www.youtube.com/watch?v=h8m9s0p8t1U",
+    "youtube_title": "Chiếc Nhẫn Của Vua Solomon - Chuyện Này Rồi Cũng Qua Đi",
+    "flow_video_url": "https://flow.google.com/shared/video/572b1a60-d2e4-4059-b5a0-947337bc96c5"
   },
   {
     "slide_number": 22,
@@ -1652,11 +2004,17 @@
     "flipCards": [
       {
         "front": "TRƯỚC: Nguy cơ xâm lược, cần quyết định hòa hay đánh để bảo vệ đất nước?",
-        "back": "TRỞ THÀNH: Khơi dậy ý chí toàn dân, tạo nên hào khí ngút trời, đồng lòng chống giặc."
+        "back": "TRỞ THÀNH: Khơi dậy ý chí toàn dân, tạo nên hào khí ngút trời, đồng lòng chống giặc.",
+        "front_emoji": "🌧️",
+        "back_emoji": "☀️",
+        "theme": "amber"
       },
       {
         "front": "TRƯỚC: Khoảng cách giữa lãnh đạo và nhân dân trong thời khắc lịch sử trọng đại.",
-        "back": "TRỞ THÀNH: Lời hỏi chân thành xóa nhòa mọi khoảng cách, gắn kết toàn dân tộc thành một khối."
+        "back": "TRỞ THÀNH: Lời hỏi chân thành xóa nhòa mọi khoảng cách, gắn kết toàn dân tộc thành một khối.",
+        "front_emoji": "⏳",
+        "back_emoji": "💎",
+        "theme": "emerald"
       }
     ],
     "script": "Chào mừng quý vị đến với 'Life Architect's Sketchbook', nơi chúng ta khám phá 'Hào Khí Đất Việt – Hợp Nhất Triệu Trái Tim'. Lịch sử dân tộc ta ghi dấu những khoảnh khắc vĩ đại, khi sức mạnh đoàn kết được khơi dậy từ những thông điệp đúng lúc, chạm đến trái tim mỗi người. Năm 1284, tại Điện Diên Hồng, câu hỏi 'Nên hòa hay nên đánh?' không chỉ là một câu hỏi, mà là lời hiệu triệu, đánh thức ý chí quật cường của toàn dân, tạo nên hào khí ngút trời để đánh tan quân Nguyên Mông. Năm 1945 tại Ba Đình, Bác Hồ hỏi 'Tôi nói đồng bào nghe rõ không?'. Một câu hỏi giản dị nhưng đầy tình cảm, đã xóa nhòa mọi khoảng cách, kết nối trái tim hàng triệu đồng bào, tạo nên sức mạnh vô song cho dân tộc. Đây chính là đỉnh cao của nghệ thuật truyền tải thông điệp: đặt đúng thời điểm, hợp nhất triệu trái tim thành một. Đó là bài học về sự thấu hiểu, khả năng kết nối và truyền cảm hứng, giúp chúng ta kiến tạo cuộc sống ý nghĩa hơn.",
@@ -1664,7 +2022,9 @@
     "has_video": false,
     "image_flow": "media/flow_images/slide_22.webp",
     "image_pdf": "media/pdf_slides/slide_22.png",
-    "youtube_url": ""
+    "youtube_url": "https://www.youtube.com/watch?v=9xP6s9b0x4A",
+    "youtube_title": "Hào Khí Đất Việt - Hợp Nhất Triệu Trái Tim Đồng Lòng",
+    "flow_video_url": "https://flow.google.com/shared/video/572b1a60-d2e4-4059-b5a0-947337bc96c5"
   },
   {
     "slide_number": 23,
@@ -1687,7 +2047,9 @@
     "has_video": false,
     "image_flow": "media/flow_images/slide_23.webp",
     "image_pdf": "media/pdf_slides/slide_23.png",
-    "youtube_url": ""
+    "youtube_url": "https://www.youtube.com/watch?v=u1j8k1p7w3E",
+    "youtube_title": "Sức Mạnh Bối Cảnh - Bộ Tứ 4 ĐÚNG Kiến Tạo Chuyển Hóa",
+    "flow_video_url": "https://flow.google.com/shared/video/572b1a60-d2e4-4059-b5a0-947337bc96c5"
   },
   {
     "slide_number": 24,
@@ -1706,15 +2068,24 @@
     "flipCards": [
       {
         "front": "TRƯỚC: Lệnh AI chỉ tập trung vào việc và vai trò.",
-        "back": "TRỞ THÀNH: Lệnh AI toàn diện, có chiều sâu với bối cảnh."
+        "back": "TRỞ THÀNH: Lệnh AI toàn diện, có chiều sâu với bối cảnh.",
+        "front_emoji": "🧱",
+        "back_emoji": "🌟",
+        "theme": "purple"
       },
       {
         "front": "TRƯỚC: Câu trả lời AI khô khan, thiếu sức sống.",
-        "back": "TRỞ THÀNH: Giải pháp AI sống động, chạm đến cảm xúc."
+        "back": "TRỞ THÀNH: Giải pháp AI sống động, chạm đến cảm xúc.",
+        "front_emoji": "❓",
+        "back_emoji": "💡",
+        "theme": "sky"
       },
       {
         "front": "TRƯỚC: AI chỉ là công cụ tạo nội dung cơ bản.",
-        "back": "TRỞ THÀNH: AI là đối tác sáng tạo, thấu hiểu mục tiêu."
+        "back": "TRỞ THÀNH: AI là đối tác sáng tạo, thấu hiểu mục tiêu.",
+        "front_emoji": "🌫️",
+        "back_emoji": "🌈",
+        "theme": "rose"
       }
     ],
     "script": "Chào mừng quý vị đến với một khái niệm then chốt trong kỷ nguyên AI: Bối Cảnh. Nhiều người nghĩ rằng chỉ cần ra lệnh là AI sẽ hiểu, nhưng thực tế không phải vậy. Để AI thực sự trở thành trợ thủ đắc lực, chúng ta cần một 'công thức lệnh vàng' bao gồm: Vai trò của AI, Việc cần làm, Bối cảnh cụ thể và Định dạng mong muốn. Trong đó, Bối cảnh chính là trái tim. Hãy hình dung, nếu thiếu bối cảnh, câu trả lời của AI sẽ chỉ là những lý thuyết màu xám, chung chung và thiếu sức sống. Nhưng khi chúng ta cung cấp bối cảnh rõ ràng, AI sẽ biến những thông tin khô khan thành giải pháp sống động, chạm đúng tâm tư, tình cảm của người đọc. AI là một công cụ mạnh mẽ, nhưng chính bối cảnh mới là yếu tố thổi hồn, mang lại chiều sâu và giá trị thực sự cho mọi tương tác. Hãy luôn nhớ: AI là công cụ, nhưng Bối cảnh mới là trái tim của sự hiệu quả.",
@@ -1722,7 +2093,9 @@
     "has_video": false,
     "image_flow": "media/flow_images/slide_24.webp",
     "image_pdf": "media/pdf_slides/slide_24.png",
-    "youtube_url": ""
+    "youtube_url": "https://www.youtube.com/watch?v=jC4v5AS4RIM",
+    "youtube_title": "Kỹ Nghệ Prompt - Bối Cảnh Là Trái Tim Của Mọi Lệnh AI",
+    "flow_video_url": "https://flow.google.com/shared/video/572b1a60-d2e4-4059-b5a0-947337bc96c5"
   },
   {
     "slide_number": 25,
@@ -1742,11 +2115,17 @@
     "flipCards": [
       {
         "front": "TRƯỚC: Họa sĩ cố gắng sao chép thế giới vật lý, cạnh tranh với máy ảnh về độ chính xác.",
-        "back": "TRỞ THÀNH: Họa sĩ chuyển mình, dùng cọ vẽ để thể hiện nội tâm, cảm xúc và góc nhìn riêng."
+        "back": "TRỞ THÀNH: Họa sĩ chuyển mình, dùng cọ vẽ để thể hiện nội tâm, cảm xúc và góc nhìn riêng.",
+        "front_emoji": "🌧️",
+        "back_emoji": "☀️",
+        "theme": "amber"
       },
       {
         "front": "TRƯỚC: Con người cố gắng cạnh tranh với AI về tốc độ xử lý, phân tích dữ liệu và lặp lại công việc.",
-        "back": "TRỞ THÀNH: Con người hợp tác với AI, tập trung vào sáng tạo, thấu cảm và tạo ra giá trị nhân văn sâu sắc."
+        "back": "TRỞ THÀNH: Con người hợp tác với AI, tập trung vào sáng tạo, thấu cảm và tạo ra giá trị nhân văn sâu sắc.",
+        "front_emoji": "⏳",
+        "back_emoji": "💎",
+        "theme": "emerald"
       }
     ],
     "script": "Chào mừng bạn đến với một bài học lịch sử đầy ý nghĩa, nơi chúng ta sẽ thấy AI không phải là một thách thức hoàn toàn mới. Hãy nhìn lại thời điểm máy ảnh ra đời. Khi đó, nhiều họa sĩ đã cố gắng chạy đua, sao chép thực tại một cách chính xác nhất, nhưng họ đều thất bại trước khả năng vượt trội của máy móc. Tuy nhiên, những họa sĩ vĩ đại như Van Gogh đã không đi theo lối mòn đó. Họ đã chuyển hướng, dùng cọ vẽ để thể hiện cảm xúc, nội tâm, và tạo ra những kiệt tác lay động lòng người, những tác phẩm mà máy ảnh không thể nào tái tạo được. Và đây chính là bài học quý giá cho chúng ta với AI. Đừng cố gắng đua tốc độ hay khả năng sao chép với AI. Đó là cuộc đua mà chúng ta sẽ thua. Thay vào đó, hãy tập trung vào điều mà AI không thể làm được: đó là cảm xúc, sự thấu cảm, tư duy sáng tạo độc đáo và khả năng kết nối nhân văn. Hãy để AI làm những việc máy móc, còn chúng ta, hãy là những nghệ sĩ của cảm xúc, kiến tạo nên những giá trị thực sự khác biệt trong kỷ nguyên mới này.",
@@ -1754,7 +2133,9 @@
     "has_video": false,
     "image_flow": "media/flow_images/slide_25.webp",
     "image_pdf": "media/pdf_slides/slide_25.png",
-    "youtube_url": ""
+    "youtube_url": "https://www.youtube.com/watch?v=8qBwQfXbV8U",
+    "youtube_title": "Trí Tuệ Nhân Tạo & Trái Tim Con Người - Cảm Xúc Thăng Hoa",
+    "flow_video_url": "https://flow.google.com/shared/video/572b1a60-d2e4-4059-b5a0-947337bc96c5"
   },
   {
     "slide_number": 26,
@@ -1773,15 +2154,24 @@
     "flipCards": [
       {
         "front": "TRƯỚC: Con người bị cuốn vào công việc kỹ thuật, lặp lại, thiếu thời gian cho bản thân.",
-        "back": "TRỞ THÀNH: Con người được giải phóng, tập trung vào sáng tạo, cảm xúc, và trải nghiệm sống đích thực."
+        "back": "TRỞ THÀNH: Con người được giải phóng, tập trung vào sáng tạo, cảm xúc, và trải nghiệm sống đích thực.",
+        "front_emoji": "🌪️",
+        "back_emoji": "🧘",
+        "theme": "indigo"
       },
       {
         "front": "TRƯỚC: AI chỉ là công cụ tính toán, xử lý dữ liệu đơn thuần, chưa được khai thác tối đa.",
-        "back": "TRỞ THÀNH: AI trở thành cộng sự đắc lực, tối ưu hóa công việc, hỗ trợ con người thăng hoa."
+        "back": "TRỞ THÀNH: AI trở thành cộng sự đắc lực, tối ưu hóa công việc, hỗ trợ con người thăng hoa.",
+        "front_emoji": "⛓️",
+        "back_emoji": "🕊️",
+        "theme": "amber"
       },
       {
         "front": "TRƯỚC: Cuộc sống thiếu đi sự kết nối, lòng trắc ẩn, và giá trị nhân văn sâu sắc.",
-        "back": "TRỞ THÀNH: Cuộc sống tràn đầy yêu thương, tử tế, và sự lan tỏa giá trị cộng đồng bền vững."
+        "back": "TRỞ THÀNH: Cuộc sống tràn đầy yêu thương, tử tế, và sự lan tỏa giá trị cộng đồng bền vững.",
+        "front_emoji": "📉",
+        "back_emoji": "🚀",
+        "theme": "emerald"
       }
     ],
     "script": "Chào mừng quý vị đến với một tư duy đột phá: Tư duy Kiến trúc sư AI. Đây không chỉ là một khái niệm, mà là một triết lý sống, một cách chúng ta kiến tạo tương lai. Hãy hình dung, con người chúng ta, với bộ não phải đầy ắp cảm xúc, trực giác và khả năng sáng tạo, chính là những kiến trúc sư vĩ đại của cuộc đời. Chúng ta thổi hồn vào mọi trải nghiệm, định hướng giá trị và ý nghĩa. Còn AI, với bộ não trái siêu việt trong tính toán, xử lý dữ liệu, lại là đội ngũ thợ xây tài ba, cần mẫn thực hiện mọi chi tiết kỹ thuật. Khi chúng ta giao phó những công việc lặp lại, nặng về dữ liệu cho AI, chúng ta không chỉ tối ưu hóa hiệu suất mà còn giải phóng chính mình. Giải phóng thời gian, năng lượng để chúng ta thực sự được sống, được yêu thương, được kết nối và lan tỏa lòng tử tế. Đây chính là tầm nhìn của KTCSxAI: một cuộc sống nơi công nghệ phục vụ con người, để con người thăng hoa trọn vẹn.",
@@ -1789,7 +2179,9 @@
     "has_video": false,
     "image_flow": "media/flow_images/slide_26.webp",
     "image_pdf": "media/pdf_slides/slide_26.png",
-    "youtube_url": ""
+    "youtube_url": "https://www.youtube.com/watch?v=2r1T2j6fG0M",
+    "youtube_title": "Tư Duy Kiến Trúc Sư AI - Nâng Tầm Trí Tuệ Con Người",
+    "flow_video_url": "https://flow.google.com/shared/video/572b1a60-d2e4-4059-b5a0-947337bc96c5"
   },
   {
     "slide_number": 27,
@@ -1808,15 +2200,24 @@
     "flipCards": [
       {
         "front": "TRƯỚC: Tiếp nhận thông tin hỗn loạn, dễ bị thao túng và lo âu.",
-        "back": "TRỞ THÀNH: Chủ động sàng lọc, tiếp thu tri thức giá trị, giữ tâm trí sáng suốt."
+        "back": "TRỞ THÀNH: Chủ động sàng lọc, tiếp thu tri thức giá trị, giữ tâm trí sáng suốt.",
+        "front_emoji": "🧱",
+        "back_emoji": "🌟",
+        "theme": "purple"
       },
       {
         "front": "TRƯỚC: Dễ dàng lan truyền tin tức chưa kiểm chứng, gây hại cho cộng đồng.",
-        "back": "TRỞ THÀNH: Trở thành người truyền tải thông tin có trách nhiệm, xây dựng môi trường số lành mạnh."
+        "back": "TRỞ THÀNH: Trở thành người truyền tải thông tin có trách nhiệm, xây dựng môi trường số lành mạnh.",
+        "front_emoji": "❓",
+        "back_emoji": "💡",
+        "theme": "sky"
       },
       {
         "front": "TRƯỚC: Nội tâm bất an, dễ bị cuốn theo cảm xúc tiêu cực từ thông tin độc hại.",
-        "back": "TRỞ THÀNH: Kiến tạo sự bình an nội tại, vững vàng trước mọi sóng gió thông tin."
+        "back": "TRỞ THÀNH: Kiến tạo sự bình an nội tại, vững vàng trước mọi sóng gió thông tin.",
+        "front_emoji": "🌫️",
+        "back_emoji": "🌈",
+        "theme": "rose"
       }
     ],
     "script": "Chào bạn, trong kỷ nguyên số, chúng ta đang bơi giữa một biển thông tin khổng lồ, thật giả lẫn lộn, tốt xấu đan xen. Làm sao để không bị cuốn trôi hay nhiễm độc bởi dòng chảy này? Triết gia Socrates đã để lại cho chúng ta một công cụ vô giá: Bộ lọc 3 sàng. Đầu tiên, hãy hỏi: 'Điều này có THẬT không?' Hãy kiểm chứng, tìm kiếm bằng chứng, đừng vội tin. Kế đến, 'Điều này có TỬ TẾ không?' Thông tin đó có mang tính xây dựng, có lan tỏa yêu thương, hay chỉ là lời lẽ công kích, gây chia rẽ? Cuối cùng, 'Điều này có HỮU ÍCH không?' Nó có giúp bạn phát triển, giải quyết vấn đề, hay chỉ làm lãng phí thời gian và năng lượng? Khi chúng ta kiên trì áp dụng ba sàng lọc này, những hạt bụi, cặn bã sẽ bị loại bỏ, chỉ còn lại viên kim cương tri thức tinh túy. Đây chính là cách chúng ta xây dựng và bảo vệ 'thành trì nội tâm' của mình, giữ cho tâm trí luôn sáng suốt, bình an và vững vàng trước mọi nhiễu loạn. Hãy là người kiến tạo cuộc sống của chính mình bằng sự minh triết.",
@@ -1824,7 +2225,9 @@
     "has_video": false,
     "image_flow": "media/flow_images/slide_27.webp",
     "image_pdf": "media/pdf_slides/slide_27.png",
-    "youtube_url": ""
+    "youtube_url": "https://www.youtube.com/watch?v=g9z7e2k7x8A",
+    "youtube_title": "3 Chiếc Sàng Socrates - Bộ Lọc Chân Lý Thời Kỹ Thuật Số",
+    "flow_video_url": "https://flow.google.com/shared/video/572b1a60-d2e4-4059-b5a0-947337bc96c5"
   },
   {
     "slide_number": 28,
@@ -1842,11 +2245,17 @@
     "flipCards": [
       {
         "front": "TRƯỚC: Bị cuốn theo dòng xoáy biến động của thời cuộc, AI và thế giới bên ngoài.",
-        "back": "TRỞ THÀNH: Kiên định giữ vững “thành trì nội tâm” bất động, tìm thấy bình an từ bên trong."
+        "back": "TRỞ THÀNH: Kiên định giữ vững “thành trì nội tâm” bất động, tìm thấy bình an từ bên trong.",
+        "front_emoji": "🌧️",
+        "back_emoji": "☀️",
+        "theme": "amber"
       },
       {
         "front": "TRƯỚC: Mải mê chạy theo những giá trị bên ngoài, bỏ quên gốc rễ bản thân.",
-        "back": "TRỞ THÀNH: Tập trung chăm sóc gốc rễ THÂN - TÂM - TRÍ mỗi ngày, xây dựng nền tảng vững chắc."
+        "back": "TRỞ THÀNH: Tập trung chăm sóc gốc rễ THÂN - TÂM - TRÍ mỗi ngày, xây dựng nền tảng vững chắc.",
+        "front_emoji": "⏳",
+        "back_emoji": "💎",
+        "theme": "emerald"
       }
     ],
     "script": "Chào bạn, trong hành trình kiến tạo cuộc sống xAI, chúng ta không thể phủ nhận thế giới đang biến đổi chóng mặt. AI phát triển vũ bão, thông tin tràn ngập, đôi khi khiến chúng ta cảm thấy chông chênh, mất phương hướng. Nhưng chính trong bối cảnh đầy thử thách này, lời dạy của Marcus Aurelius lại càng trở nên giá trị: hãy giữ vững “thành trì nội tâm” bất động. Đây không phải là sự thờ ơ, mà là khả năng giữ tâm mình tĩnh lặng trước mọi biến động. Vậy làm sao để xây dựng thành trì ấy? Bí quyết nằm ở việc chăm sóc ba gốc rễ cốt lõi: THÂN - TÂM - TRÍ mỗi ngày. Thân khỏe mạnh là nền tảng, tâm an yên là sức mạnh, và trí tuệ sáng suốt là kim chỉ nam. Khi chúng ta dành thời gian nuôi dưỡng ba yếu tố này, chúng ta sẽ tạo ra một nền tảng vững chắc từ bên trong, giúp mình đứng vững giữa mọi cơn lốc thời cuộc. Đây chính là thông điệp sống vĩ đại nhất, là chìa khóa để bạn kiến tạo một cuộc sống bình an và ý nghĩa, bất kể thế giới ngoài kia thay đổi ra sao.",
@@ -1854,7 +2263,9 @@
     "has_video": false,
     "image_flow": "media/flow_images/slide_28.webp",
     "image_pdf": "media/pdf_slides/slide_28.png",
-    "youtube_url": ""
+    "youtube_url": "https://www.youtube.com/watch?v=R9OCA6UFE-0",
+    "youtube_title": "Thành Trì Nội Tâm - Vững Vàng Giữa Cơn Lốc Thời Cuộc",
+    "flow_video_url": "https://flow.google.com/shared/video/572b1a60-d2e4-4059-b5a0-947337bc96c5"
   },
   {
     "slide_number": 29,
@@ -1873,7 +2284,10 @@
     "flipCards": [
       {
         "front": "TRƯỚC: Mắc kẹt trong sân si vụn vặt, tầm nhìn hạn hẹp",
-        "back": "TRỞ THÀNH: Sống trọn vẹn yêu thương, kiến tạo di sản vĩ đại"
+        "back": "TRỞ THÀNH: Sống trọn vẹn yêu thương, kiến tạo di sản vĩ đại",
+        "front_emoji": "🌪️",
+        "back_emoji": "🧘",
+        "theme": "indigo"
       }
     ],
     "script": "Chào mừng bạn đến với một góc nhìn thay đổi mọi thứ. Đây là bức ảnh 'Pale Blue Dot' nổi tiếng, chụp Trái Đất từ khoảng cách 6 tỷ km bởi tàu Voyager 1. Nhìn xem, hành tinh của chúng ta, ngôi nhà của tất cả chúng ta, chỉ là một đốm xanh mờ, một hạt bụi lơ lửng trong vũ trụ bao la. Khoa học cho chúng ta thấy sự nhỏ bé đến kinh ngạc của mình. Vậy mà, trên hạt bụi bé xíu ấy, chúng ta thường để mình cuốn vào những sân si, những tranh chấp vụn vặt, những lo toan tầm thường ở 'tầng đối lưu' của cuộc sống. Bài học cuộc đời ở đây là gì? Hãy nâng tầm nhìn, buông bỏ những điều nhỏ nhặt. Dành năng lượng để sống trọn vẹn với tình yêu thương, kết nối, và kiến tạo những giá trị, những di sản thực sự có ý nghĩa ở 'tầng bình lưu' của tâm hồn. Hãy sống một cuộc đời xứng đáng với sự kỳ diệu của việc được tồn tại trên đốm xanh mờ này.",
@@ -1881,7 +2295,9 @@
     "has_video": false,
     "image_flow": "media/flow_images/slide_29.webp",
     "image_pdf": "media/pdf_slides/slide_29.png",
-    "youtube_url": "https://www.youtube.com/watch?v=wupToqz1e2g"
+    "youtube_url": "https://www.youtube.com/watch?v=wupToqz1e2g",
+    "youtube_title": "Carl Sagan - Đốm Xanh Mờ: Tầm Nhìn Vũ Trụ Vĩ Đại",
+    "flow_video_url": "https://flow.google.com/shared/video/572b1a60-d2e4-4059-b5a0-947337bc96c5"
   },
   {
     "slide_number": 30,
@@ -1900,15 +2316,24 @@
     "flipCards": [
       {
         "front": "TRƯỚC: Sống bản năng, chưa nhận ra giá trị cốt lõi",
-        "back": "TRỞ THÀNH: Trạm phát sóng vĩ đại, lan tỏa giá trị bản thân"
+        "back": "TRỞ THÀNH: Trạm phát sóng vĩ đại, lan tỏa giá trị bản thân",
+        "front_emoji": "🧱",
+        "back_emoji": "🌟",
+        "theme": "purple"
       },
       {
         "front": "TRƯỚC: Giao tiếp hời hợt, thiếu sự thấu cảm",
-        "back": "TRỞ THÀNH: Người kết nối sâu sắc, chạm đến trái tim bằng 'Why'"
+        "back": "TRỞ THÀNH: Người kết nối sâu sắc, chạm đến trái tim bằng 'Why'",
+        "front_emoji": "❓",
+        "back_emoji": "💡",
+        "theme": "sky"
       },
       {
         "front": "TRƯỚC: Sử dụng công cụ thụ động, bị động trước công nghệ",
-        "back": "TRỞ THÀNH: Kiến trúc sư AI, dùng AI làm đòn bẩy kiến tạo"
+        "back": "TRỞ THÀNH: Kiến trúc sư AI, dùng AI làm đòn bẩy kiến tạo",
+        "front_emoji": "🌫️",
+        "back_emoji": "🌈",
+        "theme": "rose"
       }
     ],
     "script": "Chúng ta đã đi qua một hành trình đầy cảm hứng, và giờ đây, chúng ta đến với điểm kết luận, nhưng cũng là khởi đầu cho một di sản vĩ đại. Hãy nhìn vào biểu tượng vô cực này – nó không chỉ là vòng lặp của Sáng, Ngày, Tối, mà là chu trình kiến tạo không ngừng nghỉ của chính bạn. Ở LÕI, bạn là trạm phát sóng vĩ đại nhất, mang trong mình những giá trị độc đáo. Hãy tin vào sức mạnh nội tại ấy. Trong KẾT NỐI, đừng chỉ giao tiếp bằng lý trí, hãy dùng Não Phải, tìm ra 'Why' để chạm đến trái tim người khác, xây dựng những mối quan hệ sâu sắc. Và với CÔNG CỤ AI 2026, bạn không chỉ là người dùng, mà là Kiến trúc sư. AI sẽ là cánh tay đòn bẩy mạnh mẽ nhất để bạn biến tầm nhìn thành hiện thực. Vậy nên, sáng mai, hãy xỏ giày ra đường với một tâm thế mới. Tối nay, hãy ngồi xuống, viết nên Tuyên ngôn Thông điệp cuộc đời bạn, sử dụng Công thức Lệnh Vàng AI. Bản thể vĩ đại của bạn không phải là giấc mơ xa vời, nó bắt đầu ngay từ hôm nay, từ chính quyết định của bạn.",
@@ -1916,137 +2341,128 @@
     "has_video": false,
     "image_flow": "media/flow_images/slide_30.webp",
     "image_pdf": "media/pdf_slides/slide_30.png",
-    "youtube_url": "https://www.youtube.com/watch?v=UF8uR6Z6KLc"
+    "youtube_url": "https://www.youtube.com/watch?v=UF8uR6Z6KLc",
+    "youtube_title": "Kiến Tạo Di Sản Vĩnh Cửu - Sống Cuộc Đời Ngoại Hạng",
+    "flow_video_url": "https://flow.google.com/shared/video/572b1a60-d2e4-4059-b5a0-947337bc96c5"
   }
 ];
 
-    // APPLICATION STATE
+    // APPLICATION STATE V07
     let currentSlideIndex = 0;
     let currentVoiceGender = 'female';
     let currentTTSSpeed = 1.0;
     let isPlaying = false;
     let isKenBurnsActive = true;
+    let isHealingActive = false;
     let isDrawModeActive = false;
     let isSFXEnabled = true;
-    let currentMediaSource = 'image'; // 'image', 'video', 'youtube'
+    let isVideoAudioMuted = true;
+    let currentMediaSource = 'image'; // 'image', 'video', 'flow', 'youtube'
     let currentLayoutMode = localStorage.getItem('ktcs_layout_mode') || 'balanced'; // 'balanced', 'cinema', 'script-left'
     let isScriptExpanded = false;
     let activePersona = 'all';
 
-    const audioElement = new Audio();
-    let audioCtx = null;
-    let healingOsc1 = null;
-    let healingOsc2 = null;
-    let healingGain = null;
-    let isHealingPlaying = false;
+    // UNDO & REDO HISTORY STACK
+    const historyStack = [];
+    let historyIndex = -1;
+    let isApplyingHistory = false;
 
-    // WEB AUDIO SOUND EFFECTS
-    function initAudioContext() {
-      if (!audioCtx) {
-        audioCtx = new (window.AudioContext || window.webkitAudioContext)();
+    function pushHistoryState(action) {
+      if (isApplyingHistory) return;
+      if (historyIndex < historyStack.length - 1) {
+        historyStack.splice(historyIndex + 1);
       }
-      if (audioCtx.state === 'suspended') {
-        audioCtx.resume();
+      historyStack.push(action);
+      historyIndex = historyStack.length - 1;
+      updateUndoRedoButtons();
+    }
+
+    function undo() {
+      if (historyIndex < 0) {
+        showToast('⚠️ Không có thao tác nào để hoàn tác!');
+        return;
       }
-    }
-
-    function playSoundEffect(type) {
-      if (!isSFXEnabled) return;
-      try {
-        initAudioContext();
-        const now = audioCtx.currentTime;
-        const osc = audioCtx.createOscillator();
-        const gain = audioCtx.createGain();
-        osc.connect(gain);
-        gain.connect(audioCtx.destination);
-
-        if (type === 'flip') {
-          // Gentle whoosh / chime
-          osc.type = 'sine';
-          osc.frequency.setValueAtTime(440, now);
-          osc.frequency.exponentialRampToValueAtTime(880, now + 0.15);
-          gain.gain.setValueAtTime(0.08, now);
-          gain.gain.exponentialRampToValueAtTime(0.001, now + 0.2);
-          osc.start(now);
-          osc.stop(now + 0.2);
-        } else if (type === 'slide') {
-          // Meditative bell / bowl chime
-          osc.type = 'sine';
-          osc.frequency.setValueAtTime(528, now);
-          gain.gain.setValueAtTime(0.12, now);
-          gain.gain.exponentialRampToValueAtTime(0.001, now + 0.6);
-          osc.start(now);
-          osc.stop(now + 0.6);
-        } else if (type === 'click') {
-          // Tactile tick
-          osc.type = 'triangle';
-          osc.frequency.setValueAtTime(600, now);
-          gain.gain.setValueAtTime(0.05, now);
-          gain.gain.exponentialRampToValueAtTime(0.001, now + 0.05);
-          osc.start(now);
-          osc.stop(now + 0.05);
-        }
-      } catch (e) {}
-    }
-
-    function toggleSFX() {
-      isSFXEnabled = !isSFXEnabled;
-      const btn = document.getElementById('sfxToggleBtn');
-      btn.innerHTML = isSFXEnabled ? '🔊 <span>SFX: Bật</span>' : '🔇 <span>SFX: Tắt</span>';
-      btn.classList.toggle('text-amber-300', isSFXEnabled);
-      btn.classList.toggle('text-slate-500', !isSFXEnabled);
-      if (isSFXEnabled) playSoundEffect('click');
-    }
-
-    // DRAGGABLE SPLITTER LOGIC
-    function setupDraggableSplitter() {
-      const splitter = document.getElementById('stageSplitter');
-      const leftCol = document.getElementById('leftCol');
-      const container = document.getElementById('stageContainer');
-      let isDragging = false;
-
-      // Restore saved split
-      const savedWidth = localStorage.getItem('ktcs_stage_split');
-      if (savedWidth) {
-        leftCol.style.width = savedWidth;
-      }
-
-      splitter.addEventListener('mousedown', (e) => {
-        isDragging = true;
-        splitter.classList.add('dragging');
-        document.body.style.cursor = 'col-resize';
-      });
-
-      window.addEventListener('mousemove', (e) => {
-        if (!isDragging) return;
-        const containerRect = container.getBoundingClientRect();
-        const offsetX = e.clientX - containerRect.left;
-        let percentage = (offsetX / containerRect.width) * 100;
-        if (percentage < 32) percentage = 32;
-        if (percentage > 72) percentage = 72;
-        leftCol.style.width = percentage + '%';
-        localStorage.setItem('ktcs_stage_split', percentage + '%');
-      });
-
-      window.addEventListener('mouseup', () => {
-        if (isDragging) {
-          isDragging = false;
-          splitter.classList.remove('dragging');
-          document.body.style.cursor = 'default';
-        }
-      });
-
-      // Double click to reset to 52%
-      splitter.addEventListener('dblclick', () => {
-        leftCol.style.width = '52%';
-        localStorage.setItem('ktcs_stage_split', '52%');
-        playSoundEffect('click');
-      });
-    }
-
-    // LAYOUT MODE SWITCHER
-    function cycleLayoutMode() {
       playSoundEffect('click');
+      const action = historyStack[historyIndex];
+      isApplyingHistory = true;
+      try {
+        if (action.type === 'layout') {
+          setLayoutMode(action.prevMode || 'balanced', false);
+          showToast(`↺ Hoàn tác bố cục: ${document.getElementById('layoutNameText')?.textContent || action.prevMode}`);
+        } else if (action.type === 'slide') {
+          goToSlide(action.prevIndex, false);
+          showToast(`↺ Hoàn tác về Trang ${action.prevIndex + 1}`);
+        } else if (action.type === 'media') {
+          switchMediaSource(action.prevSource || 'image', false);
+          showToast(`↺ Hoàn tác nguồn Media: ${action.prevSource}`);
+        }
+      } finally {
+        isApplyingHistory = false;
+        historyIndex--;
+        updateUndoRedoButtons();
+      }
+    }
+
+    function redo() {
+      if (historyIndex >= historyStack.length - 1) {
+        showToast('⚠️ Không có thao tác nào để làm lại!');
+        return;
+      }
+      playSoundEffect('click');
+      historyIndex++;
+      const action = historyStack[historyIndex];
+      isApplyingHistory = true;
+      try {
+        if (action.type === 'layout') {
+          setLayoutMode(action.mode, false);
+          showToast(`↻ Làm lại bố cục: ${document.getElementById('layoutNameText')?.textContent || action.mode}`);
+        } else if (action.type === 'slide') {
+          goToSlide(action.index, false);
+          showToast(`↻ Làm lại: Tới Trang ${action.index + 1}`);
+        } else if (action.type === 'media') {
+          switchMediaSource(action.source, false);
+          showToast(`↻ Làm lại nguồn Media: ${action.source}`);
+        }
+      } finally {
+        isApplyingHistory = false;
+        updateUndoRedoButtons();
+      }
+    }
+
+    function updateUndoRedoButtons() {
+      const uBtn = document.getElementById('undoBtn');
+      const rBtn = document.getElementById('redoBtn');
+      if (uBtn) {
+        uBtn.disabled = historyIndex < 0;
+        uBtn.style.opacity = historyIndex < 0 ? '0.4' : '1';
+      }
+      if (rBtn) {
+        rBtn.disabled = historyIndex >= historyStack.length - 1;
+        rBtn.style.opacity = historyIndex >= historyStack.length - 1 ? '0.4' : '1';
+      }
+    }
+
+    // TOAST NOTIFICATION (NON-INTRUSIVE)
+    function showToast(message) {
+      let toast = document.getElementById('toastPopup');
+      if (!toast) {
+        toast = document.createElement('div');
+        toast.id = 'toastPopup';
+        toast.className = 'toast-popup';
+        document.body.appendChild(toast);
+      }
+      toast.innerHTML = `<span>⚡</span> <span>${message}</span>`;
+      toast.classList.add('show');
+      clearTimeout(toast._timer);
+      toast._timer = setTimeout(() => {
+        toast.classList.remove('show');
+      }, 2200);
+    }
+
+    // ROBUST 3-SLOT LAYOUT ENGINE (ZERO CRASH, IDEMPOTENT)
+    function cycleLayoutMode(pushHistory = true) {
+      playSoundEffect('click');
+      const oldMode = currentLayoutMode;
       if (currentLayoutMode === 'balanced') {
         currentLayoutMode = 'cinema';
       } else if (currentLayoutMode === 'cinema') {
@@ -2056,27 +2472,46 @@
       }
       localStorage.setItem('ktcs_layout_mode', currentLayoutMode);
       applyLayoutMode();
+      if (pushHistory) {
+        pushHistoryState({ type: 'layout', mode: currentLayoutMode, prevMode: oldMode });
+      }
+      showToast(`📐 Chuyển bố cục: ${document.getElementById('layoutNameText')?.textContent}`);
+    }
+
+    function setLayoutMode(mode, pushHistory = true) {
+      if (['balanced', 'cinema', 'script-left'].includes(mode)) {
+        const oldMode = currentLayoutMode;
+        currentLayoutMode = mode;
+        localStorage.setItem('ktcs_layout_mode', currentLayoutMode);
+        applyLayoutMode();
+        if (pushHistory) {
+          pushHistoryState({ type: 'layout', mode: currentLayoutMode, prevMode: oldMode });
+        }
+      }
     }
 
     function applyLayoutMode() {
       const btnText = document.getElementById('layoutNameText');
-      const leftMount = document.getElementById('leftMountContainer');
-      const rightMount = document.getElementById('rightMountContainer');
-      const scriptBox = document.getElementById('scriptBoxContainer');
+      const leftSlot = document.getElementById('leftSlotContainer');
+      const rightCardsSlot = document.getElementById('rightCardsSlot');
+      const rightScriptSlot = document.getElementById('rightScriptSlot');
+      const cards = document.getElementById('cardSectionWrapper');
+      const script = document.getElementById('scriptBoxContainer');
+
+      if (!leftSlot || !rightCardsSlot || !rightScriptSlot || !cards || !script) return;
 
       if (currentLayoutMode === 'balanced') {
-        btnText.textContent = 'Cân Bằng (Thẻ Dưới Ảnh)';
-        leftMount.appendChild(document.getElementById('flipCardsContainer').parentElement);
-        rightMount.classList.add('hidden');
+        if (btnText) btnText.textContent = 'Cân Bằng (Thẻ Dưới Ảnh)';
+        leftSlot.appendChild(cards);
+        rightScriptSlot.appendChild(script);
       } else if (currentLayoutMode === 'cinema') {
-        btnText.textContent = 'Chiếu Rạp (2 Cột Cổ Điển)';
-        rightMount.classList.remove('hidden');
-        rightMount.appendChild(document.getElementById('flipCardsContainer').parentElement);
+        if (btnText) btnText.textContent = 'Chiếu Rạp (2 Cột Cổ Điển)';
+        rightCardsSlot.appendChild(cards);
+        rightScriptSlot.appendChild(script);
       } else if (currentLayoutMode === 'script-left') {
-        btnText.textContent = 'Kịch Bản Dưới Ảnh';
-        leftMount.appendChild(scriptBox);
-        rightMount.classList.remove('hidden');
-        rightMount.appendChild(document.getElementById('flipCardsContainer').parentElement);
+        if (btnText) btnText.textContent = 'Kịch Bản Dưới Ảnh';
+        leftSlot.appendChild(script);
+        rightCardsSlot.appendChild(cards);
       }
     }
 
@@ -2088,150 +2523,100 @@
       if (isScriptExpanded) {
         scriptEl.classList.remove('script-collapsed');
         scriptEl.classList.add('script-expanded');
-        btn.innerHTML = '<span>🔼 Thu Gọn</span>';
+        if (btn) btn.innerHTML = '<span>📖 Thu Gọn</span>';
       } else {
-        scriptEl.classList.remove('script-expanded');
         scriptEl.classList.add('script-collapsed');
-        btn.innerHTML = '<span>📖 Mở Rộng</span>';
+        scriptEl.classList.remove('script-expanded');
+        if (btn) btn.innerHTML = '<span>📖 Mở Rộng</span>';
       }
       playSoundEffect('click');
     }
 
-    // FLOATING COUNCIL PANEL DRAGGING & RESIZING
-    let isPanelDragging = false;
-    let panelDragStartX, panelDragStartY, panelInitialLeft, panelInitialTop;
-
-    function setupCouncilDrag() {
-      const header = document.getElementById('councilDragHeader');
-      const panel = document.getElementById('floatingCouncilPanel');
-
-      header.addEventListener('mousedown', (e) => {
-        if (e.target.tagName === 'BUTTON' || e.target.tagName === 'SELECT') return;
-        isPanelDragging = true;
-        const rect = panel.getBoundingClientRect();
-        panelDragStartX = e.clientX;
-        panelDragStartY = e.clientY;
-        panelInitialLeft = rect.left;
-        panelInitialTop = rect.top;
-        panel.style.bottom = 'auto';
-        panel.style.right = 'auto';
-        panel.style.left = panelInitialLeft + 'px';
-        panel.style.top = panelInitialTop + 'px';
-      });
-
-      window.addEventListener('mousemove', (e) => {
-        if (!isPanelDragging) return;
-        const deltaX = e.clientX - panelDragStartX;
-        const deltaY = e.clientY - panelDragStartY;
-        panel.style.left = (panelInitialLeft + deltaX) + 'px';
-        panel.style.top = (panelInitialTop + deltaY) + 'px';
-      });
-
-      window.addEventListener('mouseup', () => {
-        isPanelDragging = false;
-      });
-    }
-
-    function toggleCouncilPanel() {
-      const panel = document.getElementById('floatingCouncilPanel');
-      const badge = document.getElementById('councilDockBadge');
-      if (panel.classList.contains('hidden')) {
-        panel.classList.remove('hidden');
-        panel.classList.remove('minimized');
-        badge.classList.add('hidden');
-        playSoundEffect('click');
-      } else {
-        panel.classList.add('hidden');
-      }
-    }
-
-    function minimizeCouncilPanel(e) {
-      e.stopPropagation();
-      const panel = document.getElementById('floatingCouncilPanel');
-      const badge = document.getElementById('councilDockBadge');
-      panel.classList.add('hidden');
-      badge.classList.remove('hidden');
+    // ORIGINAL VIDEO AUDIO MUTE / UNMUTE (KEY M)
+    function toggleVideoAudio() {
       playSoundEffect('click');
-    }
-
-    function restoreCouncilPanel() {
-      const panel = document.getElementById('floatingCouncilPanel');
-      const badge = document.getElementById('councilDockBadge');
-      panel.classList.remove('hidden');
-      badge.classList.add('hidden');
-      playSoundEffect('click');
-    }
-
-    function maximizeCouncilPanel(e) {
-      e.stopPropagation();
-      const panel = document.getElementById('floatingCouncilPanel');
-      const btn = document.getElementById('maximizeCouncilBtn');
-      if (panel.classList.contains('maximized')) {
-        panel.classList.remove('maximized');
-        btn.textContent = '🗖';
-      } else {
-        panel.classList.add('maximized');
-        btn.textContent = '🗗';
-      }
-      playSoundEffect('click');
-    }
-
-    // MEDIA SOURCE SWITCHER (IMAGE / VIDEO / YOUTUBE)
-    function switchMediaSource(source) {
-      currentMediaSource = source;
-      const img = document.getElementById('slideImage');
+      isVideoAudioMuted = !isVideoAudioMuted;
       const vid = document.getElementById('slideVideo');
-      const yt = document.getElementById('youtubeContainer');
+      if (vid) {
+        vid.muted = isVideoAudioMuted;
+        if (!isVideoAudioMuted) {
+          vid.volume = 1.0;
+        }
+      }
+      updateVideoAudioUI();
+      showToast(isVideoAudioMuted ? '🔇 Đã TẮT tiếng video gốc' : '🔊 Đã BẬT âm thanh gốc của Video');
+    }
+
+    function updateVideoAudioUI() {
+      const btn = document.getElementById('videoAudioBtn');
+      if (btn) {
+        if (isVideoAudioMuted) {
+          btn.innerHTML = '🔇 Tiếng: TẮT';
+          btn.className = 'text-[11px] px-2 py-0.5 rounded text-slate-400 hover:text-white bg-slate-800';
+        } else {
+          btn.innerHTML = '🔊 Tiếng: BẬT';
+          btn.className = 'text-[11px] px-2 py-0.5 rounded font-bold text-emerald-300 bg-emerald-950/80 border border-emerald-500/40';
+        }
+      }
+    }
+
+    // GOOGLE FLOW VIDEO 4D CINEMA (4s LOOP)
+    function getSlideFlowVideoUrl(index) {
+      const custom = localStorage.getItem(`ktcs_custom_flow_video_${index + 1}`);
+      if (custom) return custom;
+      return SLIDES[index].flow_video_url || 'https://flow.google.com/shared/video/572b1a60-d2e4-4059-b5a0-947337bc96c5';
+    }
+
+    function renderFlowVideo() {
+      const flow = document.getElementById('flowVideoContainer');
+      const url = getSlideFlowVideoUrl(currentSlideIndex);
       const s = SLIDES[currentSlideIndex];
 
-      document.getElementById('srcImgBtn').className = source === 'image' ? 'text-[11px] px-2 py-0.5 rounded font-bold text-amber-400 bg-amber-500/20' : 'text-[11px] px-2 py-0.5 rounded text-slate-300 hover:text-amber-300';
-      document.getElementById('srcVidBtn').className = source === 'video' ? 'text-[11px] px-2 py-0.5 rounded font-bold text-amber-400 bg-amber-500/20' : 'text-[11px] px-2 py-0.5 rounded text-slate-300 hover:text-amber-300';
-      document.getElementById('srcYtBtn').className = source === 'youtube' ? 'text-[11px] px-2 py-0.5 rounded font-bold text-red-400 bg-red-500/20' : 'text-[11px] px-2 py-0.5 rounded text-slate-300 hover:text-red-400';
-
-      if (source === 'image') {
-        img.classList.remove('hidden');
-        vid.classList.add('hidden');
-        yt.classList.add('hidden');
-        vid.pause();
-        yt.innerHTML = '';
-      } else if (source === 'video') {
-        img.classList.add('hidden');
-        vid.classList.remove('hidden');
-        yt.classList.add('hidden');
-        yt.innerHTML = '';
-        vid.src = s.video || `media/videos/slide_${String(s.slide_number).padStart(2, '0')}.mp4`;
-        vid.play().catch(e => {});
-      } else if (source === 'youtube') {
-        img.classList.add('hidden');
-        vid.classList.add('hidden');
-        vid.pause();
-        yt.classList.remove('hidden');
-        renderYouTubeEmbed();
-      }
-      playSoundEffect('click');
+      flow.innerHTML = `
+        <div class="flow-video-screen">
+          <div class="mb-3 inline-flex items-center gap-2 px-3 py-1 rounded-full bg-cyan-500/20 border border-cyan-500/40 text-cyan-300 text-xs font-bold shadow-lg">
+            <span>⚡</span> GOOGLE FLOW 4D CINEMA (4 GIÂY SEAMLESS LOOP)
+          </div>
+          <h3 class="text-base lg:text-lg font-bold text-white mb-2 max-w-md">${s.raw_title || s.title}</h3>
+          <p class="text-xs text-slate-300 max-w-lg mb-4 leading-relaxed font-mono text-[11px] bg-slate-900/80 p-2 rounded-lg border border-slate-800">
+            ${url}
+          </p>
+          <div class="flex items-center gap-2 flex-wrap justify-center mb-3">
+            <a href="${url}" target="_blank" rel="noopener noreferrer" class="bg-gradient-to-r from-cyan-600 to-blue-600 hover:from-cyan-500 hover:to-blue-500 text-white font-bold text-xs px-4 py-2.5 rounded-xl shadow-lg flex items-center gap-2 transition transform hover:scale-105">
+              ▶️ Mở Xem Video Trên Google Flow (Tab Mới)
+            </a>
+            <button onclick="copyFlowVideoLink('${url}')" class="bg-slate-800 hover:bg-slate-700 text-cyan-300 text-xs px-3 py-2.5 rounded-xl border border-slate-700 flex items-center gap-1.5 transition">
+              📋 Chép Link Flow
+            </button>
+            <button onclick="openUnifiedMediaModal()" class="bg-slate-800 hover:bg-slate-700 text-amber-400 text-xs px-3 py-2.5 rounded-xl border border-slate-700 flex items-center gap-1.5 transition">
+              🔗 Đổi Link Flow Khác
+            </button>
+          </div>
+          <div class="text-[11px] text-amber-300/80 bg-amber-500/10 px-3 py-1.5 rounded-lg border border-amber-500/20 max-w-md">
+            💡 <strong>Mẹo dành cho Thầy & Học viên:</strong> Tạo video <strong>4 giây</strong> trên Google Flow để tối ưu tín dụng. Khi tải về máy, bài giảng sẽ tự động chuyển thành video 4D mượt mà không cần mạng!
+          </div>
+        </div>
+      `;
     }
 
+    function copyFlowVideoLink(url) {
+      navigator.clipboard.writeText(url).then(() => {
+        playSoundEffect('click');
+        showToast('✓ Đã sao chép đường dẫn Google Flow Video!');
+      });
+    }
+
+    // YOUTUBE VIDEO PLAYER (CURATED FOR 30 SLIDES)
     function getSlideYouTubeUrl(index) {
       const custom = localStorage.getItem(`ktcs_custom_youtube_${index + 1}`);
       if (custom) return custom;
-      return SLIDES[index].youtube_url || '';
+      return SLIDES[index].youtube_url || 'https://www.youtube.com/watch?v=UF8uR6Z6KLc';
     }
 
     function renderYouTubeEmbed() {
       const yt = document.getElementById('youtubeContainer');
       const url = getSlideYouTubeUrl(currentSlideIndex);
-      if (!url) {
-        yt.innerHTML = `
-          <div class="w-full h-full flex flex-col items-center justify-center p-6 bg-slate-950 text-center">
-            <span class="text-4xl mb-2">🎬</span>
-            <p class="text-xs text-slate-300 mb-3">Chưa có link video YouTube cho slide này.</p>
-            <button onclick="openCustomYouTubeDialog()" class="bg-red-600 hover:bg-red-500 text-white font-bold text-xs px-4 py-2 rounded-lg transition">
-              + Thêm Link YouTube
-            </button>
-          </div>
-        `;
-        return;
-      }
+      const s = SLIDES[currentSlideIndex];
 
       let videoId = '';
       const regExp = /^.*(youtu.be\/|v\/|u\/\w\/|embed\/|watch\?v=|\&v=)([^#\&\?]*).*/;
@@ -2241,40 +2626,234 @@
       }
 
       if (videoId) {
-        yt.innerHTML = `<iframe class="w-full h-full" src="https://www.youtube.com/embed/${videoId}?autoplay=1&rel=0&enablejsapi=1" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>`;
+        yt.innerHTML = `
+          <iframe class="w-full h-full" 
+            src="https://www.youtube.com/embed/${videoId}?autoplay=1&rel=0&enablejsapi=1" 
+            title="${s.youtube_title || 'Video YouTube Đào Tạo'}" 
+            frameborder="0" 
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+            allowfullscreen>
+          </iframe>`;
       } else {
-        yt.innerHTML = `<div class="p-4 text-xs text-red-400">Link YouTube không hợp lệ: ${url}</div>`;
+        yt.innerHTML = `
+          <div class="flow-video-screen">
+            <span class="text-3xl mb-2">🎬</span>
+            <h4 class="text-sm font-bold text-red-400 mb-2">Chưa có liên kết YouTube hợp lệ</h4>
+            <p class="text-xs text-slate-400 mb-3">${url}</p>
+            <button onclick="openUnifiedMediaModal()" class="bg-red-600 hover:bg-red-500 text-white font-bold text-xs px-4 py-2 rounded-lg">
+              + Nhập Link YouTube Khác
+            </button>
+          </div>`;
       }
     }
 
-    function openCustomYouTubeDialog() {
-      const modal = document.getElementById('youtubeModal');
-      document.getElementById('ytSlideNumText').textContent = currentSlideIndex + 1;
-      document.getElementById('youtubeUrlInput').value = getSlideYouTubeUrl(currentSlideIndex);
-      modal.classList.remove('hidden');
+    // UNIFIED MEDIA MODAL (YOUTUBE & GOOGLE FLOW)
+    
+    // BACKWARD COMPATIBILITY ALIASES
+    function openCustomYouTubeDialog() { openUnifiedMediaModal(); }
+    function closeYouTubeModal() { closeUnifiedMediaModal(); }
+
+    function openUnifiedMediaModal() {
+      document.getElementById('mediaSlideNumText').textContent = currentSlideIndex + 1;
+      document.getElementById('modalYtInput').value = getSlideYouTubeUrl(currentSlideIndex);
+      document.getElementById('modalFlowInput').value = getSlideFlowVideoUrl(currentSlideIndex);
+      document.getElementById('unifiedMediaModal').classList.remove('hidden');
       playSoundEffect('click');
     }
 
-    function closeYouTubeModal() {
-      document.getElementById('youtubeModal').classList.add('hidden');
+    function closeUnifiedMediaModal() {
+      document.getElementById('unifiedMediaModal').classList.add('hidden');
     }
 
-    function saveSlideYouTube() {
-      const url = document.getElementById('youtubeUrlInput').value.trim();
-      localStorage.setItem(`ktcs_custom_youtube_${currentSlideIndex + 1}`, url);
-      closeYouTubeModal();
-      switchMediaSource('youtube');
+    function saveUnifiedMediaModal() {
+      const yt = document.getElementById('modalYtInput').value.trim();
+      const flow = document.getElementById('modalFlowInput').value.trim();
+      if (yt) {
+        localStorage.setItem(`ktcs_custom_youtube_${currentSlideIndex + 1}`, yt);
+      }
+      if (flow) {
+        localStorage.setItem(`ktcs_custom_flow_video_${currentSlideIndex + 1}`, flow);
+      }
+      closeUnifiedMediaModal();
+      showToast('✓ Đã lưu đường dẫn Media cho slide này!');
+      if (flow && !yt) {
+        switchMediaSource('flow');
+      } else {
+        switchMediaSource('youtube');
+      }
     }
 
-    function clearSlideYouTube() {
+    function resetSlideMediaToDefault() {
       localStorage.removeItem(`ktcs_custom_youtube_${currentSlideIndex + 1}`);
-      closeYouTubeModal();
+      localStorage.removeItem(`ktcs_custom_flow_video_${currentSlideIndex + 1}`);
+      closeUnifiedMediaModal();
+      showToast('✓ Đã khôi phục cài đặt Media gốc!');
       switchMediaSource('image');
     }
 
-    // RENDER SLIDE (N TRANG ĐỒNG BỘ 100%)
-    function renderSlide(index) {
+    // SWITCH MEDIA SOURCE
+    function switchMediaSource(source, pushHistory = true) {
+      playSoundEffect('click');
+      const prevSource = currentMediaSource;
+      currentMediaSource = source;
+
+      const img = document.getElementById('slideImage');
+      const vid = document.getElementById('slideVideo');
+      const flow = document.getElementById('flowVideoContainer');
+      const yt = document.getElementById('youtubeContainer');
+      const s = SLIDES[currentSlideIndex];
+
+      img.classList.add('hidden');
+      vid.classList.add('hidden');
+      if (flow) flow.classList.add('hidden');
+      yt.classList.add('hidden');
+
+      if (source !== 'video') {
+        vid.pause();
+      }
+
+      const updateBtn = (id, active) => {
+        const el = document.getElementById(id);
+        if (!el) return;
+        el.className = active 
+          ? 'text-[11px] px-2 py-0.5 rounded font-bold text-amber-400 bg-amber-500/20 border border-amber-500/40' 
+          : 'text-[11px] px-2 py-0.5 rounded text-slate-300 hover:text-amber-300';
+      };
+      updateBtn('srcImgBtn', source === 'image');
+      updateBtn('srcVidBtn', source === 'video');
+      updateBtn('srcFlowBtn', source === 'flow');
+      updateBtn('srcYtBtn', source === 'youtube');
+
+      if (source === 'image') {
+        img.classList.remove('hidden');
+      } else if (source === 'video') {
+        vid.classList.remove('hidden');
+        vid.src = s.video || 'media/videos/slide_01.mp4';
+        vid.muted = isVideoAudioMuted;
+        vid.play().catch(err => {});
+      } else if (source === 'flow') {
+        if (flow) flow.classList.remove('hidden');
+        renderFlowVideo();
+      } else if (source === 'youtube') {
+        yt.classList.remove('hidden');
+        renderYouTubeEmbed();
+      }
+
+      if (pushHistory && prevSource !== source) {
+        pushHistoryState({ type: 'media', source: currentMediaSource, prevSource: prevSource });
+      }
+    }
+
+    // GLOBAL CLICK-TO-COPY SYSTEM WITH EMERALD TICK FEEDBACK
+    function initCopySystem() {
+      document.addEventListener('click', (e) => {
+        if (e.target.closest('button') || e.target.closest('a') || e.target.closest('input') || e.target.closest('select') || e.target.closest('textarea')) {
+          return;
+        }
+
+        const block = e.target.closest('.copyable-block');
+        if (!block) return;
+
+        let text = block.getAttribute('data-copy-text');
+        if (!text) {
+          text = block.innerText.replace(/<[^>]+>/g, ' ').replace(/&nbsp;/g, ' ').trim();
+        }
+        if (!text) return;
+
+        copyTextWithFeedback(text, block);
+      });
+    }
+
+    function copyTextWithFeedback(text, element) {
+      navigator.clipboard.writeText(text).then(() => {
+        playSoundEffect('click');
+        showCopyFeedback(element);
+        showToast('✓ Đã sao chép nội dung vào bộ nhớ tạm!');
+      }).catch(() => {
+        showToast('✓ Đã sao chép!');
+      });
+    }
+
+    function showCopyFeedback(element) {
+      element.classList.add('copy-success-flash');
+      const badge = document.createElement('span');
+      badge.className = 'copy-floating-badge';
+      badge.innerHTML = '✓ Đã sao chép!';
+      element.appendChild(badge);
+
+      setTimeout(() => {
+        badge.classList.add('fade-out');
+        setTimeout(() => badge.remove(), 250);
+        element.classList.remove('copy-success-flash');
+      }, 1300);
+    }
+
+    function copyScriptText() {
+      const s = SLIDES[currentSlideIndex];
+      const text = s.script.replace(/<[^>]+>/g, ' ').replace(/&nbsp;/g, ' ').trim();
+      navigator.clipboard.writeText(text).then(() => {
+        playSoundEffect('click');
+        const btn = document.getElementById('copyScriptBtn');
+        if (btn) {
+          const old = btn.innerHTML;
+          btn.innerHTML = '✓ Đã chép!';
+          btn.className = 'text-[11px] text-emerald-300 font-bold bg-emerald-950/80 px-2 py-0.5 rounded border border-emerald-500/40 flex items-center gap-1 transition';
+          setTimeout(() => {
+            btn.innerHTML = old;
+            btn.className = 'text-[11px] text-slate-300 hover:text-emerald-300 bg-slate-800 hover:bg-slate-700 px-2 py-0.5 rounded border border-slate-700 flex items-center gap-1 transition';
+          }, 1500);
+        }
+        showToast('✓ Đã sao chép toàn bộ kịch bản lời giảng!');
+      });
+    }
+
+    function quickCopySlidePrompt() {
+      const s = SLIDES[currentSlideIndex];
+      navigator.clipboard.writeText(s.flowPrompt).then(() => {
+        playSoundEffect('click');
+        const btn = document.getElementById('quickPromptBtn');
+        if (btn) {
+          const old = btn.innerHTML;
+          btn.innerHTML = '✓ Đã Chép Prompt!';
+          btn.className = 'px-2.5 py-1.5 rounded-lg bg-emerald-600 text-white font-bold text-xs border border-emerald-400 transition flex items-center gap-1';
+          setTimeout(() => {
+            btn.innerHTML = old;
+            btn.className = 'px-2.5 py-1.5 rounded-lg bg-slate-900 hover:bg-slate-800 text-cyan-400 text-xs border border-cyan-500/30 transition flex items-center gap-1';
+          }, 1500);
+        }
+        showToast('✓ Đã sao chép câu lệnh tạo ảnh/video Google Flow (16:9 Loop)!');
+      });
+    }
+
+    function copyResearchTopic() {
+      const s = SLIDES[currentSlideIndex];
+      const topic = `${s.raw_title || s.title} - Khoa học não bộ, dẫn chứng lịch sử & giá trị chuyển hóa cuộc sống xAI`;
+      navigator.clipboard.writeText(topic).then(() => {
+        playSoundEffect('click');
+        const btn = document.getElementById('researchCopyBtn');
+        if (btn) {
+          const old = btn.innerHTML;
+          btn.innerHTML = '✓ Đã chép!';
+          btn.classList.add('text-emerald-300', 'font-bold');
+          setTimeout(() => {
+            btn.innerHTML = '📋 Chép từ khóa';
+            btn.classList.remove('text-emerald-300', 'font-bold');
+          }, 1500);
+        }
+        showToast('✓ Đã sao chép từ khóa nghiên cứu sâu!');
+      });
+    }
+
+    function openGoogleSearchTab() {
+      const s = SLIDES[currentSlideIndex];
+      const query = encodeURIComponent(`${s.raw_title || s.title} khoa học não bộ chuyển hóa`);
+      window.open(`https://www.google.com/search?q=${query}`, '_blank');
+    }
+
+    // RENDER SLIDE (30 TRANG ĐỒNG BỘ 100%)
+    function renderSlide(index, pushHistory = true) {
       if (index < 0 || index >= SLIDES.length) return;
+      const prevIndex = currentSlideIndex;
       currentSlideIndex = index;
       const s = SLIDES[index];
 
@@ -2288,43 +2867,67 @@
       // Update Media
       const imgEl = document.getElementById('slideImage');
       imgEl.src = s.image.replace('.png', '.webp');
-      if (currentMediaSource === 'youtube') {
+      
+      if (currentMediaSource === 'flow') {
+        renderFlowVideo();
+      } else if (currentMediaSource === 'youtube') {
         renderYouTubeEmbed();
       } else if (currentMediaSource === 'video') {
-        switchMediaSource('video');
+        switchMediaSource('video', false);
       }
 
-      // Render Bullets
+      // Render Bullets with Copyable block
       const bulletsContainer = document.getElementById('bulletsContainer');
       bulletsContainer.innerHTML = '';
       s.bullets.forEach(b => {
         const bDiv = document.createElement('div');
-        bDiv.className = 'flex items-start gap-2.5 text-xs lg:text-sm text-slate-300 leading-relaxed';
+        bDiv.className = 'flex items-start gap-2.5 text-xs lg:text-sm text-slate-300 leading-relaxed copyable-block p-1';
+        bDiv.title = 'Nhấp để sao chép luận điểm này';
         bDiv.innerHTML = `<span class="text-amber-400 text-sm leading-none shrink-0 mt-0.5">✦</span> <span>${b}</span>`;
         bulletsContainer.appendChild(bDiv);
       });
 
-      // Render 3D Flip Cards
+      // Render 3D Flip Cards V07 with Emojis & Rich Contrast
       const flipContainer = document.getElementById('flipCardsContainer');
       flipContainer.innerHTML = '';
-      s.flipCards.forEach(card => {
+      s.flipCards.forEach((card, idx) => {
         const cardEl = document.createElement('div');
-        cardEl.className = 'flip-card';
-        cardEl.onclick = () => {
+        cardEl.className = 'flip-card copyable-block group cursor-pointer';
+        cardEl.setAttribute('data-copy-text', `[TRƯỚC] ${card.front}\n[TRỞ THÀNH] ${card.back}`);
+        cardEl.onclick = (e) => {
+          if (e.target.closest('.card-copy-btn')) return;
           cardEl.classList.toggle('flipped');
           playSoundEffect('flip');
         };
+        const frontEmoji = card.front_emoji || (idx === 0 ? '🌧️' : idx === 1 ? '⏳' : '🥀');
+        const backEmoji = card.back_emoji || (idx === 0 ? '☀️' : idx === 1 ? '💎' : '👑');
         cardEl.innerHTML = `
           <div class="flip-card-inner">
             <div class="flip-card-front">
-              <span class="text-[9px] font-black tracking-wider text-rose-400 uppercase">TRƯỚC CHUYỂN HÓA</span>
-              <p class="text-[11px] leading-snug text-slate-200 mt-1">${card.front.replace(/^TRƯỚC:\s*/i, '')}</p>
-              <span class="text-[9px] text-slate-500 self-end mt-1">Lật xem đột phá ↻</span>
+              <div class="flex items-center justify-between">
+                <span class="inline-flex items-center gap-1 text-[10px] font-black tracking-wider text-rose-400 bg-rose-500/10 px-2 py-0.5 rounded-full border border-rose-500/20 uppercase">
+                  <span>${frontEmoji}</span> TRƯỚC CHUYỂN HÓA
+                </span>
+                <button class="card-copy-btn text-[10px] text-slate-500 hover:text-amber-400 transition" title="Sao chép nội dung thẻ" onclick="event.stopPropagation(); copyTextWithFeedback('${card.front.replace(/'/g, "\\'")}', this.closest('.flip-card'))">📋</button>
+              </div>
+              <p class="text-[11px] leading-snug text-slate-200 mt-1.5 font-normal">${card.front.replace(/^TRƯỚC:\s*/i, '')}</p>
+              <div class="mt-auto pt-1 flex items-center justify-between border-t border-slate-800/80">
+                <span class="text-[9px] text-amber-400/90 font-medium flex items-center gap-1">👉 Nhấp để lật 🔄</span>
+                <span class="text-[9px] text-slate-500">Thẻ ${idx + 1}/3</span>
+              </div>
             </div>
             <div class="flip-card-back">
-              <span class="text-[9px] font-black tracking-wider text-emerald-400 uppercase">TRỞ THÀNH (ĐỘT PHÁ)</span>
-              <p class="text-[11px] leading-snug text-emerald-200 mt-1 font-medium">${card.back.replace(/^TRỞ THÀNH:\s*/i, '')}</p>
-              <span class="text-[9px] text-emerald-400/60 self-end mt-1">✓ Đã chuyển hóa</span>
+              <div class="flex items-center justify-between">
+                <span class="inline-flex items-center gap-1 text-[10px] font-black tracking-wider text-emerald-400 bg-emerald-500/15 px-2 py-0.5 rounded-full border border-emerald-500/30 uppercase">
+                  <span>${backEmoji}</span> TRỞ THÀNH DI SẢN
+                </span>
+                <button class="card-copy-btn text-[10px] text-emerald-400/60 hover:text-emerald-300 transition" title="Sao chép nội dung thẻ" onclick="event.stopPropagation(); copyTextWithFeedback('${card.back.replace(/'/g, "\\'")}', this.closest('.flip-card'))">📋</button>
+              </div>
+              <p class="text-[11px] leading-snug text-emerald-100 mt-1.5 font-medium">${card.back.replace(/^TRỞ THÀNH:\s*/i, '')}</p>
+              <div class="mt-auto pt-1 flex items-center justify-between border-t border-emerald-900/40">
+                <span class="text-[9px] text-emerald-300 font-semibold flex items-center gap-1">✨ Đột phá tư duy</span>
+                <span class="text-[9px] text-emerald-400/70">✓ Vượt thời gian</span>
+              </div>
             </div>
           </div>
         `;
@@ -2345,7 +2948,16 @@
         item.classList.toggle('border-amber-500', idx === index);
         item.classList.toggle('bg-amber-500/10', idx === index);
       });
+
+      if (pushHistory && prevIndex !== index) {
+        pushHistoryState({ type: 'slide', index: currentSlideIndex, prevIndex: prevIndex });
+      }
     }
+
+    function goToSlide(index, pushHistory = true) {
+      renderSlide(index, pushHistory);
+    }
+
 
     function prevSlide() {
       if (currentSlideIndex > 0) renderSlide(currentSlideIndex - 1);
@@ -2762,9 +3374,34 @@
       playSoundEffect('click');
     }
 
-    // KEYBOARD NAVIGATION
+    // KEYBOARD NAVIGATION V07 (Ctrl+Z, Ctrl+Y, M, Arrows)
     window.addEventListener('keydown', (e) => {
       if (e.target.tagName === 'INPUT' || e.target.tagName === 'TEXTAREA') return;
+
+      // Undo & Redo
+      if ((e.ctrlKey || e.metaKey) && e.key.toLowerCase() === 'z') {
+        e.preventDefault();
+        if (e.shiftKey) {
+          redo();
+        } else {
+          undo();
+        }
+        return;
+      }
+      if ((e.ctrlKey || e.metaKey) && e.key.toLowerCase() === 'y') {
+        e.preventDefault();
+        redo();
+        return;
+      }
+
+      // Mute / Unmute Video Audio
+      if (e.key === 'm' || e.key === 'M') {
+        e.preventDefault();
+        toggleVideoAudio();
+        return;
+      }
+
+      // Navigation
       if (e.key === 'ArrowRight' || e.key === 'PageDown' || e.key === ' ') {
         e.preventDefault();
         nextSlide();
@@ -2775,6 +3412,7 @@
         toggleAudio();
       }
     });
+
 
     // THUMBNAILS DRAWER
     function setupThumbnails() {
@@ -2952,9 +3590,47 @@
       setupThumbnails();
       setupParticles();
       applyLayoutMode();
-      renderSlide(0);
+      renderSlide(0, false);
       selectPersona('all');
+      initCopySystem();
+      updateVideoAudioUI();
+      updateUndoRedoButtons();
     });
   </script>
+
+  <!-- MODAL: GẮN LINK YOUTUBE & GOOGLE FLOW CHO SLIDE HIỆN TẠI -->
+  <div id="unifiedMediaModal" class="fixed inset-0 z-50 modal-backdrop hidden flex items-center justify-center p-4">
+    <div class="bg-slate-900 border border-amber-500/40 rounded-2xl w-full max-w-lg p-5 shadow-2xl">
+      <div class="flex items-center justify-between mb-3 border-b border-slate-800 pb-2">
+        <h3 class="text-sm font-bold text-amber-400 flex items-center gap-2">
+          <span>🎬</span> GẮN LINK MEDIA CHO SLIDE <span id="mediaSlideNumText">1</span>
+        </h3>
+        <button onclick="closeUnifiedMediaModal()" class="text-slate-400 hover:text-white font-bold">✕</button>
+      </div>
+      <div class="space-y-3 text-xs">
+        <div>
+          <label class="block text-slate-300 font-semibold mb-1">▶️ Đường dẫn Video YouTube:</label>
+          <input type="text" id="modalYtInput" placeholder="https://www.youtube.com/watch?v=..." class="w-full bg-slate-950 border border-slate-800 rounded-lg p-2.5 text-slate-200 font-mono focus:outline-none focus:border-red-500">
+        </div>
+        <div>
+          <label class="block text-cyan-300 font-semibold mb-1">⚡ Đường dẫn Video Google Flow (4 Giây Seamless Loop):</label>
+          <input type="text" id="modalFlowInput" placeholder="https://flow.google.com/shared/video/..." class="w-full bg-slate-950 border border-slate-800 rounded-lg p-2.5 text-slate-200 font-mono focus:outline-none focus:border-cyan-500">
+          <span class="text-[10px] text-slate-400 mt-1 block">💡 <em>Mẹo: Tạo video 4 giây trên Google Flow để tiết kiệm tín dụng và dán link chia sẻ vào đây.</em></span>
+        </div>
+      </div>
+      <div class="flex items-center justify-end gap-2 mt-4 pt-3 border-t border-slate-800">
+        <button onclick="resetSlideMediaToDefault()" class="bg-slate-800 hover:bg-slate-700 text-slate-300 text-xs px-3 py-2 rounded-lg transition">
+          Khôi Phục Gốc
+        </button>
+        <button onclick="saveUnifiedMediaModal()" class="bg-gradient-to-r from-amber-600 to-amber-500 hover:from-amber-500 hover:to-amber-400 text-black font-bold text-xs px-4 py-2 rounded-lg transition">
+          Lưu & Áp Dụng
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- FLOATING TOAST NOTIFICATION POPUP -->
+  <div id="toastPopup" class="toast-popup"></div>
+
 </body>
 </html>
