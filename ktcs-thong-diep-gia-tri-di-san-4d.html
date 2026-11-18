@@ -675,32 +675,26 @@
           <div id="youtubeContainer" class="media-element hidden w-full h-full"></div>
 
           <!-- Top Corner Source Switcher (Unobtrusive) -->
-          <div class="absolute top-2.5 right-2.5 flex items-center gap-1.5 opacity-0 group-hover:opacity-100 transition duration-300 z-40 bg-black/80 backdrop-blur-md p-1 rounded-lg border border-slate-700">
+          <div class="absolute top-2.5 right-2.5 flex items-center gap-1.5 opacity-90 hover:opacity-100 transition duration-300 z-40 bg-black/80 backdrop-blur-md p-1 rounded-lg border border-slate-700/80 shadow-lg">
             <!-- Source Selector Buttons -->
-            <button onclick="switchMediaSource('image')" id="srcImgBtn" class="text-[11px] px-2 py-0.5 rounded font-bold text-amber-400 bg-amber-500/20" title="Xem ảnh gốc PDF / WebP">
-              🖼️ Ảnh
+            <button onclick="switchMediaSource('image')" id="srcImgBtn" class="text-[11px] px-2 py-0.5 rounded font-bold text-amber-400 bg-amber-500/20" title="Xem slide gốc PDF / WebP">
+              🖼️ Slide PDF
+            </button>
+            <button onclick="switchMediaSource('flow_image')" id="srcFlowImgBtn" class="text-[11px] px-2 py-0.5 rounded text-slate-300 hover:text-cyan-300" title="Xem ảnh nghệ thuật Google Flow AI">
+              🎨 Ảnh Flow AI
             </button>
             <button onclick="switchMediaSource('video')" id="srcVidBtn" class="text-[11px] px-2 py-0.5 rounded text-slate-300 hover:text-amber-300" title="Xem Video 16:9 Seamless Loop Cục Bộ">
               🎥 Video 4D
             </button>
             <button onclick="switchMediaSource('flow')" id="srcFlowBtn" class="text-[11px] px-2 py-0.5 rounded text-slate-300 hover:text-cyan-300" title="Xem Video Google Flow (4s Loop)">
-              ⚡ Video Flow
+              ⚡ Flow Link
             </button>
             <button onclick="switchMediaSource('youtube')" id="srcYtBtn" class="text-[11px] px-2 py-0.5 rounded text-slate-300 hover:text-red-400" title="Xem video YouTube trực tiếp">
               ▶️ YouTube
             </button>
-            <span class="w-[1px] h-3 bg-slate-700 mx-0.5"></span>
-            <button onclick="toggleVideoAudio()" id="videoAudioBtn" class="text-[11px] px-2 py-0.5 rounded text-slate-400 hover:text-white bg-slate-800" title="Bật/Tắt âm thanh gốc của Video (Phím M)">
-              🔇 Tiếng: TẮT
-            </button>
-            <button onclick="openUnifiedMediaModal()" class="text-[11px] px-1.5 py-0.5 rounded text-amber-400 hover:bg-amber-950/60" title="Gắn Link YouTube / Google Flow cho slide này">
-              🔗 Gắn Link
-            </button>
-            <button onclick="toggleKenBurns()" class="text-[11px] px-1.5 py-0.5 rounded text-amber-400 hover:bg-amber-950/60" title="Bật/Tắt hiệu ứng chuyển động Ken Burns">
-              4D Motion
-            </button>
-            <button onclick="toggleFullscreenMedia()" class="text-[11px] px-1.5 py-0.5 rounded text-slate-200 hover:bg-slate-800" title="Phóng to khung chiếu">
-              ⛶
+            <!-- Video Audio Toggle Button -->
+            <button onclick="toggleVideoAudio()" id="videoAudioBtn" class="text-[11px] px-2 py-0.5 rounded text-slate-300 hover:text-emerald-400 hidden" title="Bật/Tắt âm thanh gốc của Video">
+              🔇 Tiếng Gốc
             </button>
           </div>
 
@@ -1161,10 +1155,12 @@
     "flowPrompt": "Cinematic 16:9 seamless loop, a serene yet dynamic scene. A person stands on a futuristic, glowing pathway, looking towards a horizon where digital cityscapes blend with natural landscapes. Around them, subtle holographic elements represent data and AI, but they are interacting with tangible elements: planting a tree that grows rapidly, sketching blueprints for a meaningful life, meditating under a digital aurora. The scene transitions smoothly, showing hands building a miniature, intricate world, then a wise figure passing down knowledge to a younger generation, all within a harmonious blend of technology and nature. Emphasize growth, wisdom, human connection, and purposeful creation in an AI-integrated future. Soft, warm lighting with occasional futuristic glows. UHD, highly detailed, inspiring, hopeful.",
     "has_video": true,
     "image_flow": "media/flow_images/slide_01.webp",
-    "image_pdf": "media/pdf_slides/slide_01.png",
+    "image_pdf": "media/slides/slide_01.webp",
     "youtube_url": "https://www.youtube.com/watch?v=UF8uR6Z6KLc",
     "youtube_title": "Steve Jobs - Đi Tìm Lẽ Sống & Kiến Tạo Di Sản",
-    "flow_video_url": "https://flow.google.com/shared/video/572b1a60-d2e4-4059-b5a0-947337bc96c5"
+    "flow_video_url": "https://flow.google.com/shared/video/572b1a60-d2e4-4059-b5a0-947337bc96c5",
+    "flow_video": "media/flow_videos/slide_01.mp4",
+    "flow_image": "media/flow_images/slide_01.webp"
   },
   {
     "slide_number": 2,
@@ -1172,7 +1168,7 @@
     "title": "Lời Chào Từ Đêm Trăng Tới Bình Minh",
     "raw_title": "Lời Chào Từ Đêm Trăng Tới Bình Minh",
     "image": "media/slides/slide_02.webp",
-    "video": "media/videos/slide_02.mp4",
+    "video": "",
     "audio_female": "media/audio/slide_02_female.mp3",
     "audio_male": "media/audio/slide_02_male.mp3",
     "bullets": [
@@ -1208,10 +1204,12 @@
     "flowPrompt": "Cinematic 16:9 seamless loop of a serene transition from a starry night sky with subtle digital circuit patterns to a vibrant sunrise over a calm horizon. On the night side, an open book glows with knowledge, and a tablet displays intricate tech designs. On the dawn side, a silhouette of a person meditating, a steaming cup of coffee, and a pair of running shoes symbolize morning rituals and well-being. The overall mood is inspiring, disciplined, and transformative, blending intellectual growth with physical and mental rejuvenation.",
     "has_video": false,
     "image_flow": "media/flow_images/slide_02.webp",
-    "image_pdf": "media/pdf_slides/slide_02.png",
+    "image_pdf": "media/slides/slide_02.webp",
     "youtube_url": "https://www.youtube.com/watch?v=8b06gDkYp4c",
     "youtube_title": "Robin Sharma - Câu Lạc Bộ 5 Giờ Sáng & Kỷ Luật Thức Dậy",
-    "flow_video_url": "https://flow.google.com/shared/video/572b1a60-d2e4-4059-b5a0-947337bc96c5"
+    "flow_video_url": "https://flow.google.com/shared/video/572b1a60-d2e4-4059-b5a0-947337bc96c5",
+    "flow_video": "",
+    "flow_image": "media/flow_images/slide_02.webp"
   },
   {
     "slide_number": 3,
@@ -1219,7 +1217,7 @@
     "title": "Sống là Phát Đi Một Thông Điệp",
     "raw_title": "Sống là Phát Đi Một Thông Điệp",
     "image": "media/slides/slide_03.webp",
-    "video": "media/videos/slide_03.mp4",
+    "video": "",
     "audio_female": "media/audio/slide_03_female.mp3",
     "audio_male": "media/audio/slide_03_male.mp3",
     "bullets": [
@@ -1255,10 +1253,12 @@
     "flowPrompt": "Cinematic 16:9 seamless loop of a stylized human silhouette at the center, radiating warm, ethereal light and energy outwards in concentric, flowing patterns. This energy subtly transforms into symbolic representations: an open book glowing with knowledge, two hands shaking in agreement, a loving family silhouette, and a deeply rooted ancient tree. The overall aesthetic is watercolor and digital painting fusion, with a cosmic, interconnected feel. The colors are warm golds, blues, and oranges, blending harmoniously. The movement is gentle, continuous, and flowing, emphasizing the ripple effect of one's essence. Ethereal particles drift through the scene, enhancing the spiritual and profound nature of the message being sent.",
     "has_video": false,
     "image_flow": "media/flow_images/slide_03.webp",
-    "image_pdf": "media/pdf_slides/slide_03.png",
+    "image_pdf": "media/slides/slide_03.webp",
     "youtube_url": "https://www.youtube.com/watch?v=vVjV2pWw3h0",
     "youtube_title": "Jim Rohn - Triết Lý Cuộc Sống: Sống Là Phát Đi Một Thông Điệp",
-    "flow_video_url": "https://flow.google.com/shared/video/572b1a60-d2e4-4059-b5a0-947337bc96c5"
+    "flow_video_url": "https://flow.google.com/shared/video/572b1a60-d2e4-4059-b5a0-947337bc96c5",
+    "flow_video": "",
+    "flow_image": "media/flow_images/slide_03.webp"
   },
   {
     "slide_number": 4,
@@ -1266,7 +1266,7 @@
     "title": "Ba Gốc Rễ:<br>Kiến Tạo Sức Mạnh Nội Tại",
     "raw_title": "Ba Gốc Rễ: Kiến Tạo Sức Mạnh Nội Tại",
     "image": "media/slides/slide_04.webp",
-    "video": "media/videos/slide_04.mp4",
+    "video": "",
     "audio_female": "media/audio/slide_04_female.mp3",
     "audio_male": "media/audio/slide_04_male.mp3",
     "bullets": [
@@ -1301,10 +1301,12 @@
     "flowPrompt": "Cinematic 16:9 seamless loop. A beautifully rendered architectural blueprint of a cozy, strong house slowly materializes from glowing lines. As it builds, subtle energy flows from the foundation (representing 'Body' - strong, vibrant), up through the pillars (representing 'Mind' - peaceful, loving light), and culminates in the roof (representing 'Spirit' - a bright, expanding light bulb of wisdom and AI integration). The house stands on a solid, glowing base, surrounded by a gentle aura of internal power. The scene is warm, inspiring, and symbolizes the holistic development of inner strength. Soft, ethereal lighting. Golden hour glow.",
     "has_video": false,
     "image_flow": "media/flow_images/slide_04.webp",
-    "image_pdf": "media/pdf_slides/slide_04.png",
+    "image_pdf": "media/slides/slide_04.webp",
     "youtube_url": "https://www.youtube.com/watch?v=5Vz1yU9P-eQ",
     "youtube_title": "Thầy Trần Việt Quân - 3 Gốc Rễ Đạo Đức, Trí Tuệ, Nghị Lực",
-    "flow_video_url": "https://flow.google.com/shared/video/572b1a60-d2e4-4059-b5a0-947337bc96c5"
+    "flow_video_url": "https://flow.google.com/shared/video/572b1a60-d2e4-4059-b5a0-947337bc96c5",
+    "flow_video": "",
+    "flow_image": "media/flow_images/slide_04.webp"
   },
   {
     "slide_number": 5,
@@ -1312,7 +1314,7 @@
     "title": "Kỷ Luật Sinh Khí:<br>Nền Tảng Vững Chắc Cho Mọi Chuyển Hóa",
     "raw_title": "Kỷ Luật Sinh Khí: Nền Tảng Vững Chắc Cho Mọi Chuyển Hóa",
     "image": "media/slides/slide_05.webp",
-    "video": "media/videos/slide_05.mp4",
+    "video": "",
     "audio_female": "media/audio/slide_05_female.mp3",
     "audio_male": "media/audio/slide_05_male.mp3",
     "bullets": [
@@ -1345,12 +1347,14 @@
     ],
     "script": "Chào mừng bạn đến với một chủ đề vô cùng quan trọng: Kỷ Luật Sinh Khí – Nền Tảng Vững Chắc Cho Mọi Chuyển Hóa. Bạn có thấy không, hành trình chuyển hóa bắt đầu từ những điều giản dị nhất: một buổi sáng chạy bộ đầy năng lượng, việc theo dõi và cải thiện bản thân qua các ứng dụng như VRACE, và quan trọng hơn cả là việc lan tỏa năng lượng tích cực ấy đến cộng đồng, qua Zalo hay Facebook. Khi thân thể khỏe mạnh, tràn đầy sinh khí, tâm trí chúng ta mới thực sự an yên. Từ đó, mọi thông điệp chúng ta gửi đi đều mang một sức mạnh nội tại, một sự chân thành khó cưỡng. Điều kỳ diệu là, chính nhờ sinh khí dồi dào, chúng ta có thể biến những 'tiếng ồn thông tin' hàng ngày thành những 'tín hiệu đánh thức' quý giá, giúp ta nhìn rõ hơn con đường mình đang đi. Hãy cùng nhau xây dựng kỷ luật sinh khí để kiến tạo một cuộc sống tràn đầy năng lượng và ý nghĩa nhé!",
     "flowPrompt": "Cinematic 16:9 seamless loop of a person running joyfully at sunrise, transitioning to a hand holding a smartphone tracking progress on a vibrant map app, then to a diverse group of people high-fiving and sharing positive energy with social media icons (Facebook, Zalo) subtly appearing. The scene should convey vitality, discipline, community, and personal transformation, with dynamic lighting and an uplifting mood. Focus on smooth transitions between scenes, emphasizing energy flow and awakening. The overall aesthetic is inspiring and energetic.",
-    "has_video": true,
+    "has_video": false,
     "image_flow": "media/flow_images/slide_05.webp",
-    "image_pdf": "media/pdf_slides/slide_05.png",
+    "image_pdf": "media/slides/slide_05.webp",
     "youtube_url": "https://www.youtube.com/watch?v=k2WCN_BqT6s",
     "youtube_title": "Jocko Willink - Kỷ Luật Sinh Khí & Tự Do Đích Thực",
-    "flow_video_url": "https://flow.google.com/shared/video/572b1a60-d2e4-4059-b5a0-947337bc96c5"
+    "flow_video_url": "https://flow.google.com/shared/video/572b1a60-d2e4-4059-b5a0-947337bc96c5",
+    "flow_video": "",
+    "flow_image": "media/flow_images/slide_05.webp"
   },
   {
     "slide_number": 6,
@@ -1358,7 +1362,7 @@
     "title": "Khoa Học Não Bộ:<br>Chạy Marathon Bằng Hai Chân",
     "raw_title": "Khoa Học Não Bộ: Chạy Marathon Bằng Hai Chân",
     "image": "media/slides/slide_06.webp",
-    "video": "media/videos/slide_06.mp4",
+    "video": "",
     "audio_female": "media/audio/slide_06_female.mp3",
     "audio_male": "media/audio/slide_06_male.mp3",
     "bullets": [
@@ -1393,10 +1397,12 @@
     "flowPrompt": "Cinematic 16:9 seamless loop. A split screen of a human brain. The left hemisphere is depicted with intricate gears, blueprints, data visualizations, and flowing mathematical equations, all in cool, precise blues and grays. The right hemisphere is a vibrant explosion of watercolor art, musical notes, blooming flowers, swirling colors, and dreamlike clouds, in warm, expressive hues. Both halves are subtly connected by glowing neural pathways, symbolizing synergy. A faint, energetic runner's silhouette is seen in the background, moving smoothly, representing the 'marathon' of communication. The transition between the two halves is fluid and harmonious, not a harsh line. Dynamic lighting, soft glow. UHD, high detail, artistic.",
     "has_video": false,
     "image_flow": "media/flow_images/slide_06.webp",
-    "image_pdf": "media/pdf_slides/slide_06.png",
+    "image_pdf": "media/slides/slide_06.webp",
     "youtube_url": "https://www.youtube.com/watch?v=UyyjU8UrFNU",
     "youtube_title": "Dr. Jill Bolte Taylor - Khoa Học Não Bộ: Não Trái & Não Phải",
-    "flow_video_url": "https://flow.google.com/shared/video/572b1a60-d2e4-4059-b5a0-947337bc96c5"
+    "flow_video_url": "https://flow.google.com/shared/video/572b1a60-d2e4-4059-b5a0-947337bc96c5",
+    "flow_video": "",
+    "flow_image": "media/flow_images/slide_06.webp"
   },
   {
     "slide_number": 7,
@@ -1404,7 +1410,7 @@
     "title": "Nghệ Thuật Chạm Não Phải:<br>Sức Mạnh Của Cảm Xúc",
     "raw_title": "Nghệ Thuật Chạm Não Phải: Sức Mạnh Của Cảm Xúc",
     "image": "media/slides/slide_07.webp",
-    "video": "media/videos/slide_07.mp4",
+    "video": "",
     "audio_female": "media/audio/slide_07_female.mp3",
     "audio_male": "media/audio/slide_07_male.mp3",
     "bullets": [
@@ -1432,10 +1438,12 @@
     "flowPrompt": "Cinematic 16:9 seamless loop of a street scene. On the left, a blind person sits with a sign saying 'I am blind, please help me', a few coins drop into a hat. The scene subtly transitions to the right, same person, same street, but the sign now reads 'Today is a beautiful spring day, and I cannot see it'. Now, banknotes and many coins overflow from the hat. Emphasize the emotional contrast, subtle watercolor animation, warm spring light, gentle falling money, evoking empathy and transformation. The transition should be smooth, highlighting the power of emotional communication and right-brain activation.",
     "has_video": false,
     "image_flow": "media/flow_images/slide_07.webp",
-    "image_pdf": "media/pdf_slides/slide_07.png",
+    "image_pdf": "media/slides/slide_07.webp",
     "youtube_url": "https://www.youtube.com/watch?v=rrkrvAUbU9Y",
     "youtube_title": "Daniel Pink - Sức Mạnh Cảm Xúc & Nghệ Thuật Não Phải",
-    "flow_video_url": "https://flow.google.com/shared/video/572b1a60-d2e4-4059-b5a0-947337bc96c5"
+    "flow_video_url": "https://flow.google.com/shared/video/572b1a60-d2e4-4059-b5a0-947337bc96c5",
+    "flow_video": "",
+    "flow_image": "media/flow_images/slide_07.webp"
   },
   {
     "slide_number": 8,
@@ -1443,7 +1451,7 @@
     "title": "Vòng Tròn Vàng:<br>Sức Mạnh Giao Tiếp Từ Bên Trong",
     "raw_title": "Vòng Tròn Vàng: Sức Mạnh Giao Tiếp Từ Bên Trong",
     "image": "media/slides/slide_08.webp",
-    "video": "media/videos/slide_08.mp4",
+    "video": "",
     "audio_female": "media/audio/slide_08_female.mp3",
     "audio_male": "media/audio/slide_08_male.mp3",
     "bullets": [
@@ -1478,10 +1486,12 @@
     "flowPrompt": "Cinematic 16:9 seamless loop of a glowing golden circle at the center, radiating outwards through concentric rings of orange and light blue. Text labels \"WHY\", \"HOW\", \"WHAT\" appear sequentially from the center outwards. A dynamic arrow flows from the \"WHY\" core, expanding outwards, with subtle particles or light trails emphasizing the outward movement. The background is a warm, textured paper with watercolor splashes and subtle gears, pencils, and leaves, suggesting creativity and thought. The overall mood is inspiring, insightful, and empowering, representing the power of communicating from purpose.",
     "has_video": false,
     "image_flow": "media/flow_images/slide_08.webp",
-    "image_pdf": "media/pdf_slides/slide_08.png",
+    "image_pdf": "media/slides/slide_08.webp",
     "youtube_url": "https://www.youtube.com/watch?v=u4ZoJKF_VuA",
     "youtube_title": "Simon Sinek - Vòng Tròn Vàng: Bắt Đầu Với Câu Hỏi TẠI SAO",
-    "flow_video_url": "https://flow.google.com/shared/video/572b1a60-d2e4-4059-b5a0-947337bc96c5"
+    "flow_video_url": "https://flow.google.com/shared/video/572b1a60-d2e4-4059-b5a0-947337bc96c5",
+    "flow_video": "",
+    "flow_image": "media/flow_images/slide_08.webp"
   },
   {
     "slide_number": 9,
@@ -1489,7 +1499,7 @@
     "title": "6 Yếu Tố Tạo Nên Thông Điệp 'Kết Dính' (S.U.C.C.E.S)",
     "raw_title": "6 Yếu Tố Tạo Nên Thông Điệp 'Kết Dính' (S.U.C.C.E.S)",
     "image": "media/slides/slide_09.webp",
-    "video": "media/videos/slide_09.mp4",
+    "video": "",
     "audio_female": "media/audio/slide_09_female.mp3",
     "audio_male": "media/audio/slide_09_male.mp3",
     "bullets": [
@@ -1505,10 +1515,12 @@
     "flowPrompt": "Cinematic 16:9 seamless loop of abstract ideas transforming into clear, impactful messages. Visual metaphors for simplicity (minimalist design), unexpectedness (a sudden, delightful reveal), concreteness (tangible objects forming a clear image), credibility (a handshake or trusted symbol), emotion (glowing heart, warm colors), and storytelling (pages turning, narrative unfolding). Dynamic, flowing transitions between these concepts, symbolizing the journey of an idea becoming 'sticky' and memorable. Soft, inspiring lighting, subtle motion graphics, focus on connection and understanding.",
     "has_video": false,
     "image_flow": "media/flow_images/slide_09.webp",
-    "image_pdf": "media/pdf_slides/slide_09.png",
+    "image_pdf": "media/slides/slide_09.webp",
     "youtube_url": "https://www.youtube.com/watch?v=jW7Lh6_1GzE",
     "youtube_title": "Made to Stick - 6 Yếu Tố Tạo Thông Điệp Kết Dính S.U.C.C.E.S",
-    "flow_video_url": "https://flow.google.com/shared/video/572b1a60-d2e4-4059-b5a0-947337bc96c5"
+    "flow_video_url": "https://flow.google.com/shared/video/572b1a60-d2e4-4059-b5a0-947337bc96c5",
+    "flow_video": "",
+    "flow_image": "media/flow_images/slide_09.webp"
   },
   {
     "slide_number": 10,
@@ -1527,12 +1539,14 @@
     "flipCards": [],
     "script": "Chào mừng quý vị đến với Kho Tàng Di Sản, nơi chúng ta khám phá những giá trị vượt thời gian. Hôm nay, chúng ta sẽ nhìn vào một câu chuyện đầy cảm hứng về tầm nhìn vượt mọi phán xét. Hãy nhìn bức tranh này, 'Đêm Đầy Sao' của Vincent van Gogh. Ông, một người nghệ sĩ nghèo túng, bị gọi là 'gã điên tóc đỏ', đã vẽ kiệt tác này qua song sắt nhà thương điên. Cả đời ông chỉ bán được duy nhất một bức tranh, sống trong sự khinh miệt và hiểu lầm. Nhưng thời gian là minh chứng công bằng nhất. Ngày nay, một tác phẩm của ông có thể trị giá đến 180 triệu đô la. Điều này cho chúng ta thấy gì? Lời phán xét của người đời chỉ như cơn gió thoảng qua. Giá trị thật của tâm hồn, của tầm nhìn độc đáo mà bạn mang trong mình, sẽ luôn sáng mãi như vì sao trên bầu trời. Đừng bao giờ để những lời cười chê, những định kiến của xã hội làm bạn chùn bước, làm dang dở bức tranh di sản cuộc đời mà bạn đang kiến tạo. Hãy tin vào giá trị nội tại của mình, và kiên định trên con đường riêng.",
     "flowPrompt": "Cinematic 16:9 seamless loop. A painter's hand, in Van Gogh's style, creating 'The Starry Night' with vibrant, swirling brushstrokes. The view shifts between the canvas and the same starry sky seen through a barred window, suggesting confinement. Stars in the painting subtly merge with the actual night sky, symbolizing boundless vision. A soft, growing light emanates from the artwork, representing enduring value and legacy. Emphasize deep blues, yellows, and oranges, conveying artistic passion, resilience, and timeless beauty.",
-    "has_video": false,
+    "has_video": true,
     "image_flow": "media/flow_images/slide_10.webp",
-    "image_pdf": "media/pdf_slides/slide_10.png",
+    "image_pdf": "media/slides/slide_10.webp",
     "youtube_url": "https://www.youtube.com/watch?v=dip280m0f6U",
     "youtube_title": "Vincent van Gogh - Bức Họa Đêm Đầy Sao & Di Sản Bất Tử",
-    "flow_video_url": "https://flow.google.com/shared/video/572b1a60-d2e4-4059-b5a0-947337bc96c5"
+    "flow_video_url": "https://flow.google.com/shared/video/572b1a60-d2e4-4059-b5a0-947337bc96c5",
+    "flow_video": "media/flow_videos/slide_10.mp4",
+    "flow_image": "media/flow_images/slide_10.webp"
   },
   {
     "slide_number": 11,
@@ -1573,12 +1587,14 @@
     ],
     "script": "Chào mừng bạn đến với Kho Tàng Di Sản số 2, nơi chúng ta khám phá câu chuyện thức tỉnh đầy mạnh mẽ của Alfred Nobel. Năm 1888, một sự kiện định mệnh đã thay đổi hoàn toàn cuộc đời ông. Khi đọc nhầm cáo phó của chính mình trên báo, Nobel bàng hoàng khi thấy mình bị gọi là 'vua buôn cái chết' – người giàu lên nhờ phát minh thuốc nổ. Khoảnh khắc đó như một tiếng sét đánh ngang tai, khiến ông nhận ra di sản mình đang để lại thật nghiệt ngã. Sự thức tỉnh sâu sắc này đã thôi thúc Nobel hành động. Ông quyết định dùng toàn bộ tài sản để thành lập Giải Nobel, vinh danh những cống hiến xuất sắc cho nhân loại. Từ một 'thương gia của cái chết', ông đã trở thành biểu tượng của trí tuệ và lòng nhân ái. Câu chuyện của Nobel đặt ra cho chúng ta một câu hỏi lớn, đặc biệt là với những ai đang ở độ tuổi 39-58: 'Thông điệp lớn nhất bạn muốn để lại cho thế hệ sau là gì?' Hãy suy ngẫm về di sản bạn đang xây dựng mỗi ngày. Đây là cơ hội để chúng ta kiến tạo một cuộc sống ý nghĩa, không chỉ cho bản thân mà còn cho cả tương lai.",
     "flowPrompt": "Cinematic 16:9 seamless loop. A sepia-toned antique newspaper headline slowly transforms into a shimmering gold Nobel Prize medal. The medal rotates to reveal Alfred Nobel's profile, then subtly morphs into a wise, reflective face looking towards a bright, hopeful horizon. Subtle watercolor splashes of blue and gold blend into the background, symbolizing transformation and enlightenment. Elements of old parchment, a quill pen, and abstract light rays emanate from the medal, suggesting legacy and profound thought. The overall mood is reflective, inspiring, and transformative, with a sense of historical significance meeting future impact.",
-    "has_video": false,
+    "has_video": true,
     "image_flow": "media/flow_images/slide_11.webp",
-    "image_pdf": "media/pdf_slides/slide_11.png",
+    "image_pdf": "media/slides/slide_11.webp",
     "youtube_url": "https://www.youtube.com/watch?v=JmKxJk6fQ3M",
     "youtube_title": "Alfred Nobel - Cáo Phó Thức Tỉnh & Giải Nobel Hòa Bình",
-    "flow_video_url": "https://flow.google.com/shared/video/572b1a60-d2e4-4059-b5a0-947337bc96c5"
+    "flow_video_url": "https://flow.google.com/shared/video/572b1a60-d2e4-4059-b5a0-947337bc96c5",
+    "flow_video": "media/flow_videos/slide_11.mp4",
+    "flow_image": "media/flow_images/slide_11.webp"
   },
   {
     "slide_number": 12,
@@ -1586,7 +1602,7 @@
     "title": "Dẫn Dắt Bằng Chính Cuộc Đời:<br>Bài Học Từ Gandhi",
     "raw_title": "Dẫn Dắt Bằng Chính Cuộc Đời: Bài Học Từ Gandhi",
     "image": "media/slides/slide_12.webp",
-    "video": "media/videos/slide_12.mp4",
+    "video": "",
     "audio_female": "media/audio/slide_12_female.mp3",
     "audio_male": "media/audio/slide_12_male.mp3",
     "bullets": [
@@ -1614,10 +1630,12 @@
     "flowPrompt": "Cinematic 16:9 seamless loop, watercolor style, sepia tones. An old, wise Gandhi with gentle eyes, sitting calmly. A young child, dressed in simple Indian attire, approaches him with a pot of sugar cubes. Gandhi looks at the child with compassion, then subtly glances at the sugar, a hint of personal struggle. A subtle visual transition showing the passage of three weeks, perhaps a calendar page turning or a plant growing. Then, Gandhi is seen again, now with a serene smile, gently advising the child, who listens attentively. The scene emphasizes integrity, self-mastery, and leading by example. Soft, warm lighting, traditional Indian background elements subtly blurred. The loop should convey a sense of quiet wisdom and personal transformation.",
     "has_video": false,
     "image_flow": "media/flow_images/slide_12.webp",
-    "image_pdf": "media/pdf_slides/slide_12.png",
+    "image_pdf": "media/slides/slide_12.webp",
     "youtube_url": "https://www.youtube.com/watch?v=2f3-1rW9Kfg",
     "youtube_title": "Mahatma Gandhi - Hãy Là Sự Thay Đổi Bạn Muốn Thấy",
-    "flow_video_url": "https://flow.google.com/shared/video/572b1a60-d2e4-4059-b5a0-947337bc96c5"
+    "flow_video_url": "https://flow.google.com/shared/video/572b1a60-d2e4-4059-b5a0-947337bc96c5",
+    "flow_video": "",
+    "flow_image": "media/flow_images/slide_12.webp"
   },
   {
     "slide_number": 13,
@@ -1644,12 +1662,14 @@
     ],
     "script": "Chào mừng quý vị đến với Kho Tàng Di Sản số 4, một câu chuyện lay động về Thomas Edison và bức thư định mệnh của mẹ ông. Khi còn nhỏ, Edison bị nhà trường đánh giá là 'tâm thần, đần độn' và bị đuổi học. Một bản án nghiệt ngã có thể hủy hoại bất kỳ đứa trẻ nào. Nhưng mẹ ông, với tình yêu vô bờ, đã biến bi kịch thành kỳ tích. Bà lau nước mắt, đọc lại bức thư với một thông điệp hoàn toàn khác: 'Con bà là một thiên tài!' Lời nói ấy không chỉ là an ủi, mà là một 'lập trình' mạnh mẽ vào tiềm thức của Edison. Chính thông điệp yêu thương và niềm tin tuyệt đối đó đã tái sinh một đứa trẻ bị ruồng bỏ, nuôi dưỡng một tâm hồn vĩ đại, để rồi biến cậu bé ấy thành Thomas Edison – nhà phát minh lỗi lạc với hơn 1.000 bằng sáng chế. Đây là minh chứng hùng hồn cho sức mạnh phi thường của niềm tin và tình yêu thương đúng lúc, có thể kiến tạo nên những thiên tài từ những khởi đầu tưởng chừng như bất hạnh nhất.",
     "flowPrompt": "Cinematic 16:9 seamless loop. A pair of gentle, wise hands carefully holding an old, folded letter. Above the hands, a glowing, incandescent light bulb radiates warm, golden light, symbolizing a brilliant idea or genius. Subtle watercolor splashes of blue and orange in the background. Gears and circuit board patterns faintly emerge from the edges, representing innovation and intellect. The scene transitions from a somber, rejected tone to one of hopeful, transformative brilliance. Focus on the interplay of light, paper texture, and the aura of potential. Emphasize the feeling of nurturing and the birth of greatness from a simple, loving message. Soft, inspiring glow. Dreamlike quality.",
-    "has_video": false,
+    "has_video": true,
     "image_flow": "media/flow_images/slide_13.webp",
-    "image_pdf": "media/pdf_slides/slide_13.png",
+    "image_pdf": "media/slides/slide_13.webp",
     "youtube_url": "https://www.youtube.com/watch?v=kP_u2x0qD-o",
     "youtube_title": "Thomas Edison & Bức Thư Của Mẹ - Niềm Tin Tạo Thiên Tài",
-    "flow_video_url": "https://flow.google.com/shared/video/572b1a60-d2e4-4059-b5a0-947337bc96c5"
+    "flow_video_url": "https://flow.google.com/shared/video/572b1a60-d2e4-4059-b5a0-947337bc96c5",
+    "flow_video": "media/flow_videos/slide_13.mp4",
+    "flow_image": "media/flow_images/slide_13.webp"
   },
   {
     "slide_number": 14,
@@ -1677,12 +1697,14 @@
     ],
     "script": "Chào mừng bạn đến với bài học về Sức Mạnh Sự Cô Đọng. Chúng ta thường nghĩ nói nhiều, viết dài sẽ truyền tải được nhiều thông tin. Nhưng thực tế, điều ngược lại mới đúng. Hãy nhìn vào hình ảnh này: một bên là 13.600 từ, mất 2 tiếng trình bày, nhưng chẳng ai nhớ. Còn bên kia, chỉ 272 từ của Abraham Lincoln trong Diễn văn Gettysburg đã trở thành bất hủ. Hay một câu hỏi duy nhất của Steve Jobs đã thay đổi cả sự nghiệp của John Sculley và lịch sử công nghệ: 'Anh muốn bán nước đường cả đời, hay đi cùng tôi thay đổi thế giới?' Một câu hỏi ngắn gọn, nhưng chạm thẳng vào khát vọng sâu thẳm nhất. Điều này cho thấy, không phải số lượng từ ngữ, mà chính là sự tinh lọc, sự thấu hiểu và khả năng chạm đến trái tim, khối óc mới tạo nên sức ảnh hưởng thực sự. Hãy học cách cô đọng thông điệp để mỗi lời nói, mỗi câu chữ đều mang trọng lượng, ý nghĩa sâu sắc, tạo ra IMPACT lớn lao.",
     "flowPrompt": "Cinematic 16:9 seamless loop. A vintage brass weighing scale in the center. On the left pan, a towering, dusty stack of old, forgotten documents, tied with faded string, representing verbosity and forgotten words. On the right pan, a single, glowing, pristine piece of paper, radiating a soft, warm light, symbolizing profound conciseness and lasting impact. Subtle golden dust motes float around the glowing paper. The background is a soft, parchment-like texture with faint, elegant ink sketches of gears, compasses, and quills, suggesting thought and creation. The scale gently sways, emphasizing the weight of impact over volume. The overall mood is thoughtful, inspiring, and timeless. Soft, warm lighting from the right, casting long shadows from the left stack. Focus on the contrast and the glow of the single paper.",
-    "has_video": false,
+    "has_video": true,
     "image_flow": "media/flow_images/slide_14.webp",
-    "image_pdf": "media/pdf_slides/slide_14.png",
+    "image_pdf": "media/slides/slide_14.webp",
     "youtube_url": "https://www.youtube.com/watch?v=qCXUmioyqNE",
     "youtube_title": "Sức Mạnh Của Sự Cô Đọng - Ít Chữ Mà Chạm Cực Sâu",
-    "flow_video_url": "https://flow.google.com/shared/video/572b1a60-d2e4-4059-b5a0-947337bc96c5"
+    "flow_video_url": "https://flow.google.com/shared/video/572b1a60-d2e4-4059-b5a0-947337bc96c5",
+    "flow_video": "media/flow_videos/slide_14.mp4",
+    "flow_image": "media/flow_images/slide_14.webp"
   },
   {
     "slide_number": 15,
@@ -1709,12 +1731,14 @@
     ],
     "script": "Chào mừng quý vị đến với một câu chuyện đầy cảm hứng về sức mạnh của sự công nhận. Đây là câu chuyện về cô giáo Thompson và một học trò đặc biệt. Vào dịp Giáng sinh, cậu bé, trong hoàn cảnh khó khăn, đã tặng cô một món quà đơn sơ: một chiếc vòng tay tự làm và một lọ nước nhỏ. Thay vì xem nhẹ, cô Thompson đã đeo chiếc vòng và xịt lọ nước với thái độ trân trọng nhất. Hành động tưởng chừng nhỏ bé ấy đã gieo một hạt mầm lớn trong tâm hồn cậu bé. Từ một đứa trẻ lầm lì, cậu đã lớn lên và trở thành Bác sĩ Theodore Stallard vĩ đại. Câu chuyện này cho chúng ta thấy, sự công nhận không chỉ là lời khen, mà là việc nhìn thấy và trân trọng giá trị cốt lõi của một người. Nó là động lực mạnh mẽ nhất để mỗi chúng ta tin vào bản thân, vượt qua mọi giới hạn và kiến tạo nên những điều phi thường trong cuộc sống, đúng như tinh thần của KTCSxAI. Hãy luôn nhớ, mỗi người đều quan trọng và có thể tạo nên sự khác biệt.",
     "flowPrompt": "Cinematic 16:9 seamless loop, a gentle hand holding a simple, clear glass bottle and a handmade bracelet, glowing with subtle inner light. The background transitions from a muted, watercolor-stained paper texture to a vibrant, hopeful sky. A silhouette of a young boy slowly morphs into a confident, distinguished doctor. Soft, warm lighting, inspiring and transformative atmosphere. Focus on the emotional connection and the journey of growth. Vintage aesthetic with modern, ethereal light effects. Seamless loop.",
-    "has_video": false,
-    "image_flow": "media/flow_images/slide_15.webp",
-    "image_pdf": "media/pdf_slides/slide_15.png",
+    "has_video": true,
+    "image_flow": "media/slides/slide_15.webp",
+    "image_pdf": "media/slides/slide_15.webp",
     "youtube_url": "https://www.youtube.com/watch?v=0k9Jtq5310M",
     "youtube_title": "Dale Carnegie - Đắc Nhân Tâm & Sức Mạnh Công Nhận",
-    "flow_video_url": "https://flow.google.com/shared/video/572b1a60-d2e4-4059-b5a0-947337bc96c5"
+    "flow_video_url": "https://flow.google.com/shared/video/572b1a60-d2e4-4059-b5a0-947337bc96c5",
+    "flow_video": "media/flow_videos/slide_15.mp4",
+    "flow_image": "media/slides/slide_15.webp"
   },
   {
     "slide_number": 16,
@@ -1755,12 +1779,14 @@
     ],
     "script": "Chào bạn, hôm nay chúng ta sẽ khám phá một bí mật thú vị: Vũ trụ này luôn phát sóng! Mọi người bạn gặp, mọi biến cố bạn trải qua, đều là những thông điệp quý giá. Giống như sóng radio phủ kín bầu trời, chúng luôn ở đó, chờ đợi chúng ta thu nhận. Nhưng tại sao có người lại may mắn, còn người khác thì không? Bí mật nằm ở 'chiếc radio' trong tâm trí chúng ta. May mắn và cơ hội chỉ thực sự xuất hiện khi 'mảnh đất tâm trí' của bạn đã được cải tạo, sẵn sàng đón nhận 'hạt giống' cơ hội. Một chiếc radio hỏng ăng-ten, với tư duy đóng, sẽ chỉ nghe thấy tiếng rè tiêu cực, và ngừng phát triển. Hãy tự hỏi: 'Chiếc radio' tâm trí của mình đang ở trạng thái nào? Chúng ta có đang mở lòng đón nhận tín hiệu tích cực, hay mắc kẹt trong tiếng rè tiêu cực? Hãy cùng nhau điều chỉnh 'ăng-ten' tâm trí, để cuộc sống tràn ngập thông điệp ý nghĩa và cơ hội tuyệt vời!",
     "flowPrompt": "Cinematic 16:9 seamless loop. A stylized watercolor and sketch animation. The universe as a vast broadcaster, emitting subtle, glowing waves of information and energy. A human figure, initially with a closed, rusty radio for a head, symbolizing a closed mind, surrounded by static and broken signals. Then, a transformation: the radio morphs into a radiant, open mind, with an antenna extending upwards, receiving clear, golden, swirling cosmic messages. The background subtly shifts from muted tones to vibrant, flowing colors, representing understanding and growth. Emphasize the contrast between noisy interference and clear reception. The overall mood is insightful and hopeful.",
-    "has_video": false,
+    "has_video": true,
     "image_flow": "media/flow_images/slide_16.webp",
-    "image_pdf": "media/pdf_slides/slide_16.png",
+    "image_pdf": "media/slides/slide_16.webp",
     "youtube_url": "https://www.youtube.com/watch?v=q6t8k9j2JbM",
     "youtube_title": "Luật Hấp Dẫn - Vũ Trụ Luôn Phát Sóng Hai Chiều",
-    "flow_video_url": "https://flow.google.com/shared/video/572b1a60-d2e4-4059-b5a0-947337bc96c5"
+    "flow_video_url": "https://flow.google.com/shared/video/572b1a60-d2e4-4059-b5a0-947337bc96c5",
+    "flow_video": "media/flow_videos/slide_16.mp4",
+    "flow_image": "media/flow_images/slide_16.webp"
   },
   {
     "slide_number": 17,
@@ -1802,12 +1828,14 @@
     ],
     "script": "Chào mừng bạn đến với slide này, nơi chúng ta sẽ cùng khám phá một chân lý sâu sắc: 'Cùng Hiện Tượng, Khác Tầm Nhìn'. Bạn thấy đấy, một quả táo rơi, người thường chỉ thấy đó là đồ ăn. Nhưng Newton, với tầm nhìn khác biệt, đã thấy Lực Hấp Dẫn, thay đổi cả nền khoa học. Một ổ bánh mì mốc, với đa số là rác, nhưng Fleming lại nhìn ra Penicillin cứu người. Hay ngay cả khi đối diện với cảnh tượng 'hết hy vọng' của đôi chân trần, một doanh nhân lại nhìn thấy một thị trường tiềm năng cho hàng triệu đôi giày. Điều này cho thấy, cơ hội không phải là thứ xa vời, mà nó luôn nằm sẵn trong những điều bình thường nhất, chờ đợi một tầm nhìn khác biệt để được khai phá. KTCSxAI sẽ giúp bạn rèn luyện đôi mắt này, để biến những điều tưởng chừng vô nghĩa thành những đột phá phi thường.",
     "flowPrompt": "Cinematic 16:9 seamless loop. A dynamic visual journey illustrating the power of perspective. Start with an apple falling, then seamlessly transition to a cosmic representation of gravity. Next, a close-up of moldy bread transforming into a glowing, life-saving penicillin molecule. Then, bare, dusty feet gradually being adorned with a pair of perfectly fitting shoes, symbolizing opportunity and transformation. The overall mood is one of discovery, innovation, and shifting viewpoints, with subtle light rays highlighting moments of insight. Soft, inspiring colors, high detail, smooth transitions.",
-    "has_video": false,
+    "has_video": true,
     "image_flow": "media/flow_images/slide_17.webp",
-    "image_pdf": "media/pdf_slides/slide_17.png",
+    "image_pdf": "media/slides/slide_17.webp",
     "youtube_url": "https://www.youtube.com/watch?v=b4N9t1h2r2Q",
     "youtube_title": "Một Hiện Tượng, Vạn Tầm Nhìn - Thay Đổi Góc Nhìn",
-    "flow_video_url": "https://flow.google.com/shared/video/572b1a60-d2e4-4059-b5a0-947337bc96c5"
+    "flow_video_url": "https://flow.google.com/shared/video/572b1a60-d2e4-4059-b5a0-947337bc96c5",
+    "flow_video": "media/flow_videos/slide_17.mp4",
+    "flow_image": "media/flow_images/slide_17.webp"
   },
   {
     "slide_number": 18,
@@ -1848,12 +1876,14 @@
     ],
     "script": "Chào mừng bạn đến với bài học đầu tiên từ Mẹ Thiên Nhiên, và hôm nay chúng ta sẽ khám phá bí mật của cây tre. Bạn có biết, một cây tre con trong 4 năm đầu tiên, dù chỉ nhú lên vài centimet trên mặt đất, nhưng lại đang miệt mài đan rễ sâu hàng trăm mét dưới lòng đất không? Đây là giai đoạn xây dựng nền tảng, một quá trình thầm lặng nhưng vô cùng quan trọng. Và rồi, điều kỳ diệu xảy ra vào năm thứ 5. Với bộ rễ vững chắc đã được kiến tạo, cây tre bứt phá ngoạn mục, vút cao 25 mét chỉ trong vỏn vẹn 6 tuần! Một sự tăng trưởng phi thường, phải không? Bài học ở đây thật sâu sắc. Mỗi giờ bạn miệt mài học AI, dù đôi khi cảm thấy lúng túng; mỗi giọt mồ hôi bạn đổ ra trên đường chạy, dù chưa thấy ngay kết quả, tất cả đều là những sợi rễ đang được đan kết. Chúng ta đang xây dựng nền tảng vững chắc cho 'cú nhảy vọt' của cuộc đời mình. Hãy kiên trì, vì thành quả vĩ đại thường đến sau những nỗ lực thầm lặng và bền bỉ nhất.",
     "flowPrompt": "Cinematic 16:9 seamless loop, time-lapse of a bamboo shoot slowly growing roots deep underground for four years, then rapidly shooting upwards, growing 25 meters in just 6 weeks, breaking through the canopy. Emphasize the hidden, intricate root system and the dramatic, fast-paced vertical growth. Soft, natural lighting, earthy tones for the roots, vibrant green for the bamboo. A sense of quiet determination transforming into explosive success. Focus on the contrast between slow, foundational development and sudden, powerful emergence. High detail, realistic, inspiring.",
-    "has_video": false,
+    "has_video": true,
     "image_flow": "media/flow_images/slide_18.webp",
-    "image_pdf": "media/pdf_slides/slide_18.png",
+    "image_pdf": "media/slides/slide_18.webp",
     "youtube_url": "https://www.youtube.com/watch?v=Kz6pE1kQ3-0",
     "youtube_title": "Bài Học Cây Tre - Kiên Trì Cắm Rễ Để Bứt Phá Vượt Trội",
-    "flow_video_url": "https://flow.google.com/shared/video/572b1a60-d2e4-4059-b5a0-947337bc96c5"
+    "flow_video_url": "https://flow.google.com/shared/video/572b1a60-d2e4-4059-b5a0-947337bc96c5",
+    "flow_video": "media/flow_videos/slide_18.mp4",
+    "flow_image": "media/flow_images/slide_18.webp"
   },
   {
     "slide_number": 19,
@@ -1894,12 +1924,14 @@
     ],
     "script": "Chào mừng quý vị đến với thông điệp không lời từ Mẹ Thiên Nhiên. Hôm nay, chúng ta sẽ cùng chiêm nghiệm về hoa sen và loài bướm. Hoa sen, biểu tượng của sự thanh khiết, không chọn nơi khô ráo mà lại vươn mình từ bùn lầy hôi hám. Chính chất dinh dưỡng từ bùn đen ấy đã nuôi dưỡng để sen nở ra những đóa hoa thơm ngát, tinh khôi. Tương tự, một chú sâu bướm phải trải qua cuộc vật lộn đầy cam go để thoát ra khỏi chiếc kén chật hẹp. Quá trình gian nan ấy không phải là sự trừng phạt, mà là cách tự nhiên ép dịch thể vào đôi cánh, giúp chúng trở nên cứng cáp và đủ sức bay lượn tự do. Nếu chúng ta can thiệp, cắt kén giúp bướm, chúng sẽ tàn tật suốt đời. Bài học ở đây rất rõ ràng: nghịch cảnh không phải là điều xui xẻo cần tránh né, mà chính là chất liệu quý giá để tôi luyện, giúp chúng ta trưởng thành mạnh mẽ hơn, đẹp đẽ hơn. Hãy đón nhận thử thách như một cơ hội để phát triển.",
     "flowPrompt": "Cinematic 16:9 seamless loop of a vibrant pink lotus flower emerging gracefully from dark, murky mud, slowly blooming under a clear sky. Transition to a caterpillar struggling to emerge from a chrysalis, its wings slowly unfurling and strengthening as it breaks free, then taking its first powerful flight. The scene should evoke themes of transformation, resilience, and growth from adversity, with soft, natural lighting and a sense of quiet triumph. Focus on the intricate details of the lotus petals and butterfly wings. Ethereal, inspiring, nature's wisdom.",
-    "has_video": false,
+    "has_video": true,
     "image_flow": "media/flow_images/slide_19.webp",
-    "image_pdf": "media/pdf_slides/slide_19.png",
+    "image_pdf": "media/slides/slide_19.webp",
     "youtube_url": "https://www.youtube.com/watch?v=z9p9p9r2mZk",
     "youtube_title": "Viktor Frankl - Nghịch Cảnh Là Chất Liệu Tôi Luyện Ý Chí",
-    "flow_video_url": "https://flow.google.com/shared/video/572b1a60-d2e4-4059-b5a0-947337bc96c5"
+    "flow_video_url": "https://flow.google.com/shared/video/572b1a60-d2e4-4059-b5a0-947337bc96c5",
+    "flow_video": "media/flow_videos/slide_19.mp4",
+    "flow_image": "media/flow_images/slide_19.webp"
   },
   {
     "slide_number": 20,
@@ -1943,10 +1975,12 @@
     "flowPrompt": "Cinematic 16:9 seamless loop, tranquil scene of ancient Vulture Peak, soft morning light, a serene Buddha holding a delicate pink lotus flower, a wise monk (Mahakasyapa) beside him with a subtle, knowing smile. Focus on the silent transmission of wisdom, gentle breeze, ethereal glow, sense of profound understanding and inner peace. Subtle watercolor textures, spiritual, enlightened atmosphere.",
     "has_video": true,
     "image_flow": "media/flow_images/slide_20.webp",
-    "image_pdf": "media/pdf_slides/slide_20.png",
+    "image_pdf": "media/slides/slide_20.webp",
     "youtube_url": "https://www.youtube.com/watch?v=r0p6h7x0s9M",
     "youtube_title": "Niêm Hoa Vi Tiếu - Thông Điệp Giác Ngộ Tâm Truyền Tâm",
-    "flow_video_url": "https://flow.google.com/shared/video/572b1a60-d2e4-4059-b5a0-947337bc96c5"
+    "flow_video_url": "https://flow.google.com/shared/video/572b1a60-d2e4-4059-b5a0-947337bc96c5",
+    "flow_video": "media/flow_videos/slide_20.mp4",
+    "flow_image": "media/flow_images/slide_20.webp"
   },
   {
     "slide_number": 21,
@@ -1980,12 +2014,14 @@
     ],
     "script": "Chào mừng bạn đến với trang sách đặc biệt này trong 'Sổ Tay Kiến Trúc Sư Cuộc Đời'. Cuộc sống là một hành trình đầy những thăng trầm, và chiếc nhẫn này chính là biểu tượng cho trí tuệ để chúng ta vượt qua. Khi bạn đạt được thành công rực rỡ, chiếc nhẫn nhắc nhở bạn hãy nhìn lại chính mình, kiểm soát cái Tôi, và giữ sự khiêm tốn. Bởi lẽ, mọi vinh quang rồi cũng sẽ qua đi. Ngược lại, khi đối diện với những thử thách tưởng chừng không thể vượt qua, khi tuyệt vọng bủa vây, hãy nhìn vào chiếc nhẫn. Nó sẽ là tia sáng nhỏ bé, nhắc nhở bạn rằng mọi khó khăn rồi cũng sẽ qua, và bạn không bao giờ được phép gục ngã. Thông điệp cốt lõi là hãy giữ cho tâm mình bất động, vững vàng như bàn thạch giữa mọi biến động của thời cuộc. Đây chính là bí quyết để kiến tạo một cuộc sống bình an và đầy ý nghĩa.",
     "flowPrompt": "Cinematic 16:9 seamless loop of an ancient golden ring with intricate patterns and a subtle inscription 'Everything will pass' in a mystical script. The ring slowly rotates, catching light that shifts from warm golden hues to cool, hopeful blues. Reflections of a serene, calm environment transition to subtle hints of a stormy, challenging backdrop, yet the ring remains steadfast and glowing. Ethereal particles gently float around it, symbolizing wisdom and resilience. The overall mood is profound, inspiring, and timeless, representing humility in victory and hope in despair, with a constant sense of inner peace.",
-    "has_video": false,
+    "has_video": true,
     "image_flow": "media/flow_images/slide_21.webp",
-    "image_pdf": "media/pdf_slides/slide_21.png",
+    "image_pdf": "media/slides/slide_21.webp",
     "youtube_url": "https://www.youtube.com/watch?v=h8m9s0p8t1U",
     "youtube_title": "Chiếc Nhẫn Của Vua Solomon - Chuyện Này Rồi Cũng Qua Đi",
-    "flow_video_url": "https://flow.google.com/shared/video/572b1a60-d2e4-4059-b5a0-947337bc96c5"
+    "flow_video_url": "https://flow.google.com/shared/video/572b1a60-d2e4-4059-b5a0-947337bc96c5",
+    "flow_video": "media/flow_videos/slide_21.mp4",
+    "flow_image": "media/flow_images/slide_21.webp"
   },
   {
     "slide_number": 22,
@@ -1993,7 +2029,7 @@
     "title": "Hào Khí Đất Việt –<br>Hợp Nhất Triệu Trái Tim",
     "raw_title": "Hào Khí Đất Việt – Hợp Nhất Triệu Trái Tim",
     "image": "media/slides/slide_22.webp",
-    "video": "media/videos/slide_22.mp4",
+    "video": "",
     "audio_female": "media/audio/slide_22_female.mp3",
     "audio_male": "media/audio/slide_22_male.mp3",
     "bullets": [
@@ -2021,10 +2057,12 @@
     "flowPrompt": "Cinematic 16:9 seamless loop, watercolor sketch style, depicting the spirit of Vietnamese unity. Start with an ancient Vietnamese court scene (Điện Diên Hồng), nobles and king discussing, then transition to a vast crowd at Ba Đình Square listening to Ho Chi Minh speak, with the Ho Chi Minh Mausoleum in the background. Interweave these scenes with a majestic, flowing Vietnamese flag (red with a golden star) as a central motif. The overall mood is inspiring, patriotic, and powerful, emphasizing historical moments of collective strength and communication. Soft, warm lighting, dynamic camera movements that flow between eras. Focus on the emotional connection and shared purpose. No text overlays.",
     "has_video": false,
     "image_flow": "media/flow_images/slide_22.webp",
-    "image_pdf": "media/pdf_slides/slide_22.png",
+    "image_pdf": "media/slides/slide_22.webp",
     "youtube_url": "https://www.youtube.com/watch?v=9xP6s9b0x4A",
     "youtube_title": "Hào Khí Đất Việt - Hợp Nhất Triệu Trái Tim Đồng Lòng",
-    "flow_video_url": "https://flow.google.com/shared/video/572b1a60-d2e4-4059-b5a0-947337bc96c5"
+    "flow_video_url": "https://flow.google.com/shared/video/572b1a60-d2e4-4059-b5a0-947337bc96c5",
+    "flow_video": "",
+    "flow_image": "media/flow_images/slide_22.webp"
   },
   {
     "slide_number": 23,
@@ -2044,12 +2082,14 @@
     "flipCards": [],
     "script": "Bạn có bao giờ tự hỏi, tại sao cùng một thông điệp, nhưng có lúc lại chạm đến trái tim, có lúc lại trôi tuột đi không dấu vết? Bí mật nằm ở 'bối cảnh'. Sức mạnh của bối cảnh được gói gọn trong 'Bộ Tứ 4 ĐÚNG' – bốn yếu tố then chốt để thông điệp của bạn thực sự tạo ra sự chuyển hóa. ĐÚNG NGƯỜI là thấu hiểu sâu sắc họ đang ở đâu, họ đang trăn trở điều gì. Khi bạn chạm vào nỗi đau, bạn chạm vào tâm hồn. ĐÚNG VIỆC nghĩa là thông điệp phải gắn liền với giải pháp thực tế, giúp họ nhìn thấy con đường phía trước. ĐÚNG CHỖ là tạo ra một không gian mà ở đó, năng lượng được cộng hưởng, sự lắng nghe được trân trọng. Và ĐÚNG THỜI ĐIỂM, đó là khoảnh khắc mà khao khát thay đổi của họ đang cháy bỏng nhất, khi họ sẵn sàng đón nhận. Khi hội tụ đủ cả bốn yếu tố này, thông điệp của bạn không chỉ là lời nói, mà là một hạt giống mạnh mẽ, nảy mầm và kiến tạo nên những cuộc đời mới. Đó chính là nghệ thuật của bối cảnh chuẩn xác.",
     "flowPrompt": "Cinematic 16:9 seamless loop. Four distinct, watercolor-painted puzzle pieces gracefully come together, forming a perfect square. Each piece subtly animates to reveal its core symbol: the first, a silhouette of a person with a mended heart; the second, intricate gears turning with a bright lightbulb illuminating; the third, a grand archway resonating with gentle sound waves; the fourth, a clock's hands moving towards a blooming lotus. As the final piece locks into place, a soft, radiant glow emanates from the center, symbolizing profound understanding and transformative synergy. The aesthetic is a blend of hand-drawn sketch and vibrant watercolor, conveying warmth, insight, and hopeful connection. Ethereal lighting, smooth motion, inspiring atmosphere.",
-    "has_video": false,
+    "has_video": true,
     "image_flow": "media/flow_images/slide_23.webp",
-    "image_pdf": "media/pdf_slides/slide_23.png",
+    "image_pdf": "media/slides/slide_23.webp",
     "youtube_url": "https://www.youtube.com/watch?v=u1j8k1p7w3E",
     "youtube_title": "Sức Mạnh Bối Cảnh - Bộ Tứ 4 ĐÚNG Kiến Tạo Chuyển Hóa",
-    "flow_video_url": "https://flow.google.com/shared/video/572b1a60-d2e4-4059-b5a0-947337bc96c5"
+    "flow_video_url": "https://flow.google.com/shared/video/572b1a60-d2e4-4059-b5a0-947337bc96c5",
+    "flow_video": "media/flow_videos/slide_23.mp4",
+    "flow_image": "media/flow_images/slide_23.webp"
   },
   {
     "slide_number": 24,
@@ -2090,12 +2130,14 @@
     ],
     "script": "Chào mừng quý vị đến với một khái niệm then chốt trong kỷ nguyên AI: Bối Cảnh. Nhiều người nghĩ rằng chỉ cần ra lệnh là AI sẽ hiểu, nhưng thực tế không phải vậy. Để AI thực sự trở thành trợ thủ đắc lực, chúng ta cần một 'công thức lệnh vàng' bao gồm: Vai trò của AI, Việc cần làm, Bối cảnh cụ thể và Định dạng mong muốn. Trong đó, Bối cảnh chính là trái tim. Hãy hình dung, nếu thiếu bối cảnh, câu trả lời của AI sẽ chỉ là những lý thuyết màu xám, chung chung và thiếu sức sống. Nhưng khi chúng ta cung cấp bối cảnh rõ ràng, AI sẽ biến những thông tin khô khan thành giải pháp sống động, chạm đúng tâm tư, tình cảm của người đọc. AI là một công cụ mạnh mẽ, nhưng chính bối cảnh mới là yếu tố thổi hồn, mang lại chiều sâu và giá trị thực sự cho mọi tương tác. Hãy luôn nhớ: AI là công cụ, nhưng Bối cảnh mới là trái tim của sự hiệu quả.",
     "flowPrompt": "Cinematic 16:9 seamless loop. An antique computer monitor displaying lines of generic, gray text. As a vibrant, glowing heart symbol emerges from the screen, the text transforms into rich, colorful, and meaningful words that resonate with an unseen audience. The heart pulsates, radiating warmth and clarity, symbolizing context. Data streams flow from the heart into the monitor, making the output dynamic and impactful. Subtle watercolor splashes and pencil sketch elements add an artistic touch. Focus on the transformation from dullness to vivid, emotionally resonant output, driven by the 'heart' of context. Soft, inspiring lighting. Loopable.",
-    "has_video": false,
+    "has_video": true,
     "image_flow": "media/flow_images/slide_24.webp",
-    "image_pdf": "media/pdf_slides/slide_24.png",
+    "image_pdf": "media/slides/slide_24.webp",
     "youtube_url": "https://www.youtube.com/watch?v=jC4v5AS4RIM",
     "youtube_title": "Kỹ Nghệ Prompt - Bối Cảnh Là Trái Tim Của Mọi Lệnh AI",
-    "flow_video_url": "https://flow.google.com/shared/video/572b1a60-d2e4-4059-b5a0-947337bc96c5"
+    "flow_video_url": "https://flow.google.com/shared/video/572b1a60-d2e4-4059-b5a0-947337bc96c5",
+    "flow_video": "media/flow_videos/slide_24.mp4",
+    "flow_image": "media/flow_images/slide_24.webp"
   },
   {
     "slide_number": 25,
@@ -2130,12 +2172,14 @@
     ],
     "script": "Chào mừng bạn đến với một bài học lịch sử đầy ý nghĩa, nơi chúng ta sẽ thấy AI không phải là một thách thức hoàn toàn mới. Hãy nhìn lại thời điểm máy ảnh ra đời. Khi đó, nhiều họa sĩ đã cố gắng chạy đua, sao chép thực tại một cách chính xác nhất, nhưng họ đều thất bại trước khả năng vượt trội của máy móc. Tuy nhiên, những họa sĩ vĩ đại như Van Gogh đã không đi theo lối mòn đó. Họ đã chuyển hướng, dùng cọ vẽ để thể hiện cảm xúc, nội tâm, và tạo ra những kiệt tác lay động lòng người, những tác phẩm mà máy ảnh không thể nào tái tạo được. Và đây chính là bài học quý giá cho chúng ta với AI. Đừng cố gắng đua tốc độ hay khả năng sao chép với AI. Đó là cuộc đua mà chúng ta sẽ thua. Thay vào đó, hãy tập trung vào điều mà AI không thể làm được: đó là cảm xúc, sự thấu cảm, tư duy sáng tạo độc đáo và khả năng kết nối nhân văn. Hãy để AI làm những việc máy móc, còn chúng ta, hãy là những nghệ sĩ của cảm xúc, kiến tạo nên những giá trị thực sự khác biệt trong kỷ nguyên mới này.",
     "flowPrompt": "Cinematic 16:9 seamless loop. A vintage camera slowly transforms into a sleek robotic arm precisely drawing intricate patterns. This then dissolves into a painter's hand, brushstrokes dynamically forming a vibrant, emotional masterpiece reminiscent of Van Gogh's 'Starry Night'. The painting then subtly morphs into a glowing, pulsating human heart, radiating warmth and creativity. Finally, the heart integrates with a futuristic, ethereal AI interface, where human hands gently touch and interact with glowing data streams, symbolizing collaboration and emotional intelligence. The overall mood is inspiring, reflective, and hopeful, emphasizing the fusion of human emotion and advanced technology. Soft, warm lighting with dynamic transitions.",
-    "has_video": false,
+    "has_video": true,
     "image_flow": "media/flow_images/slide_25.webp",
-    "image_pdf": "media/pdf_slides/slide_25.png",
+    "image_pdf": "media/slides/slide_25.webp",
     "youtube_url": "https://www.youtube.com/watch?v=8qBwQfXbV8U",
     "youtube_title": "Trí Tuệ Nhân Tạo & Trái Tim Con Người - Cảm Xúc Thăng Hoa",
-    "flow_video_url": "https://flow.google.com/shared/video/572b1a60-d2e4-4059-b5a0-947337bc96c5"
+    "flow_video_url": "https://flow.google.com/shared/video/572b1a60-d2e4-4059-b5a0-947337bc96c5",
+    "flow_video": "media/flow_videos/slide_25.mp4",
+    "flow_image": "media/flow_images/slide_25.webp"
   },
   {
     "slide_number": 26,
@@ -2176,12 +2220,14 @@
     ],
     "script": "Chào mừng quý vị đến với một tư duy đột phá: Tư duy Kiến trúc sư AI. Đây không chỉ là một khái niệm, mà là một triết lý sống, một cách chúng ta kiến tạo tương lai. Hãy hình dung, con người chúng ta, với bộ não phải đầy ắp cảm xúc, trực giác và khả năng sáng tạo, chính là những kiến trúc sư vĩ đại của cuộc đời. Chúng ta thổi hồn vào mọi trải nghiệm, định hướng giá trị và ý nghĩa. Còn AI, với bộ não trái siêu việt trong tính toán, xử lý dữ liệu, lại là đội ngũ thợ xây tài ba, cần mẫn thực hiện mọi chi tiết kỹ thuật. Khi chúng ta giao phó những công việc lặp lại, nặng về dữ liệu cho AI, chúng ta không chỉ tối ưu hóa hiệu suất mà còn giải phóng chính mình. Giải phóng thời gian, năng lượng để chúng ta thực sự được sống, được yêu thương, được kết nối và lan tỏa lòng tử tế. Đây chính là tầm nhìn của KTCSxAI: một cuộc sống nơi công nghệ phục vụ con người, để con người thăng hoa trọn vẹn.",
     "flowPrompt": "Cinematic 16:9 seamless loop. A vibrant, glowing human silhouette with a bright lightbulb emerging from its head, representing creativity and emotion (right brain). Below, intricate gears and flowing binary code (left brain) seamlessly connect to a sleek, helpful AI robot. An upward-pointing arrow, gradient from digital blue to warm human colors, symbolizes the flow of data transforming into human-centric innovation. The background is a soft, inspiring watercolor wash. Emphasize synergy, collaboration, and the liberation of human potential. Focus on smooth transitions between abstract thought and technological execution, conveying a sense of harmonious progress and future optimism.",
-    "has_video": false,
+    "has_video": true,
     "image_flow": "media/flow_images/slide_26.webp",
-    "image_pdf": "media/pdf_slides/slide_26.png",
+    "image_pdf": "media/slides/slide_26.webp",
     "youtube_url": "https://www.youtube.com/watch?v=2r1T2j6fG0M",
     "youtube_title": "Tư Duy Kiến Trúc Sư AI - Nâng Tầm Trí Tuệ Con Người",
-    "flow_video_url": "https://flow.google.com/shared/video/572b1a60-d2e4-4059-b5a0-947337bc96c5"
+    "flow_video_url": "https://flow.google.com/shared/video/572b1a60-d2e4-4059-b5a0-947337bc96c5",
+    "flow_video": "media/flow_videos/slide_26.mp4",
+    "flow_image": "media/flow_images/slide_26.webp"
   },
   {
     "slide_number": 27,
@@ -2222,12 +2268,14 @@
     ],
     "script": "Chào bạn, trong kỷ nguyên số, chúng ta đang bơi giữa một biển thông tin khổng lồ, thật giả lẫn lộn, tốt xấu đan xen. Làm sao để không bị cuốn trôi hay nhiễm độc bởi dòng chảy này? Triết gia Socrates đã để lại cho chúng ta một công cụ vô giá: Bộ lọc 3 sàng. Đầu tiên, hãy hỏi: 'Điều này có THẬT không?' Hãy kiểm chứng, tìm kiếm bằng chứng, đừng vội tin. Kế đến, 'Điều này có TỬ TẾ không?' Thông tin đó có mang tính xây dựng, có lan tỏa yêu thương, hay chỉ là lời lẽ công kích, gây chia rẽ? Cuối cùng, 'Điều này có HỮU ÍCH không?' Nó có giúp bạn phát triển, giải quyết vấn đề, hay chỉ làm lãng phí thời gian và năng lượng? Khi chúng ta kiên trì áp dụng ba sàng lọc này, những hạt bụi, cặn bã sẽ bị loại bỏ, chỉ còn lại viên kim cương tri thức tinh túy. Đây chính là cách chúng ta xây dựng và bảo vệ 'thành trì nội tâm' của mình, giữ cho tâm trí luôn sáng suốt, bình an và vững vàng trước mọi nhiễu loạn. Hãy là người kiến tạo cuộc sống của chính mình bằng sự minh triết.",
     "flowPrompt": "Cinematic 16:9 seamless loop. A stream of chaotic, glowing digital data particles (representing information overload, fake news) flows from the top of the frame. It passes through three ethereal, glowing sieves, stacked vertically. The first sieve filters out dark, noisy particles. The second sieve filters out sharp, aggressive particles. The third sieve refines the remaining particles into pure, shimmering light. Below the final sieve, a radiant, multifaceted diamond slowly forms and pulsates with a gentle, wise glow. The background is a soft, contemplative gradient of deep blues and purples, suggesting inner peace and clarity. Subtle, ancient Greek architectural elements or philosophical symbols are faintly visible in the background, hinting at Socrates' wisdom. The overall mood is thoughtful, transformative, and serene. Focus on the smooth, continuous flow of particles and the magical transformation into wisdom.",
-    "has_video": false,
+    "has_video": true,
     "image_flow": "media/flow_images/slide_27.webp",
-    "image_pdf": "media/pdf_slides/slide_27.png",
+    "image_pdf": "media/slides/slide_27.webp",
     "youtube_url": "https://www.youtube.com/watch?v=g9z7e2k7x8A",
     "youtube_title": "3 Chiếc Sàng Socrates - Bộ Lọc Chân Lý Thời Kỹ Thuật Số",
-    "flow_video_url": "https://flow.google.com/shared/video/572b1a60-d2e4-4059-b5a0-947337bc96c5"
+    "flow_video_url": "https://flow.google.com/shared/video/572b1a60-d2e4-4059-b5a0-947337bc96c5",
+    "flow_video": "media/flow_videos/slide_27.mp4",
+    "flow_image": "media/flow_images/slide_27.webp"
   },
   {
     "slide_number": 28,
@@ -2260,12 +2308,14 @@
     ],
     "script": "Chào bạn, trong hành trình kiến tạo cuộc sống xAI, chúng ta không thể phủ nhận thế giới đang biến đổi chóng mặt. AI phát triển vũ bão, thông tin tràn ngập, đôi khi khiến chúng ta cảm thấy chông chênh, mất phương hướng. Nhưng chính trong bối cảnh đầy thử thách này, lời dạy của Marcus Aurelius lại càng trở nên giá trị: hãy giữ vững “thành trì nội tâm” bất động. Đây không phải là sự thờ ơ, mà là khả năng giữ tâm mình tĩnh lặng trước mọi biến động. Vậy làm sao để xây dựng thành trì ấy? Bí quyết nằm ở việc chăm sóc ba gốc rễ cốt lõi: THÂN - TÂM - TRÍ mỗi ngày. Thân khỏe mạnh là nền tảng, tâm an yên là sức mạnh, và trí tuệ sáng suốt là kim chỉ nam. Khi chúng ta dành thời gian nuôi dưỡng ba yếu tố này, chúng ta sẽ tạo ra một nền tảng vững chắc từ bên trong, giúp mình đứng vững giữa mọi cơn lốc thời cuộc. Đây chính là thông điệp sống vĩ đại nhất, là chìa khóa để bạn kiến tạo một cuộc sống bình an và ý nghĩa, bất kể thế giới ngoài kia thay đổi ra sao.",
     "flowPrompt": "Cinematic 16:9 seamless loop of a majestic, ancient stone castle standing firm and serene on a rocky outcrop. Around the castle, a powerful, swirling whirlwind rages on one side, and a dramatic thunderstorm with lightning strikes illuminates dark, turbulent clouds on the other. The castle remains perfectly still, untouched, radiating an aura of calm and resilience amidst the surrounding chaos. The camera slowly orbits the castle, emphasizing its unwavering stability against the dynamic, turbulent environment. High contrast, dramatic lighting, epic scale.",
-    "has_video": false,
-    "image_flow": "media/flow_images/slide_28.webp",
-    "image_pdf": "media/pdf_slides/slide_28.png",
+    "has_video": true,
+    "image_flow": "media/slides/slide_28.webp",
+    "image_pdf": "media/slides/slide_28.webp",
     "youtube_url": "https://www.youtube.com/watch?v=R9OCA6UFE-0",
     "youtube_title": "Thành Trì Nội Tâm - Vững Vàng Giữa Cơn Lốc Thời Cuộc",
-    "flow_video_url": "https://flow.google.com/shared/video/572b1a60-d2e4-4059-b5a0-947337bc96c5"
+    "flow_video_url": "https://flow.google.com/shared/video/572b1a60-d2e4-4059-b5a0-947337bc96c5",
+    "flow_video": "media/flow_videos/slide_28.mp4",
+    "flow_image": "media/slides/slide_28.webp"
   },
   {
     "slide_number": 29,
@@ -2292,12 +2342,14 @@
     ],
     "script": "Chào mừng bạn đến với một góc nhìn thay đổi mọi thứ. Đây là bức ảnh 'Pale Blue Dot' nổi tiếng, chụp Trái Đất từ khoảng cách 6 tỷ km bởi tàu Voyager 1. Nhìn xem, hành tinh của chúng ta, ngôi nhà của tất cả chúng ta, chỉ là một đốm xanh mờ, một hạt bụi lơ lửng trong vũ trụ bao la. Khoa học cho chúng ta thấy sự nhỏ bé đến kinh ngạc của mình. Vậy mà, trên hạt bụi bé xíu ấy, chúng ta thường để mình cuốn vào những sân si, những tranh chấp vụn vặt, những lo toan tầm thường ở 'tầng đối lưu' của cuộc sống. Bài học cuộc đời ở đây là gì? Hãy nâng tầm nhìn, buông bỏ những điều nhỏ nhặt. Dành năng lượng để sống trọn vẹn với tình yêu thương, kết nối, và kiến tạo những giá trị, những di sản thực sự có ý nghĩa ở 'tầng bình lưu' của tâm hồn. Hãy sống một cuộc đời xứng đáng với sự kỳ diệu của việc được tồn tại trên đốm xanh mờ này.",
     "flowPrompt": "Cinematic 16:9 seamless loop of Earth as a tiny, pale blue dot, seen from an immense distance in the vast, dark cosmos. Stars twinkle faintly. A subtle, ethereal glow emanates from the distant sun, illuminating the cosmic dust. The camera slowly zooms out, emphasizing the profound solitude and insignificance of the dot against the infinite universe. Serene, awe-inspiring, and thought-provoking.",
-    "has_video": false,
-    "image_flow": "media/flow_images/slide_29.webp",
-    "image_pdf": "media/pdf_slides/slide_29.png",
+    "has_video": true,
+    "image_flow": "media/slides/slide_29.webp",
+    "image_pdf": "media/slides/slide_29.webp",
     "youtube_url": "https://www.youtube.com/watch?v=wupToqz1e2g",
     "youtube_title": "Carl Sagan - Đốm Xanh Mờ: Tầm Nhìn Vũ Trụ Vĩ Đại",
-    "flow_video_url": "https://flow.google.com/shared/video/572b1a60-d2e4-4059-b5a0-947337bc96c5"
+    "flow_video_url": "https://flow.google.com/shared/video/572b1a60-d2e4-4059-b5a0-947337bc96c5",
+    "flow_video": "media/flow_videos/slide_29.mp4",
+    "flow_image": "media/slides/slide_29.webp"
   },
   {
     "slide_number": 30,
@@ -2338,16 +2390,208 @@
     ],
     "script": "Chúng ta đã đi qua một hành trình đầy cảm hứng, và giờ đây, chúng ta đến với điểm kết luận, nhưng cũng là khởi đầu cho một di sản vĩ đại. Hãy nhìn vào biểu tượng vô cực này – nó không chỉ là vòng lặp của Sáng, Ngày, Tối, mà là chu trình kiến tạo không ngừng nghỉ của chính bạn. Ở LÕI, bạn là trạm phát sóng vĩ đại nhất, mang trong mình những giá trị độc đáo. Hãy tin vào sức mạnh nội tại ấy. Trong KẾT NỐI, đừng chỉ giao tiếp bằng lý trí, hãy dùng Não Phải, tìm ra 'Why' để chạm đến trái tim người khác, xây dựng những mối quan hệ sâu sắc. Và với CÔNG CỤ AI 2026, bạn không chỉ là người dùng, mà là Kiến trúc sư. AI sẽ là cánh tay đòn bẩy mạnh mẽ nhất để bạn biến tầm nhìn thành hiện thực. Vậy nên, sáng mai, hãy xỏ giày ra đường với một tâm thế mới. Tối nay, hãy ngồi xuống, viết nên Tuyên ngôn Thông điệp cuộc đời bạn, sử dụng Công thức Lệnh Vàng AI. Bản thể vĩ đại của bạn không phải là giấc mơ xa vời, nó bắt đầu ngay từ hôm nay, từ chính quyết định của bạn.",
     "flowPrompt": "Cinematic 16:9 seamless loop video. An elegant infinity symbol made of light and energy. One end transitions from a vibrant sunrise with a person's feet in running shoes, moving forward. This flows into the middle section representing 'Day', featuring a sleek, friendly AI robot interacting with glowing data streams in a futuristic, clean environment. The loop continues to the other end, depicting 'Night', with an open, illuminated book on a desk, a hand writing in a journal under a warm lamp, with a starry window view. The entire scene is infused with soft watercolor splashes and a hand-drawn sketchbook aesthetic, conveying inspiration, continuous growth, and the integration of human purpose with advanced AI, creating a legacy. The transitions are smooth and fluid, emphasizing a never-ending cycle of creation and reflection.",
-    "has_video": false,
+    "has_video": true,
     "image_flow": "media/flow_images/slide_30.webp",
-    "image_pdf": "media/pdf_slides/slide_30.png",
+    "image_pdf": "media/slides/slide_30.webp",
     "youtube_url": "https://www.youtube.com/watch?v=UF8uR6Z6KLc",
     "youtube_title": "Kiến Tạo Di Sản Vĩnh Cửu - Sống Cuộc Đời Ngoại Hạng",
-    "flow_video_url": "https://flow.google.com/shared/video/572b1a60-d2e4-4059-b5a0-947337bc96c5"
+    "flow_video_url": "https://flow.google.com/shared/video/572b1a60-d2e4-4059-b5a0-947337bc96c5",
+    "flow_video": "media/flow_videos/slide_30.mp4",
+    "flow_image": "media/flow_images/slide_30.webp"
   }
 ];
 
     // APPLICATION STATE V07
+
+    // WEB AUDIO & SOUND EFFECTS
+    const audioElement = new Audio();
+    let audioCtx = null;
+    let healingOsc1 = null;
+    let healingOsc2 = null;
+    let healingGain = null;
+    let isHealingPlaying = false;
+
+    function initAudioContext() {
+      if (!audioCtx) {
+        audioCtx = new (window.AudioContext || window.webkitAudioContext)();
+      }
+      if (audioCtx.state === 'suspended') {
+        audioCtx.resume();
+      }
+    }
+
+    function playSoundEffect(type) {
+      if (!isSFXEnabled) return;
+      try {
+        initAudioContext();
+        const now = audioCtx.currentTime;
+        const osc = audioCtx.createOscillator();
+        const gain = audioCtx.createGain();
+        osc.connect(gain);
+        gain.connect(audioCtx.destination);
+
+        if (type === 'flip') {
+          osc.type = 'sine';
+          osc.frequency.setValueAtTime(440, now);
+          osc.frequency.exponentialRampToValueAtTime(880, now + 0.15);
+          gain.gain.setValueAtTime(0.08, now);
+          gain.gain.exponentialRampToValueAtTime(0.001, now + 0.2);
+          osc.start(now);
+          osc.stop(now + 0.2);
+        } else if (type === 'slide') {
+          osc.type = 'sine';
+          osc.frequency.setValueAtTime(528, now);
+          gain.gain.setValueAtTime(0.12, now);
+          gain.gain.exponentialRampToValueAtTime(0.001, now + 0.6);
+          osc.start(now);
+          osc.stop(now + 0.6);
+        } else if (type === 'click') {
+          osc.type = 'triangle';
+          osc.frequency.setValueAtTime(600, now);
+          gain.gain.setValueAtTime(0.05, now);
+          gain.gain.exponentialRampToValueAtTime(0.001, now + 0.05);
+          osc.start(now);
+          osc.stop(now + 0.05);
+        }
+      } catch (e) {}
+    }
+
+    function toggleSFX() {
+      isSFXEnabled = !isSFXEnabled;
+      const btn = document.getElementById('sfxToggleBtn');
+      if (btn) {
+        btn.innerHTML = isSFXEnabled ? '🔊 <span>SFX: Bật</span>' : '🔇 <span>SFX: Tắt</span>';
+        btn.classList.toggle('text-amber-300', isSFXEnabled);
+        btn.classList.toggle('text-slate-500', !isSFXEnabled);
+      }
+      if (isSFXEnabled) playSoundEffect('click');
+    }
+
+    // DRAGGABLE SPLITTER LOGIC
+    function setupDraggableSplitter() {
+      const splitter = document.getElementById('stageSplitter');
+      const leftCol = document.getElementById('leftCol');
+      const container = document.getElementById('stageContainer');
+      if (!splitter || !leftCol || !container) return;
+      let isDragging = false;
+
+      const savedWidth = localStorage.getItem('ktcs_stage_split');
+      if (savedWidth) {
+        leftCol.style.width = savedWidth;
+      }
+
+      splitter.addEventListener('mousedown', (e) => {
+        isDragging = true;
+        splitter.classList.add('dragging');
+        document.body.style.cursor = 'col-resize';
+      });
+
+      window.addEventListener('mousemove', (e) => {
+        if (!isDragging) return;
+        const containerRect = container.getBoundingClientRect();
+        const offsetX = e.clientX - containerRect.left;
+        let percentage = (offsetX / containerRect.width) * 100;
+        if (percentage < 32) percentage = 32;
+        if (percentage > 72) percentage = 72;
+        leftCol.style.width = percentage + '%';
+        localStorage.setItem('ktcs_stage_split', percentage + '%');
+      });
+
+      window.addEventListener('mouseup', () => {
+        if (isDragging) {
+          isDragging = false;
+          splitter.classList.remove('dragging');
+          document.body.style.cursor = 'default';
+        }
+      });
+
+      splitter.addEventListener('dblclick', () => {
+        leftCol.style.width = '52%';
+        localStorage.setItem('ktcs_stage_split', '52%');
+        playSoundEffect('click');
+      });
+    }
+
+    // FLOATING PIP COUNCIL PANEL LOGIC
+    function setupCouncilDrag() {
+      const panel = document.getElementById('floatingCouncilPanel');
+      const header = document.getElementById('councilDragHeader');
+      if (!panel || !header) return;
+      let isDragging = false;
+      let startX, startY, startLeft, startTop;
+
+      header.addEventListener('mousedown', (e) => {
+        if (e.target.tagName === 'BUTTON' || e.target.tagName === 'SELECT') return;
+        isDragging = true;
+        startX = e.clientX;
+        startY = e.clientY;
+        const rect = panel.getBoundingClientRect();
+        startLeft = rect.left;
+        startTop = rect.top;
+        panel.style.bottom = 'auto';
+        panel.style.right = 'auto';
+        panel.style.left = startLeft + 'px';
+        panel.style.top = startTop + 'px';
+        document.body.style.userSelect = 'none';
+      });
+
+      window.addEventListener('mousemove', (e) => {
+        if (!isDragging) return;
+        const dx = e.clientX - startX;
+        const dy = e.clientY - startY;
+        panel.style.left = Math.max(10, Math.min(window.innerWidth - panel.offsetWidth - 10, startLeft + dx)) + 'px';
+        panel.style.top = Math.max(10, Math.min(window.innerHeight - panel.offsetHeight - 10, startTop + dy)) + 'px';
+      });
+
+      window.addEventListener('mouseup', () => {
+        if (isDragging) {
+          isDragging = false;
+          document.body.style.userSelect = '';
+        }
+      });
+    }
+
+    function toggleCouncilPanel() {
+      const panel = document.getElementById('floatingCouncilPanel');
+      const badge = document.getElementById('councilDockBadge');
+      if (!panel) return;
+      if (panel.classList.contains('hidden')) {
+        panel.classList.remove('hidden');
+        if (badge) badge.classList.add('hidden');
+        playSoundEffect('click');
+        updateCouncilChips();
+      } else {
+        panel.classList.add('hidden');
+      }
+    }
+
+    function minimizeCouncilPanel(e) {
+      if (e) e.stopPropagation();
+      const panel = document.getElementById('floatingCouncilPanel');
+      const badge = document.getElementById('councilDockBadge');
+      if (panel) panel.classList.add('hidden');
+      if (badge) badge.classList.remove('hidden');
+      playSoundEffect('click');
+    }
+
+    function restoreCouncilPanel() {
+      const panel = document.getElementById('floatingCouncilPanel');
+      const badge = document.getElementById('councilDockBadge');
+      if (panel) panel.classList.remove('hidden');
+      if (badge) badge.classList.add('hidden');
+      playSoundEffect('click');
+    }
+
+    function maximizeCouncilPanel(e) {
+      if (e) e.stopPropagation();
+      const panel = document.getElementById('floatingCouncilPanel');
+      const btn = document.getElementById('maximizeCouncilBtn');
+      if (!panel) return;
+      panel.classList.toggle('maximized');
+      const isMax = panel.classList.contains('maximized');
+      if (btn) btn.textContent = isMax ? '🗗' : '🗖';
+      playSoundEffect('click');
+    }
     let currentSlideIndex = 0;
     let currentVoiceGender = 'female';
     let currentTTSSpeed = 1.0;
@@ -2701,12 +2945,14 @@
       const vid = document.getElementById('slideVideo');
       const flow = document.getElementById('flowVideoContainer');
       const yt = document.getElementById('youtubeContainer');
+      const audioBtn = document.getElementById('videoAudioBtn');
       const s = SLIDES[currentSlideIndex];
 
       img.classList.add('hidden');
       vid.classList.add('hidden');
       if (flow) flow.classList.add('hidden');
-      yt.classList.add('hidden');
+      if (yt) yt.classList.add('hidden');
+      if (audioBtn) audioBtn.classList.add('hidden');
 
       if (source !== 'video') {
         vid.pause();
@@ -2720,22 +2966,38 @@
           : 'text-[11px] px-2 py-0.5 rounded text-slate-300 hover:text-amber-300';
       };
       updateBtn('srcImgBtn', source === 'image');
+      updateBtn('srcFlowImgBtn', source === 'flow_image');
       updateBtn('srcVidBtn', source === 'video');
       updateBtn('srcFlowBtn', source === 'flow');
       updateBtn('srcYtBtn', source === 'youtube');
 
       if (source === 'image') {
         img.classList.remove('hidden');
+        img.src = s.image.replace('.png', '.webp');
+      } else if (source === 'flow_image') {
+        img.classList.remove('hidden');
+        img.src = s.image_flow || s.flow_image || s.image;
       } else if (source === 'video') {
-        vid.classList.remove('hidden');
-        vid.src = s.video || 'media/videos/slide_01.mp4';
-        vid.muted = isVideoAudioMuted;
-        vid.play().catch(err => {});
+        if (s.video) {
+          vid.classList.remove('hidden');
+          vid.src = s.video;
+          vid.muted = isVideoAudioMuted;
+          vid.play().catch(err => {});
+          if (audioBtn) {
+            audioBtn.classList.remove('hidden');
+            audioBtn.innerHTML = isVideoAudioMuted ? '🔇 Tiếng Gốc: Tắt' : '🔊 Tiếng Gốc: Bật';
+            audioBtn.classList.toggle('text-emerald-400', !isVideoAudioMuted);
+            audioBtn.classList.toggle('text-slate-300', isVideoAudioMuted);
+          }
+        } else {
+          img.classList.remove('hidden');
+          img.src = s.image_flow || s.image;
+        }
       } else if (source === 'flow') {
         if (flow) flow.classList.remove('hidden');
         renderFlowVideo();
       } else if (source === 'youtube') {
-        yt.classList.remove('hidden');
+        if (yt) yt.classList.remove('hidden');
         renderYouTubeEmbed();
       }
 
@@ -2866,14 +3128,34 @@
 
       // Update Media
       const imgEl = document.getElementById('slideImage');
-      imgEl.src = s.image.replace('.png', '.webp');
-      
+      if (currentMediaSource === 'flow_image') {
+        imgEl.src = s.image_flow || s.flow_image || s.image;
+      } else {
+        imgEl.src = s.image.replace('.png', '.webp');
+      }
+
+      // Dynamic video button indicator
+      const vidBtn = document.getElementById('srcVidBtn');
+      if (vidBtn) {
+        if (s.has_video) {
+          vidBtn.innerHTML = '🎥 Video 4D <span class="ml-1 text-[9px] bg-red-500/90 text-white px-1 py-0.2 rounded-full font-bold animate-pulse">4s</span>';
+          vidBtn.title = 'Xem Video 16:9 Seamless Loop 4D (Đã ghép video)';
+        } else {
+          vidBtn.innerHTML = '🎥 Video 4D';
+          vidBtn.title = 'Xem Video 16:9 Seamless Loop';
+        }
+      }
+
       if (currentMediaSource === 'flow') {
         renderFlowVideo();
       } else if (currentMediaSource === 'youtube') {
         renderYouTubeEmbed();
       } else if (currentMediaSource === 'video') {
         switchMediaSource('video', false);
+      } else if (currentMediaSource === 'flow_image') {
+        switchMediaSource('flow_image', false);
+      } else {
+        switchMediaSource('image', false);
       }
 
       // Render Bullets with Copyable block
