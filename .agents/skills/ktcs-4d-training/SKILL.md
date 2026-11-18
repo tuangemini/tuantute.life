@@ -17,13 +17,37 @@ của **Thầy Tuấn Tử Tế (Nguyễn Anh Tuấn - Chương trình Kiến T�
 
 1. **LUÔN ĐƯA NGAY LIÊN KẾT TRỰC TIẾP TRONG MỌI CÂU TRẢ LỜI**:
    - Mọi câu trả lời sau khi hoàn tất công việc PHẢI đính kèm đường link `file:///...` có thể nhấp chuột trực tiếp:
-     - Ứng dụng bài giảng HTML 4D: `file:///c:/Users/PC/Downloads/TRAIN%20THE%20TRAINERS/ktcs-thong-diep-gia-tri-di-san-4d.html`
-     - Bảng điều khiển Giảng viên: `file:///c:/Users/PC/Downloads/TRAIN%20THE%20TRAINERS/CHAY_KTCS_TRAINER_HUB.bat`
-     - Công cụ Auto Google Flow: `file:///c:/Users/PC/Downloads/TRAIN%20THE%20TRAINERS/CHAY_AUTO_FLOW.bat`
-     - Thư mục làm việc: `file:///c:/Users/PC/Downloads/TRAIN%20THE%20TRAINERS/`
-     - Dữ liệu 30 slide: `file:///c:/Users/PC/Downloads/TRAIN%20THE%20TRAINERS/slides_30_data.json`
-     - Thư mục Media: `file:///c:/Users/PC/Downloads/TRAIN%20THE%20TRAINERS/media/`
-   - Kèm theo đường link trực tuyến trên GitHub Pages: `https://tuantute.life/ktcs-thong-diep-gia-tri-di-san-4d.html`.
+     - Ứng dụng Tạo Bài Giảng Tự Hành (1-Click): `file:///C:/Users/PC/Downloads/TRAIN%20THE%20TRAINERS/KHOI_DONG_KTCS_4D_CREATOR.bat`
+     - Mã nguồn Ứng Dụng Studio: `file:///C:/Users/PC/Downloads/TRAIN%20THE%20TRAINERS/KTCS_4D_Creator_Studio.py`
+     - Engine Toàn Năng (Python): `file:///C:/Users/PC/Downloads/TRAIN%20THE%20TRAINERS/.agents/skills/ktcs-4d-training/scripts/ktcs_universal_engine.py`
+     - Ứng dụng bài giảng HTML 4D: `file:///C:/Users/PC/Downloads/TRAIN%20THE%20TRAINERS/1118%20-%20Thong%20Diep%20Y%20Nghia%20-%20Gia%20Tri/ktcs-thong-diep-gia-tri-di-san-4d.html`
+     - Thư mục làm việc chuẩn: `file:///C:/Users/PC/Downloads/TRAIN%20THE%20TRAINERS/1118%20-%20Thong%20Diep%20Y%20Nghia%20-%20Gia%20Tri/`
+     - Bảng điều khiển Giảng viên: `file:///C:/Users/PC/Downloads/TRAIN%20THE%20TRAINERS/1118%20-%20Thong%20Diep%20Y%20Nghia%20-%20Gia%20Tri/CHAY_KTCS_TRAINER_HUB.bat`
+     - Công cụ Auto Google Flow (Đã fix Win 11): `file:///C:/Users/PC/Downloads/TRAIN%20THE%20TRAINERS/1118%20-%20Thong%20Diep%20Y%20Nghia%20-%20Gia%20Tri/CHAY_AUTO_FLOW.bat`
+     - Dữ liệu 30 slide: `file:///C:/Users/PC/Downloads/TRAIN%20THE%20TRAINERS/1118%20-%20Thong%20Diep%20Y%20Nghia%20-%20Gia%20Tri/slides_30_data.json`
+     - Thư mục Media: `file:///C:/Users/PC/Downloads/TRAIN%20THE%20TRAINERS/1118%20-%20Thong%20Diep%20Y%20Nghia%20-%20Gia%20Tri/media/`
+   - Kèm theo đường link nhánh riêng trên GitHub: `https://github.com/tuangemini/tuantute.life/tree/ktcs-4d-creator-engine`.
+   - Đường link trực tuyến trên GitHub Pages: `https://tuantute.life/ktcs-thong-diep-gia-tri-di-san-4d.html`.
+
+---
+
+## 🛠️ ỨNG DỤNG PHẦN MỀM KTCS 4D CREATOR STUDIO & UNIVERSAL ENGINE
+
+### 1. Khởi Chạy Ứng Dụng Studio Bằng 1-Click:
+- Chạy file: `KHOI_DONG_KTCS_4D_CREATOR.bat` (tại `C:\Users\PC\Downloads\TRAIN THE TRAINERS\`).
+- Trình duyệt Chrome sẽ tự động mở giao diện Studio tại `http://localhost:7890`.
+
+### 2. Quy Trình Vận Hành Tự Hành Cho Mọi Người Dùng:
+- **Bước 1**: Nhập Tên Chủ Đề bài giảng (bất kỳ lĩnh vực nào).
+- **Bước 2**: Chọn Lĩnh vực đào tạo (Thân Tâm Trí, Lãnh đạo, Bán hàng, AI, Giáo dục, Tài chính, Sức khỏe, Tổng quát).
+- **Bước 3**: Tùy chọn Nạp file PDF (NotebookLM Slide Deck) hoặc chọn số slide mong muốn ($N = 10, 15, 20, 30$).
+- **Bước 4**: Bấm nút `[⚡ BẮT ĐẦU KIẾN TẠO BÀI GIẢNG 4D (1-CLICK)]`.
+- **Hệ thống tự động thực hiện 100%**:
+  1. Dùng PyMuPDF đếm đủ $N$ trang, kết xuất ảnh WebP $2048 \times 1152$ chuẩn 16:9 siêu nét.
+  2. Phân tích nội dung và sinh cấu trúc 4D: Tiêu đề, Luận điểm, 3 Thẻ lật 3D chuyển hóa, Kịch bản Não Trái & Não Phải.
+  3. Áp dụng thuật toán Khóa từ mồ côi tuyệt đối bằng `&nbsp;` và `<br>`.
+  4. Tạo trọn bộ câu lệnh Google Flow 16:9 (ảnh + video 4s loop) lưu vào `.txt` và `.json`.
+  5. Đóng gói mã nguồn HTML 4D Cinema 16:9 hoàn chỉnh kèm file `.bat` rạp chiếu và tự động mở lên màn hình cho học viên tương tác ngay!
 
 2. **GIAO SẢN PHẨM HOÀN CHỈNH, CHẠY ĐƯỢC NGAY KHÔNG CẦN CÀI ĐẶT THÊM**:
    - Trình chiếu mở được trực tiếp trên Google Chrome, Edge hoặc bất kỳ trình duyệt nào.
@@ -61,14 +85,18 @@ của **Thầy Tuấn Tử Tế (Nguyễn Anh Tuấn - Chương trình Kiến T�
 - Nút **`[✨ Prompt Slide Này]`**: Click là chép ngay câu lệnh Google Flow 16:9, nút chuyển sang `✓ Đã Chép Prompt!` màu xanh ngọc, không mở modal rườm rà.
 - Nút **`[📋 Copy]`** trên kịch bản: Đổi sang `✓ Đã chép!` kèm thông báo nổi êm ái.
 
-### 4. Tích Hợp Video Google Flow (4 Giây Tiết Kiệm Tín Dụng) & 30 Video YouTube
-- **Google Flow Video (4s Seamless Loop)**:
-  - Khuyến nghị học viên chỉ tạo video **4 giây** trên Google Flow để tối ưu hóa tín dụng.
-  - Hỗ trợ gắn link chia sẻ Google Flow (`https://flow.google.com/shared/video/...`).
-  - Hiển thị rạp chiếu 4D với nút mở xem trực tiếp trên Google Flow hoặc tải về máy để chạy offline.
-- **YouTube Curated Playback**:
-  - Tích hợp sẵn 30 video YouTube truyền cảm hứng, chiều sâu triết lý và khoa học não bộ phù hợp 100% với từng slide trong `slides_30_data.json`.
-  - Cho phép người dùng tùy ý đổi link YouTube cho từng trang bằng nút `[🔗 Gắn Link]`.
+### 4. Hệ Thống Media Thông Minh Đa Nguồn (PDF, Flow AI, Video 4D, Flow Link, YouTube)
+- **Tương Tác Click-to-Play/Pause Trực Tiếp Trên Màn Hình Video**:
+  - Người dùng bấm thẳng vào màn hình video để **Phát / Tạm Dừng (Play / Pause)** tức thì.
+  - Hiệu ứng gợn sóng trung tâm (`▶` / `❚❚`) phản hồi thị giác êm ái 0.4s.
+- **Hộp Thoại [🔄 Đổi Media] Đa Năng & Tự Nhận Diện Thông Minh**:
+  - **Cách 1: Nạp tệp từ máy tính**: Kéo thả hoặc duyệt tệp từ máy tính (hỗ trợ cả Video `.mp4`, `.webm` và Ảnh `.webp`, `.jpg`, `.png`), lưu cục bộ và hiển thị ngay lập tức không cần mạng.
+  - **Cách 2: Dán đường dẫn thông minh**: Tự động nhận diện link Google Flow, YouTube, file MP4 online hoặc link hình ảnh để kích hoạt đúng chế độ tương ứng.
+  - Tối giản tối đa: lược bỏ toàn bộ văn bản ghi chú rườm rà, tập trung 100% vào tương tác trực quan.
+- **Xử Lý Chuẩn Mực Liên Kết Google Flow Video**:
+  - Do Google Flow thiết lập bảo mật `X-Frame-Options: SAMEORIGIN` chặn nhúng thẻ iframe, hệ thống hiển thị màn hình rạp chiếu Google Flow sang trọng với nút mở xem trực tiếp 1-click `▶️ Mở Xem Trên Google Flow (Cửa Sổ Mới)` kèm nút `🎥 Phát Video 4D Cục Bộ` chạy file MP4 chất lượng cao đã lưu offline.
+- **Tích Hợp Video Nâng Cấp Thời Lượng Dài Hơn & Chuẩn 720p**:
+  - Hỗ trợ các video dài 12 giây và độ phân giải 720p (Slide 01, 05, 20, 23...).
 - **Bật/Tắt Âm Thanh Gốc Của Video (`Mute / Unmute`)**:
   - Nút `[🔊 Tiếng: BẬT]` / `[🔇 Tiếng: TẮT]` ngay trên góc khung Media (phím tắt **`M`**).
   - Cho phép chạy video loop 4D đồng thời với **Thuyết minh tiếng Việt chuẩn (Nam Minh / Hoài My)** và **Nhạc thiền 432Hz**.
