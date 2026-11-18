@@ -397,6 +397,93 @@ button {
   transform: translateY(-2px);
 }
 
+.latest-training-card {
+  display: grid;
+  gap: 18px;
+  width: 100%;
+  max-width: 1240px;
+  margin: 0 auto 24px;
+  padding: clamp(20px, 3vw, 32px);
+  border: 2px solid #34d399;
+  background:
+    radial-gradient(circle at 100% 0, rgba(245, 158, 11, 0.18), transparent 38%),
+    linear-gradient(125deg, rgba(6, 78, 59, 0.7), rgba(15, 23, 42, 0.98) 55%, rgba(88, 28, 135, 0.42));
+  box-shadow: 0 0 32px rgba(16, 185, 129, 0.2);
+}
+
+.latest-training-card__meta,
+.latest-training-card__content,
+.latest-training-card__actions {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 14px;
+}
+
+.latest-training-card__meta {
+  flex-wrap: wrap;
+}
+
+.latest-training-card__badge {
+  padding: 7px 12px;
+  border-radius: 999px;
+  background: #10b981;
+  color: #022c22;
+  font-size: 0.78rem;
+  font-weight: 900;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.latest-training-card__date {
+  color: #fde68a;
+  font-weight: 800;
+}
+
+.latest-training-card h2 {
+  margin: 0 0 10px;
+  color: #fff;
+  font-size: clamp(1.25rem, 2.8vw, 2rem);
+  line-height: 1.25;
+}
+
+.latest-training-card p {
+  max-width: 760px;
+  margin: 0;
+  color: #cbd5e1;
+  line-height: 1.65;
+}
+
+.latest-training-card__actions {
+  flex-wrap: wrap;
+  flex-shrink: 0;
+  justify-content: flex-end;
+}
+
+.latest-training-card__button,
+.latest-training-card__archive {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 44px;
+  padding: 10px 16px;
+  border-radius: 12px;
+  font-weight: 800;
+  text-align: center;
+  text-decoration: none;
+}
+
+.latest-training-card__button {
+  background: linear-gradient(135deg, #fbbf24, #f59e0b);
+  color: #111827;
+}
+
+.latest-training-card__archive {
+  border: 1px solid rgba(167, 243, 208, 0.55);
+  background: rgba(6, 78, 59, 0.48);
+  color: #d1fae5;
+}
+
 .card-glass-shine {
   position: absolute;
   top: 0;
@@ -2212,6 +2299,20 @@ textarea {
   .bento-container {
     grid-template-columns: 1fr;
     gap: 16px;
+  }
+
+  .latest-training-card {
+    padding: 20px;
+  }
+
+  .latest-training-card__content {
+    align-items: stretch;
+    flex-direction: column;
+  }
+
+  .latest-training-card__actions {
+    align-items: stretch;
+    flex-direction: column;
   }
 
   .card-hero,
