@@ -670,27 +670,32 @@
 
           <!-- Slide Media Elements -->
           <img id="slideImage" src="media/slides/slide_01.webp" onerror="if(this.src.endsWith('.webp')) this.src=this.src.replace('.webp', '.png')" alt="Slide Image" class="media-element ken-burns">
-          <video id="slideVideo" class="media-element hidden" loop muted playsinline></video>
+          <video id="slideVideo" class="media-element hidden cursor-pointer" loop playsinline onclick="toggleVideoPlayPause(event)" title="Nhấp thẳng vào video để Phát / Tạm dừng"></video>
+          <div id="videoPlayPauseRipple" class="pointer-events-none absolute inset-0 flex items-center justify-center text-white/90 bg-black/30 rounded-2xl opacity-0 scale-50 transition-all duration-300 z-30 font-bold text-3xl"></div>
           <div id="flowVideoContainer" class="media-element hidden w-full h-full"></div>
           <div id="youtubeContainer" class="media-element hidden w-full h-full"></div>
 
           <!-- Top Corner Source Switcher (Unobtrusive) -->
-          <div class="absolute top-2.5 right-2.5 flex items-center gap-1.5 opacity-90 hover:opacity-100 transition duration-300 z-40 bg-black/80 backdrop-blur-md p-1 rounded-lg border border-slate-700/80 shadow-lg">
+          <div class="absolute top-2.5 right-2.5 flex items-center gap-1 opacity-90 hover:opacity-100 transition duration-300 z-40 bg-black/85 backdrop-blur-md p-1 rounded-lg border border-slate-700/80 shadow-xl">
             <!-- Source Selector Buttons -->
-            <button onclick="switchMediaSource('image')" id="srcImgBtn" class="text-[11px] px-2 py-0.5 rounded font-bold text-amber-400 bg-amber-500/20" title="Xem slide gốc PDF / WebP">
-              🖼️ Slide PDF
+            <button onclick="switchMediaSource('image')" id="srcImgBtn" class="text-[11px] px-2 py-0.5 rounded font-bold text-amber-400 bg-amber-500/20" title="Slide gốc PDF">
+              🖼️ PDF
             </button>
-            <button onclick="switchMediaSource('flow_image')" id="srcFlowImgBtn" class="text-[11px] px-2 py-0.5 rounded text-slate-300 hover:text-cyan-300" title="Xem ảnh nghệ thuật Google Flow AI">
-              🎨 Ảnh Flow AI
+            <button onclick="switchMediaSource('flow_image')" id="srcFlowImgBtn" class="text-[11px] px-2 py-0.5 rounded text-slate-300 hover:text-cyan-300" title="Ảnh nghệ thuật Flow AI">
+              🎨 Ảnh AI
             </button>
-            <button onclick="switchMediaSource('video')" id="srcVidBtn" class="text-[11px] px-2 py-0.5 rounded text-slate-300 hover:text-amber-300" title="Xem Video 16:9 Seamless Loop Cục Bộ">
+            <button onclick="switchMediaSource('video')" id="srcVidBtn" class="text-[11px] px-2 py-0.5 rounded text-slate-300 hover:text-amber-300" title="Video 4D chuyển động">
               🎥 Video 4D
             </button>
-            <button onclick="switchMediaSource('flow')" id="srcFlowBtn" class="text-[11px] px-2 py-0.5 rounded text-slate-300 hover:text-cyan-300" title="Xem Video Google Flow (4s Loop)">
+            <button onclick="switchMediaSource('flow')" id="srcFlowBtn" class="text-[11px] px-2 py-0.5 rounded text-slate-300 hover:text-cyan-300" title="Liên kết Google Flow">
               ⚡ Flow Link
             </button>
-            <button onclick="switchMediaSource('youtube')" id="srcYtBtn" class="text-[11px] px-2 py-0.5 rounded text-slate-300 hover:text-red-400" title="Xem video YouTube trực tiếp">
+            <button onclick="switchMediaSource('youtube')" id="srcYtBtn" class="text-[11px] px-2 py-0.5 rounded text-slate-300 hover:text-red-400" title="Video YouTube">
               ▶️ YouTube
+            </button>
+            <!-- Easy Media Switcher Button -->
+            <button onclick="openUnifiedMediaModal()" class="text-[11px] px-2 py-0.5 rounded text-cyan-300 hover:text-white bg-cyan-950/60 border border-cyan-700/60 font-semibold" title="Thay đổi hình ảnh hoặc video cho slide này">
+              🔄 Đổi Media
             </button>
             <!-- Video Audio Toggle Button -->
             <button onclick="toggleVideoAudio()" id="videoAudioBtn" class="text-[11px] px-2 py-0.5 rounded text-slate-300 hover:text-emerald-400 hidden" title="Bật/Tắt âm thanh gốc của Video">
@@ -1314,7 +1319,7 @@
     "title": "Kỷ Luật Sinh Khí:<br>Nền Tảng Vững Chắc Cho Mọi Chuyển Hóa",
     "raw_title": "Kỷ Luật Sinh Khí: Nền Tảng Vững Chắc Cho Mọi Chuyển Hóa",
     "image": "media/slides/slide_05.webp",
-    "video": "",
+    "video": "media/videos/slide_05.mp4",
     "audio_female": "media/audio/slide_05_female.mp3",
     "audio_male": "media/audio/slide_05_male.mp3",
     "bullets": [
@@ -1347,13 +1352,13 @@
     ],
     "script": "Chào mừng bạn đến với một chủ đề vô cùng quan trọng: Kỷ Luật Sinh Khí – Nền Tảng Vững Chắc Cho Mọi Chuyển Hóa. Bạn có thấy không, hành trình chuyển hóa bắt đầu từ những điều giản dị nhất: một buổi sáng chạy bộ đầy năng lượng, việc theo dõi và cải thiện bản thân qua các ứng dụng như VRACE, và quan trọng hơn cả là việc lan tỏa năng lượng tích cực ấy đến cộng đồng, qua Zalo hay Facebook. Khi thân thể khỏe mạnh, tràn đầy sinh khí, tâm trí chúng ta mới thực sự an yên. Từ đó, mọi thông điệp chúng ta gửi đi đều mang một sức mạnh nội tại, một sự chân thành khó cưỡng. Điều kỳ diệu là, chính nhờ sinh khí dồi dào, chúng ta có thể biến những 'tiếng ồn thông tin' hàng ngày thành những 'tín hiệu đánh thức' quý giá, giúp ta nhìn rõ hơn con đường mình đang đi. Hãy cùng nhau xây dựng kỷ luật sinh khí để kiến tạo một cuộc sống tràn đầy năng lượng và ý nghĩa nhé!",
     "flowPrompt": "Cinematic 16:9 seamless loop of a person running joyfully at sunrise, transitioning to a hand holding a smartphone tracking progress on a vibrant map app, then to a diverse group of people high-fiving and sharing positive energy with social media icons (Facebook, Zalo) subtly appearing. The scene should convey vitality, discipline, community, and personal transformation, with dynamic lighting and an uplifting mood. Focus on smooth transitions between scenes, emphasizing energy flow and awakening. The overall aesthetic is inspiring and energetic.",
-    "has_video": false,
+    "has_video": true,
     "image_flow": "media/flow_images/slide_05.webp",
     "image_pdf": "media/slides/slide_05.webp",
     "youtube_url": "https://www.youtube.com/watch?v=k2WCN_BqT6s",
     "youtube_title": "Jocko Willink - Kỷ Luật Sinh Khí & Tự Do Đích Thực",
     "flow_video_url": "https://flow.google.com/shared/video/572b1a60-d2e4-4059-b5a0-947337bc96c5",
-    "flow_video": "",
+    "flow_video": "media/flow_videos/slide_05.mp4",
     "flow_image": "media/flow_images/slide_05.webp"
   },
   {
@@ -2087,7 +2092,7 @@
     "image_pdf": "media/slides/slide_23.webp",
     "youtube_url": "https://www.youtube.com/watch?v=u1j8k1p7w3E",
     "youtube_title": "Sức Mạnh Bối Cảnh - Bộ Tứ 4 ĐÚNG Kiến Tạo Chuyển Hóa",
-    "flow_video_url": "https://flow.google.com/shared/video/572b1a60-d2e4-4059-b5a0-947337bc96c5",
+    "flow_video_url": "https://flow.google.com/shared/video/402d057a-898d-4ae5-885f-da45491d4b5d",
     "flow_video": "media/flow_videos/slide_23.mp4",
     "flow_image": "media/flow_images/slide_23.webp"
   },
@@ -2817,27 +2822,32 @@
       const s = SLIDES[currentSlideIndex];
 
       flow.innerHTML = `
-        <div class="flow-video-screen">
-          <div class="mb-3 inline-flex items-center gap-2 px-3 py-1 rounded-full bg-cyan-500/20 border border-cyan-500/40 text-cyan-300 text-xs font-bold shadow-lg">
-            <span>⚡</span> GOOGLE FLOW 4D CINEMA (4 GIÂY SEAMLESS LOOP)
+        <div class="flow-video-screen flex flex-col items-center justify-center p-6 text-center h-full w-full bg-gradient-to-br from-slate-950 via-cyan-950/25 to-slate-950 relative overflow-hidden select-none">
+          <div class="mb-3 inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-cyan-500/20 border border-cyan-500/50 text-cyan-300 text-xs font-bold shadow-lg">
+            <span class="animate-pulse">⚡</span> GOOGLE FLOW VIDEO 4D
           </div>
-          <h3 class="text-base lg:text-lg font-bold text-white mb-2 max-w-md">${s.raw_title || s.title}</h3>
-          <p class="text-xs text-slate-300 max-w-lg mb-4 leading-relaxed font-mono text-[11px] bg-slate-900/80 p-2 rounded-lg border border-slate-800">
+          <h3 class="text-base lg:text-xl font-bold text-white mb-2 max-w-lg leading-snug">
+            ${s.raw_title || s.title.replace(/<br>/g, ' ')}
+          </h3>
+          <p class="text-xs text-slate-400 font-mono max-w-md truncate mb-4 bg-slate-900/80 px-3 py-1.5 rounded-lg border border-slate-800">
             ${url}
           </p>
-          <div class="flex items-center gap-2 flex-wrap justify-center mb-3">
-            <a href="${url}" target="_blank" rel="noopener noreferrer" class="bg-gradient-to-r from-cyan-600 to-blue-600 hover:from-cyan-500 hover:to-blue-500 text-white font-bold text-xs px-4 py-2.5 rounded-xl shadow-lg flex items-center gap-2 transition transform hover:scale-105">
-              ▶️ Mở Xem Video Trên Google Flow (Tab Mới)
+          <div class="flex items-center gap-3 flex-wrap justify-center">
+            <a href="${url}" target="_blank" rel="noopener noreferrer" 
+               class="bg-gradient-to-r from-cyan-500 to-blue-600 hover:from-cyan-400 hover:to-blue-500 text-white font-bold text-xs lg:text-sm px-5 py-2.5 rounded-xl shadow-xl flex items-center gap-2 transition transform hover:scale-105 active:scale-95">
+              ▶️ Mở Xem Trên Google Flow (Cửa Sổ Mới)
             </a>
-            <button onclick="copyFlowVideoLink('${url}')" class="bg-slate-800 hover:bg-slate-700 text-cyan-300 text-xs px-3 py-2.5 rounded-xl border border-slate-700 flex items-center gap-1.5 transition">
-              📋 Chép Link Flow
+            ${s.has_video ? `
+              <button onclick="switchMediaSource('video')" class="bg-amber-500/20 hover:bg-amber-500/30 text-amber-300 border border-amber-500/50 font-bold text-xs lg:text-sm px-4 py-2.5 rounded-xl shadow-lg flex items-center gap-2 transition transform hover:scale-105">
+                🎥 Phát Video 4D Cục Bộ
+              </button>
+            ` : ''}
+            <button onclick="copyFlowVideoLink('${url}')" class="bg-slate-800 hover:bg-slate-700 text-slate-300 text-xs px-3.5 py-2.5 rounded-xl border border-slate-700 flex items-center gap-1.5 transition">
+              📋 Chép Link
             </button>
-            <button onclick="openUnifiedMediaModal()" class="bg-slate-800 hover:bg-slate-700 text-amber-400 text-xs px-3 py-2.5 rounded-xl border border-slate-700 flex items-center gap-1.5 transition">
-              🔗 Đổi Link Flow Khác
+            <button onclick="openUnifiedMediaModal()" class="bg-slate-800 hover:bg-slate-700 text-cyan-300 text-xs px-3.5 py-2.5 rounded-xl border border-slate-700 flex items-center gap-1.5 transition">
+              🔄 Đổi Media
             </button>
-          </div>
-          <div class="text-[11px] text-amber-300/80 bg-amber-500/10 px-3 py-1.5 rounded-lg border border-amber-500/20 max-w-md">
-            💡 <strong>Mẹo dành cho Thầy & Học viên:</strong> Tạo video <strong>4 giây</strong> trên Google Flow để tối ưu tín dụng. Khi tải về máy, bài giảng sẽ tự động chuyển thành video 4D mượt mà không cần mạng!
           </div>
         </div>
       `;
@@ -2846,11 +2856,11 @@
     function copyFlowVideoLink(url) {
       navigator.clipboard.writeText(url).then(() => {
         playSoundEffect('click');
-        showToast('✓ Đã sao chép đường dẫn Google Flow Video!');
+        showToast('✓ Đã sao chép link Google Flow!');
       });
     }
 
-    // YOUTUBE VIDEO PLAYER (CURATED FOR 30 SLIDES)
+    // YOUTUBE VIDEO PLAYER
     function getSlideYouTubeUrl(index) {
       const custom = localStorage.getItem(`ktcs_custom_youtube_${index + 1}`);
       if (custom) return custom;
@@ -2871,36 +2881,71 @@
 
       if (videoId) {
         yt.innerHTML = `
-          <iframe class="w-full h-full" 
-            src="https://www.youtube.com/embed/${videoId}?autoplay=1&rel=0&enablejsapi=1" 
-            title="${s.youtube_title || 'Video YouTube Đào Tạo'}" 
-            frameborder="0" 
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-            allowfullscreen>
-          </iframe>`;
+          <div class="w-full h-full relative group">
+            <iframe class="w-full h-full" 
+              src="https://www.youtube-nocookie.com/embed/${videoId}?rel=0" 
+              title="${s.youtube_title || 'Video YouTube Đào Tạo'}" 
+              frameborder="0" 
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+              allowfullscreen>
+            </iframe>
+            <a href="${url}" target="_blank" rel="noopener noreferrer" 
+               class="absolute bottom-3 right-3 bg-black/85 hover:bg-red-600 text-white text-xs font-bold px-3 py-1.5 rounded-lg border border-slate-700/80 shadow-xl flex items-center gap-1.5 transition">
+              ▶️ Mở Trực Tiếp Trên YouTube
+            </a>
+          </div>`;
       } else {
         yt.innerHTML = `
-          <div class="flow-video-screen">
+          <div class="flow-video-screen flex flex-col items-center justify-center p-6 text-center h-full w-full">
             <span class="text-3xl mb-2">🎬</span>
-            <h4 class="text-sm font-bold text-red-400 mb-2">Chưa có liên kết YouTube hợp lệ</h4>
-            <p class="text-xs text-slate-400 mb-3">${url}</p>
-            <button onclick="openUnifiedMediaModal()" class="bg-red-600 hover:bg-red-500 text-white font-bold text-xs px-4 py-2 rounded-lg">
-              + Nhập Link YouTube Khác
+            <p class="text-xs text-slate-400 mb-3">Chưa có liên kết YouTube cho slide này</p>
+            <button onclick="openUnifiedMediaModal()" class="bg-red-600/80 hover:bg-red-600 text-white text-xs px-4 py-2 rounded-xl transition">
+              🔗 Gắn Link YouTube Ngay
             </button>
-          </div>`;
+          </div>
+        `;
       }
     }
 
-    // UNIFIED MEDIA MODAL (YOUTUBE & GOOGLE FLOW)
-    
-    // BACKWARD COMPATIBILITY ALIASES
-    function openCustomYouTubeDialog() { openUnifiedMediaModal(); }
-    function closeYouTubeModal() { closeUnifiedMediaModal(); }
+    // CLICK-TO-PLAY/PAUSE ON VIDEO
+    function toggleVideoPlayPause(e) {
+      if (e) e.stopPropagation();
+      const vid = document.getElementById('slideVideo');
+      if (!vid) return;
 
+      if (vid.paused) {
+        vid.play().catch(err => {});
+        showPlayPauseFeedback('play');
+      } else {
+        vid.pause();
+        showPlayPauseFeedback('pause');
+      }
+    }
+
+    function showPlayPauseFeedback(action) {
+      const ripple = document.getElementById('videoPlayPauseRipple');
+      if (!ripple) return;
+      ripple.innerHTML = action === 'play' 
+        ? '<div class="w-16 h-16 rounded-full bg-black/70 border border-white/40 flex items-center justify-center pl-1 text-2xl text-emerald-400 shadow-2xl">▶</div>' 
+        : '<div class="w-16 h-16 rounded-full bg-black/70 border border-white/40 flex items-center justify-center text-2xl text-amber-400 shadow-2xl">❚❚</div>';
+      ripple.classList.remove('opacity-0', 'scale-50');
+      ripple.classList.add('opacity-100', 'scale-100');
+      setTimeout(() => {
+        ripple.classList.add('opacity-0', 'scale-50');
+        ripple.classList.remove('opacity-100', 'scale-100');
+      }, 400);
+    }
+
+    // UNIFIED MEDIA MANAGEMENT MODAL LOGIC
     function openUnifiedMediaModal() {
       document.getElementById('mediaSlideNumText').textContent = currentSlideIndex + 1;
-      document.getElementById('modalYtInput').value = getSlideYouTubeUrl(currentSlideIndex);
-      document.getElementById('modalFlowInput').value = getSlideFlowVideoUrl(currentSlideIndex);
+      const s = SLIDES[currentSlideIndex];
+      const customFlow = localStorage.getItem(`ktcs_custom_flow_video_${currentSlideIndex + 1}`);
+      const customYt = localStorage.getItem(`ktcs_custom_youtube_${currentSlideIndex + 1}`);
+      const customMedia = localStorage.getItem(`ktcs_custom_media_${currentSlideIndex + 1}`);
+      
+      const inputEl = document.getElementById('modalSmartMediaInput');
+      inputEl.value = customMedia || customFlow || customYt || s.flow_video_url || s.youtube_url || '';
       document.getElementById('unifiedMediaModal').classList.remove('hidden');
       playSoundEffect('click');
     }
@@ -2909,30 +2954,84 @@
       document.getElementById('unifiedMediaModal').classList.add('hidden');
     }
 
-    function saveUnifiedMediaModal() {
-      const yt = document.getElementById('modalYtInput').value.trim();
-      const flow = document.getElementById('modalFlowInput').value.trim();
-      if (yt) {
-        localStorage.setItem(`ktcs_custom_youtube_${currentSlideIndex + 1}`, yt);
-      }
-      if (flow) {
-        localStorage.setItem(`ktcs_custom_flow_video_${currentSlideIndex + 1}`, flow);
-      }
-      closeUnifiedMediaModal();
-      showToast('✓ Đã lưu đường dẫn Media cho slide này!');
-      if (flow && !yt) {
-        switchMediaSource('flow');
+    function handleLocalFileUpload(event) {
+      const file = event.target.files[0];
+      if (!file) return;
+
+      const url = URL.createObjectURL(file);
+      const isVideo = file.type.startsWith('video/') || file.name.toLowerCase().endsWith('.mp4') || file.name.toLowerCase().endsWith('.webm');
+      const slideNum = currentSlideIndex + 1;
+
+      if (isVideo) {
+        localStorage.setItem(`ktcs_custom_video_${slideNum}`, url);
+        SLIDES[currentSlideIndex].custom_video = url;
+        SLIDES[currentSlideIndex].has_video = true;
+        closeUnifiedMediaModal();
+        switchMediaSource('video');
+        showToast(`✓ Đã nạp video: ${file.name}`);
       } else {
+        localStorage.setItem(`ktcs_custom_image_${slideNum}`, url);
+        SLIDES[currentSlideIndex].custom_image = url;
+        closeUnifiedMediaModal();
+        switchMediaSource('image');
+        showToast(`✓ Đã nạp ảnh: ${file.name}`);
+      }
+    }
+
+    function saveUnifiedMediaModal() {
+      const input = document.getElementById('modalSmartMediaInput').value.trim();
+      const slideNum = currentSlideIndex + 1;
+      const s = SLIDES[currentSlideIndex];
+
+      if (!input) {
+        closeUnifiedMediaModal();
+        return;
+      }
+
+      const lower = input.toLowerCase();
+      localStorage.setItem(`ktcs_custom_media_${slideNum}`, input);
+
+      if (lower.includes('flow.google.com')) {
+        localStorage.setItem(`ktcs_custom_flow_video_${slideNum}`, input);
+        s.flow_video_url = input;
+        closeUnifiedMediaModal();
+        switchMediaSource('flow');
+        showToast('✓ Đã cập nhật liên kết Google Flow!');
+      } else if (lower.includes('youtube.com') || lower.includes('youtu.be')) {
+        localStorage.setItem(`ktcs_custom_youtube_${slideNum}`, input);
+        s.youtube_url = input;
+        closeUnifiedMediaModal();
         switchMediaSource('youtube');
+        showToast('✓ Đã cập nhật liên kết YouTube!');
+      } else if (lower.endsWith('.mp4') || lower.endsWith('.webm') || lower.includes('/videos/') || lower.includes('blob:')) {
+        localStorage.setItem(`ktcs_custom_video_${slideNum}`, input);
+        s.custom_video = input;
+        s.has_video = true;
+        closeUnifiedMediaModal();
+        switchMediaSource('video');
+        showToast('✓ Đã cập nhật Video 4D!');
+      } else {
+        // Image URL or path
+        localStorage.setItem(`ktcs_custom_image_${slideNum}`, input);
+        s.custom_image = input;
+        closeUnifiedMediaModal();
+        switchMediaSource('image');
+        showToast('✓ Đã cập nhật Hình Ảnh!');
       }
     }
 
     function resetSlideMediaToDefault() {
-      localStorage.removeItem(`ktcs_custom_youtube_${currentSlideIndex + 1}`);
-      localStorage.removeItem(`ktcs_custom_flow_video_${currentSlideIndex + 1}`);
+      const slideNum = currentSlideIndex + 1;
+      localStorage.removeItem(`ktcs_custom_youtube_${slideNum}`);
+      localStorage.removeItem(`ktcs_custom_flow_video_${slideNum}`);
+      localStorage.removeItem(`ktcs_custom_video_${slideNum}`);
+      localStorage.removeItem(`ktcs_custom_image_${slideNum}`);
+      localStorage.removeItem(`ktcs_custom_media_${slideNum}`);
+      delete SLIDES[currentSlideIndex].custom_video;
+      delete SLIDES[currentSlideIndex].custom_image;
       closeUnifiedMediaModal();
-      showToast('✓ Đã khôi phục cài đặt Media gốc!');
-      switchMediaSource('image');
+      showToast('✓ Đã khôi phục cài đặt gốc của slide!');
+      renderSlide(currentSlideIndex, false);
     }
 
     // SWITCH MEDIA SOURCE
@@ -2947,6 +3046,9 @@
       const yt = document.getElementById('youtubeContainer');
       const audioBtn = document.getElementById('videoAudioBtn');
       const s = SLIDES[currentSlideIndex];
+      const customImg = localStorage.getItem(`ktcs_custom_image_${currentSlideIndex + 1}`) || s.custom_image;
+      const customVid = localStorage.getItem(`ktcs_custom_video_${currentSlideIndex + 1}`) || s.custom_video;
+      const activeVideo = customVid || s.video;
 
       img.classList.add('hidden');
       vid.classList.add('hidden');
@@ -2973,14 +3075,14 @@
 
       if (source === 'image') {
         img.classList.remove('hidden');
-        img.src = s.image.replace('.png', '.webp');
+        img.src = customImg || s.image.replace('.png', '.webp');
       } else if (source === 'flow_image') {
         img.classList.remove('hidden');
-        img.src = s.image_flow || s.flow_image || s.image;
+        img.src = customImg || s.image_flow || s.flow_image || s.image;
       } else if (source === 'video') {
-        if (s.video) {
+        if (activeVideo) {
           vid.classList.remove('hidden');
-          vid.src = s.video;
+          vid.src = activeVideo;
           vid.muted = isVideoAudioMuted;
           vid.play().catch(err => {});
           if (audioBtn) {
@@ -2991,7 +3093,7 @@
           }
         } else {
           img.classList.remove('hidden');
-          img.src = s.image_flow || s.image;
+          img.src = customImg || s.image_flow || s.image;
         }
       } else if (source === 'flow') {
         if (flow) flow.classList.remove('hidden');
@@ -3127,22 +3229,26 @@
       document.getElementById('slideTitle').innerHTML = s.title;
 
       // Update Media
+      const customImg = localStorage.getItem(`ktcs_custom_image_${index + 1}`) || s.custom_image;
+      const customVid = localStorage.getItem(`ktcs_custom_video_${index + 1}`) || s.custom_video;
+      const activeVideo = customVid || s.video;
+
       const imgEl = document.getElementById('slideImage');
       if (currentMediaSource === 'flow_image') {
-        imgEl.src = s.image_flow || s.flow_image || s.image;
+        imgEl.src = customImg || s.image_flow || s.flow_image || s.image;
       } else {
-        imgEl.src = s.image.replace('.png', '.webp');
+        imgEl.src = customImg || s.image.replace('.png', '.webp');
       }
 
       // Dynamic video button indicator
       const vidBtn = document.getElementById('srcVidBtn');
       if (vidBtn) {
-        if (s.has_video) {
+        if (s.has_video || customVid) {
           vidBtn.innerHTML = '🎥 Video 4D <span class="ml-1 text-[9px] bg-red-500/90 text-white px-1 py-0.2 rounded-full font-bold animate-pulse">4s</span>';
-          vidBtn.title = 'Xem Video 16:9 Seamless Loop 4D (Đã ghép video)';
+          vidBtn.title = 'Xem Video 4D Seamless Loop (Nhấp để xem)';
         } else {
           vidBtn.innerHTML = '🎥 Video 4D';
-          vidBtn.title = 'Xem Video 16:9 Seamless Loop';
+          vidBtn.title = 'Xem Video 4D';
         }
       }
 
@@ -3880,33 +3986,51 @@
     });
   </script>
 
-  <!-- MODAL: GẮN LINK YOUTUBE & GOOGLE FLOW CHO SLIDE HIỆN TẠI -->
+  <!-- MODAL: THAY ĐỔI HÌNH ẢNH & VIDEO CHO SLIDE HIỆN TẠI -->
   <div id="unifiedMediaModal" class="fixed inset-0 z-50 modal-backdrop hidden flex items-center justify-center p-4">
-    <div class="bg-slate-900 border border-amber-500/40 rounded-2xl w-full max-w-lg p-5 shadow-2xl">
-      <div class="flex items-center justify-between mb-3 border-b border-slate-800 pb-2">
-        <h3 class="text-sm font-bold text-amber-400 flex items-center gap-2">
-          <span>🎬</span> GẮN LINK MEDIA CHO SLIDE <span id="mediaSlideNumText">1</span>
+    <div class="bg-slate-900 border border-cyan-500/40 rounded-2xl w-full max-w-lg p-5 shadow-2xl backdrop-blur-xl">
+      <div class="flex items-center justify-between mb-4 border-b border-slate-800 pb-2.5">
+        <h3 class="text-sm font-bold text-cyan-300 flex items-center gap-2">
+          <span>🔄</span> THAY ĐỔI MEDIA SLIDE <span id="mediaSlideNumText" class="text-amber-400">1</span>
         </h3>
-        <button onclick="closeUnifiedMediaModal()" class="text-slate-400 hover:text-white font-bold">✕</button>
+        <button onclick="closeUnifiedMediaModal()" class="text-slate-400 hover:text-white font-bold text-base p-1">✕</button>
       </div>
-      <div class="space-y-3 text-xs">
+
+      <!-- Quick Upload Zone -->
+      <div class="space-y-4 text-xs">
         <div>
-          <label class="block text-slate-300 font-semibold mb-1">▶️ Đường dẫn Video YouTube:</label>
-          <input type="text" id="modalYtInput" placeholder="https://www.youtube.com/watch?v=..." class="w-full bg-slate-950 border border-slate-800 rounded-lg p-2.5 text-slate-200 font-mono focus:outline-none focus:border-red-500">
+          <label class="block text-slate-300 font-semibold mb-1.5">📁 Cách 1: Chọn Tệp Từ Máy Tính (Ảnh hoặc Video)</label>
+          <div onclick="document.getElementById('fileUploadInput').click()" 
+               class="border-2 border-dashed border-slate-700 hover:border-cyan-500 rounded-xl p-4 text-center cursor-pointer bg-slate-950/50 hover:bg-cyan-950/20 transition group">
+            <span class="text-2xl block mb-1 group-hover:scale-110 transition">📂</span>
+            <span class="text-slate-300 font-medium">Bấm để duyệt tệp từ máy tính</span>
+            <span class="text-[11px] text-slate-500 block mt-0.5">Hỗ trợ: .mp4, .webm, .webp, .jpg, .png</span>
+          </div>
+          <input type="file" id="fileUploadInput" class="hidden" accept="image/*,video/*" onchange="handleLocalFileUpload(event)">
         </div>
+
         <div>
-          <label class="block text-cyan-300 font-semibold mb-1">⚡ Đường dẫn Video Google Flow (4 Giây Seamless Loop):</label>
-          <input type="text" id="modalFlowInput" placeholder="https://flow.google.com/shared/video/..." class="w-full bg-slate-950 border border-slate-800 rounded-lg p-2.5 text-slate-200 font-mono focus:outline-none focus:border-cyan-500">
-          <span class="text-[10px] text-slate-400 mt-1 block">💡 <em>Mẹo: Tạo video 4 giây trên Google Flow để tiết kiệm tín dụng và dán link chia sẻ vào đây.</em></span>
+          <label class="block text-slate-300 font-semibold mb-1.5">🔗 Cách 2: Dán Đường Dẫn (URL Flow / YouTube / MP4 / Ảnh)</label>
+          <div class="relative">
+            <input type="text" id="modalSmartMediaInput" placeholder="Dán link Flow / YouTube / file MP4 / link Ảnh..." 
+                   class="w-full bg-slate-950 border border-slate-700 rounded-xl p-3 text-slate-100 font-mono text-xs focus:outline-none focus:border-cyan-400 pr-10">
+            <button onclick="document.getElementById('modalSmartMediaInput').value=''" class="absolute right-3 top-3 text-slate-500 hover:text-slate-300">✕</button>
+          </div>
         </div>
       </div>
-      <div class="flex items-center justify-end gap-2 mt-4 pt-3 border-t border-slate-800">
-        <button onclick="resetSlideMediaToDefault()" class="bg-slate-800 hover:bg-slate-700 text-slate-300 text-xs px-3 py-2 rounded-lg transition">
-          Khôi Phục Gốc
+
+      <div class="flex items-center justify-between gap-2 mt-5 pt-3 border-t border-slate-800">
+        <button onclick="resetSlideMediaToDefault()" class="bg-slate-800 hover:bg-slate-700 text-slate-400 hover:text-slate-200 text-xs px-3.5 py-2.5 rounded-xl transition">
+          ↺ Khôi Phục Gốc
         </button>
-        <button onclick="saveUnifiedMediaModal()" class="bg-gradient-to-r from-amber-600 to-amber-500 hover:from-amber-500 hover:to-amber-400 text-black font-bold text-xs px-4 py-2 rounded-lg transition">
-          Lưu & Áp Dụng
-        </button>
+        <div class="flex items-center gap-2">
+          <button onclick="closeUnifiedMediaModal()" class="bg-slate-800 hover:bg-slate-700 text-slate-300 text-xs px-3.5 py-2.5 rounded-xl transition">
+            Đóng
+          </button>
+          <button onclick="saveUnifiedMediaModal()" class="bg-gradient-to-r from-cyan-600 to-blue-600 hover:from-cyan-500 hover:to-blue-500 text-white font-bold text-xs px-5 py-2.5 rounded-xl shadow-lg transition transform hover:scale-105 active:scale-95">
+            ✓ Áp Dụng Ngay
+          </button>
+        </div>
       </div>
     </div>
   </div>

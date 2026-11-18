@@ -199,7 +199,7 @@
     "title": "Kỷ Luật Sinh Khí:<br>Nền Tảng Vững Chắc Cho Mọi Chuyển Hóa",
     "raw_title": "Kỷ Luật Sinh Khí: Nền Tảng Vững Chắc Cho Mọi Chuyển Hóa",
     "image": "media/slides/slide_05.webp",
-    "video": "",
+    "video": "media/videos/slide_05.mp4",
     "audio_female": "media/audio/slide_05_female.mp3",
     "audio_male": "media/audio/slide_05_male.mp3",
     "bullets": [
@@ -232,13 +232,13 @@
     ],
     "script": "Chào mừng bạn đến với một chủ đề vô cùng quan trọng: Kỷ Luật Sinh Khí – Nền Tảng Vững Chắc Cho Mọi Chuyển Hóa. Bạn có thấy không, hành trình chuyển hóa bắt đầu từ những điều giản dị nhất: một buổi sáng chạy bộ đầy năng lượng, việc theo dõi và cải thiện bản thân qua các ứng dụng như VRACE, và quan trọng hơn cả là việc lan tỏa năng lượng tích cực ấy đến cộng đồng, qua Zalo hay Facebook. Khi thân thể khỏe mạnh, tràn đầy sinh khí, tâm trí chúng ta mới thực sự an yên. Từ đó, mọi thông điệp chúng ta gửi đi đều mang một sức mạnh nội tại, một sự chân thành khó cưỡng. Điều kỳ diệu là, chính nhờ sinh khí dồi dào, chúng ta có thể biến những 'tiếng ồn thông tin' hàng ngày thành những 'tín hiệu đánh thức' quý giá, giúp ta nhìn rõ hơn con đường mình đang đi. Hãy cùng nhau xây dựng kỷ luật sinh khí để kiến tạo một cuộc sống tràn đầy năng lượng và ý nghĩa nhé!",
     "flowPrompt": "Cinematic 16:9 seamless loop of a person running joyfully at sunrise, transitioning to a hand holding a smartphone tracking progress on a vibrant map app, then to a diverse group of people high-fiving and sharing positive energy with social media icons (Facebook, Zalo) subtly appearing. The scene should convey vitality, discipline, community, and personal transformation, with dynamic lighting and an uplifting mood. Focus on smooth transitions between scenes, emphasizing energy flow and awakening. The overall aesthetic is inspiring and energetic.",
-    "has_video": false,
+    "has_video": true,
     "image_flow": "media/flow_images/slide_05.webp",
     "image_pdf": "media/slides/slide_05.webp",
     "youtube_url": "https://www.youtube.com/watch?v=k2WCN_BqT6s",
     "youtube_title": "Jocko Willink - Kỷ Luật Sinh Khí & Tự Do Đích Thực",
     "flow_video_url": "https://flow.google.com/shared/video/572b1a60-d2e4-4059-b5a0-947337bc96c5",
-    "flow_video": "",
+    "flow_video": "media/flow_videos/slide_05.mp4",
     "flow_image": "media/flow_images/slide_05.webp"
   },
   {
@@ -972,7 +972,7 @@
     "image_pdf": "media/slides/slide_23.webp",
     "youtube_url": "https://www.youtube.com/watch?v=u1j8k1p7w3E",
     "youtube_title": "Sức Mạnh Bối Cảnh - Bộ Tứ 4 ĐÚNG Kiến Tạo Chuyển Hóa",
-    "flow_video_url": "https://flow.google.com/shared/video/572b1a60-d2e4-4059-b5a0-947337bc96c5",
+    "flow_video_url": "https://flow.google.com/shared/video/402d057a-898d-4ae5-885f-da45491d4b5d",
     "flow_video": "media/flow_videos/slide_23.mp4",
     "flow_image": "media/flow_images/slide_23.webp"
   },
