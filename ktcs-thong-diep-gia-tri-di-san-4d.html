@@ -575,10 +575,594 @@
       border-radius: 16px;
     }
 
+  
+    /* ==================== V08 CINEMA MASTER UPGRADES ==================== */
+    /* Cinema Control Dock (Slow-Mo, Fullscreen, Copy YouTube Link) */
+    .cinema-control-dock {
+      background: linear-gradient(135deg, rgba(15, 23, 42, 0.96), rgba(30, 41, 59, 0.92));
+      border: 1px solid rgba(245, 158, 11, 0.32);
+      border-radius: 14px;
+      padding: 8px 12px;
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      gap: 8px;
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.45);
+      flex-shrink: 0;
+    }
+
+    .slowmo-pill {
+      padding: 3px 8px;
+      border-radius: 9999px;
+      font-size: 11px;
+      font-weight: 700;
+      color: #cbd5e1;
+      background: rgba(15, 23, 42, 0.85);
+      border: 1px solid rgba(100, 116, 139, 0.45);
+      cursor: pointer;
+      transition: all 0.2s ease;
+    }
+    .slowmo-pill:hover {
+      color: #fde047;
+      border-color: rgba(245, 158, 11, 0.6);
+      transform: translateY(-1px);
+    }
+    .slowmo-pill.active {
+      background: linear-gradient(135deg, #f59e0b, #eab308);
+      color: #020617;
+      border-color: #fde047;
+      box-shadow: 0 0 12px rgba(245, 158, 11, 0.55);
+    }
+
+    /* YouTube Link Copy Block */
+    .yt-copy-block {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      background: linear-gradient(135deg, rgba(127, 29, 29, 0.35), rgba(15, 23, 42, 0.92));
+      border: 1px solid rgba(239, 68, 68, 0.4);
+      border-radius: 10px;
+      padding: 5px 10px;
+      cursor: pointer;
+      transition: all 0.25s ease;
+      max-width: 100%;
+    }
+    .yt-copy-block:hover {
+      border-color: #f87171;
+      background: linear-gradient(135deg, rgba(153, 27, 27, 0.5), rgba(15, 23, 42, 0.96));
+      box-shadow: 0 0 16px rgba(239, 68, 68, 0.28);
+      transform: translateY(-1px);
+    }
+
+    /* Fullscreen Media Frame */
+    #leftMediaFrame:fullscreen,
+    #leftMediaFrame:-webkit-full-screen {
+      width: 100vw !important;
+      height: 100vh !important;
+      max-width: none !important;
+      aspect-ratio: auto !important;
+      border-radius: 0 !important;
+      border: none !important;
+      background: #000 !important;
+    }
+
+    /* Vertical Drag-to-Resize Handle in Right Column */
+    .v-resizer {
+      height: 14px;
+      cursor: row-resize;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      margin: 4px 0;
+      border-radius: 8px;
+      background: rgba(15, 23, 42, 0.55);
+      border: 1px dashed rgba(245, 158, 11, 0.28);
+      transition: all 0.2s ease;
+      user-select: none;
+      touch-action: none;
+      flex-shrink: 0;
+    }
+    .v-resizer:hover, .v-resizer.dragging {
+      background: rgba(245, 158, 11, 0.2);
+      border-color: rgba(245, 158, 11, 0.85);
+      box-shadow: 0 0 12px rgba(245, 158, 11, 0.3);
+    }
+    .v-resizer-bar {
+      width: 56px;
+      height: 4px;
+      border-radius: 9999px;
+      background: #64748b;
+      transition: all 0.2s ease;
+    }
+    .v-resizer:hover .v-resizer-bar, .v-resizer.dragging .v-resizer-bar {
+      width: 90px;
+      background: #fbbf24;
+      box-shadow: 0 0 8px #f59e0b;
+    }
+
+    /* Resizable Message / Bullets Zone */
+    .bullets-scroll-zone {
+      overflow-y: auto;
+      min-height: 92px;
+      max-height: 520px;
+      padding-right: 4px;
+      scrollbar-width: thin;
+      scrollbar-color: var(--gold) transparent;
+      scroll-behavior: smooth;
+    }
+    .bullets-scroll-zone::-webkit-scrollbar { width: 6px; }
+    .bullets-scroll-zone::-webkit-scrollbar-thumb { background: var(--gold); border-radius: 6px; }
+
+    /* Rich Inspiring Message Bullet Card (Friendly for Middle-Aged Readers) */
+    .message-bullet-card {
+      display: flex;
+      align-items: flex-start;
+      gap: 11px;
+      padding: 10px 13px;
+      border-radius: 13px;
+      background: linear-gradient(135deg, rgba(30, 41, 59, 0.78), rgba(15, 23, 42, 0.92));
+      border: 1px solid rgba(245, 158, 11, 0.2);
+      border-left: 4px solid var(--bullet-accent, #f59e0b);
+      box-shadow: 0 4px 14px rgba(0, 0, 0, 0.28);
+      transition: all 0.25s cubic-bezier(0.22, 1, 0.36, 1);
+    }
+    .message-bullet-card:hover {
+      transform: translateX(4px);
+      border-color: rgba(251, 191, 36, 0.55);
+      background: linear-gradient(135deg, rgba(30, 41, 59, 0.94), rgba(15, 23, 42, 0.98));
+      box-shadow: 0 8px 20px rgba(245, 158, 11, 0.18);
+    }
+    .bullet-emoji-badge {
+      width: 34px;
+      height: 34px;
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 18px;
+      flex-shrink: 0;
+      background: radial-gradient(circle at 30% 30%, rgba(251, 191, 36, 0.28), rgba(15, 23, 42, 0.9));
+      border: 1px solid rgba(251, 191, 36, 0.35);
+      box-shadow: 0 3px 10px rgba(0, 0, 0, 0.35);
+    }
+
+    /* Inspiring Micro-Illustration Banner inside Right Panel */
+    .slide-visual-banner {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      padding: 8px 12px;
+      margin-bottom: 10px;
+      border-radius: 12px;
+      background: linear-gradient(120deg, rgba(245, 158, 11, 0.14), rgba(16, 185, 129, 0.1), rgba(15, 23, 42, 0.85));
+      border: 1px solid rgba(245, 158, 11, 0.28);
+    }
+
+    /* Elevated 3D Flip Cards V08 (Inspiring Spring Transformation + Sheen) */
+    .flip-card {
+      perspective: 1400px;
+      height: 150px !important;
+      cursor: pointer;
+    }
+    .flip-card-inner {
+      transition: transform 0.78s cubic-bezier(0.34, 1.45, 0.64, 1) !important;
+      transform-style: preserve-3d;
+    }
+    .flip-card:hover .flip-card-inner {
+      transform: translateY(-3px) rotateX(3deg);
+    }
+    .flip-card.flipped:hover .flip-card-inner {
+      transform: rotateY(180deg) translateY(-3px);
+    }
+    .flip-card-front, .flip-card-back {
+      border-radius: 14px !important;
+      padding: 11px 13px !important;
+      overflow: hidden;
+    }
+    .flip-card-back {
+      background: linear-gradient(135deg, rgba(6, 78, 59, 0.92), rgba(15, 23, 42, 0.98)) !important;
+      border: 1px solid rgba(52, 211, 153, 0.55) !important;
+      border-left: 4px solid #10b981 !important;
+      box-shadow: 0 10px 28px rgba(16, 185, 129, 0.28), inset 0 0 20px rgba(52, 211, 153, 0.12) !important;
+    }
+    .flip-card-back::after {
+      content: '';
+      position: absolute;
+      top: -50%;
+      left: -60%;
+      width: 45%;
+      height: 200%;
+      background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.18), transparent);
+      transform: rotate(25deg);
+      pointer-events: none;
+      animation: cardSheen 4.2s ease-in-out infinite;
+    }
+    @keyframes cardSheen {
+      0%, 75% { left: -60%; opacity: 0; }
+      85% { opacity: 1; }
+      100% { left: 130%; opacity: 0; }
+    }
+
+    /* Sparkle Burst Particles on Flip */
+    .sparkle-dot {
+      position: fixed;
+      pointer-events: none;
+      z-index: 99999;
+      font-size: 16px;
+      animation: sparkleFly 0.85s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+    }
+    @keyframes sparkleFly {
+      0% { opacity: 1; transform: translate(0, 0) scale(0.5) rotate(0deg); }
+      100% { opacity: 0; transform: translate(var(--tx), var(--ty)) scale(1.25) rotate(160deg); }
+    }
+    /* ==================== END V08 CSS ==================== */
+
+  
+    /* ==================== V08.2 FLIP CARD LOCK + CELEBRATION + FULLSCREEN WHITEBOARD ==================== */
+    .flip-card-grid {
+      display: grid !important;
+      grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
+      gap: 10px !important;
+      width: 100% !important;
+    }
+    @media (max-width: 520px) {
+      .flip-card-grid {
+        grid-template-columns: 1fr !important;
+      }
+    }
+    .flip-card {
+      min-width: 0 !important;
+      width: 100% !important;
+    }
+    .flip-card-front p, .flip-card-back p {
+      display: -webkit-box;
+      -webkit-line-clamp: 4;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+      word-break: break-word;
+    }
+
+    /* Flower & Confetti Celebration Particles */
+    .flower-confetti {
+      position: fixed;
+      pointer-events: none;
+      z-index: 99999;
+      user-select: none;
+      will-change: transform, opacity;
+      animation: flowerBurst var(--dur, 1.35s) cubic-bezier(0.16, 0.88, 0.3, 1) forwards;
+    }
+    @keyframes flowerBurst {
+      0% {
+        opacity: 1;
+        transform: translate(0, 0) scale(0.4) rotate(0deg);
+      }
+      35% {
+        opacity: 1;
+        transform: translate(var(--tx1), var(--ty1)) scale(1.18) rotate(var(--rot1));
+      }
+      100% {
+        opacity: 0;
+        transform: translate(var(--tx2), var(--ty2)) scale(0.75) rotate(var(--rot2));
+      }
+    }
+
+    /* Fullscreen Whiteboard Canvas Overlay */
+    #drawCanvas {
+      position: fixed !important;
+      inset: 0 !important;
+      width: 100vw !important;
+      height: 100vh !important;
+      z-index: 9000 !important;
+      pointer-events: none;
+    }
+    #drawCanvas.active {
+      pointer-events: auto !important;
+      cursor: crosshair !important;
+    }
+    #drawCanvas.eraser-cursor {
+      cursor: cell !important;
+    }
+
+    /* Floating Drawing Studio Toolbar */
+    #drawToolbar {
+      position: fixed;
+      top: 74px;
+      left: 50%;
+      transform: translateX(-50%);
+      z-index: 9500;
+      background: rgba(15, 23, 42, 0.96);
+      backdrop-filter: blur(18px);
+      border: 1px solid rgba(245, 158, 11, 0.55);
+      border-radius: 18px;
+      padding: 8px 12px;
+      box-shadow: 0 20px 45px rgba(0, 0, 0, 0.85), 0 0 25px rgba(245, 158, 11, 0.25);
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 6px;
+      max-width: 96vw;
+    }
+    .draw-tool-btn {
+      padding: 4px 8px;
+      border-radius: 9px;
+      font-size: 11px;
+      font-weight: 700;
+      color: #cbd5e1;
+      background: rgba(30, 41, 59, 0.9);
+      border: 1px solid rgba(100, 116, 139, 0.45);
+      cursor: pointer;
+      transition: all 0.18s ease;
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+    }
+    .draw-tool-btn:hover {
+      border-color: #fbbf24;
+      color: #fde047;
+      transform: translateY(-1px);
+    }
+    .draw-tool-btn.active {
+      background: linear-gradient(135deg, #f59e0b, #eab308);
+      color: #020617;
+      border-color: #fde047;
+      box-shadow: 0 0 12px rgba(245, 158, 11, 0.55);
+    }
+    .draw-color-dot {
+      width: 20px;
+      height: 20px;
+      border-radius: 9999px;
+      border: 2px solid rgba(255, 255, 255, 0.35);
+      cursor: pointer;
+      transition: transform 0.15s ease, box-shadow 0.15s ease;
+    }
+    .draw-color-dot.active {
+      transform: scale(1.22);
+      border-color: #fff;
+      box-shadow: 0 0 10px #fff;
+    }
+    /* ==================== END V08.2 CSS ==================== */
+
+  
+    /* ==================== V08.3 SMART AI COUNCIL & MIDDLE-AGED READABILITY ==================== */
+    .floating-council-panel {
+      width: 540px;
+      height: 600px;
+      min-width: 380px;
+      min-height: 400px;
+    }
+    #councilChatHistory {
+      font-size: var(--council-font-size, 16px) !important;
+      line-height: 1.65 !important;
+    }
+    #councilChatHistory .council-msg-bubble {
+      font-size: var(--council-font-size, 16px) !important;
+      line-height: 1.65 !important;
+      user-select: text !important;
+    }
+    .council-resize-grip {
+      position: absolute;
+      right: 3px;
+      bottom: 3px;
+      width: 22px;
+      height: 22px;
+      cursor: nwse-resize;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #f59e0b;
+      font-size: 13px;
+      font-weight: 900;
+      background: rgba(15, 23, 42, 0.9);
+      border: 1px solid rgba(245, 158, 11, 0.45);
+      border-radius: 6px;
+      z-index: 30;
+      user-select: none;
+      transition: all 0.2s ease;
+    }
+    .council-resize-grip:hover {
+      background: #f59e0b;
+      color: #020617;
+      transform: scale(1.1);
+    }
+    /* ==================== END V08.3 CSS ==================== */
+
+  
+    /* ==================== V08.4 COMPACT FLIP CARDS LOCK & AUTO-COLLAPSE DRAW PALETTE ==================== */
+    .left-col {
+      gap: 6px !important;
+    }
+    .cinema-control-dock {
+      padding: 4px 10px !important;
+      gap: 6px !important;
+      border-radius: 10px !important;
+      flex-wrap: nowrap !important;
+      overflow-x: auto !important;
+      scrollbar-width: none;
+    }
+    .cinema-control-dock::-webkit-scrollbar { display: none; }
+    .slowmo-pill {
+      padding: 2px 6px !important;
+      font-size: 10px !important;
+    }
+    .yt-copy-block {
+      padding: 3px 8px !important;
+      gap: 5px !important;
+    }
+    .left-lower-area {
+      min-height: 0 !important;
+      flex: 0 0 auto !important;
+    }
+    .flip-card {
+      height: clamp(118px, 16vh, 136px) !important;
+    }
+    .flip-card-front, .flip-card-back {
+      padding: 8px 10px !important;
+    }
+    .flip-card-front p, .flip-card-back p {
+      -webkit-line-clamp: 3 !important;
+      font-size: 11px !important;
+      line-height: 1.35 !important;
+    }
+
+    /* Compact Floating Mini-Pill + Expandable Popover for Draw Studio */
+    #drawToolbar {
+      top: 66px !important;
+      padding: 5px 10px !important;
+      border-radius: 9999px !important;
+      gap: 6px !important;
+      flex-wrap: nowrap !important;
+      width: auto !important;
+    }
+    #drawPalettePopover {
+      position: fixed;
+      top: 112px;
+      left: 50%;
+      transform: translateX(-50%);
+      z-index: 9510;
+      width: min(560px, 94vw);
+      background: rgba(15, 23, 42, 0.97);
+      backdrop-filter: blur(20px);
+      border: 1px solid rgba(245, 158, 11, 0.55);
+      border-radius: 16px;
+      padding: 12px 14px;
+      box-shadow: 0 22px 50px rgba(0, 0, 0, 0.88), 0 0 28px rgba(245, 158, 11, 0.28);
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+    #drawPalettePopover.hidden {
+      display: none !important;
+    }
+    /* ==================== END V08.4 CSS ==================== */
+
+  
+    /* ==================== V08.5 FIX FLIP CARD ABSOLUTE POSITIONING (NO DROPPING!) ==================== */
+    .flip-card {
+      position: relative !important;
+      overflow: visible !important;
+    }
+    .flip-card-inner {
+      position: relative !important;
+      width: 100% !important;
+      height: 100% !important;
+      transform-style: preserve-3d !important;
+    }
+    .flip-card-front, .flip-card-back {
+      position: absolute !important;
+      top: 0 !important;
+      left: 0 !important;
+      right: 0 !important;
+      bottom: 0 !important;
+      width: 100% !important;
+      height: 100% !important;
+      -webkit-backface-visibility: hidden !important;
+      backface-visibility: hidden !important;
+      margin: 0 !important;
+    }
+    #rightCardsSlot, #rightScriptSlot {
+      position: relative !important;
+      z-index: 1;
+      clear: both;
+    }
+    /* ==================== END V08.5 FIX ==================== */
+
+  
+    /* ==================== V08.6 GLOBAL TEXT FONT SIZE SCALING (MIDDLE-AGED FRIENDLY) ==================== */
+    :root {
+      --ktcs-text-scale: 1.1;
+    }
+    #slideTitle {
+      font-size: calc(1.35rem * var(--ktcs-text-scale)) !important;
+      line-height: 1.35 !important;
+    }
+    .message-bullet-card p {
+      font-size: calc(14.5px * var(--ktcs-text-scale)) !important;
+      line-height: 1.6 !important;
+    }
+    #slideBannerMotto {
+      font-size: calc(12.5px * var(--ktcs-text-scale)) !important;
+    }
+    #slideScript {
+      font-size: calc(14px * var(--ktcs-text-scale)) !important;
+      line-height: 1.7 !important;
+    }
+    .flip-card-front p, .flip-card-back p {
+      font-size: calc(11.5px * var(--ktcs-text-scale)) !important;
+      line-height: 1.4 !important;
+      overflow-y: auto !important;
+      display: block !important;
+      -webkit-line-clamp: unset !important;
+    }
+    /* ==================== END V08.6 CSS ==================== */
+
   </style>
 </head>
 <body class="style-dienanh">
+  <!-- FULLSCREEN WHITEBOARD CANVAS & COMPACT AUTO-COLLAPSING DRAW PILL (V08.4) -->
+  <canvas id="drawCanvas"></canvas>
 
+  <!-- Compact Floating Pill (Occupies minimal space when drawing) -->
+  <div id="drawToolbar" class="hidden select-none">
+    <div id="drawDragHandle" class="cursor-move text-amber-400 font-bold text-xs px-1" title="Kéo di chuyển">⠿</div>
+    <button onclick="toggleDrawPalette()" id="drawPaletteToggleBtn"
+            class="bg-amber-500 hover:bg-amber-400 text-black font-extrabold text-xs px-3 py-1 rounded-full flex items-center gap-1.5 shadow transition">
+      <span id="drawActiveColorDot" class="w-2.5 h-2.5 rounded-full border border-black/40" style="background:#f59e0b"></span>
+      <span id="drawActiveToolLabel">✏️ Tự Do</span>
+      <span>▾</span>
+    </button>
+    <button onclick="setDrawTool('eraser'); collapseDrawPalette();" class="draw-tool-btn" data-dtool="eraser" title="Chuyển nhanh sang Tẩy">🧹 Tẩy</button>
+    <button onclick="undoDrawStroke()" class="draw-tool-btn" title="Hoàn tác 1 nét">↩️</button>
+    <button onclick="clearDrawingCanvas(false)" class="draw-tool-btn text-rose-300 border-rose-500/40" title="Xóa hết nét vẽ">🗑️</button>
+    <button onclick="toggleDrawMode()" class="draw-tool-btn bg-rose-600/85 text-white border-rose-400" title="Tắt chế độ vẽ">✕</button>
+  </div>
+
+  <!-- Expandable Drawing Palette Popover (Auto-collapses as soon as you draw!) -->
+  <div id="drawPalettePopover" class="hidden select-none">
+    <div class="flex items-center justify-between border-b border-slate-800 pb-1.5">
+      <span class="text-xs font-extrabold text-amber-300">🎨 CHỌN BÚT, HÌNH KHỐI &amp; HIỆU ỨNG (Tự thu gọn khi vẽ)</span>
+      <button onclick="collapseDrawPalette()" class="text-xs text-slate-400 hover:text-white px-1.5">✕</button>
+    </div>
+
+    <!-- Tools & Shapes -->
+    <div class="flex items-center gap-1.5 flex-wrap">
+      <button onclick="setDrawTool('pen')" class="draw-tool-btn active" data-dtool="pen">✏️ Tự Do</button>
+      <button onclick="setDrawTool('line')" class="draw-tool-btn" data-dtool="line">➖ Đường Thẳng</button>
+      <button onclick="setDrawTool('arrow')" class="draw-tool-btn" data-dtool="arrow">➡️ Mũi Tên</button>
+      <button onclick="setDrawTool('circle')" class="draw-tool-btn" data-dtool="circle">⭕ Hình Tròn</button>
+      <button onclick="setDrawTool('square')" class="draw-tool-btn" data-dtool="square">⬜ Hình Vuông</button>
+      <button onclick="setDrawTool('rect')" class="draw-tool-btn" data-dtool="rect">▭ Chữ Nhật</button>
+      <button onclick="setDrawTool('eraser')" class="draw-tool-btn" data-dtool="eraser">🧹 Tẩy</button>
+    </div>
+
+    <!-- Effects & Size -->
+    <div class="flex items-center justify-between flex-wrap gap-2">
+      <div class="flex items-center gap-1.5">
+        <button onclick="toggleDrawNeon()" id="drawNeonBtn" class="draw-tool-btn active">🌟 Dạ Quang</button>
+        <button onclick="toggleDrawStars()" id="drawStarsBtn" class="draw-tool-btn">✨ Dải Sao</button>
+      </div>
+      <div class="flex items-center gap-2">
+        <span class="text-[11px] text-slate-300 font-bold">Cỡ nét:</span>
+        <input type="range" id="drawSizeSlider" min="2" max="24" value="4" oninput="setDrawSize(this.value)" class="w-24 accent-amber-400 cursor-pointer">
+        <span id="drawSizeBadge" class="text-xs font-mono text-amber-300 min-w-[30px]">4px</span>
+      </div>
+    </div>
+
+    <!-- Colors -->
+    <div class="flex items-center gap-2 flex-wrap pt-1 border-t border-slate-800/80">
+      <span class="text-[11px] text-slate-400 font-semibold mr-1">Màu sắc:</span>
+      <button onclick="setDrawColor('#f59e0b', this)" class="draw-color-dot active" style="background:#f59e0b" title="Vàng Kim"></button>
+      <button onclick="setDrawColor('#ef4444', this)" class="draw-color-dot" style="background:#ef4444" title="Đỏ Rực"></button>
+      <button onclick="setDrawColor('#10b981', this)" class="draw-color-dot" style="background:#10b981" title="Xanh Ngọc"></button>
+      <button onclick="setDrawColor('#38bdf8', this)" class="draw-color-dot" style="background:#38bdf8" title="Xanh Dương"></button>
+      <button onclick="setDrawColor('#c084fc', this)" class="draw-color-dot" style="background:#c084fc" title="Tím Neon"></button>
+      <button onclick="setDrawColor('#f472b6', this)" class="draw-color-dot" style="background:#f472b6" title="Hồng"></button>
+      <button onclick="setDrawColor('#ffffff', this)" class="draw-color-dot" style="background:#ffffff" title="Trắng"></button>
+      <input type="color" id="drawColorPicker" value="#f59e0b" oninput="setDrawColor(this.value)" class="w-6 h-6 rounded-full cursor-pointer border border-slate-600 bg-transparent p-0" title="Chọn màu bất kỳ">
+      <button onclick="collapseDrawPalette()" class="ml-auto bg-emerald-600 hover:bg-emerald-500 text-white text-xs font-bold px-3 py-1 rounded-lg">✓ Xong, Bắt Đầu Vẽ</button>
+    </div>
+  </div>
   <!-- BACKGROUND PARTICLES -->
   <canvas id="particleCanvas"></canvas>
 
@@ -592,7 +1176,7 @@
       <div>
         <div class="flex items-center gap-2">
           <span class="text-xs font-black text-amber-400 tracking-wider">KTCSxAI • ĐÀO TẠO GIẢNG VIÊN VƯỢT THỜI GIAN</span>
-          <span class="text-[10px] bg-amber-500/20 text-amber-300 font-extrabold px-1.5 py-0.2 rounded border border-amber-500/30">4D V06</span>
+          <span class="text-[10px] bg-amber-500/20 text-amber-300 font-extrabold px-1.5 py-0.2 rounded border border-amber-500/30">4D V08</span>
         </div>
         <p class="text-[11px] text-slate-400">
           Giảng viên: <strong class="text-slate-200">Nguyễn Anh Tuấn (Tuấn Tử Tế)</strong> • Trọn bộ 30 Trang Chuẩn Rạp Chiếu 16:9
@@ -667,7 +1251,6 @@
         <!-- 16:9 MEDIA FRAME: PDF / GOOGLE FLOW VIDEO / YOUTUBE PLAYER -->
         <div class="media-frame relative group" id="leftMediaFrame">
           <!-- Interactive Drawing Canvas -->
-          <canvas id="drawCanvas"></canvas>
 
           <!-- Slide Media Elements -->
           <img id="slideImage" src="media/slides/slide_01.webp" onerror="if(this.src.endsWith('.webp')) this.src=this.src.replace('.webp', '.png')" alt="Slide Image" class="media-element ken-burns">
@@ -713,6 +1296,38 @@
           </button>
         </div>
 
+
+        <!-- V08 CINEMA CONTROL DOCK: SLOW-MO + FULLSCREEN + CLICK-TO-COPY YOUTUBE LINK -->
+        <div class="cinema-control-dock" id="cinemaControlDock">
+          <!-- Slow-Mo Speed Controls -->
+          <div class="flex items-center gap-1 flex-wrap">
+            <span class="text-[11px] font-bold text-amber-300 mr-1 flex items-center gap-1" title="Tua chậm hoặc tăng tốc video (Video 4D & YouTube)">
+              🐢 Tốc Độ:
+            </span>
+            <button onclick="setVideoPlaybackSpeed(0.25)" class="slowmo-pill" data-vspeed="0.25" title="Tua siêu chậm 0.25x">0.25x</button>
+            <button onclick="setVideoPlaybackSpeed(0.5)" class="slowmo-pill" data-vspeed="0.5" title="Tua chậm 0.5x">0.5x</button>
+            <button onclick="setVideoPlaybackSpeed(0.75)" class="slowmo-pill" data-vspeed="0.75" title="Tua chậm nhẹ 0.75x">0.75x</button>
+            <button onclick="setVideoPlaybackSpeed(1)" class="slowmo-pill active" data-vspeed="1" title="Tốc độ chuẩn 1x">1x</button>
+            <button onclick="setVideoPlaybackSpeed(1.25)" class="slowmo-pill" data-vspeed="1.25" title="Nhanh 1.25x">1.25x</button>
+            <button onclick="setVideoPlaybackSpeed(1.5)" class="slowmo-pill" data-vspeed="1.5" title="Nhanh 1.5x">1.5x</button>
+            <button onclick="setVideoPlaybackSpeed(2)" class="slowmo-pill" data-vspeed="2" title="Nhanh 2x">2x</button>
+          </div>
+
+          <!-- Fullscreen & Quick Copy YouTube Link Block -->
+          <div class="flex items-center gap-2 flex-wrap">
+            <div onclick="copyCurrentYouTubeLink(this)" id="ytCopyLinkBlock" class="yt-copy-block" title="Nhấp để sao chép link YouTube tiếng Việt của trang này">
+              <span class="text-red-400 text-xs font-extrabold shrink-0">▶ YouTube VN</span>
+              <span id="ytCopyUrlPreview" class="text-[11px] font-mono text-slate-200 max-w-[165px] truncate">youtu.be/...</span>
+              <span class="text-[10px] font-bold bg-red-600/80 text-white px-2 py-0.5 rounded-md shrink-0">📋 Copy Link</span>
+            </div>
+            <button onclick="toggleMediaFullscreen()" id="fullscreenMediaBtn"
+                    class="bg-gradient-to-r from-amber-500 to-yellow-500 hover:from-amber-400 hover:to-yellow-400 text-black font-extrabold text-[11px] px-3 py-1.5 rounded-lg shadow flex items-center gap-1 transition transform hover:scale-105"
+                    title="Xem video / slide toàn màn hình (Phím F)">
+              ⛶ <span>Toàn Màn Hình</span>
+            </button>
+          </div>
+        </div>
+
         <!-- LOWER AREA (TRIỆT TIÊU TOÀN BỘ KHOẢNG ĐEN THỪA DƯỚI ẢNH!) -->
         <div class="left-lower-area" id="leftLowerArea">
           <!-- DESIGNATED LEFT SLOT: Cards (balanced) or Script (script-left) mount here -->
@@ -735,6 +1350,12 @@
                 🏛️ KIẾN TẠO CUỘC SỐNG xAI • TRANG 1 / 30
               </span>
               <div class="flex items-center gap-2">
+                <!-- Global Font Size Controls (+/-) for Middle-Aged Readers -->
+                <div class="flex items-center bg-slate-800/95 border border-amber-500/35 rounded-lg px-1.5 py-0.5 gap-1" title="Phóng to / Thu nhỏ cỡ chữ các khối văn bản">
+                  <button onclick="changeGlobalFontScale(-0.05)" class="text-xs font-extrabold text-slate-200 hover:text-amber-300 px-1.5 py-0.5 rounded hover:bg-slate-700 transition" title="Giảm cỡ chữ (-)">A-</button>
+                  <button onclick="resetGlobalFontScale()" id="globalFontBadge" class="text-[11px] font-mono font-bold text-amber-300 min-w-[38px] text-center hover:underline" title="Nhấp để đặt lại 110%">110%</button>
+                  <button onclick="changeGlobalFontScale(0.05)" class="text-xs font-extrabold text-slate-200 hover:text-amber-300 px-1.5 py-0.5 rounded hover:bg-slate-700 transition" title="Tăng cỡ chữ (+)">A+</button>
+                </div>
                 <!-- Layout Switcher Button -->
                 <button onclick="cycleLayoutMode()" id="layoutToggleBtn" class="text-xs bg-slate-800 hover:bg-slate-700 text-amber-300 px-2.5 py-1 rounded-lg border border-amber-500/30 flex items-center gap-1 transition" title="Đổi cách bố trí thẻ lật / kịch bản">
                   📐 <span id="layoutNameText">Cân Bằng (Thẻ Dưới Ảnh)</span>
@@ -750,9 +1371,31 @@
               Kiến Tạo Cuộc Sống xAI: Nền Tảng Giá Trị và Di Sản Vĩnh Cửu
             </h2>
 
-            <!-- Core Bullets (Clear, Highlighted) -->
-            <div class="space-y-2 mb-3" id="bulletsContainer">
-              <!-- Injected via JS -->
+            <!-- V08 Inspiring Micro-Illustration Banner -->
+            <div class="slide-visual-banner copyable-block" title="Thông điệp truyền cảm hứng — Nhấp để sao chép">
+              <img id="slideBannerThumb" src="media/slides/slide_01.webp" onerror="this.style.display='none'" alt="Minh họa" class="w-14 h-9 rounded-lg object-cover border border-amber-400/40 shadow shrink-0">
+              <div class="flex-1 min-w-0">
+                <div class="text-[10px] font-extrabold text-amber-400 uppercase tracking-wider">✨ Thông Điệp Chạm Trái Tim • Dành Cho Người Kiến Tạo</div>
+                <div id="slideBannerMotto" class="text-xs text-slate-200 font-medium truncate">✨ Mỗi ngày một bước nhỏ vững chãi — Kiến tạo di sản lớn lao!</div>
+              </div>
+              <div class="flex items-center gap-1 shrink-0">
+                <button onclick="quickResizeBullets('expand')" class="text-[10px] px-1.5 py-0.5 rounded bg-slate-800 hover:bg-amber-500/20 text-amber-300 border border-slate-700" title="Mở rộng khối thông điệp">⤢</button>
+                <button onclick="quickResizeBullets('compact')" class="text-[10px] px-1.5 py-0.5 rounded bg-slate-800 hover:bg-amber-500/20 text-slate-300 border border-slate-700" title="Thu gọn khối thông điệp">⤡</button>
+              </div>
+            </div>
+
+            <!-- Core Bullets (Resizable Vertical Zone with Rich Emoji Message Cards) -->
+            <div id="bulletsScrollZone" class="bullets-scroll-zone">
+              <div class="space-y-2.5 mb-2" id="bulletsContainer">
+                <!-- Injected via JS -->
+              </div>
+            </div>
+
+            <!-- Vertical Drag-to-Resize Handle 1 -->
+            <div id="bulletsVResizer" class="v-resizer" title="Kéo dọc để mở rộng hoặc thu hẹp khối Thông Điệp (Nhấp đúp để đặt lại)">
+              <span class="text-[10px] text-amber-400/80">↕</span>
+              <div class="v-resizer-bar"></div>
+              <span class="text-[10px] text-slate-400">Kéo dọc mở rộng / thu hẹp</span>
             </div>
 
             <!-- Secondary mount container (when layout mode moves cards to right) -->
@@ -771,7 +1414,14 @@
                 <span class="text-xs font-bold text-amber-300 uppercase tracking-wider flex items-center gap-1.5">
                   <span>🔄</span> THẺ BÀI LẬT 3D CHUYỂN HÓA (TRƯỚC → TRỞ THÀNH)
                 </span>
-                <span class="text-[10px] text-amber-400/80">Bấm hoặc rê chuột để lật • Âm thanh 4D</span>
+                <div class="flex items-center gap-1.5">
+                  <button onclick="flipAllCards(true)" class="text-[11px] font-extrabold bg-gradient-to-r from-emerald-600 to-teal-500 hover:from-emerald-500 hover:to-teal-400 text-white px-2.5 py-0.5 rounded-full shadow flex items-center gap-1 transition transform hover:scale-105">
+                    ✨ Chuyển Hóa Tất Cả
+                  </button>
+                  <button onclick="flipAllCards(false)" class="text-[10px] font-semibold bg-slate-800 hover:bg-slate-700 text-slate-300 px-2 py-0.5 rounded-full border border-slate-700 transition">
+                    🔄 Lật Lại
+                  </button>
+                </div>
               </div>
               <div class="flip-card-grid" id="flipCardsContainer">
                 <!-- Injected via JS -->
@@ -799,9 +1449,15 @@
                   </button>
                 </div>
               </div>
-              <p id="slideScript" class="text-slate-300 text-xs lg:text-sm leading-relaxed script-collapsed pr-1 copyable-block" title="Nhấp bất kỳ chỗ nào để sao chép kịch bản">
+              <p id="slideScript" class="text-slate-200 text-xs lg:text-sm leading-relaxed script-collapsed pr-1 copyable-block" title="Nhấp bất kỳ chỗ nào để sao chép kịch bản">
                 <!-- Injected via JS -->
               </p>
+              <!-- Vertical Drag-to-Resize Handle 2 (Script Box) -->
+              <div id="scriptVResizer" class="v-resizer mt-2" title="Kéo dọc để mở rộng hoặc thu hẹp Kịch Bản Lời Giảng (Nhấp đúp để đặt lại)">
+                <span class="text-[10px] text-amber-400/80">↕</span>
+                <div class="v-resizer-bar"></div>
+                <span class="text-[10px] text-slate-400">Kéo dọc mở rộng kịch bản</span>
+              </div>
             </div>
           </div>
 
@@ -867,20 +1523,29 @@
 
     </div>
   </main>
-
-  <!-- FLOATING DRAGGABLE RESIZABLE AI COUNCIL PANEL (PIP WIDGET) -->
+  <!-- FLOATING DRAGGABLE RESIZABLE AI COUNCIL PANEL (PIP WIDGET V08.3) -->
   <div id="floatingCouncilPanel" class="floating-council-panel hidden">
-    <!-- Header with drag handle and window controls -->
+    <!-- Header with drag handle, font size controls, and window controls -->
     <div class="council-header-bar" id="councilDragHeader">
-      <div class="flex items-center gap-2">
-        <span class="text-base">🏛️</span>
-        <span class="text-xs font-bold text-amber-400">HỘI ĐỒNG TRÍ TUỆ AI & BẬC GIÁC NGỘ</span>
+      <div class="flex items-center gap-2 min-w-0">
+        <span class="text-base shrink-0">🏛️</span>
+        <span class="text-xs font-extrabold text-amber-400 truncate">HỘI ĐỒNG TRÍ TUỆ AI &amp; CỐ VẤN KỸ THUẬT</span>
       </div>
-      <div class="flex items-center gap-1.5">
-        <select id="councilScopeSelect" class="bg-slate-900 border border-slate-700 text-[10px] text-amber-300 rounded px-1.5 py-0.5" onclick="event.stopPropagation()">
-          <option value="current">Slide Hiện Tại</option>
-          <option value="all">Toàn Bài (30 Slide)</option>
+      <div class="flex items-center gap-1.5 shrink-0">
+        <select id="councilScopeSelect" class="bg-slate-900 border border-slate-700 text-[11px] text-amber-300 rounded px-1.5 py-0.5 font-semibold" onclick="event.stopPropagation()" title="Phạm vi tra cứu câu trả lời">
+          <option value="current">Trang Hiện Tại</option>
+          <option value="all" selected>Toàn Bộ Tài Liệu</option>
         </select>
+        <!-- Font Size Controls for Middle-Aged Readers -->
+        <div class="flex items-center bg-slate-900 border border-slate-700 rounded px-1 gap-0.5" onclick="event.stopPropagation()" title="Chỉnh cỡ chữ khung Hội Đồng">
+          <button onclick="changeCouncilFontSize(-1)" class="text-[11px] font-bold text-slate-300 hover:text-amber-300 px-1 py-0.5">A-</button>
+          <span id="councilFontBadge" class="text-[10px] font-mono text-amber-300 min-w-[28px] text-center">16px</span>
+          <button onclick="changeCouncilFontSize(1)" class="text-[11px] font-bold text-slate-300 hover:text-amber-300 px-1 py-0.5">A+</button>
+        </div>
+        <!-- Optional Gemini Key Button -->
+        <button onclick="configureCouncilApiKey(event)" id="councilAiKeyBtn" class="px-1.5 h-6 rounded bg-slate-800 hover:bg-slate-700 text-[10px] font-bold text-cyan-300 border border-cyan-500/30 flex items-center justify-center" title="Tùy chọn nhập Gemini API Key (Không bắt buộc)">
+          🤖 AI
+        </button>
         <!-- Minimize Button -->
         <button onclick="minimizeCouncilPanel(event)" class="w-6 h-6 rounded bg-slate-800 hover:bg-slate-700 text-slate-300 text-xs flex items-center justify-center" title="Thu nhỏ">
           —
@@ -896,42 +1561,45 @@
       </div>
     </div>
 
-    <!-- 5 Personas Selector -->
-    <div class="px-3 py-1.5 bg-slate-900/90 border-b border-slate-800 flex items-center gap-1.5 overflow-x-auto text-[11px]">
+    <!-- 5 Dynamic Personas Selector (Adapts per Slide!) -->
+    <div id="councilPersonasBar" class="px-3 py-2 bg-slate-900/90 border-b border-slate-800 flex items-center gap-1.5 overflow-x-auto text-xs">
       <button onclick="selectPersona('all')" class="persona-tab active px-2.5 py-1 rounded-full font-semibold shrink-0 bg-amber-500 text-black" data-persona="all">
         🏛️ Toàn Thể
       </button>
-      <button onclick="selectPersona('thien_su')" class="persona-tab px-2.5 py-1 rounded-full font-semibold shrink-0 bg-slate-800 text-slate-300 hover:bg-slate-700" data-persona="thien_su">
-        🧘 Thiền Sư
+      <button onclick="selectPersona('triet_ly')" class="persona-tab px-2.5 py-1 rounded-full font-semibold shrink-0 bg-slate-800 text-slate-300 hover:bg-slate-700" data-persona="triet_ly">
+        🧘 Bậc Giác Ngộ
       </button>
-      <button onclick="selectPersona('nao_bo')" class="persona-tab px-2.5 py-1 rounded-full font-semibold shrink-0 bg-slate-800 text-slate-300 hover:bg-slate-700" data-persona="nao_bo">
-        🧠 Não Bộ
+      <button onclick="selectPersona('khoa_hoc')" class="persona-tab px-2.5 py-1 rounded-full font-semibold shrink-0 bg-slate-800 text-slate-300 hover:bg-slate-700" data-persona="khoa_hoc">
+        🧠 Khoa Học
       </button>
-      <button onclick="selectPersona('kinh_doanh')" class="persona-tab px-2.5 py-1 rounded-full font-semibold shrink-0 bg-slate-800 text-slate-300 hover:bg-slate-700" data-persona="kinh_doanh">
-        💼 Kinh Doanh
+      <button onclick="selectPersona('nhan_vat')" id="dynamicFigureTab" class="persona-tab px-2.5 py-1 rounded-full font-semibold shrink-0 bg-slate-800 text-slate-300 hover:bg-slate-700" data-persona="nhan_vat">
+        🌟 Nhân Vật Slide
       </button>
-      <button onclick="selectPersona('van_gogh')" class="persona-tab px-2.5 py-1 rounded-full font-semibold shrink-0 bg-slate-800 text-slate-300 hover:bg-slate-700" data-persona="van_gogh">
-        🎨 Van Gogh
+      <button onclick="selectPersona('ky_thuat')" class="persona-tab px-2.5 py-1 rounded-full font-semibold shrink-0 bg-slate-800 text-cyan-300 hover:bg-slate-700" data-persona="ky_thuat">
+        🛠️ Kỹ Thuật &amp; HD
       </button>
     </div>
 
     <!-- Chat History -->
-    <div id="councilChatHistory" class="grow p-3 overflow-y-auto space-y-2.5 bg-slate-950/70 text-xs">
+    <div id="councilChatHistory" class="grow p-3.5 overflow-y-auto space-y-3 bg-slate-950/75">
       <!-- Injected via JS -->
     </div>
 
     <!-- Prompt Suggestions Chips -->
-    <div id="councilChipsContainer" class="px-3 py-1.5 bg-slate-900 border-t border-slate-800 flex items-center gap-1.5 overflow-x-auto text-[11px]">
+    <div id="councilChipsContainer" class="px-3 py-1.5 bg-slate-900 border-t border-slate-800 flex items-center gap-1.5 overflow-x-auto text-xs">
       <!-- Injected via JS -->
     </div>
 
     <!-- Chat Input Bar -->
-    <div class="p-2.5 bg-slate-950 border-t border-slate-800 flex items-center gap-2">
-      <input type="text" id="councilChatInput" placeholder="Hỏi Hội Đồng AI về slide đang chiếu..." class="grow bg-slate-900 border border-slate-700 rounded-lg px-3 py-1.5 text-xs text-slate-200 focus:outline-none focus:border-amber-500" onkeydown="if(event.key==='Enter') sendCouncilQuestion()">
-      <button onclick="sendCouncilQuestion()" class="bg-amber-500 hover:bg-amber-400 text-black font-bold px-3.5 py-1.5 rounded-lg text-xs transition">
+    <div class="p-3 bg-slate-950 border-t border-slate-800 flex items-center gap-2 pr-8">
+      <input type="text" id="councilChatInput" placeholder="Hỏi bất kỳ điều gì về bài giảng hoặc cách sử dụng..." class="grow bg-slate-900 border border-slate-700 rounded-xl px-3.5 py-2 text-sm text-slate-100 focus:outline-none focus:border-amber-500" onkeydown="if(event.key==='Enter') sendCouncilQuestion()">
+      <button onclick="sendCouncilQuestion()" class="bg-amber-500 hover:bg-amber-400 text-black font-extrabold px-4 py-2 rounded-xl text-sm transition shrink-0">
         Gửi
       </button>
     </div>
+
+    <!-- Corner Drag-to-Resize Grip -->
+    <div id="councilResizeGrip" class="council-resize-grip" title="Kéo góc để mở rộng hoặc thu hẹp khung chat">⤡</div>
   </div>
 
   <!-- FLOATING DOCKED BADGE (WHEN MINIMIZED) -->
@@ -1162,11 +1830,12 @@
     "has_video": true,
     "image_flow": "media/flow_images/slide_01.webp",
     "image_pdf": "media/slides/slide_01.webp",
-    "youtube_url": "https://www.youtube.com/watch?v=UF8uR6Z6KLc",
-    "youtube_title": "Steve Jobs - Đi Tìm Lẽ Sống & Kiến Tạo Di Sản",
+    "youtube_url": "https://www.youtube.com/watch?v=_jGU_GvHsMM",
+    "youtube_title": "[Thuyết Minh] Bài phát biểu hay nhất của Steve Jobs (ĐH Standford - 2005)",
     "flow_video_url": "https://flow.google.com/shared/video/572b1a60-d2e4-4059-b5a0-947337bc96c5",
     "flow_video": "media/flow_videos/slide_01.mp4",
-    "flow_image": "media/flow_images/slide_01.webp"
+    "flow_image": "media/flow_images/slide_01.webp",
+    "youtube_author": "Tuan Look"
   },
   {
     "slide_number": 2,
@@ -1211,11 +1880,12 @@
     "has_video": false,
     "image_flow": "media/flow_images/slide_02.webp",
     "image_pdf": "media/slides/slide_02.webp",
-    "youtube_url": "https://www.youtube.com/watch?v=8b06gDkYp4c",
-    "youtube_title": "Robin Sharma - Câu Lạc Bộ 5 Giờ Sáng & Kỷ Luật Thức Dậy",
+    "youtube_url": "https://www.youtube.com/watch?v=oNEZ0og693U",
+    "youtube_title": "[VN] The 5AM Club - Câu Lạc Bộ 5 Giờ Sáng | Tóm tắt sách",
     "flow_video_url": "https://flow.google.com/shared/video/572b1a60-d2e4-4059-b5a0-947337bc96c5",
     "flow_video": "",
-    "flow_image": "media/flow_images/slide_02.webp"
+    "flow_image": "media/flow_images/slide_02.webp",
+    "youtube_author": "Tia Sách"
   },
   {
     "slide_number": 3,
@@ -1260,11 +1930,12 @@
     "has_video": false,
     "image_flow": "media/flow_images/slide_03.webp",
     "image_pdf": "media/slides/slide_03.webp",
-    "youtube_url": "https://www.youtube.com/watch?v=vVjV2pWw3h0",
-    "youtube_title": "Jim Rohn - Triết Lý Cuộc Sống: Sống Là Phát Đi Một Thông Điệp",
+    "youtube_url": "https://www.youtube.com/watch?v=tiOuQe7_UhU",
+    "youtube_title": "Con Đường Duy Nhất Giúp Bạn Thoát Khỏi Cuộc Đời Tầm Thường | Jim Rohn",
     "flow_video_url": "https://flow.google.com/shared/video/572b1a60-d2e4-4059-b5a0-947337bc96c5",
     "flow_video": "",
-    "flow_image": "media/flow_images/slide_03.webp"
+    "flow_image": "media/flow_images/slide_03.webp",
+    "youtube_author": "Cổng Trí Tuệ"
   },
   {
     "slide_number": 4,
@@ -1308,11 +1979,12 @@
     "has_video": false,
     "image_flow": "media/flow_images/slide_04.webp",
     "image_pdf": "media/slides/slide_04.webp",
-    "youtube_url": "https://www.youtube.com/watch?v=5Vz1yU9P-eQ",
-    "youtube_title": "Thầy Trần Việt Quân - 3 Gốc Rễ Đạo Đức, Trí Tuệ, Nghị Lực",
+    "youtube_url": "https://www.youtube.com/watch?v=uu4kOe-pty0",
+    "youtube_title": "Giá Trị Của 3 Gốc: Đạo Đức  -Trí Tuệ - Nghị Lực | Trần Việt Quân",
     "flow_video_url": "https://flow.google.com/shared/video/572b1a60-d2e4-4059-b5a0-947337bc96c5",
     "flow_video": "",
-    "flow_image": "media/flow_images/slide_04.webp"
+    "flow_image": "media/flow_images/slide_04.webp",
+    "youtube_author": "Rèn Trí Sáng Suốt - Thầy Trần Việt Quân"
   },
   {
     "slide_number": 5,
@@ -1356,11 +2028,12 @@
     "has_video": true,
     "image_flow": "media/flow_images/slide_05.webp",
     "image_pdf": "media/slides/slide_05.webp",
-    "youtube_url": "https://www.youtube.com/watch?v=k2WCN_BqT6s",
-    "youtube_title": "Jocko Willink - Kỷ Luật Sinh Khí & Tự Do Đích Thực",
+    "youtube_url": "https://www.youtube.com/watch?v=cIOOxnN8oA8",
+    "youtube_title": "Điều Gì Thực Sự Xảy Ra Khi Bạn Kỷ Luật Liên Tục Trong 90 Ngày? | Đàn Ông Trung Niên",
     "flow_video_url": "https://flow.google.com/shared/video/572b1a60-d2e4-4059-b5a0-947337bc96c5",
     "flow_video": "media/flow_videos/slide_05.mp4",
-    "flow_image": "media/flow_images/slide_05.webp"
+    "flow_image": "media/flow_images/slide_05.webp",
+    "youtube_author": "Đàn Ông Trung Niên"
   },
   {
     "slide_number": 6,
@@ -1404,11 +2077,12 @@
     "has_video": false,
     "image_flow": "media/flow_images/slide_06.webp",
     "image_pdf": "media/slides/slide_06.webp",
-    "youtube_url": "https://www.youtube.com/watch?v=UyyjU8UrFNU",
-    "youtube_title": "Dr. Jill Bolte Taylor - Khoa Học Não Bộ: Não Trái & Não Phải",
+    "youtube_url": "https://www.youtube.com/watch?v=-Q4f2L-JKlQ",
+    "youtube_title": "[Sách nói] Não trái não phải - Phần 1 | Bizbooks Audio",
     "flow_video_url": "https://flow.google.com/shared/video/572b1a60-d2e4-4059-b5a0-947337bc96c5",
     "flow_video": "",
-    "flow_image": "media/flow_images/slide_06.webp"
+    "flow_image": "media/flow_images/slide_06.webp",
+    "youtube_author": "Bizbooks Audio - Ngọn đèn sáng bất diệt"
   },
   {
     "slide_number": 7,
@@ -1445,11 +2119,12 @@
     "has_video": false,
     "image_flow": "media/flow_images/slide_07.webp",
     "image_pdf": "media/slides/slide_07.webp",
-    "youtube_url": "https://www.youtube.com/watch?v=rrkrvAUbU9Y",
-    "youtube_title": "Daniel Pink - Sức Mạnh Cảm Xúc & Nghệ Thuật Não Phải",
+    "youtube_url": "https://www.youtube.com/watch?v=Dm5hxsDFMo8",
+    "youtube_title": "[Sách Nói] Storytelling - Lay Động Lòng Người Bằng Chuyện Kể - Chương 1 | Nguyễn Trần Quang",
     "flow_video_url": "https://flow.google.com/shared/video/572b1a60-d2e4-4059-b5a0-947337bc96c5",
     "flow_video": "",
-    "flow_image": "media/flow_images/slide_07.webp"
+    "flow_image": "media/flow_images/slide_07.webp",
+    "youtube_author": "Fonos - Kho sách nói bản quyền"
   },
   {
     "slide_number": 8,
@@ -1493,11 +2168,12 @@
     "has_video": false,
     "image_flow": "media/flow_images/slide_08.webp",
     "image_pdf": "media/slides/slide_08.webp",
-    "youtube_url": "https://www.youtube.com/watch?v=u4ZoJKF_VuA",
-    "youtube_title": "Simon Sinek - Vòng Tròn Vàng: Bắt Đầu Với Câu Hỏi TẠI SAO",
+    "youtube_url": "https://www.youtube.com/watch?v=LS1kG6DFdvM",
+    "youtube_title": "Tóm tắt sách “BẮT ĐẦU VỚI CÂU HỎI TẠI SAO” - Simon Sinek | MICCO Bookee",
     "flow_video_url": "https://flow.google.com/shared/video/572b1a60-d2e4-4059-b5a0-947337bc96c5",
     "flow_video": "",
-    "flow_image": "media/flow_images/slide_08.webp"
+    "flow_image": "media/flow_images/slide_08.webp",
+    "youtube_author": "MICCO Bookee - Tóm tắt sách kinh điển"
   },
   {
     "slide_number": 9,
@@ -1522,11 +2198,12 @@
     "has_video": false,
     "image_flow": "media/flow_images/slide_09.webp",
     "image_pdf": "media/slides/slide_09.webp",
-    "youtube_url": "https://www.youtube.com/watch?v=jW7Lh6_1GzE",
-    "youtube_title": "Made to Stick - 6 Yếu Tố Tạo Thông Điệp Kết Dính S.U.C.C.E.S",
+    "youtube_url": "https://www.youtube.com/watch?v=Bi_Rz8fDPuw",
+    "youtube_title": "[VN] Made to Stick - Tạo ra thông điệp kết dính | Tóm tắt sách",
     "flow_video_url": "https://flow.google.com/shared/video/572b1a60-d2e4-4059-b5a0-947337bc96c5",
     "flow_video": "",
-    "flow_image": "media/flow_images/slide_09.webp"
+    "flow_image": "media/flow_images/slide_09.webp",
+    "youtube_author": "Tia Sách"
   },
   {
     "slide_number": 10,
@@ -1548,11 +2225,12 @@
     "has_video": true,
     "image_flow": "media/flow_images/slide_10.webp",
     "image_pdf": "media/slides/slide_10.webp",
-    "youtube_url": "https://www.youtube.com/watch?v=dip280m0f6U",
-    "youtube_title": "Vincent van Gogh - Bức Họa Đêm Đầy Sao & Di Sản Bất Tử",
+    "youtube_url": "https://www.youtube.com/watch?v=B2QPystP2ZI",
+    "youtube_title": "Cuộc Phiêu Lưu Của Văn-Gốc",
     "flow_video_url": "https://flow.google.com/shared/video/572b1a60-d2e4-4059-b5a0-947337bc96c5",
     "flow_video": "media/flow_videos/slide_10.mp4",
-    "flow_image": "media/flow_images/slide_10.webp"
+    "flow_image": "media/flow_images/slide_10.webp",
+    "youtube_author": "Thanh Pahm"
   },
   {
     "slide_number": 11,
@@ -1596,11 +2274,12 @@
     "has_video": true,
     "image_flow": "media/flow_images/slide_11.webp",
     "image_pdf": "media/slides/slide_11.webp",
-    "youtube_url": "https://www.youtube.com/watch?v=JmKxJk6fQ3M",
-    "youtube_title": "Alfred Nobel - Cáo Phó Thức Tỉnh & Giải Nobel Hòa Bình",
+    "youtube_url": "https://www.youtube.com/watch?v=1RvRqte8UkM",
+    "youtube_title": "Cuộc Đời Alfred Nobel - EZ Sử",
     "flow_video_url": "https://flow.google.com/shared/video/572b1a60-d2e4-4059-b5a0-947337bc96c5",
     "flow_video": "media/flow_videos/slide_11.mp4",
-    "flow_image": "media/flow_images/slide_11.webp"
+    "flow_image": "media/flow_images/slide_11.webp",
+    "youtube_author": "EZ Sử"
   },
   {
     "slide_number": 12,
@@ -1637,11 +2316,12 @@
     "has_video": false,
     "image_flow": "media/flow_images/slide_12.webp",
     "image_pdf": "media/slides/slide_12.webp",
-    "youtube_url": "https://www.youtube.com/watch?v=2f3-1rW9Kfg",
-    "youtube_title": "Mahatma Gandhi - Hãy Là Sự Thay Đổi Bạn Muốn Thấy",
+    "youtube_url": "https://www.youtube.com/watch?v=cKQOZwXLKGM",
+    "youtube_title": "GIẢI PHÓNG CUỘC ĐỜI - 100 Câu Nói Bất Hủ Của Mahatma Gandhi! (PHẦN 1) || Triết Lý Sống",
     "flow_video_url": "https://flow.google.com/shared/video/572b1a60-d2e4-4059-b5a0-947337bc96c5",
     "flow_video": "",
-    "flow_image": "media/flow_images/slide_12.webp"
+    "flow_image": "media/flow_images/slide_12.webp",
+    "youtube_author": "Trí Tuệ Ngàn Năm"
   },
   {
     "slide_number": 13,
@@ -1671,11 +2351,12 @@
     "has_video": true,
     "image_flow": "media/flow_images/slide_13.webp",
     "image_pdf": "media/slides/slide_13.webp",
-    "youtube_url": "https://www.youtube.com/watch?v=kP_u2x0qD-o",
-    "youtube_title": "Thomas Edison & Bức Thư Của Mẹ - Niềm Tin Tạo Thiên Tài",
+    "youtube_url": "https://www.youtube.com/watch?v=1umoxnrGp78",
+    "youtube_title": "CÂU CHUYỆN TRUYỀN CẢM HỨNG VỀ EDISON VÀ MẸ - SUY NGẪM",
     "flow_video_url": "https://flow.google.com/shared/video/572b1a60-d2e4-4059-b5a0-947337bc96c5",
     "flow_video": "media/flow_videos/slide_13.mp4",
-    "flow_image": "media/flow_images/slide_13.webp"
+    "flow_image": "media/flow_images/slide_13.webp",
+    "youtube_author": "CAO TÂM"
   },
   {
     "slide_number": 14,
@@ -1706,11 +2387,12 @@
     "has_video": true,
     "image_flow": "media/flow_images/slide_14.webp",
     "image_pdf": "media/slides/slide_14.webp",
-    "youtube_url": "https://www.youtube.com/watch?v=qCXUmioyqNE",
-    "youtube_title": "Sức Mạnh Của Sự Cô Đọng - Ít Chữ Mà Chạm Cực Sâu",
+    "youtube_url": "https://www.youtube.com/watch?v=4jRWMxHmtjg",
+    "youtube_title": "Nói Ít Nhưng Đúng 5 Mẹo Giao Tiếp Khôn Ngoan",
     "flow_video_url": "https://flow.google.com/shared/video/572b1a60-d2e4-4059-b5a0-947337bc96c5",
     "flow_video": "media/flow_videos/slide_14.mp4",
-    "flow_image": "media/flow_images/slide_14.webp"
+    "flow_image": "media/flow_images/slide_14.webp",
+    "youtube_author": "Thấu Hiểu Nhân Sinh"
   },
   {
     "slide_number": 15,
@@ -1740,11 +2422,12 @@
     "has_video": true,
     "image_flow": "media/slides/slide_15.webp",
     "image_pdf": "media/slides/slide_15.webp",
-    "youtube_url": "https://www.youtube.com/watch?v=0k9Jtq5310M",
-    "youtube_title": "Dale Carnegie - Đắc Nhân Tâm & Sức Mạnh Công Nhận",
+    "youtube_url": "https://www.youtube.com/watch?v=Rniy1-Yw9VU",
+    "youtube_title": "Tóm tắt sách: ĐẮC NHÂN TÂM (Dale Carnegie) | Nghệ thuật giao tiếp và đàm phán",
     "flow_video_url": "https://flow.google.com/shared/video/572b1a60-d2e4-4059-b5a0-947337bc96c5",
     "flow_video": "media/flow_videos/slide_15.mp4",
-    "flow_image": "media/slides/slide_15.webp"
+    "flow_image": "media/slides/slide_15.webp",
+    "youtube_author": "Tóm tắt sách cùng Tanya"
   },
   {
     "slide_number": 16,
@@ -1788,11 +2471,12 @@
     "has_video": true,
     "image_flow": "media/flow_images/slide_16.webp",
     "image_pdf": "media/slides/slide_16.webp",
-    "youtube_url": "https://www.youtube.com/watch?v=q6t8k9j2JbM",
-    "youtube_title": "Luật Hấp Dẫn - Vũ Trụ Luôn Phát Sóng Hai Chiều",
+    "youtube_url": "https://www.youtube.com/watch?v=Xs3i3MPAORw",
+    "youtube_title": "MUỐN HIỂU VỀ VŨ TRỤ HÃY NGHĨ VỀ NĂNG LƯỢNG, TẦN SỐ VÀ SỰ RUNG ĐỘNG LUẬT HẤP DẪN",
     "flow_video_url": "https://flow.google.com/shared/video/572b1a60-d2e4-4059-b5a0-947337bc96c5",
     "flow_video": "media/flow_videos/slide_16.mp4",
-    "flow_image": "media/flow_images/slide_16.webp"
+    "flow_image": "media/flow_images/slide_16.webp",
+    "youtube_author": "Bara Vlog"
   },
   {
     "slide_number": 17,
@@ -1837,11 +2521,12 @@
     "has_video": true,
     "image_flow": "media/flow_images/slide_17.webp",
     "image_pdf": "media/slides/slide_17.webp",
-    "youtube_url": "https://www.youtube.com/watch?v=b4N9t1h2r2Q",
-    "youtube_title": "Một Hiện Tượng, Vạn Tầm Nhìn - Thay Đổi Góc Nhìn",
+    "youtube_url": "https://www.youtube.com/watch?v=PKTZcoeiGw8",
+    "youtube_title": "LUYỆN TƯ DUY SẮC BÉN (xem xong làm được liền vì DỄ QUÁ MÀ)",
     "flow_video_url": "https://flow.google.com/shared/video/572b1a60-d2e4-4059-b5a0-947337bc96c5",
     "flow_video": "media/flow_videos/slide_17.mp4",
-    "flow_image": "media/flow_images/slide_17.webp"
+    "flow_image": "media/flow_images/slide_17.webp",
+    "youtube_author": "Tri Kỷ Cảm Xúc "
   },
   {
     "slide_number": 18,
@@ -1885,11 +2570,12 @@
     "has_video": true,
     "image_flow": "media/flow_images/slide_18.webp",
     "image_pdf": "media/slides/slide_18.webp",
-    "youtube_url": "https://www.youtube.com/watch?v=Kz6pE1kQ3-0",
-    "youtube_title": "Bài Học Cây Tre - Kiên Trì Cắm Rễ Để Bứt Phá Vượt Trội",
+    "youtube_url": "https://www.youtube.com/watch?v=IhRXttPADYA",
+    "youtube_title": "Câu chuyện về cây tre Moso-Bài học về sự kiên trì",
     "flow_video_url": "https://flow.google.com/shared/video/572b1a60-d2e4-4059-b5a0-947337bc96c5",
     "flow_video": "media/flow_videos/slide_18.mp4",
-    "flow_image": "media/flow_images/slide_18.webp"
+    "flow_image": "media/flow_images/slide_18.webp",
+    "youtube_author": "Xưởng Đá Mỹ Nghệ Thái Thành-Non Nước Đà Nẵng"
   },
   {
     "slide_number": 19,
@@ -1933,11 +2619,12 @@
     "has_video": true,
     "image_flow": "media/flow_images/slide_19.webp",
     "image_pdf": "media/slides/slide_19.webp",
-    "youtube_url": "https://www.youtube.com/watch?v=z9p9p9r2mZk",
-    "youtube_title": "Viktor Frankl - Nghịch Cảnh Là Chất Liệu Tôi Luyện Ý Chí",
+    "youtube_url": "https://www.youtube.com/watch?v=xKeWCbSQRTU",
+    "youtube_title": "[Tóm Tắt Sách] ĐI TÌM LẼ SỐNG | Viktor Frankl | Khi con người sống tiếp dù đã mất tất cả",
     "flow_video_url": "https://flow.google.com/shared/video/572b1a60-d2e4-4059-b5a0-947337bc96c5",
     "flow_video": "media/flow_videos/slide_19.mp4",
-    "flow_image": "media/flow_images/slide_19.webp"
+    "flow_image": "media/flow_images/slide_19.webp",
+    "youtube_author": "Sách Tinh Gọn"
   },
   {
     "slide_number": 20,
@@ -1982,11 +2669,12 @@
     "has_video": true,
     "image_flow": "media/flow_images/slide_20.webp",
     "image_pdf": "media/slides/slide_20.webp",
-    "youtube_url": "https://www.youtube.com/watch?v=r0p6h7x0s9M",
-    "youtube_title": "Niêm Hoa Vi Tiếu - Thông Điệp Giác Ngộ Tâm Truyền Tâm",
+    "youtube_url": "https://www.youtube.com/watch?v=FFWRJlQyGW4",
+    "youtube_title": "Niêm Hoa Vi Tiếu | Phật Pháp Truyền Bằng Tâm #phatphap #motivation #loivangphatdaythichphaphoa",
     "flow_video_url": "https://flow.google.com/shared/video/572b1a60-d2e4-4059-b5a0-947337bc96c5",
     "flow_video": "media/flow_videos/slide_20.mp4",
-    "flow_image": "media/flow_images/slide_20.webp"
+    "flow_image": "media/flow_images/slide_20.webp",
+    "youtube_author": "Trang Nguyễn"
   },
   {
     "slide_number": 21,
@@ -2023,11 +2711,12 @@
     "has_video": true,
     "image_flow": "media/flow_images/slide_21.webp",
     "image_pdf": "media/slides/slide_21.webp",
-    "youtube_url": "https://www.youtube.com/watch?v=h8m9s0p8t1U",
-    "youtube_title": "Chiếc Nhẫn Của Vua Solomon - Chuyện Này Rồi Cũng Qua Đi",
+    "youtube_url": "https://www.youtube.com/watch?v=9z6F7WF9tp8",
+    "youtube_title": "CÂU CHUYỆN: CHIẾC NHẪN CỦA VUA SOLOMON",
     "flow_video_url": "https://flow.google.com/shared/video/572b1a60-d2e4-4059-b5a0-947337bc96c5",
     "flow_video": "media/flow_videos/slide_21.mp4",
-    "flow_image": "media/flow_images/slide_21.webp"
+    "flow_image": "media/flow_images/slide_21.webp",
+    "youtube_author": "CUỘC SỐNG TƯƠI ĐẸP - Beautiful Life"
   },
   {
     "slide_number": 22,
@@ -2064,11 +2753,12 @@
     "has_video": false,
     "image_flow": "media/flow_images/slide_22.webp",
     "image_pdf": "media/slides/slide_22.webp",
-    "youtube_url": "https://www.youtube.com/watch?v=9xP6s9b0x4A",
-    "youtube_title": "Hào Khí Đất Việt - Hợp Nhất Triệu Trái Tim Đồng Lòng",
+    "youtube_url": "https://www.youtube.com/watch?v=2BnTKQJOKV0",
+    "youtube_title": "HÀO KHÍ VIỆT NAM - ĐÔNG HÙNG | ST: HOLY THẮNG | CÙNG NHAU GIỮ NƯỚC 2024",
     "flow_video_url": "https://flow.google.com/shared/video/572b1a60-d2e4-4059-b5a0-947337bc96c5",
     "flow_video": "",
-    "flow_image": "media/flow_images/slide_22.webp"
+    "flow_image": "media/flow_images/slide_22.webp",
+    "youtube_author": "ĐÔNG HÙNG Official"
   },
   {
     "slide_number": 23,
@@ -2091,11 +2781,12 @@
     "has_video": true,
     "image_flow": "media/flow_images/slide_23.webp",
     "image_pdf": "media/slides/slide_23.webp",
-    "youtube_url": "https://www.youtube.com/watch?v=u1j8k1p7w3E",
-    "youtube_title": "Sức Mạnh Bối Cảnh - Bộ Tứ 4 ĐÚNG Kiến Tạo Chuyển Hóa",
+    "youtube_url": "https://www.youtube.com/watch?v=CjrqXNg75zA",
+    "youtube_title": "3 Báu Vật Cuộc Đời - Thầy Hiền Trí, Tủ Sách Hay, Nhóm Bạn Tốt | Chọn Môi trường quyết định cuộc đời",
     "flow_video_url": "https://flow.google.com/shared/video/402d057a-898d-4ae5-885f-da45491d4b5d",
     "flow_video": "media/flow_videos/slide_23.mp4",
-    "flow_image": "media/flow_images/slide_23.webp"
+    "flow_image": "media/flow_images/slide_23.webp",
+    "youtube_author": "Trần Việt Quân"
   },
   {
     "slide_number": 24,
@@ -2139,11 +2830,12 @@
     "has_video": true,
     "image_flow": "media/flow_images/slide_24.webp",
     "image_pdf": "media/slides/slide_24.webp",
-    "youtube_url": "https://www.youtube.com/watch?v=jC4v5AS4RIM",
-    "youtube_title": "Kỹ Nghệ Prompt - Bối Cảnh Là Trái Tim Của Mọi Lệnh AI",
+    "youtube_url": "https://www.youtube.com/watch?v=bxzlOB9k-F4",
+    "youtube_title": "Tư Duy Viết Prompt Cho Người Mới Bắt Đầu (Trọn bộ + Dễ hiểu) | Làm Bạn Với AI EP9",
     "flow_video_url": "https://flow.google.com/shared/video/572b1a60-d2e4-4059-b5a0-947337bc96c5",
     "flow_video": "media/flow_videos/slide_24.mp4",
-    "flow_image": "media/flow_images/slide_24.webp"
+    "flow_image": "media/flow_images/slide_24.webp",
+    "youtube_author": "Thái Vân Linh Skills Bridge"
   },
   {
     "slide_number": 25,
@@ -2181,11 +2873,12 @@
     "has_video": true,
     "image_flow": "media/flow_images/slide_25.webp",
     "image_pdf": "media/slides/slide_25.webp",
-    "youtube_url": "https://www.youtube.com/watch?v=8qBwQfXbV8U",
-    "youtube_title": "Trí Tuệ Nhân Tạo & Trái Tim Con Người - Cảm Xúc Thăng Hoa",
+    "youtube_url": "https://www.youtube.com/watch?v=Z43_i13E7kE",
+    "youtube_title": "Trí tuệ nhân tạo AI có cảm xúc và tri giác? | Theo báo cáo của kỹ sư Google | Better Version",
     "flow_video_url": "https://flow.google.com/shared/video/572b1a60-d2e4-4059-b5a0-947337bc96c5",
     "flow_video": "media/flow_videos/slide_25.mp4",
-    "flow_image": "media/flow_images/slide_25.webp"
+    "flow_image": "media/flow_images/slide_25.webp",
+    "youtube_author": "Better Version"
   },
   {
     "slide_number": 26,
@@ -2229,11 +2922,12 @@
     "has_video": true,
     "image_flow": "media/flow_images/slide_26.webp",
     "image_pdf": "media/slides/slide_26.webp",
-    "youtube_url": "https://www.youtube.com/watch?v=2r1T2j6fG0M",
-    "youtube_title": "Tư Duy Kiến Trúc Sư AI - Nâng Tầm Trí Tuệ Con Người",
+    "youtube_url": "https://www.youtube.com/watch?v=mPtfYVyhA3c",
+    "youtube_title": "ChatGPT cho người chăm sóc gia đình là gì? Sắp lịch, lập việc cần làm | Tin AI #Shorts",
     "flow_video_url": "https://flow.google.com/shared/video/572b1a60-d2e4-4059-b5a0-947337bc96c5",
     "flow_video": "media/flow_videos/slide_26.mp4",
-    "flow_image": "media/flow_images/slide_26.webp"
+    "flow_image": "media/flow_images/slide_26.webp",
+    "youtube_author": "Ngọc AI Thực Chiến"
   },
   {
     "slide_number": 27,
@@ -2277,11 +2971,12 @@
     "has_video": true,
     "image_flow": "media/flow_images/slide_27.webp",
     "image_pdf": "media/slides/slide_27.webp",
-    "youtube_url": "https://www.youtube.com/watch?v=g9z7e2k7x8A",
-    "youtube_title": "3 Chiếc Sàng Socrates - Bộ Lọc Chân Lý Thời Kỹ Thuật Số",
+    "youtube_url": "https://www.youtube.com/watch?v=K99IuSTKoBU",
+    "youtube_title": "3 Cái Sàng của Socrates: Khám phá Bí Quyết Lọc Lời nói của Nhà Hiền triết Hy Lạp Socrates",
     "flow_video_url": "https://flow.google.com/shared/video/572b1a60-d2e4-4059-b5a0-947337bc96c5",
     "flow_video": "media/flow_videos/slide_27.mp4",
-    "flow_image": "media/flow_images/slide_27.webp"
+    "flow_image": "media/flow_images/slide_27.webp",
+    "youtube_author": "Vấn đáp"
   },
   {
     "slide_number": 28,
@@ -2317,11 +3012,12 @@
     "has_video": true,
     "image_flow": "media/slides/slide_28.webp",
     "image_pdf": "media/slides/slide_28.webp",
-    "youtube_url": "https://www.youtube.com/watch?v=R9OCA6UFE-0",
-    "youtube_title": "Thành Trì Nội Tâm - Vững Vàng Giữa Cơn Lốc Thời Cuộc",
+    "youtube_url": "https://www.youtube.com/watch?v=OeE5IFMQi5w",
+    "youtube_title": "Thầy Minh Niệm - Thuận Tự Nhiên Đời Tự Khắc Bình Yên (Rất Thấm) | Radio Chữa Lành",
     "flow_video_url": "https://flow.google.com/shared/video/572b1a60-d2e4-4059-b5a0-947337bc96c5",
     "flow_video": "media/flow_videos/slide_28.mp4",
-    "flow_image": "media/slides/slide_28.webp"
+    "flow_image": "media/slides/slide_28.webp",
+    "youtube_author": "Radio Chữa Lành"
   },
   {
     "slide_number": 29,
@@ -2351,11 +3047,12 @@
     "has_video": true,
     "image_flow": "media/slides/slide_29.webp",
     "image_pdf": "media/slides/slide_29.webp",
-    "youtube_url": "https://www.youtube.com/watch?v=wupToqz1e2g",
-    "youtube_title": "Carl Sagan - Đốm Xanh Mờ: Tầm Nhìn Vũ Trụ Vĩ Đại",
+    "youtube_url": "https://www.youtube.com/watch?v=_YIYGWH9NPM",
+    "youtube_title": "[VTTC Vietsub] Chấm màu xanh nhạt (Pale Blue Dot) - Carl Sagan (Full HD)",
     "flow_video_url": "https://flow.google.com/shared/video/572b1a60-d2e4-4059-b5a0-947337bc96c5",
     "flow_video": "media/flow_videos/slide_29.mp4",
-    "flow_image": "media/slides/slide_29.webp"
+    "flow_image": "media/slides/slide_29.webp",
+    "youtube_author": "vttcnews"
   },
   {
     "slide_number": 30,
@@ -2399,11 +3096,12 @@
     "has_video": true,
     "image_flow": "media/flow_images/slide_30.webp",
     "image_pdf": "media/slides/slide_30.webp",
-    "youtube_url": "https://www.youtube.com/watch?v=UF8uR6Z6KLc",
-    "youtube_title": "Kiến Tạo Di Sản Vĩnh Cửu - Sống Cuộc Đời Ngoại Hạng",
+    "youtube_url": "https://www.youtube.com/watch?v=h96coGHH0gk",
+    "youtube_title": "Thầy Minh Niệm - Hãy Sống Cho Mình Đúng Nghĩa: Hy Sinh Quá Nhiều Chưa Chắc Nhận Lại |Radio Chữa Lành",
     "flow_video_url": "https://flow.google.com/shared/video/572b1a60-d2e4-4059-b5a0-947337bc96c5",
     "flow_video": "media/flow_videos/slide_30.mp4",
-    "flow_image": "media/flow_images/slide_30.webp"
+    "flow_image": "media/flow_images/slide_30.webp",
+    "youtube_author": "Radio Chữa Lành"
   }
 ];
 
@@ -4101,6 +4799,1822 @@
         h = canvas.height = window.innerHeight;
       });
     }
+
+
+    // ==================== V08 CINEMA ENGINE (SLOW-MO, FULLSCREEN, YT PREVIEW, V-RESIZE, SPARKLES, AMBIENT MUSIC) ====================
+    let currentVideoSpeed = 1.0;
+    let ambientModeIndex = 0; // 0: Off, 1: 432Hz, 2: Piano Cảm Hứng, 3: Chuông Thiền, 4: Suối Bình Yên
+    let ambientInterval = null;
+    let ambientNodes = [];
+    let activeDirectYtPlayer = null;
+    let ytApiReadyCallbacks = [];
+
+    const AMBIENT_MODES = [
+      { id: 'off', label: '🎵 Nhạc Nền', toast: '🔇 Đã tắt nhạc nền truyền cảm hứng' },
+      { id: '432hz', label: '🎵 432Hz Thiền', toast: '🎵 Đang phát Tần số 432Hz An Lạc' },
+      { id: 'piano', label: '🎹 Piano Cảm Hứng', toast: '🎹 Đang phát Hợp âm Piano Truyền Cảm Hứng' },
+      { id: 'bowl', label: '🔔 Chuông Thiền', toast: '🔔 Đang phát Chuông Xoay Chánh Niệm' },
+      { id: 'nature', label: '🌊 Suối Bình Yên', toast: '🌊 Đang phát Âm Thanh Suối Nguồn Bình Yên' }
+    ];
+
+    const BULLET_VISUAL_THEMES = [
+      { emoji: '🌟', accent: '#f59e0b', tag: 'Cốt Lõi' },
+      { emoji: '💡', accent: '#06b6d4', tag: 'Khai Sáng' },
+      { emoji: '🔥', accent: '#f97316', tag: 'Hành Động' },
+      { emoji: '💎', accent: '#10b981', tag: 'Giá Trị' },
+      { emoji: '🧭', accent: '#8b5cf6', tag: 'Định Hướng' },
+      { emoji: '❤️', accent: '#ec4899', tag: 'Cảm Xúc' }
+    ];
+
+    const SLIDE_MOTTOS = [
+      '✨ Mỗi ngày một bước nhỏ vững chãi — Kiến tạo di sản lớn lao!',
+      '🌱 Tuổi trung niên là mùa chín muồi nhất của trí tuệ và sự tử tế.',
+      '🔥 Hiểu bằng Não Trái, Chạm bằng Não Phải, Sống bằng Trái Tim.',
+      '💎 Giá trị thật không phai mờ theo năm tháng — Di sản luôn còn mãi.',
+      '☀️ Bình an nội tâm là sức mạnh vĩ đại nhất giữa kỷ nguyên AI.'
+    ];
+
+    // 1. SPARKLE PARTICLE BURST EFFECT
+    function spawnSparkleBurst(x, y, count = 14) {
+      const icons = ['✨', '🌟', '💎', '⭐', '☀️', '💫'];
+      for (let i = 0; i < count; i++) {
+        const dot = document.createElement('span');
+        dot.className = 'sparkle-dot';
+        dot.textContent = icons[i % icons.length];
+        const angle = (Math.PI * 2 * i) / count + (Math.random() - 0.5) * 0.4;
+        const dist = 45 + Math.random() * 65;
+        dot.style.left = x + 'px';
+        dot.style.top = y + 'px';
+        dot.style.setProperty('--tx', Math.cos(angle) * dist + 'px');
+        dot.style.setProperty('--ty', Math.sin(angle) * dist - 20 + 'px');
+        document.body.appendChild(dot);
+        setTimeout(() => dot.remove(), 900);
+      }
+    }
+
+    // 2. ENHANCED SOUND EFFECTS (CRYSTALLINE HARP, CHIME, TRANSFORM WAVE)
+    const _origPlaySoundEffect = typeof playSoundEffect === 'function' ? playSoundEffect : null;
+    playSoundEffect = function(type) {
+      if (!isSFXEnabled) return;
+      try {
+        initAudioContext();
+        const now = audioCtx.currentTime;
+        if (type === 'flip') {
+          // Magical crystalline harp 2-note shimmer
+          [523.25, 659.25, 783.99, 1046.5].forEach((freq, i) => {
+            const osc = audioCtx.createOscillator();
+            const gain = audioCtx.createGain();
+            osc.type = 'sine';
+            osc.frequency.setValueAtTime(freq, now + i * 0.045);
+            gain.gain.setValueAtTime(0.06, now + i * 0.045);
+            gain.gain.exponentialRampToValueAtTime(0.0008, now + i * 0.045 + 0.38);
+            osc.connect(gain);
+            gain.connect(audioCtx.destination);
+            osc.start(now + i * 0.045);
+            osc.stop(now + i * 0.045 + 0.4);
+          });
+        } else if (type === 'transform_all') {
+          // Inspiring uplifting major arpeggio chord
+          [261.63, 329.63, 392.00, 523.25, 659.25, 783.99].forEach((freq, i) => {
+            const osc = audioCtx.createOscillator();
+            const gain = audioCtx.createGain();
+            osc.type = 'triangle';
+            osc.frequency.setValueAtTime(freq, now + i * 0.07);
+            gain.gain.setValueAtTime(0.075, now + i * 0.07);
+            gain.gain.exponentialRampToValueAtTime(0.0008, now + i * 0.07 + 0.75);
+            osc.connect(gain);
+            gain.connect(audioCtx.destination);
+            osc.start(now + i * 0.07);
+            osc.stop(now + i * 0.07 + 0.78);
+          });
+        } else if (type === 'copy') {
+          // Crisp pleasant bell ding
+          [880, 1318.5].forEach((freq, i) => {
+            const osc = audioCtx.createOscillator();
+            const gain = audioCtx.createGain();
+            osc.type = 'sine';
+            osc.frequency.setValueAtTime(freq, now + i * 0.06);
+            gain.gain.setValueAtTime(0.06, now + i * 0.06);
+            gain.gain.exponentialRampToValueAtTime(0.0008, now + i * 0.06 + 0.25);
+            osc.connect(gain);
+            gain.connect(audioCtx.destination);
+            osc.start(now + i * 0.06);
+            osc.stop(now + i * 0.06 + 0.26);
+          });
+        } else if (type === 'slide') {
+          // Warm soothing transition chime
+          [432, 540].forEach((freq, i) => {
+            const osc = audioCtx.createOscillator();
+            const gain = audioCtx.createGain();
+            osc.type = 'sine';
+            osc.frequency.setValueAtTime(freq, now + i * 0.05);
+            gain.gain.setValueAtTime(0.055, now + i * 0.05);
+            gain.gain.exponentialRampToValueAtTime(0.0008, now + i * 0.05 + 0.45);
+            osc.connect(gain);
+            gain.connect(audioCtx.destination);
+            osc.start(now + i * 0.05);
+            osc.stop(now + i * 0.05 + 0.48);
+          });
+        } else if (_origPlaySoundEffect) {
+          _origPlaySoundEffect(type);
+        }
+      } catch (e) {}
+    };
+
+    // 3. 4-MODE INSPIRATIONAL AMBIENT MUSIC ENGINE
+    function stopAllAmbient() {
+      if (ambientInterval) { clearInterval(ambientInterval); ambientInterval = null; }
+      ambientNodes.forEach(n => {
+        try { if (n.stop) n.stop(); if (n.disconnect) n.disconnect(); } catch (e) {}
+      });
+      ambientNodes = [];
+      isHealingPlaying = false;
+    }
+
+    toggleHealingSound = function() {
+      initAudioContext();
+      stopAllAmbient();
+      ambientModeIndex = (ambientModeIndex + 1) % AMBIENT_MODES.length;
+      const mode = AMBIENT_MODES[ambientModeIndex];
+      const btn = document.getElementById('healingBtn');
+
+      if (btn) {
+        btn.innerHTML = `<span>${mode.label}</span>`;
+        btn.classList.toggle('text-amber-300', mode.id !== 'off');
+        btn.classList.toggle('bg-amber-950/60', mode.id !== 'off');
+        btn.classList.toggle('border-amber-500/50', mode.id !== 'off');
+      }
+
+      if (mode.id === '432hz') {
+        const g = audioCtx.createGain();
+        g.gain.setValueAtTime(0.001, audioCtx.currentTime);
+        g.gain.exponentialRampToValueAtTime(0.035, audioCtx.currentTime + 1.2);
+        g.connect(audioCtx.destination);
+        [432, 436, 216].forEach(f => {
+          const o = audioCtx.createOscillator();
+          o.type = 'sine';
+          o.frequency.setValueAtTime(f, audioCtx.currentTime);
+          o.connect(g);
+          o.start();
+          ambientNodes.push(o);
+        });
+        ambientNodes.push(g);
+        isHealingPlaying = true;
+      } else if (mode.id === 'piano') {
+        // Gentle inspirational pentatonic piano arpeggio
+        const scale = [261.63, 293.66, 329.63, 392.00, 440.00, 523.25, 587.33, 659.25];
+        let step = 0;
+        const playNote = () => {
+          if (!audioCtx) return;
+          const now = audioCtx.currentTime;
+          const freq = scale[(step * 2 + (step % 3)) % scale.length];
+          const osc = audioCtx.createOscillator();
+          const gain = audioCtx.createGain();
+          osc.type = 'sine';
+          osc.frequency.setValueAtTime(freq, now);
+          gain.gain.setValueAtTime(0.001, now);
+          gain.gain.linearRampToValueAtTime(0.045, now + 0.08);
+          gain.gain.exponentialRampToValueAtTime(0.0005, now + 2.2);
+          osc.connect(gain);
+          gain.connect(audioCtx.destination);
+          osc.start(now);
+          osc.stop(now + 2.3);
+          step++;
+        };
+        playNote();
+        ambientInterval = setInterval(playNote, 1350);
+        isHealingPlaying = true;
+      } else if (mode.id === 'bowl') {
+        const strikeBowl = () => {
+          const now = audioCtx.currentTime;
+          [256, 514, 772].forEach((f, idx) => {
+            const osc = audioCtx.createOscillator();
+            const g = audioCtx.createGain();
+            osc.type = 'sine';
+            osc.frequency.setValueAtTime(f, now);
+            g.gain.setValueAtTime(0.04 / (idx + 1), now);
+            g.gain.exponentialRampToValueAtTime(0.0004, now + 5.5);
+            osc.connect(g);
+            g.connect(audioCtx.destination);
+            osc.start(now);
+            osc.stop(now + 5.6);
+          });
+        };
+        strikeBowl();
+        ambientInterval = setInterval(strikeBowl, 6000);
+        isHealingPlaying = true;
+      } else if (mode.id === 'nature') {
+        // Soft filtered stream/rain noise
+        const bufferSize = audioCtx.sampleRate * 2;
+        const buffer = audioCtx.createBuffer(1, bufferSize, audioCtx.sampleRate);
+        const output = buffer.getChannelData(0);
+        let b0 = 0, b1 = 0, b2 = 0;
+        for (let i = 0; i < bufferSize; i++) {
+          const white = Math.random() * 2 - 1;
+          b0 = 0.997 * b0 + white * 0.029;
+          b1 = 0.985 * b1 + white * 0.032;
+          b2 = 0.950 * b2 + white * 0.048;
+          output[i] = (b0 + b1 + b2) * 0.35;
+        }
+        const noise = audioCtx.createBufferSource();
+        noise.buffer = buffer;
+        noise.loop = true;
+        const filter = audioCtx.createBiquadFilter();
+        filter.type = 'lowpass';
+        filter.frequency.value = 650;
+        const g = audioCtx.createGain();
+        g.gain.value = 0.05;
+        noise.connect(filter);
+        filter.connect(g);
+        g.connect(audioCtx.destination);
+        noise.start();
+        ambientNodes.push(noise, filter, g);
+        isHealingPlaying = true;
+      }
+      showToast(mode.toast);
+      playSoundEffect('click');
+    };
+
+    // 4. SLOW-MOTION PLAYBACK SPEED CONTROL (BOTH LOCAL VIDEO 4D & YOUTUBE!)
+    function setVideoPlaybackSpeed(rate) {
+      currentVideoSpeed = parseFloat(rate) || 1.0;
+      // Update pills UI
+      document.querySelectorAll('.slowmo-pill').forEach(btn => {
+        const val = parseFloat(btn.getAttribute('data-vspeed'));
+        btn.classList.toggle('active', Math.abs(val - currentVideoSpeed) < 0.01);
+      });
+
+      // Apply to HTML5 Video 4D
+      const vid = document.getElementById('slideVideo');
+      if (vid) {
+        vid.playbackRate = currentVideoSpeed;
+      }
+
+      // Apply to direct YT.Player if active
+      if (activeDirectYtPlayer && typeof activeDirectYtPlayer.setPlaybackRate === 'function') {
+        try { activeDirectYtPlayer.setPlaybackRate(currentVideoSpeed); } catch (e) {}
+      }
+
+      // Apply to YouTube iframe / yt-bridge via postMessage
+      const ytFrame = document.querySelector('#youtubeContainer iframe');
+      if (ytFrame && ytFrame.contentWindow) {
+        try {
+          ytFrame.contentWindow.postMessage({ type: 'KTCS_YT_SET_RATE', rate: currentVideoSpeed }, '*');
+          ytFrame.contentWindow.postMessage(JSON.stringify({
+            event: 'command',
+            func: 'setPlaybackRate',
+            args: [currentVideoSpeed]
+          }), '*');
+        } catch (e) {}
+      }
+
+      playSoundEffect('click');
+      const label = currentVideoSpeed < 1 ? `🐢 Đã bật Tua Chậm ${currentVideoSpeed}x` : (currentVideoSpeed > 1 ? `⚡ Tốc độ video ${currentVideoSpeed}x` : '▶ Tốc độ video chuẩn 1x');
+      showToast(label);
+    }
+
+    // 5. FULLSCREEN CINEMA MODE (VIDEO, YOUTUBE, PDF, AI ART)
+    function toggleMediaFullscreen() {
+      const frame = document.getElementById('leftMediaFrame');
+      if (!frame) return;
+      playSoundEffect('click');
+      if (!document.fullscreenElement && !document.webkitFullscreenElement) {
+        if (frame.requestFullscreen) frame.requestFullscreen();
+        else if (frame.webkitRequestFullscreen) frame.webkitRequestFullscreen();
+        showToast('⛶ Đang mở Toàn Màn Hình (Nhấn ESC để thoát)');
+      } else {
+        if (document.exitFullscreen) document.exitFullscreen();
+        else if (document.webkitExitFullscreen) document.webkitExitFullscreen();
+      }
+    }
+
+    document.addEventListener('fullscreenchange', () => {
+      const btn = document.getElementById('fullscreenMediaBtn');
+      if (!btn) return;
+      const isFs = !!document.fullscreenElement;
+      btn.innerHTML = isFs ? '🗗 <span>Thu Nhỏ</span>' : '⛶ <span>Toàn Màn Hình</span>';
+    });
+
+    // 6. CLICK-TO-COPY YOUTUBE LINK BLOCK
+    function updateYouTubeCopyDock() {
+      const url = getSlideYouTubeUrl(currentSlideIndex);
+      const previewEl = document.getElementById('ytCopyUrlPreview');
+      if (previewEl) {
+        previewEl.textContent = url.replace(/^https?:\/\/(www\.)?/, '');
+      }
+    }
+
+    function copyCurrentYouTubeLink(el) {
+      const url = getSlideYouTubeUrl(currentSlideIndex);
+      navigator.clipboard.writeText(url).then(() => {
+        playSoundEffect('copy');
+        if (el) showCopyFeedback(el);
+        showToast('✓ Đã sao chép link YouTube tiếng Việt: ' + url);
+      }).catch(() => {
+        showToast('Link YouTube: ' + url);
+      });
+    }
+
+    // 7. PRIORITY VIDEO PREVIEW + SMOOTH DIRECT IN-BROWSER YOUTUBE CINEMA
+    function ensureYouTubeApiLoaded(cb) {
+      if (window.YT && window.YT.Player) { cb(); return; }
+      ytApiReadyCallbacks.push(cb);
+      if (!document.getElementById('ktcs-yt-api-script')) {
+        const s = document.createElement('script');
+        s.id = 'ktcs-yt-api-script';
+        s.src = 'https://www.youtube.com/iframe_api';
+        document.head.appendChild(s);
+        window.onYouTubeIframeAPIReady = () => {
+          ytApiReadyCallbacks.forEach(fn => { try { fn(); } catch(e){} });
+          ytApiReadyCallbacks = [];
+        };
+      }
+    }
+
+    function playYouTubeDirectInBrowser(videoId, videoTitle) {
+      const yt = document.getElementById('youtubeContainer');
+      const isFileProtocol = window.location.protocol === 'file:';
+      const directWatchUrl = `https://www.youtube.com/watch?v=${videoId}`;
+      playSoundEffect('click');
+
+      const mountDirectIframe = (useBridge = false) => {
+        activeDirectYtPlayer = null;
+        if (useBridge) {
+          yt.innerHTML = `
+            <div class="w-full h-full relative group bg-black rounded-xl overflow-hidden shadow-2xl">
+              <iframe class="w-full h-full"
+                src="http://localhost:7890/yt-bridge.html?v=${videoId}&autoplay=1&rate=${currentVideoSpeed}"
+                title="${videoTitle}"
+                frameborder="0"
+                referrerpolicy="strict-origin-when-cross-origin"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                allowfullscreen>
+              </iframe>
+            </div>`;
+        } else {
+          yt.innerHTML = `
+            <div class="w-full h-full relative group bg-black rounded-xl overflow-hidden shadow-2xl">
+              <div id="directYtHost" class="w-full h-full"></div>
+              <div class="absolute bottom-2.5 right-2.5 flex items-center gap-1.5 opacity-0 group-hover:opacity-100 transition-opacity z-20">
+                <button onclick="copyCurrentYouTubeLink(this)" class="bg-black/85 hover:bg-emerald-600 text-white text-[11px] font-bold px-2.5 py-1 rounded-lg border border-slate-600">📋 Copy Link</button>
+                <a href="${directWatchUrl}" target="_blank" rel="noopener noreferrer" class="bg-black/85 hover:bg-red-600 text-white text-[11px] font-bold px-2.5 py-1 rounded-lg border border-slate-600">▶ Mở YouTube</a>
+              </div>
+            </div>`;
+          ensureYouTubeApiLoaded(() => {
+            const host = document.getElementById('directYtHost');
+            if (!host) return;
+            activeDirectYtPlayer = new YT.Player('directYtHost', {
+              videoId: videoId,
+              width: '100%',
+              height: '100%',
+              playerVars: {
+                autoplay: 1,
+                rel: 0,
+                modestbranding: 1,
+                enablejsapi: 1,
+                hl: 'vi',
+                cc_lang_pref: 'vi',
+                cc_load_policy: 1
+              },
+              events: {
+                onReady: () => {
+                  if (currentVideoSpeed !== 1 && activeDirectYtPlayer?.setPlaybackRate) {
+                    activeDirectYtPlayer.setPlaybackRate(currentVideoSpeed);
+                  }
+                }
+              }
+            });
+          });
+        }
+      };
+
+      if (!isFileProtocol) {
+        mountDirectIframe(false);
+      } else {
+        // On file:// check if localhost:7890 bridge is running for 0% Error 153
+        fetch('http://localhost:7890/yt-bridge.html?v=' + videoId, { method: 'HEAD', mode: 'no-cors' })
+          .then(() => mountDirectIframe(true))
+          .catch(() => {
+            // Fallback: try standard nocookie embed + quick popout option
+            yt.innerHTML = `
+              <div class="w-full h-full relative group bg-black rounded-xl overflow-hidden shadow-2xl">
+                <iframe class="w-full h-full"
+                  src="https://www.youtube-nocookie.com/embed/${videoId}?autoplay=1&rel=0&hl=vi&cc_lang_pref=vi&cc_load_policy=1&enablejsapi=1"
+                  title="${videoTitle}"
+                  frameborder="0"
+                  referrerpolicy="strict-origin-when-cross-origin"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                  allowfullscreen>
+                </iframe>
+                <div class="absolute bottom-2.5 left-2.5 right-2.5 flex items-center justify-between gap-2 bg-black/80 px-3 py-1.5 rounded-lg border border-amber-500/30 opacity-85 hover:opacity-100 transition">
+                  <span class="text-[11px] text-amber-300">💡 Nếu YouTube chặn file://, bấm Mở Rạp Chiếu hoặc chạy CHAY_BAI_GIANG_LOCAL.bat</span>
+                  <button onclick="openYouTubeCinemaPopout('${videoId}')" class="bg-red-600 hover:bg-red-500 text-white text-[11px] font-bold px-2.5 py-1 rounded-md shrink-0">🎬 Mở Rạp Chiếu</button>
+                </div>
+              </div>`;
+          });
+      }
+    }
+
+    // Override renderYouTubeEmbed to PRIORITIZE HD VIDEO PREVIEW FIRST!
+    renderYouTubeEmbed = function() {
+      const yt = document.getElementById('youtubeContainer');
+      const url = getSlideYouTubeUrl(currentSlideIndex);
+      const s = SLIDES[currentSlideIndex];
+      updateYouTubeCopyDock();
+
+      let videoId = '';
+      const regExp = /^.*(youtu.be\/|v\/|u\/\w\/|embed\/|watch\?v=|\&v=)([^#\&\?]*).*/;
+      const match = url.match(regExp);
+      if (match && match[2].length === 11) {
+        videoId = match[2];
+      }
+
+      if (!videoId) {
+        yt.innerHTML = `
+          <div class="flex flex-col items-center justify-center p-6 text-center h-full w-full bg-slate-950">
+            <span class="text-4xl mb-2">🎬</span>
+            <p class="text-sm text-slate-300 mb-3">Chưa có liên kết YouTube cho trang này</p>
+            <button onclick="openUnifiedMediaModal()" class="bg-red-600 hover:bg-red-500 text-white text-xs font-bold px-4 py-2 rounded-xl transition">
+              🔗 Gắn Link YouTube Ngay
+            </button>
+          </div>`;
+        return;
+      }
+
+      const videoTitle = (s.youtube_title || s.raw_title || 'Video Truyền Cảm Hứng Tiếng Việt').replace(/"/g, '&quot;');
+      const videoAuthor = s.youtube_author ? ` • 🎙️ ${s.youtube_author}` : ' • 🇻🇳 Tiếng Việt / Thuyết Minh';
+      const thumbHq = `https://i.ytimg.com/vi/${videoId}/hqdefault.jpg`;
+      const thumbMax = `https://i.ytimg.com/vi/${videoId}/maxresdefault.jpg`;
+      const safeTitleArg = videoTitle.replace(/'/g, "\\'");
+
+      // PRIORITY: SHOW HD VIDEO PREVIEW IMAGE CLEARLY (NOT JUST A TITLE CARD!)
+      yt.innerHTML = `
+        <div class="w-full h-full relative group rounded-xl overflow-hidden bg-black select-none">
+          <!-- Real HD Video Thumbnail Preview -->
+          <img src="${thumbMax}"
+               onerror="this.onerror=null; this.src='${thumbHq}';"
+               alt="${videoTitle}"
+               class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105 cursor-pointer"
+               onclick="playYouTubeDirectInBrowser('${videoId}', '${safeTitleArg}')">
+
+          <!-- Subtle Cinema Vignette (keeps video preview crisp & bright!) -->
+          <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-black/45 pointer-events-none"></div>
+
+          <!-- Top Badges -->
+          <div class="absolute top-3 left-3 flex items-center gap-2 z-10 pointer-events-none">
+            <span class="bg-red-600/95 text-white font-extrabold text-[11px] px-2.5 py-1 rounded-md tracking-wide flex items-center gap-1.5 shadow-lg">
+              ▶ XEM TRƯỚC VIDEO • 🇻🇳 TIẾNG VIỆT
+            </span>
+            <span class="text-[11px] font-bold text-amber-200 bg-black/75 px-2.5 py-1 rounded-md border border-amber-500/40">
+              🐢 Hỗ trợ Tua Chậm & Toàn Màn Hình
+            </span>
+          </div>
+
+          <!-- Center Vibrant Play Button -->
+          <div class="absolute inset-0 flex items-center justify-center z-10 cursor-pointer"
+               onclick="playYouTubeDirectInBrowser('${videoId}', '${safeTitleArg}')">
+            <div class="w-20 h-20 rounded-full bg-red-600/95 hover:bg-red-500 text-white flex items-center justify-center pl-1.5 shadow-[0_0_40px_rgba(220,38,38,0.8)] transform transition duration-300 group-hover:scale-110 ring-4 ring-white/30">
+              <svg class="w-10 h-10 fill-current" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+            </div>
+          </div>
+
+          <!-- Bottom Bar: Video Title + Action Controls + Copy Link -->
+          <div class="absolute bottom-0 inset-x-0 p-3.5 z-20 flex flex-col gap-2">
+            <div>
+              <h3 class="text-sm md:text-base font-extrabold text-white drop-shadow-lg line-clamp-1">
+                ${videoTitle}
+              </h3>
+              <p class="text-[11px] text-amber-300/95 font-medium drop-shadow">
+                Slide ${currentSlideIndex + 1} / ${SLIDES.length}${videoAuthor}
+              </p>
+            </div>
+            <div class="flex flex-wrap items-center gap-2">
+              <button onclick="playYouTubeDirectInBrowser('${videoId}', '${safeTitleArg}')"
+                      class="bg-red-600 hover:bg-red-500 text-white text-xs font-extrabold px-3.5 py-1.5 rounded-lg shadow-lg flex items-center gap-1.5 transition transform hover:scale-105">
+                ▶ Phát Trực Tiếp Ngay
+              </button>
+              <button onclick="openYouTubeCinemaPopout('${videoId}')"
+                      class="bg-amber-500 hover:bg-amber-400 text-black text-xs font-extrabold px-3 py-1.5 rounded-lg shadow flex items-center gap-1 transition">
+                🎬 Cửa Sổ Rạp Chiếu
+              </button>
+              <button onclick="copyCurrentYouTubeLink(this)"
+                      class="bg-slate-900/90 hover:bg-emerald-700 text-emerald-300 hover:text-white text-xs font-bold px-3 py-1.5 rounded-lg border border-emerald-500/40 flex items-center gap-1 transition">
+                🔗 Copy Link YouTube
+              </button>
+              <button onclick="toggleMediaFullscreen()"
+                      class="bg-slate-900/90 hover:bg-slate-700 text-amber-300 text-xs font-bold px-2.5 py-1.5 rounded-lg border border-amber-500/35 flex items-center gap-1 transition">
+                ⛶ Toàn Màn Hình
+              </button>
+            </div>
+          </div>
+        </div>`;
+    };
+
+    // 8. FLIP ALL / RESET ALL 3D CARDS WITH CASCADING WAVE & SPARKLES
+    function flipAllCards(toFlipped = true) {
+      const cards = document.querySelectorAll('#flipCardsContainer .flip-card');
+      if (!cards.length) return;
+      playSoundEffect(toFlipped ? 'transform_all' : 'click');
+      cards.forEach((card, idx) => {
+        setTimeout(() => {
+          card.classList.toggle('flipped', toFlipped);
+          if (toFlipped) {
+            const rect = card.getBoundingClientRect();
+            spawnSparkleBurst(rect.left + rect.width / 2, rect.top + rect.height / 2, 10);
+          }
+        }, idx * 170);
+      });
+      showToast(toFlipped ? '✨ Đã chuyển hóa trọn bộ 3 Thẻ Di Sản 3D!' : '🔄 Đã đặt lại 3 Thẻ Bài!');
+    }
+
+    // 9. VERTICAL DRAG-TO-RESIZE HANDLES IN RIGHT COLUMN
+    function setupVerticalResizer(handleId, targetId, minH = 85, maxH = 520) {
+      const handle = document.getElementById(handleId);
+      const target = document.getElementById(targetId);
+      if (!handle || !target) return;
+
+      let dragging = false;
+      let startY = 0;
+      let startHeight = 0;
+
+      const onStart = (clientY) => {
+        dragging = true;
+        startY = clientY;
+        startHeight = target.getBoundingClientRect().height;
+        handle.classList.add('dragging');
+        document.body.style.cursor = 'row-resize';
+        // If resizing script, remove line-clamp so user can smoothly drag to any height!
+        if (targetId === 'slideScript') {
+          target.classList.remove('script-collapsed');
+          target.classList.add('script-expanded');
+          target.style.maxHeight = 'none';
+          target.style.overflowY = 'auto';
+        }
+      };
+
+      const onMove = (clientY) => {
+        if (!dragging) return;
+        const delta = clientY - startY;
+        const nextH = Math.max(minH, Math.min(maxH, startHeight + delta));
+        target.style.height = nextH + 'px';
+        target.style.maxHeight = nextH + 'px';
+      };
+
+      const onEnd = () => {
+        if (!dragging) return;
+        dragging = false;
+        handle.classList.remove('dragging');
+        document.body.style.cursor = '';
+      };
+
+      handle.addEventListener('mousedown', (e) => { e.preventDefault(); onStart(e.clientY); });
+      window.addEventListener('mousemove', (e) => onMove(e.clientY));
+      window.addEventListener('mouseup', onEnd);
+
+      handle.addEventListener('touchstart', (e) => { if (e.touches[0]) onStart(e.touches[0].clientY); }, { passive: true });
+      window.addEventListener('touchmove', (e) => { if (dragging && e.touches[0]) onMove(e.touches[0].clientY); }, { passive: true });
+      window.addEventListener('touchend', onEnd);
+
+      handle.addEventListener('dblclick', () => {
+        target.style.height = '';
+        target.style.maxHeight = '';
+        playSoundEffect('click');
+        showToast('↕ Đã khôi phục chiều cao tự động!');
+      });
+    }
+
+    function quickResizeBullets(mode) {
+      const box = document.getElementById('bulletsScrollZone');
+      if (!box) return;
+      playSoundEffect('click');
+      if (mode === 'expand') {
+        box.style.height = '340px';
+        box.style.maxHeight = '340px';
+      } else if (mode === 'compact') {
+        box.style.height = '135px';
+        box.style.maxHeight = '135px';
+      } else {
+        box.style.height = '';
+        box.style.maxHeight = '';
+      }
+    }
+
+    // 10. ENHANCE renderSlide TO RENDER VISUAL MESSAGE CARDS, EMOJIS, SPARKLE FLIP CARDS & SYNC SPEED/YT DOCK
+    const _origRenderSlideV07 = renderSlide;
+    renderSlide = function(index, pushHistory = true) {
+      _origRenderSlideV07(index, pushHistory);
+      const s = SLIDES[currentSlideIndex];
+      if (!s) return;
+
+      // Update YouTube Link Copy Dock
+      updateYouTubeCopyDock();
+
+      // Keep local video slow-mo speed synced
+      const vid = document.getElementById('slideVideo');
+      if (vid) vid.playbackRate = currentVideoSpeed;
+
+      // Update Inspiring Visual Banner inside Right Panel
+      const bannerMotto = document.getElementById('slideBannerMotto');
+      const bannerThumb = document.getElementById('slideBannerThumb');
+      if (bannerMotto) {
+        bannerMotto.textContent = SLIDE_MOTTOS[currentSlideIndex % SLIDE_MOTTOS.length];
+      }
+      if (bannerThumb) {
+        bannerThumb.src = s.image_flow || s.image || 'media/slides/slide_01.webp';
+      }
+
+      // Upgrade Bullets into Vivid Emoji + Visual Illustration Message Cards
+      const bulletsContainer = document.getElementById('bulletsContainer');
+      if (bulletsContainer && Array.isArray(s.bullets)) {
+        bulletsContainer.innerHTML = '';
+        s.bullets.forEach((b, bIdx) => {
+          const theme = BULLET_VISUAL_THEMES[(currentSlideIndex + bIdx) % BULLET_VISUAL_THEMES.length];
+          const card = document.createElement('div');
+          card.className = 'message-bullet-card copyable-block';
+          card.style.setProperty('--bullet-accent', theme.accent);
+          card.title = 'Nhấp để sao chép thông điệp này';
+          card.innerHTML = `
+            <div class="bullet-emoji-badge">${theme.emoji}</div>
+            <div class="flex-1 min-w-0">
+              <div class="flex items-center justify-between gap-2 mb-0.5">
+                <span class="text-[10px] font-extrabold uppercase tracking-wider px-2 py-0.5 rounded-full bg-amber-500/15 text-amber-300 border border-amber-500/30">
+                  ${theme.tag} #${bIdx + 1}
+                </span>
+                <span class="text-[10px] text-slate-400">📋 Chạm để chép</span>
+              </div>
+              <p class="text-sm lg:text-[15px] text-slate-100 leading-relaxed font-medium">${b}</p>
+            </div>
+          `;
+          bulletsContainer.appendChild(card);
+        });
+      }
+
+      // Enhance Flip Card Click with Sparkle Burst!
+      document.querySelectorAll('#flipCardsContainer .flip-card').forEach(cardEl => {
+        const prevClick = cardEl.onclick;
+        cardEl.onclick = (e) => {
+          if (e.target.closest('.card-copy-btn')) return;
+          if (prevClick) prevClick(e);
+          if (cardEl.classList.contains('flipped')) {
+            spawnSparkleBurst(e.clientX, e.clientY, 12);
+          }
+        };
+      });
+    };
+
+    // Keyboard shortcut F for Fullscreen
+    window.addEventListener('keydown', (e) => {
+      if (e.target.tagName === 'INPUT' || e.target.tagName === 'TEXTAREA') return;
+      if (e.key === 'f' || e.key === 'F') {
+        e.preventDefault();
+        toggleMediaFullscreen();
+      }
+    });
+
+    // Init V08 Resizers & Dock on DOMContentLoaded
+    window.addEventListener('DOMContentLoaded', () => {
+      setupVerticalResizer('bulletsVResizer', 'bulletsScrollZone', 90, 480);
+      setupVerticalResizer('scriptVResizer', 'slideScript', 65, 420);
+      updateYouTubeCopyDock();
+    });
+    // ==================== END V08 CINEMA ENGINE ====================
+
+
+
+    // ==================== V08.2 CELEBRATION BURST & FULLSCREEN WHITEBOARD STUDIO ====================
+    let drawTool = 'pen'; // pen, line, arrow, circle, square, rect, eraser
+    let drawColor = '#f59e0b';
+    let drawSize = 4;
+    let drawNeon = true;
+    let drawStars = false;
+    let drawHistory = [];
+
+    // 1. FLOWER & CONFETTI CELEBRATION BURST ("Tung hoa chào đón điều mới")
+    function spawnCelebrationBurst(x, y, grand = false) {
+      const items = ['🌸', '🌺', '🌼', '🌷', '✨', '🌟', '💎', '🎉', '🎊', '🦋'];
+      const count = grand ? 34 : 20;
+      for (let i = 0; i < count; i++) {
+        const el = document.createElement('span');
+        el.className = 'flower-confetti';
+        el.textContent = items[i % items.length];
+        el.style.fontSize = (14 + Math.random() * 12) + 'px';
+        const angle = -Math.PI / 2 + (Math.random() - 0.5) * Math.PI * 1.75;
+        const speed1 = (grand ? 70 : 45) + Math.random() * (grand ? 110 : 75);
+        const tx1 = Math.cos(angle) * speed1;
+        const ty1 = Math.sin(angle) * speed1 - 25;
+        const tx2 = tx1 + (Math.random() - 0.5) * 90;
+        const ty2 = ty1 + 95 + Math.random() * 110;
+        el.style.left = x + 'px';
+        el.style.top = y + 'px';
+        el.style.setProperty('--tx1', tx1 + 'px');
+        el.style.setProperty('--ty1', ty1 + 'px');
+        el.style.setProperty('--tx2', tx2 + 'px');
+        el.style.setProperty('--ty2', ty2 + 'px');
+        el.style.setProperty('--rot1', (Math.random() * 240 - 120) + 'deg');
+        el.style.setProperty('--rot2', (Math.random() * 480 - 240) + 'deg');
+        el.style.setProperty('--dur', (1.05 + Math.random() * 0.65) + 's');
+        document.body.appendChild(el);
+        setTimeout(() => el.remove(), 1800);
+      }
+    }
+
+    // Upgrade flipAllCards & individual card flip to launch flowers!
+    flipAllCards = function(toFlipped = true) {
+      const cards = document.querySelectorAll('#flipCardsContainer .flip-card');
+      if (!cards.length) return;
+      playSoundEffect(toFlipped ? 'transform_all' : 'click');
+      cards.forEach((card, idx) => {
+        setTimeout(() => {
+          card.classList.toggle('flipped', toFlipped);
+          if (toFlipped) {
+            const rect = card.getBoundingClientRect();
+            spawnCelebrationBurst(rect.left + rect.width / 2, rect.top + rect.height / 2, idx === cards.length - 1);
+          }
+        }, idx * 180);
+      });
+      showToast(toFlipped ? '🌸✨ Đã chuyển hóa trọn bộ 3 Thẻ Di Sản 3D!' : '🔄 Đã đặt lại 3 Thẻ Bài!');
+    };
+
+    const _origRenderSlideV08 = renderSlide;
+    renderSlide = function(index, pushHistory = true) {
+      const changed = index !== currentSlideIndex;
+      _origRenderSlideV08(index, pushHistory);
+
+      // Clear whiteboard strokes automatically when turning to another slide!
+      if (changed) {
+        clearDrawingCanvas(true);
+      }
+
+      // Attach flower celebration burst on every card flip to 'TRỞ THÀNH DI SẢN'
+      document.querySelectorAll('#flipCardsContainer .flip-card').forEach(cardEl => {
+        cardEl.onclick = (e) => {
+          if (e.target.closest('.card-copy-btn')) return;
+          cardEl.classList.toggle('flipped');
+          playSoundEffect('flip');
+          if (cardEl.classList.contains('flipped')) {
+            spawnCelebrationBurst(e.clientX, e.clientY, false);
+          }
+        };
+      });
+    };
+
+    // 2. FULLSCREEN WHITEBOARD DRAWING STUDIO
+    function setDrawTool(tool) {
+      drawTool = tool;
+      document.querySelectorAll('[data-dtool]').forEach(b => {
+        b.classList.toggle('active', b.getAttribute('data-dtool') === tool);
+      });
+      const canvas = document.getElementById('drawCanvas');
+      if (canvas) canvas.classList.toggle('eraser-cursor', tool === 'eraser');
+      playSoundEffect('click');
+    }
+
+    function setDrawColor(color, btnEl) {
+      drawColor = color;
+      const picker = document.getElementById('drawColorPicker');
+      if (picker) picker.value = color;
+      document.querySelectorAll('.draw-color-dot').forEach(d => d.classList.remove('active'));
+      if (btnEl) btnEl.classList.add('active');
+      if (drawTool === 'eraser') setDrawTool('pen');
+    }
+
+    function setDrawSize(val) {
+      drawSize = parseInt(val, 10) || 4;
+      const b = document.getElementById('drawSizeBadge');
+      if (b) b.textContent = drawSize + 'px';
+    }
+
+    function toggleDrawNeon() {
+      drawNeon = !drawNeon;
+      document.getElementById('drawNeonBtn')?.classList.toggle('active', drawNeon);
+      playSoundEffect('click');
+    }
+
+    function toggleDrawStars() {
+      drawStars = !drawStars;
+      document.getElementById('drawStarsBtn')?.classList.toggle('active', drawStars);
+      playSoundEffect('click');
+    }
+
+    function saveDrawSnapshot() {
+      const canvas = document.getElementById('drawCanvas');
+      if (!canvas) return;
+      const ctx = canvas.getContext('2d');
+      try {
+        drawHistory.push(ctx.getImageData(0, 0, canvas.width, canvas.height));
+        if (drawHistory.length > 25) drawHistory.shift();
+      } catch (e) {}
+    }
+
+    function undoDrawStroke() {
+      const canvas = document.getElementById('drawCanvas');
+      if (!canvas || !drawHistory.length) return;
+      const ctx = canvas.getContext('2d');
+      const prev = drawHistory.pop();
+      ctx.putImageData(prev, 0, 0);
+      playSoundEffect('click');
+    }
+
+    function clearDrawingCanvas(silent = false) {
+      const canvas = document.getElementById('drawCanvas');
+      if (!canvas) return;
+      const ctx = canvas.getContext('2d');
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
+      drawHistory = [];
+      if (!silent) {
+        playSoundEffect('click');
+        showToast('🗑️ Đã xóa sạch nét vẽ trên trang này!');
+      }
+    }
+
+    function drawStarShape(ctx, cx, cy, spikes, outerR, innerR, color) {
+      let rot = Math.PI / 2 * 3;
+      let step = Math.PI / spikes;
+      ctx.save();
+      ctx.beginPath();
+      ctx.moveTo(cx, cy - outerR);
+      for (let i = 0; i < spikes; i++) {
+        ctx.lineTo(cx + Math.cos(rot) * outerR, cy + Math.sin(rot) * outerR);
+        rot += step;
+        ctx.lineTo(cx + Math.cos(rot) * innerR, cy + Math.sin(rot) * innerR);
+        rot += step;
+      }
+      ctx.closePath();
+      ctx.fillStyle = '#ffffff';
+      ctx.shadowColor = color;
+      ctx.shadowBlur = 12;
+      ctx.fill();
+      ctx.restore();
+    }
+
+    function applyStrokeStyle(ctx) {
+      if (drawTool === 'eraser') {
+        ctx.globalCompositeOperation = 'destination-out';
+        ctx.strokeStyle = 'rgba(0,0,0,1)';
+        ctx.lineWidth = Math.max(14, drawSize * 3);
+        ctx.shadowBlur = 0;
+      } else {
+        ctx.globalCompositeOperation = 'source-over';
+        ctx.strokeStyle = drawColor;
+        ctx.fillStyle = drawColor;
+        ctx.lineWidth = drawSize;
+        ctx.lineCap = 'round';
+        ctx.lineJoin = 'round';
+        ctx.shadowColor = drawNeon ? drawColor : 'transparent';
+        ctx.shadowBlur = drawNeon ? Math.max(12, drawSize * 2.4) : 0;
+      }
+    }
+
+    function drawArrowHead(ctx, x1, y1, x2, y2, size) {
+      const angle = Math.atan2(y2 - y1, x2 - x1);
+      const headLen = Math.max(12, size * 3.2);
+      ctx.beginPath();
+      ctx.moveTo(x2, y2);
+      ctx.lineTo(x2 - headLen * Math.cos(angle - Math.PI / 6), y2 - headLen * Math.sin(angle - Math.PI / 6));
+      ctx.moveTo(x2, y2);
+      ctx.lineTo(x2 - headLen * Math.cos(angle + Math.PI / 6), y2 - headLen * Math.sin(angle + Math.PI / 6));
+      ctx.stroke();
+    }
+
+    setupDrawingCanvas = function() {
+      const canvas = document.getElementById('drawCanvas');
+      if (!canvas) return;
+      const ctx = canvas.getContext('2d');
+      let drawing = false;
+      let startX = 0, startY = 0;
+      let lastX = 0, lastY = 0;
+      let baseSnapshot = null;
+
+      function resizeCanvas() {
+        let saved = null;
+        try {
+          if (canvas.width > 0 && canvas.height > 0) {
+            saved = ctx.getImageData(0, 0, canvas.width, canvas.height);
+          }
+        } catch (e) {}
+        canvas.width = window.innerWidth;
+        canvas.height = window.innerHeight;
+        if (saved) {
+          try { ctx.putImageData(saved, 0, 0); } catch (e) {}
+        }
+      }
+      resizeCanvas();
+      window.addEventListener('resize', resizeCanvas);
+
+      // Keep canvas & toolbar usable even inside native Fullscreen!
+      document.addEventListener('fullscreenchange', () => {
+        const fsEl = document.fullscreenElement;
+        const toolbar = document.getElementById('drawToolbar');
+        if (fsEl) {
+          fsEl.appendChild(canvas);
+          if (toolbar) fsEl.appendChild(toolbar);
+        } else {
+          document.body.appendChild(canvas);
+          if (toolbar) document.body.appendChild(toolbar);
+        }
+        resizeCanvas();
+      });
+
+      // Make Drawing Toolbar draggable
+      const toolbar = document.getElementById('drawToolbar');
+      const dragHandle = document.getElementById('drawDragHandle');
+      if (toolbar && dragHandle) {
+        let tDrag = false, tX = 0, tY = 0, tLeft = 0, tTop = 0;
+        dragHandle.addEventListener('mousedown', (e) => {
+          tDrag = true;
+          tX = e.clientX; tY = e.clientY;
+          const r = toolbar.getBoundingClientRect();
+          tLeft = r.left; tTop = r.top;
+          toolbar.style.transform = 'none';
+          toolbar.style.left = tLeft + 'px';
+          toolbar.style.top = tTop + 'px';
+        });
+        window.addEventListener('mousemove', (e) => {
+          if (!tDrag) return;
+          toolbar.style.left = Math.max(8, Math.min(window.innerWidth - toolbar.offsetWidth - 8, tLeft + e.clientX - tX)) + 'px';
+          toolbar.style.top = Math.max(8, Math.min(window.innerHeight - toolbar.offsetHeight - 8, tTop + e.clientY - tY)) + 'px';
+        });
+        window.addEventListener('mouseup', () => { tDrag = false; });
+      }
+
+      const startDraw = (cx, cy) => {
+        if (!isDrawModeActive) return;
+        drawing = true;
+        saveDrawSnapshot();
+        startX = lastX = cx;
+        startY = lastY = cy;
+        if (drawTool !== 'pen' && drawTool !== 'eraser') {
+          baseSnapshot = ctx.getImageData(0, 0, canvas.width, canvas.height);
+        } else {
+          applyStrokeStyle(ctx);
+          ctx.beginPath();
+          ctx.moveTo(cx, cy);
+        }
+      };
+
+      const moveDraw = (cx, cy) => {
+        if (!drawing || !isDrawModeActive) return;
+        if (drawTool === 'pen' || drawTool === 'eraser') {
+          applyStrokeStyle(ctx);
+          ctx.beginPath();
+          ctx.moveTo(lastX, lastY);
+          ctx.lineTo(cx, cy);
+          ctx.stroke();
+
+          if (drawStars && drawTool === 'pen') {
+            const dist = Math.hypot(cx - lastX, cy - lastY);
+            if (dist > 8) {
+              drawStarShape(ctx, cx + (Math.random() - 0.5) * 14, cy + (Math.random() - 0.5) * 14, 5, drawSize * 1.4 + 3, drawSize * 0.6 + 1, drawColor);
+            }
+          }
+          lastX = cx;
+          lastY = cy;
+        } else {
+          if (baseSnapshot) ctx.putImageData(baseSnapshot, 0, 0);
+          applyStrokeStyle(ctx);
+          ctx.beginPath();
+          if (drawTool === 'line') {
+            ctx.moveTo(startX, startY);
+            ctx.lineTo(cx, cy);
+            ctx.stroke();
+          } else if (drawTool === 'arrow') {
+            ctx.moveTo(startX, startY);
+            ctx.lineTo(cx, cy);
+            ctx.stroke();
+            drawArrowHead(ctx, startX, startY, cx, cy, drawSize);
+          } else if (drawTool === 'rect') {
+            ctx.strokeRect(startX, startY, cx - startX, cy - startY);
+          } else if (drawTool === 'square') {
+            const side = Math.max(Math.abs(cx - startX), Math.abs(cy - startY));
+            const sx = cx >= startX ? side : -side;
+            const sy = cy >= startY ? side : -side;
+            ctx.strokeRect(startX, startY, sx, sy);
+          } else if (drawTool === 'circle') {
+            const rx = Math.abs(cx - startX) / 2;
+            const ry = Math.abs(cy - startY) / 2;
+            const centerX = (startX + cx) / 2;
+            const centerY = (startY + cy) / 2;
+            ctx.ellipse(centerX, centerY, Math.max(1, rx), Math.max(1, ry), 0, 0, Math.PI * 2);
+            ctx.stroke();
+          }
+          if (drawStars) {
+            drawStarShape(ctx, cx, cy, 5, drawSize * 1.5 + 4, drawSize * 0.6 + 1.5, drawColor);
+          }
+        }
+      };
+
+      const endDraw = () => {
+        if (!drawing) return;
+        drawing = false;
+        baseSnapshot = null;
+        ctx.globalCompositeOperation = 'source-over';
+        ctx.shadowBlur = 0;
+      };
+
+      canvas.addEventListener('mousedown', (e) => startDraw(e.clientX, e.clientY));
+      window.addEventListener('mousemove', (e) => moveDraw(e.clientX, e.clientY));
+      window.addEventListener('mouseup', endDraw);
+
+      canvas.addEventListener('touchstart', (e) => {
+        if (!isDrawModeActive || !e.touches[0]) return;
+        e.preventDefault();
+        startDraw(e.touches[0].clientX, e.touches[0].clientY);
+      }, { passive: false });
+      window.addEventListener('touchmove', (e) => {
+        if (!drawing || !e.touches[0]) return;
+        moveDraw(e.touches[0].clientX, e.touches[0].clientY);
+      }, { passive: true });
+      window.addEventListener('touchend', endDraw);
+    };
+
+    toggleDrawMode = function() {
+      isDrawModeActive = !isDrawModeActive;
+      const canvas = document.getElementById('drawCanvas');
+      const toolbar = document.getElementById('drawToolbar');
+      const btn = document.getElementById('drawModeBtn');
+      if (canvas) canvas.classList.toggle('active', isDrawModeActive);
+      if (toolbar) toolbar.classList.toggle('hidden', !isDrawModeActive);
+      if (btn) {
+        btn.classList.toggle('text-amber-400', isDrawModeActive);
+        btn.classList.toggle('bg-amber-950/60', isDrawModeActive);
+        btn.classList.toggle('border-amber-400', isDrawModeActive);
+      }
+      playSoundEffect('click');
+      showToast(isDrawModeActive ? '✏️ Đã bật Bảng Vẽ Toàn Màn Hình (Chọn màu, hình khối, dạ quang & tẩy)' : '✓ Đã tắt chế độ vẽ');
+    };
+    // ==================== END V08.2 ====================
+
+
+
+    // ==================== V08.3 SMART SEMANTIC AI COUNCIL & DYNAMIC PERSONAS ====================
+    let councilFontSize = parseInt(localStorage.getItem('ktcs_council_font_size') || '16', 10);
+
+    function applyCouncilFontSize() {
+      const panel = document.getElementById('floatingCouncilPanel');
+      const badge = document.getElementById('councilFontBadge');
+      if (panel) panel.style.setProperty('--council-font-size', councilFontSize + 'px');
+      if (badge) badge.textContent = councilFontSize + 'px';
+      localStorage.setItem('ktcs_council_font_size', String(councilFontSize));
+    }
+
+    function changeCouncilFontSize(delta) {
+      councilFontSize = Math.max(13, Math.min(24, councilFontSize + delta));
+      applyCouncilFontSize();
+      playSoundEffect('click');
+    }
+
+    function configureCouncilApiKey(e) {
+      if (e) e.stopPropagation();
+      const cur = localStorage.getItem('ktcs_gemini_api_key') || '';
+      const val = prompt(
+        'Nhập Gemini API Key để Hội Đồng trả lời bằng AI trực tuyến (Để trống và bấm OK nếu muốn dùng Chế Độ Thông Minh Ngoại Tuyến 100%):',
+        cur
+      );
+      if (val === null) return;
+      if (val.trim()) {
+        localStorage.setItem('ktcs_gemini_api_key', val.trim());
+        showToast('✓ Đã lưu Gemini API Key cho Hội Đồng AI!');
+      } else {
+        localStorage.removeItem('ktcs_gemini_api_key');
+        showToast('✓ Đã chuyển sang Smart Local Council (Không cần API Key)!');
+      }
+      updateCouncilAiBadge();
+    }
+
+    function updateCouncilAiBadge() {
+      const btn = document.getElementById('councilAiKeyBtn');
+      if (!btn) return;
+      const hasKey = !!localStorage.getItem('ktcs_gemini_api_key');
+      btn.textContent = hasKey ? '🤖 AI: Live' : '🤖 Smart';
+      btn.classList.toggle('text-emerald-300', hasKey);
+    }
+
+    function stripVietnameseTones(str) {
+      return (str || '')
+        .normalize('NFD')
+        .replace(/[\u0300-\u036f]/g, '')
+        .replace(/đ/g, 'd').replace(/Đ/g, 'D')
+        .toLowerCase();
+    }
+
+    function cleanHtmlText(str) {
+      return (str || '').replace(/<[^>]+>/g, ' ').replace(/&nbsp;/g, ' ').replace(/\s+/g, ' ').trim();
+    }
+
+    // Dynamic Inspiring Figure Selector based on CURRENT SLIDE content!
+    function getSlideDynamicPersona(s) {
+      const hay = stripVietnameseTones(`${s.raw_title || ''} ${s.title || ''} ${s.script || ''} ${s.youtube_title || ''}`);
+      if (hay.includes('van gogh')) return { emoji: '🎨', label: 'Van Gogh', full: 'Danh Họa Vincent van Gogh', style: 'chân thành, cháy bỏng đam mê và vượt lên phán xét' };
+      if (hay.includes('nobel')) return { emoji: '🏅', label: 'Alfred Nobel', full: 'Nhà Phát Minh Alfred Nobel', style: 'chiêm nghiệm sâu sắc về cáo phó cuộc đời và di sản cống hiến' };
+      if (hay.includes('gandhi')) return { emoji: '🕊️', label: 'Gandhi', full: 'Mahatma Gandhi', style: 'ôn hòa, kiên định và dẫn dắt bằng chính cuộc đời mình' };
+      if (hay.includes('edison')) return { emoji: '💡', label: 'Mẹ Edison', full: 'Bà Nancy Edison & Thomas Edison', style: 'ấm áp tình mẫu tử, khơi dậy niềm tin vô điều kiện' };
+      if (hay.includes('steve jobs') || hay.includes('stanford')) return { emoji: '🍏', label: 'Steve Jobs', full: 'Steve Jobs', style: 'sắc bén, tối giản và sống trọn với lẽ sống trái tim' };
+      if (hay.includes('simon sinek') || hay.includes('vong tron vang')) return { emoji: '⭕', label: 'Simon Sinek', full: 'Tác giả Simon Sinek', style: 'truyền cảm hứng từ câu hỏi TẠI SAO (Why)' };
+      if (hay.includes('carnegie') || hay.includes('dac nhan tam') || hay.includes('cong nhan')) return { emoji: '🤝', label: 'Dale Carnegie', full: 'Bậc Thầy Dale Carnegie', style: 'ân cần, thấu cảm và tôn vinh giá trị con người' };
+      if (hay.includes('frankl') || hay.includes('nghich canh')) return { emoji: '⛰️', label: 'Viktor Frankl', full: 'Bác Sĩ Viktor Frankl', style: 'kiên cường tìm thấy ý nghĩa sống ngay giữa nghịch cảnh' };
+      if (hay.includes('solomon')) return { emoji: '💍', label: 'Vua Solomon', full: 'Vua Solomon Thông Thái', style: 'điềm tĩnh, thấu hiểu quy luật vô thường của thời gian' };
+      if (hay.includes('socrates') || hay.includes('3 sang')) return { emoji: '🏛️', label: 'Socrates', full: 'Triết Gia Socrates', style: 'chất vấn trí tuệ qua 3 chiếc sàng Sự Thật - Thiện Chí - Hữu Ích' };
+      if (hay.includes('carl sagan') || hay.includes('dom xanh')) return { emoji: '🌍', label: 'Carl Sagan', full: 'Nhà Thiên Văn Carl Sagan', style: 'hùng vĩ, nhân văn trước Đốm Xanh Mờ vũ trụ' };
+      if (hay.includes('dat viet') || hay.includes('hao khi')) return { emoji: '🇻🇳', label: 'Hào Khí Việt', full: 'Tiếng Vọng Non Sông Đất Việt', style: 'hào sảng, tự hào cội nguồn và đoàn kết triệu trái tim' };
+      if (hay.includes('niem hoa') || hay.includes('thien')) return { emoji: '🪷', label: 'Thiền Sư', full: 'Bậc Thiền Sư Tỉnh Thức', style: 'nhẹ nhàng, mỉm cười an nhiên giữa hiện tại' };
+      if (hay.includes('prompt') || hay.includes('kien truc su ai') || hay.includes('tri tue nhan tao')) return { emoji: '🤖', label: 'Kiến Trúc Sư AI', full: 'Kiến Trúc Sư AI Nhân Văn', style: 'thực chiến, biến AI thành đòn bẩy phục vụ con người' };
+      if (hay.includes('cay tre')) return { emoji: '🎋', label: 'Người Trồng Tre', full: 'Triết Lý Cây Tre Moso', style: 'bền bỉ cắm rễ sâu trước khi vươn cao bứt phá' };
+      if (hay.includes('5 gio') || hay.includes('binh minh') || hay.includes('sinh khi')) return { emoji: '🌅', label: 'Robin Sharma', full: 'Tác Giả CLB 5 Giờ Sáng', style: 'kỷ luật bình minh, nuôi dưỡng Thân - Tâm - Trí' };
+      return { emoji: '🌟', label: 'Thầy Tuấn Tử Tế', full: 'Cố Vấn Di Sản KTCSxAI', style: 'gần gũi, sâu sắc và thực tế cho người trưởng thành Việt Nam' };
+    }
+
+    function updateDynamicCouncilPersonaTab() {
+      const s = SLIDES[currentSlideIndex];
+      if (!s) return;
+      const fig = getSlideDynamicPersona(s);
+      const tab = document.getElementById('dynamicFigureTab');
+      if (tab) {
+        tab.innerHTML = `${fig.emoji} ${fig.label}`;
+        tab.title = fig.full;
+      }
+    }
+
+    selectPersona = function(p) {
+      activePersona = p;
+      document.querySelectorAll('.persona-tab').forEach(t => {
+        const isAct = t.dataset.persona === p;
+        t.classList.toggle('active', isAct);
+        t.className = isAct
+          ? 'persona-tab active px-2.5 py-1 rounded-full font-bold shrink-0 bg-amber-500 text-black shadow'
+          : 'persona-tab px-2.5 py-1 rounded-full font-semibold shrink-0 bg-slate-800 text-slate-300 hover:bg-slate-700';
+      });
+      const s = SLIDES[currentSlideIndex];
+      const fig = getSlideDynamicPersona(s);
+      const greetings = {
+        all: `🏛️ <b>Toàn Thể Hội Đồng</b> đang đồng hành cùng bạn tại <b>Trang ${s.slide_number}: "${cleanHtmlText(s.title)}"</b>. Bạn muốn hỏi về nội dung trang này, tra cứu toàn bộ ${SLIDES.length} trang, hay hỏi cách sử dụng tính năng nào?`,
+        triet_ly: `🧘 <b>Bậc Giác Ngộ &amp; Triết Lý Sống</b> kính chào. Hãy chia sẻ điều bạn đang trăn trở về "${cleanHtmlText(s.title)}" để cùng soi chiếu từ tâm.`,
+        khoa_hoc: `🧠 <b>Chuyên Gia Khoa Học Não Bộ</b> sẵn sàng phân tích cơ chế tư duy, thói quen và ứng dụng thực tế cho anh chị em trung niên.`,
+        nhan_vat: `${fig.emoji} <b>${fig.full}</b> kính chào bạn! Tôi sẽ giải đáp câu hỏi của bạn theo góc nhìn ${fig.style}.`,
+        ky_thuat: `🛠️ <b>Cố Vấn Kỹ Thuật &amp; Hướng Dẫn Sử Dụng</b> đây! Bạn cần hỗ trợ về YouTube, Tua chậm Slow-Mo, Toàn màn hình, Bảng Vẽ, Thẻ Lật 3D, Âm thanh hay tạo bài giảng từ PDF/HTML/TXT?`
+      };
+      addCouncilMessage('ai', greetings[p] || greetings.all);
+      updateCouncilChips();
+      playSoundEffect('click');
+    };
+
+    updateCouncilChips = function() {
+      const container = document.getElementById('councilChipsContainer');
+      if (!container) return;
+      const s = SLIDES[currentSlideIndex];
+      const fig = getSlideDynamicPersona(s);
+      const chips = [
+        `📌 Tóm tắt ý chính Trang ${s.slide_number}`,
+        `🎯 Áp dụng Trang ${s.slide_number} vào đời sống`,
+        `${fig.emoji} ${fig.label} nói gì về bài này?`,
+        `🛠️ Cách vẽ toàn màn hình &amp; tua chậm video?`,
+        `🔍 Tra cứu từ khóa trong toàn bộ ${SLIDES.length} trang`
+      ];
+      container.innerHTML = '';
+      chips.forEach(chip => {
+        const cleanChip = chip.replace(/&amp;/g, '&');
+        const b = document.createElement('button');
+        b.className = 'px-2.5 py-1 rounded-full bg-slate-800 hover:bg-slate-700 text-amber-300 text-xs shrink-0 border border-slate-700 transition';
+        b.innerHTML = chip;
+        b.onclick = () => {
+          document.getElementById('councilChatInput').value = cleanChip;
+          sendCouncilQuestion();
+        };
+        container.appendChild(b);
+      });
+    };
+
+    addCouncilMessage = function(sender, htmlText) {
+      const history = document.getElementById('councilChatHistory');
+      if (!history) return;
+      const msg = document.createElement('div');
+      msg.className = sender === 'user' ? 'flex justify-end' : 'flex justify-start';
+      msg.innerHTML = `
+        <div class="council-msg-bubble max-w-[90%] rounded-2xl px-3.5 py-2.5 shadow ${
+          sender === 'user'
+            ? 'bg-amber-500 text-black font-bold'
+            : 'bg-slate-900/95 border border-slate-700/80 text-slate-100'
+        }">
+          ${htmlText}
+        </div>`;
+      history.appendChild(msg);
+      history.scrollTop = history.scrollHeight;
+    };
+
+    // Technical Support Knowledge Base (Answers real user technical questions!)
+    function answerTechnicalQuestion(qNorm) {
+      const rules = [
+        {
+          keys: ['youtube', 'video', '153', 'khong xem duoc', 'khong bat duoc', 'link youtube', 'copy link'],
+          ans: `🛠️ <b>Hướng dẫn xem &amp; sao chép Video YouTube mượt mà:</b><br>
+          1️⃣ Bấm nút <b>▶️ YouTube</b> ở góc trên khung media để xem hình Preview HD tiếng Việt.<br>
+          2️⃣ Bấm <b>▶ Phát Trực Tiếp Ngay</b> để xem ngay trong khung, hoặc <b>🎬 Cửa Sổ Rạp Chiếu</b> để mở cửa sổ lớn.<br>
+          3️⃣ Nếu mở file trực tiếp (<code>file:///</code>) bị YouTube chặn nhúng, hãy nhấp đúp tệp <b>CHAY_BAI_GIANG_LOCAL.bat</b> (chạy cổng 7890) là xem trực tiếp 100% không lỗi.<br>
+          4️⃣ Ngay dưới khung video có ô <b>▶ YouTube VN • 📋 Copy Link</b> — bấm 1 chạm là sao chép ngay link YouTube của trang đó.`
+        },
+        {
+          keys: ['tua cham', 'slow', 'toc do', 'nhanh', 'cham'],
+          ans: `🐢 <b>Cách Tua Chậm (Slow-Mo) &amp; Chỉnh Tốc Độ:</b><br>
+          • Ngay dưới khung video có dải nút <b>🐢 Tốc Độ: 0.25x • 0.5x • 0.75x • 1x • 1.25x • 1.5x • 2x</b>.<br>
+          • Áp dụng cho cả <b>Video 4D (.mp4)</b> lẫn <b>Video YouTube</b>.<br>
+          • Ngoài ra thanh đọc thuyết minh ở cột phải cũng có thanh trượt tốc độ đọc giọng Hoài My / Nam Minh từ <b>0.50x đến 1.80x</b>.`
+        },
+        {
+          keys: ['toan man hinh', 'fullscreen', 'phong to'],
+          ans: `⛶ <b>Cách Mở Rộng Toàn Màn Hình:</b><br>
+          • Bấm nút vàng <b>⛶ Toàn Màn Hình</b> ngay dưới khung video hoặc nhấn phím tắt <b>F</b>.<br>
+          • Bảng vẽ toàn màn hình vẫn hoạt động ngay cả khi đang ở chế độ Toàn Màn Hình! Nhấn <b>ESC</b> để thoát.`
+        },
+        {
+          keys: ['ve', 'but', 'tay', 'xoa', 'da quang', 'dai sao', 'hinh tron', 'hinh vuong', 'mui ten', 'chu nhat', 'duong thang'],
+          ans: `✏️ <b>Hướng dẫn Bảng Vẽ Toàn Màn Hình (Whiteboard Studio):</b><br>
+          • Bấm nút <b>✏️ Vẽ</b> trên thanh tiêu đề để bật bảng vẽ phủ toàn bộ màn hình.<br>
+          • Chọn công cụ: <b>✏️ Tự Do, ➖ Thẳng, ➡️ Mũi Tên, ⭕ Tròn, ⬜ Vuông, ▭ Chữ Nhật, 🧹 Tẩy</b>.<br>
+          • Bật <b>🌟 Dạ Quang</b> để phát sáng neon, bật <b>✨ Dải Sao</b> để rắc sao theo nét vẽ.<br>
+          • Đổi màu, chỉnh kích thước nét (2px–24px), dùng <b>↩️ Hoàn Tác</b> hoặc <b>🗑️ Xóa Hết</b>. Khi sang trang mới nét vẽ tự động được làm sạch!`
+        },
+        {
+          keys: ['the lat', 'chuyen hoa', 'tung hoa'],
+          ans: `🔄 <b>Cách sử dụng Thẻ Lật 3D Chuyển Hóa:</b><br>
+          • Nhấp vào từng thẻ để lật từ <i>Trước Chuyển Hóa</i> sang <i>Trở Thành Di Sản</i> kèm hiệu ứng tung hoa.<br>
+          • Hoặc bấm nút <b>✨ Chuyển Hóa Tất Cả</b> ở góc trên khối thẻ để lật nối tiếp cả 3 thẻ một lúc.`
+        },
+        {
+          keys: ['am thanh', 'nhac', '432', 'piano', 'chuong', 'suoi', 'giong doc', 'thuyet minh', 'tieng goc'],
+          ans: `🎵 <b>Hệ thống Âm Thanh &amp; Nhạc Nền:</b><br>
+          • Nút <b>🎵 Nhạc Nền</b> trên thanh tiêu đề bấm liên tiếp để đổi 4 chế độ: <b>432Hz Thiền → Piano Cảm Hứng → Chuông Thiền → Suối Bình Yên → Tắt</b>.<br>
+          • Cột phải có nút <b>▶</b> để nghe thuyết minh tiếng Việt (chọn giọng <b>Nữ: Hoài My</b> hoặc <b>Nam: Nam Minh</b>, phím tắt <b>K</b>).`
+        },
+        {
+          keys: ['keo', 'mo rong', 'thu hep', 'bo cuc', 'layout', 'co chu'],
+          ans: `📐 <b>Điều chỉnh Giao Diện &amp; Cỡ Chữ:</b><br>
+          • <b>Kéo ngang</b> thanh chia ở giữa 2 cột trái/phải để phóng to khung video hoặc khung chữ.<br>
+          • <b>Kéo dọc</b> 2 thanh <b>↕ Kéo dọc mở rộng / thu hẹp</b> ở cột phải để chỉnh chiều cao Khối Thông Điệp và Kịch Bản.<br>
+          • Trong khung Hội Đồng AI này, bấm <b>A- / A+</b> ở góc trên để chỉnh cỡ chữ (13px–24px) và kéo góc <b>⤡</b> ở dưới-phải để mở rộng khung chat.`
+        },
+        {
+          keys: ['studio', 'pdf', 'html', 'tao bai giang', 'phim tat'],
+          ans: `⚡ <b>Phím Tắt &amp; Tạo Bài Giảng Mới Từ PDF / HTML / TXT:</b><br>
+          • Phím tắt: <b>← / → / Space</b> (chuyển trang), <b>F</b> (toàn màn hình), <b>K</b> (bật/tắt thuyết minh), <b>M</b> (tắt/bật tiếng gốc video), <b>Ctrl+Z / Ctrl+Y</b> (hoàn tác).<br>
+          • Để tạo bài giảng mới từ chủ đề bất kỳ hoặc file <code>.pdf, .html, .txt</code>, mở <b>KHOI_DONG_KTCS_4D_CREATOR.bat</b> (<code>http://localhost:7890</code>).`
+        }
+      ];
+
+      for (const r of rules) {
+        if (r.keys.some(k => qNorm.includes(k))) {
+          return r.ans;
+        }
+      }
+      return `🛠️ <b>Cố Vấn Kỹ Thuật KTCSxAI:</b> Bạn có thể hỏi cụ thể về: <i>YouTube, Tua chậm Slow-Mo, Toàn màn hình, Bảng Vẽ &amp; Tẩy, Nhạc nền 4 chế độ, Thẻ Lật 3D, Phím tắt, hoặc Tạo bài giảng từ PDF/HTML/TXT</i>. Hệ thống đang chạy ở phiên bản <b>V08.3</b> hỗ trợ đầy đủ offline lẫn online.`;
+    }
+
+    // Smart Semantic Search Across Slides
+    function searchRelevantSlides(query) {
+      const qNorm = stripVietnameseTones(query);
+      const stop = new Set(['la', 'gi', 'nhu', 'the', 'nao', 'tai', 'sao', 've', 'cua', 'cho', 'toi', 'minh', 'ban', 'nay', 'trang', 'slide', 'hoi', 'dong', 'hay', 'lam', 'de', 'co', 'trong', 'va', 'nhung', 'cac', 'mot', 'voi', 'khong', 'duoc']);
+      const tokens = qNorm.split(/[^a-z0-9]+/).filter(w => w.length >= 2 && !stop.has(w));
+      if (!tokens.length) return [];
+
+      return SLIDES.map((slide, idx) => {
+        const textBlob = stripVietnameseTones([
+          slide.raw_title,
+          cleanHtmlText(slide.title),
+          ...(slide.bullets || []).map(cleanHtmlText),
+          ...(slide.flipCards || []).map(c => cleanHtmlText(c.front + ' ' + c.back)),
+          cleanHtmlText(slide.script),
+          slide.youtube_title || ''
+        ].join(' '));
+
+        let score = 0;
+        tokens.forEach(t => {
+          if (textBlob.includes(t)) {
+            score += t.length >= 4 ? 3 : 1;
+            if (stripVietnameseTones(slide.raw_title || '').includes(t)) score += 4;
+          }
+        });
+        return { slide, idx, score };
+      })
+      .filter(item => item.score > 0)
+      .sort((a, b) => b.score - a.score)
+      .slice(0, 3);
+    }
+
+    function buildSmartLocalCouncilReply(question, persona) {
+      const qNorm = stripVietnameseTones(question);
+      const s = SLIDES[currentSlideIndex];
+      const scope = document.getElementById('councilScopeSelect')?.value || 'all';
+      const fig = getSlideDynamicPersona(s);
+
+      // 1. Check Technical Intent first (or if ky_thuat tab selected)
+      const techHints = ['youtube', '153', 'tua cham', 'slow', 'toan man hinh', 'fullscreen', 'but ve', 'bang ve', 'tay xoa', 'da quang', 'dai sao', 'hinh tron', 'hinh vuong', 'chu nhat', 'mui ten', 'phim tat', 'co chu', 'studio', 'keo doc', 'cach dung', 'huong dan', 'khong chay', 'khong bat', 'loi '];
+      if (persona === 'ky_thuat' || techHints.some(h => qNorm.includes(h))) {
+        return answerTechnicalQuestion(qNorm);
+      }
+
+      // 2. Check explicit slide/page number reference (e.g., "slide 11", "trang 27")
+      const numMatch = qNorm.match(/(?:slide|trang|muc)\s*(\d{1,2})/);
+      let targetSlide = s;
+      if (numMatch) {
+        const num = parseInt(numMatch[1], 10);
+        if (num >= 1 && num <= SLIDES.length) {
+          targetSlide = SLIDES[num - 1];
+        }
+      } else if (scope === 'all') {
+        const hits = searchRelevantSlides(question);
+        if (hits.length > 0 && hits[0].score >= 3 && hits[0].idx !== currentSlideIndex) {
+          targetSlide = hits[0].slide;
+        }
+      }
+
+      const tTitle = cleanHtmlText(targetSlide.title);
+      const bulletsHtml = (targetSlide.bullets || []).map((b, i) => `• <b>Ý ${i + 1}:</b> ${cleanHtmlText(b)}`).join('<br>');
+      const cardsHtml = (targetSlide.flipCards || []).slice(0, 2).map(c =>
+        `🔄 <i>${cleanHtmlText(c.front)}</i> ➜ <b>${cleanHtmlText(c.back)}</b>`
+      ).join('<br>');
+      const scriptSentences = cleanHtmlText(targetSlide.script).split(/(?<=[.!?])\s+/).filter(Boolean);
+      const scriptExcerpt = scriptSentences.slice(0, 3).join(' ');
+
+      // 3. Check Summary / Overview Intent
+      if (qNorm.includes('tom tat') || qNorm.includes('y chinh') || qNorm.includes('tong quan') || qNorm.includes('noi dung')) {
+        return `📌 <b>Tóm tắt Trang ${targetSlide.slide_number}: "${tTitle}"</b><br><br>` +
+          `${bulletsHtml}<br><br>` +
+          `<b>✨ Chuyển hóa cốt lõi:</b><br>${cardsHtml}<br><br>` +
+          `<button onclick="goToSlide(${targetSlide.slide_number - 1})" class="mt-1 px-2.5 py-1 rounded-lg bg-amber-500/20 border border-amber-500/40 text-amber-300 text-xs font-bold hover:bg-amber-500/30">👉 Mở Trang ${targetSlide.slide_number}</button>`;
+      }
+
+      // 4. Check Practical Application / Action Intent
+      if (qNorm.includes('ap dung') || qNorm.includes('lam sao') || qNorm.includes('thuc hanh') || qNorm.includes('doi song') || qNorm.includes('trung nien') || qNorm.includes('vi du')) {
+        return `🎯 <b>Ứng dụng thực tế từ Trang ${targetSlide.slide_number} ("${tTitle}"):</b><br><br>` +
+          `<b>1. Điểm chạm nhận thức:</b><br>${cardsHtml}<br><br>` +
+          `<b>2. Bước hành động gợi ý hôm nay:</b><br>${scriptExcerpt}<br><br>` +
+          `💡 <i>Gợi ý: Hãy chọn 1 thẻ chuyển hóa ở trang này và thực hành liên tục trong 7 ngày tới!</i>`;
+      }
+
+      // 5. Persona-styled Contextual Answer using REAL slide content + multi-slide matches
+      const related = scope === 'all' ? searchRelevantSlides(question) : [];
+      const relatedLinks = related.length > 1
+        ? `<div class="mt-2 pt-2 border-t border-slate-700/70 text-xs text-slate-300">🔎 <b>Các trang liên quan khác:</b> ` +
+          related.map(r => `<button onclick="goToSlide(${r.idx})" class="underline text-amber-300 hover:text-amber-200 mr-2">Trang ${r.slide.slide_number}: ${cleanHtmlText(r.slide.raw_title).slice(0, 32)}...</button>`).join('') +
+          `</div>`
+        : '';
+
+      if (persona === 'triet_ly') {
+        return `🧘 <b>Bậc Giác Ngộ soi chiếu câu hỏi của bạn qua Trang ${targetSlide.slide_number} ("${tTitle}"):</b><br><br>` +
+          `Về câu hỏi <i>"${question}"</i>, gốc rễ nằm ở sự chuyển hóa nội tâm:<br>${cardsHtml}<br><br>` +
+          `🌿 ${scriptExcerpt}${relatedLinks}`;
+      }
+      if (persona === 'khoa_hoc') {
+        return `🧠 <b>Góc nhìn Khoa Học &amp; Não Bộ (Trang ${targetSlide.slide_number} - "${tTitle}"):</b><br><br>` +
+          `Để trả lời <i>"${question}"</i> dựa trên cơ chế Não Trái &amp; Não Phải:<br>${bulletsHtml}<br><br>` +
+          `🔬 <b>Cơ chế cốt lõi:</b> ${scriptExcerpt}${relatedLinks}`;
+      }
+      if (persona === 'nhan_vat') {
+        return `${fig.emoji} <b>${fig.full} chia sẻ về "${question}" (Trang ${targetSlide.slide_number}):</b><br><br>` +
+          `Từ tinh thần của <b>"${tTitle}"</b>, điều quan trọng nhất là:<br>${bulletsHtml}<br><br>` +
+          `✨ <i>"${scriptExcerpt}"</i>${relatedLinks}`;
+      }
+
+      // Default: 'all' (Toàn Thể Hội Đồng synthesizes real data)
+      return `🏛️ <b>Giải đáp từ Toàn Thể Hội Đồng (Trang ${targetSlide.slide_number}: "${tTitle}"):</b><br><br>` +
+        `<b>• Luận điểm trọng tâm:</b><br>${bulletsHtml}<br><br>` +
+        `<b>• Chuyển hóa thực tế:</b><br>${cardsHtml}<br><br>` +
+        `<b>• Diễn giải chuyên sâu (${fig.emoji} ${fig.label}):</b> ${scriptExcerpt}${relatedLinks}`;
+    }
+
+    sendCouncilQuestion = async function() {
+      const input = document.getElementById('councilChatInput');
+      if (!input) return;
+      const q = input.value.trim();
+      if (!q) return;
+      input.value = '';
+      addCouncilMessage('user', q.replace(/</g, '&lt;'));
+      playSoundEffect('click');
+
+      const apiKey = localStorage.getItem('ktcs_gemini_api_key');
+      const s = SLIDES[currentSlideIndex];
+      const fig = getSlideDynamicPersona(s);
+
+      if (apiKey) {
+        const loadingId = 'council-loading-' + Date.now();
+        addCouncilMessage('ai', `<span id="${loadingId}" class="text-amber-300 animate-pulse">⏳ Hội Đồng AI đang suy ngẫm câu hỏi của bạn...</span>`);
+        try {
+          const contextSlides = (document.getElementById('councilScopeSelect')?.value === 'all')
+            ? SLIDES.map(sl => `Trang ${sl.slide_number}: ${cleanHtmlText(sl.title)} | ${sl.bullets.map(cleanHtmlText).join('; ')}`).join('\n')
+            : `Trang ${s.slide_number}: ${cleanHtmlText(s.title)}\nLuận điểm: ${s.bullets.map(cleanHtmlText).join('\n')}\nKịch bản: ${cleanHtmlText(s.script)}`;
+
+          const prompt = `Bạn là Hội Đồng Trí Tuệ KTCSxAI (gồm Bậc Giác Ngộ, Chuyên gia Não bộ, ${fig.full}, và Cố vấn Kỹ thuật phần mềm). Đối tượng hỏi là người trung niên Việt Nam (38-58 tuổi). Hãy trả lời thật sâu sắc, tự nhiên, đúng trọng tâm câu hỏi sau bằng tiếng Việt, dựa trên dữ liệu bài giảng:\n\n[NGỮ CẢNH BÀI GIẢNG]\n${contextSlides.slice(0, 6500)}\n\n[CÂU HỎI]: ${q}`;
+          const resp = await fetch(`https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key=${encodeURIComponent(apiKey)}`, {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ contents: [{ parts: [{ text: prompt }] }] })
+          });
+          const data = await resp.json();
+          const ans = data?.candidates?.[0]?.content?.parts?.[0]?.text;
+          const loadEl = document.getElementById(loadingId)?.closest('.council-msg-bubble');
+          if (ans && loadEl) {
+            loadEl.innerHTML = ans.replace(/\n/g, '<br>').replace(/\*\*(.*?)\*\*/g, '<b>$1</b>');
+            return;
+          }
+        } catch (e) {}
+        const loadEl = document.getElementById(loadingId)?.closest('.flex');
+        if (loadEl) loadEl.remove();
+      }
+
+      // Smart Local Semantic Reply (always works 100% offline!)
+      setTimeout(() => {
+        const reply = buildSmartLocalCouncilReply(q, activePersona);
+        addCouncilMessage('ai', reply);
+      }, 220);
+    };
+
+    // Corner Resize Grip for Floating Council Panel
+    function setupCouncilCornerResize() {
+      const panel = document.getElementById('floatingCouncilPanel');
+      const grip = document.getElementById('councilResizeGrip');
+      if (!panel || !grip) return;
+      let resizing = false, startX = 0, startY = 0, startW = 0, startH = 0;
+
+      grip.addEventListener('mousedown', (e) => {
+        e.preventDefault();
+        e.stopPropagation();
+        resizing = true;
+        startX = e.clientX;
+        startY = e.clientY;
+        const rect = panel.getBoundingClientRect();
+        startW = rect.width;
+        startH = rect.height;
+        panel.classList.remove('maximized');
+        document.body.style.cursor = 'nwse-resize';
+      });
+
+      window.addEventListener('mousemove', (e) => {
+        if (!resizing) return;
+        const newW = Math.max(360, Math.min(window.innerWidth - 24, startW + (e.clientX - startX)));
+        const newH = Math.max(360, Math.min(window.innerHeight - 24, startH + (e.clientY - startY)));
+        panel.style.width = newW + 'px';
+        panel.style.height = newH + 'px';
+      });
+
+      window.addEventListener('mouseup', () => {
+        if (resizing) {
+          resizing = false;
+          document.body.style.cursor = '';
+        }
+      });
+    }
+
+    // Update dynamic persona tab whenever slide changes
+    const _origRenderSlideV082 = renderSlide;
+    renderSlide = function(index, pushHistory = true) {
+      _origRenderSlideV082(index, pushHistory);
+      updateDynamicCouncilPersonaTab();
+      updateCouncilChips();
+    };
+
+    window.addEventListener('DOMContentLoaded', () => {
+      applyCouncilFontSize();
+      updateCouncilAiBadge();
+      setupCouncilCornerResize();
+      updateDynamicCouncilPersonaTab();
+    });
+    // ==================== END V08.3 ====================
+
+
+
+    // ==================== V08.4 AUTO-COLLAPSING DRAW PALETTE ====================
+    const DRAW_TOOL_LABELS = {
+      pen: '✏️ Tự Do',
+      line: '➖ Thẳng',
+      arrow: '➡️ Mũi Tên',
+      circle: '⭕ Tròn',
+      square: '⬜ Vuông',
+      rect: '▭ Chữ Nhật',
+      eraser: '🧹 Tẩy'
+    };
+
+    function toggleDrawPalette() {
+      const pop = document.getElementById('drawPalettePopover');
+      const bar = document.getElementById('drawToolbar');
+      if (!pop) return;
+      const willOpen = pop.classList.contains('hidden');
+      if (willOpen && bar) {
+        const r = bar.getBoundingClientRect();
+        pop.style.top = Math.min(window.innerHeight - 220, r.bottom + 8) + 'px';
+        pop.style.left = (r.left + r.width / 2) + 'px';
+      }
+      pop.classList.toggle('hidden', !willOpen);
+      playSoundEffect('click');
+    }
+
+    function collapseDrawPalette() {
+      document.getElementById('drawPalettePopover')?.classList.add('hidden');
+    }
+
+    const _origSetDrawTool = setDrawTool;
+    setDrawTool = function(tool) {
+      _origSetDrawTool(tool);
+      const lbl = document.getElementById('drawActiveToolLabel');
+      if (lbl) lbl.textContent = DRAW_TOOL_LABELS[tool] || '✏️ Bút';
+    };
+
+    const _origSetDrawColor = setDrawColor;
+    setDrawColor = function(color, btnEl) {
+      _origSetDrawColor(color, btnEl);
+      const dot = document.getElementById('drawActiveColorDot');
+      if (dot) dot.style.background = color;
+    };
+
+    const _origToggleDrawMode = toggleDrawMode;
+    toggleDrawMode = function() {
+      _origToggleDrawMode();
+      const pop = document.getElementById('drawPalettePopover');
+      if (isDrawModeActive) {
+        // Open palette briefly or let user pick right away; auto-collapses when they start drawing!
+        if (pop) pop.classList.remove('hidden');
+      } else {
+        collapseDrawPalette();
+      }
+    };
+
+    // Auto-collapse the drawing palette the instant the user starts drawing on the canvas!
+    window.addEventListener('DOMContentLoaded', () => {
+      const canvas = document.getElementById('drawCanvas');
+      if (canvas) {
+        canvas.addEventListener('mousedown', () => {
+          if (isDrawModeActive) collapseDrawPalette();
+        });
+        canvas.addEventListener('touchstart', () => {
+          if (isDrawModeActive) collapseDrawPalette();
+        }, { passive: true });
+      }
+      // Also attach fullscreenchange for popover
+      document.addEventListener('fullscreenchange', () => {
+        const fsEl = document.fullscreenElement;
+        const pop = document.getElementById('drawPalettePopover');
+        if (pop) {
+          (fsEl || document.body).appendChild(pop);
+        }
+      });
+    });
+    // ==================== END V08.4 ====================
+
+
+
+    // ==================== V08.6 GLOBAL FONT SIZE CONTROLS ====================
+    let globalFontScale = parseFloat(localStorage.getItem('ktcs_global_font_scale') || '1.10');
+
+    function applyGlobalFontScale() {
+      globalFontScale = Math.max(0.85, Math.min(1.55, Math.round(globalFontScale * 100) / 100));
+      document.documentElement.style.setProperty('--ktcs-text-scale', String(globalFontScale));
+      const badge = document.getElementById('globalFontBadge');
+      if (badge) badge.textContent = Math.round(globalFontScale * 100) + '%';
+      localStorage.setItem('ktcs_global_font_scale', String(globalFontScale));
+    }
+
+    function changeGlobalFontScale(delta) {
+      globalFontScale += delta;
+      applyGlobalFontScale();
+      playSoundEffect('click');
+      showToast(`🔠 Cỡ chữ bài giảng: ${Math.round(globalFontScale * 100)}%`);
+    }
+
+    function resetGlobalFontScale() {
+      globalFontScale = 1.10;
+      applyGlobalFontScale();
+      playSoundEffect('click');
+      showToast('🔠 Đã đặt lại cỡ chữ chuẩn trung niên: 110%');
+    }
+
+    window.addEventListener('DOMContentLoaded', applyGlobalFontScale);
+    // ==================== END V08.6 ====================
+
+
+
+    // ==================== V08.7 PERSISTENT USER MEMORY (DISK + LOCALSTORAGE + HTML EXPORT) ====================
+    const OVERRIDES_SERVER = 'http://localhost:7890';
+
+    function collectAllUserOverrides() {
+      const overrides = {
+        updated_at: new Date().toISOString(),
+        global_font_scale: localStorage.getItem('ktcs_global_font_scale') || '1.10',
+        council_font_size: localStorage.getItem('ktcs_council_font_size') || '16',
+        layout_mode: localStorage.getItem('ktcs_layout_mode') || 'balanced',
+        stage_split: localStorage.getItem('ktcs_stage_split') || '52%',
+        slides: {}
+      };
+      SLIDES.forEach((s, idx) => {
+        const n = idx + 1;
+        const yt = localStorage.getItem(`ktcs_custom_youtube_${n}`);
+        const fl = localStorage.getItem(`ktcs_custom_flow_video_${n}`);
+        const vd = localStorage.getItem(`ktcs_custom_video_${n}`);
+        const im = localStorage.getItem(`ktcs_custom_image_${n}`);
+        const md = localStorage.getItem(`ktcs_custom_media_${n}`);
+        if (yt || fl || vd || im || md) {
+          overrides.slides[n] = {
+            youtube_url: yt || undefined,
+            flow_video_url: fl || undefined,
+            custom_video: (vd && !vd.startsWith('blob:')) ? vd : undefined,
+            custom_image: (im && !im.startsWith('blob:')) ? im : undefined,
+            custom_media: (md && !md.startsWith('blob:')) ? md : undefined
+          };
+        }
+      });
+      return overrides;
+    }
+
+    function applyUserOverrides(overrides) {
+      if (!overrides || typeof overrides !== 'object') return false;
+      let changed = false;
+      if (overrides.slides) {
+        Object.entries(overrides.slides).forEach(([nStr, item]) => {
+          const n = parseInt(nStr, 10);
+          const idx = n - 1;
+          if (!SLIDES[idx] || !item) return;
+          if (item.youtube_url && !localStorage.getItem(`ktcs_custom_youtube_${n}`)) {
+            localStorage.setItem(`ktcs_custom_youtube_${n}`, item.youtube_url);
+            SLIDES[idx].youtube_url = item.youtube_url;
+            changed = true;
+          }
+          if (item.flow_video_url && !localStorage.getItem(`ktcs_custom_flow_video_${n}`)) {
+            localStorage.setItem(`ktcs_custom_flow_video_${n}`, item.flow_video_url);
+            SLIDES[idx].flow_video_url = item.flow_video_url;
+            changed = true;
+          }
+          if (item.custom_video && !localStorage.getItem(`ktcs_custom_video_${n}`)) {
+            localStorage.setItem(`ktcs_custom_video_${n}`, item.custom_video);
+            SLIDES[idx].custom_video = item.custom_video;
+            SLIDES[idx].video = item.custom_video;
+            SLIDES[idx].has_video = true;
+            changed = true;
+          }
+          if (item.custom_image && !localStorage.getItem(`ktcs_custom_image_${n}`)) {
+            localStorage.setItem(`ktcs_custom_image_${n}`, item.custom_image);
+            SLIDES[idx].custom_image = item.custom_image;
+            changed = true;
+          }
+          if (item.custom_media && !localStorage.getItem(`ktcs_custom_media_${n}`)) {
+            localStorage.setItem(`ktcs_custom_media_${n}`, item.custom_media);
+          }
+        });
+      }
+      return changed;
+    }
+
+    async function syncOverridesToDisk() {
+      const payload = collectAllUserOverrides();
+      try {
+        await fetch(`${OVERRIDES_SERVER}/api/save-user-overrides`, {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify(payload)
+        });
+      } catch (e) {
+        // Offline/file:// without server 7890 -> already safely stored in localStorage!
+      }
+    }
+
+    async function loadOverridesFromDiskOnBoot() {
+      try {
+        const res = await fetch(`${OVERRIDES_SERVER}/api/load-user-overrides`);
+        if (!res.ok) return;
+        const data = await res.json();
+        if (applyUserOverrides(data)) {
+          renderSlide(currentSlideIndex, false);
+        }
+      } catch (e) {}
+    }
+
+    // Wrap saveUnifiedMediaModal, handleLocalFileUpload, applyBatchUrls, resetSlideMediaToDefault
+    const _origSaveUnifiedMediaModal = saveUnifiedMediaModal;
+    saveUnifiedMediaModal = function() {
+      _origSaveUnifiedMediaModal();
+      syncOverridesToDisk();
+    };
+
+    const _origResetSlideMediaToDefault = resetSlideMediaToDefault;
+    resetSlideMediaToDefault = function() {
+      _origResetSlideMediaToDefault();
+      syncOverridesToDisk();
+    };
+
+    // Upgrade handleLocalFileUpload to persist uploaded files onto disk when Server 7890 is running!
+    const _origHandleLocalFileUpload = handleLocalFileUpload;
+    handleLocalFileUpload = async function(event) {
+      const file = event.target.files[0];
+      if (!file) return;
+      const slideNum = currentSlideIndex + 1;
+      const isVideo = file.type.startsWith('video/') || /\.(mp4|webm)$/i.test(file.name);
+
+      // First run immediate preview
+      _origHandleLocalFileUpload(event);
+
+      // Try persisting actual file to media/custom/ via Server 7890 so it survives browser restarts!
+      try {
+        const buf = await file.arrayBuffer();
+        const safeName = `slide_${String(slideNum).padStart(2, '0')}_${file.name.replace(/[^a-zA-Z0-9._-]/g, '_')}`;
+        const resp = await fetch(`${OVERRIDES_SERVER}/api/upload-custom-media?filename=${encodeURIComponent(safeName)}`, {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/octet-stream' },
+          body: buf
+        });
+        const res = await resp.json();
+        if (res.ok && res.rel_path) {
+          if (isVideo) {
+            localStorage.setItem(`ktcs_custom_video_${slideNum}`, res.rel_path);
+            SLIDES[currentSlideIndex].custom_video = res.rel_path;
+            SLIDES[currentSlideIndex].video = res.rel_path;
+          } else {
+            localStorage.setItem(`ktcs_custom_image_${slideNum}`, res.rel_path);
+            SLIDES[currentSlideIndex].custom_image = res.rel_path;
+          }
+          await syncOverridesToDisk();
+          showToast(`💾 Đã lưu vĩnh viễn tệp vào ${res.rel_path}!`);
+        }
+      } catch (e) {}
+    };
+
+    // Fix applyBatchUrls to persist to localStorage & disk too!
+    applyBatchUrls = function() {
+      const raw = document.getElementById('batchUrlInput').value.trim();
+      if (!raw) return;
+      const lines = raw.split('\n').map(l => l.trim()).filter(l => l.length > 0);
+      let count = 0;
+      lines.forEach((url, i) => {
+        if (i < SLIDES.length) {
+          const n = i + 1;
+          const lower = url.toLowerCase();
+          if (lower.includes('youtube.com') || lower.includes('youtu.be')) {
+            SLIDES[i].youtube_url = url;
+            localStorage.setItem(`ktcs_custom_youtube_${n}`, url);
+          } else if (lower.includes('flow.google.com')) {
+            SLIDES[i].flow_video_url = url;
+            localStorage.setItem(`ktcs_custom_flow_video_${n}`, url);
+          } else if (lower.endsWith('.mp4') || lower.endsWith('.webm')) {
+            SLIDES[i].video = url;
+            SLIDES[i].custom_video = url;
+            SLIDES[i].has_video = true;
+            localStorage.setItem(`ktcs_custom_video_${n}`, url);
+          } else {
+            SLIDES[i].image = url;
+            SLIDES[i].custom_image = url;
+            localStorage.setItem(`ktcs_custom_image_${n}`, url);
+          }
+          count++;
+        }
+      });
+      syncOverridesToDisk();
+      showToast(`💾 Đã lưu & áp dụng ${count} liên kết cho bài giảng!`);
+      closeMediaManagerModal();
+      renderSlide(currentSlideIndex, false);
+    };
+
+    // Export standalone HTML with all user customizations permanently baked into SLIDES!
+    function exportBakedHtmlLecture() {
+      const bakedSlides = SLIDES.map((s, idx) => {
+        const n = idx + 1;
+        const copy = Object.assign({}, s);
+        const yt = localStorage.getItem(`ktcs_custom_youtube_${n}`);
+        const fl = localStorage.getItem(`ktcs_custom_flow_video_${n}`);
+        const vd = localStorage.getItem(`ktcs_custom_video_${n}`);
+        const im = localStorage.getItem(`ktcs_custom_image_${n}`);
+        if (yt) copy.youtube_url = yt;
+        if (fl) copy.flow_video_url = fl;
+        if (vd && !vd.startsWith('blob:')) { copy.video = vd; copy.has_video = true; }
+        if (im && !im.startsWith('blob:')) { copy.image = im; }
+        return copy;
+      });
+      const fullHtml = '<!DOCTYPE html>\n' + document.documentElement.outerHTML;
+      const updated = fullHtml.replace(
+        /const SLIDES = \[[\s\S]*?\];\s*\n/,
+        `const SLIDES = ${JSON.stringify(bakedSlides, null, 2)};\n`
+      );
+      const blob = new Blob([updated], { type: 'text/html;charset=utf-8' });
+      const a = document.createElement('a');
+      a.href = URL.createObjectURL(blob);
+      a.download = 'ktcs-thong-diep-gia-tri-di-san-4d-da-luu.html';
+      document.body.appendChild(a);
+      a.click();
+      a.remove();
+      playSoundEffect('copy');
+      showToast('💾 Đã tải xuống file HTML đã lưu toàn bộ link & video mới nhất!');
+    }
+
+    function exportOverridesJSON() {
+      const data = JSON.stringify(collectAllUserOverrides(), null, 2);
+      const blob = new Blob([data], { type: 'application/json;charset=utf-8' });
+      const a = document.createElement('a');
+      a.href = URL.createObjectURL(blob);
+      a.download = 'ktcs-tuy-chinh-media.json';
+      document.body.appendChild(a);
+      a.click();
+      a.remove();
+      showToast('📤 Đã xuất file sao lưu các link & video của bạn!');
+    }
+
+    window.addEventListener('DOMContentLoaded', () => {
+      loadOverridesFromDiskOnBoot();
+    });
+    // ==================== END V08.7 ====================
+
 
     // INITIALIZATION
     window.addEventListener('DOMContentLoaded', () => {

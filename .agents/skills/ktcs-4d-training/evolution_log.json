@@ -1,0 +1,77 @@
+{
+  "version": "V09.0 Multi-Modal Self-Evolving",
+  "updated_at": "2026-11-19 16:32:23",
+  "lessons_learned": [
+    {
+      "date": "2026-11-19 15:32",
+      "category": "Ghi Nhớ Vĩnh Viễn Dữ Liệu Người Dùng",
+      "insight": "Tự động đồng bộ mọi link YouTube, Flow và tệp media người dùng thay đổi xuống user_media_overrides.json và media/custom/ qua Server 7890, đồng thời bổ sung nút Tải HTML Đã Lưu và Sao Lưu JSON để không bao giờ bị mất thay đổi."
+    },
+    {
+      "date": "2026-11-19 15:25",
+      "category": "Cỡ Chữ Thân Thiện Trung Niên",
+      "insight": "Bổ sung cụm nút A- / 110% / A+ chỉnh cỡ chữ toàn cục (85%–155%, mặc định 110% to rõ) cho tiêu đề, khối thông điệp, kịch bản lời giảng và thẻ lật 3D."
+    },
+    {
+      "date": "2026-11-19 15:22",
+      "category": "Sửa Lỗi CSS Thẻ Lật 3D",
+      "insight": "Khắc phục triệt để lỗi .flip-card-front và .flip-card-back bị ghi đè position: relative khiến mặt sau rơi xuống 138px và đè lên Kịch Bản Lời Giảng; ép position: absolute; inset: 0; backface-visibility: hidden để lật tại chỗ 100% ở mọi chế độ bố cục."
+    },
+    {
+      "date": "2026-11-19 14:59",
+      "category": "Bố Cục Thẻ Lật & Bảng Vẽ Thu Gọn",
+      "insight": "Thu gọn thanh điều khiển video thành 1 hàng mảnh (~34px) và đặt chiều cao thẻ lật linh hoạt (118px–136px) để 3 thẻ lật luôn nằm gọn đúng vị trí dưới khung hình không bị đẩy xuống dưới; thu gọn bảng công cụ vẽ thành viên thuốc nhỏ, bấm để sổ bảng chọn và tự động thu lại ngay khi bắt đầu vẽ."
+    },
+    {
+      "date": "2026-11-19 09:51",
+      "category": "Hội Đồng AI Thông Minh & Thân Thiện Trung Niên",
+      "insight": "Hội Đồng AI tự thay đổi nhân vật truyền cảm hứng theo từng trang bài giảng (Van Gogh, Nobel, Gandhi, Edison, Socrates, Carl Sagan, Kiến Trúc Sư AI...), hiểu câu hỏi tiếng Việt & tra cứu toàn bộ tài liệu, tích hợp Cố vấn Kỹ thuật giải đáp mọi tính năng, cỡ chữ mặc định 16px có nút A-/A+ và tay cầm kéo góc mở rộng/thu hẹp."
+    },
+    {
+      "date": "2026-11-19 09:44",
+      "category": "Thẻ Lật 3D & Bảng Vẽ Toàn Màn Hình",
+      "insight": "Khóa cứng 3 thẻ lật 3D trên 1 hàng ngang (repeat(3, minmax(0, 1fr))), bổ sung hiệu ứng tung hoa/pháo hoa chào đón điều mới khi lật thẻ; nâng cấp Bút Vẽ thành Bảng Vẽ Toàn Màn Hình tự xóa nét khi chuyển trang, có Tẩy, đổi màu, kích thước, Dạ quang, Dải sao và vẽ Đường thẳng, Mũi tên, Tròn, Vuông, Chữ nhật."
+    },
+    {
+      "date": "2026-11-19",
+      "category": "YouTube & Media",
+      "insight": "Luôn xác thực mọi link YouTube qua oEmbed API trước khi nhúng; ưu tiên 100% video tiếng Việt hoặc có thuyết minh tiếng Việt phù hợp người trung niên (38–58 tuổi); luôn hiển thị hình Preview HD trước và kèm nút Copy Link YouTube."
+    },
+    {
+      "date": "2026-11-19",
+      "category": "Trải Nghiệm Video",
+      "insight": "Tích hợp thanh điều khiển Tua Chậm Slow-Mo (0.25x - 2x) cho cả Video 4D và YouTube cùng nút Toàn Màn Hình (F) giúp giảng viên phân tích sâu từng khoảnh khắc."
+    },
+    {
+      "date": "2026-11-19",
+      "category": "Giao Diện & Cảm Xúc",
+      "insight": "Thêm thanh kéo dọc mở rộng/thu hẹp cho khối Thông Điệp và Kịch Bản bên phải; gắn biểu tượng cảm xúc + khung minh họa trong từng luận điểm; bổ sung nhạc nền 4 chế độ (432Hz, Piano, Chuông Thiền, Suối) và hiệu ứng pháo hoa sao khi lật thẻ 3D."
+    },
+    {
+      "date": "2026-11-19",
+      "category": "Đa Định Dạng & Không Phụ Thuộc AI",
+      "insight": "Hỗ trợ nạp trực tiếp .PDF, .HTML, .TXT, .MD hoặc chủ đề tự do; chạy mượt cả khi có Gemini API lẫn 100% Offline không cần API Key."
+    }
+  ],
+  "learned_youtube_bank": [],
+  "build_history": [
+    {
+      "timestamp": "2026-11-19 16:32:23",
+      "topic": "Làm Chủ AI & Sức Khỏe Tuổi Trung Niên",
+      "domain": "triet_ly_song",
+      "input_type": "txt+json+html+image+video",
+      "total_slides": 5,
+      "mode": "Smart Offline Fusion",
+      "output_dir": "C:\\Users\\PC\\.gemini\\antigravity\\brain\\57ab858a-5ced-422c-b82c-6cb82e4a761a\\scratch\\test_fusion_out"
+    },
+    {
+      "timestamp": "2026-11-19 08:24:45",
+      "topic": "Sống Bình An Tuổi Trung Niên",
+      "domain": "triet_ly_song",
+      "input_type": "text",
+      "total_slides": 2,
+      "mode": "Smart Offline Engine",
+      "output_dir": "C:\\Users\\PC\\.gemini\\antigravity\\brain\\57ab858a-5ced-422c-b82c-6cb82e4a761a\\scratch\\test_build_v08"
+    }
+  ]
+}
