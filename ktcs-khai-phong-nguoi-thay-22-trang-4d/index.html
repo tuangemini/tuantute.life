@@ -407,32 +407,152 @@
       user-select: none;
     }
 
-    /* ART STYLES */
+    /* ART STYLES (5 DISTINCT VISUAL WORLDS) */
     body.style-dienanh {
       --gold: #f59e0b;
+      --gold-glow: rgba(245, 158, 11, 0.38);
       --bg-dark: #030712;
+      --bg-panel: rgba(15, 23, 42, 0.90);
+      --border-panel: rgba(245, 158, 11, 0.30);
     }
+
     body.style-chanthuc {
-      --gold: #06b6d4;
-      --bg-dark: #041019;
+      --gold: #22d3ee;
+      --gold-glow: rgba(34, 211, 238, 0.22);
+      --bg-dark: #071426;
+      --bg-panel: rgba(12, 30, 54, 0.94);
+      --border-panel: rgba(56, 189, 248, 0.45);
+      background-image: linear-gradient(160deg, #071426 0%, #0d2542 55%, #061222 100%) !important;
     }
+    body.style-chanthuc .media-frame,
+    body.style-chanthuc .right-content-frame,
+    body.style-chanthuc .message-bullet-card {
+      border-radius: 6px !important;
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.55) !important;
+    }
+    body.style-chanthuc .media-element {
+      filter: contrast(1.06) saturate(1.05);
+    }
+
     body.style-infographic {
       --gold: #10b981;
-      --bg-dark: #021a12;
+      --gold-glow: rgba(16, 185, 129, 0.25);
+      --bg-dark: #021610;
+      --bg-panel: rgba(4, 34, 24, 0.92);
+      --border-panel: rgba(16, 185, 129, 0.5);
+      background-color: #021610 !important;
+      background-image:
+        linear-gradient(rgba(16, 185, 129, 0.08) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(16, 185, 129, 0.08) 1px, transparent 1px) !important;
+      background-size: 28px 28px !important;
     }
+    body.style-infographic .right-content-frame,
+    body.style-infographic .media-frame {
+      border-style: dashed !important;
+      border-width: 2px !important;
+      border-radius: 10px !important;
+    }
+    body.style-infographic #slideTag,
+    body.style-infographic .message-bullet-card span {
+      font-family: ui-monospace, SFMono-Regular, Menlo, monospace !important;
+    }
+    body.style-infographic .message-bullet-card {
+      background: rgba(6, 48, 34, 0.85) !important;
+      border: 1px dashed rgba(52, 211, 153, 0.45) !important;
+      border-left: 5px solid #10b981 !important;
+    }
+
     body.style-nghethuat {
-      --gold: #ec4899;
-      --bg-dark: #160410;
+      --gold: #f472b6;
+      --gold-glow: rgba(244, 114, 182, 0.35);
+      --bg-dark: #1d0618;
+      --bg-panel: rgba(42, 10, 34, 0.90);
+      --border-panel: rgba(244, 114, 182, 0.48);
+      background-image: radial-gradient(circle at 20% 20%, #3b0a2e 0%, #1d0618 55%, #0f030d 100%) !important;
     }
+    body.style-nghethuat h2,
+    body.style-nghethuat #slideTitle {
+      font-family: 'Playfair Display', Georgia, serif !important;
+      letter-spacing: 0.01em;
+      color: #fdf2f8 !important;
+    }
+    body.style-nghethuat .media-frame {
+      border: 4px double #f472b6 !important;
+      border-radius: 22px !important;
+      box-shadow: 0 0 40px rgba(244, 114, 182, 0.3) !important;
+    }
+    body.style-nghethuat .message-bullet-card {
+      background: linear-gradient(135deg, rgba(80, 18, 60, 0.78), rgba(30, 8, 26, 0.92)) !important;
+      border-left: 4px solid #f472b6 !important;
+    }
+
     body.style-sketchnote {
-      --gold: #eab308;
-      --bg-dark: #121008;
-      font-family: 'Caveat', cursive, sans-serif;
+      --gold: #b45309;
+      --gold-glow: rgba(180, 83, 9, 0.22);
+      --bg-dark: #fbf5e6;
+      --bg-panel: rgba(255, 251, 240, 0.96);
+      --border-panel: #78350f;
+      background-color: #fbf5e6 !important;
+      background-image: radial-gradient(rgba(120, 53, 15, 0.08) 1px, transparent 1px) !important;
+      background-size: 18px 18px !important;
+      color: #1c1917 !important;
     }
-    body.style-sketchnote h2, body.style-sketchnote .flip-card {
-      font-family: 'Caveat', cursive, sans-serif;
-      font-size: 1.25rem;
+    body.style-sketchnote header {
+      background: #fef3c7 !important;
+      border-bottom: 2px solid #92400e !important;
+      color: #1c1917 !important;
     }
+    body.style-sketchnote header p,
+    body.style-sketchnote header span {
+      color: #451a03 !important;
+    }
+    body.style-sketchnote .right-content-frame,
+    body.style-sketchnote .cinema-control-dock,
+    body.style-sketchnote .audio-bar,
+    body.style-sketchnote .script-box-container {
+      background: #fffbeb !important;
+      border: 2px dashed #92400e !important;
+      color: #1c1917 !important;
+      box-shadow: 4px 4px 0px rgba(120, 53, 15, 0.22) !important;
+    }
+    body.style-sketchnote .media-frame {
+      border: 3px solid #78350f !important;
+      box-shadow: 6px 6px 0px rgba(120, 53, 15, 0.28) !important;
+    }
+    body.style-sketchnote h2,
+    body.style-sketchnote #slideTitle,
+    body.style-sketchnote .flip-card {
+      font-family: 'Caveat', cursive, sans-serif !important;
+      color: #1c1917 !important;
+    }
+    body.style-sketchnote #slideTitle {
+      font-size: calc(1.75rem * var(--ktcs-text-scale)) !important;
+      color: #78350f !important;
+    }
+    body.style-sketchnote .message-bullet-card {
+      background: #fef9c3 !important;
+      border: 1.5px dashed #b45309 !important;
+      border-left: 5px solid #b45309 !important;
+      color: #1c1917 !important;
+      box-shadow: 3px 3px 0px rgba(180, 83, 9, 0.18) !important;
+    }
+    body.style-sketchnote .message-bullet-card p,
+    body.style-sketchnote #slideScript,
+    body.style-sketchnote #slideBannerMotto {
+      color: #1c1917 !important;
+    }
+    body.style-sketchnote .flip-card-front {
+      background: #fee2e2 !important;
+      border: 2px dashed #dc2626 !important;
+      color: #1c1917 !important;
+    }
+    body.style-sketchnote .flip-card-front p { color: #7f1d1d !important; font-size: 15px !important; }
+    body.style-sketchnote .flip-card-back {
+      background: #d1fae5 !important;
+      border: 2px solid #059669 !important;
+      color: #064e3b !important;
+    }
+    body.style-sketchnote .flip-card-back p { color: #064e3b !important; font-size: 15px !important; }
 
     /* MODAL OVERLAYS */
     .modal-backdrop {
@@ -1803,9 +1923,9 @@
     "image_flow": "media/flow_images/slide_01.webp",
     "image_pdf": "media/slides/slide_01.webp",
     "flow_image": "media/flow_images/slide_01.webp",
-    "video": "",
+    "video": "media/videos/slide_01.mp4",
     "flow_video": "",
-    "has_video": false,
+    "has_video": true,
     "audio_female": "media/audio/slide_01_female.mp3",
     "audio_male": "media/audio/slide_01_male.mp3",
     "bullets": [
@@ -1838,9 +1958,9 @@
     ],
     "script": "Chào mừng các anh chị học viên đến với buổi đào tạo Kiến Tạo Cuộc Sống xAI! Thông điệp của chúng ta: Đây đo đời, đếch để đời đo! Hỏi đúng hướng thì AI mở đường, kỷ luật bền bỉ thì Thân Tâm vững vàng, đóng gói trải nghiệm thì Di sản trường tồn!",
     "flowPrompt": "Cinematic 16:9 4K golden beacon of light rising from an open ancient book into a starry stratosphere sky above Nha Trang ocean at dawn, luminous neural waves, photorealistic, seamless loop, no text",
-    "youtube_url": "https://www.youtube.com/watch?v=zPPNeWI2yEc",
-    "youtube_title": "HÀNH TRÌNH TÌM VỀ CHÍNH MÌNH  | THẦY TRẦN VIỆT QUÂN",
-    "youtube_author": "Deveerich Academy",
+    "youtube_url": "https://www.youtube.com/watch?v=vgfe_iaetNw",
+    "youtube_title": "STEVE JOBS P3: Hãy cứ khao khát và hãy cứ dại khờ",
+    "youtube_author": "CUỘC SỐNG TƯƠI ĐẸP - Beautiful Life",
     "flow_video_url": "https://flow.google.com/"
   },
   {
@@ -1852,9 +1972,9 @@
     "image_flow": "media/flow_images/slide_02.webp",
     "image_pdf": "media/slides/slide_02.webp",
     "flow_image": "media/flow_images/slide_02.webp",
-    "video": "",
+    "video": "media/videos/slide_02.mp4",
     "flow_video": "",
-    "has_video": false,
+    "has_video": true,
     "audio_female": "media/audio/slide_02_female.mp3",
     "audio_male": "media/audio/slide_02_male.mp3",
     "bullets": [
@@ -1887,9 +2007,9 @@
     ],
     "script": "Chào mừng các anh chị đến với Tháp 6 Tầng Tư Duy Logical Levels của Robert Dilts! Tầng 1 là Môi trường, Tầng 2 là Hành vi, Tầng 3 là Năng lực, Tầng 4 là Niềm tin giá trị, Tầng 5 là Nhân dạng Bản thể và đỉnh cao Tầng 6 là Sứ mệnh Di sản. Khi gặp biến cố, đừng hỏi tại sao việc này lại đến với tôi ở tầng thấp — hãy nâng câu hỏi lên tầng giải pháp, bản thể và sứ mệnh!",
     "flowPrompt": "Cinematic 16:9 4K luminous six-tiered golden and turquoise glass pyramid rising from misty clouds into radiant stratosphere sunlight, ascending energy beams connecting all six levels, seamless loop, no text",
-    "youtube_url": "https://www.youtube.com/watch?v=DTBbeHZtAd4",
-    "youtube_title": "Tư duy về tháp Logical Levels",
-    "youtube_author": "Nguyễn Thị Thùy Dương ",
+    "youtube_url": "https://www.youtube.com/watch?v=S72-RT2sQWI",
+    "youtube_title": "Identity, Rejection and The Logical Levels with Robbie Steinhouse and Robert Dilts. Part 2 of 5",
+    "youtube_author": "NLP School",
     "flow_video_url": "https://flow.google.com/"
   },
   {
@@ -1901,9 +2021,9 @@
     "image_flow": "media/flow_images/slide_03.webp",
     "image_pdf": "media/slides/slide_03.webp",
     "flow_image": "media/flow_images/slide_03.webp",
-    "video": "",
+    "video": "media/videos/slide_03.mp4",
     "flow_video": "",
-    "has_video": false,
+    "has_video": true,
     "audio_female": "media/audio/slide_03_female.mp3",
     "audio_male": "media/audio/slide_03_male.mp3",
     "bullets": [
@@ -1936,9 +2056,9 @@
     ],
     "script": "Cách đây 2400 năm, triết gia Socrates không bao giờ giảng bài theo kiểu nhồi nhét đáp án. Ông đặt từng câu hỏi gợi mở để học trò tự tìm ra chân lý. Trong kỷ nguyên AI hôm nay, chất lượng câu hỏi bạn đặt cho AI quyết định đẳng cấp trí tuệ của chính bạn!",
     "flowPrompt": "Cinematic 16:9 4K ancient Greek marble colonnade in Athens bathed in golden dawn light, luminous golden threads of wisdom connecting two glowing spheres of thought, seamless loop, no text",
-    "youtube_url": "https://www.youtube.com/watch?v=iua7JgfAB5s",
-    "youtube_title": "PHƯƠNG PHÁP ĐẶT CÂU HỎI CỦA SOCRATES - Câu Hỏi Như Một Cách Sống - Mỗi Ngày Một Cuốn Sách",
-    "youtube_author": "Mỗi Ngày Một Cuốn Sách",
+    "youtube_url": "https://www.youtube.com/watch?v=aW4a468gUfk",
+    "youtube_title": "Triết gia Socrates: Trước khi nói chuyện, hãy dùng qua “3 cái lọc” | Tinh Hoa TV",
+    "youtube_author": "Tinh Hoa TV",
     "flow_video_url": "https://flow.google.com/"
   },
   {
@@ -1985,9 +2105,9 @@
     ],
     "script": "Nhà bác học Albert Einstein khẳng định: Nếu có một giờ để cứu thế giới, tôi dành 55 phút tìm đúng câu hỏi và 5 phút tìm câu trả lời. Đừng bao giờ xem nhẹ một câu hỏi tò mò, vì nó có thể mở ra cả một bầu trời mới ở tầng bình lưu!",
     "flowPrompt": "Cinematic 16:9 4K radiant beam of golden light traveling through cosmic space-time ripples and glowing geometric constellations, awe-inspiring scientific wonder, seamless loop, no text",
-    "youtube_url": "https://www.youtube.com/watch?v=DpR7jQqXUog",
-    "youtube_title": "💡 Einstein Dành 55 Phút Để Làm Điều Này — Kỹ Năng Ít Ai Được Dạy #shorts",
-    "youtube_author": "Kỹ năng mềm",
+    "youtube_url": "https://www.youtube.com/watch?v=jLRSTfOkUQM",
+    "youtube_title": "Tư Duy Thiên Tài: 7 Câu Nói Để Đời Của Albert Einstein!",
+    "youtube_author": "Nguyễn Thành Nghĩa",
     "flow_video_url": "https://flow.google.com/"
   },
   {
@@ -1999,9 +2119,9 @@
     "image_flow": "media/flow_images/slide_05.webp",
     "image_pdf": "media/slides/slide_05.webp",
     "flow_image": "media/flow_images/slide_05.webp",
-    "video": "",
+    "video": "media/videos/slide_05.mp4",
     "flow_video": "",
-    "has_video": false,
+    "has_video": true,
     "audio_female": "media/audio/slide_05_female.mp3",
     "audio_male": "media/audio/slide_05_male.mp3",
     "bullets": [
@@ -2034,9 +2154,9 @@
     ],
     "script": "Ở cách Trái Đất 320 nghìn ki lô mét khi tàu Apollo 13 nổ bình oxy, Giám đốc Gene Kranz gạt bỏ mọi tiếng than vãn tại sao và hỏi một câu duy nhất: Trên tàu đang có gì và chúng ta có giải pháp gì? Từ băng dính và ống các tông sẵn có, họ đã đưa cả phi hành đoàn trở về an toàn!",
     "flowPrompt": "Cinematic 16:9 4K Apollo spacecraft gleaming in deep space with blue Earth glowing on the horizon, warm golden light inside cabin symbolizing calm human ingenuity, seamless loop, no text",
-    "youtube_url": "https://www.youtube.com/watch?v=zV8oluxusMw",
-    "youtube_title": "Apollo 13: 87 giờ giành lại sự sống giữa đường tới Mặt Trăng",
-    "youtube_author": "Something on YT",
+    "youtube_url": "https://www.youtube.com/watch?v=TA8SXpyg4O4",
+    "youtube_title": "Apollo 13: Failure is not an option HD CLIP",
+    "youtube_author": "Binge Society",
     "flow_video_url": "https://flow.google.com/"
   },
   {
@@ -2048,9 +2168,9 @@
     "image_flow": "media/flow_images/slide_06.webp",
     "image_pdf": "media/slides/slide_06.webp",
     "flow_image": "media/flow_images/slide_06.webp",
-    "video": "",
+    "video": "media/videos/slide_06.mp4",
     "flow_video": "",
-    "has_video": false,
+    "has_video": true,
     "audio_female": "media/audio/slide_06_female.mp3",
     "audio_male": "media/audio/slide_06_male.mp3",
     "bullets": [
@@ -2083,9 +2203,9 @@
     ],
     "script": "Năm 67 tuổi, toàn bộ xưởng thí nghiệm của Thomas Edison bị thiêu rụi trong một đêm. Sáng hôm sau đứng trên tro tàn, ông nói: Cảm ơn Trời, tất cả sai lầm cũ của chúng ta vừa được đốt sạch, ngày mai ta xây lại từ đầu! Chỉ 3 tuần sau, phát minh mới lại ra đời.",
     "flowPrompt": "Cinematic 16:9 4K glowing golden phoenix rising gracefully from warm embers into a bright luminous workshop filled with radiant light filaments, seamless loop, no text",
-    "youtube_url": "https://www.youtube.com/watch?v=92qaq_G42sw",
-    "youtube_title": "At 67, Thomas Edison Watched His Factories Burn",
-    "youtube_author": "Second Attempt",
+    "youtube_url": "https://www.youtube.com/watch?v=MVYbdJJ2dTc",
+    "youtube_title": "Cách Dạy Con Thành Tài: Câu Chuyện Truyền Cảm Hứng Về Thomas Edison và Mẹ",
+    "youtube_author": "CUỘC SỐNG TƯƠI ĐẸP - Beautiful Life",
     "flow_video_url": "https://flow.google.com/"
   },
   {
@@ -2097,9 +2217,9 @@
     "image_flow": "media/flow_images/slide_07.webp",
     "image_pdf": "media/slides/slide_07.webp",
     "flow_image": "media/flow_images/slide_07.webp",
-    "video": "",
+    "video": "media/videos/slide_07.mp4",
     "flow_video": "",
-    "has_video": false,
+    "has_video": true,
     "audio_female": "media/audio/slide_07_female.mp3",
     "audio_male": "media/audio/slide_07_male.mp3",
     "bullets": [
@@ -2132,9 +2252,9 @@
     ],
     "script": "Từ bác sĩ Viktor Frankl trong trại tập trung, W. Mitchell hai lần bị tai nạn thảm khốc đến nữ họa sĩ Frida Kahlo nằm bất động trên giường bệnh — tất cả đều ngừng hỏi tại sao lại là tôi để hỏi: Tôi còn làm được gì ngay tại đây? Và họ đã trở thành những tượng đài bất tử!",
     "flowPrompt": "Cinematic 16:9 4K vibrant blooming flowers and golden butterflies emerging around an artist easel bathed in warm sunlight streaming through a window, uplifting atmosphere, seamless loop, no text",
-    "youtube_url": "https://www.youtube.com/watch?v=xKeWCbSQRTU",
-    "youtube_title": "[Tóm Tắt Sách] ĐI TÌM LẼ SỐNG | Viktor Frankl | Khi con người sống tiếp dù đã mất tất cả",
-    "youtube_author": "Sách Tinh Gọn",
+    "youtube_url": "https://www.youtube.com/watch?v=44z9EqnjwRU",
+    "youtube_title": "10 bài học đáng giá nhất từ cuốn sách Đi Tìm Lẽ Sống của Viktor Frankl (1946)| Tóm Tắt Sách",
+    "youtube_author": "Nghiện Kiến Thức",
     "flow_video_url": "https://flow.google.com/"
   },
   {
@@ -2146,9 +2266,9 @@
     "image_flow": "media/flow_images/slide_08.webp",
     "image_pdf": "media/slides/slide_08.webp",
     "flow_image": "media/flow_images/slide_08.webp",
-    "video": "",
+    "video": "media/videos/slide_08.mp4",
     "flow_video": "",
-    "has_video": false,
+    "has_video": true,
     "audio_female": "media/audio/slide_08_female.mp3",
     "audio_male": "media/audio/slide_08_male.mp3",
     "bullets": [
@@ -2181,9 +2301,9 @@
     ],
     "script": "Chúng ta không thể bắt cả thế giới trải thảm da bò êm ái dưới chân mình, nhưng ta hoàn toàn có thể tự mang cho mình một đôi giày trí tuệ Thân Tâm Trí vững chắc để bước qua mọi sỏi đá cuộc đời!",
     "flowPrompt": "Cinematic 16:9 4K golden footsteps illuminating a rugged stone mountain path into a smooth glowing road at sunrise, serene spiritual wisdom, seamless loop, no text",
-    "youtube_url": "https://www.youtube.com/watch?v=IFa20c1-n-4",
-    "youtube_title": "Nhà Vua Đòi Bọc Da Bò Cả Nước Và Sự Ra Đời Đôi Giày Da! #Shorts",
-    "youtube_author": "ABUM",
+    "youtube_url": "https://www.youtube.com/watch?v=lzCVzg07oCw",
+    "youtube_title": "Day 1: Hạt giống tâm hồn - Đừng thay đổi thế giới",
+    "youtube_author": "Thảo Nguyễn Phương",
     "flow_video_url": "https://flow.google.com/"
   },
   {
@@ -2230,9 +2350,9 @@
     ],
     "script": "Thầy tu Dom Pérignon biến sự cố nổ hầm rượu vang thành rượu Champagne trứ danh; ông Honda biến chiếc động cơ phát điện bỏ đi sau động đất thành chiếc xe máy Honda đầu tiên. Mọi sự cố đều mang trong mình hạt giống của một phát minh vĩ đại!",
     "flowPrompt": "Cinematic 16:9 4K golden champagne bubbles rising in crystal light alongside intricate golden clockwork gears turning in harmony, turning accidents into breakthroughs, seamless loop, no text",
-    "youtube_url": "https://www.youtube.com/watch?v=cooI8ClbuKI",
-    "youtube_title": "5 câu hỏi tại sao là gì | What is \"5 Whys\"",
-    "youtube_author": "LifeSteps 84",
+    "youtube_url": "https://www.youtube.com/watch?v=BEQvq99PZwo",
+    "youtube_title": "Five Whys Jefferson Memorial Example",
+    "youtube_author": "Danielle Young",
     "flow_video_url": "https://flow.google.com/"
   },
   {
@@ -2244,9 +2364,9 @@
     "image_flow": "media/flow_images/slide_10.webp",
     "image_pdf": "media/slides/slide_10.webp",
     "flow_image": "media/flow_images/slide_10.webp",
-    "video": "",
+    "video": "media/videos/slide_10.mp4",
     "flow_video": "",
-    "has_video": false,
+    "has_video": true,
     "audio_female": "media/audio/slide_10_female.mp3",
     "audio_male": "media/audio/slide_10_male.mp3",
     "bullets": [
@@ -2279,9 +2399,9 @@
     ],
     "script": "Khi áp dụng nghệ thuật đặt câu hỏi vào trí tuệ AI, công thức Lệnh Vàng của lớp KTCSxAI gồm bốn phần: Vai trò, Việc cần làm, Bối cảnh bốn đúng và Định dạng. Bạn là Kiến trúc sư trưởng, còn AI chính là đội thợ giỏi thi công mọi ý tưởng của bạn!",
     "flowPrompt": "Cinematic 16:9 4K four luminous golden pillars of light converging into a radiant AI holographic crystal cube in a modern warm studio, seamless loop, no text",
-    "youtube_url": "https://www.youtube.com/watch?v=vk93aEGb9Bo",
-    "youtube_title": "Đừng Chỉ Viết Prompt — Đây Mới Là Cách Dùng AI Hiệu Quả Thật Sự",
-    "youtube_author": "Dũng Lại Lập Trình",
+    "youtube_url": "https://www.youtube.com/watch?v=hfbJ0ZTTSyk",
+    "youtube_title": "Cách Viết Prompt 7 Thành Phần Giúp AI Phản Hồi Chi Tiết Nhất (Context Engineering)",
+    "youtube_author": "Vật Vờ Studio",
     "flow_video_url": "https://flow.google.com/"
   },
   {
@@ -2328,9 +2448,9 @@
     ],
     "script": "Cùng đón nhận dòng nước ngọt tinh khiết từ sông Jordan, nhưng Biển Hồ Galilee mở lòng cho nước chảy ra nên tràn đầy sự sống, còn Biển Chết giữ khư khư cho riêng mình nên hóa mặn chát. Kiến thức chỉ thực sự sống khi bạn hành động và trao đi!",
     "flowPrompt": "Cinematic 16:9 4K aerial view of a crystal turquoise river flowing through a lush green valley into a sparkling lake under warm golden sunrise light, abundant life, seamless loop, no text",
-    "youtube_url": "https://www.youtube.com/watch?v=_1plqWgU6hY",
-    "youtube_title": "Vườn Tâm Thức | Câu chuyện đặc biệt thú vị từ hai biển hồ đó là Biển Chết và Biển Galilee!",
-    "youtube_author": "Hannah Nguyen",
+    "youtube_url": "https://www.youtube.com/watch?v=t0R1HB_2l4U",
+    "youtube_title": "Tắm ở Biển Chết - Du Lịch Do Thái - Dead Sea, Israel",
+    "youtube_author": "EECN",
     "flow_video_url": "https://flow.google.com/"
   },
   {
@@ -2342,9 +2462,9 @@
     "image_flow": "media/flow_images/slide_12.webp",
     "image_pdf": "media/slides/slide_12.webp",
     "flow_image": "media/flow_images/slide_12.webp",
-    "video": "",
+    "video": "media/custom/slide_12_River_winding_through_green_valleys_50b9899c_720p.mp4",
     "flow_video": "",
-    "has_video": false,
+    "has_video": true,
     "audio_female": "media/audio/slide_12_female.mp3",
     "audio_male": "media/audio/slide_12_male.mp3",
     "bullets": [
@@ -2377,10 +2497,11 @@
     ],
     "script": "Cùng khuân từng viên gạch dưới nắng gió London, người thợ có tầm nhìn thấy mình đang kiến tạo ngôi thánh đường tồn tại hàng nghìn năm. Khi anh chị thức dậy lúc 5 giờ sáng chạy bộ hay ngồi học AI, anh chị đang kiến tạo kỳ quan cho chính cuộc đời mình!",
     "flowPrompt": "Cinematic 16:9 4K magnificent golden cathedral dome bathed in heavenly volumetric sunbeams, architectural blueprints glowing with golden light in the foreground, seamless loop, no text",
-    "youtube_url": "https://www.youtube.com/watch?v=gt4ReXRUm_o",
-    "youtube_title": "Ba người thợ xây .#trietlysong#shorts",
-    "youtube_author": "Sakura97",
-    "flow_video_url": "https://flow.google.com/"
+    "youtube_url": "https://www.youtube.com/watch?v=LS1kG6DFdvM",
+    "youtube_title": "Tóm tắt sách: BẮT ĐẦU VỚI CÂU HỎI TẠI SAO - Simon Sinek",
+    "youtube_author": "MICCO Bookee",
+    "flow_video_url": "https://flow.google.com/",
+    "custom_video": "media/custom/slide_12_River_winding_through_green_valleys_50b9899c_720p.mp4"
   },
   {
     "slide_number": 13,
@@ -2391,9 +2512,9 @@
     "image_flow": "media/flow_images/slide_13.webp",
     "image_pdf": "media/slides/slide_13.webp",
     "flow_image": "media/flow_images/slide_13.webp",
-    "video": "",
+    "video": "media/custom/slide_13_Runner_striding_along_coastal_road_439b138d_720p.mp4",
     "flow_video": "",
-    "has_video": false,
+    "has_video": true,
     "audio_female": "media/audio/slide_13_female.mp3",
     "audio_male": "media/audio/slide_13_male.mp3",
     "bullets": [
@@ -2426,10 +2547,11 @@
     ],
     "script": "Ngày 6 tháng 5 năm 1954, Roger Bannister phá vỡ kỷ lục chạy một dặm dưới 4 phút vốn bị coi là bất khả thi, mở đường cho 37 người khác vượt qua ngay năm sau. Trong lớp học của chúng ta, hàng loạt anh chị trung niên đã hoàn thành cự ly Marathon dài nhất đời mình!",
     "flowPrompt": "Cinematic 16:9 4K runner breaking through a shimmering ribbon of golden light at sunrise along a coastal road, energetic light trails, triumphant atmosphere, seamless loop, no text",
-    "youtube_url": "https://www.youtube.com/watch?v=NrCKONktCTo",
-    "youtube_title": "Chỉ tập trong giờ nghỉ trưa mà phá bức tường 4 phút: Roger Bannister #shorts",
-    "youtube_author": "Runner BĐS",
-    "flow_video_url": "https://flow.google.com/"
+    "youtube_url": "https://www.youtube.com/watch?v=wTXoTnp_5sI",
+    "youtube_title": "First Four Minute Mile-HQ(Roger Bannister:1954)",
+    "youtube_author": "AthletixStuffChannel",
+    "flow_video_url": "https://flow.google.com/",
+    "custom_video": "media/custom/slide_13_Runner_striding_along_coastal_road_439b138d_720p.mp4"
   },
   {
     "slide_number": 14,
@@ -2440,9 +2562,9 @@
     "image_flow": "media/flow_images/slide_14.webp",
     "image_pdf": "media/slides/slide_14.webp",
     "flow_image": "media/flow_images/slide_14.webp",
-    "video": "",
+    "video": "media/custom/slide_14_Water_droplets_nourishing_bloomi__e130d22d_720p.mp4",
     "flow_video": "",
-    "has_video": false,
+    "has_video": true,
     "audio_female": "media/audio/slide_14_female.mp3",
     "audio_male": "media/audio/slide_14_male.mp3",
     "bullets": [
@@ -2475,10 +2597,11 @@
     ],
     "script": "Đừng bao giờ mặc cảm vì những vết nứt hay vấp ngã trong quá khứ của mình. Chính những giọt nước rỉ ra từ vết nứt ấy đã tưới tắm nên vườn hoa trí tuệ và lòng thấu cảm để bạn nâng đỡ biết bao người đi sau!",
     "flowPrompt": "Cinematic 16:9 4K rustic terracotta amphora pouring sparkling water droplets that bloom into colorful wildflowers along a sunlit stone path, magical realism, seamless loop, no text",
-    "youtube_url": "https://www.youtube.com/watch?v=faeFVHtNeNY",
-    "youtube_title": "#72 Chiếc bình nứt - The Cracked Vase 🌹 Truyện cổ tích giáo dục dành cho trẻ em",
-    "youtube_author": "Lớp Học Cô Ba",
-    "flow_video_url": "https://flow.google.com/"
+    "youtube_url": "https://www.youtube.com/watch?v=IlpdlL0MUZE",
+    "youtube_title": "Chiếc Bình Nứt | Truyện ngụ ngôn về vết nứt và những bông hoa",
+    "youtube_author": "Thỏ Bông",
+    "flow_video_url": "https://flow.google.com/",
+    "custom_video": "media/custom/slide_14_Water_droplets_nourishing_bloomi__e130d22d_720p.mp4"
   },
   {
     "slide_number": 15,
@@ -2489,9 +2612,9 @@
     "image_flow": "media/flow_images/slide_15.webp",
     "image_pdf": "media/slides/slide_15.webp",
     "flow_image": "media/flow_images/slide_15.webp",
-    "video": "",
+    "video": "media/custom/slide_15_Dominoes_leading_to_mountain_peak_5e25493b_720p.mp4",
     "flow_video": "",
-    "has_video": false,
+    "has_video": true,
     "audio_female": "media/audio/slide_15_female.mp3",
     "audio_male": "media/audio/slide_15_male.mp3",
     "bullets": [
@@ -2524,10 +2647,11 @@
     ],
     "script": "Một quân cờ Domino chỉ cao 5 xen ti mét đổ dây chuyền đến quân thứ 29 đủ sức đánh đổ cả đỉnh núi Everest. Từng bước chạy bộ buổi sáng, từng trang sách và từng câu lệnh AI mỗi ngày chính là những quân Domino kiến tạo kỳ tích của bạn!",
     "flowPrompt": "Cinematic 16:9 4K golden dominoes cascading in a glowing wave up toward a majestic snow-capped mountain peak bathed in golden dawn light, seamless loop, no text",
-    "youtube_url": "https://www.youtube.com/watch?v=-htP3BCfY0o",
-    "youtube_title": "Hiệu ứng Domino từ những lá bài #Shorts",
-    "youtube_author": "MrThachHP",
-    "flow_video_url": "https://flow.google.com/"
+    "youtube_url": "https://www.youtube.com/watch?v=uMhYXZ0kG_E",
+    "youtube_title": "Hiệu ứng Domino",
+    "youtube_author": "Tiếng Đức NDF Trung tâm",
+    "flow_video_url": "https://flow.google.com/",
+    "custom_video": "media/custom/slide_15_Dominoes_leading_to_mountain_peak_5e25493b_720p.mp4"
   },
   {
     "slide_number": 16,
@@ -2538,9 +2662,9 @@
     "image_flow": "media/flow_images/slide_16.webp",
     "image_pdf": "media/slides/slide_16.webp",
     "flow_image": "media/flow_images/slide_16.webp",
-    "video": "",
+    "video": "media/videos/slide_16.mp4",
     "flow_video": "",
-    "has_video": false,
+    "has_video": true,
     "audio_female": "media/audio/slide_16_female.mp3",
     "audio_male": "media/audio/slide_16_male.mp3",
     "bullets": [
@@ -2573,9 +2697,9 @@
     ],
     "script": "Người thầy bình thường chỉ trao kiến thức, người thầy giỏi biết giải thích, người thầy xuất sắc biết minh họa, còn người thầy vĩ đại là người truyền cảm hứng! Hãy trở thành người thầy vĩ đại trong chính ngôi đền Thân Tâm Trí của bạn!",
     "flowPrompt": "Cinematic 16:9 4K golden temple of Body Mind Spirit radiating warm inspiring light beams to surrounding learners in a serene cosmic sanctuary, seamless loop, no text",
-    "youtube_url": "https://www.youtube.com/watch?v=LhaXmDpugg0",
-    "youtube_title": "[Review Phim] Người thầy thay đổi  thị trấn nhỏ, giải thoát các thiếu niên khỏi vòng xoáy nghèo đói",
-    "youtube_author": "Nguyễn Review",
+    "youtube_url": "https://www.youtube.com/watch?v=32GpXgqvaYQ",
+    "youtube_title": "Người Thầy truyền cảm hứng",
+    "youtube_author": "Trung tâm cung ứng dịch vụ phường Uông Bí",
     "flow_video_url": "https://flow.google.com/"
   },
   {
@@ -2587,9 +2711,9 @@
     "image_flow": "media/flow_images/slide_17.webp",
     "image_pdf": "media/slides/slide_17.webp",
     "flow_image": "media/flow_images/slide_17.webp",
-    "video": "",
+    "video": "media/videos/slide_17.mp4",
     "flow_video": "",
-    "has_video": false,
+    "has_video": true,
     "audio_female": "media/audio/slide_17_female.mp3",
     "audio_male": "media/audio/slide_17_male.mp3",
     "bullets": [
@@ -2622,9 +2746,9 @@
     ],
     "script": "Những dòng nhật ký Hoàng đế Marcus Aurelius viết cho chính mình nơi lều trận và cuốn sổ ghi chép tò mò của Leonardo da Vinci đã trở thành báu vật vô giá của nhân loại. Những chiêm nghiệm sống của anh chị hôm nay chính là cuốn sách di sản cho con cháu mai sau!",
     "flowPrompt": "Cinematic 16:9 4K ornate leather journal with glowing golden Da Vinci sketches and celestial geometry floating above the pages in warm candlelight, seamless loop, no text",
-    "youtube_url": "https://www.youtube.com/watch?v=-FFOReq4xw0",
-    "youtube_title": "SUY TƯỞNG - Meditations | Marcus Aurelius | Sách Nói Trọn Bộ",
-    "youtube_author": "Hopan Reading",
+    "youtube_url": "https://www.youtube.com/watch?v=CWQAcGJsstQ",
+    "youtube_title": "[PREVIEW] SUY TƯỞNG – MARCUS AURELIUS | Mọi thứ chỉ là sớm nở tối tàn",
+    "youtube_author": "Nhã Nam Video Channel",
     "flow_video_url": "https://flow.google.com/"
   },
   {
@@ -2671,8 +2795,8 @@
     ],
     "script": "Cụ bà Masako Wakamiya ở Nhật Bản 60 tuổi mới lần đầu chạm máy tính và 81 tuổi tự viết ứng dụng được CEO Apple vinh danh toàn cầu. Các anh chị trong lớp mới 39 đến 58 tuổi — chúng ta đang ở độ tuổi đẹp nhất để kết hợp chiều sâu trải nghiệm với sức mạnh của AI!",
     "flowPrompt": "Cinematic 16:9 4K cherry blossom petals floating over a glowing modern laptop and traditional Japanese wooden craft table in warm morning sunlight, harmony of wisdom and technology, seamless loop, no text",
-    "youtube_url": "https://www.youtube.com/watch?v=aUL77hgD_0M",
-    "youtube_title": "81-Year-Old Coder Transforms Gaming!",
+    "youtube_url": "https://www.youtube.com/watch?v=UFYJ2DE9wlM",
+    "youtube_title": "After Learning to Code at 81, She Made a Game for Fellow Seniors",
     "youtube_author": "Great Big Story",
     "flow_video_url": "https://flow.google.com/"
   },
@@ -2685,9 +2809,9 @@
     "image_flow": "media/flow_images/slide_19.webp",
     "image_pdf": "media/slides/slide_19.webp",
     "flow_image": "media/flow_images/slide_19.webp",
-    "video": "",
+    "video": "media/videos/slide_19.mp4",
     "flow_video": "",
-    "has_video": false,
+    "has_video": true,
     "audio_female": "media/audio/slide_19_female.mp3",
     "audio_male": "media/audio/slide_19_male.mp3",
     "bullets": [
@@ -2720,9 +2844,9 @@
     ],
     "script": "Những tòa lâu đài nguy nga theo thời gian đều trở thành phế sản. Chỉ có tri thức, lòng tử tế và những câu chuyện truyền cảm hứng như của cụ Nguyễn Đình Chiểu, Trạng Trình Nguyễn Bỉnh Khiêm hay Lev Tolstoy là sống mãi từ thế hệ này sang thế hệ khác!",
     "flowPrompt": "Cinematic 16:9 4K ancient Vietnamese stone turtle stele and pavilion illuminated by floating golden lotus lanterns over tranquil water at twilight, dignified heritage, seamless loop, no text",
-    "youtube_url": "https://www.youtube.com/watch?v=aqobiLq6VTc",
-    "youtube_title": "Tóm tắt Truyện thơ Lục Vân Tiên - Nguyễn Đình Chiểu #booktube #gioithieusach",
-    "youtube_author": "GIỚI THIỆU SÁCH NGHIỆP DƯ",
+    "youtube_url": "https://www.youtube.com/watch?v=CMfBivyy49k",
+    "youtube_title": "Lục Vân Tiên Cứu Kiều Nguyệt Nga - Nguyễn Đình Chiểu | Phổ Nhạc Điện Ảnh",
+    "youtube_author": "Thi Ca Việt Nam",
     "flow_video_url": "https://flow.google.com/"
   },
   {
@@ -2734,9 +2858,9 @@
     "image_flow": "media/flow_images/slide_20.webp",
     "image_pdf": "media/slides/slide_20.webp",
     "flow_image": "media/flow_images/slide_20.webp",
-    "video": "",
+    "video": "media/videos/slide_20.mp4",
     "flow_video": "",
-    "has_video": false,
+    "has_video": true,
     "audio_female": "media/audio/slide_20_female.mp3",
     "audio_male": "media/audio/slide_20_male.mp3",
     "bullets": [
@@ -2769,9 +2893,9 @@
     ],
     "script": "Với hệ sinh thái công cụ của lớp KTCSxAI, bất kỳ học viên nào cũng có thể đóng gói trải nghiệm cuộc đời mình qua bốn bước: Khai thác câu chuyện thật, dùng Lệnh Vàng AI biên tập, tạo hình ảnh video bằng Google Flow và xuất bản thành bài giảng HTML 4D sống động!",
     "flowPrompt": "Cinematic 16:9 4K four glowing golden holographic stations transforming a handwritten story into a luminous interactive 4D digital book floating in space, seamless loop, no text",
-    "youtube_url": "https://www.youtube.com/watch?v=cpCBIUWvB98",
-    "youtube_title": "CÁCH THỨC ĐÓNG GÓI KIẾN THỨC THÀNH SẢN PHẨM",
-    "youtube_author": "Coach Duy Nguyen",
+    "youtube_url": "https://www.youtube.com/watch?v=NmEtXWnPq6o",
+    "youtube_title": "3 DAYS DIGITAL BUSINESS - ĐÓNG GÓI KỸ NĂNG CHUYÊN MÔN THÀNH SẢN PHẨM TƯ VẤN GIÁ TRỊ CAO LÊN ĐẾN $1M",
+    "youtube_author": "DAS - Bí Mật Học Viện Số",
     "flow_video_url": "https://flow.google.com/"
   },
   {
@@ -2783,9 +2907,9 @@
     "image_flow": "media/flow_images/slide_21.webp",
     "image_pdf": "media/slides/slide_21.webp",
     "flow_image": "media/flow_images/slide_21.webp",
-    "video": "",
+    "video": "media/videos/slide_21.mp4",
     "flow_video": "",
-    "has_video": false,
+    "has_video": true,
     "audio_female": "media/audio/slide_21_female.mp3",
     "audio_male": "media/audio/slide_21_male.mp3",
     "bullets": [
@@ -2818,9 +2942,9 @@
     ],
     "script": "Ngay trên bài giảng này, Thần Đèn đã tích hợp Hội Đồng Trí Tuệ AI và Bậc Giác Ngộ. Anh chị có thể bấm mở bảng Hội Đồng AI bất cứ lúc nào để đặt câu hỏi cho tình huống của riêng mình và mở rộng nghiên cứu từ Internet!",
     "flowPrompt": "Cinematic 16:9 4K round table of luminous golden silhouettes of ancient sages and modern scientists radiating wisdom beams around a glowing globe, seamless loop, no text",
-    "youtube_url": "https://www.youtube.com/watch?v=GowxqKsww6U",
-    "youtube_title": "[Sách Nói] Rèn Luyện Tư Duy Phản Biện - Chương 1 | Albert Rutherford",
-    "youtube_author": "Fonos - Kho sách nói bản quyền",
+    "youtube_url": "https://www.youtube.com/watch?v=hpH4IbqPrGk",
+    "youtube_title": "Review Sách: Phương Pháp Đặt Câu Hỏi Của Socrates - Khai Mở Tư Duy Phản Biện Và Hiểu Biết Sâu Sắc",
+    "youtube_author": "Luận Sách",
     "flow_video_url": "https://flow.google.com/"
   },
   {
@@ -2832,9 +2956,9 @@
     "image_flow": "media/flow_images/slide_22.webp",
     "image_pdf": "media/slides/slide_22.webp",
     "flow_image": "media/flow_images/slide_22.webp",
-    "video": "",
+    "video": "media/videos/slide_22.mp4",
     "flow_video": "",
-    "has_video": false,
+    "has_video": true,
     "audio_female": "media/audio/slide_22_female.mp3",
     "audio_male": "media/audio/slide_22_male.mp3",
     "bullets": [
@@ -2867,9 +2991,9 @@
     ],
     "script": "Còn phát triển là còn hạnh phúc, còn thành công! Chúc các anh chị học viên luôn giữ tinh thần tò mò học hỏi, chuyển hóa mọi thử thách thành bậc thang vinh quang, trở thành Người Thầy Vĩ Đại trong ngôi đền Thân Tâm Trí và kiến tạo nên Di Sản Bất Tử cho cuộc đời mình!",
     "flowPrompt": "Cinematic 16:9 4K grand luminous tree of life with golden roots and radiant leaves connecting people around a glowing globe at sunrise, inspiring legacy, seamless loop, no text",
-    "youtube_url": "https://www.youtube.com/watch?v=-1I3u5Qmk2k",
-    "youtube_title": "Thầy Minh Niệm - SỐNG TRỌN VẸN VỚI HIỆN TẠI VÀ HẠNH PHÚC Ở TƯƠNG LAI (Rất Nên Nghe)",
-    "youtube_author": "Gieo Hạt Tỉnh Thức",
+    "youtube_url": "https://www.youtube.com/watch?v=rt-17BxPzM0",
+    "youtube_title": "Sống trọn vẹn mỗi ngày - Video ý nghĩa cuộc sống",
+    "youtube_author": "Oanh Kim",
     "flow_video_url": "https://flow.google.com/"
   }
 ];
@@ -2937,6 +3061,8 @@
         btn.classList.toggle('text-slate-500', !isSFXEnabled);
       }
       if (isSFXEnabled) playSoundEffect('click');
+      const names = {dienanh:'Điện Ảnh 4D', chanthuc:'Chân Thực', infographic:'Infographic', nghethuat:'Bức Vẽ Sơn Dầu', sketchnote:'Sketchnote Vẽ Tay'};
+      if (typeof showToast === 'function') showToast('🎨 Phong cách: ' + (names[style] || style));
     }
 
     // DRAGGABLE SPLITTER LOGIC

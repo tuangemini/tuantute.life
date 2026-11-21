@@ -1,0 +1,21 @@
+{
+  "updated_at": "2026-11-20T07:43:50.210Z",
+  "global_font_scale": "1.1",
+  "council_font_size": "16",
+  "layout_mode": "balanced",
+  "stage_split": "52%",
+  "slides": {
+    "12": {
+      "custom_video": "media/custom/slide_12_River_winding_through_green_valleys_50b9899c_720p.mp4"
+    },
+    "13": {
+      "custom_video": "media/custom/slide_13_Runner_striding_along_coastal_road_439b138d_720p.mp4"
+    },
+    "14": {
+      "custom_video": "media/custom/slide_14_Water_droplets_nourishing_bloomi__e130d22d_720p.mp4"
+    },
+    "15": {
+      "custom_video": "media/custom/slide_15_Dominoes_leading_to_mountain_peak_5e25493b_720p.mp4"
+    }
+  }
+}
